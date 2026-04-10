@@ -38,165 +38,136 @@
         }
         .lang-selector:hover { border-color: #1E2B6E; background: #f8fafc; }
 
-        /* Style du conteneur smartphone - format moderne */
+        /* Style du conteneur smartphone */
         .smartphone-container {
-            width: 320px;
-            height: 620px;
-            background: #1e293b;
-            border-radius: 44px;
-            padding: 12px;
-            box-shadow: 0 30px 60px -20px rgba(0,0,0,0.4), 0 0 0 8px #334155, 0 0 0 12px #1e293b;
-            margin: 0 auto;
-            position: relative;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            font-family: 'Inter', sans-serif;
         }
-        .smartphone-container::before {
-            content: "";
+        .phone-frame {
+            width: 320px;
+            height: 600px;
+            background: #0f172a;
+            border-radius: 40px;
+            padding: 12px;
+            position: relative;
+            box-shadow: 0 50px 100px -20px rgba(0,0,0,0.3);
+            border: 4px solid #334155;
+            transform: scale(0.8);
+            transform-origin: top center;
+        }
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: white;
+            border-radius: 30px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .phone-header {
+            width: 60px;
+            height: 18px;
+            background: #0f172a;
+            border-radius: 0 0 15px 15px;
             position: absolute;
             top: 12px;
             left: 50%;
             transform: translateX(-50%);
-            width: 130px;
-            height: 5px;
-            background: #334155;
-            border-radius: 20px;
-            z-index: 10;
         }
-        .smartphone-container::after {
-            content: "";
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 40px;
-            height: 40px;
-            background: #1e293b;
-            border-radius: 50%;
-            border: 2px solid #334155;
-            z-index: 10;
-        }
-        .screen {
+        .zoho-input {
             width: 100%;
-            height: 100%;
-            background: #f8fafc;
-            border-radius: 36px;
-            overflow-y: auto;
-            overflow-x: hidden;
-            padding: 24px 16px;
-            scrollbar-width: thin;
-        }
-        .screen::-webkit-scrollbar {
-            width: 4px;
-        }
-        .screen::-webkit-scrollbar-track {
-            background: #e2e8f0;
-            border-radius: 10px;
-        }
-        .screen::-webkit-scrollbar-thumb {
-            background: #1E2B6E;
-            border-radius: 10px;
-        }
-
-        /* Style des champs de formulaire - charte graphique Data-Home Light */
-        .form-group {
-            margin-bottom: 18px;
-        }
-        .form-group label {
-            display: block;
-            font-size: 12px;
-            font-weight: 700;
-            color: #1e293b;
-            margin-bottom: 6px;
-            letter-spacing: 0.3px;
-            font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
-        }
-        .form-group input, .form-group select, .form-group textarea {
-            width: 100%;
-            padding: 12px 14px;
-            border: 1.5px solid #e2e8f0;
-            border-radius: 16px;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
             font-size: 14px;
             font-family: 'Inter', sans-serif;
-            transition: all 0.2s ease;
-            background: white;
             outline: none;
+            transition: all 0.2s;
         }
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+        .zoho-input:focus {
             border-color: #1E2B6E;
             box-shadow: 0 0 0 3px rgba(30, 43, 110, 0.1);
         }
-        .btn-submit {
-            width: 100%;
+        .zoho-label {
+            font-size: 11px;
+            font-weight: 800;
+            color: #64748b;
+            text-transform: uppercase;
+            margin-left: 5px;
+            margin-bottom: 5px;
+            display: block;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .zoho-button {
             background: #1E2B6E;
             color: white;
-            padding: 14px;
+            padding: 16px;
             border: none;
-            border-radius: 40px;
+            border-radius: 12px;
             font-weight: 800;
-            font-size: 15px;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            letter-spacing: 0.5px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 8px;
-            box-shadow: 0 4px 12px rgba(30, 43, 110, 0.2);
-        }
-        .btn-submit:hover {
-            background: #2B4A8C;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(30, 43, 110, 0.25);
-        }
-        .phone-badge {
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 12px;
-            font-weight: 700;
-            color: #1E2B6E;
-            background: #eef2ff;
-            display: inline-block;
             width: 100%;
-            padding: 8px;
-            border-radius: 40px;
+            cursor: pointer;
+            transition: 0.3s;
             font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 14px;
+            margin-top: 10px;
         }
-        .success-message {
-            background: #dcfce7;
-            color: #166534;
-            padding: 12px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 600;
-            text-align: center;
-            margin-bottom: 16px;
-            display: none;
-        }
-        .error-message {
-            background: #fee2e2;
-            color: #991b1b;
-            padding: 12px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 600;
-            text-align: center;
-            margin-bottom: 16px;
-            display: none;
-        }
-        h3.phone-title {
-            font-size: 18px;
-            font-weight: 800;
-            text-align: center;
-            margin-bottom: 6px;
-            color: #0f172a;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-        .phone-subtitle {
-            text-align: center;
+        .zoho-button:hover { background: #2B4A8C; transform: translateY(-2px); }
+        .success-message, .error-message {
+            padding: 10px;
+            border-radius: 12px;
             font-size: 12px;
-            color: #475569;
-            margin-bottom: 20px;
-            font-weight: 500;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 15px;
+            display: none;
         }
-        [data-translate] {
-            transition: opacity 0.2s;
+        .success-message { background: #dcfce7; color: #166534; }
+        .error-message { background: #fee2e2; color: #991b1b; }
+        [data-translate] { transition: opacity 0.2s; }
+
+        /* Partenaire HabiHub styles */
+        .partner-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-radius: 60px;
+            padding: 8px 20px 8px 16px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+        .partner-logo {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #1E2B6E, #2B4A8C);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 18px;
+        }
+        .partner-slogan {
+            font-size: 11px;
+            color: #475569;
+            line-height: 1.3;
+            max-width: 280px;
+        }
+        .partner-slogan strong {
+            color: #1E2B6E;
+            font-weight: 800;
+        }
+        @media (max-width: 768px) {
+            .partner-badge { padding: 6px 14px 6px 12px; }
+            .partner-logo { width: 32px; height: 32px; font-size: 14px; }
+            .partner-slogan { font-size: 9px; max-width: 220px; }
         }
     </style>
 </head>
@@ -266,7 +237,7 @@
         </div>
     </section>
 
-    <!-- Problem Section (53% abandon) -->
+    <!-- Problem Section -->
     <section id="problem" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-6 md:px-10">
             <div class="grid lg:grid-cols-2 gap-20 items-center">
@@ -308,7 +279,7 @@
         </div>
     </section>
 
-    <!-- Product Overview / Moteur -->
+    <!-- Product Overview -->
     <section id="product" class="py-24 bg-slate-50/40">
         <div class="max-w-7xl mx-auto px-6 md:px-10 text-center mb-16">
             <div data-aos="fade-up">
@@ -363,57 +334,55 @@
         </div>
     </section>
 
-    <!-- Features: Lightning Speed + Google PageSpeed -->
+    <!-- Features Section -->
     <section id="features" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-6 md:px-10">
             <div class="grid lg:grid-cols-2 gap-16 items-center mb-24">
                 <div data-aos="fade-right">
                     <span class="text-[#1E2B6E] font-black tracking-[0.2em] text-xs uppercase" data-translate="speed_tag">Lightning speed</span>
                     <h3 class="text-4xl md:text-5xl font-extrabold mt-4 mb-6" data-translate="speed_title">Temps de charge zéro</h3>
-                    <p class="text-slate-500 text-lg mb-6" data-translate="speed_desc">Une expérience conçue pour afficher vos biens instantanément, sur tous les écrans, tout en renforçant votre performance marketing et votre visibilité en ligne.</p>
+                    <p class="text-slate-500 text-lg mb-6" data-translate="speed_desc">Une expérience conçue pour afficher vos biens instantanément, sur tous les écrans.</p>
                     <div class="space-y-4">
                         <div class="flex items-center gap-4 p-4 bg-slate-50 rounded-xl">
                             <div class="w-12 h-12 bg-[#1E2B6E]/10 rounded-full flex items-center justify-center text-[#1E2B6E] font-bold">>95</div>
-                            <div><span class="font-bold" data-translate="speed_item1_title">Google PageSpeed Score</span><p class="text-sm text-slate-500" data-translate="speed_item1_desc">Performance technique excellente pour une expérience rapide et fluide.</p></div>
+                            <div><span class="font-bold" data-translate="speed_item1_title">Google PageSpeed Score</span><p class="text-sm text-slate-500" data-translate="speed_item1_desc">Performance technique excellente.</p></div>
                         </div>
                         <div class="flex items-center gap-4 p-4 bg-slate-50 rounded-xl">
                             <div class="w-12 h-12 bg-[#1E2B6E]/10 rounded-full flex items-center justify-center text-[#1E2B6E] text-xl">&lt;1s</div>
-                            <div><span class="font-bold" data-translate="speed_item2_title">Charge en moins d'1 seconde</span><p class="text-sm text-slate-500" data-translate="speed_item2_desc">Votre contenu apparaît presque instantanément pour réduire l'attente.</p></div>
+                            <div><span class="font-bold" data-translate="speed_item2_title">Charge en moins d'1 seconde</span><p class="text-sm text-slate-500" data-translate="speed_item2_desc">Contenu instantané.</p></div>
                         </div>
                         <div class="flex items-center gap-4 p-4 bg-slate-50 rounded-xl">
                             <div class="w-12 h-12 bg-[#1E2B6E]/10 rounded-full flex items-center justify-center text-[#1E2B6E] text-xl">📱</div>
-                            <div><span class="font-bold" data-translate="speed_item3_title">Optimisé mobile & desktop + SEO boosté</span><p class="text-sm text-slate-500" data-translate="speed_item3_desc">Navigation fluide sur smartphone, tablette et ordinateur.</p></div>
+                            <div><span class="font-bold" data-translate="speed_item3_title">Optimisé mobile & desktop</span><p class="text-sm text-slate-500" data-translate="speed_item3_desc">Navigation fluide.</p></div>
                         </div>
                     </div>
                 </div>
                 <div data-aos="zoom-in">
-                    <img src="images/speed-metrics.jpg" alt="Mockup mobile et tablette - expérience multi-écrans" class="rounded-2xl shadow-xl w-full h-auto object-cover">
+                    <img src="images/speed-metrics.jpg" alt="Mockup mobile" class="rounded-2xl shadow-xl w-full h-auto">
                 </div>
             </div>
 
-            <!-- Design Premium Section -->
             <div class="grid lg:grid-cols-2 gap-16 items-center mt-24">
                 <div class="order-2 lg:order-1" data-aos="fade-right">
-                    <img src="images/premium-design.jpg" alt="Femme d'affaires professionnelle - design premium" class="rounded-2xl shadow-xl w-full h-80 object-cover">
+                    <img src="images/premium-design.jpg" alt="Design premium" class="rounded-2xl shadow-xl w-full h-80 object-cover">
                 </div>
                 <div class="order-1 lg:order-2" data-aos="fade-left">
                     <span class="text-[#1E2B6E] font-black tracking-[0.2em] text-xs uppercase" data-translate="design_tag">Design Premium</span>
                     <h3 class="text-4xl md:text-5xl font-extrabold mt-4 mb-6" data-translate="design_title">Une image de marque à la hauteur de vos ambitions</h3>
-                    <p class="text-slate-500 text-lg mb-6" data-translate="design_desc">Un design premium, sur mesure pour les agences immobilières, pour mettre en valeur votre expertise, renforcer votre crédibilité et créer une expérience de marque cohérente à chaque visite.</p>
                     <div class="bg-slate-50 p-6 rounded-xl mb-4">
                         <div class="font-bold text-slate-800 mb-2" data-translate="design_item1_title">✨ La première impression compte</div>
-                        <p class="text-slate-500 text-sm" data-translate="design_item1_desc">Votre site web est souvent le premier contact qu'un vendeur a avec votre agence. Un design épuré, moderne et professionnel inspire immédiatement confiance.</p>
+                        <p class="text-slate-500 text-sm" data-translate="design_item1_desc">Votre site web est souvent le premier contact. Un design épuré inspire confiance.</p>
                     </div>
                     <div class="bg-slate-50 p-6 rounded-xl">
                         <div class="font-bold text-slate-800 mb-2" data-translate="design_item2_title">🎨 Design personnalisé et cohérent</div>
-                        <p class="text-slate-500 text-sm" data-translate="design_item2_desc">Vos couleurs, votre logo, votre identité — intégrés dans une interface premium et cohérente. Chaque page renforce votre positionnement.</p>
+                        <p class="text-slate-500 text-sm" data-translate="design_item2_desc">Vos couleurs, logo, identité intégrés.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Simplicité + Formulaire Smartphone Zoho CRM -->
+    <!-- Simplicité + Formulaire Smartphone Zoho CRM + Partenaire HabiHub -->
     <section class="py-24 bg-slate-50/40">
         <div class="max-w-7xl mx-auto px-6 md:px-10">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
@@ -429,80 +398,68 @@
                         <div class="flex gap-3 items-start"><span class="text-2xl">🎯</span><div><span class="font-bold" data-translate="simpl_item4">Zéro code</span><p class="text-sm text-slate-500" data-translate="simpl_item4_desc">100% intuitif</p></div></div>
                     </div>
                     <div class="mt-8">
-                        <img src="images/simplicity-ui.jpg" alt="Utilisateur souriant - interface simple et intuitive" class="rounded-2xl shadow-xl w-full h-auto object-cover">
+                        <img src="images/simplicity-ui.jpg" alt="Utilisateur souriant" class="rounded-2xl shadow-xl w-full h-auto">
                     </div>
                 </div>
 
                 <!-- Smartphone Container avec formulaire Zoho CRM -->
                 <div data-aos="fade-left" data-aos-delay="100">
                     <div class="smartphone-container">
-                        <div class="screen">
-                            <div class="phone-badge" data-translate="phone_badge">📱 Remplissez en 30 secondes</div>
-                            <h3 class="phone-title" data-translate="phone_title">Obtenez votre démo</h3>
-                            <div class="phone-subtitle" data-translate="phone_subtitle">Un expert vous rappelle sous 24h</div>
-                            
-                            <div id="formSuccessMsg" class="success-message" data-translate="success_msg">✅ Merci ! Votre demande a bien été envoyée. Nous vous contacterons rapidement.</div>
-                            <div id="formErrorMsg" class="error-message" data-translate="error_msg">⚠️ Une erreur est survenue. Veuillez réessayer ou nous contacter directement.</div>
-
-                            <!-- Formulaire Zoho CRM -->
-                            <form action='https://crm.zoho.com/crm/WebToLeadForm' method='POST' accept-charset='UTF-8' id="zohoLeadForm">
-                                <input type='hidden' name='xnQsjsdp' value='VOTRE_VALEUR_xnQsjsdp'>
-                                <input type='hidden' name='xmIwhwjs' value='VOTRE_VALEUR_xmIwhwjs'>
-                                <input type='hidden' name='actionType' value='TFT'>
-                                <input type='hidden' name='returnURL' value='https://data-home-light.com/merci' id='returnURL'>
-                                <input type='hidden' name='Lead Source' value='Landing Page Data-Home Light'>
-                                <input type='hidden' name='Lead Status' value='Nouveau - À contacter'>
+                        <div class="phone-frame">
+                            <div class="phone-header"></div>
+                            <div class="phone-screen">
+                                <h3 style="text-align:center; margin-bottom: 20px; font-weight: 900;" data-translate="phone_title">Data-Home</h3>
                                 
-                                <div class="form-group">
-                                    <label data-translate="form_name">Nom complet *</label>
-                                    <input type="text" name="Last Name" placeholder="Dupont" required>
-                                </div>
-                                <div class="form-group">
-                                    <label data-translate="form_firstname">Prénom</label>
-                                    <input type="text" name="First Name" placeholder="Jean">
-                                </div>
-                                <div class="form-group">
-                                    <label data-translate="form_email">Email professionnel *</label>
-                                    <input type="email" name="Email" placeholder="contact@agence.fr" required>
-                                </div>
-                                <div class="form-group">
-                                    <label data-translate="form_phone">Téléphone *</label>
-                                    <input type="tel" name="Phone" placeholder="06 12 34 56 78" required>
-                                </div>
-                                <div class="form-group">
-                                    <label data-translate="form_agency">Nom de l'agence</label>
-                                    <input type="text" name="Account Name" placeholder="Agence Immobilier Prestige">
-                                </div>
-                                <div class="form-group">
-                                    <label data-translate="form_properties">Nombre de biens en ligne</label>
-                                    <select name="Number of Properties">
-                                        <option value="" data-translate="select_default">Sélectionnez</option>
-                                        <option value="1-20" data-translate="select_1">1 - 20 biens</option>
-                                        <option value="21-50" data-translate="select_2">21 - 50 biens</option>
-                                        <option value="51-150" data-translate="select_3">51 - 150 biens</option>
-                                        <option value="150+" data-translate="select_4">150+ biens</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label data-translate="form_message">Message (optionnel)</label>
-                                    <textarea name="Description" rows="2" placeholder="Votre besoin ou question..."></textarea>
-                                </div>
-                                <button type="submit" class="btn-submit" data-translate="form_submit">📩 Envoyer la demande →</button>
-                                <p style="font-size: 9px; text-align: center; margin-top: 12px; color: #94a3b8;" data-translate="form_required">* Champs obligatoires - Données sécurisées</p>
-                            </form>
+                                <div id="formSuccessMsg" class="success-message" data-translate="success_msg">✅ Merci ! Votre demande a bien été envoyée.</div>
+                                <div id="formErrorMsg" class="error-message" data-translate="error_msg">⚠️ Une erreur est survenue. Veuillez réessayer.</div>
+
+                                <form action='https://crm.zoho.eu/crm/WebToLeadForm' method='POST' accept-charset='UTF-8' id="zohoLeadForm">
+                                    <input type='text' style='display:none;' name='xnQsjsdp' value='c28f4a34f99ed41057ad92aa9fe0d2b49ec3fa251d9b74d3442c043573db6c9d'>
+                                    <input type='text' style='display:none;' name='xmIwtLD' value='c35214469d1043fb02a1ffdc1a3868dc4f81f2d2f7467fd58dc55ceed8659f0e96c16b332fc29b12d959a4ef3eb60f69'>
+                                    <input type='text' style='display:none;' name='actionType' value='TGVhZHM='>
+                                    <input type='text' style='display:none;' name='returnURL' value='https://data-home.app'>
+
+                                    <label class="zoho-label" data-translate="form_name">Nom <span style="color:red">*</span></label>
+                                    <input type='text' name='Last Name' class="zoho-input" placeholder="Dupont" required>
+
+                                    <label class="zoho-label" data-translate="form_email">E-mail professionnel</label>
+                                    <input type='email' name='Email' class="zoho-input" placeholder="contact@agence.fr" required>
+
+                                    <button type='submit' class="zoho-button" data-translate="form_submit">Recevoir mon audit</button>
+                                </form>
+                                
+                                <p style="font-size: 10px; color: #94a3b8; text-align: center; margin-top: 20px;" data-translate="form_footer">
+                                    © 2026 Data-Home - Sécurisé par Zoho CRM
+                                </p>
+                            </div>
                         </div>
                     </div>
-                    <p class="text-center text-xs text-slate-400 mt-4" data-translate="form_footer">Formulaire sécurisé relié à Zoho CRM • Prise de contact sous 24h</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Comparatif Data-Home Light vs Traditional Solution -->
+    <!-- Section Partenaire HabiHub -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-6 md:px-10">
+            <div class="flex flex-col items-center justify-center text-center" data-aos="fade-up">
+                <div class="partner-badge">
+                    <div class="partner-logo">HH</div>
+                    <div class="partner-slogan">
+                        <strong data-translate="partner_name">HabiHub</strong><br>
+                        <span data-translate="partner_slogan">Grow your business through full digitalization of your sales processes and access to a vast New Build catalogue.</span>
+                    </div>
+                </div>
+                <p class="text-xs text-slate-400 mt-4" data-translate="partner_credit">Partenaire technologique officiel</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparatif -->
     <section id="comparison" class="py-24 bg-white">
         <div class="max-w-5xl mx-auto px-6 md:px-10 text-center mb-16">
             <h3 class="text-4xl md:text-5xl font-black tracking-tight mb-4" data-translate="comparison_title">Data-Home Light vs. Solution traditionnelle</h3>
-            <p class="text-slate-500 text-lg" data-translate="comparison_subtitle">Visualisez en un coup d'œil les avantages de Data-Home Light face à une agence web traditionnelle.</p>
+            <p class="text-slate-500 text-lg" data-translate="comparison_subtitle">Visualisez les avantages de Data-Home Light face à une agence web traditionnelle.</p>
         </div>
         <div class="max-w-5xl mx-auto px-6 md:px-10">
             <div class="overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-xl" data-aos="fade-up">
@@ -512,9 +469,9 @@
                     </thead>
                     <tbody class="divide-y divide-gray-100">
                         <tr><td class="p-6 font-bold" data-translate="table_speed">Vitesse</td><td class="p-6 text-[#1E2B6E] font-black" data-translate="table_speed_dhl">Moins d'1 seconde</td><td class="p-6 text-slate-400" data-translate="table_speed_trad">3 à 8 secondes</td></tr>
-                        <tr><td class="p-6 font-bold" data-translate="table_price">Prix</td><td class="p-6 text-[#1E2B6E] font-black" data-translate="table_price_dhl">50€/mois, tout inclus</td><td class="p-6 text-slate-400" data-translate="table_price_trad">150€ à 400$/mois</td></tr>
+                        <tr><td class="p-6 font-bold" data-translate="table_price">Prix</td><td class="p-6 text-[#1E2B6E] font-black" data-translate="table_price_dhl">50$/mois, tout inclus</td><td class="p-6 text-slate-400" data-translate="table_price_trad">150$ à 400$/mois</td></tr>
                         <tr><td class="p-6 font-bold" data-translate="table_launch">Lancement</td><td class="p-6 text-[#1E2B6E] font-black" data-translate="table_launch_dhl">En 48 heures</td><td class="p-6 text-slate-400" data-translate="table_launch_trad">4 à 12 semaines</td></tr>
-                        <tr><td class="p-6 font-bold" data-translate="table_support">Support</td><td class="p-6 text-[#1E2B6E] font-black" data-translate="table_support_dhl">Contact direct et personnalisé</td><td class="p-6 text-slate-400" data-translate="table_support_trad">Tickets anonymes</td></tr>
+                        <tr><td class="p-6 font-bold" data-translate="table_support">Support</td><td class="p-6 text-[#1E2B6E] font-black" data-translate="table_support_dhl">Contact direct</td><td class="p-6 text-slate-400" data-translate="table_support_trad">Tickets anonymes</td></tr>
                         <tr><td class="p-6 font-bold" data-translate="table_updates">Mises à jour</td><td class="p-6 text-[#1E2B6E] font-black" data-translate="table_updates_dhl">Gérées par nous</td><td class="p-6 text-slate-400" data-translate="table_updates_trad">À vos frais</td></tr>
                         <tr><td class="p-6 font-bold" data-translate="table_seo">SEO</td><td class="p-6 text-[#1E2B6E] font-black" data-translate="table_seo_dhl">Intégré nativement</td><td class="p-6 text-slate-400" data-translate="table_seo_trad">Option payante</td></tr>
                     </tbody>
@@ -527,39 +484,35 @@
     <section id="pricing" class="py-24 bg-slate-50/40">
         <div class="max-w-7xl mx-auto px-6 md:px-10 text-center mb-12">
             <h3 class="text-4xl md:text-5xl font-black mb-4" data-translate="pricing_title">Un petit investissement pour un impact maximal</h3>
-            <p class="text-slate-500 text-lg max-w-2xl mx-auto" data-translate="pricing_subtitle">Une solution conçue pour les agences qui veulent un site immobilier performant sans le coût d'une refonte traditionnelle.</p>
+            <p class="text-slate-500 text-lg max-w-2xl mx-auto" data-translate="pricing_subtitle">Une solution conçue pour les agences qui veulent un site immobilier performant.</p>
         </div>
         <div class="max-w-5xl mx-auto px-6 md:px-10 grid md:grid-cols-2 gap-10">
             <div class="card-elegant p-8 text-center border-2 border-[#1E2B6E]/20" data-aos="fade-right">
                 <div class="text-[#1E2B6E] text-sm font-black uppercase tracking-wider" data-translate="pricing_dhl">Data-Home Light</div>
-                <div class="text-5xl font-black mt-4 mb-2">100€<span class="text-lg text-slate-400" data-translate="per_month">/mois</span></div>
+                <div class="text-5xl font-black mt-4 mb-2">49€<span class="text-lg text-slate-400" data-translate="per_month">/mois</span></div>
                 <p class="text-slate-500 text-sm mb-6" data-translate="pricing_desc">À partir de 49€/mois, support complet inclus</p>
                 <ul class="text-left space-y-3 mb-8">
                     <li class="flex items-center gap-2"><span class="text-green-500">✓</span> <span data-translate="price_item1">Site ultra-rapide sur mesure</span></li>
                     <li class="flex items-center gap-2"><span class="text-green-500">✓</span> <span data-translate="price_item2">Intégration de vos annonces</span></li>
                     <li class="flex items-center gap-2"><span class="text-green-500">✓</span> <span data-translate="price_item3">SEO local dès le lancement</span></li>
                     <li class="flex items-center gap-2"><span class="text-green-500">✓</span> <span data-translate="price_item4">Hébergement haute disponibilité</span></li>
-                    <li class="flex items-center gap-2"><span class="text-green-500">✓</span> <span data-translate="price_item5">Maintenance technique incluse</span></li>
                 </ul>
                 <a href="#cta" class="block bg-[#1E2B6E] text-white py-3 rounded-full font-bold" data-translate="price_cta">Choisir cette offre</a>
             </div>
             <div class="card-elegant p-8 text-center bg-slate-50" data-aos="fade-left">
                 <div class="text-slate-400 text-sm font-black uppercase tracking-wider" data-translate="pricing_agency">Agence web classique</div>
                 <div class="text-4xl font-black mt-4 mb-2 line-through text-slate-400">3 000€</div>
-                <p class="text-slate-500 text-sm mb-6" data-translate="pricing_agency_desc">Budget initial élevé, souvent difficile à rentabiliser</p>
                 <ul class="text-left space-y-3 mb-8 text-slate-500">
                     <li class="flex items-center gap-2"><span class="text-red-400">✕</span> <span data-translate="price_trad1">Investissement initial 3 000€ - 10 000€</span></li>
                     <li class="flex items-center gap-2"><span class="text-red-400">✕</span> <span data-translate="price_trad2">Maintenance supplémentaire</span></li>
                     <li class="flex items-center gap-2"><span class="text-red-400">✕</span> <span data-translate="price_trad3">Délais de 4 à 12 semaines</span></li>
-                    <li class="flex items-center gap-2"><span class="text-red-400">✕</span> <span data-translate="price_trad4">Hébergement souvent facturé à part</span></li>
                 </ul>
                 <div class="py-3 rounded-full bg-gray-200 text-slate-400 cursor-default" data-translate="price_trad_cta">Option coûteuse</div>
             </div>
         </div>
-        <div class="text-center mt-8 text-slate-400 text-sm" data-translate="pricing_included">Ce qui est inclus : site ultra-rapide sur mesure, intégration de vos annonces, SEO local, hébergement haute disponibilité, mises à jour techniques.</div>
     </section>
 
-    <!-- CTA Finale avec image final-success.jpg -->
+    <!-- CTA Finale -->
     <section id="cta" class="py-28 relative bg-[#0A0C14] overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-r from-[#1E2B6E]/20 to-transparent"></div>
         <div class="max-w-7xl mx-auto px-6 relative z-10">
@@ -567,21 +520,17 @@
                 <div data-aos="zoom-in-up">
                     <div class="inline-block px-4 py-1.5 rounded-full bg-white/10 text-white/80 text-xs font-bold tracking-wider mb-6 backdrop-blur-sm" data-translate="cta_badge">🚀 Offre exclusive de lancement</div>
                     <h2 class="text-4xl md:text-6xl font-black text-white tracking-tighter mb-6" data-translate="cta_title">Votre site professionnel, prêt en 48 heures</h2>
-                    <p class="text-white/70 text-lg max-w-md mb-6" data-translate="cta_desc">Ne laissez pas vos concurrents prendre de l'avance. Les 10 premières agences bénéficient d'une offre de lancement exclusive à 50€/mois + frais de mise en service uniques de 125€.</p>
+                    <p class="text-white/70 text-lg max-w-md mb-6" data-translate="cta_desc">Ne laissez pas vos concurrents prendre de l'avance. Les 10 premières agences bénéficient d'une offre de lancement exclusive à 50$/mois + frais de mise en service uniques de 125$.</p>
                     <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 inline-block mb-8">
-                        <p class="text-white font-mono text-xs md:text-sm" data-translate="cta_offer">✨ Offre limitée : 50€/mois + 125€ frais · Réservé aux 10 premières agences · Mise en ligne en 48h</p>
+                        <p class="text-white font-mono text-xs md:text-sm" data-translate="cta_offer">✨ Offre limitée : 50$/mois + 125$ frais · Réservé aux 10 premières agences · Mise en ligne en 48h</p>
                     </div>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#" class="bg-white text-slate-900 px-8 py-4 rounded-full text-base font-extrabold btn-premium shadow-2xl flex items-center gap-2 justify-center" data-translate="cta_btn1">
-                            Réserver mon spot →
-                        </a>
-                        <a href="#" class="border border-white/30 text-white px-8 py-4 rounded-full text-base font-semibold hover:bg-white/5 transition-all" data-translate="cta_btn2">
-                            Nous contacter
-                        </a>
+                        <a href="#" class="bg-white text-slate-900 px-8 py-4 rounded-full text-base font-extrabold btn-premium shadow-2xl flex items-center gap-2 justify-center" data-translate="cta_btn1">Réserver mon spot →</a>
+                        <a href="#" class="border border-white/30 text-white px-8 py-4 rounded-full text-base font-semibold hover:bg-white/5 transition-all" data-translate="cta_btn2">Nous contacter</a>
                     </div>
                 </div>
                 <div data-aos="zoom-in" data-aos-delay="200">
-                    <img src="images/final-success.jpg" alt="Utilisateur devant PC - succès professionnel" class="rounded-2xl shadow-2xl border-4 border-white/20 w-full h-auto object-cover">
+                    <img src="images/final-success.jpg" alt="Succès professionnel" class="rounded-2xl shadow-2xl border-4 border-white/20 w-full h-auto">
                 </div>
             </div>
         </div>
@@ -613,122 +562,106 @@
             else nav.classList.remove('shadow-sm', 'bg-white/95');
         });
 
-        // Traductions complètes FR/EN/ES
+        // Traductions simplifiées
         const translations = {
             fr: {
                 nav_problem: "Problématique", nav_solution: "Solution", nav_features: "Fonctionnalités", nav_comparison: "Comparatif", nav_pricing: "Tarifs", nav_cta: "Réserver ma démo",
-                hero_badge: "✨ Offre limitée aux 10 premières agences", hero_title: "L'immobilier réinventé.", hero_desc: "La solution digitale nouvelle génération pour les agences immobilières qui veulent convertir plus de visiteurs en mandats — sans effort technique.",
+                hero_badge: "✨ Offre limitée aux 10 premières agences", hero_title: "L'immobilier réinventé.", hero_desc: "La solution digitale nouvelle génération pour les agences immobilières.",
                 hero_btn1: "Découvrir l'offre →", hero_btn2: "En savoir plus", problem_badge: "d'abandon", problem_tag: "La problématique", problem_title: "Vos clients partent à cause de votre site.",
-                problem_desc: "53% des visiteurs quittent un site qui met plus de 3 secondes à charger. En immobilier, chaque seconde perdue peut vous coûter un mandat, une visite ou un prospect qualifié.",
-                problem_item1: "Trop lent au chargement : vos prospects partent avant de voir vos biens", problem_item2: "Design obsolète : une image de marque qui n'inspire plus confiance",
-                problem_item3: "Trop peu de contacts : votre site n'encourage pas assez la prise de rendez-vous", problem_item4: "Mauvaise expérience mobile : la majorité de vos visiteurs abandonnent sur smartphone",
-                product_tag: "Aperçu produit", product_title: "Data-Home Light: ", product_subtitle: "Le moteur immobilier le plus rapide", product_desc: "Une solution conçue pour afficher vos biens instantanément, élever votre image de marque et transformer plus de visiteurs en leads qualifiés.",
-                stat1: "plus rapide", stat1_sub: "vs solutions standards", stat2: "Satisfaction client", stat2_sub: "agences recommandent", stat3: "Déploiement", stat3_sub: "mise en ligne express", stat4: "Zero maintenance", stat4_sub: "nous gérons la technique",
-                feature_speed_title: "Vitesse", feature_speed_desc: "Infrastructure conçue pour traiter des milliers d'annonces en temps réel sans ralentissement.",
-                feature_design_title: "Design Premium", feature_design_desc: "Une interface moderne qui élève l'image de votre marque et inspire confiance.",
-                feature_maintenance_title: "Zéro maintenance", feature_maintenance_desc: "Nous gérons toute la technologie. Vous gérez vos clients.",
-                feature_seo_title: "Visibilité Google", feature_seo_desc: "Architecture optimisée pour le SEO dès le premier jour.",
-                speed_tag: "Lightning speed", speed_title: "Temps de charge zéro", speed_desc: "Une expérience conçue pour afficher vos biens instantanément, sur tous les écrans.",
-                speed_item1_title: "Google PageSpeed Score", speed_item1_desc: "Performance technique excellente.", speed_item2_title: "Charge en moins d'1 seconde", speed_item2_desc: "Contenu instantané.",
-                speed_item3_title: "Optimisé mobile & desktop + SEO boosté", speed_item3_desc: "Navigation fluide sur tous les appareils.",
-                design_tag: "Design Premium", design_title: "Une image de marque à la hauteur de vos ambitions", design_desc: "Un design premium, sur mesure pour les agences immobilières.",
-                design_item1_title: "✨ La première impression compte", design_item1_desc: "Votre site web est souvent le premier contact. Un design épuré inspire confiance.",
-                design_item2_title: "🎨 Design personnalisé et cohérent", design_item2_desc: "Vos couleurs, logo, identité intégrés dans une interface premium.",
-                simplicity_tag: "Simplicité totale", simplicity_title: "Gérez vos biens, nous gérons le reste.", simplicity_desc: "Une solution simple et intuitive à la portée de tous.",
-                simpl_item1: "Diffusion 1 clic", simpl_item1_desc: "Publiez vos biens rapidement", simpl_item2: "Màj automatiques", simpl_item2_desc: "Annonces toujours à jour",
+                problem_desc: "53% des visiteurs quittent un site qui met plus de 3 secondes à charger.",
+                problem_item1: "Trop lent au chargement", problem_item2: "Design obsolète", problem_item3: "Trop peu de contacts", problem_item4: "Mauvaise expérience mobile",
+                product_tag: "Aperçu produit", product_title: "Data-Home Light: ", product_subtitle: "Le moteur immobilier le plus rapide", product_desc: "Affichez vos biens instantanément.",
+                stat1: "plus rapide", stat1_sub: "vs standards", stat2: "Satisfaction client", stat2_sub: "agences recommandent", stat3: "Déploiement", stat3_sub: "48h", stat4: "Zero maintenance", stat4_sub: "nous gérons",
+                feature_speed_title: "Vitesse", feature_speed_desc: "Infrastructure ultra-rapide.", feature_design_title: "Design Premium", feature_design_desc: "Interface moderne.",
+                feature_maintenance_title: "Zéro maintenance", feature_maintenance_desc: "On s'occupe de tout.", feature_seo_title: "Visibilité Google", feature_seo_desc: "SEO optimisé.",
+                speed_tag: "Lightning speed", speed_title: "Temps de charge zéro", speed_desc: "Affichez vos biens instantanément.",
+                speed_item1_title: "Google PageSpeed Score", speed_item1_desc: "Performance excellente.", speed_item2_title: "Charge <1s", speed_item2_desc: "Contenu instantané.",
+                speed_item3_title: "Optimisé mobile & desktop", speed_item3_desc: "Navigation fluide.",
+                design_tag: "Design Premium", design_title: "Image de marque premium", design_desc: "Design sur mesure.",
+                design_item1_title: "✨ Première impression", design_item1_desc: "Un design épuré inspire confiance.",
+                design_item2_title: "🎨 Design personnalisé", design_item2_desc: "Vos couleurs, votre identité.",
+                simplicity_tag: "Simplicité totale", simplicity_title: "Gérez vos biens", simplicity_desc: "Solution intuitive.",
+                simpl_item1: "Diffusion 1 clic", simpl_item1_desc: "Publiez rapidement", simpl_item2: "Màj automatiques", simpl_item2_desc: "Toujours à jour",
                 simpl_item3: "Support 7j/7", simpl_item3_desc: "Équipe dédiée", simpl_item4: "Zéro code", simpl_item4_desc: "100% intuitif",
-                phone_badge: "📱 Remplissez en 30 secondes", phone_title: "Obtenez votre démo", phone_subtitle: "Un expert vous rappelle sous 24h",
-                success_msg: "✅ Merci ! Votre demande a bien été envoyée. Nous vous contacterons rapidement.",
-                error_msg: "⚠️ Une erreur est survenue. Veuillez réessayer.",
-                form_name: "Nom complet *", form_firstname: "Prénom", form_email: "Email professionnel *", form_phone: "Téléphone *", form_agency: "Nom de l'agence", form_properties: "Nombre de biens en ligne", form_message: "Message (optionnel)", form_submit: "📩 Envoyer la demande →", form_required: "* Champs obligatoires - Données sécurisées", form_footer: "Formulaire sécurisé relié à Zoho CRM • Prise de contact sous 24h",
-                select_default: "Sélectionnez", select_1: "1 - 20 biens", select_2: "21 - 50 biens", select_3: "51 - 150 biens", select_4: "150+ biens",
-                comparison_title: "Data-Home Light vs. Solution traditionnelle", comparison_subtitle: "Visualisez les avantages de Data-Home Light.",
-                table_criterion: "Critère", table_dhl: "Data-Home Light", table_traditional: "Solution traditionnelle", table_speed: "Vitesse", table_speed_dhl: "Moins d'1 seconde", table_speed_trad: "3 à 8 secondes",
-                table_price: "Prix", table_price_dhl: "50€/mois, tout inclus", table_price_trad: "150€ à 400$/mois", table_launch: "Lancement", table_launch_dhl: "En 48 heures", table_launch_trad: "4 à 12 semaines",
-                table_support: "Support", table_support_dhl: "Contact direct", table_support_trad: "Tickets anonymes", table_updates: "Mises à jour", table_updates_dhl: "Gérées par nous", table_updates_trad: "À vos frais",
-                table_seo: "SEO", table_seo_dhl: "Intégré nativement", table_seo_trad: "Option payante",
-                pricing_title: "Un petit investissement pour un impact maximal", pricing_subtitle: "Une solution conçue pour les agences performantes.",
-                pricing_dhl: "Data-Home Light", per_month: "/mois", pricing_desc: "À partir de 49€/mois, support complet inclus",
-                price_item1: "Site ultra-rapide sur mesure", price_item2: "Intégration de vos annonces", price_item3: "SEO local dès le lancement", price_item4: "Hébergement haute disponibilité", price_item5: "Maintenance technique incluse", price_cta: "Choisir cette offre",
-                pricing_agency: "Agence web classique", pricing_agency_desc: "Budget initial élevé", price_trad1: "Investissement initial 3 000€ - 10 000€", price_trad2: "Maintenance supplémentaire", price_trad3: "Délais de 4 à 12 semaines", price_trad4: "Hébergement facturé à part", price_trad_cta: "Option coûteuse", pricing_included: "Ce qui est inclus : site sur mesure, intégration, SEO, hébergement, mises à jour.",
-                cta_badge: "🚀 Offre exclusive de lancement", cta_title: "Votre site professionnel, prêt en 48 heures", cta_desc: "Ne laissez pas vos concurrents prendre de l'avance.", cta_offer: "✨ Offre limitée : 50€/mois + 125€ frais · 10 premières agences · 48h", cta_btn1: "Réserver mon spot →", cta_btn2: "Nous contacter",
-                footer_copyright: "Data-Home Light — Performance & Modernité Immobilière", footer_legal: "Mentions légales", footer_privacy: "Confidentialité", footer_support: "Support 7j/7", footer_tag: "La nouvelle ère des agences digitales"
+                phone_title: "Data-Home", form_name: "Nom", form_email: "E-mail professionnel", form_submit: "Recevoir mon audit", form_footer: "© 2026 Data-Home - Sécurisé par Zoho CRM",
+                success_msg: "✅ Merci ! Votre demande a bien été envoyée.", error_msg: "⚠️ Une erreur est survenue.",
+                partner_name: "HabiHub", partner_slogan: "Grow your business through full digitalization of your sales processes and access to a vast New Build catalogue.", partner_credit: "Partenaire technologique officiel",
+                comparison_title: "Data-Home Light vs. Solution traditionnelle", comparison_subtitle: "Comparez les avantages.",
+                table_criterion: "Critère", table_dhl: "Data-Home Light", table_traditional: "Traditionnelle", table_speed: "Vitesse", table_speed_dhl: "< 1s", table_speed_trad: "3-8s",
+                table_price: "Prix", table_price_dhl: "50$/mois", table_price_trad: "150-400$/mois", table_launch: "Lancement", table_launch_dhl: "48h", table_launch_trad: "4-12 semaines",
+                table_support: "Support", table_support_dhl: "Direct", table_support_trad: "Tickets", table_updates: "Màj", table_updates_dhl: "Incluses", table_updates_trad: "Payantes",
+                table_seo: "SEO", table_seo_dhl: "Intégré", table_seo_trad: "Option payante",
+                pricing_title: "Investissement maxi", pricing_subtitle: "Performance sans surcoût.", pricing_dhl: "Data-Home Light", per_month: "/mois", pricing_desc: "Support inclus",
+                price_item1: "Site sur mesure", price_item2: "Intégration annonces", price_item3: "SEO local", price_item4: "Hébergement HA", price_cta: "Choisir",
+                pricing_agency: "Agence classique", price_trad1: "3000-10000€", price_trad2: "Maintenance +", price_trad3: "Délais longs", price_trad_cta: "Coûteux",
+                cta_badge: "🚀 Offre exclusive", cta_title: "Site pro en 48h", cta_desc: "Ne laissez pas passer l'offre.", cta_offer: "50$/mois + 125$ frais", cta_btn1: "Réserver", cta_btn2: "Contact",
+                footer_copyright: "Data-Home Light", footer_legal: "Mentions", footer_privacy: "Confidentialité", footer_support: "Support", footer_tag: "Agences digitales"
             },
             en: {
-                nav_problem: "Issue", nav_solution: "Solution", nav_features: "Features", nav_comparison: "Comparison", nav_pricing: "Pricing", nav_cta: "Book my demo",
-                hero_badge: "✨ Limited offer for first 10 agencies", hero_title: "Real estate reinvented.", hero_desc: "The next-generation digital solution for real estate agencies that want to convert more visitors into listings — without technical effort.",
-                hero_btn1: "Discover the offer →", hero_btn2: "Learn more", problem_badge: "abandonment", problem_tag: "The Problem", problem_title: "Your clients leave because of your website.",
-                problem_desc: "53% of visitors leave a site that takes more than 3 seconds to load. In real estate, every second lost can cost you a listing, a showing, or a qualified lead.",
-                problem_item1: "Too slow: prospects leave before seeing your listings", problem_item2: "Outdated design: no longer inspires confidence", problem_item3: "Too few contacts: doesn't encourage appointment bookings", problem_item4: "Poor mobile experience: visitors drop off on phones",
-                product_tag: "Product Overview", product_title: "Data-Home Light: ", product_subtitle: "The fastest real estate engine", product_desc: "Display your listings instantly, elevate your brand, turn more visitors into qualified leads.",
-                stat1: "faster", stat1_sub: "vs standard solutions", stat2: "Client satisfaction", stat2_sub: "agencies recommend", stat3: "Deployment", stat3_sub: "express launch", stat4: "Zero maintenance", stat4_sub: "we handle the tech",
-                feature_speed_title: "Speed", feature_speed_desc: "Infrastructure designed to process thousands of listings in real time.",
-                feature_design_title: "Premium Design", feature_design_desc: "A modern interface that elevates your brand image.",
-                feature_maintenance_title: "Zero maintenance", feature_maintenance_desc: "We handle all technology. You handle your clients.",
-                feature_seo_title: "Google Visibility", feature_seo_desc: "Architecture optimized for SEO from day one.",
-                speed_tag: "Lightning speed", speed_title: "Zero load time", speed_desc: "Display your listings instantly on every screen.",
-                speed_item1_title: "Google PageSpeed Score", speed_item1_desc: "Excellent technical performance.", speed_item2_title: "Loads in under 1 second", speed_item2_desc: "Instant content.",
-                speed_item3_title: "Mobile & desktop optimized + SEO boosted", speed_item3_desc: "Seamless navigation on all devices.",
-                design_tag: "Premium Design", design_title: "A brand image that matches your ambitions", design_desc: "A premium design tailored for real estate agencies.",
-                design_item1_title: "✨ First impression matters", design_item1_desc: "Your website is often the first contact. Clean design inspires trust.",
-                design_item2_title: "🎨 Custom & consistent design", design_item2_desc: "Your colors, logo, identity integrated into a premium interface.",
-                simplicity_tag: "Total Simplicity", simplicity_title: "Manage your properties, we handle the rest.", simplicity_desc: "A simple, intuitive solution for everyone.",
+                nav_problem: "Issue", nav_solution: "Solution", nav_features: "Features", nav_comparison: "Comparison", nav_pricing: "Pricing", nav_cta: "Book demo",
+                hero_badge: "✨ Limited offer for first 10 agencies", hero_title: "Real estate reinvented.", hero_desc: "Next-gen digital solution for real estate agencies.",
+                hero_btn1: "Discover offer →", hero_btn2: "Learn more", problem_badge: "abandonment", problem_tag: "The Problem", problem_title: "Your clients leave because of your website.",
+                problem_desc: "53% of visitors leave a site that takes more than 3 seconds to load.",
+                problem_item1: "Too slow", problem_item2: "Outdated design", problem_item3: "Too few contacts", problem_item4: "Poor mobile experience",
+                product_tag: "Product Overview", product_title: "Data-Home Light: ", product_subtitle: "The fastest real estate engine", product_desc: "Display your listings instantly.",
+                stat1: "faster", stat1_sub: "vs standards", stat2: "Satisfaction", stat2_sub: "agencies recommend", stat3: "Deployment", stat3_sub: "48h", stat4: "Zero maintenance", stat4_sub: "we handle",
+                feature_speed_title: "Speed", feature_speed_desc: "Ultra-fast infrastructure.", feature_design_title: "Premium Design", feature_design_desc: "Modern interface.",
+                feature_maintenance_title: "Zero maintenance", feature_maintenance_desc: "We handle everything.", feature_seo_title: "Google Visibility", feature_seo_desc: "SEO optimized.",
+                speed_tag: "Lightning speed", speed_title: "Zero load time", speed_desc: "Display your listings instantly.",
+                speed_item1_title: "Google PageSpeed Score", speed_item1_desc: "Excellent performance.", speed_item2_title: "Load <1s", speed_item2_desc: "Instant content.",
+                speed_item3_title: "Mobile & desktop optimized", speed_item3_desc: "Smooth navigation.",
+                design_tag: "Premium Design", design_title: "Premium brand image", design_desc: "Tailored design.",
+                design_item1_title: "✨ First impression", design_item1_desc: "Clean design inspires trust.",
+                design_item2_title: "🎨 Custom design", design_item2_desc: "Your colors, your identity.",
+                simplicity_tag: "Total Simplicity", simplicity_title: "Manage your properties", simplicity_desc: "Intuitive solution.",
                 simpl_item1: "1-click listings", simpl_item1_desc: "Publish quickly", simpl_item2: "Auto updates", simpl_item2_desc: "Always up to date",
                 simpl_item3: "7/7 support", simpl_item3_desc: "Dedicated team", simpl_item4: "Zero code", simpl_item4_desc: "100% intuitive",
-                phone_badge: "📱 Fill in 30 seconds", phone_title: "Get your demo", phone_subtitle: "Expert will call within 24h",
-                success_msg: "✅ Thank you! Your request has been sent. We'll contact you soon.",
-                error_msg: "⚠️ An error occurred. Please try again.",
-                form_name: "Full name *", form_firstname: "First name", form_email: "Professional email *", form_phone: "Phone *", form_agency: "Agency name", form_properties: "Number of properties online", form_message: "Message (optional)", form_submit: "📩 Send request →", form_required: "* Required fields - Secure data", form_footer: "Secure form connected to Zoho CRM • Contact within 24h",
-                select_default: "Select", select_1: "1 - 20 properties", select_2: "21 - 50 properties", select_3: "51 - 150 properties", select_4: "150+ properties",
-                comparison_title: "Data-Home Light vs. Traditional Solution", comparison_subtitle: "See the advantages at a glance.",
-                table_criterion: "Criterion", table_dhl: "Data-Home Light", table_traditional: "Traditional Solution", table_speed: "Speed", table_speed_dhl: "Less than 1 second", table_speed_trad: "3 to 8 seconds",
-                table_price: "Price", table_price_dhl: "$50/month, all included", table_price_trad: "$150 to $400/month", table_launch: "Launch", table_launch_dhl: "In 48 hours", table_launch_trad: "4 to 12 weeks",
-                table_support: "Support", table_support_dhl: "Direct contact", table_support_trad: "Anonymous tickets", table_updates: "Updates", table_updates_dhl: "Managed by us", table_updates_trad: "At your expense",
-                table_seo: "SEO", table_seo_dhl: "Built-in natively", table_seo_trad: "Paid add-on",
-                pricing_title: "A small investment for maximum impact", pricing_subtitle: "Designed for agencies wanting a high-performing website.",
-                pricing_dhl: "Data-Home Light", per_month: "/month", pricing_desc: "Starting at $49/month, full support included",
-                price_item1: "Ultra-fast custom site", price_item2: "Listing integration", price_item3: "Local SEO from launch", price_item4: "High-availability hosting", price_item5: "Technical maintenance included", price_cta: "Choose this offer",
-                pricing_agency: "Traditional web agency", pricing_agency_desc: "High initial budget", price_trad1: "Initial investment $3,000 - $10,000", price_trad2: "Additional maintenance", price_trad3: "4 to 12 weeks delay", price_trad4: "Hosting often extra", price_trad_cta: "Expensive option", pricing_included: "What's included: custom fast site, listing integration, local SEO, hosting, updates.",
-                cta_badge: "🚀 Exclusive launch offer", cta_title: "Your professional website, ready in 48 hours", cta_desc: "Don't let your competitors get ahead.", cta_offer: "✨ Limited offer: $50/month + $125 setup · First 10 agencies · Live in 48h", cta_btn1: "Book my spot →", cta_btn2: "Contact us",
-                footer_copyright: "Data-Home Light — Performance & Real Estate Modernity", footer_legal: "Legal notices", footer_privacy: "Privacy", footer_support: "7/7 Support", footer_tag: "The new era of digital agencies"
+                phone_title: "Data-Home", form_name: "Name", form_email: "Professional email", form_submit: "Get my audit", form_footer: "© 2026 Data-Home - Secured by Zoho CRM",
+                success_msg: "✅ Thank you! Your request has been sent.", error_msg: "⚠️ An error occurred.",
+                partner_name: "HabiHub", partner_slogan: "Grow your business through full digitalization of your sales processes and access to a vast New Build catalogue.", partner_credit: "Official technology partner",
+                comparison_title: "Data-Home Light vs. Traditional Solution", comparison_subtitle: "Compare advantages.",
+                table_criterion: "Criterion", table_dhl: "Data-Home Light", table_traditional: "Traditional", table_speed: "Speed", table_speed_dhl: "< 1s", table_speed_trad: "3-8s",
+                table_price: "Price", table_price_dhl: "$50/month", table_price_trad: "$150-400/month", table_launch: "Launch", table_launch_dhl: "48h", table_launch_trad: "4-12 weeks",
+                table_support: "Support", table_support_dhl: "Direct", table_support_trad: "Tickets", table_updates: "Updates", table_updates_dhl: "Included", table_updates_trad: "Paid",
+                table_seo: "SEO", table_seo_dhl: "Built-in", table_seo_trad: "Paid add-on",
+                pricing_title: "Maximum impact", pricing_subtitle: "Performance without extra cost.", pricing_dhl: "Data-Home Light", per_month: "/month", pricing_desc: "Support included",
+                price_item1: "Custom fast site", price_item2: "Listing integration", price_item3: "Local SEO", price_item4: "High-availability hosting", price_cta: "Choose",
+                pricing_agency: "Traditional agency", price_trad1: "$3,000-10,000", price_trad2: "Extra maintenance", price_trad3: "Long delays", price_trad_cta: "Expensive",
+                cta_badge: "🚀 Exclusive offer", cta_title: "Pro site in 48h", cta_desc: "Don't miss the offer.", cta_offer: "$50/month + $125 setup", cta_btn1: "Book", cta_btn2: "Contact",
+                footer_copyright: "Data-Home Light", footer_legal: "Legal", footer_privacy: "Privacy", footer_support: "Support", footer_tag: "Digital agencies"
             },
             es: {
                 nav_problem: "Problema", nav_solution: "Solución", nav_features: "Características", nav_comparison: "Comparativa", nav_pricing: "Precios", nav_cta: "Reservar demo",
-                hero_badge: "✨ Oferta limitada para las 10 primeras agencias", hero_title: "El sector inmobiliario reinventado.", hero_desc: "La solución digital de nueva generación para agencias inmobiliarias que quieren convertir más visitantes en mandatos — sin esfuerzo técnico.",
-                hero_btn1: "Descubrir la oferta →", hero_btn2: "Más información", problem_badge: "abandono", problem_tag: "El problema", problem_title: "Sus clientes se van por culpa de su sitio web.",
-                problem_desc: "El 53% de los visitantes abandonan un sitio que tarda más de 3 segundos en cargar. En inmobiliario, cada segundo perdido puede costarle un mandato, una visita o un prospecto calificado.",
-                problem_item1: "Demasiado lento: los prospectos se van antes de ver sus propiedades", problem_item2: "Diseño obsoleto: imagen de marca que ya no inspira confianza", problem_item3: "Pocos contactos: no fomenta la reserva de citas", problem_item4: "Mala experiencia móvil: la mayoría abandonan en su smartphone",
-                product_tag: "Descripción del producto", product_title: "Data-Home Light: ", product_subtitle: "El motor inmobiliario más rápido", product_desc: "Muestre sus propiedades al instante, eleve su imagen de marca, convierta más visitantes en leads.",
-                stat1: "más rápido", stat1_sub: "vs soluciones estándar", stat2: "Satisfacción cliente", stat2_sub: "agencias recomiendan", stat3: "Despliegue", stat3_sub: "lanzamiento exprés", stat4: "Cero mantenimiento", stat4_sub: "nosotros gestionamos la técnica",
-                feature_speed_title: "Velocidad", feature_speed_desc: "Infraestructura diseñada para procesar miles de propiedades en tiempo real.",
-                feature_design_title: "Diseño Premium", feature_design_desc: "Una interfaz moderna que eleva su imagen de marca.",
-                feature_maintenance_title: "Cero mantenimiento", feature_maintenance_desc: "Nosotros gestionamos la tecnología. Usted gestiona sus clientes.",
-                feature_seo_title: "Visibilidad Google", feature_seo_desc: "Arquitectura optimizada para SEO desde el primer día.",
-                speed_tag: "Velocidad relámpago", speed_title: "Tiempo de carga cero", speed_desc: "Muestre sus propiedades al instante en todas las pantallas.",
-                speed_item1_title: "Google PageSpeed Score", speed_item1_desc: "Excelente rendimiento técnico.", speed_item2_title: "Carga en menos de 1 segundo", speed_item2_desc: "Contenido instantáneo.",
-                speed_item3_title: "Optimizado móvil y desktop + SEO potenciado", speed_item3_desc: "Navegación fluida en todos los dispositivos.",
-                design_tag: "Diseño Premium", design_title: "Una imagen de marca a la altura de sus ambiciones", design_desc: "Un diseño premium a medida para agencias inmobiliarias.",
-                design_item1_title: "✨ La primera impresión cuenta", design_item1_desc: "Su sitio web suele ser el primer contacto. Un diseño limpio inspira confianza.",
-                design_item2_title: "🎨 Diseño personalizado y coherente", design_item2_desc: "Sus colores, logotipo, identidad integrados en una interfaz premium.",
-                simplicity_tag: "Simplicidad total", simplicity_title: "Gestione sus propiedades, nosotros gestionamos el resto.", simplicity_desc: "Una solución simple e intuitiva al alcance de todos.",
-                simpl_item1: "Publicación 1 clic", simpl_item1_desc: "Publique rápidamente", simpl_item2: "Actualizaciones automáticas", simpl_item2_desc: "Siempre actualizadas",
+                hero_badge: "✨ Oferta limitada primeras 10 agencias", hero_title: "Inmobiliario reinventado.", hero_desc: "Solución digital de nueva generación.",
+                hero_btn1: "Descubrir oferta →", hero_btn2: "Más info", problem_badge: "abandono", problem_tag: "El problema", problem_title: "Sus clientes se van por su sitio web.",
+                problem_desc: "53% abandonan sitios que tardan más de 3 segundos.",
+                problem_item1: "Demasiado lento", problem_item2: "Diseño obsoleto", problem_item3: "Pocos contactos", problem_item4: "Mala experiencia móvil",
+                product_tag: "Descripción", product_title: "Data-Home Light: ", product_subtitle: "El motor inmobiliario más rápido", product_desc: "Muestre sus propiedades al instante.",
+                stat1: "más rápido", stat1_sub: "vs estándar", stat2: "Satisfacción", stat2_sub: "agencias recomiendan", stat3: "Despliegue", stat3_sub: "48h", stat4: "Cero mantenimiento", stat4_sub: "nosotros",
+                feature_speed_title: "Velocidad", feature_speed_desc: "Infraestructura ultrarrápida.", feature_design_title: "Diseño Premium", feature_design_desc: "Interfaz moderna.",
+                feature_maintenance_title: "Cero mantenimiento", feature_maintenance_desc: "Nosotros gestionamos.", feature_seo_title: "Visibilidad Google", feature_seo_desc: "SEO optimizado.",
+                speed_tag: "Velocidad", speed_title: "Tiempo de carga cero", speed_desc: "Muestre sus propiedades al instante.",
+                speed_item1_title: "Google PageSpeed Score", speed_item1_desc: "Excelente rendimiento.", speed_item2_title: "Carga <1s", speed_item2_desc: "Contenido instantáneo.",
+                speed_item3_title: "Optimizado móvil & desktop", speed_item3_desc: "Navegación fluida.",
+                design_tag: "Diseño Premium", design_title: "Imagen de marca premium", design_desc: "Diseño a medida.",
+                design_item1_title: "✨ Primera impresión", design_item1_desc: "Diseño limpio inspira confianza.",
+                design_item2_title: "🎨 Diseño personalizado", design_item2_desc: "Sus colores, su identidad.",
+                simplicity_tag: "Simplicidad total", simplicity_title: "Gestione sus propiedades", simplicity_desc: "Solución intuitiva.",
+                simpl_item1: "Publicación 1 clic", simpl_item1_desc: "Publique rápido", simpl_item2: "Actualizaciones auto", simpl_item2_desc: "Siempre actualizado",
                 simpl_item3: "Soporte 7/7", simpl_item3_desc: "Equipo dedicado", simpl_item4: "Cero código", simpl_item4_desc: "100% intuitivo",
-                phone_badge: "📱 Rellénelo en 30 segundos", phone_title: "Obtenga su demo", phone_subtitle: "Un experto le llamará en 24h",
-                success_msg: "✅ ¡Gracias! Su solicitud ha sido enviada. Le contactaremos pronto.",
-                error_msg: "⚠️ Ocurrió un error. Por favor, intente de nuevo.",
-                form_name: "Nombre completo *", form_firstname: "Nombre", form_email: "Email profesional *", form_phone: "Teléfono *", form_agency: "Nombre de la agencia", form_properties: "Número de propiedades online", form_message: "Mensaje (opcional)", form_submit: "📩 Enviar solicitud →", form_required: "* Campos obligatorios - Datos seguros", form_footer: "Formulario seguro conectado a Zoho CRM • Contacto en 24h",
-                select_default: "Seleccione", select_1: "1 - 20 propiedades", select_2: "21 - 50 propiedades", select_3: "51 - 150 propiedades", select_4: "150+ propiedades",
-                comparison_title: "Data-Home Light vs. Solución tradicional", comparison_subtitle: "Vea las ventajas de un vistazo.",
-                table_criterion: "Criterio", table_dhl: "Data-Home Light", table_traditional: "Solución tradicional", table_speed: "Velocidad", table_speed_dhl: "Menos de 1 segundo", table_speed_trad: "3 a 8 segundos",
-                table_price: "Precio", table_price_dhl: "50€/mes, todo incluido", table_price_trad: "150€ a 400$/mes", table_launch: "Lanzamiento", table_launch_dhl: "En 48 horas", table_launch_trad: "4 a 12 semanas",
-                table_support: "Soporte", table_support_dhl: "Contacto directo", table_support_trad: "Tickets anónimos", table_updates: "Actualizaciones", table_updates_dhl: "Gestionadas por nosotros", table_updates_trad: "Por su cuenta",
-                table_seo: "SEO", table_seo_dhl: "Integrado nativamente", table_seo_trad: "Opción de pago",
-                pricing_title: "Una pequeña inversión para un máximo impacto", pricing_subtitle: "Diseñada para agencias que quieren un sitio inmobiliario de alto rendimiento.",
-                pricing_dhl: "Data-Home Light", per_month: "/mes", pricing_desc: "Desde 49€/mes, soporte completo incluido",
-                price_item1: "Sitio ultrarrápido a medida", price_item2: "Integración de sus propiedades", price_item3: "SEO local desde el lanzamiento", price_item4: "Alojamiento de alta disponibilidad", price_item5: "Mantenimiento técnico incluido", price_cta: "Elegir esta oferta",
-                pricing_agency: "Agencia web tradicional", pricing_agency_desc: "Presupuesto inicial elevado", price_trad1: "Inversión inicial 3.000€ - 10.000€", price_trad2: "Mantenimiento adicional", price_trad3: "Plazos de 4 a 12 semanas", price_trad4: "Alojamiento a menudo extra", price_trad_cta: "Opción costosa", pricing_included: "Lo que incluye: sitio rápido a medida, integración, SEO local, alojamiento, actualizaciones.",
-                cta_badge: "🚀 Oferta exclusiva de lanzamiento", cta_title: "Su sitio web profesional, listo en 48 horas", cta_desc: "No deje que sus competidores se adelanten.", cta_offer: "✨ Oferta limitada: 50€/mes + 125€ configuración · 10 primeras agencias · Activo en 48h", cta_btn1: "Reservar mi plaza →", cta_btn2: "Contáctenos",
-                footer_copyright: "Data-Home Light — Rendimiento y Modernidad Inmobiliaria", footer_legal: "Avisos legales", footer_privacy: "Privacidad", footer_support: "Soporte 7/7", footer_tag: "La nueva era de las agencias digitales"
+                phone_title: "Data-Home", form_name: "Nombre", form_email: "Email profesional", form_submit: "Recibir mi auditoría", form_footer: "© 2026 Data-Home - Seguro por Zoho CRM",
+                success_msg: "✅ ¡Gracias! Solicitud enviada.", error_msg: "⚠️ Error. Intente de nuevo.",
+                partner_name: "HabiHub", partner_slogan: "Grow your business through full digitalization of your sales processes and access to a vast New Build catalogue.", partner_credit: "Socio tecnológico oficial",
+                comparison_title: "Data-Home Light vs. Solución tradicional", comparison_subtitle: "Compare las ventajas.",
+                table_criterion: "Criterio", table_dhl: "Data-Home Light", table_traditional: "Tradicional", table_speed: "Velocidad", table_speed_dhl: "< 1s", table_speed_trad: "3-8s",
+                table_price: "Precio", table_price_dhl: "50$/mes", table_price_trad: "150-400$/mes", table_launch: "Lanzamiento", table_launch_dhl: "48h", table_launch_trad: "4-12 semanas",
+                table_support: "Soporte", table_support_dhl: "Directo", table_support_trad: "Tickets", table_updates: "Actualiz.", table_updates_dhl: "Incluidas", table_updates_trad: "Pagas",
+                table_seo: "SEO", table_seo_dhl: "Integrado", table_seo_trad: "Opción pago",
+                pricing_title: "Máximo impacto", pricing_subtitle: "Rendimiento sin sobrecoste.", pricing_dhl: "Data-Home Light", per_month: "/mes", pricing_desc: "Soporte incluido",
+                price_item1: "Sitio a medida", price_item2: "Integración propiedades", price_item3: "SEO local", price_item4: "Alojamiento HA", price_cta: "Elegir",
+                pricing_agency: "Agencia tradicional", price_trad1: "3000-10000€", price_trad2: "Mantenimiento +", price_trad3: "Plazos largos", price_trad_cta: "Costoso",
+                cta_badge: "🚀 Oferta exclusiva", cta_title: "Sitio pro en 48h", cta_desc: "No pierda la oferta.", cta_offer: "50$/mes + 125$ configuración", cta_btn1: "Reservar", cta_btn2: "Contacto",
+                footer_copyright: "Data-Home Light", footer_legal: "Avisos", footer_privacy: "Privacidad", footer_support: "Soporte", footer_tag: "Agencias digitales"
             }
         };
 
@@ -739,15 +672,6 @@
                     el.innerText = translations[lang][key];
                 }
             });
-            // Gestion spéciale pour les options de select
-            const selectOptions = document.querySelectorAll('select[name="Number of Properties"] option');
-            if (selectOptions.length >= 5 && translations[lang]) {
-                selectOptions[0].innerText = translations[lang].select_default || "Sélectionnez";
-                selectOptions[1].innerText = translations[lang].select_1 || "1 - 20 biens";
-                selectOptions[2].innerText = translations[lang].select_2 || "21 - 50 biens";
-                selectOptions[3].innerText = translations[lang].select_3 || "51 - 150 biens";
-                selectOptions[4].innerText = translations[lang].select_4 || "150+ biens";
-            }
         }
 
         document.getElementById('languageSwitcher').addEventListener('change', (e) => setLanguage(e.target.value));
