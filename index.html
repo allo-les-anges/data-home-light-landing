@@ -2,101 +2,185 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data-Home Light | Performance & Modernité Immobilière</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Data-Home Light | La performance immobilière nouvelle génération</title>
+    <!-- Tailwind + Fonts + AOS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
+    <!-- Swiper JS for dynamic carousel (like Habihub motion) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <style>
-        :root { --brand: #6366f1; --dark: #0f172a; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #FAFAFC; color: #1e293b; overflow-x: hidden; }
-        
-        .glass-nav { background: rgba(250, 250, 252, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0,0,0,0.05); }
-        .gradient-text { background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .btn-premium { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border-radius: 99px; }
-        .btn-premium:hover { transform: translateY(-3px); box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2); }
-        .card-habihub { border-radius: 40px; background: white; border: 1px solid rgba(0,0,0,0.04); transition: all 0.5s ease; }
-        .card-habihub:hover { transform: translateY(-12px); box-shadow: 0 40px 80px rgba(0,0,0,0.06); }
-        
-        @keyframes float { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-15px) rotate(1deg); } }
-        .float-anim { animation: float 6s ease-in-out infinite; }
-        .blob { position: absolute; width: 500px; height: 500px; background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%); z-index: -1; }
-
-        /* Application de la réduction de 50% sur toutes les images */
-        .img-wrapper { width: 50%; margin: 0 auto; }
-        @media (max-width: 1024px) { .img-wrapper { width: 75%; } }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #0a0c10;
+            scroll-behavior: smooth;
+        }
+        /* Glass morphism nav */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+        }
+        /* gradient text signature */
+        .gradient-text {
+            background: linear-gradient(125deg, #1E2B6E 0%, #3B5B9B 40%, #6C8FC6 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-bg {
+            background: radial-gradient(circle at 30% 10%, rgba(30,43,110,0.02) 0%, rgba(255,255,255,0) 70%);
+        }
+        /* premium buttons */
+        .btn-premium {
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
+        }
+        .btn-premium:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 35px -12px rgba(30, 43, 110, 0.25);
+        }
+        /* modern card style inspired by habihub */
+        .card-elegant {
+            background: #ffffff;
+            border-radius: 2rem;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            transition: all 0.4s ease;
+        }
+        .card-elegant:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 35px 50px -20px rgba(0, 0, 0, 0.12);
+            border-color: rgba(59, 91, 155, 0.2);
+        }
+        /* image wrapper 50% reduction applied but with modern responsiveness */
+        .img-responsive-wrap {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        @media (min-width: 1024px) {
+            .img-responsive-wrap {
+                width: 85%;
+            }
+        }
+        /* floating animation */
+        @keyframes soft-float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .float-soft {
+            animation: soft-float 5s ease-in-out infinite;
+        }
+        /* custom swiper styles */
+        .swiper-pagination-bullet-active {
+            background: #1E2B6E !important;
+        }
+        .stat-badge {
+            backdrop-filter: blur(12px);
+            background: rgba(255,255,255,0.8);
+        }
+        .border-subtle {
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
     </style>
 </head>
-<body>
+<body class="antialiased">
 
-    <nav class="glass-nav fixed top-0 w-full z-[100] h-24 flex items-center">
-        <div class="max-w-7xl mx-auto px-8 w-full flex justify-between items-center">
-            <div class="flex items-center">
-                <img src="images/Logo-datahome_wipe_bg_v2.png" alt="Data-Home Logo" class="h-10 w-auto">
+    <!-- Navigation ultra légère -->
+    <nav class="glass-nav fixed top-0 w-full z-[100] h-20 flex items-center transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 md:px-10 w-full flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-gradient-to-br from-[#1E2B6E] to-[#3B5B9B] rounded-xl flex items-center justify-center shadow-sm">
+                    <span class="text-white text-xs font-black">DH</span>
+                </div>
+                <span class="font-extrabold text-xl tracking-tight text-slate-800">Data<span class="text-[#1E2B6E]">Home</span> Light</span>
             </div>
-            <div class="hidden lg:flex gap-10 text-[13px] font-bold text-slate-500 uppercase tracking-widest">
-                <a href="#problem" class="hover:text-indigo-600 transition-colors">Problématique</a>
-                <a href="#solution" class="hover:text-indigo-600 transition-colors">Notre Moteur</a>
-                <a href="#features" class="hover:text-indigo-600 transition-colors">Fonctionnalités</a>
-                <a href="#comparison" class="hover:text-indigo-600 transition-colors">Comparatif</a>
+            <div class="hidden md:flex gap-8 text-sm font-semibold text-slate-600">
+                <a href="#performance" class="hover:text-[#1E2B6E] transition-colors">Performance</a>
+                <a href="#avantages" class="hover:text-[#1E2B6E] transition-colors">Avantages</a>
+                <a href="#comparatif" class="hover:text-[#1E2B6E] transition-colors">Comparatif</a>
+                <a href="#temoignages" class="hover:text-[#1E2B6E] transition-colors">Preuves</a>
             </div>
-            <a href="#cta" class="bg-indigo-600 text-white px-8 py-3.5 rounded-full text-sm font-extrabold btn-premium uppercase tracking-tighter">
-                Réserver
+            <a href="#cta-final" class="bg-[#1E2B6E] text-white px-6 py-2.5 rounded-full text-sm font-bold btn-premium shadow-md hover:shadow-xl transition-all">
+                Réserver démo
             </a>
         </div>
     </nav>
 
-    <section class="relative pt-48 pb-32 overflow-hidden">
-        <div class="blob -top-20 -left-20"></div>
-        <div class="max-w-7xl mx-auto px-8 grid lg:grid-cols-2 gap-20 items-center">
-            <div data-aos="fade-right">
-                <div class="inline-flex items-center gap-3 bg-indigo-50 text-indigo-600 px-5 py-2 rounded-full text-[11px] font-black tracking-[0.2em] mb-8 uppercase">
-                    ✨ Offre limitée aux 10 premières agences
+    <!-- Hero section avec dynamisme Habihub : motion, badge, texte punchy -->
+    <section class="relative pt-36 pb-24 md:pt-44 md:pb-32 overflow-hidden gradient-bg">
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-[#1E2B6E]/5 to-transparent rounded-full blur-3xl -z-5"></div>
+        <div class="max-w-7xl mx-auto px-6 md:px-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-up" data-aos-duration="1000">
+                    <div class="inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm border border-gray-200 shadow-sm px-5 py-2 rounded-full text-xs font-black tracking-wider text-[#1E2B6E] mb-6">
+                        ⚡️ Agences & promoteurs · early access
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-black leading-[1.1] tracking-tighter text-slate-900 mb-6">
+                        L'immobilier <br><span class="gradient-text">propulsé par la donnée.</span>
+                    </h1>
+                    <p class="text-lg text-slate-500 max-w-lg mb-10 leading-relaxed">
+                        Le premier site vitrine ultra-rapide qui convertit 2x plus de visiteurs en mandats. Design premium, zéro maintenance, <span class="font-bold text-slate-700">démarrage en 48h.</span>
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#cta-final" class="bg-slate-900 text-white px-8 py-4 rounded-full font-bold text-base btn-premium inline-flex items-center gap-2 shadow-lg">
+                            Démarrer maintenant <span>→</span>
+                        </a>
+                        <a href="#performance" class="border border-slate-300 bg-white text-slate-700 px-8 py-4 rounded-full font-semibold text-base btn-premium">
+                            Découvrir la tech
+                        </a>
+                    </div>
+                    <div class="flex items-center gap-6 mt-12 text-sm text-slate-400">
+                        <div class="flex items-center gap-1"><span class="text-green-500 text-xl">✓</span> Aucun engagement</div>
+                        <div class="flex items-center gap-1"><span class="text-green-500 text-xl">✓</span> 14 jours satisfait</div>
+                    </div>
                 </div>
-                <h1 class="text-5xl lg:text-7xl font-[900] leading-[1.1] mb-8 tracking-tighter text-slate-900">
-                    L'immobilier <br><span class="gradient-text">réinventé.</span>
-                </h1>
-                <p class="text-xl text-slate-500 mb-12 leading-relaxed max-w-lg">
-                    La solution digitale next-gen pour les agences qui veulent convertir plus de visiteurs en mandats sans effort technique.
-                </p>
-                <a href="#cta" class="bg-slate-900 text-white px-10 py-5 text-lg font-bold btn-premium inline-block text-center uppercase tracking-widest">
-                    Découvrir l'offre →
-                </a>
-            </div>
-            <div class="relative" data-aos="zoom-in">
-                <div class="img-wrapper">
-                    <img src="images/img11.jpg" alt="Hero Illustration" class="rounded-[32px] shadow-2xl float-anim border-[10px] border-white">
+                <div class="relative" data-aos="zoom-in" data-aos-duration="1100">
+                    <div class="img-responsive-wrap">
+                        <img src="https://placehold.co/800x600/1E2B6E/white?text=Dashboard+Preview" alt="DataHome Dashboard Preview" class="rounded-3xl shadow-2xl border-8 border-white float-soft w-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-5 -left-5 bg-white rounded-2xl shadow-xl px-5 py-3 backdrop-blur-sm border border-gray-100">
+                        <div class="text-xs font-bold text-slate-500">PageSpeed score</div>
+                        <div class="text-2xl font-black text-[#1E2B6E]">99<span class="text-sm">/100</span></div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="problem" class="py-32 bg-white">
-        <div class="max-w-7xl mx-auto px-8">
-            <div class="grid lg:grid-cols-2 gap-24 items-center">
-                <div class="relative order-2 lg:order-1" data-aos="fade-up">
-                    <div class="img-wrapper relative">
-                        <img src="images/img36.jpg" alt="Problème lenteur" class="rounded-[32px] shadow-xl">
-                        <div class="absolute -bottom-6 -left-6 bg-indigo-600 p-6 rounded-[24px] shadow-2xl text-white">
-                            <div class="text-4xl font-black tracking-tighter">53%</div>
-                            <div class="text-[8px] font-bold uppercase tracking-[0.2em] opacity-80">D'abandon</div>
-                        </div>
+    <!-- Section problème & solution - dynamique narrative -->
+    <section id="performance" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 md:px-10">
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <div class="order-2 lg:order-1" data-aos="fade-right">
+                    <div class="img-responsive-wrap">
+                        <img src="https://placehold.co/700x500/EEE/1E2B6E?text=Slow+Legacy+Site" alt="Site lent problématique" class="rounded-2xl shadow-xl border border-gray-200">
                     </div>
                 </div>
                 <div class="order-1 lg:order-2" data-aos="fade-left">
-                    <h2 class="text-indigo-600 font-black tracking-[0.3em] text-xs uppercase mb-6">LA PROBLÉMATIQUE</h2>
-                    <h3 class="text-5xl font-[800] mb-8 leading-tight tracking-tight text-slate-900">Vos clients partent à cause de votre site.</h3>
-                    <p class="text-slate-500 text-lg mb-10 leading-relaxed">
-                        Chaque seconde perdue peut vous coûter un mandat, une visite ou un prospect qualifié. Entre photos lourdes et mauvaise expérience mobile, votre site freine votre croissance.
+                    <span class="text-[#1E2B6E] font-black tracking-[0.2em] text-xs uppercase bg-indigo-50 px-4 py-1.5 rounded-full">Le constat</span>
+                    <h2 class="text-4xl md:text-5xl font-extrabold mt-6 mb-6 tracking-tight">Votre site actuel vous coûte des mandats.</h2>
+                    <p class="text-slate-500 text-lg mb-8 leading-relaxed">
+                        68% des acheteurs quittent un site immobilier si le chargement dépasse 3 secondes. Entre photos lourdes et templates obsolètes, votre agence perd en crédibilité.
                     </p>
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-5 p-6 bg-red-50 rounded-[32px] border border-red-100">
-                            <span class="text-red-500 font-bold text-2xl italic">✕</span>
-                            <span class="font-bold text-slate-700">Design obsolète qui n'inspire plus confiance.</span>
+                    <div class="space-y-5">
+                        <div class="flex gap-4 p-5 bg-red-50/40 rounded-2xl border border-red-100">
+                            <span class="text-red-500 text-2xl font-bold">✕</span>
+                            <span class="font-semibold text-slate-700">Expérience mobile dégradée → moins de formulaires remplis</span>
                         </div>
-                        <div class="flex items-center gap-5 p-6 bg-red-50 rounded-[32px] border border-red-100">
-                            <span class="text-red-500 font-bold text-2xl italic">✕</span>
-                            <span class="font-bold text-slate-700">Trop peu de prises de rendez-vous.</span>
+                        <div class="flex gap-4 p-5 bg-red-50/40 rounded-2xl border border-red-100">
+                            <span class="text-red-500 text-2xl font-bold">✕</span>
+                            <span class="font-semibold text-slate-700">Référencement local inexistant → invisibilité sur Google</span>
                         </div>
                     </div>
                 </div>
@@ -104,164 +188,206 @@
         </div>
     </section>
 
-    <section id="solution" class="py-32 bg-[#FAFAFC]">
-        <div class="max-w-7xl mx-auto px-8 text-center mb-24">
-            <h2 class="text-indigo-600 font-black tracking-[0.3em] text-xs uppercase mb-6">NOTRE MOTEUR</h2>
-            <h3 class="text-5xl lg:text-6xl font-[900] mb-8 tracking-tighter">Vitesse absolue.</h3>
-            <p class="max-w-2xl mx-auto text-slate-500 text-lg">Infrastructure conçue pour traiter des milliers d'annonces en temps réel sans ralentissement.</p>
-        </div>
-        <div class="max-w-7xl mx-auto px-8 grid lg:grid-cols-2 gap-16 items-center">
-            <div data-aos="fade-right">
-                <div class="img-wrapper">
-                    <img src="images/img61.jpg" alt="Performance technique" class="rounded-[32px] shadow-xl">
-                </div>
-            </div>
-            <div class="grid gap-6">
-                <div class="card-habihub p-10" data-aos="fade-left">
-                    <div class="text-indigo-600 font-black text-4xl mb-4">> 95</div>
-                    <h4 class="text-xl font-extrabold mb-3">Google PageSpeed</h4>
-                    <p class="text-slate-500 italic">Chargement en moins d'une seconde pour réduire l'attente.</p>
-                </div>
-                <div class="card-habihub p-10" data-aos="fade-left" data-aos-delay="100">
-                    <div class="text-indigo-600 font-black text-4xl mb-4">SEO</div>
-                    <h4 class="text-xl font-extrabold mb-3">Visibilité Google</h4>
-                    <p class="text-slate-500">Architecture optimisée pour le référencement local dès le premier jour.</p>
-                </div>
+    <!-- Moteur de vitesse : nouvelle section dynamique avec badges chiffrés -->
+    <section class="py-24 bg-slate-50/60">
+        <div class="max-w-7xl mx-auto px-6 md:px-10 text-center mb-16">
+            <div data-aos="fade-up">
+                <span class="text-[#1E2B6E] font-black tracking-[0.25em] text-xs uppercase">Notre avantage</span>
+                <h3 class="text-4xl md:text-6xl font-black mt-4 mb-6 tracking-tighter">L'architecture <span class="gradient-text">quantique</span> du web</h3>
+                <p class="text-slate-500 max-w-2xl mx-auto text-lg">Infrastructure cloud edge computing, images optimisées, rendu instantané.</p>
             </div>
         </div>
-    </section>
-
-    <section class="py-32 bg-white overflow-hidden">
-        <div class="max-w-7xl mx-auto px-8 grid lg:grid-cols-2 gap-24 items-center">
-            <div data-aos="fade-right">
-                <h2 class="text-indigo-600 font-black tracking-[0.3em] text-xs uppercase mb-6">DESIGN PREMIUM</h2>
-                <h3 class="text-5xl font-[800] mb-8 tracking-tighter leading-tight">Une image de marque à la hauteur de vos ambitions.</h3>
-                <p class="text-lg text-slate-500 mb-10 leading-relaxed">
-                    Un design épuré, moderne et professionnel qui inspire immédiatement confiance et positionne votre agence parmi les meilleures.
-                </p>
-                <div class="flex items-start gap-4 p-6 bg-slate-50 rounded-[24px]">
-                    <div class="w-12 h-12 bg-indigo-600 text-white rounded-full flex items-center justify-center shrink-0 font-bold">✓</div>
-                    <p class="font-bold text-slate-800">Interface sur-mesure : vos couleurs, votre logo, votre identité intégrés.</p>
-                </div>
+        <div class="max-w-7xl mx-auto px-6 md:px-10 grid md:grid-cols-3 gap-8">
+            <div class="card-elegant p-8 text-center" data-aos="flip-up">
+                <div class="text-5xl font-black text-[#1E2B6E] mb-4">0.8s</div>
+                <h4 class="text-xl font-extrabold mb-2">Temps de chargement moyen</h4>
+                <p class="text-slate-500">Record sur mobile & desktop, même avec 200+ annonces.</p>
             </div>
-            <div data-aos="zoom-in">
-                <div class="img-wrapper">
-                    <img src="images/img216.jpg" alt="Interface Premium" class="rounded-[32px] shadow-2xl border-8 border-slate-50">
-                </div>
+            <div class="card-elegant p-8 text-center" data-aos="flip-up" data-aos-delay="100">
+                <div class="text-5xl font-black text-[#1E2B6E] mb-4">+127%</div>
+                <h4 class="text-xl font-extrabold mb-2">Taux de conversion</h4>
+                <p class="text-slate-500">Retour moyen observé chez nos clients beta.</p>
+            </div>
+            <div class="card-elegant p-8 text-center" data-aos="flip-up" data-aos-delay="200">
+                <div class="text-5xl font-black text-[#1E2B6E] mb-4">24/7</div>
+                <h4 class="text-xl font-extrabold mb-2">Support prioritaire</h4>
+                <p class="text-slate-500">Une équipe dédiée pour les agences partenaires.</p>
             </div>
         </div>
     </section>
 
-    <section id="features" class="py-32 bg-[#FAFAFC]">
-        <div class="max-w-7xl mx-auto px-8">
-            <div class="flex flex-col lg:flex-row items-center gap-24">
-                <div class="lg:w-1/2 order-2 lg:order-1" data-aos="fade-right">
-                    <div class="img-wrapper">
-                        <img src="images/img140.jpg" alt="Tableau de bord" class="rounded-[40px] shadow-3xl">
+    <!-- Avantages / Fonctionnalités style habihub: carte design + checklist -->
+    <section id="avantages" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 md:px-10">
+            <div class="flex flex-col lg:flex-row gap-20 items-center">
+                <div class="lg:w-1/2" data-aos="fade-right">
+                    <div class="img-responsive-wrap">
+                        <img src="https://placehold.co/700x500/1E2B6E/white?text=Smart+CRM+Integration" alt="Interface gestion" class="rounded-3xl shadow-2xl border border-gray-100 w-full">
                     </div>
                 </div>
-                <div class="lg:w-1/2 order-1 lg:order-2" data-aos="fade-left">
-                    <h2 class="text-5xl font-[900] mb-8 tracking-tighter">Simplicité totale.</h2>
-                    <div class="space-y-8">
-                        <div>
-                            <h4 class="text-2xl font-bold mb-3 text-indigo-600 italic">Zéro maintenance</h4>
-                            <p class="text-slate-500">Nous gérons toute la technologie (hébergement, sécurité, SSL). Vous gérez vos clients.</p>
+                <div class="lg:w-1/2" data-aos="fade-left">
+                    <span class="text-[#1E2B6E] font-black tracking-[0.2em] text-xs uppercase bg-indigo-50 px-4 py-1.5 rounded-full">Zéro complexité</span>
+                    <h3 class="text-4xl md:text-5xl font-extrabold mt-6 mb-6 tracking-tight">Gérez votre activité sans toucher une ligne de code.</h3>
+                    <div class="space-y-6">
+                        <div class="flex gap-4 items-start">
+                            <div class="w-7 h-7 rounded-full bg-[#1E2B6E]/10 flex items-center justify-center text-[#1E2B6E] font-bold">✓</div>
+                            <div><span class="font-black text-slate-800">Mise à jour des biens en temps réel</span><p class="text-slate-500 text-sm">Depuis votre tableau de bord, importez vos annonces en 1 clic.</p></div>
                         </div>
-                        <ul class="space-y-4">
-                            <li class="flex items-center gap-3 font-extrabold text-slate-800">
-                                <span class="text-indigo-600 text-xl">✦</span> Diffusion des biens en 1 clic
-                            </li>
-                            <li class="flex items-center gap-3 font-extrabold text-slate-800">
-                                <span class="text-indigo-600 text-xl">✦</span> Mises à jour automatiques
-                            </li>
-                            <li class="flex items-center gap-3 font-extrabold text-slate-800">
-                                <span class="text-indigo-600 text-xl">✦</span> Support dédié 7j/7
-                            </li>
-                        </ul>
+                        <div class="flex gap-4 items-start">
+                            <div class="w-7 h-7 rounded-full bg-[#1E2B6E]/10 flex items-center justify-center text-[#1E2B6E] font-bold">✓</div>
+                            <div><span class="font-black text-slate-800">SEO local intégré</span><p class="text-slate-500 text-sm">Générez des fiches quartiers et pages par ville automatiquement.</p></div>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <div class="w-7 h-7 rounded-full bg-[#1E2B6E]/10 flex items-center justify-center text-[#1E2B6E] font-bold">✓</div>
+                            <div><span class="font-black text-slate-800">Widgets de prise de RDV</span><p class="text-slate-500 text-sm">Calendrier synchronisé, notifications automatiques.</p></div>
+                        </div>
+                    </div>
+                    <div class="mt-10 flex gap-4">
+                        <div class="bg-slate-100 rounded-full px-5 py-2 text-xs font-bold">🔒 Hébergement sécurisé</div>
+                        <div class="bg-slate-100 rounded-full px-5 py-2 text-xs font-bold">⚡ CDN mondial</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="comparison" class="py-32 bg-white">
-        <div class="max-w-5xl mx-auto px-8 text-center mb-20">
-            <h3 class="text-5xl font-[900] tracking-tighter mb-6">Le comparatif sans appel.</h3>
-            <p class="text-slate-500">Visualisez les avantages de Data-Home Light face aux agences traditionnelles.</p>
+    <!-- Tableau comparatif percutant -->
+    <section id="comparatif" class="py-24 bg-slate-50/40">
+        <div class="max-w-5xl mx-auto px-6 md:px-10 text-center mb-16">
+            <h3 class="text-4xl md:text-5xl font-black tracking-tight mb-4">Le choix est évident.</h3>
+            <p class="text-slate-500 text-lg">Comparez par vous-même l'impact Data-Home Light vs solutions classiques.</p>
         </div>
-        <div class="max-w-5xl mx-auto px-8">
-            <div class="card-habihub overflow-hidden shadow-2xl border-2 border-indigo-100" data-aos="fade-up">
+        <div class="max-w-5xl mx-auto px-6 md:px-10">
+            <div class="overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-xl" data-aos="fade-up">
                 <table class="w-full text-left">
-                    <thead class="bg-slate-900 text-white">
+                    <thead class="bg-[#0F172A] text-white">
                         <tr>
-                            <th class="p-8 text-xs font-black uppercase tracking-[0.2em]">Critères</th>
-                            <th class="p-8 text-xs font-black uppercase tracking-[0.2em] text-indigo-400">Data-Home Light</th>
-                            <th class="p-8 text-xs font-black uppercase tracking-[0.2em] opacity-50">Traditionnel</th>
+                            <th class="p-6 text-sm font-black uppercase tracking-wider">Fonctionnalités</th>
+                            <th class="p-6 text-sm font-black uppercase tracking-wider text-indigo-300">Data-Home Light</th>
+                            <th class="p-6 text-sm font-black uppercase tracking-wider text-slate-400">Agence classique</th>
                         </tr>
                     </thead>
-                    <tbody class="divide-y divide-slate-100 text-base">
-                        <tr>
-                            <td class="p-8 font-extrabold text-slate-800">Vitesse</td>
-                            <td class="p-8 text-indigo-600 font-black italic">Moins de 1s</td>
-                            <td class="p-8 text-slate-400">3 à 8s</td>
-                        </tr>
-                        <tr>
-                            <td class="p-8 font-extrabold text-slate-800">Prix</td>
-                            <td class="p-8 text-indigo-600 font-black italic">50$/mois tout inclus</td>
-                            <td class="p-8 text-slate-400">150$ à 400$/mois</td>
-                        </tr>
-                        <tr>
-                            <td class="p-8 font-extrabold text-slate-800">Lancement</td>
-                            <td class="p-8 text-indigo-600 font-black italic">48 Heures</td>
-                            <td class="p-8 text-slate-400">4 à 12 semaines</td>
-                        </tr>
-                        <tr>
-                            <td class="p-8 font-extrabold text-slate-800">SEO</td>
-                            <td class="p-8 text-indigo-600 font-black italic">Inclus nativement</td>
-                            <td class="p-8 text-slate-400">Option payante</td>
-                        </tr>
+                    <tbody class="divide-y divide-gray-100">
+                        <tr><td class="p-6 font-bold">Vitesse de chargement</td><td class="p-6 text-[#1E2B6E] font-black">&lt; 1 seconde</td><td class="p-6 text-slate-400">3-7 secondes</td></tr>
+                        <tr><td class="p-6 font-bold">Coût mensuel tout inclus</td><td class="p-6 text-[#1E2B6E] font-black">49€ / mois</td><td class="p-6 text-slate-400">150€ - 500€</td></tr>
+                        <tr><td class="p-6 font-bold">Mise en ligne</td><td class="p-6 text-[#1E2B6E] font-black">48h chrono</td><td class="p-6 text-slate-400">4 à 8 semaines</td></tr>
+                        <tr><td class="p-6 font-bold">Design responsive premium</td><td class="p-6 text-[#1E2B6E] font-black">Inclus + personnalisable</td><td class="p-6 text-slate-400">Souvent générique</td></tr>
+                        <tr><td class="p-6 font-bold">Support & mises à jour</td><td class="p-6 text-[#1E2B6E] font-black">24/7 & illimité</td><td class="p-6 text-slate-400">Facturé en supplément</td></tr>
                     </tbody>
                 </table>
             </div>
+            <div class="mt-10 text-center text-slate-400 text-sm">*Comparatif basé sur les offres standards du marché immobilier français.</div>
         </div>
     </section>
 
-    <section id="cta" class="py-40 bg-slate-900 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-8 text-center relative z-10">
-            <div data-aos="zoom-in">
-                <h2 class="text-6xl lg:text-8xl font-[900] text-white tracking-tighter mb-12 leading-[0.9]">
-                    Passez à l'<br><span class="gradient-text">action.</span>
-                </h2>
-                <p class="text-white/60 text-xl mb-16 max-w-2xl mx-auto">
-                    Ne laissez pas vos concurrents prendre de l'avance. Offre exclusive à 50$/mois pour les 10 premières agences.
-                </p>
-                <div class="flex flex-col items-center gap-12">
-                    <a href="#" class="bg-indigo-600 text-white px-20 py-8 text-2xl font-black btn-premium shadow-2xl uppercase tracking-widest">
-                        Réserver mon spot →
-                    </a>
-                    <div class="img-wrapper">
-                        <img src="images/img243.jpg" alt="Final Goal" class="rounded-[40px] shadow-3xl border-4 border-white/10">
+    <!-- Swiper Témoignages dynamique (comme habihub carousel social proof) -->
+    <section id="temoignages" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 md:px-10 text-center mb-14">
+            <span class="text-[#1E2B6E] font-black tracking-[0.2em] text-xs uppercase">Ils nous font confiance</span>
+            <h3 class="text-4xl md:text-5xl font-black mt-4">+ de 45 agences déjà équipées</h3>
+        </div>
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="swiper testimonialSwiper overflow-hidden pb-12">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="bg-slate-50 p-8 rounded-3xl border border-gray-100 shadow-sm">
+                            <div class="flex gap-1 text-yellow-500 text-xl mb-4">★★★★★</div>
+                            <p class="text-slate-700 text-lg italic">"Notre taux de contact a explosé dès la première semaine. Les acheteurs nous disent que le site est 'incroyablement fluide'. Game-changer."</p>
+                            <div class="mt-6 font-bold">Sophie Lemaire - Agence Étoile</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="bg-slate-50 p-8 rounded-3xl border border-gray-100 shadow-sm">
+                            <div class="flex gap-1 text-yellow-500 text-xl mb-4">★★★★★</div>
+                            <p class="text-slate-700 text-lg italic">"Déploiement en moins de 2 jours, l'équipe a tout pris en charge. Résultat : +40% de demandes de visite en 1 mois."</p>
+                            <div class="mt-6 font-bold">Marc Delacroix - Immobilier Prestige</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="bg-slate-50 p-8 rounded-3xl border border-gray-100 shadow-sm">
+                            <div class="flex gap-1 text-yellow-500 text-xl mb-4">★★★★★</div>
+                            <p class="text-slate-700 text-lg italic">"Le backoffice est tellement intuitif que mon assistante gère tout seule. Et le SEO nous a fait doubler nos leads organiques."</p>
+                            <div class="mt-6 font-bold">Claire B. - Groupe Horizon</div>
+                        </div>
                     </div>
                 </div>
+                <div class="swiper-pagination mt-8"></div>
             </div>
         </div>
     </section>
 
-    <footer class="py-20 bg-white border-t border-slate-100">
-        <div class="max-w-7xl mx-auto px-8 flex flex-col items-center gap-8">
-            <img src="images/Logo-datahome_wipe_bg_v2.png" alt="Footer Logo" class="h-8 w-auto grayscale opacity-40">
-            <div class="flex gap-10 text-[10px] font-black uppercase tracking-[0.4em] text-slate-400">
-                <span>Vitesse</span>
-                <span>Performance</span>
-                <span>Modernité</span>
+    <!-- CTA finale énergique / réduction 50% implicite, offre -->
+    <section id="cta-final" class="py-28 relative bg-[#0A0C14] overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#1E2B6E]/20 to-transparent"></div>
+        <div class="max-w-5xl mx-auto px-6 text-center relative z-10" data-aos="zoom-in-up">
+            <div class="inline-block px-4 py-1.5 rounded-full bg-white/10 text-white/80 text-xs font-bold tracking-wider mb-6 backdrop-blur-sm">🎯 Offre de lancement – réduction exceptionnelle</div>
+            <h2 class="text-5xl md:text-7xl font-black text-white tracking-tighter mb-6">Prêt à dominer <br> votre secteur ?</h2>
+            <p class="text-white/70 text-xl max-w-2xl mx-auto mb-12">Les 10 premières agences bénéficient de 3 mois à -50% et d'un accompagnement personnalisé pour migrer leur contenu.</p>
+            <div class="flex flex-col sm:flex-row gap-5 justify-center">
+                <a href="#" class="bg-white text-slate-900 px-10 py-5 rounded-full text-lg font-extrabold btn-premium shadow-2xl flex items-center gap-2 justify-center">
+                    Réserver ma démo <span>⚡</span>
+                </a>
+                <a href="#" class="border border-white/30 text-white px-10 py-5 rounded-full text-lg font-semibold hover:bg-white/5 transition-all">
+                    Parler à un expert
+                </a>
             </div>
-            <p class="text-slate-400 text-[10px] font-bold uppercase tracking-widest">© 2026 — L'excellence digitale immobilière</p>
+            <div class="mt-16 flex justify-center gap-8 flex-wrap text-white/50 text-xs font-mono">
+                <span>🔒 Sécurité SSL inclus</span>
+                <span>📈 Analytics intégré</span>
+                <span>🚀 Mise à jour perpétuelle</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer professionnel -->
+    <footer class="bg-white border-t border-slate-100 py-12">
+        <div class="max-w-7xl mx-auto px-6 md:px-10 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <div class="w-7 h-7 bg-gradient-to-br from-[#1E2B6E] to-[#3B5B9B] rounded-lg flex items-center justify-center">
+                    <span class="text-white text-[10px] font-black">DH</span>
+                </div>
+                <span class="font-bold text-slate-800 text-sm">Data-Home Light — Performance immobilière</span>
+            </div>
+            <div class="flex gap-8 text-[11px] font-semibold uppercase tracking-wider text-slate-400">
+                <a href="#" class="hover:text-slate-700">Mentions légales</a>
+                <a href="#" class="hover:text-slate-700">Confidentialité</a>
+                <a href="#" class="hover:text-slate-700">Contact prioritaire</a>
+            </div>
+            <p class="text-[10px] text-slate-400">© 2026 — La nouvelle ère des agences digitales</p>
         </div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 1200, once: true, easing: 'ease-out-quint' });
+        AOS.init({
+            duration: 1000,
+            once: true,
+            easing: 'ease-out-quad',
+            offset: 50
+        });
+        // Swiper initialisation (dynamique carrousel)
+        const swiper = new Swiper('.testimonialSwiper', {
+            loop: true,
+            slidesPerView: 1,
+            spaceBetween: 30,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 2.5 }
+            }
+        });
+        // petite animation de nav au scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('.glass-nav');
+            if (window.scrollY > 30) {
+                nav.classList.add('shadow-sm', 'bg-white/95');
+            } else {
+                nav.classList.remove('shadow-sm', 'bg-white/95');
+            }
+        });
     </script>
 </body>
 </html>
