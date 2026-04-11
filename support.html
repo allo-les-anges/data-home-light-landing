@@ -13,24 +13,37 @@
         .glass-card { background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(20px); border: 1px solid rgba(0, 0, 0, 0.04); border-radius: 2rem; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08); transition: all 0.3s ease; }
         .glass-card:hover { transform: translateY(-4px); box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.1); }
         .gradient-text { background: linear-gradient(125deg, #1E2B6E 0%, #2B4A8C 40%, #4A7AB5 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-        .btn-back { background: #1E2B6E; color: white; transition: all 0.3s ease; }
+        .btn-back { background: #1E2B6E; color: white; transition: all 0.3s ease; border-radius: 99px; }
         .btn-back:hover { background: #2B4A8C; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(30, 43, 110, 0.2); }
-        .btn-support { background: #1E2B6E; color: white; transition: all 0.3s ease; }
+        .btn-support { background: #1E2B6E; color: white; transition: all 0.3s ease; border-radius: 99px; }
         .btn-support:hover { background: #2B4A8C; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(30, 43, 110, 0.25); }
         h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .support-card { transition: all 0.3s ease; }
+        .support-card { transition: all 0.3s ease; background: white; border-radius: 1.5rem; border: 1px solid rgba(0, 0, 0, 0.04); }
         .support-card:hover { transform: translateY(-4px); box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1); }
         a { color: #1E2B6E; text-decoration: none; transition: all 0.2s; }
-        a:hover { color: #2B4A8C; }
-        input, textarea { transition: all 0.2s ease; }
+        a:hover { color: #2B4A8C; text-decoration: underline; }
+        input, textarea { transition: all 0.2s ease; border: 1px solid #e2e8f0; }
         input:focus, textarea:focus { border-color: #1E2B6E; box-shadow: 0 0 0 3px rgba(30, 43, 110, 0.1); outline: none; }
+        
+        /* Badge chatbot */
+        .chatbot-badge {
+            background: linear-gradient(135deg, #1E2B6E, #2B4A8C);
+            border-radius: 60px;
+            padding: 4px 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+        }
     </style>
 </head>
 <body class="antialiased">
     <div class="max-w-6xl mx-auto px-6 py-32 md:py-40">
         <!-- Bouton retour -->
         <div class="mb-8">
-            <a href="index.html" class="btn-back inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold">
+            <a href="index.html" class="btn-back inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
                 Retour à l'accueil
             </a>
@@ -49,28 +62,31 @@
 
         <!-- Cartes support -->
         <div class="grid md:grid-cols-2 gap-6 mb-12">
-            <div class="glass-card p-8 text-center support-card">
+            <div class="support-card p-8 text-center">
                 <div class="w-16 h-16 bg-indigo-50 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4">📧</div>
                 <h3 class="text-xl font-bold text-slate-800 mb-2">Support par email</h3>
                 <p class="text-slate-500 mb-4">Une réponse sous 24h ouvrées, 7j/7.</p>
                 <a href="mailto:info@data-home.app" class="font-semibold text-[#1E2B6E] hover:underline">info@data-home.app →</a>
             </div>
 
-            <div class="glass-card p-8 text-center support-card">
+            <div class="support-card p-8 text-center">
                 <div class="w-16 h-16 bg-indigo-50 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4">📞</div>
                 <h3 class="text-xl font-bold text-slate-800 mb-2">Support téléphonique</h3>
                 <p class="text-slate-500 mb-4">Lun-Ven : 9h-18h<br>Samedi : 10h-16h</p>
                 <a href="tel:+34627768233" class="font-semibold text-[#1E2B6E] hover:underline">+34 (0) 627 76 82 33 →</a>
             </div>
 
-            <div class="glass-card p-8 text-center support-card">
+            <div class="support-card p-8 text-center">
                 <div class="w-16 h-16 bg-indigo-50 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4">💬</div>
                 <h3 class="text-xl font-bold text-slate-800 mb-2">Chat en direct</h3>
-                <p class="text-slate-500 mb-4">Disponible pendant nos horaires d'ouverture.</p>
-                <a href="#" class="font-semibold text-[#1E2B6E] hover:underline">Lancer le chat →</a>
+                <p class="text-slate-500 mb-4">Disponible 24h/24, 7j/7 avec notre assistant intelligent.</p>
+                <div class="inline-flex items-center gap-2 bg-gradient-to-r from-[#1E2B6E]/10 to-[#2B4A8C]/10 px-3 py-1.5 rounded-full">
+                    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                    <span class="text-xs font-semibold text-[#1E2B6E]">Assistance instantanée</span>
+                </div>
             </div>
 
-            <div class="glass-card p-8 text-center support-card">
+            <div class="support-card p-8 text-center">
                 <div class="w-16 h-16 bg-indigo-50 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4">📚</div>
                 <h3 class="text-xl font-bold text-slate-800 mb-2">Base de connaissances</h3>
                 <p class="text-slate-500 mb-4">Tutoriels, FAQ et guides d'utilisation.</p>
@@ -92,33 +108,43 @@
                 <div class="grid md:grid-cols-2 gap-4 mb-4">
                     <div>
                         <label class="block text-sm font-semibold text-slate-700 mb-1">Nom complet *</label>
-                        <input type="text" class="w-full p-3 border border-gray-200 rounded-xl bg-white" required>
+                        <input type="text" class="w-full p-3 rounded-xl bg-white" required>
                     </div>
                     <div>
                         <label class="block text-sm font-semibold text-slate-700 mb-1">Votre email *</label>
-                        <input type="email" class="w-full p-3 border border-gray-200 rounded-xl bg-white" required>
+                        <input type="email" class="w-full p-3 rounded-xl bg-white" required>
                     </div>
                 </div>
                 <div class="mb-4">
                     <label class="block text-sm font-semibold text-slate-700 mb-1">Objet *</label>
-                    <input type="text" class="w-full p-3 border border-gray-200 rounded-xl bg-white" required>
+                    <input type="text" class="w-full p-3 rounded-xl bg-white" required>
                 </div>
                 <div class="mb-6">
                     <label class="block text-sm font-semibold text-slate-700 mb-1">Message *</label>
-                    <textarea rows="5" class="w-full p-3 border border-gray-200 rounded-xl bg-white resize-none" placeholder="Décrivez votre demande..." required></textarea>
+                    <textarea rows="5" class="w-full p-3 rounded-xl bg-white resize-none" placeholder="Décrivez votre demande..." required></textarea>
                 </div>
-                <button type="submit" class="btn-support w-full py-3 rounded-xl font-bold text-base">
+                <button type="submit" class="btn-support w-full py-3 font-bold text-base">
                     📩 Envoyer la demande
                 </button>
             </form>
             <div id="supportSuccess" class="text-center text-green-600 mt-4 hidden bg-green-50 p-3 rounded-xl">✅ Votre message a bien été envoyé. Nous vous répondrons sous 24h.</div>
         </div>
 
-        <!-- Horaires -->
+        <!-- Sécurité -->
         <div class="text-center mt-8">
             <p class="text-xs text-slate-400">🔒 Vos données sont sécurisées et ne seront jamais partagées avec des tiers.</p>
         </div>
     </div>
+
+    <!-- Scripts chatbot Taskade -->
+    <script src="https://assets.taskade.com/embeds/latest/taskade-embed.min.js"></script>
+    <script type="module">
+        TaskadeEmbed.AgentPublicChatPopup.init({
+            publicAgentId: '01KNY1Q8QVX0MN4PTC75KZFS9C',
+            position: 'bottom-right',
+            theme: 'auto'
+        });
+    </script>
 
     <script>
         document.getElementById('supportForm')?.addEventListener('submit', function(e) {
