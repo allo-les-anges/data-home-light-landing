@@ -5,81 +5,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Politique de confidentialité - Data-Home Light</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        .container-custom { max-width: 900px; margin: 0 auto; padding: 120px 24px 60px; }
-        h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 2rem; color: #1E2B6E; }
-        h2 { font-size: 1.5rem; font-weight: 700; margin: 2rem 0 1rem; color: #1e293b; }
-        p, li { color: #475569; line-height: 1.6; margin-bottom: 1rem; }
-        ul { margin-bottom: 1rem; padding-left: 1.5rem; }
-        .back-link { display: inline-block; margin-top: 2rem; color: #1E2B6E; font-weight: 600; text-decoration: none; }
-        .back-link:hover { text-decoration: underline; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%); color: #0a0c10; }
+        .glass-card { background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(20px); border: 1px solid rgba(0, 0, 0, 0.04); border-radius: 2rem; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08); }
+        .gradient-text { background: linear-gradient(125deg, #1E2B6E 0%, #2B4A8C 40%, #4A7AB5 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .btn-back { background: #1E2B6E; color: white; transition: all 0.3s ease; }
+        .btn-back:hover { background: #2B4A8C; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(30, 43, 110, 0.2); }
+        h1, h2 { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .content-section { transition: all 0.3s ease; }
+        .content-section:hover { transform: translateX(4px); }
+        a { color: #1E2B6E; text-decoration: none; transition: all 0.2s; }
+        a:hover { color: #2B4A8C; text-decoration: underline; }
+        .badge { background: #eef2ff; color: #1E2B6E; border-radius: 40px; padding: 4px 12px; font-size: 12px; font-weight: 600; display: inline-block; }
     </style>
 </head>
-<body class="bg-slate-50">
-    <div class="container-custom">
-        <a href="index.html" class="back-link">← Retour à l'accueil</a>
-        <h1>Politique de confidentialité</h1>
-        
-        <p>Chez Data-Home Light, nous accordons une grande importance à la protection de vos données personnelles. Cette politique vous informe sur la manière dont nous collectons, utilisons et protégeons vos informations.</p>
+<body class="antialiased">
+    <div class="max-w-4xl mx-auto px-6 py-32 md:py-40">
+        <!-- Bouton retour -->
+        <div class="mb-8">
+            <a href="index.html" class="btn-back inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                Retour à l'accueil
+            </a>
+        </div>
 
-        <h2>1. Données collectées</h2>
-        <p>Lorsque vous remplissez notre formulaire de contact ou de demande de démonstration, nous collectons :</p>
-        <ul>
-            <li>Nom et prénom</li>
-            <li>Adresse e-mail professionnelle</li>
-            <li>Numéro de téléphone</li>
-            <li>Nom de votre agence (optionnel)</li>
-            <li>Nombre de biens en ligne (optionnel)</li>
-            <li>Message (optionnel)</li>
-        </ul>
+        <!-- Contenu principal -->
+        <div class="glass-card p-8 md:p-12">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 bg-gradient-to-br from-[#1E2B6E] to-[#2B4A8C] rounded-xl flex items-center justify-center shadow-sm">
+                    <span class="text-white text-sm font-black">DH</span>
+                </div>
+                <span class="font-extrabold text-xl tracking-tight text-slate-800">Data<span class="text-[#1E2B6E]">Home</span> Light</span>
+                <span class="badge ml-auto">RGPD conforme</span>
+            </div>
+            
+            <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-6">Politique de <span class="gradient-text">confidentialité</span></h1>
+            <p class="text-slate-600 mb-8 leading-relaxed">Chez Data-Home Light, nous accordons une grande importance à la protection de vos données personnelles. Cette politique vous informe sur la manière dont nous collectons, utilisons et protégeons vos informations.</p>
+            
+            <div class="space-y-8">
+                <div class="content-section border-l-4 border-[#1E2B6E] pl-6">
+                    <h2 class="text-xl font-bold text-slate-800 mb-3">1. Données collectées</h2>
+                    <p class="text-slate-600 mb-2">Lorsque vous remplissez notre formulaire de contact ou de demande de démonstration, nous collectons :</p>
+                    <ul class="list-disc list-inside text-slate-600 space-y-1 ml-2">
+                        <li>Nom et prénom</li>
+                        <li>Adresse e-mail professionnelle</li>
+                        <li>Numéro de téléphone</li>
+                        <li>Nom de votre agence (optionnel)</li>
+                        <li>Nombre de biens en ligne (optionnel)</li>
+                        <li>Message (optionnel)</li>
+                    </ul>
+                </div>
 
-        <h2>2. Finalités du traitement</h2>
-        <p>Vos données sont utilisées pour :</p>
-        <ul>
-            <li>Vous contacter dans le cadre de votre demande de démonstration</li>
-            <li>Répondre à vos questions et demandes d'information</li>
-            <li>Gérer notre relation commerciale</li>
-            <li>Améliorer nos services et notre communication</li>
-        </ul>
+                <div class="content-section border-l-4 border-[#1E2B6E] pl-6">
+                    <h2 class="text-xl font-bold text-slate-800 mb-3">2. Finalités du traitement</h2>
+                    <ul class="list-disc list-inside text-slate-600 space-y-1 ml-2">
+                        <li>Vous contacter dans le cadre de votre demande de démonstration</li>
+                        <li>Répondre à vos questions et demandes d'information</li>
+                        <li>Gérer notre relation commerciale</li>
+                        <li>Améliorer nos services et notre communication</li>
+                    </ul>
+                </div>
 
-        <h2>3. Base légale</h2>
-        <p>Le traitement de vos données repose sur votre consentement explicite (cases à cocher) et sur l'exécution de mesures précontractuelles.</p>
+                <div class="content-section border-l-4 border-[#1E2B6E] pl-6">
+                    <h2 class="text-xl font-bold text-slate-800 mb-3">3. Base légale</h2>
+                    <p class="text-slate-600">Le traitement de vos données repose sur votre consentement explicite et sur l'exécution de mesures précontractuelles.</p>
+                </div>
 
-        <h2>4. Destinataires des données</h2>
-        <p>Vos données sont transmises à :</p>
-        <ul>
-            <li><strong>Zoho CRM</strong> : notre outil de gestion de la relation client (hébergé en Europe)</li>
-            <li>Notre équipe commerciale et support client</li>
-        </ul>
-        <p>Aucune donnée n'est vendue à des tiers.</p>
+                <div class="content-section border-l-4 border-[#1E2B6E] pl-6">
+                    <h2 class="text-xl font-bold text-slate-800 mb-3">4. Destinataires des données</h2>
+                    <p class="text-slate-600">Vos données sont transmises à :</p>
+                    <ul class="list-disc list-inside text-slate-600 space-y-1 ml-2 mt-2">
+                        <li><strong>Zoho CRM</strong> : notre outil de gestion de la relation client (hébergé en Europe)</li>
+                        <li>Notre équipe commerciale et support client</li>
+                    </ul>
+                    <p class="text-slate-600 mt-2">Aucune donnée n'est vendue à des tiers.</p>
+                </div>
 
-        <h2>5. Durée de conservation</h2>
-        <p>Vos données sont conservées pendant une durée de 3 ans à compter du dernier contact. Passé ce délai, elles sont supprimées ou anonymisées.</p>
+                <div class="content-section border-l-4 border-[#1E2B6E] pl-6">
+                    <h2 class="text-xl font-bold text-slate-800 mb-3">5. Durée de conservation</h2>
+                    <p class="text-slate-600">Vos données sont conservées pendant une durée de 3 ans à compter du dernier contact. Passé ce délai, elles sont supprimées ou anonymisées.</p>
+                </div>
 
-        <h2>6. Vos droits</h2>
-        <p>Conformément au RGPD, vous disposez des droits suivants :</p>
-        <ul>
-            <li><strong>Droit d'accès</strong> : connaître les données que nous détenons sur vous</li>
-            <li><strong>Droit de rectification</strong> : modifier vos données inexactes</li>
-            <li><strong>Droit à l'effacement</strong> : demander la suppression de vos données</li>
-            <li><strong>Droit d'opposition</strong> : vous opposer au traitement</li>
-            <li><strong>Droit à la portabilité</strong> : recevoir vos données dans un format structuré</li>
-        </ul>
-        <p>Pour exercer ces droits, contactez-nous à : <strong>dpo@data-home-light.com</strong></p>
+                <div class="content-section border-l-4 border-[#1E2B6E] pl-6">
+                    <h2 class="text-xl font-bold text-slate-800 mb-3">6. Vos droits (RGPD)</h2>
+                    <ul class="list-disc list-inside text-slate-600 space-y-1 ml-2">
+                        <li><strong>Droit d'accès</strong> : connaître les données que nous détenons sur vous</li>
+                        <li><strong>Droit de rectification</strong> : modifier vos données inexactes</li>
+                        <li><strong>Droit à l'effacement</strong> : demander la suppression de vos données</li>
+                        <li><strong>Droit d'opposition</strong> : vous opposer au traitement</li>
+                        <li><strong>Droit à la portabilité</strong> : recevoir vos données dans un format structuré</li>
+                    </ul>
+                    <p class="text-slate-600 mt-3">Pour exercer ces droits, contactez-nous à : <a href="mailto:dpo@data-home-light.com">dpo@data-home-light.com</a></p>
+                </div>
 
-        <h2>7. Cookies</h2>
-        <p>Notre site utilise des cookies essentiels au bon fonctionnement du formulaire. Nous n'utilisons pas de cookies de traçage publicitaire.</p>
+                <div class="content-section border-l-4 border-[#1E2B6E] pl-6">
+                    <h2 class="text-xl font-bold text-slate-800 mb-3">7. Cookies</h2>
+                    <p class="text-slate-600">Notre site utilise des cookies essentiels au bon fonctionnement du formulaire. Nous n'utilisons pas de cookies de traçage publicitaire.</p>
+                </div>
 
-        <h2>8. Sécurité</h2>
-        <p>Nous mettons en œuvre des mesures techniques et organisationnelles pour protéger vos données contre tout accès non autorisé, perte ou divulgation.</p>
+                <div class="content-section border-l-4 border-[#1E2B6E] pl-6">
+                    <h2 class="text-xl font-bold text-slate-800 mb-3">8. Sécurité</h2>
+                    <p class="text-slate-600">Nous mettons en œuvre des mesures techniques et organisationnelles pour protéger vos données contre tout accès non autorisé, perte ou divulgation.</p>
+                </div>
 
-        <h2>9. Contact</h2>
-        <p>Pour toute question relative à cette politique, contactez notre Délégué à la Protection des Données :<br>
-        <strong>dpo@data-home-light.com</strong></p>
+                <div class="content-section border-l-4 border-[#1E2B6E] pl-6">
+                    <h2 class="text-xl font-bold text-slate-800 mb-3">9. Contact DPO</h2>
+                    <p class="text-slate-600">Pour toute question relative à cette politique, contactez notre Délégué à la Protection des Données :<br>
+                    <a href="mailto:dpo@data-home-light.com" class="font-semibold">dpo@data-home-light.com</a></p>
+                </div>
+            </div>
 
-        <p><em>Dernière mise à jour : 11 avril 2026</em></p>
+            <div class="mt-10 pt-6 border-t border-slate-100">
+                <p class="text-sm text-slate-400"><em>Dernière mise à jour : 11 avril 2026</em></p>
+            </div>
+        </div>
     </div>
 </body>
 </html>
