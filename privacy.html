@@ -12,7 +12,7 @@
         body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%); color: #0a0c10; }
         .glass-card { background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(20px); border: 1px solid rgba(0, 0, 0, 0.04); border-radius: 2rem; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08); }
         .gradient-text { background: linear-gradient(125deg, #1E2B6E 0%, #2B4A8C 40%, #4A7AB5 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-        .btn-back { background: #1E2B6E; color: white; transition: all 0.3s ease; }
+        .btn-back { background: #1E2B6E; color: white; transition: all 0.3s ease; border-radius: 99px; }
         .btn-back:hover { background: #2B4A8C; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(30, 43, 110, 0.2); }
         h1, h2 { font-family: 'Plus Jakarta Sans', sans-serif; }
         .content-section { transition: all 0.3s ease; }
@@ -20,13 +20,14 @@
         a { color: #1E2B6E; text-decoration: none; transition: all 0.2s; }
         a:hover { color: #2B4A8C; text-decoration: underline; }
         .badge { background: #eef2ff; color: #1E2B6E; border-radius: 40px; padding: 4px 12px; font-size: 12px; font-weight: 600; display: inline-block; }
+        .info-temporaire { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 12px 16px; border-radius: 12px; margin-bottom: 24px; }
     </style>
 </head>
 <body class="antialiased">
     <div class="max-w-4xl mx-auto px-6 py-32 md:py-40">
         <!-- Bouton retour -->
         <div class="mb-8">
-            <a href="index.html" class="btn-back inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold">
+            <a href="index.html" class="btn-back inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
                 Retour à l'accueil
             </a>
@@ -40,6 +41,10 @@
                 </div>
                 <span class="font-extrabold text-xl tracking-tight text-slate-800">Data<span class="text-[#1E2B6E]">Home</span> Light</span>
                 <span class="badge ml-auto">RGPD conforme</span>
+            </div>
+            
+            <div class="info-temporaire">
+                <p>📌 <strong>Version provisoire</strong> — Cette politique de confidentialité est en cours de finalisation. Elle sera complétée dès l'immatriculation de la société.</p>
             </div>
             
             <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-6">Politique de <span class="gradient-text">confidentialité</span></h1>
@@ -98,7 +103,7 @@
                         <li><strong>Droit d'opposition</strong> : vous opposer au traitement</li>
                         <li><strong>Droit à la portabilité</strong> : recevoir vos données dans un format structuré</li>
                     </ul>
-                    <p class="text-slate-600 mt-3">Pour exercer ces droits, contactez-nous à : <a href="mailto:dpo@data-home-light.com">dpo@data-home-light.com</a></p>
+                    <p class="text-slate-600 mt-3">Pour exercer ces droits, contactez-nous à : <a href="mailto:dpo@data-home.app">dpo@data-home.app</a></p>
                 </div>
 
                 <div class="content-section border-l-4 border-[#1E2B6E] pl-6">
@@ -114,12 +119,12 @@
                 <div class="content-section border-l-4 border-[#1E2B6E] pl-6">
                     <h2 class="text-xl font-bold text-slate-800 mb-3">9. Contact DPO</h2>
                     <p class="text-slate-600">Pour toute question relative à cette politique, contactez notre Délégué à la Protection des Données :<br>
-                    <a href="mailto:dpo@data-home-light.com" class="font-semibold">dpo@data-home-light.com</a></p>
+                    <a href="mailto:dpo@data-home.app" class="font-semibold">dpo@data-home.app</a></p>
                 </div>
             </div>
 
             <div class="mt-10 pt-6 border-t border-slate-100">
-                <p class="text-sm text-slate-400"><em>Dernière mise à jour : 11 avril 2026</em></p>
+                <p class="text-sm text-slate-400"><em>Dernière mise à jour : 11 avril 2026 — Version provisoire</em></p>
             </div>
         </div>
     </div>
