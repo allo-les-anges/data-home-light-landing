@@ -27,7 +27,6 @@
         .info-temporaire { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 12px 16px; border-radius: 12px; margin-bottom: 24px; }
         .lang-selector { background: rgba(255,255,255,0.95); border-radius: 40px; padding: 6px 12px; font-size: 13px; font-weight: 600; border: 1px solid #e2e8f0; cursor: pointer; transition: all 0.2s; }
         .lang-selector:hover { border-color: #1E2B6E; background: #f8fafc; }
-        [data-translate] { transition: opacity 0.2s; }
         @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
         .animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
     </style>
@@ -38,7 +37,7 @@
         <div class="mb-8 flex justify-between items-center">
             <a href="index.html" class="btn-back inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
-                <span data-translate="back">Retour à l'accueil</span>
+                <span id="backText">Retour à l'accueil</span>
             </a>
             <select id="languageSwitcher" class="lang-selector">
                 <option value="fr">🇫🇷 FR</option>
@@ -54,46 +53,46 @@
                     <span class="text-white text-2xl font-black">DH</span>
                 </div>
             </div>
-            <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-4"><span data-translate="title">Centre</span> <span class="gradient-text" data-translate="title_gradient">d'assistance</span></h1>
-            <p class="text-slate-500 text-lg max-w-2xl mx-auto" data-translate="subtitle">Notre équipe est à votre disposition 7 jours sur 7 pour vous accompagner dans votre réussite.</p>
+            <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-4"><span id="title">Centre</span> <span class="gradient-text" id="titleGradient">d'assistance</span></h1>
+            <p id="subtitle" class="text-slate-500 text-lg max-w-2xl mx-auto">Notre équipe est à votre disposition 7 jours sur 7 pour vous accompagner dans votre réussite.</p>
         </div>
 
         <!-- Avertissement temporaire -->
-        <div class="info-temporaire max-w-2xl mx-auto mb-8">
-            <p data-translate="temp_info">📌 <strong>Service en phase de lancement</strong> — Nous mettons tout en œuvre pour vous offrir la meilleure expérience. Merci de votre compréhension.</p>
+        <div id="tempInfo" class="info-temporaire max-w-2xl mx-auto mb-8">
+            <p>📌 <strong>Service en phase de lancement</strong> — Nous mettons tout en œuvre pour vous offrir la meilleure expérience. Merci de votre compréhension.</p>
         </div>
 
         <!-- Cartes support -->
         <div class="grid md:grid-cols-2 gap-6 mb-12">
             <div class="support-card p-8 text-center">
                 <div class="w-16 h-16 bg-indigo-50 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4">📧</div>
-                <h3 class="text-xl font-bold text-slate-800 mb-2" data-translate="card1_title">Support par email</h3>
-                <p class="text-slate-500 mb-4" data-translate="card1_desc">Une réponse sous 24h ouvrées, 7j/7.</p>
+                <h3 id="card1Title" class="text-xl font-bold text-slate-800 mb-2">Support par email</h3>
+                <p id="card1Desc" class="text-slate-500 mb-4">Une réponse sous 24h ouvrées, 7j/7.</p>
                 <a href="mailto:info@data-home.app" class="font-semibold text-[#1E2B6E] hover:underline">info@data-home.app →</a>
             </div>
 
             <div class="support-card p-8 text-center">
                 <div class="w-16 h-16 bg-indigo-50 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4">📞</div>
-                <h3 class="text-xl font-bold text-slate-800 mb-2" data-translate="card2_title">Support téléphonique</h3>
-                <p class="text-slate-500 mb-4" data-translate="card2_desc">Lun-Ven : 9h-18h<br>Samedi : 10h-16h</p>
+                <h3 id="card2Title" class="text-xl font-bold text-slate-800 mb-2">Support téléphonique</h3>
+                <p id="card2Desc" class="text-slate-500 mb-4">Lun-Ven : 9h-18h<br>Samedi : 10h-16h</p>
                 <a href="tel:+34627768233" class="font-semibold text-[#1E2B6E] hover:underline">+34 (0) 627 76 82 33 →</a>
             </div>
 
             <div class="support-card p-8 text-center">
                 <div class="w-16 h-16 bg-indigo-50 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4">💬</div>
-                <h3 class="text-xl font-bold text-slate-800 mb-2" data-translate="card3_title">Chat en direct</h3>
-                <p class="text-slate-500 mb-4" data-translate="card3_desc">Disponible 24h/24, 7j/7 avec notre assistant intelligent.</p>
+                <h3 id="card3Title" class="text-xl font-bold text-slate-800 mb-2">Chat en direct</h3>
+                <p id="card3Desc" class="text-slate-500 mb-4">Disponible 24h/24, 7j/7 avec notre assistant intelligent.</p>
                 <div class="inline-flex items-center gap-2 bg-gradient-to-r from-[#1E2B6E]/10 to-[#2B4A8C]/10 px-3 py-1.5 rounded-full">
                     <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                    <span class="text-xs font-semibold text-[#1E2B6E]" data-translate="card3_badge">Assistance instantanée</span>
+                    <span id="card3Badge" class="text-xs font-semibold text-[#1E2B6E]">Assistance instantanée</span>
                 </div>
             </div>
 
             <div class="support-card p-8 text-center">
                 <div class="w-16 h-16 bg-indigo-50 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4">📚</div>
-                <h3 class="text-xl font-bold text-slate-800 mb-2" data-translate="card4_title">Base de connaissances</h3>
-                <p class="text-slate-500 mb-4" data-translate="card4_desc">Tutoriels, FAQ et guides d'utilisation (bientôt disponible).</p>
-                <a href="#" class="font-semibold text-[#1E2B6E] hover:underline" data-translate="card4_link">Accéder à la FAQ →</a>
+                <h3 id="card4Title" class="text-xl font-bold text-slate-800 mb-2">Base de connaissances</h3>
+                <p id="card4Desc" class="text-slate-500 mb-4">Tutoriels, FAQ et guides d'utilisation (bientôt disponible).</p>
+                <a href="#" id="card4Link" class="font-semibold text-[#1E2B6E] hover:underline">Accéder à la FAQ →</a>
             </div>
         </div>
 
@@ -101,41 +100,41 @@
         <div class="glass-card p-8 md:p-10">
             <div class="text-center mb-6">
                 <div class="inline-flex items-center gap-2 bg-indigo-50 text-[#1E2B6E] px-4 py-1.5 rounded-full text-xs font-bold mb-4">
-                    📝 <span data-translate="form_badge">Formulaire de contact</span>
+                    📝 <span id="formBadge">Formulaire de contact</span>
                 </div>
-                <h2 class="text-2xl font-bold text-slate-800" data-translate="form_title">Une question ? Une demande ?</h2>
-                <p class="text-slate-500 mt-2" data-translate="form_subtitle">Remplissez le formulaire ci-dessous, nous vous répondrons sous 24h.</p>
+                <h2 id="formTitle" class="text-2xl font-bold text-slate-800">Une question ? Une demande ?</h2>
+                <p id="formSubtitle" class="text-slate-500 mt-2">Remplissez le formulaire ci-dessous, nous vous répondrons sous 24h.</p>
             </div>
 
             <form class="max-w-2xl mx-auto" id="supportForm">
                 <div class="grid md:grid-cols-2 gap-4 mb-4">
                     <div>
-                        <label class="block text-sm font-semibold text-slate-700 mb-1" data-translate="form_name">Nom complet *</label>
+                        <label id="formNameLabel" class="block text-sm font-semibold text-slate-700 mb-1">Nom complet *</label>
                         <input type="text" class="w-full p-3 rounded-xl bg-white" required>
                     </div>
                     <div>
-                        <label class="block text-sm font-semibold text-slate-700 mb-1" data-translate="form_email">Votre email *</label>
+                        <label id="formEmailLabel" class="block text-sm font-semibold text-slate-700 mb-1">Votre email *</label>
                         <input type="email" class="w-full p-3 rounded-xl bg-white" required>
                     </div>
                 </div>
                 <div class="mb-4">
-                    <label class="block text-sm font-semibold text-slate-700 mb-1" data-translate="form_subject">Objet *</label>
+                    <label id="formSubjectLabel" class="block text-sm font-semibold text-slate-700 mb-1">Objet *</label>
                     <input type="text" class="w-full p-3 rounded-xl bg-white" required>
                 </div>
                 <div class="mb-6">
-                    <label class="block text-sm font-semibold text-slate-700 mb-1" data-translate="form_message">Message *</label>
+                    <label id="formMessageLabel" class="block text-sm font-semibold text-slate-700 mb-1">Message *</label>
                     <textarea rows="5" class="w-full p-3 rounded-xl bg-white resize-none" placeholder="Décrivez votre demande..." required></textarea>
                 </div>
-                <button type="submit" class="btn-support w-full py-3 font-bold text-base" data-translate="form_submit">
+                <button type="submit" id="formSubmitBtn" class="btn-support w-full py-3 font-bold text-base">
                     📩 Envoyer la demande
                 </button>
             </form>
-            <div id="supportSuccess" class="text-center text-green-600 mt-4 hidden bg-green-50 p-3 rounded-xl" data-translate="success_msg">✅ Votre message a bien été envoyé. Nous vous répondrons sous 24h.</div>
+            <div id="supportSuccess" class="text-center text-green-600 mt-4 hidden bg-green-50 p-3 rounded-xl">✅ Votre message a bien été envoyé. Nous vous répondrons sous 24h.</div>
         </div>
 
         <!-- Sécurité -->
         <div class="text-center mt-8">
-            <p class="text-xs text-slate-400" data-translate="security">🔒 Vos données sont sécurisées et ne seront jamais partagées avec des tiers.</p>
+            <p id="securityText" class="text-xs text-slate-400">🔒 Vos données sont sécurisées et ne seront jamais partagées avec des tiers.</p>
         </div>
     </div>
 
@@ -150,56 +149,73 @@
     </script>
 
     <script>
-        const supportTranslations = {
+        const translationsSupport = {
             fr: {
-                back: "Retour à l'accueil", title: "Centre", title_gradient: "d'assistance", subtitle: "Notre équipe est à votre disposition 7 jours sur 7 pour vous accompagner dans votre réussite.",
-                temp_info: "📌 Service en phase de lancement — Nous mettons tout en œuvre pour vous offrir la meilleure expérience. Merci de votre compréhension.",
-                card1_title: "Support par email", card1_desc: "Une réponse sous 24h ouvrées, 7j/7.",
-                card2_title: "Support téléphonique", card2_desc: "Lun-Ven : 9h-18h\nSamedi : 10h-16h",
-                card3_title: "Chat en direct", card3_desc: "Disponible 24h/24, 7j/7 avec notre assistant intelligent.", card3_badge: "Assistance instantanée",
-                card4_title: "Base de connaissances", card4_desc: "Tutoriels, FAQ et guides d'utilisation (bientôt disponible).", card4_link: "Accéder à la FAQ →",
-                form_badge: "Formulaire de contact", form_title: "Une question ? Une demande ?", form_subtitle: "Remplissez le formulaire ci-dessous, nous vous répondrons sous 24h.",
-                form_name: "Nom complet *", form_email: "Votre email *", form_subject: "Objet *", form_message: "Message *", form_submit: "📩 Envoyer la demande",
-                success_msg: "✅ Votre message a bien été envoyé. Nous vous répondrons sous 24h.",
-                security: "🔒 Vos données sont sécurisées et ne seront jamais partagées avec des tiers."
+                back: "Retour à l'accueil", title: "Centre", titleGradient: "d'assistance", subtitle: "Notre équipe est à votre disposition 7 jours sur 7 pour vous accompagner dans votre réussite.",
+                tempInfo: "📌 Service en phase de lancement — Nous mettons tout en œuvre pour vous offrir la meilleure expérience. Merci de votre compréhension.",
+                card1Title: "Support par email", card1Desc: "Une réponse sous 24h ouvrées, 7j/7.",
+                card2Title: "Support téléphonique", card2Desc: "Lun-Ven : 9h-18h\nSamedi : 10h-16h",
+                card3Title: "Chat en direct", card3Desc: "Disponible 24h/24, 7j/7 avec notre assistant intelligent.", card3Badge: "Assistance instantanée",
+                card4Title: "Base de connaissances", card4Desc: "Tutoriels, FAQ et guides d'utilisation (bientôt disponible).", card4Link: "Accéder à la FAQ →",
+                formBadge: "Formulaire de contact", formTitle: "Une question ? Une demande ?", formSubtitle: "Remplissez le formulaire ci-dessous, nous vous répondrons sous 24h.",
+                formNameLabel: "Nom complet *", formEmailLabel: "Votre email *", formSubjectLabel: "Objet *", formMessageLabel: "Message *", formSubmitBtn: "📩 Envoyer la demande",
+                successMsg: "✅ Votre message a bien été envoyé. Nous vous répondrons sous 24h.",
+                securityText: "🔒 Vos données sont sécurisées et ne seront jamais partagées avec des tiers."
             },
             en: {
-                back: "Back to home", title: "Help", title_gradient: "center", subtitle: "Our team is available 7 days a week to support you in your success.",
-                temp_info: "📌 Service in launch phase — We are doing our best to offer you the best experience. Thank you for your understanding.",
-                card1_title: "Email support", card1_desc: "Response within 24 business hours, 7/7.",
-                card2_title: "Phone support", card2_desc: "Mon-Fri: 9am-6pm\nSat: 10am-4pm",
-                card3_title: "Live chat", card3_desc: "Available 24/7 with our intelligent assistant.", card3_badge: "Instant assistance",
-                card4_title: "Knowledge base", card4_desc: "Tutorials, FAQ and user guides (coming soon).", card4_link: "Access FAQ →",
-                form_badge: "Contact form", form_title: "A question? A request?", form_subtitle: "Fill out the form below, we will answer within 24h.",
-                form_name: "Full name *", form_email: "Your email *", form_subject: "Subject *", form_message: "Message *", form_submit: "📩 Send request",
-                success_msg: "✅ Your message has been sent. We will answer within 24h.",
-                security: "🔒 Your data is secure and will never be shared with third parties."
+                back: "Back to home", title: "Help", titleGradient: "center", subtitle: "Our team is available 7 days a week to support you in your success.",
+                tempInfo: "📌 Service in launch phase — We are doing our best to offer you the best experience. Thank you for your understanding.",
+                card1Title: "Email support", card1Desc: "Response within 24 business hours, 7/7.",
+                card2Title: "Phone support", card2Desc: "Mon-Fri: 9am-6pm\nSat: 10am-4pm",
+                card3Title: "Live chat", card3Desc: "Available 24/7 with our intelligent assistant.", card3Badge: "Instant assistance",
+                card4Title: "Knowledge base", card4Desc: "Tutorials, FAQ and user guides (coming soon).", card4Link: "Access FAQ →",
+                formBadge: "Contact form", formTitle: "A question? A request?", formSubtitle: "Fill out the form below, we will answer within 24h.",
+                formNameLabel: "Full name *", formEmailLabel: "Your email *", formSubjectLabel: "Subject *", formMessageLabel: "Message *", formSubmitBtn: "📩 Send request",
+                successMsg: "✅ Your message has been sent. We will answer within 24h.",
+                securityText: "🔒 Your data is secure and will never be shared with third parties."
             },
             es: {
-                back: "Volver al inicio", title: "Centro de", title_gradient: "ayuda", subtitle: "Nuestro equipo está a su disposición 7 días a la semana para acompañarle en su éxito.",
-                temp_info: "📌 Servicio en fase de lanzamiento — Estamos haciendo todo lo posible para ofrecerle la mejor experiencia. Gracias por su comprensión.",
-                card1_title: "Soporte por email", card1_desc: "Respuesta en 24h laborables, 7/7.",
-                card2_title: "Soporte telefónico", card2_desc: "Lun-Vie: 9h-18h\nSáb: 10h-16h",
-                card3_title: "Chat en vivo", card3_desc: "Disponible 24/7 con nuestro asistente inteligente.", card3_badge: "Asistencia instantánea",
-                card4_title: "Base de conocimiento", card4_desc: "Tutoriales, FAQ y guías de usuario (próximamente).", card4_link: "Acceder a la FAQ →",
-                form_badge: "Formulario de contacto", form_title: "¿Una pregunta? ¿Una solicitud?", form_subtitle: "Rellene el formulario, le responderemos en 24h.",
-                form_name: "Nombre completo *", form_email: "Su email *", form_subject: "Asunto *", form_message: "Mensaje *", form_submit: "📩 Enviar solicitud",
-                success_msg: "✅ Su mensaje ha sido enviado. Le responderemos en 24h.",
-                security: "🔒 Sus datos están seguros y nunca se compartirán con terceros."
+                back: "Volver al inicio", title: "Centro de", titleGradient: "ayuda", subtitle: "Nuestro equipo está a su disposición 7 días a la semana para acompañarle en su éxito.",
+                tempInfo: "📌 Servicio en fase de lanzamiento — Estamos haciendo todo lo posible para ofrecerle la mejor experiencia. Gracias por su comprensión.",
+                card1Title: "Soporte por email", card1Desc: "Respuesta en 24h laborables, 7/7.",
+                card2Title: "Soporte telefónico", card2Desc: "Lun-Vie: 9h-18h\nSáb: 10h-16h",
+                card3Title: "Chat en vivo", card3Desc: "Disponible 24/7 con nuestro asistente inteligente.", card3Badge: "Asistencia instantánea",
+                card4Title: "Base de conocimiento", card4Desc: "Tutoriales, FAQ y guías de usuario (próximamente).", card4Link: "Acceder a la FAQ →",
+                formBadge: "Formulario de contacto", formTitle: "¿Una pregunta? ¿Una solicitud?", formSubtitle: "Rellene el formulario, le responderemos en 24h.",
+                formNameLabel: "Nombre completo *", formEmailLabel: "Su email *", formSubjectLabel: "Asunto *", formMessageLabel: "Mensaje *", formSubmitBtn: "📩 Enviar solicitud",
+                successMsg: "✅ Su mensaje ha sido enviado. Le responderemos en 24h.",
+                securityText: "🔒 Sus datos están seguros y nunca se compartirán con terceros."
             }
         };
 
         function setLanguage(lang) {
-            document.querySelectorAll('[data-translate]').forEach(el => {
-                const key = el.getAttribute('data-translate');
-                if (supportTranslations[lang] && supportTranslations[lang][key] !== undefined) {
-                    if (key === 'card2_desc') {
-                        el.innerHTML = supportTranslations[lang][key].replace(/\n/g, '<br>');
-                    } else {
-                        el.innerText = supportTranslations[lang][key];
-                    }
-                }
-            });
+            const t = translationsSupport[lang];
+            if (!t) return;
+            document.getElementById('backText').innerText = t.back;
+            document.getElementById('title').innerText = t.title;
+            document.getElementById('titleGradient').innerText = t.titleGradient;
+            document.getElementById('subtitle').innerText = t.subtitle;
+            document.getElementById('tempInfo').innerHTML = `<p>${t.tempInfo}</p>`;
+            document.getElementById('card1Title').innerText = t.card1Title;
+            document.getElementById('card1Desc').innerText = t.card1Desc;
+            document.getElementById('card2Title').innerText = t.card2Title;
+            document.getElementById('card2Desc').innerHTML = t.card2Desc.replace(/\n/g, '<br>');
+            document.getElementById('card3Title').innerText = t.card3Title;
+            document.getElementById('card3Desc').innerText = t.card3Desc;
+            document.getElementById('card3Badge').innerText = t.card3Badge;
+            document.getElementById('card4Title').innerText = t.card4Title;
+            document.getElementById('card4Desc').innerText = t.card4Desc;
+            document.getElementById('card4Link').innerText = t.card4Link;
+            document.getElementById('formBadge').innerText = t.formBadge;
+            document.getElementById('formTitle').innerText = t.formTitle;
+            document.getElementById('formSubtitle').innerText = t.formSubtitle;
+            document.getElementById('formNameLabel').innerText = t.formNameLabel;
+            document.getElementById('formEmailLabel').innerText = t.formEmailLabel;
+            document.getElementById('formSubjectLabel').innerText = t.formSubjectLabel;
+            document.getElementById('formMessageLabel').innerText = t.formMessageLabel;
+            document.getElementById('formSubmitBtn').innerHTML = t.formSubmitBtn;
+            document.getElementById('supportSuccess').innerText = t.successMsg;
+            document.getElementById('securityText').innerText = t.securityText;
         }
 
         document.getElementById('languageSwitcher').addEventListener('change', (e) => setLanguage(e.target.value));
