@@ -20,17 +20,24 @@
         a { color: #1E2B6E; text-decoration: none; transition: all 0.2s; }
         a:hover { color: #2B4A8C; text-decoration: underline; }
         .info-temporaire { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 12px 16px; border-radius: 12px; margin-bottom: 24px; }
-        .info-temporaire p { color: #92400e; font-size: 13px; }
+        .lang-selector { background: rgba(255,255,255,0.95); border-radius: 40px; padding: 6px 12px; font-size: 13px; font-weight: 600; border: 1px solid #e2e8f0; cursor: pointer; transition: all 0.2s; }
+        .lang-selector:hover { border-color: #1E2B6E; background: #f8fafc; }
+        [data-translate] { transition: opacity 0.2s; }
     </style>
 </head>
 <body class="antialiased">
     <div class="max-w-4xl mx-auto px-6 py-32 md:py-40">
-        <!-- Bouton retour -->
-        <div class="mb-8">
+        <!-- Bouton retour et sélecteur de langue -->
+        <div class="mb-8 flex justify-between items-center">
             <a href="index.html" class="btn-back inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
-                Retour à l'accueil
+                <span data-translate="back">Retour à l'accueil</span>
             </a>
+            <select id="languageSwitcher" class="lang-selector">
+                <option value="fr">🇫🇷 FR</option>
+                <option value="en">🇬🇧 EN</option>
+                <option value="es">🇪🇸 ES</option>
+            </select>
         </div>
 
         <!-- Contenu principal -->
@@ -43,30 +50,26 @@
             </div>
             
             <div class="info-temporaire">
-                <p>📌 <strong>Informations temporaires</strong> — La société est en cours de constitution. Ces mentions légales seront mises à jour dès l'immatriculation définitive.</p>
+                <p data-translate="temp_info">📌 <strong>Informations temporaires</strong> — La société est en cours de constitution. Ces mentions légales seront mises à jour dès l'immatriculation définitive.</p>
             </div>
             
-            <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-8">Mentions <span class="gradient-text">légales</span></h1>
+            <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-8"><span data-translate="title">Mentions</span> <span class="gradient-text" data-translate="title_gradient">légales</span></h1>
             
             <div class="space-y-8">
                 <div class="content-section border-l-4 border-[#1E2B6E] pl-6">
-                    <h2 class="text-xl font-bold text-slate-800 mb-3">1. Éditeur du site</h2>
+                    <h2 class="text-xl font-bold text-slate-800 mb-3" data-translate="section1_title">1. Éditeur du site</h2>
                     <p class="text-slate-600 leading-relaxed"><strong class="text-slate-800">Data-Home Light</strong><br>
-                    Société en cours de constitution<br>
-                    Statut : SAS au capital de 1 000€ (à paraître)<br>
-                    Siège social : À déterminer<br>
-                    RCS : En cours d'immatriculation<br>
-                    TVA : En cours d'attribution<br>
+                    <span data-translate="section1_text">Société en cours de constitution<br>Statut : SAS au capital de 1 000€ (à paraître)<br>Siège social : À déterminer<br>RCS : En cours d'immatriculation<br>TVA : En cours d'attribution</span><br>
                     Email : <a href="mailto:contact@data-home.app">contact@data-home.app</a></p>
                 </div>
 
                 <div class="content-section border-l-4 border-[#1E2B6E] pl-6">
-                    <h2 class="text-xl font-bold text-slate-800 mb-3">2. Directeur de publication</h2>
-                    <p class="text-slate-600">En cours de désignation — Information à venir.</p>
+                    <h2 class="text-xl font-bold text-slate-800 mb-3" data-translate="section2_title">2. Directeur de publication</h2>
+                    <p class="text-slate-600" data-translate="section2_text">En cours de désignation — Information à venir.</p>
                 </div>
 
                 <div class="content-section border-l-4 border-[#1E2B6E] pl-6">
-                    <h2 class="text-xl font-bold text-slate-800 mb-3">3. Hébergement</h2>
+                    <h2 class="text-xl font-bold text-slate-800 mb-3" data-translate="section3_title">3. Hébergement</h2>
                     <p class="text-slate-600"><strong>Zoho CRM</strong><br>
                     Zoho Corporation BV<br>
                     Staten Bolwerk 22, 6211 JE Maastricht, Pays-Bas<br>
@@ -74,25 +77,83 @@
                 </div>
 
                 <div class="content-section border-l-4 border-[#1E2B6E] pl-6">
-                    <h2 class="text-xl font-bold text-slate-800 mb-3">4. Propriété intellectuelle</h2>
-                    <p class="text-slate-600">L'ensemble des éléments composant ce site (textes, images, logos, vidéos, etc.) est la propriété exclusive de Data-Home Light. Toute reproduction, distribution ou utilisation sans autorisation préalable est interdite.</p>
+                    <h2 class="text-xl font-bold text-slate-800 mb-3" data-translate="section4_title">4. Propriété intellectuelle</h2>
+                    <p class="text-slate-600" data-translate="section4_text">L'ensemble des éléments composant ce site (textes, images, logos, vidéos, etc.) est la propriété exclusive de Data-Home Light. Toute reproduction, distribution ou utilisation sans autorisation préalable est interdite.</p>
                 </div>
 
                 <div class="content-section border-l-4 border-[#1E2B6E] pl-6">
-                    <h2 class="text-xl font-bold text-slate-800 mb-3">5. Limitation de responsabilité</h2>
-                    <p class="text-slate-600">Data-Home Light s'efforce d'assurer l'exactitude des informations diffusées sur ce site. Toutefois, nous ne pouvons garantir l'absence d'erreurs ou d'omissions. L'utilisation du site se fait sous la seule responsabilité de l'utilisateur.</p>
+                    <h2 class="text-xl font-bold text-slate-800 mb-3" data-translate="section5_title">5. Limitation de responsabilité</h2>
+                    <p class="text-slate-600" data-translate="section5_text">Data-Home Light s'efforce d'assurer l'exactitude des informations diffusées sur ce site. Toutefois, nous ne pouvons garantir l'absence d'erreurs ou d'omissions. L'utilisation du site se fait sous la seule responsabilité de l'utilisateur.</p>
                 </div>
 
                 <div class="content-section border-l-4 border-[#1E2B6E] pl-6">
-                    <h2 class="text-xl font-bold text-slate-800 mb-3">6. Droit applicable</h2>
-                    <p class="text-slate-600">Les présentes mentions légales sont régies par le droit français. Tout litige relèvera de la compétence exclusive des tribunaux français.</p>
+                    <h2 class="text-xl font-bold text-slate-800 mb-3" data-translate="section6_title">6. Droit applicable</h2>
+                    <p class="text-slate-600" data-translate="section6_text">Les présentes mentions légales sont régies par le droit français. Tout litige relèvera de la compétence exclusive des tribunaux français.</p>
                 </div>
             </div>
 
             <div class="mt-10 pt-6 border-t border-slate-100">
-                <p class="text-sm text-slate-400"><em>Dernière mise à jour : 11 avril 2026 — Version provisoire en attendant l'immatriculation</em></p>
+                <p class="text-sm text-slate-400"><em data-translate="update">Dernière mise à jour : 11 avril 2026 — Version provisoire en attendant l'immatriculation</em></p>
             </div>
         </div>
     </div>
+
+    <!-- Scripts chatbot Taskade -->
+    <script src="https://assets.taskade.com/embeds/latest/taskade-embed.min.js"></script>
+    <script type="module">
+        TaskadeEmbed.AgentPublicChatPopup.init({
+            publicAgentId: '01KNY1Q8QVX0MN4PTC75KZFS9C',
+            position: 'bottom-right',
+            theme: 'auto'
+        });
+    </script>
+
+    <script>
+        const translations = {
+            fr: {
+                back: "Retour à l'accueil", temp_info: "📌 Informations temporaires — La société est en cours de constitution. Ces mentions légales seront mises à jour dès l'immatriculation définitive.",
+                title: "Mentions", title_gradient: "légales", section1_title: "1. Éditeur du site", section1_text: "Société en cours de constitution\nStatut : SAS au capital de 1 000€ (à paraître)\nSiège social : À déterminer\nRCS : En cours d'immatriculation\nTVA : En cours d'attribution",
+                section2_title: "2. Directeur de publication", section2_text: "En cours de désignation — Information à venir.",
+                section3_title: "3. Hébergement", section4_title: "4. Propriété intellectuelle", section4_text: "L'ensemble des éléments composant ce site (textes, images, logos, vidéos, etc.) est la propriété exclusive de Data-Home Light. Toute reproduction, distribution ou utilisation sans autorisation préalable est interdite.",
+                section5_title: "5. Limitation de responsabilité", section5_text: "Data-Home Light s'efforce d'assurer l'exactitude des informations diffusées sur ce site. Toutefois, nous ne pouvons garantir l'absence d'erreurs ou d'omissions. L'utilisation du site se fait sous la seule responsabilité de l'utilisateur.",
+                section6_title: "6. Droit applicable", section6_text: "Les présentes mentions légales sont régies par le droit français. Tout litige relèvera de la compétence exclusive des tribunaux français.",
+                update: "Dernière mise à jour : 11 avril 2026 — Version provisoire en attendant l'immatriculation"
+            },
+            en: {
+                back: "Back to home", temp_info: "📌 Temporary information — The company is being incorporated. These legal notices will be updated upon final registration.",
+                title: "Legal", title_gradient: "notices", section1_title: "1. Publisher", section1_text: "Company being incorporated\nStatus: SAS with capital of €1,000 (to be published)\nHead office: To be determined\nRCS: Registration in progress\nVAT: Being allocated",
+                section2_title: "2. Publication director", section2_text: "To be appointed — Information coming soon.",
+                section3_title: "3. Hosting", section4_title: "4. Intellectual property", section4_text: "All elements of this site (texts, images, logos, videos, etc.) are the exclusive property of Data-Home Light. Any reproduction, distribution or use without prior authorization is prohibited.",
+                section5_title: "5. Limitation of liability", section5_text: "Data-Home Light strives to ensure the accuracy of information on this site. However, we cannot guarantee the absence of errors or omissions. Use of the site is at the user's sole responsibility.",
+                section6_title: "6. Applicable law", section6_text: "These legal notices are governed by French law. Any dispute will fall under the exclusive jurisdiction of French courts.",
+                update: "Last updated: April 11, 2026 — Provisional version pending registration"
+            },
+            es: {
+                back: "Volver al inicio", temp_info: "📌 Información temporal — La empresa está en proceso de constitución. Estas notas legales se actualizarán tras el registro definitivo.",
+                title: "Aviso", title_gradient: "legal", section1_title: "1. Editor del sitio", section1_text: "Empresa en constitución\nEstatuto: SAS con capital de 1.000€ (por publicar)\nDomicilio social: Por determinar\nRCS: Registro en curso\nIVA: En proceso de asignación",
+                section2_title: "2. Director de publicación", section2_text: "Por designar — Información próxima.",
+                section3_title: "3. Alojamiento", section4_title: "4. Propiedad intelectual", section4_text: "Todos los elementos de este sitio (textos, imágenes, logotipos, vídeos, etc.) son propiedad exclusiva de Data-Home Light. Queda prohibida cualquier reproducción, distribución o uso sin autorización previa.",
+                section5_title: "5. Limitación de responsabilidad", section5_text: "Data-Home Light se esfuerza por garantizar la exactitud de la información en este sitio. Sin embargo, no podemos garantizar la ausencia de errores u omisiones. El uso del sitio es bajo la única responsabilidad del usuario.",
+                section6_title: "6. Ley aplicable", section6_text: "Estas notas legales se rigen por la legislación francesa. Cualquier disputa será competencia exclusiva de los tribunales franceses.",
+                update: "Última actualización: 11 de abril de 2026 — Versión provisional pendiente de registro"
+            }
+        };
+
+        function setLanguage(lang) {
+            document.querySelectorAll('[data-translate]').forEach(el => {
+                const key = el.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key] !== undefined) {
+                    if (key === 'section1_text') {
+                        el.innerText = translations[lang][key].replace(/\n/g, '\n');
+                    } else {
+                        el.innerText = translations[lang][key];
+                    }
+                }
+            });
+        }
+
+        document.getElementById('languageSwitcher').addEventListener('change', (e) => setLanguage(e.target.value));
+        setLanguage('fr');
+    </script>
 </body>
 </html>
