@@ -21,16 +21,24 @@
         a:hover { color: #2B4A8C; text-decoration: underline; }
         .badge { background: #eef2ff; color: #1E2B6E; border-radius: 40px; padding: 4px 12px; font-size: 12px; font-weight: 600; display: inline-block; }
         .info-temporaire { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 12px 16px; border-radius: 12px; margin-bottom: 24px; }
+        .lang-selector { background: rgba(255,255,255,0.95); border-radius: 40px; padding: 6px 12px; font-size: 13px; font-weight: 600; border: 1px solid #e2e8f0; cursor: pointer; transition: all 0.2s; }
+        .lang-selector:hover { border-color: #1E2B6E; background: #f8fafc; }
+        [data-translate] { transition: opacity 0.2s; }
     </style>
 </head>
 <body class="antialiased">
     <div class="max-w-4xl mx-auto px-6 py-32 md:py-40">
-        <!-- Bouton retour -->
-        <div class="mb-8">
+        <!-- Bouton retour et sélecteur de langue -->
+        <div class="mb-8 flex justify-between items-center">
             <a href="index.html" class="btn-back inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
-                Retour à l'accueil
+                <span data-translate="back">Retour à l'accueil</span>
             </a>
+            <select id="languageSwitcher" class="lang-selector">
+                <option value="fr">🇫🇷 FR</option>
+                <option value="en">🇬🇧 EN</option>
+                <option value="es">🇪🇸 ES</option>
+            </select>
         </div>
 
         <!-- Contenu principal -->
@@ -40,93 +48,165 @@
                     <span class="text-white text-sm font-black">DH</span>
                 </div>
                 <span class="font-extrabold text-xl tracking-tight text-slate-800">Data<span class="text-[#1E2B6E]">Home</span> Light</span>
-                <span class="badge ml-auto">RGPD conforme</span>
+                <span class="badge ml-auto" data-translate="badge">RGPD conforme</span>
             </div>
             
             <div class="info-temporaire">
-                <p>📌 <strong>Version provisoire</strong> — Cette politique de confidentialité est en cours de finalisation. Elle sera complétée dès l'immatriculation de la société.</p>
+                <p data-translate="temp_info">📌 <strong>Version provisoire</strong> — Cette politique de confidentialité est en cours de finalisation. Elle sera complétée dès l'immatriculation de la société.</p>
             </div>
             
-            <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-6">Politique de <span class="gradient-text">confidentialité</span></h1>
-            <p class="text-slate-600 mb-8 leading-relaxed">Chez Data-Home Light, nous accordons une grande importance à la protection de vos données personnelles. Cette politique vous informe sur la manière dont nous collectons, utilisons et protégeons vos informations.</p>
+            <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-6"><span data-translate="title">Politique de</span> <span class="gradient-text" data-translate="title_gradient">confidentialité</span></h1>
+            <p class="text-slate-600 mb-8 leading-relaxed" data-translate="intro">Chez Data-Home Light, nous accordons une grande importance à la protection de vos données personnelles. Cette politique vous informe sur la manière dont nous collectons, utilisons et protégeons vos informations.</p>
             
             <div class="space-y-8">
                 <div class="content-section border-l-4 border-[#1E2B6E] pl-6">
-                    <h2 class="text-xl font-bold text-slate-800 mb-3">1. Données collectées</h2>
-                    <p class="text-slate-600 mb-2">Lorsque vous remplissez notre formulaire de contact ou de demande de démonstration, nous collectons :</p>
+                    <h2 class="text-xl font-bold text-slate-800 mb-3" data-translate="section1_title">1. Données collectées</h2>
+                    <p class="text-slate-600 mb-2" data-translate="section1_sub">Lorsque vous remplissez notre formulaire de contact ou de demande de démonstration, nous collectons :</p>
                     <ul class="list-disc list-inside text-slate-600 space-y-1 ml-2">
-                        <li>Nom et prénom</li>
-                        <li>Adresse e-mail professionnelle</li>
-                        <li>Numéro de téléphone</li>
-                        <li>Nom de votre agence (optionnel)</li>
-                        <li>Nombre de biens en ligne (optionnel)</li>
-                        <li>Message (optionnel)</li>
+                        <li data-translate="data1">Nom et prénom</li>
+                        <li data-translate="data2">Adresse e-mail professionnelle</li>
+                        <li data-translate="data3">Numéro de téléphone</li>
+                        <li data-translate="data4">Nom de votre agence (optionnel)</li>
+                        <li data-translate="data5">Nombre de biens en ligne (optionnel)</li>
+                        <li data-translate="data6">Message (optionnel)</li>
                     </ul>
                 </div>
 
                 <div class="content-section border-l-4 border-[#1E2B6E] pl-6">
-                    <h2 class="text-xl font-bold text-slate-800 mb-3">2. Finalités du traitement</h2>
+                    <h2 class="text-xl font-bold text-slate-800 mb-3" data-translate="section2_title">2. Finalités du traitement</h2>
                     <ul class="list-disc list-inside text-slate-600 space-y-1 ml-2">
-                        <li>Vous contacter dans le cadre de votre demande de démonstration</li>
-                        <li>Répondre à vos questions et demandes d'information</li>
-                        <li>Gérer notre relation commerciale</li>
-                        <li>Améliorer nos services et notre communication</li>
+                        <li data-translate="purpose1">Vous contacter dans le cadre de votre demande de démonstration</li>
+                        <li data-translate="purpose2">Répondre à vos questions et demandes d'information</li>
+                        <li data-translate="purpose3">Gérer notre relation commerciale</li>
+                        <li data-translate="purpose4">Améliorer nos services et notre communication</li>
                     </ul>
                 </div>
 
                 <div class="content-section border-l-4 border-[#1E2B6E] pl-6">
-                    <h2 class="text-xl font-bold text-slate-800 mb-3">3. Base légale</h2>
-                    <p class="text-slate-600">Le traitement de vos données repose sur votre consentement explicite et sur l'exécution de mesures précontractuelles.</p>
+                    <h2 class="text-xl font-bold text-slate-800 mb-3" data-translate="section3_title">3. Base légale</h2>
+                    <p class="text-slate-600" data-translate="section3_text">Le traitement de vos données repose sur votre consentement explicite et sur l'exécution de mesures précontractuelles.</p>
                 </div>
 
                 <div class="content-section border-l-4 border-[#1E2B6E] pl-6">
-                    <h2 class="text-xl font-bold text-slate-800 mb-3">4. Destinataires des données</h2>
-                    <p class="text-slate-600">Vos données sont transmises à :</p>
+                    <h2 class="text-xl font-bold text-slate-800 mb-3" data-translate="section4_title">4. Destinataires des données</h2>
+                    <p class="text-slate-600" data-translate="section4_sub">Vos données sont transmises à :</p>
                     <ul class="list-disc list-inside text-slate-600 space-y-1 ml-2 mt-2">
-                        <li><strong>Zoho CRM</strong> : notre outil de gestion de la relation client (hébergé en Europe)</li>
-                        <li>Notre équipe commerciale et support client</li>
+                        <li><strong>Zoho CRM</strong> <span data-translate="recipient1">: notre outil de gestion de la relation client (hébergé en Europe)</span></li>
+                        <li><span data-translate="recipient2">Notre équipe commerciale et support client</span></li>
                     </ul>
-                    <p class="text-slate-600 mt-2">Aucune donnée n'est vendue à des tiers.</p>
+                    <p class="text-slate-600 mt-2" data-translate="recipient3">Aucune donnée n'est vendue à des tiers.</p>
                 </div>
 
                 <div class="content-section border-l-4 border-[#1E2B6E] pl-6">
-                    <h2 class="text-xl font-bold text-slate-800 mb-3">5. Durée de conservation</h2>
-                    <p class="text-slate-600">Vos données sont conservées pendant une durée de 3 ans à compter du dernier contact. Passé ce délai, elles sont supprimées ou anonymisées.</p>
+                    <h2 class="text-xl font-bold text-slate-800 mb-3" data-translate="section5_title">5. Durée de conservation</h2>
+                    <p class="text-slate-600" data-translate="section5_text">Vos données sont conservées pendant une durée de 3 ans à compter du dernier contact. Passé ce délai, elles sont supprimées ou anonymisées.</p>
                 </div>
 
                 <div class="content-section border-l-4 border-[#1E2B6E] pl-6">
-                    <h2 class="text-xl font-bold text-slate-800 mb-3">6. Vos droits (RGPD)</h2>
+                    <h2 class="text-xl font-bold text-slate-800 mb-3" data-translate="section6_title">6. Vos droits (RGPD)</h2>
                     <ul class="list-disc list-inside text-slate-600 space-y-1 ml-2">
-                        <li><strong>Droit d'accès</strong> : connaître les données que nous détenons sur vous</li>
-                        <li><strong>Droit de rectification</strong> : modifier vos données inexactes</li>
-                        <li><strong>Droit à l'effacement</strong> : demander la suppression de vos données</li>
-                        <li><strong>Droit d'opposition</strong> : vous opposer au traitement</li>
-                        <li><strong>Droit à la portabilité</strong> : recevoir vos données dans un format structuré</li>
+                        <li data-translate="right1"><strong>Droit d'accès</strong> : connaître les données que nous détenons sur vous</li>
+                        <li data-translate="right2"><strong>Droit de rectification</strong> : modifier vos données inexactes</li>
+                        <li data-translate="right3"><strong>Droit à l'effacement</strong> : demander la suppression de vos données</li>
+                        <li data-translate="right4"><strong>Droit d'opposition</strong> : vous opposer au traitement</li>
+                        <li data-translate="right5"><strong>Droit à la portabilité</strong> : recevoir vos données dans un format structuré</li>
                     </ul>
-                    <p class="text-slate-600 mt-3">Pour exercer ces droits, contactez-nous à : <a href="mailto:dpo@data-home.app">dpo@data-home.app</a></p>
+                    <p class="text-slate-600 mt-3" data-translate="right_contact">Pour exercer ces droits, contactez-nous à : <a href="mailto:dpo@data-home.app">dpo@data-home.app</a></p>
                 </div>
 
                 <div class="content-section border-l-4 border-[#1E2B6E] pl-6">
-                    <h2 class="text-xl font-bold text-slate-800 mb-3">7. Cookies</h2>
-                    <p class="text-slate-600">Notre site utilise des cookies essentiels au bon fonctionnement du formulaire. Nous n'utilisons pas de cookies de traçage publicitaire.</p>
+                    <h2 class="text-xl font-bold text-slate-800 mb-3" data-translate="section7_title">7. Cookies</h2>
+                    <p class="text-slate-600" data-translate="section7_text">Notre site utilise des cookies essentiels au bon fonctionnement du formulaire. Nous n'utilisons pas de cookies de traçage publicitaire.</p>
                 </div>
 
                 <div class="content-section border-l-4 border-[#1E2B6E] pl-6">
-                    <h2 class="text-xl font-bold text-slate-800 mb-3">8. Sécurité</h2>
-                    <p class="text-slate-600">Nous mettons en œuvre des mesures techniques et organisationnelles pour protéger vos données contre tout accès non autorisé, perte ou divulgation.</p>
+                    <h2 class="text-xl font-bold text-slate-800 mb-3" data-translate="section8_title">8. Sécurité</h2>
+                    <p class="text-slate-600" data-translate="section8_text">Nous mettons en œuvre des mesures techniques et organisationnelles pour protéger vos données contre tout accès non autorisé, perte ou divulgation.</p>
                 </div>
 
                 <div class="content-section border-l-4 border-[#1E2B6E] pl-6">
-                    <h2 class="text-xl font-bold text-slate-800 mb-3">9. Contact DPO</h2>
-                    <p class="text-slate-600">Pour toute question relative à cette politique, contactez notre Délégué à la Protection des Données :<br>
+                    <h2 class="text-xl font-bold text-slate-800 mb-3" data-translate="section9_title">9. Contact DPO</h2>
+                    <p class="text-slate-600"><span data-translate="dpo_text">Pour toute question relative à cette politique, contactez notre Délégué à la Protection des Données :</span><br>
                     <a href="mailto:dpo@data-home.app" class="font-semibold">dpo@data-home.app</a></p>
                 </div>
             </div>
 
             <div class="mt-10 pt-6 border-t border-slate-100">
-                <p class="text-sm text-slate-400"><em>Dernière mise à jour : 11 avril 2026 — Version provisoire</em></p>
+                <p class="text-sm text-slate-400"><em data-translate="update">Dernière mise à jour : 11 avril 2026 — Version provisoire</em></p>
             </div>
         </div>
     </div>
+
+    <!-- Scripts chatbot Taskade -->
+    <script src="https://assets.taskade.com/embeds/latest/taskade-embed.min.js"></script>
+    <script type="module">
+        TaskadeEmbed.AgentPublicChatPopup.init({
+            publicAgentId: '01KNY1Q8QVX0MN4PTC75KZFS9C',
+            position: 'bottom-right',
+            theme: 'auto'
+        });
+    </script>
+
+    <script>
+        const privacyTranslations = {
+            fr: {
+                back: "Retour à l'accueil", badge: "RGPD conforme", temp_info: "📌 Version provisoire — Cette politique de confidentialité est en cours de finalisation.",
+                title: "Politique de", title_gradient: "confidentialité", intro: "Chez Data-Home Light, nous accordons une grande importance à la protection de vos données personnelles.",
+                section1_title: "1. Données collectées", section1_sub: "Lorsque vous remplissez notre formulaire, nous collectons :",
+                data1: "Nom et prénom", data2: "Adresse e-mail professionnelle", data3: "Numéro de téléphone", data4: "Nom de votre agence (optionnel)", data5: "Nombre de biens en ligne (optionnel)", data6: "Message (optionnel)",
+                section2_title: "2. Finalités du traitement", purpose1: "Vous contacter dans le cadre de votre demande", purpose2: "Répondre à vos questions", purpose3: "Gérer notre relation commerciale", purpose4: "Améliorer nos services",
+                section3_title: "3. Base légale", section3_text: "Le traitement de vos données repose sur votre consentement explicite.",
+                section4_title: "4. Destinataires des données", section4_sub: "Vos données sont transmises à :", recipient1: ": notre outil de gestion de la relation client", recipient2: "Notre équipe commerciale et support client", recipient3: "Aucune donnée n'est vendue à des tiers.",
+                section5_title: "5. Durée de conservation", section5_text: "Vos données sont conservées pendant une durée de 3 ans.",
+                section6_title: "6. Vos droits (RGPD)", right1: "Droit d'accès : connaître les données que nous détenons sur vous", right2: "Droit de rectification : modifier vos données inexactes", right3: "Droit à l'effacement : demander la suppression de vos données", right4: "Droit d'opposition : vous opposer au traitement", right5: "Droit à la portabilité : recevoir vos données dans un format structuré", right_contact: "Pour exercer ces droits, contactez-nous à :",
+                section7_title: "7. Cookies", section7_text: "Notre site utilise des cookies essentiels au bon fonctionnement.",
+                section8_title: "8. Sécurité", section8_text: "Nous protégeons vos données contre tout accès non autorisé.",
+                section9_title: "9. Contact DPO", dpo_text: "Pour toute question relative à cette politique, contactez notre DPO :",
+                update: "Dernière mise à jour : 11 avril 2026 — Version provisoire"
+            },
+            en: {
+                back: "Back to home", badge: "GDPR compliant", temp_info: "📌 Provisional version — This privacy policy is being finalized.",
+                title: "Privacy", title_gradient: "policy", intro: "At Data-Home Light, we take the protection of your personal data very seriously.",
+                section1_title: "1. Data collected", section1_sub: "When you fill out our contact or demo request form, we collect:",
+                data1: "First and last name", data2: "Professional email address", data3: "Phone number", data4: "Your agency name (optional)", data5: "Number of online properties (optional)", data6: "Message (optional)",
+                section2_title: "2. Purpose of processing", purpose1: "Contact you regarding your demo request", purpose2: "Answer your questions", purpose3: "Manage our business relationship", purpose4: "Improve our services",
+                section3_title: "3. Legal basis", section3_text: "Processing of your data is based on your explicit consent.",
+                section4_title: "4. Data recipients", section4_sub: "Your data is transmitted to:", recipient1: ": our CRM tool", recipient2: "Our sales and customer support team", recipient3: "No data is sold to third parties.",
+                section5_title: "5. Retention period", section5_text: "Your data is kept for 3 years from the last contact.",
+                section6_title: "6. Your rights (GDPR)", right1: "Right of access: know what data we hold about you", right2: "Right of rectification: correct inaccurate data", right3: "Right to erasure: request deletion of your data", right4: "Right to object: object to processing", right5: "Right to portability: receive your data in a structured format", right_contact: "To exercise these rights, contact us at:",
+                section7_title: "7. Cookies", section7_text: "Our site uses essential cookies for proper functioning.",
+                section8_title: "8. Security", section8_text: "We protect your data against unauthorized access.",
+                section9_title: "9. Contact DPO", dpo_text: "For any questions regarding this policy, contact our DPO:",
+                update: "Last updated: April 11, 2026 — Provisional version"
+            },
+            es: {
+                back: "Volver al inicio", badge: "Cumple RGPD", temp_info: "📌 Versión provisional — Esta política de privacidad está siendo finalizada.",
+                title: "Política de", title_gradient: "privacidad", intro: "En Data-Home Light, damos gran importancia a la protección de sus datos personales.",
+                section1_title: "1. Datos recogidos", section1_sub: "Cuando rellena nuestro formulario de contacto o solicitud de demostración, recogemos:",
+                data1: "Nombre y apellidos", data2: "Correo electrónico profesional", data3: "Número de teléfono", data4: "Nombre de su agencia (opcional)", data5: "Número de propiedades online (opcional)", data6: "Mensaje (opcional)",
+                section2_title: "2. Finalidad del tratamiento", purpose1: "Contactarle sobre su solicitud de demostración", purpose2: "Responder a sus preguntas", purpose3: "Gestionar nuestra relación comercial", purpose4: "Mejorar nuestros servicios",
+                section3_title: "3. Base legal", section3_text: "El tratamiento de sus datos se basa en su consentimiento explícito.",
+                section4_title: "4. Destinatarios de los datos", section4_sub: "Sus datos se transmiten a:", recipient1: ": nuestra herramienta CRM", recipient2: "Nuestro equipo comercial y de soporte", recipient3: "No se venden datos a terceros.",
+                section5_title: "5. Plazo de conservación", section5_text: "Sus datos se conservan durante 3 años desde el último contacto.",
+                section6_title: "6. Sus derechos (RGPD)", right1: "Derecho de acceso: conocer los datos que tenemos sobre usted", right2: "Derecho de rectificación: corregir datos inexactos", right3: "Derecho de supresión: solicitar la eliminación de sus datos", right4: "Derecho de oposición: oponerse al tratamiento", right5: "Derecho a la portabilidad: recibir sus datos en un formato estructurado", right_contact: "Para ejercer estos derechos, contáctenos en:",
+                section7_title: "7. Cookies", section7_text: "Nuestro sitio utiliza cookies esenciales para su correcto funcionamiento.",
+                section8_title: "8. Seguridad", section8_text: "Protegemos sus datos contra accesos no autorizados.",
+                section9_title: "9. Contacto DPO", dpo_text: "Para cualquier pregunta sobre esta política, contacte con nuestro DPO:",
+                update: "Última actualización: 11 de abril de 2026 — Versión provisional"
+            }
+        };
+
+        function setLanguage(lang) {
+            document.querySelectorAll('[data-translate]').forEach(el => {
+                const key = el.getAttribute('data-translate');
+                if (privacyTranslations[lang] && privacyTranslations[lang][key] !== undefined) {
+                    el.innerText = privacyTranslations[lang][key];
+                }
+            });
+        }
+
+        document.getElementById('languageSwitcher').addEventListener('change', (e) => setLanguage(e.target.value));
+        setLanguage('fr');
+    </script>
 </body>
 </html>
