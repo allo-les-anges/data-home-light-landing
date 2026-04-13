@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Data-Home Light | La solution digitale nouvelle génération pour les agences immobilières</title>
+    
+    <!-- ==================== FAVICON (Version PRO) ==================== -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+    <link rel="apple-touch-icon" href="images/logo-datahome.png">
+    <link rel="icon" type="image/png" href="images/logo-datahome.png">
+    
     <!-- Tailwind CSS + Fonts + AOS + Swiper -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -142,17 +149,12 @@
             border: 1px solid #e2e8f0;
             box-shadow: 0 2px 8px rgba(0,0,0,0.02);
         }
-        .partner-logo {
+        .partner-logo-img {
             width: 40px;
             height: 40px;
-            background: linear-gradient(135deg, #1E2B6E, #2B4A8C);
+            object-fit: contain;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 800;
-            font-size: 18px;
+            background: white;
         }
         .partner-slogan {
             font-size: 11px;
@@ -166,21 +168,22 @@
         }
         @media (max-width: 768px) {
             .partner-badge { padding: 6px 14px 6px 12px; }
-            .partner-logo { width: 32px; height: 32px; font-size: 14px; }
+            .partner-logo-img { width: 32px; height: 32px; }
             .partner-slogan { font-size: 9px; max-width: 220px; }
         }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- Navigation - Logo supprimé -->
+    <!-- ==================== NAVIGATION AVEC LOGO PRO ==================== -->
     <nav class="glass-nav fixed top-0 w-full z-[100] h-20 flex items-center">
         <div class="max-w-7xl mx-auto px-6 md:px-10 w-full flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <div class="w-8 h-8 bg-gradient-to-br from-[#1E2B6E] to-[#2B4A8C] rounded-xl flex items-center justify-center shadow-sm">
-                    <span class="text-white text-xs font-black">DH</span>
-                </div>
-                <span class="font-extrabold text-xl tracking-tight text-slate-800">Data<span class="text-[#1E2B6E]">Home</span> Light</span>
+            <!-- Branding fort avec logo + texte -->
+            <div class="flex items-center gap-3">
+                <img src="images/logo-datahome.png" alt="Data-Home Light Logo" class="h-10 w-auto object-contain">
+                <span class="font-extrabold text-xl tracking-tight text-slate-800">
+                    Data<span class="text-[#1E2B6E]">Home</span> Light
+                </span>
             </div>
             <div class="hidden md:flex gap-8 text-sm font-semibold text-slate-600">
                 <a href="#problem" class="hover:text-[#1E2B6E] transition-colors" data-translate="nav_problem">Problématique</a>
@@ -444,11 +447,10 @@
         <div class="max-w-7xl mx-auto px-6 md:px-10">
             <div class="flex flex-col items-center justify-center text-center" data-aos="fade-up">
                 <div class="partner-badge">
-                        <img src="images/Habihub_wipe_bg.png" alt="HabiHub" class="partner-logo-img">
-                        <div class="partner-slogan">
-                            <strong data-translate="partner_name">HabiHub</strong><br>
-                            <span data-translate="partner_slogan">Grow your business through full digitalization of your sales processes and access to a vast New Build catalogue.</span>
-                        </div>
+                    <img src="images/Habihub_wipe_bg.png" alt="HabiHub" class="partner-logo-img">
+                    <div class="partner-slogan">
+                        <strong data-translate="partner_name">HabiHub</strong><br>
+                        <span data-translate="partner_slogan">Grow your business through full digitalization of your sales processes and access to a vast New Build catalogue.</span>
                     </div>
                 </div>
                 <p class="text-xs text-slate-400 mt-4" data-translate="partner_credit">Partenaire technologique officiel</p>
@@ -470,7 +472,7 @@
                     </thead>
                     <tbody class="divide-y divide-gray-100">
                         <tr><td class="p-6 font-bold" data-translate="table_speed">Vitesse</td><td class="p-6 text-[#1E2B6E] font-black" data-translate="table_speed_dhl">Moins d'1 seconde</td><td class="p-6 text-slate-400" data-translate="table_speed_trad">3 à 8 secondes</td></tr>
-                        <tr><td class="p-6 font-bold" data-translate="table_price">Prix</td><td class="p-6 text-[#1E2B6E] font-black" data-translate="table_price_dhl">50€/mois, tout inclus</td><td class="p-6 text-slate-400" data-translate="table_price_trad">150€ à 400$/mois</td></tr>
+                        <tr><td class="p-6 font-bold" data-translate="table_price">Prix</td><td class="p-6 text-[#1E2B6E] font-black" data-translate="table_price_dhl">50€/mois, tout inclus</td><td class="p-6 text-slate-400" data-translate="table_price_trad">150€ à 400€/mois</td></tr>
                         <tr><td class="p-6 font-bold" data-translate="table_launch">Lancement</td><td class="p-6 text-[#1E2B6E] font-black" data-translate="table_launch_dhl">En 48 heures</td><td class="p-6 text-slate-400" data-translate="table_launch_trad">4 à 12 semaines</td></tr>
                         <tr><td class="p-6 font-bold" data-translate="table_support">Support</td><td class="p-6 text-[#1E2B6E] font-black" data-translate="table_support_dhl">Contact direct</td><td class="p-6 text-slate-400" data-translate="table_support_trad">Tickets anonymes</td></tr>
                         <tr><td class="p-6 font-bold" data-translate="table_updates">Mises à jour</td><td class="p-6 text-[#1E2B6E] font-black" data-translate="table_updates_dhl">Gérées par nous</td><td class="p-6 text-slate-400" data-translate="table_updates_trad">À vos frais</td></tr>
@@ -541,13 +543,13 @@
     <footer class="bg-white border-t border-slate-100 py-12">
         <div class="max-w-7xl mx-auto px-6 md:px-10 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex items-center gap-2">
-                <div class="w-7 h-7 bg-gradient-to-br from-[#1E2B6E] to-[#2B4A8C] rounded-lg flex items-center justify-center"><span class="text-white text-[10px] font-black">DH</span></div>
+                <img src="images/logo-datahome.png" alt="Data-Home Logo" class="h-7 w-auto object-contain">
                 <span class="font-bold text-slate-800 text-sm ml-1" data-translate="footer_copyright">Data-Home Light — Performance & Modernité Immobilière</span>
             </div>
             <div class="flex gap-8 text-[11px] font-semibold uppercase tracking-wider text-slate-400">
-                <a href="legal.html" class="hover:text-slate-700" data-translate="footer_legal">Mentions légales</a>
-                <a href="privacy.html" class="hover:text-slate-700" data-translate="footer_privacy">Confidentialité</a>
-                <a href="support.html" class="hover:text-slate-700" data-translate="footer_support">Support 7j/7</a>
+                <a href="legal.html" class="hover:text-[#1E2B6E] transition-colors" data-translate="footer_legal">Mentions légales</a>
+                <a href="privacy.html" class="hover:text-[#1E2B6E] transition-colors" data-translate="footer_privacy">Confidentialité</a>
+                <a href="support.html" class="hover:text-[#1E2B6E] transition-colors" data-translate="footer_support">Support 7j/7</a>
             </div>
             <p class="text-[10px] text-slate-400">© 2026 — <span data-translate="footer_tag">La nouvelle ère des agences digitales</span></p>
         </div>
@@ -563,7 +565,7 @@
             else nav.classList.remove('shadow-sm', 'bg-white/95');
         });
 
-        // Traductions simplifiées
+        // ==================== TRADUCTIONS COMPLÈTES ====================
         const translations = {
             fr: {
                 nav_problem: "Problématique", nav_solution: "Solution", nav_features: "Fonctionnalités", nav_comparison: "Comparatif", nav_pricing: "Tarifs", nav_cta: "Réserver ma démo",
@@ -589,7 +591,7 @@
                 partner_name: "HabiHub", partner_slogan: "Grow your business through full digitalization of your sales processes and access to a vast New Build catalogue.", partner_credit: "Partenaire technologique officiel",
                 comparison_title: "Data-Home Light vs. Solution traditionnelle", comparison_subtitle: "Comparez les avantages.",
                 table_criterion: "Critère", table_dhl: "Data-Home Light", table_traditional: "Traditionnelle", table_speed: "Vitesse", table_speed_dhl: "< 1s", table_speed_trad: "3-8s",
-                table_price: "Prix", table_price_dhl: "50€/mois", table_price_trad: "150-400$/mois", table_launch: "Lancement", table_launch_dhl: "48h", table_launch_trad: "4-12 semaines",
+                table_price: "Prix", table_price_dhl: "50€/mois", table_price_trad: "150-400€/mois", table_launch: "Lancement", table_launch_dhl: "48h", table_launch_trad: "4-12 semaines",
                 table_support: "Support", table_support_dhl: "Direct", table_support_trad: "Tickets", table_updates: "Màj", table_updates_dhl: "Incluses", table_updates_trad: "Payantes",
                 table_seo: "SEO", table_seo_dhl: "Intégré", table_seo_trad: "Option payante",
                 pricing_title: "Investissement maxi", pricing_subtitle: "Performance sans surcoût.", pricing_dhl: "Data-Home Light", per_month: "/mois", pricing_desc: "Support inclus",
@@ -655,7 +657,7 @@
                 partner_name: "HabiHub", partner_slogan: "Grow your business through full digitalization of your sales processes and access to a vast New Build catalogue.", partner_credit: "Socio tecnológico oficial",
                 comparison_title: "Data-Home Light vs. Solución tradicional", comparison_subtitle: "Compare las ventajas.",
                 table_criterion: "Criterio", table_dhl: "Data-Home Light", table_traditional: "Tradicional", table_speed: "Velocidad", table_speed_dhl: "< 1s", table_speed_trad: "3-8s",
-                table_price: "Precio", table_price_dhl: "50€/mes", table_price_trad: "150-400$/mes", table_launch: "Lanzamiento", table_launch_dhl: "48h", table_launch_trad: "4-12 semanas",
+                table_price: "Precio", table_price_dhl: "50€/mes", table_price_trad: "150-400€/mes", table_launch: "Lanzamiento", table_launch_dhl: "48h", table_launch_trad: "4-12 semanas",
                 table_support: "Soporte", table_support_dhl: "Directo", table_support_trad: "Tickets", table_updates: "Actualiz.", table_updates_dhl: "Incluidas", table_updates_trad: "Pagas",
                 table_seo: "SEO", table_seo_dhl: "Integrado", table_seo_trad: "Opción pago",
                 pricing_title: "Máximo impacto", pricing_subtitle: "Rendimiento sin sobrecoste.", pricing_dhl: "Data-Home Light", per_month: "/mes", pricing_desc: "Soporte incluido",
@@ -669,7 +671,7 @@
         function setLanguage(lang) {
             document.querySelectorAll('[data-translate]').forEach(el => {
                 const key = el.getAttribute('data-translate');
-                if (translations[lang] && translations[lang][key]) {
+                if (translations[lang] && translations[lang][key] !== undefined) {
                     el.innerText = translations[lang][key];
                 }
             });
