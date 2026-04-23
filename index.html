@@ -181,11 +181,39 @@
         .form-highlight {
             animation: highlight-pulse 0.8s ease-out;
         }
+
+        /* Style du lien Experience */
+        .experience-link {
+            background: linear-gradient(135deg, #1E2B6E 0%, #2B4A8C 100%);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 40px;
+            font-size: 13px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 2px 8px rgba(30, 43, 110, 0.2);
+        }
+        .experience-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(30, 43, 110, 0.3);
+            background: linear-gradient(135deg, #2B4A8C 0%, #1E2B6E 100%);
+        }
+        .experience-link:active {
+            transform: translateY(0px);
+        }
+        @media (max-width: 768px) {
+            .experience-link { padding: 6px 14px; font-size: 11px; }
+            .experience-link span { display: none; }
+            .experience-link::before { content: "✨"; }
+        }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- ==================== NAVIGATION AVEC LOGO PRO ==================== -->
+    <!-- ==================== NAVIGATION AVEC LOGO PRO + LIEN EXPERIENCE ==================== -->
     <nav class="glass-nav fixed top-0 w-full z-[100] h-20 flex items-center">
         <div class="max-w-7xl mx-auto px-6 md:px-10 w-full flex justify-between items-center">
             <!-- Branding fort avec logo + texte -->
@@ -203,6 +231,10 @@
                 <a href="#pricing" class="hover:text-[#1E2B6E] transition-colors" data-translate="nav_pricing">Tarifs</a>
             </div>
             <div class="flex items-center gap-3">
+                <!-- NOUVEAU LIEN VERS EXPERIENCE.HTML -->
+                <a href="https://data-home.app/experience.html" target="_blank" class="experience-link" data-translate="experience_link">
+                    ✨ <span>Découvrir l'expérience</span>
+                </a>
                 <select id="languageSwitcher" class="lang-selector">
                     <option value="fr">🇫🇷 FR</option>
                     <option value="en">🇬🇧 EN</option>
@@ -600,6 +632,7 @@
         const translations = {
             fr: {
                 nav_problem: "Problématique", nav_solution: "Solution", nav_features: "Fonctionnalités", nav_comparison: "Comparatif", nav_pricing: "Tarifs", nav_cta: "Réserver ma démo",
+                experience_link: "✨ Découvrir l'expérience",
                 hero_badge: "✨ Offre limitée aux 10 premières agences", hero_title: "L'immobilier réinventé.", hero_desc: "La solution digitale nouvelle génération pour les agences immobilières.",
                 hero_btn1: "Découvrir l'offre →", hero_btn2: "En savoir plus", problem_badge: "d'abandon", problem_tag: "La problématique", problem_title: "Vos clients partent à cause de votre site.",
                 problem_desc: "53% des visiteurs quittent un site qui met plus de 3 secondes à charger.",
@@ -633,6 +666,7 @@
             },
             en: {
                 nav_problem: "Issue", nav_solution: "Solution", nav_features: "Features", nav_comparison: "Comparison", nav_pricing: "Pricing", nav_cta: "Book demo",
+                experience_link: "✨ Discover the experience",
                 hero_badge: "✨ Limited offer for first 10 agencies", hero_title: "Real estate reinvented.", hero_desc: "Next-gen digital solution for real estate agencies.",
                 hero_btn1: "Discover offer →", hero_btn2: "Learn more", problem_badge: "abandonment", problem_tag: "The Problem", problem_title: "Your clients leave because of your website.",
                 problem_desc: "53% of visitors leave a site that takes more than 3 seconds to load.",
@@ -666,6 +700,7 @@
             },
             es: {
                 nav_problem: "Problema", nav_solution: "Solución", nav_features: "Características", nav_comparison: "Comparativa", nav_pricing: "Precios", nav_cta: "Reservar demo",
+                experience_link: "✨ Descubrir la experiencia",
                 hero_badge: "✨ Oferta limitada primeras 10 agencias", hero_title: "Inmobiliario reinventado.", hero_desc: "Solución digital de nueva generación.",
                 hero_btn1: "Descubrir oferta →", hero_btn2: "Más info", problem_badge: "abandono", problem_tag: "El problema", problem_title: "Sus clientes se van por su sitio web.",
                 problem_desc: "53% abandonan sitios que tardan más de 3 segundos.",
