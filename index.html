@@ -1,776 +1,1548 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Data-Home Light | La solution digitale nouvelle génération pour les agences immobilières</title>
-    
-    <!-- ==================== FAVICON (Version PRO) ==================== -->
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
-    <link rel="apple-touch-icon" href="images/logo-datahome.png">
-    <link rel="icon" type="image/png" href="images/logo-datahome.png">
-    
-    <!-- Tailwind CSS + Fonts + AOS + Swiper -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #0a0c10; scroll-behavior: smooth; }
-        .glass-nav { background: rgba(255, 255, 255, 0.94); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(0, 0, 0, 0.03); transition: all 0.3s ease; }
-        .gradient-text { background: linear-gradient(125deg, #1E2B6E 0%, #2B4A8C 40%, #4A7AB5 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-        .btn-premium { transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02); }
-        .btn-premium:hover { transform: translateY(-3px); box-shadow: 0 20px 35px -12px rgba(30, 43, 110, 0.3); }
-        .card-elegant { background: #ffffff; border-radius: 2rem; border: 1px solid rgba(0, 0, 0, 0.04); transition: all 0.4s ease; }
-        .card-elegant:hover { transform: translateY(-8px); box-shadow: 0 35px 50px -20px rgba(0, 0, 0, 0.12); border-color: rgba(59, 91, 155, 0.2); }
-        @keyframes soft-float { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } }
-        .float-soft { animation: soft-float 5s ease-in-out infinite; }
-        .swiper-pagination-bullet-active { background: #1E2B6E !important; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="DataHome est une plateforme SaaS immobiliere modulaire pour creer, piloter et faire evoluer des sites d'agences avec import XML, dashboards, modules premium, CRM, chatbot IA et domaines personnalises.">
+  <title>DataHome | Plateforme SaaS immobiliere modulaire pour agences ambitieuses</title>
 
-        /* Langue selector */
-        .lang-selector {
-            background: rgba(255,255,255,0.95);
-            border-radius: 40px;
-            padding: 6px 12px;
-            font-size: 13px;
-            font-weight: 600;
-            border: 1px solid #e2e8f0;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-family: 'Inter', sans-serif;
-        }
-        .lang-selector:hover { border-color: #1E2B6E; background: #f8fafc; }
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+  <link rel="apple-touch-icon" href="images/logo-datahome.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
-        /* Style du conteneur smartphone */
-        .smartphone-container {
-            display: flex;
-            justify-content: center;
-            padding: 20px;
-            font-family: 'Inter', sans-serif;
-        }
-        .phone-frame {
-            width: 320px;
-            height: 600px;
-            background: #0f172a;
-            border-radius: 40px;
-            padding: 12px;
-            position: relative;
-            box-shadow: 0 50px 100px -20px rgba(0,0,0,0.3);
-            border: 4px solid #334155;
-            transform: scale(0.8);
-            transform-origin: top center;
-        }
-        .phone-screen {
-            width: 100%;
-            height: 100%;
-            background: white;
-            border-radius: 30px;
-            overflow-y: auto;
-            overflow-x: hidden;
-            padding: 40px 20px;
-            display: flex;
-            flex-direction: column;
-        }
-        .phone-header {
-            width: 60px;
-            height: 18px;
-            background: #0f172a;
-            border-radius: 0 0 15px 15px;
-            position: absolute;
-            top: 12px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        .zoho-input {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            font-size: 14px;
-            font-family: 'Inter', sans-serif;
-            outline: none;
-            transition: all 0.2s;
-        }
-        .zoho-input:focus {
-            border-color: #1E2B6E;
-            box-shadow: 0 0 0 3px rgba(30, 43, 110, 0.1);
-        }
-        .zoho-label {
-            font-size: 11px;
-            font-weight: 800;
-            color: #64748b;
-            text-transform: uppercase;
-            margin-left: 5px;
-            margin-bottom: 5px;
-            display: block;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-        .zoho-button {
-            background: #1E2B6E;
-            color: white;
-            padding: 16px;
-            border: none;
-            border-radius: 12px;
-            font-weight: 800;
-            width: 100%;
-            cursor: pointer;
-            transition: 0.3s;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 14px;
-            margin-top: 10px;
-        }
-        .zoho-button:hover { background: #2B4A8C; transform: translateY(-2px); }
-        .success-message, .error-message {
-            padding: 10px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            text-align: center;
-            margin-bottom: 15px;
-            display: none;
-        }
-        .success-message { background: #dcfce7; color: #166534; }
-        .error-message { background: #fee2e2; color: #991b1b; }
-        [data-translate] { transition: opacity 0.2s; }
+  <style>
+    :root {
+      --ink: #09111f;
+      --muted: #667085;
+      --soft: #f5f7fb;
+      --line: #e7edf5;
+      --blue: #2563eb;
+      --cyan: #06b6d4;
+      --violet: #8b5cf6;
+      --pink: #d946ef;
+      --gold: #d5ad45;
+      --green: #10b981;
+      --radius: 28px;
+      --shadow: 0 24px 70px rgba(15, 23, 42, 0.12);
+      --max: 1180px;
+    }
 
-        /* Partenaire HabiHub styles */
-        .partner-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-            border-radius: 60px;
-            padding: 8px 20px 8px 16px;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
-        }
-        .partner-logo-img {
-            width: 40px;
-            height: 40px;
-            object-fit: contain;
-            border-radius: 50%;
-            background: white;
-        }
-        .partner-slogan {
-            font-size: 11px;
-            color: #475569;
-            line-height: 1.3;
-            max-width: 280px;
-        }
-        .partner-slogan strong {
-            color: #1E2B6E;
-            font-weight: 800;
-        }
-        @media (max-width: 768px) {
-            .partner-badge { padding: 6px 14px 6px 12px; }
-            .partner-logo-img { width: 32px; height: 32px; }
-            .partner-slogan { font-size: 9px; max-width: 220px; }
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        /* Animation de surbrillance pour le formulaire */
-        @keyframes highlight-pulse {
-            0% { box-shadow: 0 0 0 0 rgba(30, 43, 110, 0.4); border-color: #1E2B6E; }
-            70% { box-shadow: 0 0 0 15px rgba(30, 43, 110, 0); border-color: #1E2B6E; }
-            100% { box-shadow: 0 0 0 0 rgba(30, 43, 110, 0); border-color: #1E2B6E; }
-        }
-        .form-highlight {
-            animation: highlight-pulse 0.8s ease-out;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        /* Style du lien Experience */
-        .experience-link {
-            background: linear-gradient(135deg, #1E2B6E 0%, #2B4A8C 100%);
-            color: white;
-            padding: 8px 18px;
-            border-radius: 40px;
-            font-size: 13px;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 2px 8px rgba(30, 43, 110, 0.2);
-        }
-        .experience-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(30, 43, 110, 0.3);
-            background: linear-gradient(135deg, #2B4A8C 0%, #1E2B6E 100%);
-        }
-        .experience-link:active {
-            transform: translateY(0px);
-        }
-        @media (max-width: 768px) {
-            .experience-link { padding: 6px 14px; font-size: 11px; }
-            .experience-link span { display: none; }
-            .experience-link::before { content: "✨"; }
-        }
-    </style>
+    body {
+      margin: 0;
+      background: #ffffff;
+      color: var(--ink);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(37, 99, 235, 0.10), transparent 28%),
+        radial-gradient(circle at 82% 10%, rgba(217, 70, 239, 0.10), transparent 30%),
+        linear-gradient(180deg, rgba(248, 250, 252, 0.4), rgba(255, 255, 255, 0));
+      z-index: -2;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #7c3aed;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.24em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      border-radius: 99px;
+      background: currentColor;
+    }
+
+    .section-title {
+      margin: 16px 0 18px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(38px, 5vw, 70px);
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      line-height: 0.98;
+    }
+
+    .section-copy {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: clamp(17px, 2vw, 20px);
+      line-height: 1.75;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.90);
+      border-bottom: 1px solid rgba(231, 237, 245, 0.9);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      min-height: 84px;
+      gap: 24px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      color: #202939;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .nav-links.right {
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      justify-self: center;
+      font-size: 32px;
+      font-weight: 900;
+      letter-spacing: -0.06em;
+    }
+
+    .brand img {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(135deg, #2563eb, #7c3aed 55%, #d946ef);
+      box-shadow: 0 18px 38px rgba(79, 70, 229, 0.24);
+    }
+
+    .btn-dark {
+      color: #fff;
+      background: var(--ink);
+      box-shadow: 0 18px 38px rgba(9, 17, 31, 0.20);
+    }
+
+    .btn-ghost {
+      color: var(--ink);
+      background: rgba(255, 255, 255, 0.68);
+      border-color: var(--line);
+    }
+
+    .hero {
+      padding: 64px 0 96px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.96fr) minmax(420px, 1.04fr);
+      min-height: 640px;
+      background: #f7f3ef;
+      border: 1px solid var(--line);
+      border-radius: 0 0 48px 48px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-media {
+      position: relative;
+      min-height: 580px;
+      background: #dbeafe;
+    }
+
+    .hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(9, 17, 31, 0.06), transparent);
+    }
+
+    .hero-content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(34px, 6vw, 84px);
+    }
+
+    .hero-kicker {
+      color: #705a42;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .hero h1 {
+      max-width: 650px;
+      margin: 26px 0;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(44px, 6vw, 82px);
+      font-weight: 600;
+      letter-spacing: -0.052em;
+      line-height: 0.96;
+    }
+
+    .hero p {
+      max-width: 610px;
+      color: #4b5565;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 44px;
+    }
+
+    .metric {
+      padding: 18px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      border-radius: 22px;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 25px;
+      letter-spacing: -0.06em;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 7px;
+      color: #697586;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.09em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    .vertical-note {
+      position: absolute;
+      right: 26px;
+      bottom: 42px;
+      color: rgba(9, 17, 31, 0.35);
+      writing-mode: vertical-rl;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+    }
+
+    section {
+      padding: 88px 0;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 44px;
+    }
+
+    .intro-card h3 {
+      margin: 0 0 16px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(28px, 3vw, 38px);
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      line-height: 1.12;
+    }
+
+    .intro-card p {
+      margin: 0;
+      color: #667085;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    .showcase {
+      background: linear-gradient(180deg, #f8fafc, #ffffff);
+      border-block: 1px solid var(--line);
+    }
+
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: 0.82fr 1.18fr;
+      gap: 46px;
+      align-items: center;
+      margin-top: 46px;
+    }
+
+    .dashboard-frame {
+      position: relative;
+      min-height: 560px;
+      padding: 24px;
+      border: 1px solid rgba(148, 163, 184, 0.28);
+      border-radius: 38px;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(240, 249, 255, 0.72)),
+        radial-gradient(circle at 80% 10%, rgba(217, 70, 239, 0.14), transparent 30%);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .dashboard-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .search-pill {
+      width: min(420px, 55%);
+      height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.82);
+    }
+
+    .avatar-row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .avatar-row span {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #dbeafe, #f5d0fe);
+      border: 1px solid #fff;
+    }
+
+    .workspace {
+      display: grid;
+      grid-template-columns: 220px 1fr 260px;
+      gap: 18px;
+    }
+
+    .sidebar, .activity, .panel, .mini-card {
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid rgba(226, 232, 240, 0.88);
+      border-radius: 24px;
+      box-shadow: 0 14px 36px rgba(15, 23, 42, 0.06);
+    }
+
+    .sidebar {
+      padding: 18px;
+    }
+
+    .sidebar strong {
+      display: block;
+      margin-bottom: 16px;
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .side-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 10px;
+      border-radius: 14px;
+      color: #344054;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .side-item.active {
+      color: #1d4ed8;
+      background: #eff6ff;
+    }
+
+    .dot {
+      width: 24px;
+      height: 24px;
+      border-radius: 9px;
+      background: linear-gradient(135deg, #60a5fa, #a78bfa);
+    }
+
+    .panel {
+      padding: 22px;
+      min-height: 420px;
+    }
+
+    .banner {
+      display: grid;
+      grid-template-columns: 1fr 240px;
+      gap: 16px;
+      align-items: center;
+      padding: 26px;
+      min-height: 160px;
+      border-radius: 26px;
+      background:
+        linear-gradient(115deg, rgba(219, 234, 254, 0.92), rgba(245, 208, 254, 0.82), rgba(254, 215, 170, 0.72));
+      overflow: hidden;
+    }
+
+    .banner h3 {
+      margin: 0 0 10px;
+      font-size: 27px;
+      letter-spacing: -0.04em;
+    }
+
+    .banner p {
+      margin: 0;
+      color: #475467;
+      line-height: 1.6;
+    }
+
+    .banner img {
+      height: 150px;
+      width: 240px;
+      object-fit: cover;
+      border-radius: 22px;
+      box-shadow: 0 18px 34px rgba(15, 23, 42, 0.16);
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .mini-card {
+      padding: 18px;
+    }
+
+    .mini-card small {
+      display: block;
+      color: #667085;
+      font-weight: 700;
+    }
+
+    .mini-card strong {
+      display: block;
+      margin-top: 14px;
+      font-size: 26px;
+      letter-spacing: -0.06em;
+    }
+
+    .activity {
+      padding: 22px;
+    }
+
+    .activity h4 {
+      margin: 0 0 18px;
+      font-size: 16px;
+    }
+
+    .activity-item {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .activity-item:last-child {
+      border-bottom: 0;
+    }
+
+    .activity-item b {
+      display: block;
+      font-size: 13px;
+    }
+
+    .activity-item span {
+      display: block;
+      margin-top: 4px;
+      color: #667085;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .features-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 36px;
+      margin-bottom: 40px;
+    }
+
+    .features-head .section-copy {
+      max-width: 520px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .feature-card {
+      position: relative;
+      min-height: 250px;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      background: linear-gradient(180deg, #ffffff, #f8fafc);
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 26px 60px rgba(15, 23, 42, 0.10);
+    }
+
+    .feature-card::after {
+      content: "";
+      position: absolute;
+      right: -70px;
+      bottom: -80px;
+      width: 160px;
+      height: 160px;
+      border-radius: 999px;
+      background: var(--tone, rgba(37, 99, 235, 0.12));
+    }
+
+    .icon {
+      display: grid;
+      place-items: center;
+      width: 52px;
+      height: 52px;
+      margin-bottom: 26px;
+      border-radius: 18px;
+      color: #fff;
+      background: var(--accent, #2563eb);
+      font-weight: 900;
+      box-shadow: 0 16px 32px rgba(37, 99, 235, 0.22);
+    }
+
+    .feature-card h3 {
+      position: relative;
+      z-index: 1;
+      margin: 0 0 12px;
+      font-size: 22px;
+      letter-spacing: -0.035em;
+    }
+
+    .feature-card p {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .flow {
+      background: #0b1020;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .flow .section-copy {
+      color: rgba(255, 255, 255, 0.68);
+    }
+
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+      margin-top: 46px;
+    }
+
+    .flow-step {
+      position: relative;
+      padding: 24px;
+      min-height: 230px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 28px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.035)),
+        radial-gradient(circle at 20% 0%, rgba(99, 102, 241, 0.34), transparent 34%);
+    }
+
+    .flow-step span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      margin-bottom: 44px;
+      border-radius: 50%;
+      color: #111827;
+      background: #fff;
+      font-weight: 900;
+    }
+
+    .flow-step h3 {
+      margin: 0 0 12px;
+      font-size: 18px;
+    }
+
+    .flow-step p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.64);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .templates {
+      background: #f7f3ef;
+    }
+
+    .template-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 44px;
+    }
+
+    .template-card {
+      overflow: hidden;
+      border: 1px solid rgba(120, 113, 108, 0.16);
+      border-radius: 34px;
+      background: #fff;
+      box-shadow: 0 20px 60px rgba(41, 37, 36, 0.09);
+    }
+
+    .template-card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+    }
+
+    .template-card .body {
+      padding: 24px;
+    }
+
+    .template-card small {
+      color: #a16207;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .template-card h3 {
+      margin: 10px 0 10px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 30px;
+      font-weight: 600;
+      letter-spacing: -0.04em;
+    }
+
+    .template-card p {
+      margin: 0;
+      color: #667085;
+      line-height: 1.65;
+    }
+
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 44px;
+      align-items: start;
+    }
+
+    .comparison {
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 18px 54px rgba(15, 23, 42, 0.08);
+    }
+
+    .comparison-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .comparison-row:last-child {
+      border-bottom: 0;
+    }
+
+    .comparison-row > div {
+      padding: 20px;
+      min-height: 76px;
+      border-right: 1px solid var(--line);
+      color: #475467;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .comparison-row > div:last-child {
+      border-right: 0;
+    }
+
+    .comparison-row.header > div {
+      color: #101828;
+      font-weight: 900;
+      background: #f8fafc;
+    }
+
+    .comparison-row .win {
+      color: #0f766e;
+      font-weight: 800;
+      background: rgba(240, 253, 250, 0.7);
+    }
+
+    .pricing {
+      background:
+        linear-gradient(180deg, rgba(248, 250, 252, 0.2), rgba(248, 250, 252, 1)),
+        radial-gradient(circle at 85% 20%, rgba(217, 70, 239, 0.12), transparent 30%);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      margin-top: 42px;
+    }
+
+    .pricing-card {
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      background: #fff;
+      box-shadow: 0 22px 60px rgba(15, 23, 42, 0.08);
+    }
+
+    .pricing-card.highlight {
+      color: #fff;
+      background:
+        linear-gradient(135deg, #08111f, #1d2b5b 48%, #5b21b6),
+        radial-gradient(circle at 70% 20%, rgba(255, 255, 255, 0.20), transparent 32%);
+    }
+
+    .pricing-card h3 {
+      margin: 0 0 10px;
+      font-size: 30px;
+      letter-spacing: -0.04em;
+    }
+
+    .pricing-card p {
+      margin: 0 0 24px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .pricing-card.highlight p {
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .module-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .module-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+      color: #475467;
+    }
+
+    .pricing-card.highlight .module-list li {
+      color: rgba(255, 255, 255, 0.78);
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+
+    .module-list b {
+      color: var(--ink);
+    }
+
+    .pricing-card.highlight .module-list b {
+      color: #fff;
+    }
+
+    .cta {
+      padding: 110px 0;
+      color: #fff;
+      background:
+        linear-gradient(90deg, rgba(9, 17, 31, 0.88), rgba(9, 17, 31, 0.38)),
+        url("images/img181.jpg") center/cover;
+    }
+
+    .cta-card {
+      max-width: 760px;
+    }
+
+    .cta h2 {
+      margin: 0 0 18px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(42px, 6vw, 74px);
+      font-weight: 600;
+      letter-spacing: -0.05em;
+      line-height: 0.98;
+    }
+
+    .cta p {
+      max-width: 620px;
+      margin: 0 0 28px;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .lead-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 12px;
+      max-width: 800px;
+      margin-top: 32px;
+      padding: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 26px;
+      background: rgba(255, 255, 255, 0.10);
+      backdrop-filter: blur(14px);
+    }
+
+    .lead-form input {
+      width: 100%;
+      min-height: 56px;
+      padding: 0 18px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 18px;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.12);
+      font: inherit;
+      outline: none;
+    }
+
+    .lead-form input::placeholder {
+      color: rgba(255, 255, 255, 0.58);
+    }
+
+    .lead-form button {
+      min-height: 56px;
+      border: 0;
+      cursor: pointer;
+    }
+
+    .form-message {
+      display: none;
+      margin-top: 14px;
+      color: #d1fae5;
+      font-weight: 700;
+    }
+
+    .site-footer {
+      padding: 62px 0;
+      border-top: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr repeat(3, 1fr);
+      gap: 44px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -0.06em;
+    }
+
+    .footer-logo img {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+    }
+
+    .site-footer p {
+      max-width: 320px;
+      margin: 0;
+      color: #667085;
+      line-height: 1.7;
+    }
+
+    .site-footer h4 {
+      margin: 0 0 18px;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .site-footer a {
+      display: block;
+      margin: 12px 0;
+      color: #667085;
+      font-size: 14px;
+    }
+
+    .site-footer a:hover {
+      color: var(--blue);
+    }
+
+    @media (max-width: 1100px) {
+      .nav {
+        grid-template-columns: 1fr;
+        padding: 14px 0;
+      }
+
+      .brand {
+        order: -1;
+      }
+
+      .nav-links, .nav-links.right {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      .hero-grid,
+      .showcase-grid,
+      .compare-grid,
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .workspace {
+        grid-template-columns: 190px 1fr;
+      }
+
+      .activity {
+        grid-column: 1 / -1;
+      }
+
+      .flow-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .container {
+        width: min(100% - 24px, var(--max));
+      }
+
+      .site-header {
+        position: relative;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .brand {
+        justify-self: start;
+        font-size: 26px;
+      }
+
+      .hero {
+        padding-top: 16px;
+      }
+
+      .hero-grid {
+        min-height: auto;
+        border-radius: 28px;
+      }
+
+      .hero-media {
+        min-height: 320px;
+      }
+
+      .hero-content {
+        padding: 28px;
+      }
+
+      .hero-metrics,
+      .intro-grid,
+      .feature-grid,
+      .template-grid,
+      .footer-grid,
+      .lead-form {
+        grid-template-columns: 1fr;
+      }
+
+      .vertical-note {
+        display: none;
+      }
+
+      section {
+        padding: 62px 0;
+      }
+
+      .features-head {
+        display: block;
+      }
+
+      .workspace {
+        grid-template-columns: 1fr;
+      }
+
+      .dashboard-frame {
+        padding: 14px;
+      }
+
+      .sidebar, .activity {
+        display: none;
+      }
+
+      .banner {
+        grid-template-columns: 1fr;
+      }
+
+      .banner img {
+        width: 100%;
+      }
+
+      .mini-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .flow-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .comparison-row {
+        grid-template-columns: 1fr;
+      }
+
+      .comparison-row > div {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .comparison-row > div:last-child {
+        border-bottom: 0;
+      }
+    }
+  </style>
 </head>
-<body class="antialiased">
 
-    <!-- ==================== NAVIGATION AVEC LOGO PRO + LIEN EXPERIENCE ==================== -->
-    <nav class="glass-nav fixed top-0 w-full z-[100] h-20 flex items-center">
-        <div class="max-w-7xl mx-auto px-6 md:px-10 w-full flex justify-between items-center">
-            <!-- Branding fort avec logo + texte -->
-            <div class="flex items-center gap-3">
-                <img src="images/data_home_landing.png" alt="Data-Home Light Logo" class="h-10 w-auto object-contain">
-                <span class="font-extrabold text-xl tracking-tight text-slate-800">
-                    Data<span class="text-[#1E2B6E]">Home</span> Light
-                </span>
-            </div>
-            <div class="hidden md:flex gap-8 text-sm font-semibold text-slate-600">
-                <a href="#problem" class="hover:text-[#1E2B6E] transition-colors" data-translate="nav_problem">Problématique</a>
-                <a href="#product" class="hover:text-[#1E2B6E] transition-colors" data-translate="nav_solution">Solution</a>
-                <a href="#features" class="hover:text-[#1E2B6E] transition-colors" data-translate="nav_features">Fonctionnalités</a>
-                <a href="#comparison" class="hover:text-[#1E2B6E] transition-colors" data-translate="nav_comparison">Comparatif</a>
-                <a href="#pricing" class="hover:text-[#1E2B6E] transition-colors" data-translate="nav_pricing">Tarifs</a>
-            </div>
-            <div class="flex items-center gap-3">
-                <!-- NOUVEAU LIEN VERS EXPERIENCE.HTML -->
-                <a href="https://data-home.app/experience.html" target="_blank" class="experience-link" data-translate="experience_link">
-                    ✨ <span>Découvrir l'expérience</span>
-                </a>
-                <select id="languageSwitcher" class="lang-selector">
-                    <option value="fr">🇫🇷 FR</option>
-                    <option value="en">🇬🇧 EN</option>
-                    <option value="es">🇪🇸 ES</option>
-                </select>
-                <a href="javascript:void(0);" onclick="scrollToForm()" class="bg-[#1E2B6E] text-white px-6 py-2.5 rounded-full text-sm font-bold btn-premium shadow-md" data-translate="nav_cta">Réserver ma démo</a>
-            </div>
-        </div>
-    </nav>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <nav class="nav-links" aria-label="Navigation principale">
+        <a href="#platform">Plateforme</a>
+        <a href="#features">Modules</a>
+        <a href="#workflow">Workflow</a>
+      </nav>
 
-    <!-- Hero Section -->
-    <section class="relative pt-36 pb-24 md:pt-44 md:pb-32 overflow-hidden bg-gradient-to-br from-slate-50 via-white to-white">
-        <div class="max-w-7xl mx-auto px-6 md:px-10">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div data-aos="fade-up" data-aos-duration="1000">
-                    <div class="inline-flex items-center gap-3 bg-white/90 backdrop-blur-sm border border-gray-200 shadow-sm px-5 py-2 rounded-full text-xs font-black tracking-wider text-[#1E2B6E] mb-6" data-translate="hero_badge">
-                        ✨ Offre limitée aux 10 premières agences
-                    </div>
-                    <h1 class="text-5xl md:text-7xl font-black leading-[1.1] tracking-tighter text-slate-900 mb-6">
-                        Data-Home Light<br>
-                        <span class="gradient-text" data-translate="hero_title">L'immobilier réinventé.</span>
-                    </h1>
-                    <p class="text-lg text-slate-500 max-w-lg mb-8 leading-relaxed" data-translate="hero_desc">
-                        La solution digitale nouvelle génération pour les agences immobilières qui veulent convertir plus de visiteurs en mandats — sans effort technique.
-                    </p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="javascript:void(0);" onclick="scrollToForm()" class="bg-slate-900 text-white px-8 py-4 rounded-full font-bold text-base btn-premium inline-flex items-center gap-2 shadow-lg" data-translate="hero_btn1">
-                            Découvrir l'offre →
-                        </a>
-                        <a href="#product" class="border border-slate-300 bg-white text-slate-700 px-8 py-4 rounded-full font-semibold text-base btn-premium" data-translate="hero_btn2">
-                            En savoir plus
-                        </a>
-                    </div>
-                </div>
-                <div class="relative" data-aos="zoom-in" data-aos-duration="1100">
-                    <div class="bg-gradient-to-br from-[#1E2B6E]/5 to-transparent rounded-3xl p-4">
-                        <img src="images/hero-villa.jpg" alt="Villa moderne avec piscine - Data-Home Light" class="rounded-2xl shadow-2xl border-8 border-white float-soft w-full object-cover h-80 md:h-auto">
-                    </div>
-                    <div class="absolute -bottom-5 -left-5 bg-white rounded-2xl shadow-xl px-5 py-3 backdrop-blur-sm border border-gray-100">
-                        <div class="text-xs font-bold text-slate-500">PageSpeed Score</div>
-                        <div class="text-2xl font-black text-[#1E2B6E]">98<span class="text-sm">/100</span></div>
-                    </div>
-                </div>
+      <a class="brand" href="#" aria-label="DataHome accueil">
+        <img src="images/logo-icon.webp" alt="">
+        <span>DataHome</span>
+      </a>
+
+      <nav class="nav-links right" aria-label="Navigation secondaire">
+        <a href="#templates">Templates</a>
+        <a href="#pricing">Tarifs</a>
+        <a class="btn btn-dark" href="#contact">Demander une demo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-media">
+            <img src="images/hero-villa.jpg" alt="Villa contemporaine avec piscine et vue mer">
+          </div>
+
+          <div class="hero-content">
+            <span class="eyebrow">SaaS immobilier modulaire</span>
+            <h1 id="hero-title">Des sites d'agence qui se pilotent comme une plateforme.</h1>
+            <p class="hero-kicker">DataHome transforme chaque agence immobiliere en marque digitale premium : site vitrine, catalogue XML, CRM leads, modules payants, domaines personnalises et tableaux de bord client/admin.</p>
+            <p>La difference : vous ne livrez pas simplement une belle page. Vous activez un systeme vivant, capable de synchroniser des milliers de biens, de personnaliser chaque experience et de faire evoluer l'agence module par module.</p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="onboarding.html">Lancer une pre-inscription</a>
+              <a class="btn btn-ghost" href="#platform">Voir la plateforme</a>
             </div>
+
+            <div class="hero-metrics" aria-label="Points forts DataHome">
+              <div class="metric">
+                <strong>15 jours</strong>
+                <span>essai premium encadre</span>
+              </div>
+              <div class="metric">
+                <strong>2 500+</strong>
+                <span>biens XML gerables</span>
+              </div>
+              <div class="metric">
+                <strong>20/j</strong>
+                <span>requêtes IA par agence</span>
+              </div>
+            </div>
+
+            <span class="vertical-note">Sites, modules et donnees reunis dans un seul produit SaaS</span>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Problem Section -->
-    <section id="problem" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6 md:px-10">
-            <div class="grid lg:grid-cols-2 gap-20 items-center">
-                <div class="order-2 lg:order-1" data-aos="fade-right">
-                    <div class="relative">
-                        <img src="images/problem-illustration.jpg" alt="Utilisateur frustré par un site lent" class="rounded-2xl shadow-xl border border-gray-200 w-full h-80 object-cover">
-                        <div class="absolute -bottom-6 -left-6 bg-[#1E2B6E] text-white p-5 rounded-2xl shadow-2xl">
-                            <div class="text-4xl font-black">53%</div>
-                            <div class="text-[10px] font-bold uppercase tracking-wider" data-translate="problem_badge">d'abandon</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="order-1 lg:order-2" data-aos="fade-left">
-                    <span class="text-[#1E2B6E] font-black tracking-[0.2em] text-xs uppercase bg-indigo-50 px-4 py-1.5 rounded-full" data-translate="problem_tag">La problématique</span>
-                    <h2 class="text-4xl md:text-5xl font-extrabold mt-6 mb-6 tracking-tight" data-translate="problem_title">Vos clients partent à cause de votre site.</h2>
-                    <p class="text-slate-500 text-lg mb-8 leading-relaxed" data-translate="problem_desc">
-                        53% des visiteurs quittent un site qui met plus de 3 secondes à charger. En immobilier, chaque seconde perdue peut vous coûter un mandat, une visite ou un prospect qualifié.
-                    </p>
-                    <div class="space-y-4">
-                        <div class="flex gap-4 p-5 bg-red-50/40 rounded-2xl border border-red-100">
-                            <span class="text-red-500 text-xl font-bold">✕</span>
-                            <span class="font-semibold text-slate-700" data-translate="problem_item1">Trop lent au chargement : vos prospects partent avant de voir vos biens</span>
-                        </div>
-                        <div class="flex gap-4 p-5 bg-red-50/40 rounded-2xl border border-red-100">
-                            <span class="text-red-500 text-xl font-bold">✕</span>
-                            <span class="font-semibold text-slate-700" data-translate="problem_item2">Design obsolète : une image de marque qui n'inspire plus confiance</span>
-                        </div>
-                        <div class="flex gap-4 p-5 bg-red-50/40 rounded-2xl border border-red-100">
-                            <span class="text-red-500 text-xl font-bold">✕</span>
-                            <span class="font-semibold text-slate-700" data-translate="problem_item3">Trop peu de contacts : votre site n'encourage pas assez la prise de rendez-vous</span>
-                        </div>
-                        <div class="flex gap-4 p-5 bg-red-50/40 rounded-2xl border border-red-100">
-                            <span class="text-red-500 text-xl font-bold">✕</span>
-                            <span class="font-semibold text-slate-700" data-translate="problem_item4">Mauvaise expérience mobile : la majorité de vos visiteurs abandonnent sur smartphone</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section aria-labelledby="vision-title">
+      <div class="container">
+        <div class="intro-grid">
+          <article class="intro-card">
+            <h3>Un site vitrine n'est plus suffisant.</h3>
+            <p>Une agence doit publier vite, rassurer, capter les leads, connecter ses flux, gerer ses modules et garder la main sur son identite visuelle sans redevenir dependante d'un developpeur.</p>
+          </article>
+
+          <article class="intro-card">
+            <h3>Chaque agence devient parametrable.</h3>
+            <p>Couleurs, typographies, templates, hero image ou video, grille des biens, arrondis, icones, langues, footer, equipe, domaines et modules sont ajustes depuis les dashboards.</p>
+          </article>
+
+          <article class="intro-card">
+            <h3>Le modele SaaS reste sous controle.</h3>
+            <p>Les imports XML et les modules sensibles restent administres depuis AgencyDashboard, pendant que le client personnalise son espace dans un cadre clair et securise.</p>
+          </article>
         </div>
+      </div>
     </section>
 
-    <!-- Product Overview -->
-    <section id="product" class="py-24 bg-slate-50/40">
-        <div class="max-w-7xl mx-auto px-6 md:px-10 text-center mb-16">
-            <div data-aos="fade-up">
-                <span class="text-[#1E2B6E] font-black tracking-[0.25em] text-xs uppercase" data-translate="product_tag">Aperçu produit</span>
-                <h3 class="text-4xl md:text-6xl font-black mt-4 mb-6 tracking-tighter"><span data-translate="product_title">Data-Home Light: </span><span class="gradient-text" data-translate="product_subtitle">Le moteur immobilier le plus rapide</span></h3>
-                <p class="text-slate-500 max-w-2xl mx-auto text-lg" data-translate="product_desc">Une solution conçue pour afficher vos biens instantanément, élever votre image de marque et transformer plus de visiteurs en leads qualifiés.</p>
+    <section id="platform" class="showcase" aria-labelledby="platform-title">
+      <div class="container">
+        <span class="eyebrow">Produit</span>
+        <h2 id="platform-title" class="section-title">Un cockpit complet pour les agences premium.</h2>
+        <p class="section-copy">DataHome reunit le meilleur d'un site immobilier haut de gamme, d'un back-office agence et d'une plateforme de modules. L'agence ne recoit pas un template fige : elle recoit un espace vivant.</p>
+
+        <div class="showcase-grid">
+          <div>
+            <h3 class="section-title" style="font-size: clamp(34px, 4vw, 52px);">Deux dashboards, une seule logique.</h3>
+            <p class="section-copy">AgencyDashboard controle la creation, les publications, les demandes premium, les flux XML, les domaines et les modules. ClientDashboard donne au client une interface claire pour personnaliser son site, suivre ses leads et activer de nouveaux services.</p>
+            <div class="hero-actions">
+              <a class="btn btn-dark" href="#features">Explorer les modules</a>
+              <a class="btn btn-ghost" href="experience.html">Voir l'experience</a>
             </div>
+          </div>
+
+          <div class="dashboard-frame" aria-label="Apercu de dashboard DataHome">
+            <div class="dashboard-top">
+              <div class="search-pill"></div>
+              <div class="avatar-row"><span></span><span></span><span></span></div>
+            </div>
+
+            <div class="workspace">
+              <aside class="sidebar">
+                <strong>DataHome</strong>
+                <div class="side-item active"><span class="dot"></span> Dashboard</div>
+                <div class="side-item"><span class="dot" style="background: linear-gradient(135deg,#10b981,#34d399);"></span> Biens XML</div>
+                <div class="side-item"><span class="dot" style="background: linear-gradient(135deg,#f59e0b,#f97316);"></span> Modules</div>
+                <div class="side-item"><span class="dot" style="background: linear-gradient(135deg,#d946ef,#8b5cf6);"></span> Domaine</div>
+                <div class="side-item"><span class="dot" style="background: linear-gradient(135deg,#0ea5e9,#2563eb);"></span> Settings</div>
+              </aside>
+
+              <div class="panel">
+                <div class="banner">
+                  <div>
+                    <h3>Bienvenue dans votre espace</h3>
+                    <p>Configurez le site, publiez les biens, suivez les leads et activez les modules premium.</p>
+                  </div>
+                  <img src="images/img243.jpg" alt="Illustration d'un workspace immobilier">
+                </div>
+
+                <div class="mini-grid">
+                  <div class="mini-card"><small>Biens</small><strong>2 548</strong></div>
+                  <div class="mini-card"><small>Leads</small><strong>64</strong></div>
+                  <div class="mini-card"><small>Langues</small><strong>8</strong></div>
+                  <div class="mini-card"><small>Modules</small><strong>7</strong></div>
+                </div>
+              </div>
+
+              <aside class="activity">
+                <h4>Activite recente</h4>
+                <div class="activity-item"><span class="dot"></span><div><b>Flux XML synchronise</b><span>Le catalogue agence vient d'etre mis a jour.</span></div></div>
+                <div class="activity-item"><span class="dot" style="background:linear-gradient(135deg,#f59e0b,#f97316);"></span><div><b>Module demande</b><span>Le client souhaite activer le chatbot IA.</span></div></div>
+                <div class="activity-item"><span class="dot" style="background:linear-gradient(135deg,#10b981,#34d399);"></span><div><b>Domaine pret</b><span>Les instructions DNS sont disponibles.</span></div></div>
+              </aside>
+            </div>
+          </div>
         </div>
-        <div class="max-w-7xl mx-auto px-6 md:px-10 grid md:grid-cols-4 gap-6">
-            <div class="card-elegant p-6 text-center" data-aos="flip-up">
-                <div class="text-4xl font-black text-[#1E2B6E] mb-2">3x</div>
-                <div class="font-bold text-slate-800" data-translate="stat1">plus rapide</div>
-                <div class="text-xs text-slate-400 mt-1" data-translate="stat1_sub">vs solutions standards</div>
-            </div>
-            <div class="card-elegant p-6 text-center" data-aos="flip-up" data-aos-delay="100">
-                <div class="text-4xl font-black text-[#1E2B6E] mb-2">98%</div>
-                <div class="font-bold text-slate-800" data-translate="stat2">Satisfaction client</div>
-                <div class="text-xs text-slate-400 mt-1" data-translate="stat2_sub">agences recommandent</div>
-            </div>
-            <div class="card-elegant p-6 text-center" data-aos="flip-up" data-aos-delay="200">
-                <div class="text-4xl font-black text-[#1E2B6E] mb-2">48h</div>
-                <div class="font-bold text-slate-800" data-translate="stat3">Déploiement</div>
-                <div class="text-xs text-slate-400 mt-1" data-translate="stat3_sub">mise en ligne express</div>
-            </div>
-            <div class="card-elegant p-6 text-center" data-aos="flip-up" data-aos-delay="300">
-                <div class="text-4xl font-black text-[#1E2B6E] mb-2">100%</div>
-                <div class="font-bold text-slate-800" data-translate="stat4">Zero maintenance</div>
-                <div class="text-xs text-slate-400 mt-1" data-translate="stat4_sub">nous gérons la technique</div>
-            </div>
-        </div>
-        <div class="max-w-7xl mx-auto px-6 md:px-10 mt-16 grid md:grid-cols-2 gap-12">
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100" data-aos="fade-right">
-                <div class="text-3xl mb-4">⚡</div>
-                <h4 class="text-xl font-extrabold mb-2" data-translate="feature_speed_title">Vitesse</h4>
-                <p class="text-slate-500" data-translate="feature_speed_desc">Infrastructure conçue pour traiter des milliers d'annonces en temps réel sans ralentissement.</p>
-            </div>
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100" data-aos="fade-left">
-                <div class="text-3xl mb-4">✨</div>
-                <h4 class="text-xl font-extrabold mb-2" data-translate="feature_design_title">Design Premium</h4>
-                <p class="text-slate-500" data-translate="feature_design_desc">Une interface moderne qui élève l'image de votre marque et inspire confiance.</p>
-            </div>
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100" data-aos="fade-right" data-aos-delay="100">
-                <div class="text-3xl mb-4">🔧</div>
-                <h4 class="text-xl font-extrabold mb-2" data-translate="feature_maintenance_title">Zéro maintenance</h4>
-                <p class="text-slate-500" data-translate="feature_maintenance_desc">Nous gérons toute la technologie. Vous gérez vos clients.</p>
-            </div>
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100" data-aos="fade-left" data-aos-delay="100">
-                <div class="text-3xl mb-4">📈</div>
-                <h4 class="text-xl font-extrabold mb-2" data-translate="feature_seo_title">Visibilité Google</h4>
-                <p class="text-slate-500" data-translate="feature_seo_desc">Architecture optimisée pour le SEO dès le premier jour.</p>
-            </div>
-        </div>
+      </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6 md:px-10">
-            <div class="grid lg:grid-cols-2 gap-16 items-center mb-24">
-                <div data-aos="fade-right">
-                    <span class="text-[#1E2B6E] font-black tracking-[0.2em] text-xs uppercase" data-translate="speed_tag">Lightning speed</span>
-                    <h3 class="text-4xl md:text-5xl font-extrabold mt-4 mb-6" data-translate="speed_title">Temps de charge zéro</h3>
-                    <p class="text-slate-500 text-lg mb-6" data-translate="speed_desc">Une expérience conçue pour afficher vos biens instantanément, sur tous les écrans.</p>
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-4 p-4 bg-slate-50 rounded-xl">
-                            <div class="w-12 h-12 bg-[#1E2B6E]/10 rounded-full flex items-center justify-center text-[#1E2B6E] font-bold">>95</div>
-                            <div><span class="font-bold" data-translate="speed_item1_title">Google PageSpeed Score</span><p class="text-sm text-slate-500" data-translate="speed_item1_desc">Performance technique excellente.</p></div>
-                        </div>
-                        <div class="flex items-center gap-4 p-4 bg-slate-50 rounded-xl">
-                            <div class="w-12 h-12 bg-[#1E2B6E]/10 rounded-full flex items-center justify-center text-[#1E2B6E] text-xl">&lt;1s</div>
-                            <div><span class="font-bold" data-translate="speed_item2_title">Charge en moins d'1 seconde</span><p class="text-sm text-slate-500" data-translate="speed_item2_desc">Contenu instantané.</p></div>
-                        </div>
-                        <div class="flex items-center gap-4 p-4 bg-slate-50 rounded-xl">
-                            <div class="w-12 h-12 bg-[#1E2B6E]/10 rounded-full flex items-center justify-center text-[#1E2B6E] text-xl">📱</div>
-                            <div><span class="font-bold" data-translate="speed_item3_title">Optimisé mobile & desktop</span><p class="text-sm text-slate-500" data-translate="speed_item3_desc">Navigation fluide.</p></div>
-                        </div>
-                    </div>
-                </div>
-                <div data-aos="zoom-in">
-                    <img src="images/speed-metrics.jpg" alt="Mockup mobile" class="rounded-2xl shadow-xl w-full h-auto">
-                </div>
-            </div>
-
-            <div class="grid lg:grid-cols-2 gap-16 items-center mt-24">
-                <div class="order-2 lg:order-1" data-aos="fade-right">
-                    <img src="images/premium-design.jpg" alt="Design premium" class="rounded-2xl shadow-xl w-full h-80 object-cover">
-                </div>
-                <div class="order-1 lg:order-2" data-aos="fade-left">
-                    <span class="text-[#1E2B6E] font-black tracking-[0.2em] text-xs uppercase" data-translate="design_tag">Design Premium</span>
-                    <h3 class="text-4xl md:text-5xl font-extrabold mt-4 mb-6" data-translate="design_title">Une image de marque à la hauteur de vos ambitions</h3>
-                    <div class="bg-slate-50 p-6 rounded-xl mb-4">
-                        <div class="font-bold text-slate-800 mb-2" data-translate="design_item1_title">✨ La première impression compte</div>
-                        <p class="text-slate-500 text-sm" data-translate="design_item1_desc">Votre site web est souvent le premier contact. Un design épuré inspire confiance.</p>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-xl">
-                        <div class="font-bold text-slate-800 mb-2" data-translate="design_item2_title">🎨 Design personnalisé et cohérent</div>
-                        <p class="text-slate-500 text-sm" data-translate="design_item2_desc">Vos couleurs, logo, identité intégrés.</p>
-                    </div>
-                </div>
-            </div>
+    <section id="features" aria-labelledby="features-title">
+      <div class="container">
+        <div class="features-head">
+          <div>
+            <span class="eyebrow">Fonctionnalites</span>
+            <h2 id="features-title" class="section-title">Plus flexible qu'un site. Plus precis qu'un simple CRM.</h2>
+          </div>
+          <p class="section-copy">Chaque fonctionnalite correspond a un vrai besoin rencontre dans le projet : onboarding, publication, imports, langues, modules, essais, domaines, leads et personnalisation avancee.</p>
         </div>
+
+        <div class="feature-grid">
+          <article class="feature-card" style="--accent:#2563eb; --tone:rgba(37,99,235,.14);">
+            <div class="icon">01</div>
+            <h3>Sites agences personnalisables</h3>
+            <p>Templates, couleurs, polices, hero image ou video, grilles 3/4 colonnes, vignettes rondes ou carrees, couleur des icones et footer configurable.</p>
+          </article>
+
+          <article class="feature-card" style="--accent:#0ea5e9; --tone:rgba(14,165,233,.14);">
+            <div class="icon">02</div>
+            <h3>Import XML administre</h3>
+            <p>L'association du flux XML reste dans AgencyDashboard, afin de garantir que les biens d'une agence ne se melangent jamais avec ceux d'une autre.</p>
+          </article>
+
+          <article class="feature-card" style="--accent:#10b981; --tone:rgba(16,185,129,.14);">
+            <div class="icon">03</div>
+            <h3>Property Manager</h3>
+            <p>Un espace client pour gerer les biens, ajouter ventes et locations, enrichir les details, photos, videos et futures experiences immersives.</p>
+          </article>
+
+          <article class="feature-card" style="--accent:#d946ef; --tone:rgba(217,70,239,.14);">
+            <div class="icon">04</div>
+            <h3>Chatbot IA immobilier</h3>
+            <p>Le chatbot propose des proprietes selon les criteres du visiteur, avec une limite agence/jour pour garder les couts et la qualite sous controle.</p>
+          </article>
+
+          <article class="feature-card" style="--accent:#f59e0b; --tone:rgba(245,158,11,.14);">
+            <div class="icon">05</div>
+            <h3>Mini CRM Leads</h3>
+            <p>Les contacts issus du site et du chatbot remontent dans un espace leads simple, inclus comme module gratuit pour donner de la valeur immediate.</p>
+          </article>
+
+          <article class="feature-card" style="--accent:#7c3aed; --tone:rgba(124,58,237,.14);">
+            <div class="icon">06</div>
+            <h3>Modules et monetisation</h3>
+            <p>Chatbot, langues supplementaires, SEO, video hero, visites AR, modules futurs : l'agence peut evoluer sans reconstruire tout son site.</p>
+          </article>
+
+          <article class="feature-card" style="--accent:#14b8a6; --tone:rgba(20,184,166,.14);">
+            <div class="icon">07</div>
+            <h3>Onboarding premium</h3>
+            <p>Pre-inscription, OTP, essai de 15 jours, configuration guidee, publication par l'admin et e-mails de bienvenue dans la langue de l'agence.</p>
+          </article>
+
+          <article class="feature-card" style="--accent:#f43f5e; --tone:rgba(244,63,94,.14);">
+            <div class="icon">08</div>
+            <h3>Domaine personnalise</h3>
+            <p>Le domaine peut etre ajoute depuis les dashboards, configure dans Vercel et accompagne d'instructions DNS envoyees au client.</p>
+          </article>
+
+          <article class="feature-card" style="--accent:#111827; --tone:rgba(17,24,39,.10);">
+            <div class="icon">09</div>
+            <h3>Langues et SEO</h3>
+            <p>Contenus et fiches biens utilisent la langue de l'URL, avec descriptions multilingues et module SEO prevu pour renforcer la visibilite.</p>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <!-- Simplicité + Formulaire Smartphone Zoho CRM + Partenaire HabiHub -->
-    <section class="py-24 bg-slate-50/40" id="contactFormSection">
-        <div class="max-w-7xl mx-auto px-6 md:px-10">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <!-- Bloc texte simplicité -->
-                <div data-aos="fade-right">
-                    <span class="text-[#1E2B6E] font-black tracking-[0.2em] text-xs uppercase" data-translate="simplicity_tag">Simplicité totale</span>
-                    <h3 class="text-4xl md:text-5xl font-extrabold mt-4 mb-6" data-translate="simplicity_title">Gérez vos biens, <br>nous gérons le reste.</h3>
-                    <p class="text-slate-500 text-lg mb-8" data-translate="simplicity_desc">Une solution simple et intuitive à la portée de tous. Aucune compétence technique requise.</p>
-                    <div class="grid grid-cols-2 gap-5">
-                        <div class="flex gap-3 items-start"><span class="text-2xl">📋</span><div><span class="font-bold" data-translate="simpl_item1">Diffusion 1 clic</span><p class="text-sm text-slate-500" data-translate="simpl_item1_desc">Publiez vos biens rapidement</p></div></div>
-                        <div class="flex gap-3 items-start"><span class="text-2xl">🔄</span><div><span class="font-bold" data-translate="simpl_item2">Màj automatiques</span><p class="text-sm text-slate-500" data-translate="simpl_item2_desc">Annonces toujours à jour</p></div></div>
-                        <div class="flex gap-3 items-start"><span class="text-2xl">💬</span><div><span class="font-bold" data-translate="simpl_item3">Support 7j/7</span><p class="text-sm text-slate-500" data-translate="simpl_item3_desc">Équipe dédiée</p></div></div>
-                        <div class="flex gap-3 items-start"><span class="text-2xl">🎯</span><div><span class="font-bold" data-translate="simpl_item4">Zéro code</span><p class="text-sm text-slate-500" data-translate="simpl_item4_desc">100% intuitif</p></div></div>
-                    </div>
-                    <div class="mt-8">
-                        <img src="images/simplicity-ui.jpg" alt="Utilisateur souriant" class="rounded-2xl shadow-xl w-full h-auto">
-                    </div>
-                </div>
+    <section id="workflow" class="flow" aria-labelledby="workflow-title">
+      <div class="container">
+        <span class="eyebrow" style="color:#93c5fd;">Workflow</span>
+        <h2 id="workflow-title" class="section-title">Du premier formulaire au site publie.</h2>
+        <p class="section-copy">Le parcours est pense pour eviter le chaos habituel : le client configure ce qu'il doit configurer, l'admin garde la main sur ce qui engage la plateforme.</p>
 
-                <!-- Smartphone Container avec formulaire Zoho CRM -->
-                <div data-aos="fade-left" data-aos-delay="100" id="contactForm">
-                    <div class="smartphone-container">
-                        <div class="phone-frame">
-                            <div class="phone-header"></div>
-                            <div class="phone-screen">
-                                <h3 style="text-align:center; margin-bottom: 20px; font-weight: 900;" data-translate="phone_title">Data-Home</h3>
-                                
-                                <div id="formSuccessMsg" class="success-message" data-translate="success_msg">✅ Merci ! Votre demande a bien été envoyée.</div>
-                                <div id="formErrorMsg" class="error-message" data-translate="error_msg">⚠️ Une erreur est survenue. Veuillez réessayer.</div>
-
-                                <form action='https://crm.zoho.eu/crm/WebToLeadForm' method='POST' accept-charset='UTF-8' id="zohoLeadForm">
-                                    <input type='text' style='display:none;' name='xnQsjsdp' value='c28f4a34f99ed41057ad92aa9fe0d2b49ec3fa251d9b74d3442c043573db6c9d'>
-                                    <input type='text' style='display:none;' name='xmIwtLD' value='c35214469d1043fb02a1ffdc1a3868dc4f81f2d2f7467fd58dc55ceed8659f0e96c16b332fc29b12d959a4ef3eb60f69'>
-                                    <input type='text' style='display:none;' name='actionType' value='TGVhZHM='>
-                                    <input type='text' style='display:none;' name='returnURL' value='https://data-home.app'>
-
-                                    <label class="zoho-label" data-translate="form_name">Nom <span style="color:red">*</span></label>
-                                    <input type='text' name='Last Name' class="zoho-input" placeholder="Dupont" required>
-
-                                    <label class="zoho-label" data-translate="form_email">E-mail professionnel</label>
-                                    <input type='email' name='Email' class="zoho-input" placeholder="contact@agence.fr" required>
-
-                                    <button type='submit' class="zoho-button" data-translate="form_submit">Recevoir mon audit</button>
-                                </form>
-                                
-                                <p style="font-size: 10px; color: #94a3b8; text-align: center; margin-top: 20px;" data-translate="form_footer">
-                                    © 2026 Data-Home - Sécurisé par Zoho CRM
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="flow-grid">
+          <article class="flow-step">
+            <span>1</span>
+            <h3>Pre-inscription</h3>
+            <p>Le client arrive sur l'onboarding, recoit son OTP et demarre une demande premium sans toucher au slug ni au flux XML.</p>
+          </article>
+          <article class="flow-step">
+            <span>2</span>
+            <h3>Configuration guidee</h3>
+            <p>Logo, hero, couleurs, langues, footer, equipe et style sont completes dans un parcours clair avec progression.</p>
+          </article>
+          <article class="flow-step">
+            <span>3</span>
+            <h3>Validation admin</h3>
+            <p>AgencyDashboard relie le flux XML, verifie les modules, publie le site et declenche les e-mails utiles.</p>
+          </article>
+          <article class="flow-step">
+            <span>4</span>
+            <h3>Mise en ligne</h3>
+            <p>Le site agence est accessible sur l'URL DataHome, puis peut recevoir un domaine personnalise avec instructions DNS.</p>
+          </article>
+          <article class="flow-step">
+            <span>5</span>
+            <h3>Croissance modulaire</h3>
+            <p>L'agence active progressivement chatbot, langues, SEO, locations, video, AR et autres modules selon ses besoins reels.</p>
+          </article>
         </div>
+      </div>
     </section>
 
-    <!-- Section Partenaire HabiHub -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-6 md:px-10">
-            <div class="flex flex-col items-center justify-center text-center" data-aos="fade-up">
-                <div class="partner-badge">
-                    <img src="images/Habihub_wipe_bg.png" alt="HabiHub" class="partner-logo-img">
-                    <div class="partner-slogan">
-                        <strong data-translate="partner_name">HabiHub</strong><br>
-                        <span data-translate="partner_slogan">Grow your business through full digitalization of your sales processes and access to a vast New Build catalogue.</span>
-                    </div>
-                </div>
-                <p class="text-xs text-slate-400 mt-4" data-translate="partner_credit">Partenaire technologique officiel</p>
+    <section id="templates" class="templates" aria-labelledby="templates-title">
+      <div class="container">
+        <span class="eyebrow">Design system agence</span>
+        <h2 id="templates-title" class="section-title">Des templates utiles, pas des vitrines figees.</h2>
+        <p class="section-copy">Les styles predéfinis servent de point de depart. Ensuite, l'agence conserve sa liberte : typographies, couleurs, formes, image, video, sections et affichage des biens.</p>
+
+        <div class="template-grid">
+          <article class="template-card">
+            <img src="images/img61.jpg" alt="Villa moderne pour template clair">
+            <div class="body">
+              <small>Luxe clair</small>
+              <h3>Elegance lumineuse</h3>
+              <p>Fond clair, accent or doux, cartes elegantes et presentation premium pour agences haut de gamme.</p>
             </div>
+          </article>
+
+          <article class="template-card">
+            <img src="images/img216.jpg" alt="Villa avec piscine pour template contraste">
+            <div class="body">
+              <small>Moderne contraste</small>
+              <h3>Impact visuel</h3>
+              <p>Univers sombre, accents colores, vignettes compactes et rendu plus editorial pour biens d'exception.</p>
+            </div>
+          </article>
+
+          <article class="template-card">
+            <img src="images/img140.jpg" alt="Interieur contemporain pour template minimal">
+            <div class="body">
+              <small>Minimal carre</small>
+              <h3>Precision sobre</h3>
+              <p>Grille droite, accent bleu, lisibilite maximale et experience tres fluide sur mobile et desktop.</p>
+            </div>
+          </article>
         </div>
+      </div>
     </section>
 
-    <!-- Comparatif -->
-    <section id="comparison" class="py-24 bg-white">
-        <div class="max-w-5xl mx-auto px-6 md:px-10 text-center mb-16">
-            <h3 class="text-4xl md:text-5xl font-black tracking-tight mb-4" data-translate="comparison_title">Data-Home Light vs. Solution traditionnelle</h3>
-            <p class="text-slate-500 text-lg" data-translate="comparison_subtitle">Visualisez les avantages de Data-Home Light face à une agence web traditionnelle.</p>
+    <section aria-labelledby="compare-title">
+      <div class="container compare-grid">
+        <div>
+          <span class="eyebrow">Positionnement</span>
+          <h2 id="compare-title" class="section-title">Pourquoi DataHome est plus qu'une landing page immobiliere.</h2>
+          <p class="section-copy">Le marche sait creer de beaux sites. DataHome va plus loin : il structure l'exploitation commerciale et technique d'une agence immobiliere dans un produit SaaS controle, extensible et monetisable.</p>
         </div>
-        <div class="max-w-5xl mx-auto px-6 md:px-10">
-            <div class="overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-xl" data-aos="fade-up">
-                <table class="w-full text-left">
-                    <thead class="bg-[#0F172A] text-white">
-                        <tr><th class="p-6 text-sm font-black uppercase tracking-wider" data-translate="table_criterion">Critère</th><th class="p-6 text-sm font-black uppercase tracking-wider text-indigo-300" data-translate="table_dhl">Data-Home Light</th><th class="p-6 text-sm font-black uppercase tracking-wider text-slate-400" data-translate="table_traditional">Solution traditionnelle</th></tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-100">
-                        <tr><td class="p-6 font-bold" data-translate="table_speed">Vitesse</td><td class="p-6 text-[#1E2B6E] font-black" data-translate="table_speed_dhl">Moins d'1 seconde</td><td class="p-6 text-slate-400" data-translate="table_speed_trad">3 à 8 secondes</td></tr>
-                        <tr><td class="p-6 font-bold" data-translate="table_price">Prix</td><td class="p-6 text-[#1E2B6E] font-black" data-translate="table_price_dhl">50€/mois, tout inclus</td><td class="p-6 text-slate-400" data-translate="table_price_trad">150€ à 400€/mois</td></tr>
-                        <tr><td class="p-6 font-bold" data-translate="table_launch">Lancement</td><td class="p-6 text-[#1E2B6E] font-black" data-translate="table_launch_dhl">En 48 heures</td><td class="p-6 text-slate-400" data-translate="table_launch_trad">4 à 12 semaines</td></tr>
-                        <tr><td class="p-6 font-bold" data-translate="table_support">Support</td><td class="p-6 text-[#1E2B6E] font-black" data-translate="table_support_dhl">Contact direct</td><td class="p-6 text-slate-400" data-translate="table_support_trad">Tickets anonymes</td></tr>
-                        <tr><td class="p-6 font-bold" data-translate="table_updates">Mises à jour</td><td class="p-6 text-[#1E2B6E] font-black" data-translate="table_updates_dhl">Gérées par nous</td><td class="p-6 text-slate-400" data-translate="table_updates_trad">À vos frais</td></tr>
-                        <tr><td class="p-6 font-bold" data-translate="table_seo">SEO</td><td class="p-6 text-[#1E2B6E] font-black" data-translate="table_seo_dhl">Intégré nativement</td><td class="p-6 text-slate-400" data-translate="table_seo_trad">Option payante</td></tr>
-                    </tbody>
-                </table>
-            </div>
+
+        <div class="comparison" role="table" aria-label="Comparaison DataHome">
+          <div class="comparison-row header" role="row">
+            <div role="columnheader">Sujet</div>
+            <div role="columnheader">Site vitrine classique</div>
+            <div role="columnheader">DataHome SaaS</div>
+          </div>
+          <div class="comparison-row" role="row">
+            <div>Catalogue</div>
+            <div>Ajout manuel ou integration ponctuelle</div>
+            <div class="win">Flux XML relies par agence, pagination et filtrage</div>
+          </div>
+          <div class="comparison-row" role="row">
+            <div>Personnalisation</div>
+            <div>Theme fixe ou intervention developpeur</div>
+            <div class="win">ClientDashboard + AgencyDashboard configurables</div>
+          </div>
+          <div class="comparison-row" role="row">
+            <div>Monetisation</div>
+            <div>Refonte ou abonnement technique opaque</div>
+            <div class="win">Modules premium activables progressivement</div>
+          </div>
+          <div class="comparison-row" role="row">
+            <div>Exploitation</div>
+            <div>Peu de visibilite sur leads et demandes</div>
+            <div class="win">Mini CRM, chatbot, demandes modules, e-mails et rappels trial</div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="py-24 bg-slate-50/40">
-        <div class="max-w-7xl mx-auto px-6 md:px-10 text-center mb-12">
-            <h3 class="text-4xl md:text-5xl font-black mb-4" data-translate="pricing_title">Un petit investissement pour un impact maximal</h3>
-            <p class="text-slate-500 text-lg max-w-2xl mx-auto" data-translate="pricing_subtitle">Une solution conçue pour les agences qui veulent un site immobilier performant.</p>
+    <section id="pricing" class="pricing" aria-labelledby="pricing-title">
+      <div class="container">
+        <span class="eyebrow">Modele commercial</span>
+        <h2 id="pricing-title" class="section-title">Un socle premium, puis des modules a la carte.</h2>
+        <p class="section-copy">L'approche est simple : un site agence solide, un essai encadre, puis des options vendues selon la valeur creee. Le client paie pour ce qui l'aide vraiment.</p>
+
+        <div class="pricing-grid">
+          <article class="pricing-card highlight">
+            <h3>Pack Premium</h3>
+            <p>Site agence, catalogue immobilier, personnalisation, mise en ligne, espace client, Mini CRM Leads, trial 15 jours et publication controlee par l'admin.</p>
+            <ul class="module-list">
+              <li><b>Site Web Public</b><span>Inclus</span></li>
+              <li><b>Property Manager</b><span>Inclus</span></li>
+              <li><b>Mini CRM Leads</b><span>Gratuit</span></li>
+              <li><b>Flou apres 6 biens</b><span>Configurable</span></li>
+            </ul>
+          </article>
+
+          <article class="pricing-card">
+            <h3>Modules evolutifs</h3>
+            <p>Des options ajoutees progressivement, sans imposer une refonte complete au client.</p>
+            <ul class="module-list">
+              <li><b>Chatbot IA</b><span>39 €/mois</span></li>
+              <li><b>Langue supplementaire</b><span>2 €/langue</span></li>
+              <li><b>SEO avance</b><span>Bientot</span></li>
+              <li><b>Visites AR</b><span>Phase 1</span></li>
+            </ul>
+          </article>
         </div>
-        <div class="max-w-5xl mx-auto px-6 md:px-10 grid md:grid-cols-2 gap-10">
-            <div class="card-elegant p-8 text-center border-2 border-[#1E2B6E]/20" data-aos="fade-right">
-                <div class="text-[#1E2B6E] text-sm font-black uppercase tracking-wider" data-translate="pricing_dhl">Data-Home Light</div>
-                <div class="text-5xl font-black mt-4 mb-2">50€<span class="text-lg text-slate-400" data-translate="per_month">/mois</span></div>
-                <p class="text-slate-500 text-sm mb-6" data-translate="pricing_desc">À partir de 50€/mois, support complet inclus</p>
-                <ul class="text-left space-y-3 mb-8">
-                    <li class="flex items-center gap-2"><span class="text-green-500">✓</span> <span data-translate="price_item1">Site ultra-rapide sur mesure</span></li>
-                    <li class="flex items-center gap-2"><span class="text-green-500">✓</span> <span data-translate="price_item2">Intégration de vos annonces</span></li>
-                    <li class="flex items-center gap-2"><span class="text-green-500">✓</span> <span data-translate="price_item3">SEO local dès le lancement</span></li>
-                    <li class="flex items-center gap-2"><span class="text-green-500">✓</span> <span data-translate="price_item4">Hébergement haute disponibilité</span></li>
-                </ul>
-                <a href="javascript:void(0);" onclick="scrollToForm()" class="block bg-[#1E2B6E] text-white py-3 rounded-full font-bold" data-translate="price_cta">Choisir cette offre</a>
-            </div>
-            <div class="card-elegant p-8 text-center bg-slate-50" data-aos="fade-left">
-                <div class="text-slate-400 text-sm font-black uppercase tracking-wider" data-translate="pricing_agency">Agence web classique</div>
-                <div class="text-4xl font-black mt-4 mb-2 line-through text-slate-400">3 000€</div>
-                <ul class="text-left space-y-3 mb-8 text-slate-500">
-                    <li class="flex items-center gap-2"><span class="text-red-400">✕</span> <span data-translate="price_trad1">Investissement initial 3 000€ - 10 000€</span></li>
-                    <li class="flex items-center gap-2"><span class="text-red-400">✕</span> <span data-translate="price_trad2">Maintenance supplémentaire</span></li>
-                    <li class="flex items-center gap-2"><span class="text-red-400">✕</span> <span data-translate="price_trad3">Délais de 4 à 12 semaines</span></li>
-                </ul>
-                <div class="py-3 rounded-full bg-gray-200 text-slate-400 cursor-default" data-translate="price_trad_cta">Option coûteuse</div>
-            </div>
-        </div>
+      </div>
     </section>
 
-    <!-- CTA Finale -->
-    <section id="cta" class="py-28 relative bg-[#0A0C14] overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-r from-[#1E2B6E]/20 to-transparent"></div>
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div data-aos="zoom-in-up">
-                    <div class="inline-block px-4 py-1.5 rounded-full bg-white/10 text-white/80 text-xs font-bold tracking-wider mb-6 backdrop-blur-sm" data-translate="cta_badge">🚀 Offre exclusive de lancement</div>
-                    <h2 class="text-4xl md:text-6xl font-black text-white tracking-tighter mb-6" data-translate="cta_title">Votre site professionnel, prêt en 48 heures</h2>
-                    <p class="text-white/70 text-lg max-w-md mb-6" data-translate="cta_desc">Ne laissez pas vos concurrents prendre de l'avance. Les 10 premières agences bénéficient d'une offre de lancement exclusive à 50€/mois + frais de mise en service uniques de 125€.</p>
-                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 inline-block mb-8">
-                        <p class="text-white font-mono text-xs md:text-sm" data-translate="cta_offer">✨ Offre limitée : 50€/mois + 125€ frais · Réservé aux 10 premières agences · Mise en ligne en 48h</p>
-                    </div>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="javascript:void(0);" onclick="scrollToForm()" class="bg-white text-slate-900 px-8 py-4 rounded-full text-base font-extrabold btn-premium shadow-2xl flex items-center gap-2 justify-center" data-translate="cta_btn1">Réserver mon spot →</a>
-                        <a href="javascript:void(0);" onclick="scrollToForm()" class="border border-white/30 text-white px-8 py-4 rounded-full text-base font-semibold hover:bg-white/5 transition-all" data-translate="cta_btn2">Nous contacter</a>
-                    </div>
-                </div>
-                <div data-aos="zoom-in" data-aos-delay="200">
-                    <img src="images/final-success.jpg" alt="Succès professionnel" class="rounded-2xl shadow-2xl border-4 border-white/20 w-full h-auto">
-                </div>
-            </div>
+    <section id="contact" class="cta" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="cta-card">
+          <span class="eyebrow" style="color:#fef3c7;">Demonstration</span>
+          <h2 id="contact-title">Construisons une vitrine qui sait aussi vendre.</h2>
+          <p>DataHome est pense pour les agences qui veulent une experience premium sans perdre la maitrise de leurs donnees, de leurs modules et de leur croissance.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="onboarding.html">Tester l'onboarding</a>
+            <a class="btn btn-ghost" style="color:#fff; border-color:rgba(255,255,255,.28); background:rgba(255,255,255,.10);" href="mailto:gaetan@amaru-homes.com">Nous contacter</a>
+          </div>
+
+          <form class="lead-form" action="https://crm.zoho.eu/crm/WebToLeadForm" method="POST" accept-charset="UTF-8" id="zohoLeadForm">
+            <input type="text" style="display:none;" name="xnQsjsdp" value="c28f4a34f99ed41057ad92aa9fe0d2b49ec3fa251d9b74d3442c043573db6c9d">
+            <input type="text" style="display:none;" name="xmIwtLD" value="c35214469d1043fb02a1ffdc1a3868dc4f81f2d2f7467fd58dc55ceed8659f0e96c16b332fc29b12d959a4ef3eb60f69">
+            <input type="text" style="display:none;" name="actionType" value="TGVhZHM=">
+            <input type="text" style="display:none;" name="returnURL" value="https://data-home.app">
+            <input type="text" name="Last Name" placeholder="Nom de l'agence" required>
+            <input type="email" name="Email" placeholder="E-mail professionnel" required>
+            <button class="btn btn-primary" type="submit">Recevoir un audit</button>
+          </form>
+          <div id="formSuccessMsg" class="form-message">Merci, votre demande a bien ete envoyee.</div>
+          <div id="formErrorMsg" class="form-message" style="color:#fecaca;">Une erreur est survenue. Vous pouvez aussi nous contacter par e-mail.</div>
         </div>
+      </div>
     </section>
+  </main>
 
-    <!-- Footer -->
-    <footer class="bg-white border-t border-slate-100 py-12">
-        <div class="max-w-7xl mx-auto px-6 md:px-10 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex items-center gap-2">
-                <img src="images/logo-datahome.png" alt="Data-Home Logo" class="h-7 w-auto object-contain">
-                <span class="font-bold text-slate-800 text-sm ml-1" data-translate="footer_copyright">Data-Home Light — Performance & Modernité Immobilière</span>
-            </div>
-            <div class="flex gap-8 text-[11px] font-semibold uppercase tracking-wider text-slate-400">
-                <a href="legal.html" class="hover:text-[#1E2B6E] transition-colors" data-translate="footer_legal">Mentions légales</a>
-                <a href="privacy.html" class="hover:text-[#1E2B6E] transition-colors" data-translate="footer_privacy">Confidentialité</a>
-                <a href="support.html" class="hover:text-[#1E2B6E] transition-colors" data-translate="footer_support">Support 7j/7</a>
-            </div>
-            <p class="text-[10px] text-slate-400">© 2026 — <span data-translate="footer_tag">La nouvelle ère des agences digitales</span></p>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-logo">
+          <img src="images/logo-icon.webp" alt="">
+          <span>DataHome</span>
         </div>
-    </footer>
+        <p>Plateforme SaaS immobiliere pour agences qui veulent une vitrine premium, des donnees propres et un modele de modules vraiment evolutif.</p>
+      </div>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 1000, once: true, easing: 'ease-out-quad', offset: 50 });
-        
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('.glass-nav');
-            if (window.scrollY > 30) nav.classList.add('shadow-sm', 'bg-white/95');
-            else nav.classList.remove('shadow-sm', 'bg-white/95');
-        });
+      <div>
+        <h4>Produit</h4>
+        <a href="#platform">Plateforme</a>
+        <a href="#features">Modules</a>
+        <a href="#templates">Templates</a>
+      </div>
 
-        // ==================== FONCTION POUR SCROLLER VERS LE FORMULAIRE ====================
-        function scrollToForm() {
-            const formSection = document.getElementById('contactFormSection');
-            const formElement = document.getElementById('contactForm');
-            
-            if (formSection) {
-                formSection.scrollIntoView({ 
-                    behavior: 'smooth', 
-                    block: 'center' 
-                });
-                
-                // Ajouter une animation de surbrillance sur le formulaire
-                if (formElement) {
-                    formElement.classList.add('form-highlight');
-                    setTimeout(() => {
-                        formElement.classList.remove('form-highlight');
-                    }, 800);
-                }
-            }
-        }
+      <div>
+        <h4>Ressources</h4>
+        <a href="experience.html">Experience</a>
+        <a href="support.html">Support</a>
+        <a href="onboarding.html">Onboarding</a>
+      </div>
 
-        // ==================== TRADUCTIONS COMPLÈTES ====================
-        const translations = {
-            fr: {
-                nav_problem: "Problématique", nav_solution: "Solution", nav_features: "Fonctionnalités", nav_comparison: "Comparatif", nav_pricing: "Tarifs", nav_cta: "Réserver ma démo",
-                experience_link: "✨ Découvrir l'expérience",
-                hero_badge: "✨ Offre limitée aux 10 premières agences", hero_title: "L'immobilier réinventé.", hero_desc: "La solution digitale nouvelle génération pour les agences immobilières.",
-                hero_btn1: "Découvrir l'offre →", hero_btn2: "En savoir plus", problem_badge: "d'abandon", problem_tag: "La problématique", problem_title: "Vos clients partent à cause de votre site.",
-                problem_desc: "53% des visiteurs quittent un site qui met plus de 3 secondes à charger.",
-                problem_item1: "Trop lent au chargement", problem_item2: "Design obsolète", problem_item3: "Trop peu de contacts", problem_item4: "Mauvaise expérience mobile",
-                product_tag: "Aperçu produit", product_title: "Data-Home Light: ", product_subtitle: "Le moteur immobilier le plus rapide", product_desc: "Affichez vos biens instantanément.",
-                stat1: "plus rapide", stat1_sub: "vs standards", stat2: "Satisfaction client", stat2_sub: "agences recommandent", stat3: "Déploiement", stat3_sub: "48h", stat4: "Zero maintenance", stat4_sub: "nous gérons",
-                feature_speed_title: "Vitesse", feature_speed_desc: "Infrastructure ultra-rapide.", feature_design_title: "Design Premium", feature_design_desc: "Interface moderne.",
-                feature_maintenance_title: "Zéro maintenance", feature_maintenance_desc: "On s'occupe de tout.", feature_seo_title: "Visibilité Google", feature_seo_desc: "SEO optimisé.",
-                speed_tag: "Lightning speed", speed_title: "Temps de charge zéro", speed_desc: "Affichez vos biens instantanément.",
-                speed_item1_title: "Google PageSpeed Score", speed_item1_desc: "Performance excellente.", speed_item2_title: "Charge <1s", speed_item2_desc: "Contenu instantané.",
-                speed_item3_title: "Optimisé mobile & desktop", speed_item3_desc: "Navigation fluide.",
-                design_tag: "Design Premium", design_title: "Image de marque premium", design_desc: "Design sur mesure.",
-                design_item1_title: "✨ Première impression", design_item1_desc: "Un design épuré inspire confiance.",
-                design_item2_title: "🎨 Design personnalisé", design_item2_desc: "Vos couleurs, votre identité.",
-                simplicity_tag: "Simplicité totale", simplicity_title: "Gérez vos biens", simplicity_desc: "Solution intuitive.",
-                simpl_item1: "Diffusion 1 clic", simpl_item1_desc: "Publiez rapidement", simpl_item2: "Màj automatiques", simpl_item2_desc: "Toujours à jour",
-                simpl_item3: "Support 7j/7", simpl_item3_desc: "Équipe dédiée", simpl_item4: "Zéro code", simpl_item4_desc: "100% intuitif",
-                phone_title: "Data-Home", form_name: "Nom", form_email: "E-mail professionnel", form_submit: "Recevoir mon audit", form_footer: "© 2026 Data-Home - Sécurisé par Zoho CRM",
-                success_msg: "✅ Merci ! Votre demande a bien été envoyée.", error_msg: "⚠️ Une erreur est survenue.",
-                partner_name: "HabiHub", partner_slogan: "Grow your business through full digitalization of your sales processes and access to a vast New Build catalogue.", partner_credit: "Partenaire technologique officiel",
-                comparison_title: "Data-Home Light vs. Solution traditionnelle", comparison_subtitle: "Comparez les avantages.",
-                table_criterion: "Critère", table_dhl: "Data-Home Light", table_traditional: "Traditionnelle", table_speed: "Vitesse", table_speed_dhl: "< 1s", table_speed_trad: "3-8s",
-                table_price: "Prix", table_price_dhl: "50€/mois", table_price_trad: "150-400€/mois", table_launch: "Lancement", table_launch_dhl: "48h", table_launch_trad: "4-12 semaines",
-                table_support: "Support", table_support_dhl: "Direct", table_support_trad: "Tickets", table_updates: "Màj", table_updates_dhl: "Incluses", table_updates_trad: "Payantes",
-                table_seo: "SEO", table_seo_dhl: "Intégré", table_seo_trad: "Option payante",
-                pricing_title: "Investissement maxi", pricing_subtitle: "Performance sans surcoût.", pricing_dhl: "Data-Home Light", per_month: "/mois", pricing_desc: "Support inclus",
-                price_item1: "Site sur mesure", price_item2: "Intégration annonces", price_item3: "SEO local", price_item4: "Hébergement HA", price_cta: "Choisir",
-                pricing_agency: "Agence classique", price_trad1: "3000-10000€", price_trad2: "Maintenance +", price_trad3: "Délais longs", price_trad_cta: "Coûteux",
-                cta_badge: "🚀 Offre exclusive", cta_title: "Site pro en 48h", cta_desc: "Ne laissez pas passer l'offre.", cta_offer: "50€/mois + 125€ frais", cta_btn1: "Réserver", cta_btn2: "Contact",
-                footer_copyright: "Data-Home Light", footer_legal: "Mentions", footer_privacy: "Confidentialité", footer_support: "Support", footer_tag: "Agences digitales"
-            },
-            en: {
-                nav_problem: "Issue", nav_solution: "Solution", nav_features: "Features", nav_comparison: "Comparison", nav_pricing: "Pricing", nav_cta: "Book demo",
-                experience_link: "✨ Discover the experience",
-                hero_badge: "✨ Limited offer for first 10 agencies", hero_title: "Real estate reinvented.", hero_desc: "Next-gen digital solution for real estate agencies.",
-                hero_btn1: "Discover offer →", hero_btn2: "Learn more", problem_badge: "abandonment", problem_tag: "The Problem", problem_title: "Your clients leave because of your website.",
-                problem_desc: "53% of visitors leave a site that takes more than 3 seconds to load.",
-                problem_item1: "Too slow", problem_item2: "Outdated design", problem_item3: "Too few contacts", problem_item4: "Poor mobile experience",
-                product_tag: "Product Overview", product_title: "Data-Home Light: ", product_subtitle: "The fastest real estate engine", product_desc: "Display your listings instantly.",
-                stat1: "faster", stat1_sub: "vs standards", stat2: "Satisfaction", stat2_sub: "agencies recommend", stat3: "Deployment", stat3_sub: "48h", stat4: "Zero maintenance", stat4_sub: "we handle",
-                feature_speed_title: "Speed", feature_speed_desc: "Ultra-fast infrastructure.", feature_design_title: "Premium Design", feature_design_desc: "Modern interface.",
-                feature_maintenance_title: "Zero maintenance", feature_maintenance_desc: "We handle everything.", feature_seo_title: "Google Visibility", feature_seo_desc: "SEO optimized.",
-                speed_tag: "Lightning speed", speed_title: "Zero load time", speed_desc: "Display your listings instantly.",
-                speed_item1_title: "Google PageSpeed Score", speed_item1_desc: "Excellent performance.", speed_item2_title: "Load <1s", speed_item2_desc: "Instant content.",
-                speed_item3_title: "Mobile & desktop optimized", speed_item3_desc: "Smooth navigation.",
-                design_tag: "Premium Design", design_title: "Premium brand image", design_desc: "Tailored design.",
-                design_item1_title: "✨ First impression", design_item1_desc: "Clean design inspires trust.",
-                design_item2_title: "🎨 Custom design", design_item2_desc: "Your colors, your identity.",
-                simplicity_tag: "Total Simplicity", simplicity_title: "Manage your properties", simplicity_desc: "Intuitive solution.",
-                simpl_item1: "1-click listings", simpl_item1_desc: "Publish quickly", simpl_item2: "Auto updates", simpl_item2_desc: "Always up to date",
-                simpl_item3: "7/7 support", simpl_item3_desc: "Dedicated team", simpl_item4: "Zero code", simpl_item4_desc: "100% intuitive",
-                phone_title: "Data-Home", form_name: "Name", form_email: "Professional email", form_submit: "Get my audit", form_footer: "© 2026 Data-Home - Secured by Zoho CRM",
-                success_msg: "✅ Thank you! Your request has been sent.", error_msg: "⚠️ An error occurred.",
-                partner_name: "HabiHub", partner_slogan: "Grow your business through full digitalization of your sales processes and access to a vast New Build catalogue.", partner_credit: "Official technology partner",
-                comparison_title: "Data-Home Light vs. Traditional Solution", comparison_subtitle: "Compare advantages.",
-                table_criterion: "Criterion", table_dhl: "Data-Home Light", table_traditional: "Traditional", table_speed: "Speed", table_speed_dhl: "< 1s", table_speed_trad: "3-8s",
-                table_price: "Price", table_price_dhl: "$50/month", table_price_trad: "$150-400/month", table_launch: "Launch", table_launch_dhl: "48h", table_launch_trad: "4-12 weeks",
-                table_support: "Support", table_support_dhl: "Direct", table_support_trad: "Tickets", table_updates: "Updates", table_updates_dhl: "Included", table_updates_trad: "Paid",
-                table_seo: "SEO", table_seo_dhl: "Built-in", table_seo_trad: "Paid add-on",
-                pricing_title: "Maximum impact", pricing_subtitle: "Performance without extra cost.", pricing_dhl: "Data-Home Light", per_month: "/month", pricing_desc: "Support included",
-                price_item1: "Custom fast site", price_item2: "Listing integration", price_item3: "Local SEO", price_item4: "High-availability hosting", price_cta: "Choose",
-                pricing_agency: "Traditional agency", price_trad1: "$3,000-10,000", price_trad2: "Extra maintenance", price_trad3: "Long delays", price_trad_cta: "Expensive",
-                cta_badge: "🚀 Exclusive offer", cta_title: "Pro site in 48h", cta_desc: "Don't miss the offer.", cta_offer: "$50/month + $125 setup", cta_btn1: "Book", cta_btn2: "Contact",
-                footer_copyright: "Data-Home Light", footer_legal: "Legal", footer_privacy: "Privacy", footer_support: "Support", footer_tag: "Digital agencies"
-            },
-            es: {
-                nav_problem: "Problema", nav_solution: "Solución", nav_features: "Características", nav_comparison: "Comparativa", nav_pricing: "Precios", nav_cta: "Reservar demo",
-                experience_link: "✨ Descubrir la experiencia",
-                hero_badge: "✨ Oferta limitada primeras 10 agencias", hero_title: "Inmobiliario reinventado.", hero_desc: "Solución digital de nueva generación.",
-                hero_btn1: "Descubrir oferta →", hero_btn2: "Más info", problem_badge: "abandono", problem_tag: "El problema", problem_title: "Sus clientes se van por su sitio web.",
-                problem_desc: "53% abandonan sitios que tardan más de 3 segundos.",
-                problem_item1: "Demasiado lento", problem_item2: "Diseño obsoleto", problem_item3: "Pocos contactos", problem_item4: "Mala experiencia móvil",
-                product_tag: "Descripción", product_title: "Data-Home Light: ", product_subtitle: "El motor inmobiliario más rápido", product_desc: "Muestre sus propiedades al instante.",
-                stat1: "más rápido", stat1_sub: "vs estándar", stat2: "Satisfacción", stat2_sub: "agencias recomiendan", stat3: "Despliegue", stat3_sub: "48h", stat4: "Cero mantenimiento", stat4_sub: "nosotros",
-                feature_speed_title: "Velocidad", feature_speed_desc: "Infraestructura ultrarrápida.", feature_design_title: "Diseño Premium", feature_design_desc: "Interfaz moderna.",
-                feature_maintenance_title: "Cero mantenimiento", feature_maintenance_desc: "Nosotros gestionamos.", feature_seo_title: "Visibilidad Google", feature_seo_desc: "SEO optimizado.",
-                speed_tag: "Velocidad", speed_title: "Tiempo de carga cero", speed_desc: "Muestre sus propiedades al instante.",
-                speed_item1_title: "Google PageSpeed Score", speed_item1_desc: "Excelente rendimiento.", speed_item2_title: "Carga <1s", speed_item2_desc: "Contenido instantáneo.",
-                speed_item3_title: "Optimizado móvil & desktop", speed_item3_desc: "Navegación fluida.",
-                design_tag: "Diseño Premium", design_title: "Imagen de marca premium", design_desc: "Diseño a medida.",
-                design_item1_title: "✨ Primera impresión", design_item1_desc: "Diseño limpio inspira confianza.",
-                design_item2_title: "🎨 Diseño personalizado", design_item2_desc: "Sus colores, su identidad.",
-                simplicity_tag: "Simplicidad total", simplicity_title: "Gestione sus propiedades", simplicity_desc: "Solución intuitiva.",
-                simpl_item1: "Publicación 1 clic", simpl_item1_desc: "Publique rápido", simpl_item2: "Actualizaciones auto", simpl_item2_desc: "Siempre actualizado",
-                simpl_item3: "Soporte 7/7", simpl_item3_desc: "Equipo dedicado", simpl_item4: "Cero código", simpl_item4_desc: "100% intuitivo",
-                phone_title: "Data-Home", form_name: "Nombre", form_email: "Email profesional", form_submit: "Recibir mi auditoría", form_footer: "© 2026 Data-Home - Seguro por Zoho CRM",
-                success_msg: "✅ ¡Gracias! Solicitud enviada.", error_msg: "⚠️ Error. Intente de nuevo.",
-                partner_name: "HabiHub", partner_slogan: "Grow your business through full digitalization of your sales processes and access to a vast New Build catalogue.", partner_credit: "Socio tecnológico oficial",
-                comparison_title: "Data-Home Light vs. Solución tradicional", comparison_subtitle: "Compare las ventajas.",
-                table_criterion: "Criterio", table_dhl: "Data-Home Light", table_traditional: "Tradicional", table_speed: "Velocidad", table_speed_dhl: "< 1s", table_speed_trad: "3-8s",
-                table_price: "Precio", table_price_dhl: "50€/mes", table_price_trad: "150-400€/mes", table_launch: "Lanzamiento", table_launch_dhl: "48h", table_launch_trad: "4-12 semanas",
-                table_support: "Soporte", table_support_dhl: "Directo", table_support_trad: "Tickets", table_updates: "Actualiz.", table_updates_dhl: "Incluidas", table_updates_trad: "Pagas",
-                table_seo: "SEO", table_seo_dhl: "Integrado", table_seo_trad: "Opción pago",
-                pricing_title: "Máximo impacto", pricing_subtitle: "Rendimiento sin sobrecoste.", pricing_dhl: "Data-Home Light", per_month: "/mes", pricing_desc: "Soporte incluido",
-                price_item1: "Sitio a medida", price_item2: "Integración propiedades", price_item3: "SEO local", price_item4: "Alojamiento HA", price_cta: "Elegir",
-                pricing_agency: "Agencia tradicional", price_trad1: "3000-10000€", price_trad2: "Mantenimiento +", price_trad3: "Plazos largos", price_trad_cta: "Costoso",
-                cta_badge: "🚀 Oferta exclusiva", cta_title: "Sitio pro en 48h", cta_desc: "No pierda la oferta.", cta_offer: "50€/mes + 125€ configuración", cta_btn1: "Reservar", cta_btn2: "Contacto",
-                footer_copyright: "Data-Home Light", footer_legal: "Avisos", footer_privacy: "Privacidad", footer_support: "Soporte", footer_tag: "Agencias digitales"
-            }
-        };
+      <div>
+        <h4>Legal</h4>
+        <a href="legal.html">Mentions legales</a>
+        <a href="privacy.html">Confidentialite</a>
+        <a href="mailto:gaetan@amaru-homes.com">Contact</a>
+      </div>
+    </div>
+  </footer>
 
-        function setLanguage(lang) {
-            document.querySelectorAll('[data-translate]').forEach(el => {
-                const key = el.getAttribute('data-translate');
-                if (translations[lang] && translations[lang][key] !== undefined) {
-                    el.innerText = translations[lang][key];
-                }
-            });
-        }
+  <script>
+    const form = document.getElementById("zohoLeadForm");
+    const successDiv = document.getElementById("formSuccessMsg");
+    const errorDiv = document.getElementById("formErrorMsg");
 
-        document.getElementById('languageSwitcher').addEventListener('change', (e) => setLanguage(e.target.value));
-        setLanguage('fr');
+    if (form) {
+      form.addEventListener("submit", function handleSubmit(event) {
+        event.preventDefault();
+        successDiv.style.display = "none";
+        errorDiv.style.display = "none";
 
-        // Gestion AJAX pour le formulaire Zoho
-        const form = document.getElementById('zohoLeadForm');
-        if(form) {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                const successDiv = document.getElementById('formSuccessMsg');
-                const errorDiv = document.getElementById('formErrorMsg');
-                successDiv.style.display = 'none';
-                errorDiv.style.display = 'none';
-                
-                const formData = new FormData(form);
-                fetch(form.action, {
-                    method: 'POST',
-                    body: formData,
-                    mode: 'no-cors'
-                }).then(() => {
-                    successDiv.style.display = 'block';
-                    form.reset();
-                    setTimeout(() => successDiv.style.display = 'none', 5000);
-                }).catch(() => {
-                    errorDiv.style.display = 'block';
-                    setTimeout(() => errorDiv.style.display = 'none', 5000);
-                });
-            });
-        }
-    </script>
+        fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          mode: "no-cors"
+        })
+          .then(function () {
+            successDiv.style.display = "block";
+            form.reset();
+          })
+          .catch(function () {
+            errorDiv.style.display = "block";
+          });
+      });
+    }
+  </script>
 </body>
 </html>
