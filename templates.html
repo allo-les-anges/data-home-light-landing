@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Catalogue des templates DataHome : templates inclus et templates premium payants pour sites d'agences immobilieres.">
+  <title>Templates DataHome | Templates inclus et premium</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #09111f;
+      --muted: #667085;
+      --line: #e7edf5;
+      --soft: #f8fafc;
+      --blue: #2563eb;
+      --violet: #7c3aed;
+      --gold: #d4af37;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 0%, rgba(37, 99, 235, 0.10), transparent 30%),
+        radial-gradient(circle at 88% 6%, rgba(217, 70, 239, 0.12), transparent 32%),
+        #fff;
+      font-family: Inter, system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(231, 237, 245, 0.9);
+      background: rgba(255, 255, 255, 0.90);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 82px;
+      gap: 24px;
+    }
+
+    .logo img {
+      width: 260px;
+      height: 56px;
+      object-fit: contain;
+      border-radius: 14px;
+      background: #02040a;
+      box-shadow: 0 16px 34px rgba(2, 4, 10, 0.16);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: #263244;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: #fff;
+      border-color: transparent;
+      background: linear-gradient(135deg, var(--blue), var(--violet), #d946ef);
+      box-shadow: 0 18px 38px rgba(79, 70, 229, 0.22);
+    }
+
+    .hero {
+      padding: 80px 0 56px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--violet);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      border-radius: 99px;
+      background: currentColor;
+    }
+
+    h1,
+    h2 {
+      margin: 18px 0;
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 600;
+      letter-spacing: -0.05em;
+      line-height: 0.98;
+    }
+
+    h1 {
+      max-width: 940px;
+      font-size: clamp(52px, 8vw, 104px);
+    }
+
+    h2 {
+      font-size: clamp(36px, 5vw, 66px);
+    }
+
+    .lead {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.8;
+    }
+
+    .hero-panel {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      margin-top: 44px;
+    }
+
+    .stat {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.78);
+      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 32px;
+      letter-spacing: -0.06em;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    section {
+      padding: 72px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 32px;
+      margin-bottom: 34px;
+    }
+
+    .section-head p {
+      max-width: 470px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .grid.premium {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      background: #fff;
+      box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+    }
+
+    .card.premium-card {
+      border-color: rgba(212, 175, 55, 0.36);
+      box-shadow: 0 24px 70px rgba(212, 175, 55, 0.16);
+    }
+
+    .visual {
+      position: relative;
+      height: 260px;
+      overflow: hidden;
+    }
+
+    .visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .4s ease;
+    }
+
+    .card:hover .visual img {
+      transform: scale(1.04);
+    }
+
+    .badge {
+      position: absolute;
+      left: 18px;
+      top: 18px;
+      display: inline-flex;
+      min-height: 32px;
+      align-items: center;
+      padding: 0 12px;
+      border-radius: 999px;
+      color: #fff;
+      background: #111827;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .badge.gold {
+      background: var(--gold);
+    }
+
+    .body {
+      padding: 26px;
+    }
+
+    .body small {
+      color: var(--violet);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .premium-card .body small {
+      color: #a16207;
+    }
+
+    .body h3 {
+      margin: 10px 0;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 31px;
+      font-weight: 600;
+      letter-spacing: -0.04em;
+    }
+
+    .body p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .price {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 22px 0 18px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(148, 163, 184, 0.22);
+    }
+
+    .price strong {
+      font-size: 30px;
+      letter-spacing: -0.06em;
+    }
+
+    .price span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tags span {
+      padding: 8px 10px;
+      border: 1px solid rgba(148, 163, 184, 0.28);
+      border-radius: 999px;
+      color: #475467;
+      background: var(--soft);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .cta {
+      color: #fff;
+      background:
+        linear-gradient(90deg, rgba(9, 17, 31, 0.88), rgba(9, 17, 31, 0.42)),
+        url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=82") center/cover;
+    }
+
+    .cta .lead {
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    footer {
+      padding: 38px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      background: #fff;
+      font-size: 14px;
+    }
+
+    @media (max-width: 1040px) {
+      .grid,
+      .grid.premium,
+      .hero-panel {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .container {
+        width: min(100% - 24px, var(--max));
+      }
+
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 16px 0;
+      }
+
+      .logo img {
+        width: 220px;
+        height: 48px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .hero {
+        padding-top: 52px;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .grid,
+      .grid.premium,
+      .hero-panel {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="logo" href="index.html" aria-label="Retour DataHome">
+        <img src="images/datahome-logo-wide.jpg" alt="DataHome">
+      </a>
+      <nav class="nav-links" aria-label="Navigation">
+        <a href="index.html">Accueil</a>
+        <a href="#base">Base</a>
+        <a href="#premium">Premium</a>
+        <a class="btn btn-primary" href="onboarding.html">Tester</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow">Catalogue templates</span>
+        <h1>Des designs immobiliers prets a vendre, du plus simple au plus premium.</h1>
+        <p class="lead">Les templates DataHome ne sont pas de simples maquettes. Ils sont connectes aux flux XML, aux langues, au CRM leads, au chatbot, aux domaines personnalises et aux reglages visuels du dashboard client.</p>
+
+        <div class="hero-panel">
+          <div class="stat"><strong>6</strong><span>templates inclus</span></div>
+          <div class="stat"><strong>4</strong><span>templates premium</span></div>
+          <div class="stat"><strong>100%</strong><span>connectes au SaaS</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="base">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Inclus</span>
+            <h2>Templates de base</h2>
+          </div>
+          <p>Ces styles sont inclus dans l'offre et peuvent servir de point de depart depuis les settings de la page mon-espace.</p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <div class="visual"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=82" alt="Villa mediterraneenne"><span class="badge">Inclus</span></div>
+            <div class="body"><small>Riviera</small><h3>Luxe balneaire</h3><p>Fond clair, accents or, cartes editoriales et rendu premium pour biens en bord de mer.</p><div class="price"><strong>Inclus</strong><span>base</span></div><div class="tags"><span>Mer</span><span>Editorial</span><span>3 colonnes</span></div></div>
+          </article>
+
+          <article class="card">
+            <div class="visual"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=82" alt="Residence prestige"><span class="badge">Inclus</span></div>
+            <div class="body"><small>Prestige</small><h3>Urbain premium</h3><p>Style sombre, violet et compact pour agences haut de gamme dans les grandes villes.</p><div class="price"><strong>Inclus</strong><span>base</span></div><div class="tags"><span>Dark</span><span>Compact</span><span>Luxury</span></div></div>
+          </article>
+
+          <article class="card">
+            <div class="visual"><img src="https://images.unsplash.com/photo-1560184897-ae75f418493e?auto=format&fit=crop&w=900&q=82" alt="Interieur moderne"><span class="badge">Inclus</span></div>
+            <div class="body"><small>Urban</small><h3>Portail efficace</h3><p>Affichage horizontal, recherche directe et structure ideale pour un volume eleve de biens.</p><div class="price"><strong>Inclus</strong><span>base</span></div><div class="tags"><span>Portail</span><span>Volume</span><span>4 colonnes</span></div></div>
+          </article>
+
+          <article class="card">
+            <div class="visual"><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=82" alt="Maison au soleil"><span class="badge">Inclus</span></div>
+            <div class="body"><small>Soleil</small><h3>Sud chaleureux</h3><p>Tons ambre et orange, experience conviviale pour agences mediterraneennes.</p><div class="price"><strong>Inclus</strong><span>base</span></div><div class="tags"><span>Chaud</span><span>Sud</span><span>Accueil</span></div></div>
+          </article>
+
+          <article class="card">
+            <div class="visual"><img src="https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?auto=format&fit=crop&w=900&q=82" alt="Architecture minimaliste"><span class="badge">Inclus</span></div>
+            <div class="body"><small>Nordic</small><h3>Minimalisme clair</h3><p>Bords droits, espaces blancs, accent bleu froid et lecture tres propre.</p><div class="price"><strong>Inclus</strong><span>base</span></div><div class="tags"><span>Minimal</span><span>Carre</span><span>Lisible</span></div></div>
+          </article>
+
+          <article class="card">
+            <div class="visual"><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=82" alt="Interieur naturel"><span class="badge">Inclus</span></div>
+            <div class="body"><small>Verde</small><h3>Nature durable</h3><p>Palette verte, douceur visuelle et positionnement immobilier nature ou eco-responsable.</p><div class="price"><strong>Inclus</strong><span>base</span></div><div class="tags"><span>Nature</span><span>Eco</span><span>Douceur</span></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="premium">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Premium</span>
+            <h2>Templates payants</h2>
+          </div>
+          <p>Ces templates peuvent etre vendus comme upgrades. Ils donnent une vraie raison commerciale de passer a un niveau superieur sans reconstruire le site.</p>
+        </div>
+
+        <div class="grid premium">
+          <article class="card premium-card">
+            <div class="visual"><img src="https://images.unsplash.com/photo-1600607687644-c7171b42498b?auto=format&fit=crop&w=900&q=82" alt="Villa premium lumineuse"><span class="badge gold">Premium</span></div>
+            <div class="body"><small>Riviera Light</small><h3>Elegance lumineuse</h3><p>Hero solaire, rythme editorial et presentation haut de gamme.</p><div class="price"><strong>490 €</strong><span>setup</span></div><div class="tags"><span>Vente</span><span>Location</span><span>Or doux</span></div></div>
+          </article>
+
+          <article class="card premium-card">
+            <div class="visual"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=82" alt="Villa luxe moderne"><span class="badge gold">Premium</span></div>
+            <div class="body"><small>Prestige Black</small><h3>Luxury dark</h3><p>Univers sombre, photos immersives, contraste et experience memorable.</p><div class="price"><strong>790 €</strong><span>setup</span></div><div class="tags"><span>Luxury</span><span>Video</span><span>Editorial</span></div></div>
+          </article>
+
+          <article class="card premium-card">
+            <div class="visual"><img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=900&q=82" alt="Architecture urbaine"><span class="badge gold">Premium</span></div>
+            <div class="body"><small>Urban Minimal</small><h3>Conversion directe</h3><p>Design sobre, recherche rapide et cartes tres efficaces sur mobile.</p><div class="price"><strong>390 €</strong><span>setup</span></div><div class="tags"><span>Minimal</span><span>SEO</span><span>Rapide</span></div></div>
+          </article>
+
+          <article class="card premium-card">
+            <div class="visual"><img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=900&q=82" alt="Maison familiale"><span class="badge gold">Premium</span></div>
+            <div class="body"><small>Signature Family</small><h3>Confiance locale</h3><p>Presentation chaleureuse pour agences locales et residences familiales.</p><div class="price"><strong>590 €</strong><span>setup</span></div><div class="tags"><span>Local</span><span>Equipe</span><span>Famille</span></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <span class="eyebrow" style="color:#fef3c7;">SaaS + design</span>
+        <h2>Un template DataHome reste connecte a toute la plateforme.</h2>
+        <p class="lead">Chaque design conserve les modules, le catalogue XML, les langues, les domaines, le CRM leads et les futurs services premium.</p>
+        <a class="btn btn-primary" href="onboarding.html">Demarrer un onboarding</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 DataHome. Templates immobiliers connectes a une plateforme SaaS.</div>
+  </footer>
+</body>
+</html>
