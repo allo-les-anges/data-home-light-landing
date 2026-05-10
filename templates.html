@@ -19,7 +19,7 @@
       --blue: #2367ff;
       --pink: #db3cc7;
       --gold: #d5ad3d;
-      --dark: #07101f;
+      --violet: #6d4cff;
       --max: 1180px;
     }
     * { box-sizing: border-box; }
@@ -43,7 +43,7 @@
       backdrop-filter: blur(18px);
     }
     .nav { min-height:82px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
-    .logo img { width:220px; height:50px; object-fit:contain; border-radius:14px; background:#02040a; box-shadow:0 16px 34px rgba(2,4,10,.13); }
+    .logo img { width:220px; height:50px; object-fit:contain; border-radius:14px; background:linear-gradient(135deg, rgba(35,103,255,.08), rgba(219,60,199,.08)); box-shadow:0 16px 34px rgba(35,103,255,.10); }
     .links { display:flex; gap:24px; align-items:center; font-size:12px; font-weight:900; letter-spacing:.18em; text-transform:uppercase; color:#43516a; }
     .btn {
       display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:0 20px;
@@ -59,7 +59,7 @@
     .lead { max-width:760px; color:var(--muted); font-size:19px; line-height:1.75; }
     .filters { display:flex; flex-wrap:wrap; gap:10px; margin-top:28px; }
     .chip { border:1px solid var(--line); background:#fff; color:#39465c; border-radius:999px; padding:10px 14px; font-size:12px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; cursor:pointer; }
-    .chip.active { color:#fff; border-color:transparent; background:var(--dark); }
+    .chip.active { color:#fff; border-color:transparent; background:linear-gradient(135deg,var(--blue),var(--pink)); }
     .grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; padding-bottom:88px; }
     .card {
       position:relative; overflow:hidden; border:1px solid var(--line); border-radius:30px; background:#fff;
@@ -77,16 +77,16 @@
     .mini-prop { border:1px solid #edf2f7; border-radius:14px; overflow:hidden; font-size:10px; color:#64748b; }
     .mini-prop img { height:70px; width:100%; object-fit:cover; }
     .mini-prop span { display:block; padding:8px; }
-    .mini-dark { background:#07101f; color:#fff; }
-    .mini-dark .mini-prop { background:#111b2d; border-color:rgba(255,255,255,.1); color:#b8c5d8; }
+    .mini-color { background:linear-gradient(135deg, rgba(35,103,255,.08), rgba(219,60,199,.08), rgba(255,139,43,.08)); color:var(--ink); }
+    .mini-color .mini-prop { background:#fff; border-color:#edf2f7; color:#64748b; }
     .card-body { padding:20px; display:flex; justify-content:space-between; gap:16px; align-items:flex-start; }
     .card h3 { margin:0 0 8px; font-size:20px; letter-spacing:-.03em; }
     .card p { margin:0; color:var(--muted); line-height:1.55; font-size:14px; }
     .tag { position:absolute; top:16px; left:16px; z-index:2; border-radius:999px; padding:8px 10px; background:#ffd34d; color:#0a1222; font-size:11px; font-weight:900; text-transform:uppercase; letter-spacing:.1em; }
     .price { white-space:nowrap; color:var(--blue); font-weight:900; font-size:14px; }
-    .cta { padding:64px 0 86px; background:#07101f; color:#fff; }
+    .cta { padding:64px 0 86px; background:linear-gradient(135deg, rgba(35,103,255,.10), rgba(25,182,255,.08), rgba(219,60,199,.10), rgba(255,139,43,.08)); color:var(--ink); }
     .cta-box { display:grid; grid-template-columns:1fr auto; gap:24px; align-items:center; }
-    .cta p { color:rgba(255,255,255,.68); }
+    .cta p { color:var(--muted); }
     .reveal { opacity:0; transform:translateY(20px); transition:opacity .65s ease, transform .65s ease; }
     .reveal.in { opacity:1; transform:none; }
     @media (max-width: 980px) {
@@ -146,7 +146,7 @@
       <article class="card reveal" data-kind="included">
         <span class="tag">Inclus</span>
         <div class="preview">
-          <div class="mini-page mini-dark">
+          <div class="mini-page mini-color">
             <div class="mini-hero" style="background-image:url('images/img140.jpg')"><div><span>Prestige</span><strong>Dreams can come true.</strong></div></div>
             <div class="mini-section"><p>Ambiance sombre, typographie serif, biens mis en scene.</p><div class="mini-row"><div class="mini-prop"><img src="images/img11.jpg"><span>Apartment</span></div><div class="mini-prop"><img src="images/img132.jpg"><span>Villa</span></div><div class="mini-prop"><img src="images/img139.jpg"><span>Bungalow</span></div></div></div>
           </div>
@@ -179,12 +179,12 @@
       <article class="card reveal" data-kind="premium">
         <span class="tag">Premium</span>
         <div class="preview">
-          <div class="mini-page mini-dark">
-            <div class="mini-hero" style="background-image:url('images/img181.jpg')"><div><span>Nocturne</span><strong>Immobilier confidentiel.</strong></div></div>
-            <div class="mini-section"><p>Design sombre, sections immersives, vignettes dramatiques.</p><div class="mini-row"><div class="mini-prop"><img src="images/img216.jpg"><span>Villa</span></div><div class="mini-prop"><img src="images/img243.jpg"><span>Sea view</span></div><div class="mini-prop"><img src="images/img140.jpg"><span>Estate</span></div></div></div>
+          <div class="mini-page mini-color">
+            <div class="mini-hero" style="background-image:url('images/img181.jpg')"><div><span>Chromia</span><strong>Immobilier confidentiel.</strong></div></div>
+            <div class="mini-section"><p>Design colore, sections immersives, vignettes elegantes.</p><div class="mini-row"><div class="mini-prop"><img src="images/img216.jpg"><span>Villa</span></div><div class="mini-prop"><img src="images/img243.jpg"><span>Sea view</span></div><div class="mini-prop"><img src="images/img140.jpg"><span>Estate</span></div></div></div>
           </div>
         </div>
-        <div class="card-body"><div><h3>Nocturne</h3><p>Pour une presentation haut de gamme, sombre et cinematographique.</p></div><span class="price">349 EUR</span></div>
+        <div class="card-body"><div><h3>Chromia</h3><p>Pour une presentation haut de gamme, coloree et cinematographique.</p></div><span class="price">349 EUR</span></div>
       </article>
 
       <article class="card reveal" data-kind="premium portal">
