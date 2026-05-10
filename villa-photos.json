@@ -1,0 +1,91 @@
+{
+  "hero": "https://medianewbuild.com/file/hh-media-bucket/developments_v2/87929424/media/images/5.jpg",
+  "featured": [
+    {
+      "title": "The Hills 14",
+      "town": "El Herrojo",
+      "price": 22000000,
+      "beds": "8",
+      "surface": "2423",
+      "image": "https://medianewbuild.com/file/hh-media-bucket/developments_v2/87929424/media/images/5.jpg"
+    },
+    {
+      "title": "Villa à Marbella",
+      "town": "Marbella",
+      "price": 19500000,
+      "beds": "7",
+      "surface": "0",
+      "image": "https://medianewbuild.com/file/hh-media-bucket/developments_v2/37089450/media/images/commonareas/6.jpg"
+    },
+    {
+      "title": "Calle Bach",
+      "town": "Marbella",
+      "price": 19000000,
+      "beds": "6",
+      "surface": "1522",
+      "image": "https://medianewbuild.com/file/hh-media-bucket/developments_v2/32156547/media/images/outdoor/5.jpg"
+    },
+    {
+      "title": "Villa à Pueblo Nuevo",
+      "town": "Pueblo Nuevo",
+      "price": 12500000,
+      "beds": "7",
+      "surface": "0",
+      "image": "https://medianewbuild.com/file/hh-media-bucket/developments_v2/70091589/media/images/outdoor/11.jpg"
+    },
+    {
+      "title": "Villa à Benahavís",
+      "town": "Benahavís",
+      "price": 12135423,
+      "beds": "5",
+      "surface": "0",
+      "image": "https://medianewbuild.com/file/hh-media-bucket/developments_v2/82064372/media/images/8.jpg"
+    },
+    {
+      "title": "Villa à San Roque",
+      "town": "San Roque",
+      "price": 12000000,
+      "beds": "9",
+      "surface": "0",
+      "image": "https://medianewbuild.com/file/hh-media-bucket/developments_v2/85770703/media/images/outdoor/3.jpg"
+    }
+  ],
+  "templates": [
+    {
+      "title": "Villa Alcalá 70",
+      "town": "Marbella",
+      "price": 11500000,
+      "image": "https://medianewbuild.com/file/hh-media-bucket/developments_v2/25407071/media/images/outdoor/2.jpg"
+    },
+    {
+      "title": "Villa à Marbella",
+      "town": "Marbella",
+      "price": 11500000,
+      "image": "https://medianewbuild.com/file/hh-media-bucket/developments_v2/61414385/media/images/outdoor/4.jpg"
+    },
+    {
+      "title": "Propriété 61414385",
+      "town": "Marbella",
+      "price": 11500000,
+      "image": "https://medianewbuild.com/file/hh-media-bucket/developments_v2/61414385/media/images/indoor/1.jpg"
+    },
+    {
+      "title": "Villa à Marbella",
+      "town": "Marbella",
+      "price": 10900000,
+      "image": "https://medianewbuild.com/file/hh-media-bucket/developments_v2/75114616/media/images/outdoor/12.jpg"
+    },
+    {
+      "title": "Propriété 75114616",
+      "town": "Marbella",
+      "price": 10900000,
+      "image": "https://medianewbuild.com/file/hh-media-bucket/developments_v2/75114616/media/images/commonareas/1.jpg"
+    },
+    {
+      "title": "Villa à Benahavís",
+      "town": "Benahavís",
+      "price": 10863607,
+      "image": "https://medianewbuild.com/file/hh-media-bucket/developments_v2/82064372/media/images/8.jpg"
+    }
+  ]
+}
