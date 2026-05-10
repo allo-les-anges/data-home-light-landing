@@ -13,6 +13,8 @@
  *   Browser form  →  POST /api/leads  →  Google Apps Script  →  Google Sheet + Email
  */
 
+export const dynamic = "force-static"
+
 import { NextRequest, NextResponse } from "next/server"
 
 // ─── Types ────────────────────────────────────────────────────────────────────
