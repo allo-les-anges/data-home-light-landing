@@ -1,533 +1,237 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Catalogue des templates DataHome : templates inclus et templates premium payants pour sites d'agences immobilieres.">
-  <title>Templates DataHome | Templates inclus et premium</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Templates DataHome - Inclus et premium</title>
+  <meta name="description" content="Galerie des templates DataHome pour agences immobilieres: modeles inclus, premium et futurs templates sur mesure.">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --ink: #09111f;
+      --ink: #0a1222;
       --muted: #667085;
-      --line: #e7edf5;
-      --soft: #f8fafc;
-      --blue: #2563eb;
-      --violet: #7c3aed;
-      --gold: #d4af37;
+      --line: #dfe8f2;
+      --soft: #f6f8fb;
+      --blue: #2367ff;
+      --pink: #db3cc7;
+      --gold: #d5ad3d;
+      --dark: #07101f;
       --max: 1180px;
     }
-
-    * {
-      box-sizing: border-box;
-    }
-
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       color: var(--ink);
       background:
-        radial-gradient(circle at 12% 0%, rgba(37, 99, 235, 0.10), transparent 30%),
-        radial-gradient(circle at 88% 6%, rgba(217, 70, 239, 0.12), transparent 32%),
-        #fff;
+        radial-gradient(circle at 8% 0%, rgba(35,103,255,.12), transparent 28%),
+        radial-gradient(circle at 92% 3%, rgba(219,60,199,.12), transparent 32%),
+        var(--soft);
       font-family: Inter, system-ui, sans-serif;
       -webkit-font-smoothing: antialiased;
     }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    .container {
-      width: min(var(--max), calc(100% - 40px));
-      margin: 0 auto;
-    }
-
+    a { color: inherit; text-decoration: none; }
+    img { display:block; max-width:100%; }
+    .container { width:min(var(--max), calc(100% - 40px)); margin:0 auto; }
     header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      border-bottom: 1px solid rgba(231, 237, 245, 0.9);
-      background: rgba(255, 255, 255, 0.90);
+      position: sticky; top:0; z-index:20;
+      background: rgba(255,255,255,.88);
+      border-bottom:1px solid rgba(223,232,242,.8);
       backdrop-filter: blur(18px);
     }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      min-height: 82px;
-      gap: 24px;
-    }
-
-    .logo img {
-      width: 260px;
-      height: 56px;
-      object-fit: contain;
-      border-radius: 14px;
-      background: #02040a;
-      box-shadow: 0 16px 34px rgba(2, 4, 10, 0.16);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-      color: #263244;
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
-
+    .nav { min-height:82px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .logo img { width:220px; height:50px; object-fit:contain; border-radius:14px; background:#02040a; box-shadow:0 16px 34px rgba(2,4,10,.13); }
+    .links { display:flex; gap:24px; align-items:center; font-size:12px; font-weight:900; letter-spacing:.18em; text-transform:uppercase; color:#43516a; }
     .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 0 22px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+      display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:0 20px;
+      border-radius:999px; border:1px solid var(--line); font-size:12px; font-weight:900; letter-spacing:.12em; text-transform:uppercase;
+      transition: transform .2s ease, box-shadow .2s ease;
     }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-primary {
-      color: #fff;
-      border-color: transparent;
-      background: linear-gradient(135deg, var(--blue), var(--violet), #d946ef);
-      box-shadow: 0 18px 38px rgba(79, 70, 229, 0.22);
-    }
-
-    .hero {
-      padding: 80px 0 56px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--violet);
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 34px;
-      height: 2px;
-      border-radius: 99px;
-      background: currentColor;
-    }
-
-    h1,
-    h2 {
-      margin: 18px 0;
-      font-family: "Playfair Display", Georgia, serif;
-      font-weight: 600;
-      letter-spacing: -0.05em;
-      line-height: 0.98;
-    }
-
-    h1 {
-      max-width: 940px;
-      font-size: clamp(52px, 8vw, 104px);
-    }
-
-    h2 {
-      font-size: clamp(36px, 5vw, 66px);
-    }
-
-    .lead {
-      max-width: 760px;
-      color: var(--muted);
-      font-size: 19px;
-      line-height: 1.8;
-    }
-
-    .hero-panel {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 16px;
-      margin-top: 44px;
-    }
-
-    .stat {
-      padding: 24px;
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      background: rgba(255, 255, 255, 0.78);
-      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
-    }
-
-    .stat strong {
-      display: block;
-      font-size: 32px;
-      letter-spacing: -0.06em;
-    }
-
-    .stat span {
-      display: block;
-      margin-top: 8px;
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    section {
-      padding: 72px 0;
-    }
-
-    .section-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 32px;
-      margin-bottom: 34px;
-    }
-
-    .section-head p {
-      max-width: 470px;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .grid.premium {
-      grid-template-columns: repeat(4, 1fr);
-    }
-
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { color:#fff; border-color:transparent; background:linear-gradient(135deg,var(--blue),var(--pink)); box-shadow:0 20px 45px rgba(35,103,255,.23); }
+    .hero { padding:78px 0 46px; }
+    .eyebrow { color:var(--blue); font-size:12px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; }
+    h1, h2 { font-family:"Playfair Display", Georgia, serif; letter-spacing:-.055em; line-height:.98; font-weight:600; }
+    h1 { max-width:930px; margin:18px 0; font-size:clamp(52px,8vw,104px); }
+    .lead { max-width:760px; color:var(--muted); font-size:19px; line-height:1.75; }
+    .filters { display:flex; flex-wrap:wrap; gap:10px; margin-top:28px; }
+    .chip { border:1px solid var(--line); background:#fff; color:#39465c; border-radius:999px; padding:10px 14px; font-size:12px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; cursor:pointer; }
+    .chip.active { color:#fff; border-color:transparent; background:var(--dark); }
+    .grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; padding-bottom:88px; }
     .card {
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 34px;
-      background: #fff;
-      box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+      position:relative; overflow:hidden; border:1px solid var(--line); border-radius:30px; background:#fff;
+      box-shadow:0 24px 70px rgba(10,18,34,.09); transition:transform .24s ease, box-shadow .24s ease;
     }
-
-    .card.premium-card {
-      border-color: rgba(212, 175, 55, 0.36);
-      box-shadow: 0 24px 70px rgba(212, 175, 55, 0.16);
+    .card:hover { transform:translateY(-6px); box-shadow:0 34px 90px rgba(10,18,34,.14); }
+    .preview { height:420px; background:#d8dee8; padding:18px; overflow:hidden; }
+    .mini-page { height:640px; border-radius:18px; overflow:hidden; background:#fff; box-shadow:0 18px 42px rgba(10,18,34,.18); transform-origin:top center; transform:scale(.68); width:145%; margin-left:-22.5%; }
+    .mini-hero { height:210px; position:relative; color:#fff; display:flex; align-items:end; padding:24px; background-size:cover; background-position:center; }
+    .mini-hero::after { content:""; position:absolute; inset:0; background:linear-gradient(to top,rgba(0,0,0,.62),transparent); }
+    .mini-hero div { position:relative; z-index:1; }
+    .mini-hero strong { display:block; font-size:28px; font-family:"Playfair Display", Georgia, serif; }
+    .mini-section { padding:22px; display:grid; gap:12px; }
+    .mini-row { display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; }
+    .mini-prop { border:1px solid #edf2f7; border-radius:14px; overflow:hidden; font-size:10px; color:#64748b; }
+    .mini-prop img { height:70px; width:100%; object-fit:cover; }
+    .mini-prop span { display:block; padding:8px; }
+    .mini-dark { background:#07101f; color:#fff; }
+    .mini-dark .mini-prop { background:#111b2d; border-color:rgba(255,255,255,.1); color:#b8c5d8; }
+    .card-body { padding:20px; display:flex; justify-content:space-between; gap:16px; align-items:flex-start; }
+    .card h3 { margin:0 0 8px; font-size:20px; letter-spacing:-.03em; }
+    .card p { margin:0; color:var(--muted); line-height:1.55; font-size:14px; }
+    .tag { position:absolute; top:16px; left:16px; z-index:2; border-radius:999px; padding:8px 10px; background:#ffd34d; color:#0a1222; font-size:11px; font-weight:900; text-transform:uppercase; letter-spacing:.1em; }
+    .price { white-space:nowrap; color:var(--blue); font-weight:900; font-size:14px; }
+    .cta { padding:64px 0 86px; background:#07101f; color:#fff; }
+    .cta-box { display:grid; grid-template-columns:1fr auto; gap:24px; align-items:center; }
+    .cta p { color:rgba(255,255,255,.68); }
+    .reveal { opacity:0; transform:translateY(20px); transition:opacity .65s ease, transform .65s ease; }
+    .reveal.in { opacity:1; transform:none; }
+    @media (max-width: 980px) {
+      .links { display:none; }
+      .grid { grid-template-columns:1fr 1fr; }
+      .cta-box { grid-template-columns:1fr; }
     }
-
-    .visual {
-      position: relative;
-      height: 260px;
-      overflow: hidden;
-    }
-
-    .visual img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform .4s ease;
-    }
-
-    .card:hover .visual img {
-      transform: scale(1.04);
-    }
-
-    .badge {
-      position: absolute;
-      left: 18px;
-      top: 18px;
-      display: inline-flex;
-      min-height: 32px;
-      align-items: center;
-      padding: 0 12px;
-      border-radius: 999px;
-      color: #fff;
-      background: #111827;
-      font-size: 10px;
-      font-weight: 900;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    .badge.gold {
-      background: var(--gold);
-    }
-
-    .body {
-      padding: 26px;
-    }
-
-    .body small {
-      color: var(--violet);
-      font-size: 11px;
-      font-weight: 900;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
-
-    .premium-card .body small {
-      color: #a16207;
-    }
-
-    .body h3 {
-      margin: 10px 0;
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: 31px;
-      font-weight: 600;
-      letter-spacing: -0.04em;
-    }
-
-    .body p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.65;
-    }
-
-    .price {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 12px;
-      margin: 22px 0 18px;
-      padding-top: 18px;
-      border-top: 1px solid rgba(148, 163, 184, 0.22);
-    }
-
-    .price strong {
-      font-size: 30px;
-      letter-spacing: -0.06em;
-    }
-
-    .price span {
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .tags span {
-      padding: 8px 10px;
-      border: 1px solid rgba(148, 163, 184, 0.28);
-      border-radius: 999px;
-      color: #475467;
-      background: var(--soft);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    .cta {
-      color: #fff;
-      background:
-        linear-gradient(90deg, rgba(9, 17, 31, 0.88), rgba(9, 17, 31, 0.42)),
-        url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=82") center/cover;
-    }
-
-    .cta .lead {
-      color: rgba(255, 255, 255, 0.72);
-    }
-
-    footer {
-      padding: 38px 0;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      background: #fff;
-      font-size: 14px;
-    }
-
-    @media (max-width: 1040px) {
-      .grid,
-      .grid.premium,
-      .hero-panel {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 720px) {
-      .container {
-        width: min(100% - 24px, var(--max));
-      }
-
-      .nav {
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 16px 0;
-      }
-
-      .logo img {
-        width: 220px;
-        height: 48px;
-      }
-
-      .nav-links {
-        flex-wrap: wrap;
-        gap: 12px;
-      }
-
-      .hero {
-        padding-top: 52px;
-      }
-
-      .section-head {
-        display: block;
-      }
-
-      .grid,
-      .grid.premium,
-      .hero-panel {
-        grid-template-columns: 1fr;
-      }
+    @media (max-width: 640px) {
+      .container { width:min(100% - 28px, var(--max)); }
+      .logo img { width:176px; }
+      .grid { grid-template-columns:1fr; }
+      .preview { height:380px; }
     }
   </style>
 </head>
 <body>
   <header>
     <div class="container nav">
-      <a class="logo" href="index.html" aria-label="Retour DataHome">
-        <img src="images/datahome-logo-wide.jpg" alt="DataHome">
-      </a>
-      <nav class="nav-links" aria-label="Navigation">
-        <a href="index.html">Accueil</a>
-        <a href="#base">Base</a>
+      <a class="logo" href="/"><img src="images/DH_V2.jpg" alt="DataHome"></a>
+      <div class="links">
+        <a href="/">Accueil</a>
+        <a href="#included">Inclus</a>
         <a href="#premium">Premium</a>
-        <a class="btn btn-primary" href="onboarding.html">Tester</a>
-      </nav>
+        <a href="onboarding.html">Essai</a>
+      </div>
+      <a class="btn btn-primary" href="onboarding.html">Demander un site</a>
     </div>
   </header>
 
   <main>
     <section class="hero">
-      <div class="container">
-        <span class="eyebrow">Catalogue templates</span>
-        <h1>Des designs immobiliers prets a vendre, du plus simple au plus premium.</h1>
-        <p class="lead">Les templates DataHome ne sont pas de simples maquettes. Ils sont connectes aux flux XML, aux langues, au CRM leads, au chatbot, aux domaines personnalises et aux reglages visuels du dashboard client.</p>
-
-        <div class="hero-panel">
-          <div class="stat"><strong>6</strong><span>templates inclus</span></div>
-          <div class="stat"><strong>4</strong><span>templates premium</span></div>
-          <div class="stat"><strong>100%</strong><span>connectes au SaaS</span></div>
+      <div class="container reveal">
+        <div class="eyebrow">Galerie templates DataHome</div>
+        <h1>Des modeles web dignes d'une agence premium.</h1>
+        <p class="lead">Choisissez une base visuelle, puis adaptez logo, couleurs, police, hero, affichage des biens, pages, domaines et modules dans l'espace client.</p>
+        <div class="filters" aria-label="Filtres templates">
+          <button class="chip active" data-filter="all">Tous</button>
+          <button class="chip" data-filter="included">Inclus</button>
+          <button class="chip" data-filter="premium">Premium</button>
+          <button class="chip" data-filter="portal">Catalogue</button>
         </div>
       </div>
     </section>
 
-    <section id="base">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Inclus</span>
-            <h2>Templates de base</h2>
+    <section class="container grid" id="templates">
+      <article class="card reveal" data-kind="premium">
+        <span class="tag">Premium</span>
+        <div class="preview">
+          <div class="mini-page">
+            <div class="mini-hero" style="background-image:url('images/img216.jpg')"><div><span>Tierra</span><strong>Nature, architecture et silence.</strong></div></div>
+            <div class="mini-section"><p>Approche editoriale inspiree des agences lifestyle.</p><div class="mini-row"><div class="mini-prop"><img src="images/img36.jpg"><span>Villa Azure</span></div><div class="mini-prop"><img src="images/img61.jpg"><span>Sea Residence</span></div><div class="mini-prop"><img src="images/img181.jpg"><span>Casa Sol</span></div></div></div>
           </div>
-          <p>Ces styles sont inclus dans l'offre et peuvent servir de point de depart depuis les settings de la page mon-espace.</p>
         </div>
+        <div class="card-body"><div><h3>Tierra</h3><p>Hero scinde, textes aeres, rythme editorial, ideal agences luxe nature.</p></div><span class="price">299 EUR</span></div>
+      </article>
 
-        <div class="grid">
-          <article class="card">
-            <div class="visual"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=82" alt="Villa mediterraneenne"><span class="badge">Inclus</span></div>
-            <div class="body"><small>Riviera</small><h3>Luxe balneaire</h3><p>Fond clair, accents or, cartes editoriales et rendu premium pour biens en bord de mer.</p><div class="price"><strong>Inclus</strong><span>base</span></div><div class="tags"><span>Mer</span><span>Editorial</span><span>3 colonnes</span></div></div>
-          </article>
-
-          <article class="card">
-            <div class="visual"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=82" alt="Residence prestige"><span class="badge">Inclus</span></div>
-            <div class="body"><small>Prestige</small><h3>Urbain premium</h3><p>Style sombre, violet et compact pour agences haut de gamme dans les grandes villes.</p><div class="price"><strong>Inclus</strong><span>base</span></div><div class="tags"><span>Dark</span><span>Compact</span><span>Luxury</span></div></div>
-          </article>
-
-          <article class="card">
-            <div class="visual"><img src="https://images.unsplash.com/photo-1560184897-ae75f418493e?auto=format&fit=crop&w=900&q=82" alt="Interieur moderne"><span class="badge">Inclus</span></div>
-            <div class="body"><small>Urban</small><h3>Portail efficace</h3><p>Affichage horizontal, recherche directe et structure ideale pour un volume eleve de biens.</p><div class="price"><strong>Inclus</strong><span>base</span></div><div class="tags"><span>Portail</span><span>Volume</span><span>4 colonnes</span></div></div>
-          </article>
-
-          <article class="card">
-            <div class="visual"><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=82" alt="Maison au soleil"><span class="badge">Inclus</span></div>
-            <div class="body"><small>Soleil</small><h3>Sud chaleureux</h3><p>Tons ambre et orange, experience conviviale pour agences mediterraneennes.</p><div class="price"><strong>Inclus</strong><span>base</span></div><div class="tags"><span>Chaud</span><span>Sud</span><span>Accueil</span></div></div>
-          </article>
-
-          <article class="card">
-            <div class="visual"><img src="https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?auto=format&fit=crop&w=900&q=82" alt="Architecture minimaliste"><span class="badge">Inclus</span></div>
-            <div class="body"><small>Nordic</small><h3>Minimalisme clair</h3><p>Bords droits, espaces blancs, accent bleu froid et lecture tres propre.</p><div class="price"><strong>Inclus</strong><span>base</span></div><div class="tags"><span>Minimal</span><span>Carre</span><span>Lisible</span></div></div>
-          </article>
-
-          <article class="card">
-            <div class="visual"><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=82" alt="Interieur naturel"><span class="badge">Inclus</span></div>
-            <div class="body"><small>Verde</small><h3>Nature durable</h3><p>Palette verte, douceur visuelle et positionnement immobilier nature ou eco-responsable.</p><div class="price"><strong>Inclus</strong><span>base</span></div><div class="tags"><span>Nature</span><span>Eco</span><span>Douceur</span></div></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="premium">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Premium</span>
-            <h2>Templates payants</h2>
+      <article class="card reveal" data-kind="included">
+        <span class="tag">Inclus</span>
+        <div class="preview">
+          <div class="mini-page mini-dark">
+            <div class="mini-hero" style="background-image:url('images/img140.jpg')"><div><span>Prestige</span><strong>Dreams can come true.</strong></div></div>
+            <div class="mini-section"><p>Ambiance sombre, typographie serif, biens mis en scene.</p><div class="mini-row"><div class="mini-prop"><img src="images/img11.jpg"><span>Apartment</span></div><div class="mini-prop"><img src="images/img132.jpg"><span>Villa</span></div><div class="mini-prop"><img src="images/img139.jpg"><span>Bungalow</span></div></div></div>
           </div>
-          <p>Ces templates peuvent etre vendus comme upgrades. Ils donnent une vraie raison commerciale de passer a un niveau superieur sans reconstruire le site.</p>
         </div>
+        <div class="card-body"><div><h3>Prestige</h3><p>Style premium sombre, parfait pour une agence haut de gamme.</p></div><span class="price">Inclus</span></div>
+      </article>
 
-        <div class="grid premium">
-          <article class="card premium-card">
-            <div class="visual"><img src="https://images.unsplash.com/photo-1600607687644-c7171b42498b?auto=format&fit=crop&w=900&q=82" alt="Villa premium lumineuse"><span class="badge gold">Premium</span></div>
-            <div class="body"><small>Riviera Light</small><h3>Elegance lumineuse</h3><p>Hero solaire, rythme editorial et presentation haut de gamme.</p><div class="price"><strong>490 €</strong><span>setup</span></div><div class="tags"><span>Vente</span><span>Location</span><span>Or doux</span></div></div>
-          </article>
-
-          <article class="card premium-card">
-            <div class="visual"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=82" alt="Villa luxe moderne"><span class="badge gold">Premium</span></div>
-            <div class="body"><small>Prestige Black</small><h3>Luxury dark</h3><p>Univers sombre, photos immersives, contraste et experience memorable.</p><div class="price"><strong>790 €</strong><span>setup</span></div><div class="tags"><span>Luxury</span><span>Video</span><span>Editorial</span></div></div>
-          </article>
-
-          <article class="card premium-card">
-            <div class="visual"><img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=900&q=82" alt="Architecture urbaine"><span class="badge gold">Premium</span></div>
-            <div class="body"><small>Urban Minimal</small><h3>Conversion directe</h3><p>Design sobre, recherche rapide et cartes tres efficaces sur mobile.</p><div class="price"><strong>390 €</strong><span>setup</span></div><div class="tags"><span>Minimal</span><span>SEO</span><span>Rapide</span></div></div>
-          </article>
-
-          <article class="card premium-card">
-            <div class="visual"><img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=900&q=82" alt="Maison familiale"><span class="badge gold">Premium</span></div>
-            <div class="body"><small>Signature Family</small><h3>Confiance locale</h3><p>Presentation chaleureuse pour agences locales et residences familiales.</p><div class="price"><strong>590 €</strong><span>setup</span></div><div class="tags"><span>Local</span><span>Equipe</span><span>Famille</span></div></div>
-          </article>
+      <article class="card reveal" data-kind="premium portal">
+        <span class="tag">Premium</span>
+        <div class="preview">
+          <div class="mini-page">
+            <div class="mini-hero" style="background-image:url('images/img243.jpg')"><div><span>Portal</span><strong>Trouvez le bien parfait.</strong></div></div>
+            <div class="mini-section"><p>Recherche avancee, filtres, liste dense et pagination.</p><div class="mini-row"><div class="mini-prop"><img src="images/img160.jpg"><span>78 000 EUR</span></div><div class="mini-prop"><img src="images/img161.jpg"><span>131 250 EUR</span></div><div class="mini-prop"><img src="images/img181.jpg"><span>883 210 EUR</span></div></div></div>
+          </div>
         </div>
-      </div>
+        <div class="card-body"><div><h3>Portal</h3><p>Experience catalogue pour agences avec beaucoup de biens XML.</p></div><span class="price">249 EUR</span></div>
+      </article>
+
+      <article class="card reveal" data-kind="included">
+        <span class="tag">Inclus</span>
+        <div class="preview">
+          <div class="mini-page">
+            <div class="mini-hero" style="background-image:url('images/hero-villa.jpg')"><div><span>Lumina</span><strong>Clair, rapide, elegant.</strong></div></div>
+            <div class="mini-section"><p>Look lumineux, couleurs modernes, cartes compactes.</p><div class="mini-row"><div class="mini-prop"><img src="images/img36.jpg"><span>Appartement</span></div><div class="mini-prop"><img src="images/img61.jpg"><span>Villa</span></div><div class="mini-prop"><img src="images/img140.jpg"><span>Projet</span></div></div></div>
+          </div>
+        </div>
+        <div class="card-body"><div><h3>Lumina</h3><p>Base claire et coloree pour agences locales et modernes.</p></div><span class="price">Inclus</span></div>
+      </article>
+
+      <article class="card reveal" data-kind="premium">
+        <span class="tag">Premium</span>
+        <div class="preview">
+          <div class="mini-page mini-dark">
+            <div class="mini-hero" style="background-image:url('images/img181.jpg')"><div><span>Nocturne</span><strong>Immobilier confidentiel.</strong></div></div>
+            <div class="mini-section"><p>Design sombre, sections immersives, vignettes dramatiques.</p><div class="mini-row"><div class="mini-prop"><img src="images/img216.jpg"><span>Villa</span></div><div class="mini-prop"><img src="images/img243.jpg"><span>Sea view</span></div><div class="mini-prop"><img src="images/img140.jpg"><span>Estate</span></div></div></div>
+          </div>
+        </div>
+        <div class="card-body"><div><h3>Nocturne</h3><p>Pour une presentation haut de gamme, sombre et cinematographique.</p></div><span class="price">349 EUR</span></div>
+      </article>
+
+      <article class="card reveal" data-kind="premium portal">
+        <span class="tag">Premium</span>
+        <div class="preview">
+          <div class="mini-page">
+            <div class="mini-hero" style="background-image:url('images/img61.jpg')"><div><span>Atlas</span><strong>Carte, regions et recherche.</strong></div></div>
+            <div class="mini-section"><p>Approche catalogue geographique pour plusieurs zones.</p><div class="mini-row"><div class="mini-prop"><img src="images/img132.jpg"><span>Alicante</span></div><div class="mini-prop"><img src="images/img139.jpg"><span>Murcia</span></div><div class="mini-prop"><img src="images/img160.jpg"><span>Costa Blanca</span></div></div></div>
+          </div>
+        </div>
+        <div class="card-body"><div><h3>Atlas</h3><p>Ideal pour mettre en avant regions, villes et volumes de biens.</p></div><span class="price">299 EUR</span></div>
+      </article>
     </section>
 
     <section class="cta">
-      <div class="container">
-        <span class="eyebrow" style="color:#fef3c7;">SaaS + design</span>
-        <h2>Un template DataHome reste connecte a toute la plateforme.</h2>
-        <p class="lead">Chaque design conserve les modules, le catalogue XML, les langues, les domaines, le CRM leads et les futurs services premium.</p>
-        <a class="btn btn-primary" href="onboarding.html">Demarrer un onboarding</a>
+      <div class="container cta-box reveal">
+        <div>
+          <div class="eyebrow" style="color:#7dd3fc">Workflow commercial</div>
+          <h2 style="font-size:clamp(36px,5vw,64px);margin:14px 0 8px">Un template n'est que le debut.</h2>
+          <p>DataHome ajoute la configuration client, le flux XML, les modules, les domaines et les demandes d'options premium.</p>
+        </div>
+        <a class="btn btn-primary" href="onboarding.html">Lancer un essai</a>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="container">© 2026 DataHome. Templates immobiliers connectes a une plateforme SaaS.</div>
-  </footer>
+  <script>
+    const reveal = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('in');
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((el) => reveal.observe(el));
+
+    const chips = document.querySelectorAll('.chip');
+    const cards = document.querySelectorAll('.card[data-kind]');
+    chips.forEach((chip) => {
+      chip.addEventListener('click', () => {
+        chips.forEach((c) => c.classList.remove('active'));
+        chip.classList.add('active');
+        const filter = chip.dataset.filter;
+        cards.forEach((card) => {
+          const show = filter === 'all' || card.dataset.kind.includes(filter);
+          card.style.display = show ? '' : 'none';
+        });
+      });
+    });
+  </script>
 </body>
 </html>
