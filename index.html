@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="light" lang="fr">
+<html lang="fr">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -12,32 +12,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
 tailwind.config = {
-  darkMode: "class",
   theme: {
     extend: {
       colors: {
-        "brand":                       "#1d4ed8",
-        "brand-dk":                    "#1239b0",
-        "brand-lt":                    "#eff4ff",
-        "primary-fixed-dim":           "#b7c4ff",
-        "on-surface":                  "#1b1b1c",
-        "primary-fixed":               "#dce1ff",
-        "on-background":               "#1b1b1c",
-        "surface-container-high":      "#eae7e8",
-        "surface":                     "#fcf8f9",
-        "inverse-surface":             "#0f1f3d",
-        "surface-bright":              "#fcf8f9",
-        "surface-container":           "#f0edee",
-        "background":                  "#fcf8f9",
-        "primary-container":           "#1d4ed8",
-        "on-primary-container":        "#cad3ff",
-        "on-surface-variant":          "#434655",
-        "outline-variant":             "#c4c5d7",
-        "surface-variant":             "#e4e2e3",
-        "outline":                     "#747686",
-        "inverse-on-surface":          "#f3f0f1",
-        "surface-container-low":       "#f6f3f4",
-        "surface-container-lowest":    "#ffffff"
+        bg:      "#0a0a0a",
+        bg2:     "#111111",
+        surface: "#161616",
+        gold:    "#f5c842",
+        red:     "#e63946",
+        orange:  "#f4844a",
+        green:   "#4caf7d",
+        purple:  "#7c5cbf",
+        blue:    "#2196c9"
       },
       spacing: {
         "margin-desktop": "48px",
@@ -47,26 +33,62 @@ tailwind.config = {
       },
       fontFamily: { sans: ["Inter", "system-ui", "sans-serif"] },
       fontSize: {
-        "display":   ["60px", {lineHeight:"68px", letterSpacing:"-0.025em", fontWeight:"700"}],
-        "h2":        ["36px", {lineHeight:"44px", letterSpacing:"-0.02em",  fontWeight:"700"}],
-        "h3":        ["22px", {lineHeight:"30px", letterSpacing:"-0.01em",  fontWeight:"600"}],
-        "body-lg":   ["18px", {lineHeight:"28px", fontWeight:"400"}],
-        "body":      ["16px", {lineHeight:"24px", fontWeight:"400"}],
-        "label":     ["14px", {lineHeight:"20px", letterSpacing:"0.01em",   fontWeight:"500"}],
-        "xs":        ["12px", {lineHeight:"16px", fontWeight:"600"}]
+        "display": ["60px", {lineHeight:"68px", letterSpacing:"-0.025em", fontWeight:"700"}],
+        "h2":      ["36px", {lineHeight:"44px", letterSpacing:"-0.02em",  fontWeight:"700"}],
+        "h3":      ["22px", {lineHeight:"30px", letterSpacing:"-0.01em",  fontWeight:"600"}],
+        "body-lg": ["18px", {lineHeight:"28px", fontWeight:"400"}],
+        "body":    ["16px", {lineHeight:"24px", fontWeight:"400"}],
+        "label":   ["14px", {lineHeight:"20px", letterSpacing:"0.01em",   fontWeight:"500"}],
+        "xs":      ["12px", {lineHeight:"16px", fontWeight:"600"}]
       }
     }
   }
 }
 </script>
 <style>
-  body { font-family:'Inter',system-ui,sans-serif; background:#fcf8f9; }
+  :root {
+    --bg:     #0a0a0a;
+    --bg2:    #111111;
+    --surf:   #161616;
+    --gold:   #f5c842;
+    --red:    #e63946;
+    --orange: #f4844a;
+    --green:  #4caf7d;
+    --purple: #7c5cbf;
+    --blue:   #2196c9;
+    --w70:    rgba(255,255,255,.70);
+    --w40:    rgba(255,255,255,.40);
+    --w10:    rgba(255,255,255,.10);
+    --w8:     rgba(255,255,255,.08);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family:'Inter',system-ui,sans-serif; background:var(--bg); color:#fff; margin:0; -webkit-font-smoothing:antialiased; }
+
   .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; }
   .ms-fill { font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24; }
 
+  /* Gradient CTA button */
+  .btn-primary {
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    background:linear-gradient(90deg,var(--red),var(--orange),var(--gold));
+    color:#0a0a0a; font-weight:700; border-radius:6px;
+    transition:opacity .15s, transform .15s;
+  }
+  .btn-primary:hover { opacity:.9; transform:translateY(-1px); }
+
+  .btn-secondary {
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    border:1px solid var(--gold); color:var(--gold); background:transparent;
+    border-radius:6px; font-weight:600;
+    transition:background .15s, transform .15s;
+  }
+  .btn-secondary:hover { background:rgba(245,200,66,.08); transform:translateY(-1px); }
+
   /* Animations */
-  @keyframes floatY  { 0%,100%{transform:translateY(0)}   50%{transform:translateY(-7px)} }
-  @keyframes pulseDot{ 0%,100%{box-shadow:0 0 0 0 rgba(29,78,216,.5)} 50%{box-shadow:0 0 0 6px rgba(29,78,216,0)} }
+  @keyframes floatY   { 0%,100%{transform:translateY(0)}   50%{transform:translateY(-7px)} }
+  @keyframes pulseDot { 0%,100%{box-shadow:0 0 0 0 rgba(245,200,66,.6)} 50%{box-shadow:0 0 0 7px rgba(245,200,66,0)} }
   .float-1 { animation:floatY 4s ease-in-out infinite; }
   .float-2 { animation:floatY 4s ease-in-out 1.4s infinite; }
   .float-3 { animation:floatY 4s ease-in-out 2.8s infinite; }
@@ -83,15 +105,30 @@ tailwind.config = {
   .faq-plus { transition:transform .25s ease; }
   .faq-item.open .faq-plus { transform:rotate(45deg); }
 
-  /* Template card hover */
+  /* Template card */
   .tpl-card { transition:transform .2s ease, box-shadow .2s ease; }
-  .tpl-card:hover { transform:translateY(-4px); box-shadow:0 16px 48px rgba(17,24,39,.12); }
+  .tpl-card:hover { transform:translateY(-4px); box-shadow:0 20px 60px rgba(0,0,0,.5); }
+
+  /* Feature card hover */
+  .feat-card { transition:border-color .2s ease, box-shadow .2s ease; }
+  .feat-card:hover { border-color:rgba(255,255,255,.18); box-shadow:0 8px 32px rgba(0,0,0,.4); }
+
+  /* Section label */
+  .section-label { color:var(--gold); font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.1em; }
+
+  /* Icon circles */
+  .ic-red    { background:rgba(230,57,70,.15);  color:var(--red); }
+  .ic-orange { background:rgba(244,132,74,.15); color:var(--orange); }
+  .ic-gold   { background:rgba(245,200,66,.15); color:var(--gold); }
+  .ic-green  { background:rgba(76,175,125,.15); color:var(--green); }
+  .ic-purple { background:rgba(124,92,191,.15); color:var(--purple); }
+  .ic-blue   { background:rgba(33,150,201,.15); color:var(--blue); }
 </style>
 </head>
-<body class="text-on-background">
+<body>
 
 <!-- ████ 1 · NAVBAR ████████████████████████████████████████ -->
-<header id="nav" class="sticky top-0 z-50 border-b border-white/10 transition-shadow duration-200" style="background:#0a0a0a">
+<header id="nav" class="sticky top-0 z-50 transition-shadow duration-200" style="background:#0a0a0a;border-bottom:1px solid rgba(255,255,255,.07)">
   <div class="flex items-center justify-between h-16 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto gap-8">
 
     <a href="/" class="flex-shrink-0">
@@ -99,15 +136,15 @@ tailwind.config = {
     </a>
 
     <nav class="hidden md:flex items-center gap-1">
-      <a href="#features" class="text-label text-white/60 hover:text-white hover:bg-white/8 px-3 py-2 rounded-lg transition-all">Fonctionnalités</a>
-      <a href="#templates" class="text-label text-white/60 hover:text-white hover:bg-white/8 px-3 py-2 rounded-lg transition-all">Templates</a>
-      <a href="#pricing" class="text-label text-white/60 hover:text-white hover:bg-white/8 px-3 py-2 rounded-lg transition-all">Tarifs</a>
-      <a href="#faq" class="text-label text-white/60 hover:text-white hover:bg-white/8 px-3 py-2 rounded-lg transition-all">FAQ</a>
+      <a href="#features" class="text-label px-3 py-2 rounded-lg transition-all" style="color:var(--w70)" onmouseover="this.style.color='#fff';this.style.background='rgba(255,255,255,.06)'" onmouseout="this.style.color='rgba(255,255,255,.7)';this.style.background='transparent'">Fonctionnalités</a>
+      <a href="#templates" class="text-label px-3 py-2 rounded-lg transition-all" style="color:var(--w70)" onmouseover="this.style.color='#fff';this.style.background='rgba(255,255,255,.06)'" onmouseout="this.style.color='rgba(255,255,255,.7)';this.style.background='transparent'">Templates</a>
+      <a href="#pricing" class="text-label px-3 py-2 rounded-lg transition-all" style="color:var(--w70)" onmouseover="this.style.color='#fff';this.style.background='rgba(255,255,255,.06)'" onmouseout="this.style.color='rgba(255,255,255,.7)';this.style.background='transparent'">Tarifs</a>
+      <a href="#faq" class="text-label px-3 py-2 rounded-lg transition-all" style="color:var(--w70)" onmouseover="this.style.color='#fff';this.style.background='rgba(255,255,255,.06)'" onmouseout="this.style.color='rgba(255,255,255,.7)';this.style.background='transparent'">FAQ</a>
     </nav>
 
     <div class="flex items-center gap-3 flex-shrink-0">
-      <a href="experience.html" class="hidden md:inline-flex items-center border border-white/25 text-white/80 text-label px-4 py-2 rounded-lg hover:bg-white/10 transition-all">Voir une démo</a>
-      <a href="onboarding.html" class="inline-flex items-center bg-brand text-white text-label px-4 py-2 rounded-lg hover:bg-brand-dk transition-all shadow-sm">Essai gratuit</a>
+      <a href="experience.html" class="btn-secondary hidden md:inline-flex text-label px-4 py-2">Voir une démo</a>
+      <a href="onboarding.html" class="btn-primary text-label px-5 py-2.5">Essai gratuit</a>
     </div>
 
   </div>
@@ -116,47 +153,40 @@ tailwind.config = {
 <main>
 
 <!-- ████ 2 · HERO ██████████████████████████████████████████ -->
-<section class="relative py-20 md:py-28 overflow-hidden px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<section class="relative py-24 md:py-32 overflow-hidden px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
 
-  <!-- Copy -->
   <div class="flex flex-col items-center text-center max-w-3xl mx-auto">
 
-    <span class="fade-up inline-flex items-center gap-2 bg-brand-lt text-brand text-xs font-semibold uppercase tracking-wider px-4 py-1.5 rounded-full mb-6">
-      <span class="w-2 h-2 rounded-full bg-brand pulse"></span>
+    <span class="fade-up inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider px-4 py-1.5 rounded-full mb-6" style="background:rgba(245,200,66,.12);color:var(--gold);border:1px solid rgba(245,200,66,.25)">
+      <span class="w-2 h-2 rounded-full pulse" style="background:var(--gold)"></span>
       La plateforme spécialisée immobilier
     </span>
 
-    <h1 class="fade-up d1 text-display text-on-background mb-5">
-      Votre agence immobilière<br class="hidden sm:block"/> en ligne en <span class="text-brand">48h.</span>
+    <h1 class="fade-up d1 text-display text-white mb-5">
+      Votre agence immobilière<br class="hidden sm:block"/> en ligne en <span style="color:var(--gold)">48h.</span>
     </h1>
 
-    <p class="fade-up d2 text-body-lg text-on-surface-variant mb-9 max-w-xl">
+    <p class="fade-up d2 text-body-lg mb-9 max-w-xl" style="color:var(--w70)">
       Site vitrine professionnel connecté à HabiHub, multilingue, chatbot IA et CRM leads intégré.
     </p>
 
     <div class="fade-up d3 flex flex-col sm:flex-row gap-3 mb-7">
-      <a href="onboarding.html" class="inline-flex items-center justify-center gap-2 bg-brand text-white text-body font-semibold px-7 py-3.5 rounded-xl hover:bg-brand-dk transition-all shadow-md hover:shadow-lg">
+      <a href="onboarding.html" class="btn-primary text-body px-7 py-3.5">
         <span class="material-symbols-outlined ms-fill" style="font-size:18px">rocket_launch</span>
         Démarrer l'essai gratuit
       </a>
-      <a href="templates.html" class="inline-flex items-center justify-center gap-2 border border-outline-variant text-on-background text-body font-semibold px-7 py-3.5 rounded-xl hover:bg-surface-container transition-all">
+      <a href="templates.html" class="btn-secondary text-body px-7 py-3.5">
         <span class="material-symbols-outlined" style="font-size:18px">grid_view</span>
         Voir les templates
       </a>
     </div>
 
-    <div class="fade-up d4 flex flex-wrap items-center justify-center gap-5 text-label text-on-surface-variant">
-      <span class="flex items-center gap-1.5">
-        <span class="material-symbols-outlined text-green-500 ms-fill" style="font-size:16px">check_circle</span>15 jours d'essai
-      </span>
-      <span class="w-px h-4 bg-outline-variant hidden sm:block"></span>
-      <span class="flex items-center gap-1.5">
-        <span class="material-symbols-outlined text-green-500 ms-fill" style="font-size:16px">check_circle</span>Sans carte bancaire
-      </span>
-      <span class="w-px h-4 bg-outline-variant hidden sm:block"></span>
-      <span class="flex items-center gap-1.5">
-        <span class="material-symbols-outlined text-green-500 ms-fill" style="font-size:16px">check_circle</span>Annulation à tout moment
-      </span>
+    <div class="fade-up d4 flex flex-wrap items-center justify-center gap-5 text-label" style="color:var(--w40)">
+      <span class="flex items-center gap-1.5"><span class="material-symbols-outlined ms-fill" style="font-size:16px;color:var(--green)">check_circle</span>15 jours d'essai</span>
+      <span class="hidden sm:block w-px h-4" style="background:rgba(255,255,255,.12)"></span>
+      <span class="flex items-center gap-1.5"><span class="material-symbols-outlined ms-fill" style="font-size:16px;color:var(--green)">check_circle</span>Sans carte bancaire</span>
+      <span class="hidden sm:block w-px h-4" style="background:rgba(255,255,255,.12)"></span>
+      <span class="flex items-center gap-1.5"><span class="material-symbols-outlined ms-fill" style="font-size:16px;color:var(--green)">check_circle</span>Annulation à tout moment</span>
     </div>
 
   </div>
@@ -165,28 +195,27 @@ tailwind.config = {
   <div class="mt-14 relative fade-up d2">
 
     <!-- Floating badges -->
-    <div class="float-1 absolute -top-3 right-4 md:right-20 z-10 hidden md:flex items-center gap-3 bg-white border border-outline-variant rounded-2xl shadow-lg px-4 py-3">
-      <span class="material-symbols-outlined text-brand ms-fill" style="font-size:20px">home</span>
-      <div><p class="font-semibold text-sm text-on-surface leading-none mb-0.5">247 biens</p><p class="text-xs text-on-surface-variant">synchronisés</p></div>
+    <div class="float-1 absolute -top-3 right-4 md:right-20 z-10 hidden md:flex items-center gap-3 rounded-2xl shadow-2xl px-4 py-3" style="background:var(--surf);border:1px solid rgba(255,255,255,.08)">
+      <span class="material-symbols-outlined ms-fill" style="font-size:20px;color:var(--gold)">home</span>
+      <div><p class="font-semibold text-sm text-white leading-none mb-0.5">247 biens</p><p class="text-xs" style="color:var(--w40)">synchronisés</p></div>
     </div>
-    <div class="float-2 absolute bottom-6 right-3 md:right-16 z-10 hidden md:flex items-center gap-3 bg-white border border-outline-variant rounded-2xl shadow-lg px-4 py-3">
-      <span class="material-symbols-outlined text-brand ms-fill" style="font-size:20px">language</span>
-      <div><p class="font-semibold text-sm text-on-surface leading-none mb-0.5">8 langues</p><p class="text-xs text-on-surface-variant">traduites auto</p></div>
+    <div class="float-2 absolute bottom-6 right-3 md:right-16 z-10 hidden md:flex items-center gap-3 rounded-2xl shadow-2xl px-4 py-3" style="background:var(--surf);border:1px solid rgba(255,255,255,.08)">
+      <span class="material-symbols-outlined ms-fill" style="font-size:20px;color:var(--blue)">language</span>
+      <div><p class="font-semibold text-sm text-white leading-none mb-0.5">8 langues</p><p class="text-xs" style="color:var(--w40)">traduites auto</p></div>
     </div>
-    <div class="float-3 absolute bottom-6 left-3 md:left-16 z-10 hidden md:flex items-center gap-3 bg-white border border-outline-variant rounded-2xl shadow-lg px-4 py-3">
-      <span class="material-symbols-outlined text-yellow-500 ms-fill" style="font-size:20px">bolt</span>
-      <div><p class="font-semibold text-sm text-on-surface leading-none mb-0.5">En ligne en 48h</p><p class="text-xs text-on-surface-variant">garanti</p></div>
+    <div class="float-3 absolute bottom-6 left-3 md:left-16 z-10 hidden md:flex items-center gap-3 rounded-2xl shadow-2xl px-4 py-3" style="background:var(--surf);border:1px solid rgba(255,255,255,.08)">
+      <span class="material-symbols-outlined ms-fill" style="font-size:20px;color:var(--orange)">bolt</span>
+      <div><p class="font-semibold text-sm text-white leading-none mb-0.5">En ligne en 48h</p><p class="text-xs" style="color:var(--w40)">garanti</p></div>
     </div>
 
-    <!-- Frame -->
-    <div class="rounded-2xl overflow-hidden border border-outline-variant shadow-2xl">
-      <div class="bg-surface-container-high flex items-center gap-3 px-4 py-3 border-b border-outline-variant">
+    <div class="rounded-2xl overflow-hidden shadow-2xl" style="border:1px solid rgba(255,255,255,.1)">
+      <div class="flex items-center gap-3 px-4 py-3" style="background:#1a1a1a;border-bottom:1px solid rgba(255,255,255,.08)">
         <div class="flex gap-1.5">
-          <div class="w-3 h-3 rounded-full bg-red-400"></div>
-          <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
-          <div class="w-3 h-3 rounded-full bg-green-400"></div>
+          <div class="w-3 h-3 rounded-full" style="background:#e63946"></div>
+          <div class="w-3 h-3 rounded-full" style="background:#f5c842"></div>
+          <div class="w-3 h-3 rounded-full" style="background:#4caf7d"></div>
         </div>
-        <div class="flex-1 bg-white border border-outline-variant rounded-full text-xs text-on-surface-variant text-center py-1 px-3">agencia-costa-del-sol.es</div>
+        <div class="flex-1 rounded-full text-xs text-center py-1 px-3" style="background:#111;border:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.4)">agencia-costa-del-sol.es</div>
       </div>
       <div class="bg-gradient-to-br from-[#1e3a5f] via-[#1d4ed8] to-[#0ea5e9] min-h-[260px] md:min-h-[340px] relative overflow-hidden">
         <div class="flex items-center justify-between px-6 py-4 bg-black/10">
@@ -197,7 +226,7 @@ tailwind.config = {
           <div class="inline-block bg-white/20 text-white text-xs px-3 py-1 rounded-full mb-3">Marbella · Costa del Sol</div>
           <p class="text-white font-bold text-2xl md:text-3xl leading-tight mb-2">Trouvez votre villa de rêve</p>
           <p class="text-white/70 text-sm mb-5">247 propriétés exclusives disponibles</p>
-          <span class="inline-block bg-white text-brand font-bold text-sm px-5 py-2.5 rounded-lg">Rechercher →</span>
+          <span class="inline-block bg-white font-bold text-sm px-5 py-2.5 rounded-lg" style="color:#1d4ed8">Rechercher →</span>
         </div>
         <div class="absolute bottom-0 right-0 flex gap-3 p-4">
           <div class="bg-white/15 backdrop-blur-sm rounded-xl p-3 w-28">
@@ -223,167 +252,167 @@ tailwind.config = {
 </section>
 
 <!-- ████ 3 · PARTENAIRES ███████████████████████████████████ -->
-<section class="py-12 bg-surface-container border-y border-outline-variant">
+<section class="py-12" style="background:var(--bg2);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)">
   <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-    <p class="text-center text-xs font-semibold text-outline uppercase tracking-[0.18em] mb-8 fade-up">Compatible avec vos outils immobiliers</p>
+    <p class="text-center text-xs font-semibold uppercase tracking-[0.18em] mb-8 fade-up" style="color:var(--w40)">Compatible avec vos outils immobiliers</p>
     <div class="flex flex-wrap justify-center items-center gap-6 md:gap-12 fade-up d1">
-      <div class="flex items-center gap-2 opacity-50 hover:opacity-100 grayscale hover:grayscale-0 transition-all cursor-default">
-        <div class="w-6 h-6 rounded-md bg-blue-100 flex items-center justify-center font-bold text-blue-700 text-xs">H</div>
-        <span class="font-bold text-base text-on-surface">HabiHub</span>
+      <div class="flex items-center gap-2 transition-opacity opacity-40 hover:opacity-100 cursor-default">
+        <div class="w-6 h-6 rounded-md flex items-center justify-center font-bold text-xs" style="background:rgba(33,150,201,.2);color:var(--blue)">H</div>
+        <span class="font-bold text-base text-white">HabiHub</span>
       </div>
-      <div class="flex items-center gap-2 opacity-50 hover:opacity-100 grayscale hover:grayscale-0 transition-all cursor-default">
-        <div class="w-6 h-6 rounded-md bg-pink-100 flex items-center justify-center font-bold text-pink-700 text-xs">I</div>
-        <span class="font-bold text-base text-on-surface">Inmovilla</span>
+      <div class="flex items-center gap-2 transition-opacity opacity-40 hover:opacity-100 cursor-default">
+        <div class="w-6 h-6 rounded-md flex items-center justify-center font-bold text-xs" style="background:rgba(230,57,70,.2);color:var(--red)">I</div>
+        <span class="font-bold text-base text-white">Inmovilla</span>
       </div>
-      <div class="flex items-center gap-2 opacity-50 hover:opacity-100 grayscale hover:grayscale-0 transition-all cursor-default">
-        <div class="w-6 h-6 rounded-md bg-green-100 flex items-center justify-center font-bold text-green-700 text-xs">W</div>
-        <span class="font-bold text-base text-on-surface">Witei</span>
+      <div class="flex items-center gap-2 transition-opacity opacity-40 hover:opacity-100 cursor-default">
+        <div class="w-6 h-6 rounded-md flex items-center justify-center font-bold text-xs" style="background:rgba(76,175,125,.2);color:var(--green)">W</div>
+        <span class="font-bold text-base text-white">Witei</span>
       </div>
-      <div class="flex items-center gap-2 opacity-50 hover:opacity-100 grayscale hover:grayscale-0 transition-all cursor-default">
-        <div class="w-6 h-6 rounded-md bg-yellow-100 flex items-center justify-center font-bold text-yellow-700 text-xs">I</div>
-        <span class="font-bold text-base text-on-surface">Inmoweb</span>
+      <div class="flex items-center gap-2 transition-opacity opacity-40 hover:opacity-100 cursor-default">
+        <div class="w-6 h-6 rounded-md flex items-center justify-center font-bold text-xs" style="background:rgba(245,200,66,.2);color:var(--gold)">I</div>
+        <span class="font-bold text-base text-white">Inmoweb</span>
       </div>
-      <div class="flex items-center gap-2 opacity-50 hover:opacity-100 grayscale hover:grayscale-0 transition-all cursor-default">
-        <div class="w-6 h-6 rounded-md bg-violet-100 flex items-center justify-center font-bold text-violet-700 text-xs">C</div>
-        <span class="font-bold text-base text-on-surface">Casafari</span>
+      <div class="flex items-center gap-2 transition-opacity opacity-40 hover:opacity-100 cursor-default">
+        <div class="w-6 h-6 rounded-md flex items-center justify-center font-bold text-xs" style="background:rgba(124,92,191,.2);color:var(--purple)">C</div>
+        <span class="font-bold text-base text-white">Casafari</span>
       </div>
-      <div class="flex items-center gap-2 opacity-50 hover:opacity-100 grayscale hover:grayscale-0 transition-all cursor-default">
-        <div class="w-6 h-6 rounded-md bg-red-100 flex items-center justify-center font-bold text-red-700 text-xs">I</div>
-        <span class="font-bold text-base text-on-surface">Inmogesco</span>
+      <div class="flex items-center gap-2 transition-opacity opacity-40 hover:opacity-100 cursor-default">
+        <div class="w-6 h-6 rounded-md flex items-center justify-center font-bold text-xs" style="background:rgba(244,132,74,.2);color:var(--orange)">I</div>
+        <span class="font-bold text-base text-white">Inmogesco</span>
       </div>
-      <div class="flex items-center gap-2 opacity-50 hover:opacity-100 grayscale hover:grayscale-0 transition-all cursor-default">
-        <div class="w-6 h-6 rounded-md bg-teal-100 flex items-center justify-center font-bold text-teal-700 text-xs">H</div>
-        <span class="font-bold text-base text-on-surface">Habitat Soft</span>
+      <div class="flex items-center gap-2 transition-opacity opacity-40 hover:opacity-100 cursor-default">
+        <div class="w-6 h-6 rounded-md flex items-center justify-center font-bold text-xs" style="background:rgba(76,175,125,.2);color:var(--green)">H</div>
+        <span class="font-bold text-base text-white">Habitat Soft</span>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ████ 4 · STATS STRIP ██████████████████████████████████ -->
-<section class="py-20 bg-brand">
+<section class="py-24" style="background:linear-gradient(90deg,var(--red) 0%,var(--purple) 50%,var(--blue) 100%)">
   <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
       <div class="fade-up">
         <p class="font-bold text-white mb-1" style="font-size:54px;line-height:1;letter-spacing:-0.03em">48h</p>
-        <p class="text-white/65 text-label">Site en ligne garanti</p>
+        <p class="text-label text-white/65">Site en ligne garanti</p>
       </div>
       <div class="fade-up d1">
         <p class="font-bold text-white mb-1" style="font-size:54px;line-height:1;letter-spacing:-0.03em">8</p>
-        <p class="text-white/65 text-label">Langues disponibles</p>
+        <p class="text-label text-white/65">Langues disponibles</p>
       </div>
       <div class="fade-up d2">
         <p class="font-bold text-white mb-1" style="font-size:54px;line-height:1;letter-spacing:-0.03em">2 500+</p>
-        <p class="text-white/65 text-label">Biens XML gérables</p>
+        <p class="text-label text-white/65">Biens XML gérables</p>
       </div>
       <div class="fade-up d3">
         <p class="font-bold text-white mb-1" style="font-size:54px;line-height:1;letter-spacing:-0.03em">6</p>
-        <p class="text-white/65 text-label">Templates premium</p>
+        <p class="text-label text-white/65">Templates premium</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ████ 5 · FEATURES BENTO ██████████████████████████████ -->
-<section id="features" class="py-28 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<section id="features" class="py-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto" style="background:var(--bg)">
   <div class="mb-14 fade-up">
-    <p class="text-xs font-semibold text-brand uppercase tracking-[0.1em] mb-3">Fonctionnalités</p>
-    <h2 class="text-h2 text-on-background mb-4">Tout ce qu'il vous faut pour vendre en ligne.</h2>
-    <p class="text-body-lg text-on-surface-variant max-w-lg">Conçu par des professionnels de l'immobilier, pour des agences qui veulent performer sans dépendre d'un développeur.</p>
+    <p class="section-label mb-3">Fonctionnalités</p>
+    <h2 class="text-h2 text-white mb-4">Tout ce qu'il vous faut pour vendre en ligne.</h2>
+    <p class="text-body-lg max-w-lg" style="color:var(--w70)">Conçu par des professionnels de l'immobilier, pour des agences qui veulent performer sans dépendre d'un développeur.</p>
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
 
-    <!-- F1 large — CRM sync -->
-    <div class="md:col-span-8 bg-white border border-outline-variant rounded-2xl p-8 md:p-10 flex flex-col gap-8 hover:shadow-lg transition-shadow fade-up">
+    <!-- F1 large — CRM sync (red) -->
+    <div class="feat-card md:col-span-8 rounded-2xl p-8 md:p-10 flex flex-col gap-8 fade-up" style="background:var(--surf);border:1px solid rgba(255,255,255,.08)">
       <div>
-        <div class="w-11 h-11 rounded-full bg-brand-lt flex items-center justify-center mb-6">
-          <span class="material-symbols-outlined text-brand">sync</span>
+        <div class="w-11 h-11 rounded-full flex items-center justify-center mb-6 ic-red">
+          <span class="material-symbols-outlined">sync</span>
         </div>
-        <h3 class="text-h3 text-on-background mb-3">Connecté à votre CRM en temps réel</h3>
-        <p class="text-body text-on-surface-variant max-w-md">Importez automatiquement vos biens depuis HabiHub, Inmovilla ou Witei via flux XML. Prix, photos, disponibilités — toujours à jour, sans manipulation manuelle.</p>
+        <h3 class="text-h3 text-white mb-3">Connecté à votre CRM en temps réel</h3>
+        <p class="text-body max-w-md" style="color:var(--w70)">Importez automatiquement vos biens depuis HabiHub, Inmovilla ou Witei via flux XML. Prix, photos, disponibilités — toujours à jour, sans manipulation manuelle.</p>
       </div>
-      <div class="flex items-center justify-center gap-6 bg-brand-lt rounded-xl h-36">
-        <div class="bg-white rounded-xl shadow-sm p-4 text-center">
-          <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-1.5 font-bold text-blue-700 text-xs">H</div>
-          <p class="text-xs font-bold text-on-surface">HabiHub</p>
+      <div class="flex items-center justify-center gap-6 rounded-xl h-36" style="background:rgba(230,57,70,.06);border:1px solid rgba(230,57,70,.15)">
+        <div class="rounded-xl p-4 text-center" style="background:var(--bg2)">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center mx-auto mb-1.5 font-bold text-xs ic-blue">H</div>
+          <p class="text-xs font-bold text-white">HabiHub</p>
         </div>
         <div class="flex flex-col items-center gap-1">
-          <div class="w-10 h-px bg-brand/30"></div>
-          <span class="material-symbols-outlined text-brand text-xl">sync</span>
-          <div class="w-10 h-px bg-brand/30"></div>
+          <div class="w-10 h-px" style="background:rgba(230,57,70,.4)"></div>
+          <span class="material-symbols-outlined text-xl" style="color:var(--red)">sync</span>
+          <div class="w-10 h-px" style="background:rgba(230,57,70,.4)"></div>
         </div>
-        <div class="bg-white rounded-xl shadow-sm p-4 text-center">
-          <span class="material-symbols-outlined text-brand ms-fill block mb-1" style="font-size:20px">home_work</span>
-          <p class="text-xs font-bold text-on-surface">DATAhome</p>
+        <div class="rounded-xl p-4 text-center" style="background:var(--bg2)">
+          <span class="material-symbols-outlined ms-fill block mb-1" style="font-size:20px;color:var(--gold)">home_work</span>
+          <p class="text-xs font-bold text-white">DATAhome</p>
         </div>
       </div>
     </div>
 
-    <!-- F2 small — Multilingual -->
-    <div class="md:col-span-4 bg-white border border-outline-variant rounded-2xl p-8 hover:shadow-lg transition-shadow fade-up d1">
-      <div class="w-11 h-11 rounded-full bg-brand-lt flex items-center justify-center mb-6">
-        <span class="material-symbols-outlined text-brand">language</span>
+    <!-- F2 small — Multilingual (orange) -->
+    <div class="feat-card md:col-span-4 rounded-2xl p-8 fade-up d1" style="background:var(--surf);border:1px solid rgba(255,255,255,.08)">
+      <div class="w-11 h-11 rounded-full flex items-center justify-center mb-6 ic-orange">
+        <span class="material-symbols-outlined">language</span>
       </div>
-      <h3 class="text-h3 text-on-background mb-3">Multilingue natif</h3>
-      <p class="text-body text-on-surface-variant mb-5">8 langues générées automatiquement. Chaque fiche bien traduite et indexée pour le SEO local.</p>
+      <h3 class="text-h3 text-white mb-3">Multilingue natif</h3>
+      <p class="text-body mb-5" style="color:var(--w70)">8 langues générées automatiquement. Chaque fiche bien traduite et indexée pour le SEO local.</p>
       <div class="flex flex-wrap gap-2">
-        <span class="bg-surface-container text-on-surface-variant text-xs font-semibold px-2.5 py-1 rounded-lg">🇫🇷 FR</span>
-        <span class="bg-surface-container text-on-surface-variant text-xs font-semibold px-2.5 py-1 rounded-lg">🇬🇧 EN</span>
-        <span class="bg-surface-container text-on-surface-variant text-xs font-semibold px-2.5 py-1 rounded-lg">🇪🇸 ES</span>
-        <span class="bg-surface-container text-on-surface-variant text-xs font-semibold px-2.5 py-1 rounded-lg">🇳🇱 NL</span>
-        <span class="bg-surface-container text-on-surface-variant text-xs font-semibold px-2.5 py-1 rounded-lg">🇵🇱 PL</span>
-        <span class="bg-surface-container text-on-surface-variant text-xs font-semibold px-2.5 py-1 rounded-lg">🇸🇦 AR</span>
-        <span class="bg-surface-container text-on-surface-variant text-xs font-semibold px-2.5 py-1 rounded-lg">🇩🇪 DE</span>
-        <span class="bg-surface-container text-on-surface-variant text-xs font-semibold px-2.5 py-1 rounded-lg">🇵🇹 PT</span>
+        <span class="text-xs font-semibold px-2.5 py-1 rounded-lg" style="background:rgba(255,255,255,.06);color:var(--w70)">🇫🇷 FR</span>
+        <span class="text-xs font-semibold px-2.5 py-1 rounded-lg" style="background:rgba(255,255,255,.06);color:var(--w70)">🇬🇧 EN</span>
+        <span class="text-xs font-semibold px-2.5 py-1 rounded-lg" style="background:rgba(255,255,255,.06);color:var(--w70)">🇪🇸 ES</span>
+        <span class="text-xs font-semibold px-2.5 py-1 rounded-lg" style="background:rgba(255,255,255,.06);color:var(--w70)">🇳🇱 NL</span>
+        <span class="text-xs font-semibold px-2.5 py-1 rounded-lg" style="background:rgba(255,255,255,.06);color:var(--w70)">🇵🇱 PL</span>
+        <span class="text-xs font-semibold px-2.5 py-1 rounded-lg" style="background:rgba(255,255,255,.06);color:var(--w70)">🇸🇦 AR</span>
+        <span class="text-xs font-semibold px-2.5 py-1 rounded-lg" style="background:rgba(255,255,255,.06);color:var(--w70)">🇩🇪 DE</span>
+        <span class="text-xs font-semibold px-2.5 py-1 rounded-lg" style="background:rgba(255,255,255,.06);color:var(--w70)">🇵🇹 PT</span>
       </div>
     </div>
 
-    <!-- F3 small — Chatbot -->
-    <div class="md:col-span-4 bg-white border border-outline-variant rounded-2xl p-8 hover:shadow-lg transition-shadow fade-up d2">
+    <!-- F3 small — Chatbot (gold) -->
+    <div class="feat-card md:col-span-4 rounded-2xl p-8 fade-up d2" style="background:var(--surf);border:1px solid rgba(255,255,255,.08)">
       <div class="flex items-start justify-between mb-6">
-        <div class="w-11 h-11 rounded-full bg-brand-lt flex items-center justify-center">
-          <span class="material-symbols-outlined text-brand">smart_toy</span>
+        <div class="w-11 h-11 rounded-full flex items-center justify-center ic-gold">
+          <span class="material-symbols-outlined">smart_toy</span>
         </div>
-        <span class="bg-amber-50 text-amber-700 border border-amber-200 text-xs font-bold px-2.5 py-1 rounded-full">+39 €/mois</span>
+        <span class="text-xs font-bold px-2.5 py-1 rounded-full" style="background:rgba(245,200,66,.12);color:var(--gold);border:1px solid rgba(245,200,66,.25)">+39 €/mois</span>
       </div>
-      <h3 class="text-h3 text-on-background mb-3">Chatbot IA</h3>
-      <p class="text-body text-on-surface-variant">Qualifie vos leads 24h/24. Répond aux questions, collecte les coordonnées et les transmet à votre CRM automatiquement.</p>
+      <h3 class="text-h3 text-white mb-3">Chatbot IA</h3>
+      <p class="text-body" style="color:var(--w70)">Qualifie vos leads 24h/24. Répond aux questions, collecte les coordonnées et les transmet à votre CRM automatiquement.</p>
     </div>
 
-    <!-- F4 large dark — Mini CRM -->
-    <div class="md:col-span-8 bg-inverse-surface rounded-2xl p-8 md:p-10 flex flex-col md:flex-row gap-8 items-center fade-up d1">
+    <!-- F4 large — Mini CRM (green) -->
+    <div class="feat-card md:col-span-8 rounded-2xl p-8 md:p-10 flex flex-col md:flex-row gap-8 items-center fade-up d1" style="background:var(--surf);border:1px solid rgba(255,255,255,.08)">
       <div class="md:w-1/2">
         <div class="flex items-center gap-3 mb-6">
-          <span class="material-symbols-outlined text-primary-fixed-dim ms-fill" style="font-size:26px">contacts</span>
-          <span class="bg-white/10 text-white/70 text-xs font-bold px-3 py-1 rounded-full border border-white/15">Gratuit inclus</span>
+          <span class="material-symbols-outlined ms-fill" style="font-size:26px;color:var(--green)">contacts</span>
+          <span class="text-xs font-bold px-3 py-1 rounded-full" style="background:rgba(76,175,125,.12);color:var(--green);border:1px solid rgba(76,175,125,.25)">Gratuit inclus</span>
         </div>
         <h3 class="text-h3 text-white mb-3">Mini CRM leads gratuit</h3>
-        <p class="text-body text-white/60">Chaque formulaire soumis depuis votre site crée une fiche lead avec statut, historique et notes. Aucun contact ne se perd.</p>
+        <p class="text-body" style="color:var(--w70)">Chaque formulaire soumis crée une fiche lead avec statut, historique et notes. Aucun contact ne se perd.</p>
       </div>
-      <div class="md:w-1/2 w-full bg-white/5 border border-white/10 rounded-xl p-4 space-y-2.5">
-        <div class="flex items-center gap-3 bg-white/8 rounded-lg px-3 py-2.5">
-          <div class="w-7 h-7 rounded-full bg-brand flex items-center justify-center text-white text-xs font-bold flex-shrink-0">JM</div>
+      <div class="md:w-1/2 w-full rounded-xl p-4 space-y-2.5" style="background:var(--bg2);border:1px solid rgba(255,255,255,.06)">
+        <div class="flex items-center gap-3 rounded-lg px-3 py-2.5" style="background:rgba(255,255,255,.04)">
+          <div class="w-7 h-7 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 ic-red">JM</div>
           <div class="flex-1 min-w-0">
             <p class="text-white text-xs font-semibold truncate">Jean-Marc Dupont</p>
-            <p class="text-white/50 text-[11px]">Villa 4 ch · Budget 900k€</p>
+            <p class="text-xs" style="color:var(--w40)">Villa 4 ch · Budget 900k€</p>
           </div>
-          <span class="bg-green-500/20 text-green-400 text-[10px] font-bold px-2 py-0.5 rounded-full flex-shrink-0">Chaud</span>
+          <span class="text-[10px] font-bold px-2 py-0.5 rounded-full flex-shrink-0" style="background:rgba(76,175,125,.15);color:var(--green)">Chaud</span>
         </div>
-        <div class="flex items-center gap-3 bg-white/8 rounded-lg px-3 py-2.5">
-          <div class="w-7 h-7 rounded-full bg-violet-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">AL</div>
+        <div class="flex items-center gap-3 rounded-lg px-3 py-2.5" style="background:rgba(255,255,255,.04)">
+          <div class="w-7 h-7 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 ic-purple">AL</div>
           <div class="flex-1 min-w-0">
             <p class="text-white text-xs font-semibold truncate">Anna Liebermann</p>
-            <p class="text-white/50 text-[11px]">Appart · Marbella centre</p>
+            <p class="text-xs" style="color:var(--w40)">Appart · Marbella centre</p>
           </div>
-          <span class="bg-yellow-500/20 text-yellow-400 text-[10px] font-bold px-2 py-0.5 rounded-full flex-shrink-0">Tiède</span>
+          <span class="text-[10px] font-bold px-2 py-0.5 rounded-full flex-shrink-0" style="background:rgba(245,200,66,.15);color:var(--gold)">Tiède</span>
         </div>
-        <div class="flex items-center gap-3 bg-white/8 rounded-lg px-3 py-2.5">
-          <div class="w-7 h-7 rounded-full bg-teal-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">RS</div>
+        <div class="flex items-center gap-3 rounded-lg px-3 py-2.5" style="background:rgba(255,255,255,.04)">
+          <div class="w-7 h-7 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 ic-blue">RS</div>
           <div class="flex-1 min-w-0">
             <p class="text-white text-xs font-semibold truncate">Ricardo Sousa</p>
-            <p class="text-white/50 text-[11px]">Villa piscine · &gt; 1.2M€</p>
+            <p class="text-xs" style="color:var(--w40)">Villa piscine · &gt; 1.2M€</p>
           </div>
-          <span class="bg-blue-500/20 text-blue-400 text-[10px] font-bold px-2 py-0.5 rounded-full flex-shrink-0">Nouveau</span>
+          <span class="text-[10px] font-bold px-2 py-0.5 rounded-full flex-shrink-0" style="background:rgba(33,150,201,.15);color:var(--blue)">Nouveau</span>
         </div>
       </div>
     </div>
@@ -392,174 +421,132 @@ tailwind.config = {
 </section>
 
 <!-- ████ 6 · TEMPLATES █████████████████████████████████████ -->
-<section id="templates" class="py-28 bg-surface-container-low">
+<section id="templates" class="py-32" style="background:var(--bg2)">
   <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
     <div class="mb-14 text-center fade-up">
-      <p class="text-xs font-semibold text-brand uppercase tracking-[0.1em] mb-3">Templates</p>
-      <h2 class="text-h2 text-on-background mb-4">Choisissez le style de votre agence.</h2>
-      <p class="text-body-lg text-on-surface-variant max-w-xl mx-auto">6 designs immobiliers premium, optimisés conversion, personnalisables en quelques clics.</p>
+      <p class="section-label mb-3">Templates</p>
+      <h2 class="text-h2 text-white mb-4">Choisissez le style de votre agence.</h2>
+      <p class="text-body-lg max-w-xl mx-auto" style="color:var(--w70)">6 designs immobiliers premium, optimisés conversion, personnalisables en quelques clics.</p>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-      <!-- Riviera -->
-      <div class="tpl-card bg-white rounded-2xl border border-outline-variant overflow-hidden fade-up d1">
+      <div class="tpl-card rounded-2xl overflow-hidden fade-up d1" style="background:var(--surf);border:1px solid rgba(255,255,255,.08)">
         <div class="h-36" style="background:linear-gradient(135deg,#b8860b 0%,#f5e6a3 50%,#fffde7 100%)">
           <div class="h-full flex flex-col justify-between p-4">
-            <div class="flex justify-between items-start">
-              <span class="bg-white/30 backdrop-blur-sm text-[#6b4e00] text-[10px] font-bold px-2.5 py-1 rounded-full">Riviera</span>
-              <div class="flex gap-1"><div class="w-2 h-2 rounded-full bg-white/60"></div><div class="w-2 h-2 rounded-full bg-white/40"></div><div class="w-2 h-2 rounded-full bg-white/40"></div></div>
-            </div>
-            <div>
-              <p class="text-[#3d2800] font-bold text-sm leading-tight">Agence Premium</p>
-              <p class="text-[#6b4e00] text-[10px]">Côte d'Azur · Costa Brava</p>
-            </div>
+            <span class="self-start text-[10px] font-bold px-2.5 py-1 rounded-full" style="background:rgba(255,255,255,.3);color:#6b4e00">Riviera</span>
+            <div><p class="text-[#3d2800] font-bold text-sm">Agence Premium</p><p class="text-[10px]" style="color:#6b4e00">Côte d'Azur · Costa Brava</p></div>
           </div>
         </div>
         <div class="p-5">
-          <h4 class="font-bold text-on-background mb-1">Riviera</h4>
-          <p class="text-label text-on-surface-variant mb-3">Or &amp; blanc ivoire · Marchés côtiers haut de gamme</p>
+          <h4 class="font-bold text-white mb-1">Riviera</h4>
+          <p class="text-label mb-3" style="color:var(--w40)">Or &amp; blanc ivoire · Marchés côtiers haut de gamme</p>
           <div class="flex flex-wrap gap-1.5 mb-4">
-            <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-0.5 rounded-full">Côte d'Azur</span>
-            <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-0.5 rounded-full">Costa Brava</span>
-            <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-0.5 rounded-full">Algarve</span>
+            <span class="text-xs px-2 py-0.5 rounded-full" style="background:rgba(255,255,255,.06);color:var(--w70)">Côte d'Azur</span>
+            <span class="text-xs px-2 py-0.5 rounded-full" style="background:rgba(255,255,255,.06);color:var(--w70)">Costa Brava</span>
+            <span class="text-xs px-2 py-0.5 rounded-full" style="background:rgba(255,255,255,.06);color:var(--w70)">Algarve</span>
           </div>
-          <a href="experience.html" class="text-brand text-label font-semibold hover:underline">Voir la démo →</a>
+          <a href="experience.html" class="text-label font-semibold hover:underline" style="color:var(--gold)">Voir la démo →</a>
         </div>
       </div>
 
-      <!-- Prestige -->
-      <div class="tpl-card bg-white rounded-2xl border border-outline-variant overflow-hidden fade-up d2">
+      <div class="tpl-card rounded-2xl overflow-hidden fade-up d2" style="background:var(--surf);border:1px solid rgba(255,255,255,.08)">
         <div class="h-36" style="background:linear-gradient(135deg,#1a1008 0%,#3d2e1e 50%,#c9a96e 100%)">
           <div class="h-full flex flex-col justify-between p-4">
-            <div class="flex justify-between items-start">
-              <span class="bg-white/15 backdrop-blur-sm text-[#c9a96e] text-[10px] font-bold px-2.5 py-1 rounded-full border border-[#c9a96e]/30">Prestige</span>
-              <div class="flex gap-1"><div class="w-2 h-2 rounded-full bg-[#c9a96e]/60"></div><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div></div>
-            </div>
-            <div>
-              <p class="text-[#f5e6c8] font-bold text-sm leading-tight">Propriétés d'exception</p>
-              <p class="text-[#c9a96e] text-[10px]">Marbella · Ibiza · Monaco</p>
-            </div>
+            <span class="self-start text-[10px] font-bold px-2.5 py-1 rounded-full" style="background:rgba(255,255,255,.1);color:#c9a96e;border:1px solid rgba(201,169,110,.3)">Prestige</span>
+            <div><p class="font-bold text-sm" style="color:#f5e6c8">Propriétés d'exception</p><p class="text-[10px]" style="color:#c9a96e">Marbella · Ibiza · Monaco</p></div>
           </div>
         </div>
         <div class="p-5">
-          <h4 class="font-bold text-on-background mb-1">Prestige</h4>
-          <p class="text-label text-on-surface-variant mb-3">Noir &amp; champagne · Segment ultra-prime</p>
+          <h4 class="font-bold text-white mb-1">Prestige</h4>
+          <p class="text-label mb-3" style="color:var(--w40)">Noir &amp; champagne · Segment ultra-prime</p>
           <div class="flex flex-wrap gap-1.5 mb-4">
-            <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-0.5 rounded-full">Marbella</span>
-            <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-0.5 rounded-full">Ibiza</span>
-            <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-0.5 rounded-full">Monaco</span>
+            <span class="text-xs px-2 py-0.5 rounded-full" style="background:rgba(255,255,255,.06);color:var(--w70)">Marbella</span>
+            <span class="text-xs px-2 py-0.5 rounded-full" style="background:rgba(255,255,255,.06);color:var(--w70)">Ibiza</span>
+            <span class="text-xs px-2 py-0.5 rounded-full" style="background:rgba(255,255,255,.06);color:var(--w70)">Monaco</span>
           </div>
-          <a href="experience.html" class="text-brand text-label font-semibold hover:underline">Voir la démo →</a>
+          <a href="experience.html" class="text-label font-semibold hover:underline" style="color:var(--gold)">Voir la démo →</a>
         </div>
       </div>
 
-      <!-- Urban -->
-      <div class="tpl-card bg-white rounded-2xl border border-outline-variant overflow-hidden fade-up d3">
+      <div class="tpl-card rounded-2xl overflow-hidden fade-up d3" style="background:var(--surf);border:1px solid rgba(255,255,255,.08)">
         <div class="h-36" style="background:linear-gradient(135deg,#0f172a 0%,#1d4ed8 55%,#0891b2 100%)">
           <div class="h-full flex flex-col justify-between p-4">
-            <div class="flex justify-between items-start">
-              <span class="bg-white/15 backdrop-blur-sm text-white text-[10px] font-bold px-2.5 py-1 rounded-full">Urban</span>
-              <div class="flex gap-1"><div class="w-2 h-2 rounded-full bg-white/50"></div><div class="w-2 h-2 rounded-full bg-white/25"></div><div class="w-2 h-2 rounded-full bg-white/25"></div></div>
-            </div>
-            <div>
-              <p class="text-white font-bold text-sm leading-tight">L'immobilier urbain</p>
-              <p class="text-white/60 text-[10px]">Madrid · Barcelone · Paris</p>
-            </div>
+            <span class="self-start text-[10px] font-bold px-2.5 py-1 rounded-full" style="background:rgba(255,255,255,.15);color:#fff">Urban</span>
+            <div><p class="text-white font-bold text-sm">L'immobilier urbain</p><p class="text-[10px] text-white/60">Madrid · Barcelone · Paris</p></div>
           </div>
         </div>
         <div class="p-5">
-          <h4 class="font-bold text-on-background mb-1">Urban</h4>
-          <p class="text-label text-on-surface-variant mb-3">Navy &amp; teal · Marchés de ville dynamiques</p>
+          <h4 class="font-bold text-white mb-1">Urban</h4>
+          <p class="text-label mb-3" style="color:var(--w40)">Navy &amp; teal · Marchés de ville dynamiques</p>
           <div class="flex flex-wrap gap-1.5 mb-4">
-            <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-0.5 rounded-full">Madrid</span>
-            <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-0.5 rounded-full">Barcelone</span>
-            <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-0.5 rounded-full">Paris</span>
+            <span class="text-xs px-2 py-0.5 rounded-full" style="background:rgba(255,255,255,.06);color:var(--w70)">Madrid</span>
+            <span class="text-xs px-2 py-0.5 rounded-full" style="background:rgba(255,255,255,.06);color:var(--w70)">Barcelone</span>
+            <span class="text-xs px-2 py-0.5 rounded-full" style="background:rgba(255,255,255,.06);color:var(--w70)">Paris</span>
           </div>
-          <a href="experience.html" class="text-brand text-label font-semibold hover:underline">Voir la démo →</a>
+          <a href="experience.html" class="text-label font-semibold hover:underline" style="color:var(--gold)">Voir la démo →</a>
         </div>
       </div>
 
-      <!-- Soleil -->
-      <div class="tpl-card bg-white rounded-2xl border border-outline-variant overflow-hidden fade-up d1">
+      <div class="tpl-card rounded-2xl overflow-hidden fade-up d1" style="background:var(--surf);border:1px solid rgba(255,255,255,.08)">
         <div class="h-36" style="background:linear-gradient(135deg,#7c2d12 0%,#c2410c 40%,#fb923c 100%)">
           <div class="h-full flex flex-col justify-between p-4">
-            <div class="flex justify-between items-start">
-              <span class="bg-white/20 backdrop-blur-sm text-white text-[10px] font-bold px-2.5 py-1 rounded-full">Soleil</span>
-              <div class="flex gap-1"><div class="w-2 h-2 rounded-full bg-white/50"></div><div class="w-2 h-2 rounded-full bg-white/25"></div><div class="w-2 h-2 rounded-full bg-white/25"></div></div>
-            </div>
-            <div>
-              <p class="text-white font-bold text-sm leading-tight">Vie sous le soleil</p>
-              <p class="text-white/70 text-[10px]">Andalousie · Valence · Murcie</p>
-            </div>
+            <span class="self-start text-[10px] font-bold px-2.5 py-1 rounded-full" style="background:rgba(255,255,255,.2);color:#fff">Soleil</span>
+            <div><p class="text-white font-bold text-sm">Vie sous le soleil</p><p class="text-[10px] text-white/70">Andalousie · Valence · Murcie</p></div>
           </div>
         </div>
         <div class="p-5">
-          <h4 class="font-bold text-on-background mb-1">Soleil</h4>
-          <p class="text-label text-on-surface-variant mb-3">Terracotta · Marchés méditerranéens soleil</p>
+          <h4 class="font-bold text-white mb-1">Soleil</h4>
+          <p class="text-label mb-3" style="color:var(--w40)">Terracotta · Marchés méditerranéens</p>
           <div class="flex flex-wrap gap-1.5 mb-4">
-            <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-0.5 rounded-full">Andalousie</span>
-            <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-0.5 rounded-full">Valence</span>
-            <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-0.5 rounded-full">Alicante</span>
+            <span class="text-xs px-2 py-0.5 rounded-full" style="background:rgba(255,255,255,.06);color:var(--w70)">Andalousie</span>
+            <span class="text-xs px-2 py-0.5 rounded-full" style="background:rgba(255,255,255,.06);color:var(--w70)">Valence</span>
+            <span class="text-xs px-2 py-0.5 rounded-full" style="background:rgba(255,255,255,.06);color:var(--w70)">Alicante</span>
           </div>
-          <a href="experience.html" class="text-brand text-label font-semibold hover:underline">Voir la démo →</a>
+          <a href="experience.html" class="text-label font-semibold hover:underline" style="color:var(--gold)">Voir la démo →</a>
         </div>
       </div>
 
-      <!-- Nordic -->
-      <div class="tpl-card bg-white rounded-2xl border border-outline-variant overflow-hidden fade-up d2">
+      <div class="tpl-card rounded-2xl overflow-hidden fade-up d2" style="background:var(--surf);border:1px solid rgba(255,255,255,.08)">
         <div class="h-36" style="background:linear-gradient(135deg,#f8fafc 0%,#e2e8f0 50%,#cbd5e1 100%)">
           <div class="h-full flex flex-col justify-between p-4">
-            <div class="flex justify-between items-start">
-              <span class="bg-slate-200/70 text-slate-600 text-[10px] font-bold px-2.5 py-1 rounded-full">Nordic</span>
-              <div class="flex gap-1"><div class="w-2 h-2 rounded-full bg-slate-400/60"></div><div class="w-2 h-2 rounded-full bg-slate-300/60"></div><div class="w-2 h-2 rounded-full bg-slate-300/60"></div></div>
-            </div>
-            <div>
-              <p class="text-slate-800 font-bold text-sm leading-tight">Design épuré</p>
-              <p class="text-slate-500 text-[10px]">Suède · Norvège · Alpes</p>
-            </div>
+            <span class="self-start text-[10px] font-bold px-2.5 py-1 rounded-full" style="background:rgba(100,116,139,.2);color:#475569">Nordic</span>
+            <div><p class="text-slate-800 font-bold text-sm">Design épuré</p><p class="text-slate-500 text-[10px]">Suède · Norvège · Alpes</p></div>
           </div>
         </div>
         <div class="p-5">
-          <h4 class="font-bold text-on-background mb-1">Nordic</h4>
-          <p class="text-label text-on-surface-variant mb-3">Gris &amp; blanc · Acheteurs nordiques &amp; alpins</p>
+          <h4 class="font-bold text-white mb-1">Nordic</h4>
+          <p class="text-label mb-3" style="color:var(--w40)">Gris &amp; blanc · Acheteurs nordiques</p>
           <div class="flex flex-wrap gap-1.5 mb-4">
-            <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-0.5 rounded-full">Suède</span>
-            <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-0.5 rounded-full">Norvège</span>
-            <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-0.5 rounded-full">Alpes</span>
+            <span class="text-xs px-2 py-0.5 rounded-full" style="background:rgba(255,255,255,.06);color:var(--w70)">Suède</span>
+            <span class="text-xs px-2 py-0.5 rounded-full" style="background:rgba(255,255,255,.06);color:var(--w70)">Norvège</span>
+            <span class="text-xs px-2 py-0.5 rounded-full" style="background:rgba(255,255,255,.06);color:var(--w70)">Alpes</span>
           </div>
-          <a href="experience.html" class="text-brand text-label font-semibold hover:underline">Voir la démo →</a>
+          <a href="experience.html" class="text-label font-semibold hover:underline" style="color:var(--gold)">Voir la démo →</a>
         </div>
       </div>
 
-      <!-- Verde -->
-      <div class="tpl-card bg-white rounded-2xl border border-outline-variant overflow-hidden fade-up d3">
+      <div class="tpl-card rounded-2xl overflow-hidden fade-up d3" style="background:var(--surf);border:1px solid rgba(255,255,255,.08)">
         <div class="h-36" style="background:linear-gradient(135deg,#14532d 0%,#16a34a 50%,#86efac 100%)">
           <div class="h-full flex flex-col justify-between p-4">
-            <div class="flex justify-between items-start">
-              <span class="bg-white/20 backdrop-blur-sm text-white text-[10px] font-bold px-2.5 py-1 rounded-full">Verde</span>
-              <div class="flex gap-1"><div class="w-2 h-2 rounded-full bg-white/50"></div><div class="w-2 h-2 rounded-full bg-white/25"></div><div class="w-2 h-2 rounded-full bg-white/25"></div></div>
-            </div>
-            <div>
-              <p class="text-white font-bold text-sm leading-tight">Immobilier durable</p>
-              <p class="text-white/70 text-[10px]">Portugal · Toscane · Madeira</p>
-            </div>
+            <span class="self-start text-[10px] font-bold px-2.5 py-1 rounded-full" style="background:rgba(255,255,255,.2);color:#fff">Verde</span>
+            <div><p class="text-white font-bold text-sm">Immobilier durable</p><p class="text-[10px] text-white/70">Portugal · Toscane · Madeira</p></div>
           </div>
         </div>
         <div class="p-5">
-          <h4 class="font-bold text-on-background mb-1">Verde</h4>
-          <p class="text-label text-on-surface-variant mb-3">Vert sauge · Éco-habitat &amp; campagne</p>
+          <h4 class="font-bold text-white mb-1">Verde</h4>
+          <p class="text-label mb-3" style="color:var(--w40)">Vert sauge · Éco-habitat &amp; campagne</p>
           <div class="flex flex-wrap gap-1.5 mb-4">
-            <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-0.5 rounded-full">Portugal</span>
-            <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-0.5 rounded-full">Toscane</span>
-            <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-0.5 rounded-full">Madeira</span>
+            <span class="text-xs px-2 py-0.5 rounded-full" style="background:rgba(255,255,255,.06);color:var(--w70)">Portugal</span>
+            <span class="text-xs px-2 py-0.5 rounded-full" style="background:rgba(255,255,255,.06);color:var(--w70)">Toscane</span>
+            <span class="text-xs px-2 py-0.5 rounded-full" style="background:rgba(255,255,255,.06);color:var(--w70)">Madeira</span>
           </div>
-          <a href="experience.html" class="text-brand text-label font-semibold hover:underline">Voir la démo →</a>
+          <a href="experience.html" class="text-label font-semibold hover:underline" style="color:var(--gold)">Voir la démo →</a>
         </div>
       </div>
 
     </div>
     <div class="text-center mt-10 fade-up">
-      <a href="templates.html" class="inline-flex items-center gap-2 border border-brand text-brand font-semibold text-body px-7 py-3 rounded-xl hover:bg-brand-lt transition-all">
+      <a href="templates.html" class="btn-secondary inline-flex text-body px-7 py-3">
         Voir tous les templates
         <span class="material-symbols-outlined" style="font-size:18px">arrow_forward</span>
       </a>
@@ -568,124 +555,124 @@ tailwind.config = {
 </section>
 
 <!-- ████ 7 · PRICING ██████████████████████████████████████ -->
-<section id="pricing" class="py-28 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<section id="pricing" class="py-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto" style="background:var(--bg)">
   <div class="text-center mb-14 fade-up">
-    <p class="text-xs font-semibold text-brand uppercase tracking-[0.1em] mb-3">Tarifs</p>
-    <h2 class="text-h2 text-on-background mb-4">Simple et transparent.</h2>
-    <p class="text-body-lg text-on-surface-variant">15 jours d'essai gratuit dans tous les plans · Sans carte bancaire</p>
+    <p class="section-label mb-3">Tarifs</p>
+    <h2 class="text-h2 text-white mb-4">Simple et transparent.</h2>
+    <p class="text-body-lg" style="color:var(--w70)">15 jours d'essai gratuit dans tous les plans · Sans carte bancaire</p>
   </div>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
 
     <!-- Silver -->
-    <div class="bg-white border border-outline-variant rounded-2xl p-8 hover:shadow-lg transition-shadow fade-up d1">
-      <p class="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-4">Silver</p>
+    <div class="feat-card rounded-2xl p-8 fade-up d1" style="background:var(--surf);border:1px solid rgba(255,255,255,.08)">
+      <p class="text-xs font-bold uppercase tracking-wider mb-4" style="color:var(--w40)">Silver</p>
       <div class="flex items-baseline gap-1 mb-1">
-        <span class="font-bold text-xl text-on-surface mt-1">€</span>
-        <span class="font-bold text-on-background" style="font-size:58px;line-height:1;letter-spacing:-0.04em">50</span>
-        <span class="text-on-surface-variant text-body">/mois</span>
+        <span class="font-bold text-xl text-white mt-1">€</span>
+        <span class="font-bold text-white" style="font-size:58px;line-height:1;letter-spacing:-0.04em">50</span>
+        <span class="text-body" style="color:var(--w40)">/mois</span>
       </div>
-      <p class="text-body text-on-surface-variant mb-6">Idéal pour lancer votre première présence en ligne.</p>
-      <div class="h-px bg-outline-variant mb-6"></div>
-      <ul class="space-y-3 mb-8 text-body text-on-surface">
-        <li class="flex gap-3"><span class="material-symbols-outlined text-green-500 ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px">check_circle</span>1 site · 1 template</li>
-        <li class="flex gap-3"><span class="material-symbols-outlined text-green-500 ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px">check_circle</span>Jusqu'à 100 biens XML</li>
-        <li class="flex gap-3"><span class="material-symbols-outlined text-green-500 ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px">check_circle</span>3 langues</li>
-        <li class="flex gap-3"><span class="material-symbols-outlined text-green-500 ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px">check_circle</span>Domaine + SSL inclus</li>
-        <li class="flex gap-3"><span class="material-symbols-outlined text-green-500 ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px">check_circle</span>Mini CRM leads</li>
-        <li class="flex gap-3"><span class="material-symbols-outlined text-green-500 ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px">check_circle</span>Support email</li>
+      <p class="text-body mb-6" style="color:var(--w70)">Idéal pour lancer votre première présence en ligne.</p>
+      <div class="h-px mb-6" style="background:rgba(255,255,255,.08)"></div>
+      <ul class="space-y-3 mb-8 text-body text-white">
+        <li class="flex gap-3"><span class="material-symbols-outlined ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px;color:var(--green)">check_circle</span>1 site · 1 template</li>
+        <li class="flex gap-3"><span class="material-symbols-outlined ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px;color:var(--green)">check_circle</span>Jusqu'à 100 biens XML</li>
+        <li class="flex gap-3"><span class="material-symbols-outlined ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px;color:var(--green)">check_circle</span>3 langues</li>
+        <li class="flex gap-3"><span class="material-symbols-outlined ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px;color:var(--green)">check_circle</span>Domaine + SSL inclus</li>
+        <li class="flex gap-3"><span class="material-symbols-outlined ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px;color:var(--green)">check_circle</span>Mini CRM leads</li>
+        <li class="flex gap-3"><span class="material-symbols-outlined ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px;color:var(--green)">check_circle</span>Support email</li>
       </ul>
-      <a href="onboarding.html" class="block text-center border border-outline text-on-background font-semibold py-3 rounded-xl hover:bg-surface-container transition-all">Démarrer</a>
+      <a href="onboarding.html" class="btn-secondary block text-center font-semibold py-3 px-4 w-full">Démarrer</a>
     </div>
 
     <!-- Gold -->
-    <div class="bg-white border-2 border-brand rounded-2xl p-8 relative fade-up d2" style="box-shadow:0 0 0 4px rgba(29,78,216,.08),0 20px 60px rgba(17,24,39,.13)">
-      <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand text-white text-xs font-bold px-4 py-1.5 rounded-full whitespace-nowrap">⭐ Le plus choisi</div>
-      <p class="text-xs font-bold text-brand uppercase tracking-wider mb-4">Gold</p>
+    <div class="rounded-2xl p-8 relative fade-up d2" style="background:var(--surf);border:1px solid var(--gold);box-shadow:0 0 0 1px rgba(245,200,66,.15),0 20px 60px rgba(245,200,66,.1)">
+      <div class="absolute -top-4 left-1/2 -translate-x-1/2 text-xs font-bold px-4 py-1.5 rounded-full whitespace-nowrap" style="background:var(--gold);color:#0a0a0a">⭐ Le plus choisi</div>
+      <p class="text-xs font-bold uppercase tracking-wider mb-4" style="color:var(--gold)">Gold</p>
       <div class="flex items-baseline gap-1 mb-1">
-        <span class="font-bold text-xl text-on-surface mt-1">€</span>
-        <span class="font-bold text-on-background" style="font-size:58px;line-height:1;letter-spacing:-0.04em">129</span>
-        <span class="text-on-surface-variant text-body">/mois</span>
+        <span class="font-bold text-xl text-white mt-1">€</span>
+        <span class="font-bold text-white" style="font-size:58px;line-height:1;letter-spacing:-0.04em">129</span>
+        <span class="text-body" style="color:var(--w40)">/mois</span>
       </div>
-      <p class="text-body text-on-surface-variant mb-6">La solution complète pour les agences multi-marchés.</p>
-      <div class="h-px bg-outline-variant mb-6"></div>
-      <ul class="space-y-3 mb-8 text-body text-on-surface">
-        <li class="flex gap-3"><span class="material-symbols-outlined text-green-500 ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px">check_circle</span>1 site · 6 templates au choix</li>
-        <li class="flex gap-3"><span class="material-symbols-outlined text-green-500 ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px">check_circle</span>Jusqu'à 1 000 biens XML</li>
-        <li class="flex gap-3"><span class="material-symbols-outlined text-green-500 ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px">check_circle</span>8 langues incluses</li>
-        <li class="flex gap-3"><span class="material-symbols-outlined text-green-500 ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px">check_circle</span>Mini CRM leads gratuit</li>
-        <li class="flex gap-3"><span class="material-symbols-outlined text-green-500 ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px">check_circle</span>Analytics & rapports leads</li>
-        <li class="flex gap-3"><span class="material-symbols-outlined text-green-500 ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px">check_circle</span>Chat support prioritaire</li>
-        <li class="flex gap-3"><span class="material-symbols-outlined text-green-500 ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px">check_circle</span>Mise en ligne 48h garantie</li>
+      <p class="text-body mb-6" style="color:var(--w70)">La solution complète pour les agences multi-marchés.</p>
+      <div class="h-px mb-6" style="background:rgba(245,200,66,.2)"></div>
+      <ul class="space-y-3 mb-8 text-body text-white">
+        <li class="flex gap-3"><span class="material-symbols-outlined ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px;color:var(--green)">check_circle</span>1 site · 6 templates au choix</li>
+        <li class="flex gap-3"><span class="material-symbols-outlined ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px;color:var(--green)">check_circle</span>Jusqu'à 1 000 biens XML</li>
+        <li class="flex gap-3"><span class="material-symbols-outlined ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px;color:var(--green)">check_circle</span>8 langues incluses</li>
+        <li class="flex gap-3"><span class="material-symbols-outlined ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px;color:var(--green)">check_circle</span>Mini CRM leads gratuit</li>
+        <li class="flex gap-3"><span class="material-symbols-outlined ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px;color:var(--green)">check_circle</span>Analytics &amp; rapports leads</li>
+        <li class="flex gap-3"><span class="material-symbols-outlined ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px;color:var(--green)">check_circle</span>Chat support prioritaire</li>
+        <li class="flex gap-3"><span class="material-symbols-outlined ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px;color:var(--green)">check_circle</span>Mise en ligne 48h garantie</li>
       </ul>
-      <a href="onboarding.html" class="block text-center bg-brand text-white font-semibold py-3 rounded-xl hover:bg-brand-dk transition-all">Démarrer gratuitement</a>
+      <a href="onboarding.html" class="btn-primary block text-center font-bold py-3 px-4 w-full">Démarrer gratuitement</a>
     </div>
 
     <!-- Platinum -->
-    <div class="bg-white border border-outline-variant rounded-2xl p-8 hover:shadow-lg transition-shadow fade-up d3">
-      <p class="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-4">Platinum</p>
+    <div class="feat-card rounded-2xl p-8 fade-up d3" style="background:var(--surf);border:1px solid rgba(255,255,255,.08)">
+      <p class="text-xs font-bold uppercase tracking-wider mb-4" style="color:var(--w40)">Platinum</p>
       <div class="flex items-baseline gap-1 mb-1">
-        <span class="font-bold text-xl text-on-surface mt-1">€</span>
-        <span class="font-bold text-on-background" style="font-size:58px;line-height:1;letter-spacing:-0.04em">179</span>
-        <span class="text-on-surface-variant text-body">/mois</span>
+        <span class="font-bold text-xl text-white mt-1">€</span>
+        <span class="font-bold text-white" style="font-size:58px;line-height:1;letter-spacing:-0.04em">179</span>
+        <span class="text-body" style="color:var(--w40)">/mois</span>
       </div>
-      <p class="text-body text-on-surface-variant mb-6">Pour les réseaux d'agences avec présence multi-sites.</p>
-      <div class="h-px bg-outline-variant mb-6"></div>
-      <ul class="space-y-3 mb-8 text-body text-on-surface">
-        <li class="flex gap-3"><span class="material-symbols-outlined text-green-500 ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px">check_circle</span>Jusqu'à 5 sites</li>
-        <li class="flex gap-3"><span class="material-symbols-outlined text-green-500 ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px">check_circle</span>Biens XML illimités</li>
-        <li class="flex gap-3"><span class="material-symbols-outlined text-green-500 ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px">check_circle</span>8 langues + traductions custom</li>
-        <li class="flex gap-3"><span class="material-symbols-outlined text-green-500 ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px">check_circle</span>API publique incluse</li>
-        <li class="flex gap-3"><span class="material-symbols-outlined text-green-500 ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px">check_circle</span>Account manager dédié</li>
-        <li class="flex gap-3"><span class="material-symbols-outlined text-green-500 ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px">check_circle</span>SLA 99,9% uptime garanti</li>
+      <p class="text-body mb-6" style="color:var(--w70)">Pour les réseaux d'agences avec présence multi-sites.</p>
+      <div class="h-px mb-6" style="background:rgba(255,255,255,.08)"></div>
+      <ul class="space-y-3 mb-8 text-body text-white">
+        <li class="flex gap-3"><span class="material-symbols-outlined ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px;color:var(--green)">check_circle</span>Jusqu'à 5 sites</li>
+        <li class="flex gap-3"><span class="material-symbols-outlined ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px;color:var(--green)">check_circle</span>Biens XML illimités</li>
+        <li class="flex gap-3"><span class="material-symbols-outlined ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px;color:var(--green)">check_circle</span>8 langues + traductions custom</li>
+        <li class="flex gap-3"><span class="material-symbols-outlined ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px;color:var(--green)">check_circle</span>API publique incluse</li>
+        <li class="flex gap-3"><span class="material-symbols-outlined ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px;color:var(--green)">check_circle</span>Account manager dédié</li>
+        <li class="flex gap-3"><span class="material-symbols-outlined ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px;color:var(--green)">check_circle</span>SLA 99,9% uptime garanti</li>
       </ul>
-      <a href="onboarding.html" class="block text-center border border-outline text-on-background font-semibold py-3 rounded-xl hover:bg-surface-container transition-all">Nous contacter</a>
+      <a href="onboarding.html" class="btn-secondary block text-center font-semibold py-3 px-4 w-full">Nous contacter</a>
     </div>
 
   </div>
-  <p class="text-center text-label text-on-surface-variant mt-8 fade-up">Tous les prix HT · Facturation mensuelle ou annuelle (−20 %) · Annulation à tout moment</p>
+  <p class="text-center text-label mt-8 fade-up" style="color:var(--w40)">Tous les prix HT · Facturation mensuelle ou annuelle (−20 %) · Annulation à tout moment</p>
 </section>
 
 <!-- ████ 8 · TESTIMONIALS ████████████████████████████████ -->
-<section class="py-28 bg-inverse-surface">
+<section class="py-32" style="background:var(--bg2)">
   <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
     <div class="text-center mb-14 fade-up">
-      <p class="text-xs font-semibold text-primary-fixed-dim uppercase tracking-[0.1em] mb-3">Témoignages</p>
+      <p class="section-label mb-3">Témoignages</p>
       <h2 class="text-h2 text-white">Ce que disent nos agences clientes.</h2>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-      <div class="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/8 transition-colors fade-up d1">
-        <p class="text-yellow-400 tracking-widest text-base mb-5">★★★★★</p>
-        <blockquote class="text-body-lg text-white/75 italic mb-7 leading-relaxed">"En 48h nous avions un site professionnel avec nos 340 villas connectées à HabiHub. Nos leads britanniques ont doublé en deux mois. Je regrette de ne pas l'avoir fait plus tôt."</blockquote>
+      <div class="feat-card rounded-2xl p-8 fade-up d1" style="background:var(--surf);border:1px solid rgba(255,255,255,.08)">
+        <p class="tracking-widest text-base mb-5" style="color:var(--gold)">★★★★★</p>
+        <blockquote class="text-body-lg italic mb-7 leading-relaxed" style="color:var(--w70)">"En 48h nous avions un site professionnel avec nos 340 villas connectées à HabiHub. Nos leads britanniques ont doublé en deux mois. Je regrette de ne pas l'avoir fait plus tôt."</blockquote>
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-brand flex items-center justify-center text-white font-bold text-sm flex-shrink-0">MC</div>
+          <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 ic-red">MC</div>
           <div>
             <p class="font-semibold text-white text-sm">María Carmen López</p>
-            <p class="text-white/45 text-xs">Directrice · Costa Homes Marbella</p>
+            <p class="text-xs" style="color:var(--w40)">Directrice · Costa Homes Marbella</p>
           </div>
         </div>
       </div>
 
-      <div class="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/8 transition-colors fade-up d2">
-        <p class="text-yellow-400 tracking-widest text-base mb-5">★★★★★</p>
-        <blockquote class="text-body-lg text-white/75 italic mb-7 leading-relaxed">"Le template Riviera correspond exactement à notre positionnement. La traduction en allemand et néerlandais nous a ouvert deux marchés d'un coup. Support très réactif."</blockquote>
+      <div class="feat-card rounded-2xl p-8 fade-up d2" style="background:var(--surf);border:1px solid rgba(255,255,255,.08)">
+        <p class="tracking-widest text-base mb-5" style="color:var(--gold)">★★★★★</p>
+        <blockquote class="text-body-lg italic mb-7 leading-relaxed" style="color:var(--w70)">"Le template Riviera correspond exactement à notre positionnement. La traduction en allemand et néerlandais nous a ouvert deux marchés d'un coup. Support très réactif."</blockquote>
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-violet-600 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">PD</div>
+          <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 ic-purple">PD</div>
           <div>
             <p class="font-semibold text-white text-sm">Pierre Delacroix</p>
-            <p class="text-white/45 text-xs">Associé · Riviera Prestige Cannes</p>
+            <p class="text-xs" style="color:var(--w40)">Associé · Riviera Prestige Cannes</p>
           </div>
         </div>
       </div>
 
-      <div class="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/8 transition-colors fade-up d3">
-        <p class="text-yellow-400 tracking-widest text-base mb-5">★★★★★</p>
-        <blockquote class="text-body-lg text-white/75 italic mb-7 leading-relaxed">"Nous gérons 3 agences au Portugal avec Platinum. La synchronisation Inmovilla est parfaite et les biens s'affichent en temps réel. Indispensable pour notre réseau."</blockquote>
+      <div class="feat-card rounded-2xl p-8 fade-up d3" style="background:var(--surf);border:1px solid rgba(255,255,255,.08)">
+        <p class="tracking-widest text-base mb-5" style="color:var(--gold)">★★★★★</p>
+        <blockquote class="text-body-lg italic mb-7 leading-relaxed" style="color:var(--w70)">"Nous gérons 3 agences au Portugal avec Platinum. La synchronisation Inmovilla est parfaite et les biens s'affichent en temps réel. Indispensable pour notre réseau."</blockquote>
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-teal-600 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">RS</div>
+          <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 ic-green">RS</div>
           <div>
             <p class="font-semibold text-white text-sm">Ricardo Sousa</p>
-            <p class="text-white/45 text-xs">CEO · Grupo Sousa Imobiliária</p>
+            <p class="text-xs" style="color:var(--w40)">CEO · Grupo Sousa Imobiliária</p>
           </div>
         </div>
       </div>
@@ -695,81 +682,81 @@ tailwind.config = {
 </section>
 
 <!-- ████ 9 · FAQ ███████████████████████████████████████████ -->
-<section id="faq" class="py-28 bg-surface-container-low">
+<section id="faq" class="py-32" style="background:var(--bg)">
   <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
     <div class="text-center mb-14 fade-up">
-      <p class="text-xs font-semibold text-brand uppercase tracking-[0.1em] mb-3">FAQ</p>
-      <h2 class="text-h2 text-on-background">Questions fréquentes.</h2>
+      <p class="section-label mb-3">FAQ</p>
+      <h2 class="text-h2 text-white">Questions fréquentes.</h2>
     </div>
     <div class="max-w-2xl mx-auto space-y-3 fade-up d1">
 
-      <div class="faq-item bg-white border border-outline-variant rounded-2xl overflow-hidden">
-        <button class="faq-q w-full flex items-center justify-between p-6 text-left font-semibold text-on-background hover:text-brand transition-colors gap-4">
+      <div class="faq-item rounded-2xl overflow-hidden" style="background:var(--surf);border:1px solid rgba(255,255,255,.08)">
+        <button class="faq-q w-full flex items-center justify-between p-6 text-left font-semibold text-white gap-4" style="transition:color .15s" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='#fff'">
           <span>Comment fonctionne la mise en ligne en 48h ?</span>
-          <span class="material-symbols-outlined text-brand faq-plus flex-shrink-0">add</span>
+          <span class="material-symbols-outlined faq-plus flex-shrink-0" style="color:var(--gold)">add</span>
         </button>
         <div class="faq-body">
-          <p class="px-6 pb-6 text-body text-on-surface-variant">Après votre inscription, notre équipe configure votre site depuis le template choisi, intègre votre flux CRM, pointe votre domaine et valide le tout. Vous recevez un lien de prévisualisation sous 24h et votre site est public sous 48h ouvrées.</p>
+          <p class="px-6 pb-6 text-body" style="color:var(--w70)">Après votre inscription, notre équipe configure votre site depuis le template choisi, intègre votre flux CRM, pointe votre domaine et valide le tout. Vous recevez un lien de prévisualisation sous 24h et votre site est public sous 48h ouvrées.</p>
         </div>
       </div>
 
-      <div class="faq-item bg-white border border-outline-variant rounded-2xl overflow-hidden">
-        <button class="faq-q w-full flex items-center justify-between p-6 text-left font-semibold text-on-background hover:text-brand transition-colors gap-4">
+      <div class="faq-item rounded-2xl overflow-hidden" style="background:var(--surf);border:1px solid rgba(255,255,255,.08)">
+        <button class="faq-q w-full flex items-center justify-between p-6 text-left font-semibold text-white gap-4" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='#fff'">
           <span>Quels CRM et portails sont compatibles ?</span>
-          <span class="material-symbols-outlined text-brand faq-plus flex-shrink-0">add</span>
+          <span class="material-symbols-outlined faq-plus flex-shrink-0" style="color:var(--gold)">add</span>
         </button>
         <div class="faq-body">
-          <p class="px-6 pb-6 text-body text-on-surface-variant">DATAhome se connecte nativement à HabiHub, Inmovilla, Witei, Inmoweb, Casafari, Inmogesco et Habitat Soft. Tout CRM exécutant un flux XML standard est également compatible. Contactez-nous pour une intégration sur mesure.</p>
+          <p class="px-6 pb-6 text-body" style="color:var(--w70)">DATAhome se connecte nativement à HabiHub, Inmovilla, Witei, Inmoweb, Casafari, Inmogesco et Habitat Soft. Tout CRM exécutant un flux XML standard est également compatible. Contactez-nous pour une intégration sur mesure.</p>
         </div>
       </div>
 
-      <div class="faq-item bg-white border border-outline-variant rounded-2xl overflow-hidden">
-        <button class="faq-q w-full flex items-center justify-between p-6 text-left font-semibold text-on-background hover:text-brand transition-colors gap-4">
+      <div class="faq-item rounded-2xl overflow-hidden" style="background:var(--surf);border:1px solid rgba(255,255,255,.08)">
+        <button class="faq-q w-full flex items-center justify-between p-6 text-left font-semibold text-white gap-4" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='#fff'">
           <span>Puis-je personnaliser les couleurs et le logo ?</span>
-          <span class="material-symbols-outlined text-brand faq-plus flex-shrink-0">add</span>
+          <span class="material-symbols-outlined faq-plus flex-shrink-0" style="color:var(--gold)">add</span>
         </button>
         <div class="faq-body">
-          <p class="px-6 pb-6 text-body text-on-surface-variant">Oui, dans tous les plans. Couleurs principales, logo, polices et contenu des sections clés sont modifiables depuis votre tableau de bord. Des personnalisations avancées (mise en page, sections custom) sont disponibles en Platinum.</p>
+          <p class="px-6 pb-6 text-body" style="color:var(--w70)">Oui, dans tous les plans. Couleurs principales, logo, polices et contenu des sections clés sont modifiables depuis votre tableau de bord. Des personnalisations avancées sont disponibles en Platinum.</p>
         </div>
       </div>
 
-      <div class="faq-item bg-white border border-outline-variant rounded-2xl overflow-hidden">
-        <button class="faq-q w-full flex items-center justify-between p-6 text-left font-semibold text-on-background hover:text-brand transition-colors gap-4">
+      <div class="faq-item rounded-2xl overflow-hidden" style="background:var(--surf);border:1px solid rgba(255,255,255,.08)">
+        <button class="faq-q w-full flex items-center justify-between p-6 text-left font-semibold text-white gap-4" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='#fff'">
           <span>Les traductions sont-elles automatiques ?</span>
-          <span class="material-symbols-outlined text-brand faq-plus flex-shrink-0">add</span>
+          <span class="material-symbols-outlined faq-plus flex-shrink-0" style="color:var(--gold)">add</span>
         </button>
         <div class="faq-body">
-          <p class="px-6 pb-6 text-body text-on-surface-variant">Les fiches de biens sont traduites automatiquement par notre moteur IA entraîné sur le vocabulaire immobilier. Le contenu éditorial (pages fixes, menus) peut être traduit manuellement pour plus de finesse ou laissé en traduction automatique.</p>
+          <p class="px-6 pb-6 text-body" style="color:var(--w70)">Les fiches de biens sont traduites automatiquement par notre moteur IA entraîné sur le vocabulaire immobilier. Le contenu éditorial peut être traduit manuellement pour plus de finesse ou laissé en traduction automatique.</p>
         </div>
       </div>
 
-      <div class="faq-item bg-white border border-outline-variant rounded-2xl overflow-hidden">
-        <button class="faq-q w-full flex items-center justify-between p-6 text-left font-semibold text-on-background hover:text-brand transition-colors gap-4">
+      <div class="faq-item rounded-2xl overflow-hidden" style="background:var(--surf);border:1px solid rgba(255,255,255,.08)">
+        <button class="faq-q w-full flex items-center justify-between p-6 text-left font-semibold text-white gap-4" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='#fff'">
           <span>Que se passe-t-il si j'annule ?</span>
-          <span class="material-symbols-outlined text-brand faq-plus flex-shrink-0">add</span>
+          <span class="material-symbols-outlined faq-plus flex-shrink-0" style="color:var(--gold)">add</span>
         </button>
         <div class="faq-body">
-          <p class="px-6 pb-6 text-body text-on-surface-variant">Annulation en un clic depuis votre tableau de bord. Votre site reste actif jusqu'à la fin de la période payée. Vous pouvez exporter vos leads et données avant fermeture. Aucune pénalité, aucun engagement minimum.</p>
+          <p class="px-6 pb-6 text-body" style="color:var(--w70)">Annulation en un clic depuis votre tableau de bord. Votre site reste actif jusqu'à la fin de la période payée. Vous pouvez exporter vos leads et données avant fermeture. Aucune pénalité, aucun engagement minimum.</p>
         </div>
       </div>
 
-      <div class="faq-item bg-white border border-outline-variant rounded-2xl overflow-hidden">
-        <button class="faq-q w-full flex items-center justify-between p-6 text-left font-semibold text-on-background hover:text-brand transition-colors gap-4">
+      <div class="faq-item rounded-2xl overflow-hidden" style="background:var(--surf);border:1px solid rgba(255,255,255,.08)">
+        <button class="faq-q w-full flex items-center justify-between p-6 text-left font-semibold text-white gap-4" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='#fff'">
           <span>Mon domaine existant est-il transférable ?</span>
-          <span class="material-symbols-outlined text-brand faq-plus flex-shrink-0">add</span>
+          <span class="material-symbols-outlined faq-plus flex-shrink-0" style="color:var(--gold)">add</span>
         </button>
         <div class="faq-body">
-          <p class="px-6 pb-6 text-body text-on-surface-variant">Oui. Si vous possédez déjà un domaine, notre équipe vous guide pour pointer votre DNS vers DATAhome en moins d'une heure, sans interrompre votre site actuel pendant la transition.</p>
+          <p class="px-6 pb-6 text-body" style="color:var(--w70)">Oui. Si vous possédez déjà un domaine, notre équipe vous guide pour pointer votre DNS vers DATAhome en moins d'une heure, sans interrompre votre site actuel pendant la transition.</p>
         </div>
       </div>
 
-      <div class="faq-item bg-white border border-outline-variant rounded-2xl overflow-hidden">
-        <button class="faq-q w-full flex items-center justify-between p-6 text-left font-semibold text-on-background hover:text-brand transition-colors gap-4">
+      <div class="faq-item rounded-2xl overflow-hidden" style="background:var(--surf);border:1px solid rgba(255,255,255,.08)">
+        <button class="faq-q w-full flex items-center justify-between p-6 text-left font-semibold text-white gap-4" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='#fff'">
           <span>L'essai est-il vraiment gratuit et sans CB ?</span>
-          <span class="material-symbols-outlined text-brand faq-plus flex-shrink-0">add</span>
+          <span class="material-symbols-outlined faq-plus flex-shrink-0" style="color:var(--gold)">add</span>
         </button>
         <div class="faq-body">
-          <p class="px-6 pb-6 text-body text-on-surface-variant">Absolument. 15 jours complets sans carte bancaire, avec accès à toutes les fonctionnalités du plan Gold. À l'issue de l'essai, vous choisissez votre plan ou supprimez votre compte en un clic. Aucun prélèvement automatique.</p>
+          <p class="px-6 pb-6 text-body" style="color:var(--w70)">Absolument. 15 jours complets sans carte bancaire, avec accès à toutes les fonctionnalités du plan Gold. À l'issue de l'essai, vous choisissez votre plan ou supprimez votre compte en un clic. Aucun prélèvement automatique.</p>
         </div>
       </div>
 
@@ -778,89 +765,89 @@ tailwind.config = {
 </section>
 
 <!-- ████ 10 · CTA FINAL ███████████████████████████████████ -->
-<section class="py-28 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-  <div class="bg-brand rounded-3xl p-12 md:p-20 text-center relative overflow-hidden fade-up">
+<section class="py-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto" style="background:var(--bg)">
+  <div class="rounded-3xl p-12 md:p-20 text-center relative overflow-hidden fade-up" style="background:linear-gradient(135deg,rgba(230,57,70,.15) 0%,rgba(124,92,191,.15) 50%,rgba(33,150,201,.15) 100%);border:1px solid rgba(245,200,66,.2)">
     <div class="relative z-10">
+      <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full mb-8" style="background:rgba(245,200,66,.12);color:var(--gold);border:1px solid rgba(245,200,66,.25)">
+        <span class="w-2 h-2 rounded-full pulse" style="background:var(--gold)"></span>
+        Rejoignez les agences qui performent
+      </span>
       <h2 class="font-bold text-white mb-5" style="font-size:clamp(28px,4vw,50px);line-height:1.15;letter-spacing:-0.025em">
         Votre concurrence améliore<br class="hidden sm:block"/> déjà son site. Et vous ?
       </h2>
-      <p class="text-body-lg text-white/70 mb-10 max-w-lg mx-auto">Rejoignez les agences qui ont choisi DATAhome pour dominer leur marché en ligne en 48 heures.</p>
+      <p class="text-body-lg mb-10 max-w-lg mx-auto" style="color:var(--w70)">Rejoignez les agences qui ont choisi DATAhome pour dominer leur marché en ligne en 48 heures.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="onboarding.html" class="inline-flex items-center justify-center gap-2 bg-white text-brand font-bold text-body px-9 py-4 rounded-xl hover:shadow-xl transition-all">
+        <a href="onboarding.html" class="btn-primary text-body px-9 py-4">
           <span class="material-symbols-outlined ms-fill" style="font-size:18px">rocket_launch</span>
           Démarrer l'essai gratuit
         </a>
-        <a href="experience.html" class="inline-flex items-center justify-center gap-2 bg-white/10 border border-white/25 text-white font-semibold text-body px-9 py-4 rounded-xl hover:bg-white/18 transition-all">Voir une démo live</a>
+        <a href="experience.html" class="btn-secondary text-body px-9 py-4">Voir une démo live</a>
       </div>
-      <p class="text-white/40 text-label mt-7">Sans carte bancaire · Mise en ligne 48h · Support humain inclus</p>
+      <p class="text-label mt-7" style="color:var(--w40)">Sans carte bancaire · Mise en ligne 48h · Support humain inclus</p>
     </div>
-    <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 w-[500px] h-[500px] bg-white/5 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/3 w-[400px] h-[400px] bg-white/5 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 w-[500px] h-[500px] rounded-full blur-3xl pointer-events-none" style="background:rgba(245,200,66,.04)"></div>
+    <div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/3 w-[400px] h-[400px] rounded-full blur-3xl pointer-events-none" style="background:rgba(230,57,70,.04)"></div>
   </div>
 </section>
 
 </main>
 
 <!-- ████ 11 · FOOTER ██████████████████████████████████████ -->
-<footer class="bg-inverse-surface">
+<footer style="background:#0a0a0a;border-top:1px solid rgba(255,255,255,.06)">
   <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto pt-20 pb-8">
 
     <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-16">
 
-      <!-- Brand -->
       <div class="md:col-span-1">
         <div class="mb-5">
           <img src="images/DH_V2.jpg" alt="DATAhome" class="h-12 object-contain">
         </div>
-        <p class="text-body text-white/45 mb-5 leading-relaxed">La plateforme SaaS qui met votre agence immobilière en ligne en 48h, connectée à votre CRM, en 8 langues.</p>
-        <div class="inline-flex items-center gap-2 bg-white/6 border border-white/10 rounded-full px-4 py-2">
-          <span class="material-symbols-outlined text-white/40 ms-fill" style="font-size:13px">shield</span>
-          <span class="text-xs text-white/40">Hébergé EU · RGPD</span>
+        <p class="text-body mb-5 leading-relaxed" style="color:var(--w40)">La plateforme SaaS qui met votre agence immobilière en ligne en 48h, connectée à votre CRM, en 8 langues.</p>
+        <div class="inline-flex items-center gap-2 rounded-full px-4 py-2" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)">
+          <span class="material-symbols-outlined ms-fill" style="font-size:13px;color:var(--w40)">shield</span>
+          <span class="text-xs" style="color:var(--w40)">Hébergé EU · RGPD</span>
         </div>
       </div>
 
-      <!-- Produit -->
       <div>
         <h4 class="text-xs font-bold text-white uppercase tracking-[0.1em] mb-5">Produit</h4>
         <ul class="space-y-3">
-          <li><a href="#features" class="text-body text-white/50 hover:text-white transition-colors">Fonctionnalités</a></li>
-          <li><a href="templates.html" class="text-body text-white/50 hover:text-white transition-colors">Templates</a></li>
-          <li><a href="#pricing" class="text-body text-white/50 hover:text-white transition-colors">Tarifs</a></li>
-          <li><a href="experience.html" class="text-body text-white/50 hover:text-white transition-colors">Démo live</a></li>
-          <li><a href="onboarding.html" class="text-body text-white/50 hover:text-white transition-colors">Démarrer</a></li>
+          <li><a href="#features" class="text-body transition-colors" style="color:var(--w40)" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.4)'">Fonctionnalités</a></li>
+          <li><a href="templates.html" class="text-body transition-colors" style="color:var(--w40)" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.4)'">Templates</a></li>
+          <li><a href="#pricing" class="text-body transition-colors" style="color:var(--w40)" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.4)'">Tarifs</a></li>
+          <li><a href="experience.html" class="text-body transition-colors" style="color:var(--w40)" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.4)'">Démo live</a></li>
+          <li><a href="onboarding.html" class="text-body transition-colors" style="color:var(--w40)" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.4)'">Démarrer</a></li>
         </ul>
       </div>
 
-      <!-- Entreprise -->
       <div>
         <h4 class="text-xs font-bold text-white uppercase tracking-[0.1em] mb-5">Entreprise</h4>
         <ul class="space-y-3">
-          <li><a href="support.html" class="text-body text-white/50 hover:text-white transition-colors">Support</a></li>
-          <li><a href="support.html" class="text-body text-white/50 hover:text-white transition-colors">Documentation</a></li>
-          <li><a href="#faq" class="text-body text-white/50 hover:text-white transition-colors">FAQ</a></li>
-          <li><a href="support.html" class="text-body text-white/50 hover:text-white transition-colors">Contact</a></li>
+          <li><a href="support.html" class="text-body transition-colors" style="color:var(--w40)" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.4)'">Support</a></li>
+          <li><a href="support.html" class="text-body transition-colors" style="color:var(--w40)" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.4)'">Documentation</a></li>
+          <li><a href="#faq" class="text-body transition-colors" style="color:var(--w40)" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.4)'">FAQ</a></li>
+          <li><a href="support.html" class="text-body transition-colors" style="color:var(--w40)" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.4)'">Contact</a></li>
         </ul>
       </div>
 
-      <!-- Légal -->
       <div>
         <h4 class="text-xs font-bold text-white uppercase tracking-[0.1em] mb-5">Légal</h4>
         <ul class="space-y-3">
-          <li><a href="legal.html" class="text-body text-white/50 hover:text-white transition-colors">Mentions légales</a></li>
-          <li><a href="privacy.html" class="text-body text-white/50 hover:text-white transition-colors">Confidentialité</a></li>
-          <li><a href="legal.html" class="text-body text-white/50 hover:text-white transition-colors">CGV</a></li>
-          <li><a href="privacy.html" class="text-body text-white/50 hover:text-white transition-colors">Cookies</a></li>
+          <li><a href="legal.html" class="text-body transition-colors" style="color:var(--w40)" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.4)'">Mentions légales</a></li>
+          <li><a href="privacy.html" class="text-body transition-colors" style="color:var(--w40)" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.4)'">Confidentialité</a></li>
+          <li><a href="legal.html" class="text-body transition-colors" style="color:var(--w40)" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.4)'">CGV</a></li>
+          <li><a href="privacy.html" class="text-body transition-colors" style="color:var(--w40)" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.4)'">Cookies</a></li>
         </ul>
       </div>
 
     </div>
 
-    <div class="border-t border-white/7 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="text-body text-white/30">© 2025 DATAhome. Tous droits réservés.</p>
+    <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4" style="border-top:1px solid rgba(255,255,255,.06)">
+      <p class="text-body" style="color:rgba(255,255,255,.25)">© 2025 DATAhome. Tous droits réservés.</p>
       <div class="flex gap-6">
-        <a href="legal.html" class="text-label text-white/30 hover:text-white/70 transition-colors">Légal</a>
-        <a href="privacy.html" class="text-label text-white/30 hover:text-white/70 transition-colors">Confidentialité</a>
-        <a href="support.html" class="text-label text-white/30 hover:text-white/70 transition-colors">Contact</a>
+        <a href="legal.html" class="text-label" style="color:rgba(255,255,255,.25)" onmouseover="this.style.color='rgba(255,255,255,.6)'" onmouseout="this.style.color='rgba(255,255,255,.25)'">Légal</a>
+        <a href="privacy.html" class="text-label" style="color:rgba(255,255,255,.25)" onmouseover="this.style.color='rgba(255,255,255,.6)'" onmouseout="this.style.color='rgba(255,255,255,.25)'">Confidentialité</a>
+        <a href="support.html" class="text-label" style="color:rgba(255,255,255,.25)" onmouseover="this.style.color='rgba(255,255,255,.6)'" onmouseout="this.style.color='rgba(255,255,255,.25)'">Contact</a>
       </div>
     </div>
 
@@ -870,9 +857,11 @@ tailwind.config = {
 <script>
   // Navbar shadow on scroll
   const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => nav.classList.toggle('shadow-md', scrollY > 8), {passive:true});
+  window.addEventListener('scroll', () => {
+    nav.style.boxShadow = scrollY > 8 ? '0 4px 24px rgba(0,0,0,.6)' : 'none';
+  }, {passive:true});
 
-  // Fade-up via IntersectionObserver
+  // Fade-up
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, {threshold: 0.1});
