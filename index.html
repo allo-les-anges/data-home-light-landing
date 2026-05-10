@@ -3,431 +3,388 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>DATAhome | Votre agence immobilière en ligne en 48h</title>
-<meta name="description" content="DATAhome crée votre site d'agence en 48h connecté à HabiHub, multilingue, chatbot IA et CRM leads intégré. Essai gratuit 15 jours, sans CB."/>
+<title>DATAhome — Votre agence immobilière en ligne en 48h</title>
+<meta name="description" content="DATAhome crée votre site d'agence en 48h, connecté à HabiHub, multilingue, chatbot IA et CRM leads intégré. Essai gratuit 15 jours sans CB."/>
 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png"/>
 <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        colors: {
-          "primary-fixed-dim":           "#b7c4ff",
-          "on-surface":                  "#1b1b1c",
-          "primary-fixed":               "#dce1ff",
-          "on-background":               "#1b1b1c",
-          "surface-container-high":      "#eae7e8",
-          "secondary-container":         "#fedd7c",
-          "surface":                     "#fcf8f9",
-          "error":                       "#ba1a1a",
-          "inverse-surface":             "#303031",
-          "tertiary":                    "#3d445a",
-          "surface-bright":              "#fcf8f9",
-          "surface-container":           "#f0edee",
-          "background":                  "#fcf8f9",
-          "primary-container":           "#1d4ed8",
-          "on-tertiary-fixed":           "#131b2e",
-          "on-secondary-container":      "#786005",
-          "on-error":                    "#ffffff",
-          "on-tertiary":                 "#ffffff",
-          "tertiary-fixed":              "#dae2fd",
-          "error-container":             "#ffdad6",
-          "surface-dim":                 "#dcd9da",
-          "surface-container-highest":   "#e4e2e3",
-          "on-secondary":                "#ffffff",
-          "primary":                     "#0037b0",
-          "on-surface-variant":          "#434655",
-          "outline-variant":             "#c4c5d7",
-          "secondary-fixed":             "#ffe086",
-          "inverse-primary":             "#b7c4ff",
-          "surface-variant":             "#e4e2e3",
-          "on-primary":                  "#ffffff",
-          "on-error-container":          "#93000a",
-          "outline":                     "#747686",
-          "inverse-on-surface":          "#f3f0f1",
-          "tertiary-container":          "#545c72",
-          "on-primary-fixed":            "#001551",
-          "secondary-fixed-dim":         "#e3c466",
-          "on-primary-container":        "#cad3ff",
-          "surface-container-low":       "#f6f3f4",
-          "on-secondary-fixed":          "#231a00",
-          "surface-tint":                "#2151da",
-          "surface-container-lowest":    "#ffffff",
-          "secondary":                   "#735c00"
-        },
-        borderRadius: {
-          DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem"
-        },
-        spacing: {
-          "margin-desktop":  "48px",
-          "container-max":   "1280px",
-          "margin-mobile":   "20px",
-          "unit":            "4px",
-          "gutter":          "24px"
-        },
-        fontFamily: {
-          "headline-md":         ["Inter"],
-          "display-lg":          ["Inter"],
-          "body-lg":             ["Inter"],
-          "headline-lg":         ["Inter"],
-          "headline-lg-mobile":  ["Inter"],
-          "body-md":             ["Inter"],
-          "label-md":            ["Inter"],
-          "label-sm":            ["Inter"]
-        },
-        fontSize: {
-          "headline-md":        ["24px", {lineHeight:"32px", fontWeight:"600"}],
-          "display-lg":         ["64px", {lineHeight:"72px", letterSpacing:"-0.02em", fontWeight:"700"}],
-          "body-lg":            ["18px", {lineHeight:"28px", fontWeight:"400"}],
-          "headline-lg":        ["32px", {lineHeight:"40px", letterSpacing:"-0.01em", fontWeight:"600"}],
-          "headline-lg-mobile": ["24px", {lineHeight:"32px", fontWeight:"600"}],
-          "body-md":            ["16px", {lineHeight:"24px", fontWeight:"400"}],
-          "label-md":           ["14px", {lineHeight:"20px", letterSpacing:"0.01em", fontWeight:"500"}],
-          "label-sm":           ["12px", {lineHeight:"16px", fontWeight:"600"}]
-        }
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "brand":                       "#1d4ed8",
+        "brand-dk":                    "#1239b0",
+        "brand-lt":                    "#eff4ff",
+        "primary-fixed-dim":           "#b7c4ff",
+        "on-surface":                  "#1b1b1c",
+        "primary-fixed":               "#dce1ff",
+        "on-background":               "#1b1b1c",
+        "surface-container-high":      "#eae7e8",
+        "surface":                     "#fcf8f9",
+        "inverse-surface":             "#0f1f3d",
+        "surface-bright":              "#fcf8f9",
+        "surface-container":           "#f0edee",
+        "background":                  "#fcf8f9",
+        "primary-container":           "#1d4ed8",
+        "on-primary-container":        "#cad3ff",
+        "on-surface-variant":          "#434655",
+        "outline-variant":             "#c4c5d7",
+        "surface-variant":             "#e4e2e3",
+        "outline":                     "#747686",
+        "inverse-on-surface":          "#f3f0f1",
+        "surface-container-low":       "#f6f3f4",
+        "surface-container-lowest":    "#ffffff"
+      },
+      spacing: {
+        "margin-desktop": "48px",
+        "container-max":  "1280px",
+        "margin-mobile":  "20px",
+        "gutter":         "24px"
+      },
+      fontFamily: { sans: ["Inter", "system-ui", "sans-serif"] },
+      fontSize: {
+        "display":   ["60px", {lineHeight:"68px", letterSpacing:"-0.025em", fontWeight:"700"}],
+        "h2":        ["36px", {lineHeight:"44px", letterSpacing:"-0.02em",  fontWeight:"700"}],
+        "h3":        ["22px", {lineHeight:"30px", letterSpacing:"-0.01em",  fontWeight:"600"}],
+        "body-lg":   ["18px", {lineHeight:"28px", fontWeight:"400"}],
+        "body":      ["16px", {lineHeight:"24px", fontWeight:"400"}],
+        "label":     ["14px", {lineHeight:"20px", letterSpacing:"0.01em",   fontWeight:"500"}],
+        "xs":        ["12px", {lineHeight:"16px", fontWeight:"600"}]
       }
     }
   }
+}
 </script>
 <style>
-  body { font-family:'Inter',sans-serif; background-color:#fcf8f9; min-height:max(884px,100dvh); }
+  body { font-family:'Inter',system-ui,sans-serif; background:#fcf8f9; }
   .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; }
+  .ms-fill { font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24; }
 
-  @keyframes floatY { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
-  .fb1 { animation:floatY 4s ease-in-out infinite; }
-  .fb2 { animation:floatY 4s ease-in-out 1.3s infinite; }
-  .fb3 { animation:floatY 4s ease-in-out 2.6s infinite; }
+  /* Animations */
+  @keyframes floatY  { 0%,100%{transform:translateY(0)}   50%{transform:translateY(-7px)} }
+  @keyframes pulseDot{ 0%,100%{box-shadow:0 0 0 0 rgba(29,78,216,.5)} 50%{box-shadow:0 0 0 6px rgba(29,78,216,0)} }
+  .float-1 { animation:floatY 4s ease-in-out infinite; }
+  .float-2 { animation:floatY 4s ease-in-out 1.4s infinite; }
+  .float-3 { animation:floatY 4s ease-in-out 2.8s infinite; }
+  .pulse   { animation:pulseDot 2s infinite; }
 
-  @keyframes pulseDot {
-    0%,100%{box-shadow:0 0 0 0 rgba(29,78,216,.5)}
-    50%{box-shadow:0 0 0 6px rgba(29,78,216,0)}
-  }
-  .pulse-dot { animation:pulseDot 2s infinite; }
+  .fade-up { opacity:0; transform:translateY(22px); transition:opacity .55s ease,transform .55s ease; }
+  .fade-up.in { opacity:1; transform:none; }
+  .d1{transition-delay:.1s} .d2{transition-delay:.2s} .d3{transition-delay:.3s}
+  .d4{transition-delay:.4s} .d5{transition-delay:.5s} .d6{transition-delay:.6s}
 
-  .fade-up { opacity:0; transform:translateY(24px); transition:opacity .55s ease,transform .55s ease; }
-  .fade-up.visible { opacity:1; transform:translateY(0); }
-  .fade-up.d1{transition-delay:.1s} .fade-up.d2{transition-delay:.2s}
-  .fade-up.d3{transition-delay:.3s} .fade-up.d4{transition-delay:.4s}
-  .fade-up.d5{transition-delay:.5s} .fade-up.d6{transition-delay:.6s}
+  /* FAQ */
+  .faq-body { max-height:0; overflow:hidden; transition:max-height .32s ease; }
+  .faq-item.open .faq-body { max-height:260px; }
+  .faq-plus { transition:transform .25s ease; }
+  .faq-item.open .faq-plus { transform:rotate(45deg); }
 
-  .faq-answer { max-height:0; overflow:hidden; transition:max-height .35s ease; }
-  .faq-item.open .faq-answer { max-height:300px; }
-  .faq-icon { transition:transform .25s ease; }
-  .faq-item.open .faq-icon { transform:rotate(45deg); }
+  /* Template card hover */
+  .tpl-card { transition:transform .2s ease, box-shadow .2s ease; }
+  .tpl-card:hover { transform:translateY(-4px); box-shadow:0 16px 48px rgba(17,24,39,.12); }
 </style>
 </head>
 <body class="text-on-background">
 
-<!-- ═══ NAVBAR ══════════════════════════════════════════════ -->
-<header id="navbar" class="w-full top-0 sticky bg-surface border-b border-outline-variant z-50 transition-shadow duration-200">
-  <div class="flex justify-between items-center h-16 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-    <a href="/" class="flex items-center gap-2">
-      <span class="material-symbols-outlined text-primary-container" style="font-size:22px">home_work</span>
-      <span class="font-bold text-[22px] tracking-tight text-on-surface">DATA<span class="text-primary-container">home</span></span>
+<!-- ████ 1 · NAVBAR ████████████████████████████████████████ -->
+<header id="nav" class="sticky top-0 z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant transition-shadow duration-200">
+  <div class="flex items-center justify-between h-16 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto gap-8">
+
+    <a href="/" class="flex items-center gap-2 flex-shrink-0">
+      <span class="material-symbols-outlined text-brand ms-fill" style="font-size:22px">home_work</span>
+      <span class="font-bold text-[20px] tracking-tight text-on-surface">DATA<span class="text-brand">home</span></span>
     </a>
-    <nav class="hidden md:flex items-center gap-6">
-      <a class="text-label-md font-label-md text-on-surface-variant hover:text-primary-container transition-colors" href="#features">Fonctionnalités</a>
-      <a class="text-label-md font-label-md text-on-surface-variant hover:text-primary-container transition-colors" href="templates.html">Templates</a>
-      <a class="text-label-md font-label-md text-on-surface-variant hover:text-primary-container transition-colors" href="#pricing">Tarifs</a>
-      <a class="text-label-md font-label-md text-on-surface-variant hover:text-primary-container transition-colors" href="#faq">FAQ</a>
+
+    <nav class="hidden md:flex items-center gap-1">
+      <a href="#features" class="text-label text-on-surface-variant hover:text-brand hover:bg-brand-lt px-3 py-2 rounded-lg transition-all">Fonctionnalités</a>
+      <a href="#templates" class="text-label text-on-surface-variant hover:text-brand hover:bg-brand-lt px-3 py-2 rounded-lg transition-all">Templates</a>
+      <a href="#pricing" class="text-label text-on-surface-variant hover:text-brand hover:bg-brand-lt px-3 py-2 rounded-lg transition-all">Tarifs</a>
+      <a href="#faq" class="text-label text-on-surface-variant hover:text-brand hover:bg-brand-lt px-3 py-2 rounded-lg transition-all">FAQ</a>
     </nav>
-    <div class="flex items-center gap-3">
-      <a href="experience.html" class="hidden md:block text-label-md font-label-md text-on-surface-variant hover:text-primary-container px-4 py-2 transition-colors">Voir une démo</a>
-      <a href="onboarding.html" class="bg-primary-container text-white px-5 py-2.5 rounded-lg text-label-md font-label-md hover:opacity-90 transition-all">Essai gratuit</a>
+
+    <div class="flex items-center gap-3 flex-shrink-0">
+      <a href="experience.html" class="hidden md:inline-flex items-center border border-brand text-brand text-label px-4 py-2 rounded-lg hover:bg-brand-lt transition-all">Voir une démo</a>
+      <a href="onboarding.html" class="inline-flex items-center bg-brand text-white text-label px-4 py-2 rounded-lg hover:bg-brand-dk transition-all shadow-sm">Essai gratuit</a>
     </div>
+
   </div>
 </header>
 
 <main>
 
-<!-- ═══ HERO ════════════════════════════════════════════════ -->
-<section class="relative py-20 md:py-32 overflow-hidden px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-  <div class="flex flex-col items-center text-center max-w-4xl mx-auto">
-    <span class="fade-up bg-primary-container/10 text-primary-container font-label-sm text-label-sm px-4 py-1.5 rounded-full mb-6 uppercase tracking-wider inline-flex items-center gap-2">
-      <span class="w-2 h-2 rounded-full bg-primary-container pulse-dot inline-block"></span>
+<!-- ████ 2 · HERO ██████████████████████████████████████████ -->
+<section class="relative py-20 md:py-28 overflow-hidden px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+
+  <!-- Copy -->
+  <div class="flex flex-col items-center text-center max-w-3xl mx-auto">
+
+    <span class="fade-up inline-flex items-center gap-2 bg-brand-lt text-brand text-xs font-semibold uppercase tracking-wider px-4 py-1.5 rounded-full mb-6">
+      <span class="w-2 h-2 rounded-full bg-brand pulse"></span>
       La plateforme spécialisée immobilier
     </span>
-    <h1 class="fade-up d1 font-display-lg text-headline-lg-mobile md:text-display-lg text-on-background mb-6" style="letter-spacing:-0.02em;line-height:1.1">
-      Votre agence immobilière<br/>en ligne en <span class="text-primary-container">48h.</span>
+
+    <h1 class="fade-up d1 text-display text-on-background mb-5">
+      Votre agence immobilière<br class="hidden sm:block"/> en ligne en <span class="text-brand">48h.</span>
     </h1>
-    <p class="fade-up d2 font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl">
-      Site vitrine professionnel connecté à HabiHub, multilingue, chatbot IA et CRM leads intégré. Zéro technique, zéro délai.
+
+    <p class="fade-up d2 text-body-lg text-on-surface-variant mb-9 max-w-xl">
+      Site vitrine professionnel connecté à HabiHub, multilingue, chatbot IA et CRM leads intégré.
     </p>
-    <div class="fade-up d3 flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-8">
-      <a href="onboarding.html" class="bg-primary-container text-white px-8 py-4 rounded-lg font-label-md text-body-md hover:opacity-90 transition-all shadow-sm flex items-center justify-center gap-2">
-        <span class="material-symbols-outlined" style="font-size:18px">arrow_forward</span>
+
+    <div class="fade-up d3 flex flex-col sm:flex-row gap-3 mb-7">
+      <a href="onboarding.html" class="inline-flex items-center justify-center gap-2 bg-brand text-white text-body font-semibold px-7 py-3.5 rounded-xl hover:bg-brand-dk transition-all shadow-md hover:shadow-lg">
+        <span class="material-symbols-outlined ms-fill" style="font-size:18px">rocket_launch</span>
         Démarrer l'essai gratuit
       </a>
-      <a href="templates.html" class="border border-outline text-on-background px-8 py-4 rounded-lg font-label-md text-body-md hover:bg-surface-container transition-all flex items-center justify-center gap-2">
+      <a href="templates.html" class="inline-flex items-center justify-center gap-2 border border-outline-variant text-on-background text-body font-semibold px-7 py-3.5 rounded-xl hover:bg-surface-container transition-all">
         <span class="material-symbols-outlined" style="font-size:18px">grid_view</span>
         Voir les templates
       </a>
     </div>
-    <div class="fade-up d4 flex flex-wrap items-center justify-center gap-6 text-label-md font-label-md text-on-surface-variant">
+
+    <div class="fade-up d4 flex flex-wrap items-center justify-center gap-5 text-label text-on-surface-variant">
       <span class="flex items-center gap-1.5">
-        <span class="material-symbols-outlined text-green-500" style="font-size:16px;font-variation-settings:'FILL' 1">check_circle</span>15 jours essai
+        <span class="material-symbols-outlined text-green-500 ms-fill" style="font-size:16px">check_circle</span>15 jours d'essai
       </span>
+      <span class="w-px h-4 bg-outline-variant hidden sm:block"></span>
       <span class="flex items-center gap-1.5">
-        <span class="material-symbols-outlined text-green-500" style="font-size:16px;font-variation-settings:'FILL' 1">check_circle</span>Sans carte bancaire
+        <span class="material-symbols-outlined text-green-500 ms-fill" style="font-size:16px">check_circle</span>Sans carte bancaire
       </span>
+      <span class="w-px h-4 bg-outline-variant hidden sm:block"></span>
       <span class="flex items-center gap-1.5">
-        <span class="material-symbols-outlined text-green-500" style="font-size:16px;font-variation-settings:'FILL' 1">check_circle</span>Annulation à tout moment
+        <span class="material-symbols-outlined text-green-500 ms-fill" style="font-size:16px">check_circle</span>Annulation à tout moment
       </span>
     </div>
+
   </div>
 
   <!-- Browser mockup -->
-  <div class="mt-16 relative fade-up d2">
+  <div class="mt-14 relative fade-up d2">
+
     <!-- Floating badges -->
-    <div class="fb1 absolute -top-4 right-4 md:right-16 z-10 bg-white border border-outline-variant rounded-xl shadow-lg px-4 py-3 hidden md:flex items-center gap-3">
-      <span class="material-symbols-outlined text-primary-container" style="font-variation-settings:'FILL' 1">home</span>
-      <div>
-        <div class="font-bold text-sm text-on-surface">247 biens</div>
-        <div class="text-xs text-on-surface-variant">synchronisés en direct</div>
-      </div>
+    <div class="float-1 absolute -top-3 right-4 md:right-20 z-10 hidden md:flex items-center gap-3 bg-white border border-outline-variant rounded-2xl shadow-lg px-4 py-3">
+      <span class="material-symbols-outlined text-brand ms-fill" style="font-size:20px">home</span>
+      <div><p class="font-semibold text-sm text-on-surface leading-none mb-0.5">247 biens</p><p class="text-xs text-on-surface-variant">synchronisés</p></div>
     </div>
-    <div class="fb2 absolute bottom-4 right-2 md:right-16 z-10 bg-white border border-outline-variant rounded-xl shadow-lg px-4 py-3 hidden md:flex items-center gap-3">
-      <span class="material-symbols-outlined text-primary-container" style="font-variation-settings:'FILL' 1">language</span>
-      <div>
-        <div class="font-bold text-sm text-on-surface">8 langues</div>
-        <div class="text-xs text-on-surface-variant">traduites auto</div>
-      </div>
+    <div class="float-2 absolute bottom-6 right-3 md:right-16 z-10 hidden md:flex items-center gap-3 bg-white border border-outline-variant rounded-2xl shadow-lg px-4 py-3">
+      <span class="material-symbols-outlined text-brand ms-fill" style="font-size:20px">language</span>
+      <div><p class="font-semibold text-sm text-on-surface leading-none mb-0.5">8 langues</p><p class="text-xs text-on-surface-variant">traduites auto</p></div>
     </div>
-    <div class="fb3 absolute bottom-4 left-2 md:left-16 z-10 bg-white border border-outline-variant rounded-xl shadow-lg px-4 py-3 hidden md:flex items-center gap-3">
-      <span class="material-symbols-outlined text-yellow-500" style="font-variation-settings:'FILL' 1">bolt</span>
-      <div>
-        <div class="font-bold text-sm text-on-surface">En ligne en 48h</div>
-        <div class="text-xs text-on-surface-variant">garanti</div>
-      </div>
+    <div class="float-3 absolute bottom-6 left-3 md:left-16 z-10 hidden md:flex items-center gap-3 bg-white border border-outline-variant rounded-2xl shadow-lg px-4 py-3">
+      <span class="material-symbols-outlined text-yellow-500 ms-fill" style="font-size:20px">bolt</span>
+      <div><p class="font-semibold text-sm text-on-surface leading-none mb-0.5">En ligne en 48h</p><p class="text-xs text-on-surface-variant">garanti</p></div>
     </div>
 
     <!-- Frame -->
-    <div class="rounded-xl overflow-hidden border border-outline-variant shadow-xl">
-      <div class="bg-surface-container-high px-4 py-3 border-b border-outline-variant flex items-center gap-3">
+    <div class="rounded-2xl overflow-hidden border border-outline-variant shadow-2xl">
+      <div class="bg-surface-container-high flex items-center gap-3 px-4 py-3 border-b border-outline-variant">
         <div class="flex gap-1.5">
           <div class="w-3 h-3 rounded-full bg-red-400"></div>
           <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
           <div class="w-3 h-3 rounded-full bg-green-400"></div>
         </div>
-        <div class="flex-1 bg-white border border-outline-variant rounded-full px-4 py-1 text-xs text-on-surface-variant text-center">agencia-costa-del-sol.es</div>
+        <div class="flex-1 bg-white border border-outline-variant rounded-full text-xs text-on-surface-variant text-center py-1 px-3">agencia-costa-del-sol.es</div>
       </div>
-      <div class="bg-gradient-to-br from-[#1e3a5f] via-[#1d4ed8] to-[#0ea5e9] min-h-[280px] md:min-h-[340px] relative overflow-hidden">
+      <div class="bg-gradient-to-br from-[#1e3a5f] via-[#1d4ed8] to-[#0ea5e9] min-h-[260px] md:min-h-[340px] relative overflow-hidden">
         <div class="flex items-center justify-between px-6 py-4 bg-black/10">
-          <div class="text-white font-bold text-sm">Costa Homes</div>
-          <div class="hidden sm:flex gap-5">
-            <span class="text-white/70 text-xs">Biens</span>
-            <span class="text-white/70 text-xs">Agence</span>
-            <span class="text-white/70 text-xs">Contact</span>
-          </div>
+          <span class="text-white font-bold text-sm">Costa Homes</span>
+          <div class="hidden sm:flex gap-5 text-white/70 text-xs"><span>Biens</span><span>Agence</span><span>Contact</span></div>
         </div>
-        <div class="px-6 py-6">
+        <div class="px-6 pt-4 pb-6">
           <div class="inline-block bg-white/20 text-white text-xs px-3 py-1 rounded-full mb-3">Marbella · Costa del Sol</div>
-          <div class="text-white font-bold text-2xl md:text-3xl leading-tight mb-2">Trouvez votre villa de rêve</div>
-          <div class="text-white/70 text-sm mb-5">247 propriétés exclusives disponibles</div>
-          <div class="inline-block bg-white text-primary-container font-bold text-sm px-5 py-2.5 rounded-lg">Rechercher →</div>
+          <p class="text-white font-bold text-2xl md:text-3xl leading-tight mb-2">Trouvez votre villa de rêve</p>
+          <p class="text-white/70 text-sm mb-5">247 propriétés exclusives disponibles</p>
+          <span class="inline-block bg-white text-brand font-bold text-sm px-5 py-2.5 rounded-lg">Rechercher →</span>
         </div>
         <div class="absolute bottom-0 right-0 flex gap-3 p-4">
           <div class="bg-white/15 backdrop-blur-sm rounded-xl p-3 w-28">
-            <div class="h-14 bg-white/25 rounded-lg mb-2"></div>
-            <div class="text-white font-bold text-xs">€ 895 000</div>
-            <div class="text-white/60 text-[10px]">Villa · Marbella</div>
+            <div class="h-12 bg-white/25 rounded-lg mb-2"></div>
+            <p class="text-white font-bold text-xs">€ 895 000</p>
+            <p class="text-white/60 text-[10px]">Villa · Marbella</p>
           </div>
           <div class="bg-white/15 backdrop-blur-sm rounded-xl p-3 w-28 hidden sm:block">
-            <div class="h-14 bg-white/25 rounded-lg mb-2"></div>
-            <div class="text-white font-bold text-xs">€ 1 250 000</div>
-            <div class="text-white/60 text-[10px]">Villa · Estepona</div>
+            <div class="h-12 bg-white/25 rounded-lg mb-2"></div>
+            <p class="text-white font-bold text-xs">€ 1 250 000</p>
+            <p class="text-white/60 text-[10px]">Villa · Estepona</p>
           </div>
-          <div class="bg-white/15 backdrop-blur-sm rounded-xl p-3 w-28 hidden md:block">
-            <div class="h-14 bg-white/25 rounded-lg mb-2"></div>
-            <div class="text-white font-bold text-xs">€ 420 000</div>
-            <div class="text-white/60 text-[10px]">Appart · Nerja</div>
+          <div class="bg-white/15 backdrop-blur-sm rounded-xl p-3 w-28 hidden lg:block">
+            <div class="h-12 bg-white/25 rounded-lg mb-2"></div>
+            <p class="text-white font-bold text-xs">€ 420 000</p>
+            <p class="text-white/60 text-[10px]">Appart · Nerja</p>
           </div>
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
-<!-- ═══ PARTENAIRES ══════════════════════════════════════════ -->
-<section id="logos" class="py-14 border-y border-outline-variant bg-surface-container-low">
+<!-- ████ 3 · PARTENAIRES ███████████████████████████████████ -->
+<section class="py-12 bg-surface-container border-y border-outline-variant">
   <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-    <p class="text-center font-label-sm text-label-sm text-outline uppercase tracking-[0.2em] mb-10 fade-up">Connecté à vos outils immobiliers</p>
-    <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 fade-up d1">
-      <div class="flex items-center gap-2 opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all">
-        <div class="w-7 h-7 rounded-lg bg-blue-100 flex items-center justify-center font-bold text-blue-700 text-sm">H</div>
-        <span class="font-bold text-lg text-on-surface">HabiHub</span>
+    <p class="text-center text-xs font-semibold text-outline uppercase tracking-[0.18em] mb-8 fade-up">Compatible avec vos outils immobiliers</p>
+    <div class="flex flex-wrap justify-center items-center gap-6 md:gap-12 fade-up d1">
+      <div class="flex items-center gap-2 opacity-50 hover:opacity-100 grayscale hover:grayscale-0 transition-all cursor-default">
+        <div class="w-6 h-6 rounded-md bg-blue-100 flex items-center justify-center font-bold text-blue-700 text-xs">H</div>
+        <span class="font-bold text-base text-on-surface">HabiHub</span>
       </div>
-      <div class="flex items-center gap-2 opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all">
-        <div class="w-7 h-7 rounded-lg bg-pink-100 flex items-center justify-center font-bold text-pink-700 text-sm">I</div>
-        <span class="font-bold text-lg text-on-surface">Inmovilla</span>
+      <div class="flex items-center gap-2 opacity-50 hover:opacity-100 grayscale hover:grayscale-0 transition-all cursor-default">
+        <div class="w-6 h-6 rounded-md bg-pink-100 flex items-center justify-center font-bold text-pink-700 text-xs">I</div>
+        <span class="font-bold text-base text-on-surface">Inmovilla</span>
       </div>
-      <div class="flex items-center gap-2 opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all">
-        <div class="w-7 h-7 rounded-lg bg-green-100 flex items-center justify-center font-bold text-green-700 text-sm">W</div>
-        <span class="font-bold text-lg text-on-surface">Witei</span>
+      <div class="flex items-center gap-2 opacity-50 hover:opacity-100 grayscale hover:grayscale-0 transition-all cursor-default">
+        <div class="w-6 h-6 rounded-md bg-green-100 flex items-center justify-center font-bold text-green-700 text-xs">W</div>
+        <span class="font-bold text-base text-on-surface">Witei</span>
       </div>
-      <div class="flex items-center gap-2 opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all">
-        <div class="w-7 h-7 rounded-lg bg-yellow-100 flex items-center justify-center font-bold text-yellow-700 text-sm">I</div>
-        <span class="font-bold text-lg text-on-surface">Inmoweb</span>
+      <div class="flex items-center gap-2 opacity-50 hover:opacity-100 grayscale hover:grayscale-0 transition-all cursor-default">
+        <div class="w-6 h-6 rounded-md bg-yellow-100 flex items-center justify-center font-bold text-yellow-700 text-xs">I</div>
+        <span class="font-bold text-base text-on-surface">Inmoweb</span>
       </div>
-      <div class="flex items-center gap-2 opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all">
-        <div class="w-7 h-7 rounded-lg bg-violet-100 flex items-center justify-center font-bold text-violet-700 text-sm">C</div>
-        <span class="font-bold text-lg text-on-surface">Casafari</span>
+      <div class="flex items-center gap-2 opacity-50 hover:opacity-100 grayscale hover:grayscale-0 transition-all cursor-default">
+        <div class="w-6 h-6 rounded-md bg-violet-100 flex items-center justify-center font-bold text-violet-700 text-xs">C</div>
+        <span class="font-bold text-base text-on-surface">Casafari</span>
+      </div>
+      <div class="flex items-center gap-2 opacity-50 hover:opacity-100 grayscale hover:grayscale-0 transition-all cursor-default">
+        <div class="w-6 h-6 rounded-md bg-red-100 flex items-center justify-center font-bold text-red-700 text-xs">I</div>
+        <span class="font-bold text-base text-on-surface">Inmogesco</span>
+      </div>
+      <div class="flex items-center gap-2 opacity-50 hover:opacity-100 grayscale hover:grayscale-0 transition-all cursor-default">
+        <div class="w-6 h-6 rounded-md bg-teal-100 flex items-center justify-center font-bold text-teal-700 text-xs">H</div>
+        <span class="font-bold text-base text-on-surface">Habitat Soft</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ STATS STRIP ══════════════════════════════════════════ -->
-<section class="py-20 bg-primary-container">
+<!-- ████ 4 · STATS STRIP ██████████████████████████████████ -->
+<section class="py-20 bg-brand">
   <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
       <div class="fade-up">
-        <div class="text-5xl md:text-6xl font-bold text-white mb-2" style="letter-spacing:-0.03em;line-height:1">48h</div>
-        <div class="text-white/70 text-body-md">Délai de mise en ligne garanti</div>
+        <p class="font-bold text-white mb-1" style="font-size:54px;line-height:1;letter-spacing:-0.03em">48h</p>
+        <p class="text-white/65 text-label">Site en ligne garanti</p>
       </div>
       <div class="fade-up d1">
-        <div class="text-5xl md:text-6xl font-bold text-white mb-2" style="letter-spacing:-0.03em;line-height:1">8</div>
-        <div class="text-white/70 text-body-md">Langues synchronisées auto</div>
+        <p class="font-bold text-white mb-1" style="font-size:54px;line-height:1;letter-spacing:-0.03em">8</p>
+        <p class="text-white/65 text-label">Langues disponibles</p>
       </div>
       <div class="fade-up d2">
-        <div class="text-5xl md:text-6xl font-bold text-white mb-2" style="letter-spacing:-0.03em;line-height:1">2500+</div>
-        <div class="text-white/70 text-body-md">Biens gérés par nos clients</div>
+        <p class="font-bold text-white mb-1" style="font-size:54px;line-height:1;letter-spacing:-0.03em">2 500+</p>
+        <p class="text-white/65 text-label">Biens XML gérables</p>
       </div>
       <div class="fade-up d3">
-        <div class="text-5xl md:text-6xl font-bold text-white mb-2" style="letter-spacing:-0.03em;line-height:1">6</div>
-        <div class="text-white/70 text-body-md">Templates premium inclus</div>
+        <p class="font-bold text-white mb-1" style="font-size:54px;line-height:1;letter-spacing:-0.03em">6</p>
+        <p class="text-white/65 text-label">Templates premium</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ FEATURES BENTO ══════════════════════════════════════ -->
-<section id="features" class="py-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-  <div class="mb-16 text-center md:text-left fade-up">
-    <p class="text-label-sm font-label-sm text-primary-container uppercase tracking-[0.08em] mb-3">Fonctionnalités</p>
-    <h2 class="font-headline-lg text-headline-lg text-on-background mb-4">Tout ce dont votre agence a besoin</h2>
-    <p class="font-body-md text-body-md text-on-surface-variant max-w-xl">Chaque fonctionnalité a été conçue avec des directeurs d'agences actifs sur des marchés internationaux.</p>
+<!-- ████ 5 · FEATURES BENTO ██████████████████████████████ -->
+<section id="features" class="py-28 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+  <div class="mb-14 fade-up">
+    <p class="text-xs font-semibold text-brand uppercase tracking-[0.1em] mb-3">Fonctionnalités</p>
+    <h2 class="text-h2 text-on-background mb-4">Tout ce qu'il vous faut pour vendre en ligne.</h2>
+    <p class="text-body-lg text-on-surface-variant max-w-lg">Conçu par des professionnels de l'immobilier, pour des agences qui veulent performer sans dépendre d'un développeur.</p>
   </div>
+
   <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
 
-    <!-- Large — CRM sync -->
-    <div class="md:col-span-8 bg-white border border-outline-variant p-8 md:p-12 rounded-lg flex flex-col justify-between hover:shadow-lg transition-shadow duration-300 fade-up">
+    <!-- F1 large — CRM sync -->
+    <div class="md:col-span-8 bg-white border border-outline-variant rounded-2xl p-8 md:p-10 flex flex-col gap-8 hover:shadow-lg transition-shadow fade-up">
       <div>
-        <div class="w-12 h-12 bg-primary-container/10 rounded-full flex items-center justify-center mb-8">
-          <span class="material-symbols-outlined text-primary-container">sync</span>
+        <div class="w-11 h-11 rounded-full bg-brand-lt flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-brand">sync</span>
         </div>
-        <h3 class="font-headline-md text-headline-md text-on-background mb-4">Synchronisation CRM en temps réel</h3>
-        <p class="font-body-md text-body-md text-on-surface-variant mb-10 max-w-md">Biens, prix, photos et disponibilités mis à jour automatiquement depuis HabiHub ou votre flux XML. Vos visiteurs voient toujours des données correctes, sans aucune action manuelle.</p>
+        <h3 class="text-h3 text-on-background mb-3">Connecté à votre CRM en temps réel</h3>
+        <p class="text-body text-on-surface-variant max-w-md">Importez automatiquement vos biens depuis HabiHub, Inmovilla ou Witei via flux XML. Prix, photos, disponibilités — toujours à jour, sans manipulation manuelle.</p>
       </div>
-      <div class="relative overflow-hidden rounded-lg h-44 border border-outline-variant bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center gap-6">
-        <div class="bg-white rounded-xl p-4 shadow-md text-center">
-          <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-2 font-bold text-blue-700 text-sm">H</div>
-          <div class="text-xs font-bold text-on-surface">HabiHub</div>
+      <div class="flex items-center justify-center gap-6 bg-brand-lt rounded-xl h-36">
+        <div class="bg-white rounded-xl shadow-sm p-4 text-center">
+          <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-1.5 font-bold text-blue-700 text-xs">H</div>
+          <p class="text-xs font-bold text-on-surface">HabiHub</p>
         </div>
-        <div class="flex flex-col gap-2 items-center">
-          <div class="w-14 h-0.5 bg-primary-container/30 rounded"></div>
-          <span class="material-symbols-outlined text-primary-container text-xl">sync</span>
-          <div class="w-14 h-0.5 bg-primary-container/30 rounded"></div>
+        <div class="flex flex-col items-center gap-1">
+          <div class="w-10 h-px bg-brand/30"></div>
+          <span class="material-symbols-outlined text-brand text-xl">sync</span>
+          <div class="w-10 h-px bg-brand/30"></div>
         </div>
-        <div class="bg-white rounded-xl p-4 shadow-md text-center">
-          <span class="material-symbols-outlined text-primary-container block mb-1" style="font-size:20px">home_work</span>
-          <div class="text-xs font-bold text-on-surface">DATAhome</div>
+        <div class="bg-white rounded-xl shadow-sm p-4 text-center">
+          <span class="material-symbols-outlined text-brand ms-fill block mb-1" style="font-size:20px">home_work</span>
+          <p class="text-xs font-bold text-on-surface">DATAhome</p>
         </div>
       </div>
     </div>
 
-    <!-- Small — Languages -->
-    <div class="md:col-span-4 bg-white border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow duration-300 fade-up d1">
-      <div class="w-12 h-12 bg-primary-container/10 rounded-full flex items-center justify-center mb-6">
-        <span class="material-symbols-outlined text-primary-container">language</span>
+    <!-- F2 small — Multilingual -->
+    <div class="md:col-span-4 bg-white border border-outline-variant rounded-2xl p-8 hover:shadow-lg transition-shadow fade-up d1">
+      <div class="w-11 h-11 rounded-full bg-brand-lt flex items-center justify-center mb-6">
+        <span class="material-symbols-outlined text-brand">language</span>
       </div>
-      <h3 class="font-headline-md text-headline-md text-on-background mb-4">8 langues incluses</h3>
-      <p class="font-body-md text-body-md text-on-surface-variant mb-6">Français, anglais, espagnol, allemand, néerlandais, portugais, russe, scandinave — chaque fiche bien traduite et indexée par Google.</p>
+      <h3 class="text-h3 text-on-background mb-3">Multilingue natif</h3>
+      <p class="text-body text-on-surface-variant mb-5">8 langues générées automatiquement. Chaque fiche bien traduite et indexée pour le SEO local.</p>
       <div class="flex flex-wrap gap-2">
-        <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-1 rounded font-medium">🇫🇷 FR</span>
-        <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-1 rounded font-medium">🇬🇧 EN</span>
-        <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-1 rounded font-medium">🇪🇸 ES</span>
-        <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-1 rounded font-medium">🇩🇪 DE</span>
-        <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-1 rounded font-medium">🇳🇱 NL</span>
-        <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-1 rounded font-medium">🇵🇹 PT</span>
-        <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-1 rounded font-medium">🇷🇺 RU</span>
-        <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-1 rounded font-medium">🇸🇪 SE</span>
+        <span class="bg-surface-container text-on-surface-variant text-xs font-semibold px-2.5 py-1 rounded-lg">🇫🇷 FR</span>
+        <span class="bg-surface-container text-on-surface-variant text-xs font-semibold px-2.5 py-1 rounded-lg">🇬🇧 EN</span>
+        <span class="bg-surface-container text-on-surface-variant text-xs font-semibold px-2.5 py-1 rounded-lg">🇪🇸 ES</span>
+        <span class="bg-surface-container text-on-surface-variant text-xs font-semibold px-2.5 py-1 rounded-lg">🇳🇱 NL</span>
+        <span class="bg-surface-container text-on-surface-variant text-xs font-semibold px-2.5 py-1 rounded-lg">🇵🇱 PL</span>
+        <span class="bg-surface-container text-on-surface-variant text-xs font-semibold px-2.5 py-1 rounded-lg">🇸🇦 AR</span>
+        <span class="bg-surface-container text-on-surface-variant text-xs font-semibold px-2.5 py-1 rounded-lg">🇩🇪 DE</span>
+        <span class="bg-surface-container text-on-surface-variant text-xs font-semibold px-2.5 py-1 rounded-lg">🇵🇹 PT</span>
       </div>
     </div>
 
-    <!-- Small — 48h -->
-    <div class="md:col-span-4 bg-white border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow duration-300 fade-up d2">
-      <div class="w-12 h-12 bg-primary-container/10 rounded-full flex items-center justify-center mb-6">
-        <span class="material-symbols-outlined text-primary-container">timer</span>
+    <!-- F3 small — Chatbot -->
+    <div class="md:col-span-4 bg-white border border-outline-variant rounded-2xl p-8 hover:shadow-lg transition-shadow fade-up d2">
+      <div class="flex items-start justify-between mb-6">
+        <div class="w-11 h-11 rounded-full bg-brand-lt flex items-center justify-center">
+          <span class="material-symbols-outlined text-brand">smart_toy</span>
+        </div>
+        <span class="bg-amber-50 text-amber-700 border border-amber-200 text-xs font-bold px-2.5 py-1 rounded-full">+39 €/mois</span>
       </div>
-      <h3 class="font-headline-md text-headline-md text-on-background mb-4">En ligne en 48h chrono</h3>
-      <p class="font-body-md text-body-md text-on-surface-variant">Template configuré, domaine pointé, CRM connecté, biens importés — notre équipe s'occupe de tout pendant que vous gérez vos mandats.</p>
+      <h3 class="text-h3 text-on-background mb-3">Chatbot IA</h3>
+      <p class="text-body text-on-surface-variant">Qualifie vos leads 24h/24. Répond aux questions, collecte les coordonnées et les transmet à votre CRM automatiquement.</p>
     </div>
 
-    <!-- Large dark — Chatbot IA -->
-    <div class="md:col-span-8 bg-inverse-surface p-8 md:p-12 rounded-lg flex flex-col md:flex-row gap-8 items-center fade-up d1">
+    <!-- F4 large dark — Mini CRM -->
+    <div class="md:col-span-8 bg-inverse-surface rounded-2xl p-8 md:p-10 flex flex-col md:flex-row gap-8 items-center fade-up d1">
       <div class="md:w-1/2">
-        <span class="material-symbols-outlined text-primary-fixed-dim mb-4 block" style="font-size:28px">smart_toy</span>
-        <h3 class="font-headline-md text-headline-md text-surface-bright mb-4">Chatbot IA & CRM leads intégré</h3>
-        <p class="font-body-md text-body-md text-outline-variant">Un assistant IA répond 24h/24, qualifie les prospects et remonte les leads directement dans HabiHub. Aucun contact ne se perd.</p>
+        <div class="flex items-center gap-3 mb-6">
+          <span class="material-symbols-outlined text-primary-fixed-dim ms-fill" style="font-size:26px">contacts</span>
+          <span class="bg-white/10 text-white/70 text-xs font-bold px-3 py-1 rounded-full border border-white/15">Gratuit inclus</span>
+        </div>
+        <h3 class="text-h3 text-white mb-3">Mini CRM leads gratuit</h3>
+        <p class="text-body text-white/60">Chaque formulaire soumis depuis votre site crée une fiche lead avec statut, historique et notes. Aucun contact ne se perd.</p>
       </div>
-      <div class="md:w-1/2 w-full h-44 rounded-lg overflow-hidden bg-gradient-to-br from-slate-700 to-slate-900 flex items-end p-4">
-        <div class="w-full space-y-2">
-          <div class="flex justify-end">
-            <div class="bg-primary-container text-white text-xs px-3 py-2 rounded-tl-xl rounded-tr-xl rounded-bl-xl max-w-[75%]">Je cherche une villa avec piscine à Marbella</div>
+      <div class="md:w-1/2 w-full bg-white/5 border border-white/10 rounded-xl p-4 space-y-2.5">
+        <div class="flex items-center gap-3 bg-white/8 rounded-lg px-3 py-2.5">
+          <div class="w-7 h-7 rounded-full bg-brand flex items-center justify-center text-white text-xs font-bold flex-shrink-0">JM</div>
+          <div class="flex-1 min-w-0">
+            <p class="text-white text-xs font-semibold truncate">Jean-Marc Dupont</p>
+            <p class="text-white/50 text-[11px]">Villa 4 ch · Budget 900k€</p>
           </div>
-          <div class="flex justify-start">
-            <div class="bg-white/15 text-white text-xs px-3 py-2 rounded-tl-xl rounded-tr-xl rounded-br-xl max-w-[75%]">J'ai 14 villas avec piscine entre 500k et 2M€. Voulez-vous les voir ?</div>
+          <span class="bg-green-500/20 text-green-400 text-[10px] font-bold px-2 py-0.5 rounded-full flex-shrink-0">Chaud</span>
+        </div>
+        <div class="flex items-center gap-3 bg-white/8 rounded-lg px-3 py-2.5">
+          <div class="w-7 h-7 rounded-full bg-violet-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">AL</div>
+          <div class="flex-1 min-w-0">
+            <p class="text-white text-xs font-semibold truncate">Anna Liebermann</p>
+            <p class="text-white/50 text-[11px]">Appart · Marbella centre</p>
           </div>
+          <span class="bg-yellow-500/20 text-yellow-400 text-[10px] font-bold px-2 py-0.5 rounded-full flex-shrink-0">Tiède</span>
         </div>
-      </div>
-    </div>
-
-    <!-- Small — Analytics -->
-    <div class="md:col-span-4 bg-white border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow duration-300 fade-up d3">
-      <div class="w-12 h-12 bg-primary-container/10 rounded-full flex items-center justify-center mb-6">
-        <span class="material-symbols-outlined text-primary-container">analytics</span>
-      </div>
-      <h3 class="font-headline-md text-headline-md text-on-background mb-4">Analytics & rapports leads</h3>
-      <p class="font-body-md text-body-md text-on-surface-variant">Visiteurs, fiches consultées, formulaires soumis. Identifiez d'où viennent vos meilleurs leads et concentrez votre marketing.</p>
-    </div>
-
-    <!-- Small — Domain -->
-    <div class="md:col-span-4 bg-white border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow duration-300 fade-up d2">
-      <div class="w-12 h-12 bg-primary-container/10 rounded-full flex items-center justify-center mb-6">
-        <span class="material-symbols-outlined text-primary-container">public</span>
-      </div>
-      <h3 class="font-headline-md text-headline-md text-on-background mb-4">Domaine & SSL inclus</h3>
-      <p class="font-body-md text-body-md text-on-surface-variant">Votre propre nom de domaine (.com, .es, .fr) configuré et sécurisé SSL, inclus dans tous les plans dès le premier mois.</p>
-    </div>
-
-    <!-- Large — Performance -->
-    <div class="md:col-span-8 bg-white border border-outline-variant p-8 md:p-12 rounded-lg hover:shadow-lg transition-shadow duration-300 fade-up d1">
-      <div class="w-12 h-12 bg-primary-container/10 rounded-full flex items-center justify-center mb-6">
-        <span class="material-symbols-outlined text-primary-container">speed</span>
-      </div>
-      <h3 class="font-headline-md text-headline-md text-on-background mb-4">Performance & Core Web Vitals</h3>
-      <p class="font-body-md text-body-md text-on-surface-variant mb-8 max-w-md">Infrastructure edge CDN, images WebP optimisées, score Lighthouse 90+ garanti. Un site rapide génère plus de leads et classe mieux sur Google.</p>
-      <div class="grid grid-cols-4 gap-3">
-        <div class="bg-surface-container rounded-lg p-4 text-center">
-          <div class="text-2xl font-bold text-green-600 mb-1">97</div>
-          <div class="text-xs text-on-surface-variant">Performance</div>
-        </div>
-        <div class="bg-surface-container rounded-lg p-4 text-center">
-          <div class="text-2xl font-bold text-green-600 mb-1">100</div>
-          <div class="text-xs text-on-surface-variant">Accessibilité</div>
-        </div>
-        <div class="bg-surface-container rounded-lg p-4 text-center">
-          <div class="text-2xl font-bold text-green-600 mb-1">95</div>
-          <div class="text-xs text-on-surface-variant">SEO</div>
-        </div>
-        <div class="bg-surface-container rounded-lg p-4 text-center">
-          <div class="text-2xl font-bold text-green-600 mb-1">100</div>
-          <div class="text-xs text-on-surface-variant">Best practices</div>
+        <div class="flex items-center gap-3 bg-white/8 rounded-lg px-3 py-2.5">
+          <div class="w-7 h-7 rounded-full bg-teal-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">RS</div>
+          <div class="flex-1 min-w-0">
+            <p class="text-white text-xs font-semibold truncate">Ricardo Sousa</p>
+            <p class="text-white/50 text-[11px]">Villa piscine · &gt; 1.2M€</p>
+          </div>
+          <span class="bg-blue-500/20 text-blue-400 text-[10px] font-bold px-2 py-0.5 rounded-full flex-shrink-0">Nouveau</span>
         </div>
       </div>
     </div>
@@ -435,240 +392,385 @@
   </div>
 </section>
 
-<!-- ═══ TESTIMONIALS ════════════════════════════════════════ -->
-<section class="py-32 bg-surface">
+<!-- ████ 6 · TEMPLATES █████████████████████████████████████ -->
+<section id="templates" class="py-28 bg-surface-container-low">
   <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-    <div class="text-center mb-16 fade-up">
-      <p class="text-label-sm font-label-sm text-primary-container uppercase tracking-[0.08em] mb-3">Témoignages</p>
-      <h2 class="font-headline-lg text-headline-lg text-on-background">Ce que disent nos agences clientes</h2>
+    <div class="mb-14 text-center fade-up">
+      <p class="text-xs font-semibold text-brand uppercase tracking-[0.1em] mb-3">Templates</p>
+      <h2 class="text-h2 text-on-background mb-4">Choisissez le style de votre agence.</h2>
+      <p class="text-body-lg text-on-surface-variant max-w-xl mx-auto">6 designs immobiliers premium, optimisés conversion, personnalisables en quelques clics.</p>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-      <div class="bg-white border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow fade-up d1">
-        <div class="text-yellow-500 text-lg mb-4 tracking-widest">★★★★★</div>
-        <blockquote class="font-body-md text-body-md text-on-surface-variant italic mb-6">"En 48h nous avions un site pro connecté à HabiHub avec nos 340 villas. Nos leads britanniques ont doublé en deux mois. Je regrette de ne pas l'avoir fait plus tôt."</blockquote>
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-white font-bold text-sm flex-shrink-0">MC</div>
-          <div>
-            <div class="font-bold text-sm text-on-surface">María Carmen López</div>
-            <div class="text-xs text-on-surface-variant">Directrice · Costa Homes Marbella</div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Riviera -->
+      <div class="tpl-card bg-white rounded-2xl border border-outline-variant overflow-hidden fade-up d1">
+        <div class="h-36" style="background:linear-gradient(135deg,#b8860b 0%,#f5e6a3 50%,#fffde7 100%)">
+          <div class="h-full flex flex-col justify-between p-4">
+            <div class="flex justify-between items-start">
+              <span class="bg-white/30 backdrop-blur-sm text-[#6b4e00] text-[10px] font-bold px-2.5 py-1 rounded-full">Riviera</span>
+              <div class="flex gap-1"><div class="w-2 h-2 rounded-full bg-white/60"></div><div class="w-2 h-2 rounded-full bg-white/40"></div><div class="w-2 h-2 rounded-full bg-white/40"></div></div>
+            </div>
+            <div>
+              <p class="text-[#3d2800] font-bold text-sm leading-tight">Agence Premium</p>
+              <p class="text-[#6b4e00] text-[10px]">Côte d'Azur · Costa Brava</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="bg-white border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow fade-up d2">
-        <div class="text-yellow-500 text-lg mb-4 tracking-widest">★★★★★</div>
-        <blockquote class="font-body-md text-body-md text-on-surface-variant italic mb-6">"Le template Riviera correspond à notre positionnement haut de gamme. La traduction en allemand et néerlandais nous a ouvert deux marchés d'un coup. Support très réactif."</blockquote>
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-white font-bold text-sm flex-shrink-0">PD</div>
-          <div>
-            <div class="font-bold text-sm text-on-surface">Pierre Delacroix</div>
-            <div class="text-xs text-on-surface-variant">Associé · Riviera Prestige Cannes</div>
+        <div class="p-5">
+          <h4 class="font-bold text-on-background mb-1">Riviera</h4>
+          <p class="text-label text-on-surface-variant mb-3">Or &amp; blanc ivoire · Marchés côtiers haut de gamme</p>
+          <div class="flex flex-wrap gap-1.5 mb-4">
+            <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-0.5 rounded-full">Côte d'Azur</span>
+            <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-0.5 rounded-full">Costa Brava</span>
+            <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-0.5 rounded-full">Algarve</span>
           </div>
+          <a href="experience.html" class="text-brand text-label font-semibold hover:underline">Voir la démo →</a>
         </div>
       </div>
-      <div class="bg-white border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow fade-up d3">
-        <div class="text-yellow-500 text-lg mb-4 tracking-widest">★★★★★</div>
-        <blockquote class="font-body-md text-body-md text-on-surface-variant italic mb-6">"Nous gérons 3 agences au Portugal. Avec Platinum, chaque site a son domaine. La synchronisation Inmovilla est parfaite — les biens s'affichent en temps réel."</blockquote>
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-white font-bold text-sm flex-shrink-0">RS</div>
-          <div>
-            <div class="font-bold text-sm text-on-surface">Ricardo Sousa</div>
-            <div class="text-xs text-on-surface-variant">CEO · Grupo Sousa Imobiliária</div>
+
+      <!-- Prestige -->
+      <div class="tpl-card bg-white rounded-2xl border border-outline-variant overflow-hidden fade-up d2">
+        <div class="h-36" style="background:linear-gradient(135deg,#1a1008 0%,#3d2e1e 50%,#c9a96e 100%)">
+          <div class="h-full flex flex-col justify-between p-4">
+            <div class="flex justify-between items-start">
+              <span class="bg-white/15 backdrop-blur-sm text-[#c9a96e] text-[10px] font-bold px-2.5 py-1 rounded-full border border-[#c9a96e]/30">Prestige</span>
+              <div class="flex gap-1"><div class="w-2 h-2 rounded-full bg-[#c9a96e]/60"></div><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div></div>
+            </div>
+            <div>
+              <p class="text-[#f5e6c8] font-bold text-sm leading-tight">Propriétés d'exception</p>
+              <p class="text-[#c9a96e] text-[10px]">Marbella · Ibiza · Monaco</p>
+            </div>
           </div>
         </div>
+        <div class="p-5">
+          <h4 class="font-bold text-on-background mb-1">Prestige</h4>
+          <p class="text-label text-on-surface-variant mb-3">Noir &amp; champagne · Segment ultra-prime</p>
+          <div class="flex flex-wrap gap-1.5 mb-4">
+            <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-0.5 rounded-full">Marbella</span>
+            <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-0.5 rounded-full">Ibiza</span>
+            <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-0.5 rounded-full">Monaco</span>
+          </div>
+          <a href="experience.html" class="text-brand text-label font-semibold hover:underline">Voir la démo →</a>
+        </div>
       </div>
+
+      <!-- Urban -->
+      <div class="tpl-card bg-white rounded-2xl border border-outline-variant overflow-hidden fade-up d3">
+        <div class="h-36" style="background:linear-gradient(135deg,#0f172a 0%,#1d4ed8 55%,#0891b2 100%)">
+          <div class="h-full flex flex-col justify-between p-4">
+            <div class="flex justify-between items-start">
+              <span class="bg-white/15 backdrop-blur-sm text-white text-[10px] font-bold px-2.5 py-1 rounded-full">Urban</span>
+              <div class="flex gap-1"><div class="w-2 h-2 rounded-full bg-white/50"></div><div class="w-2 h-2 rounded-full bg-white/25"></div><div class="w-2 h-2 rounded-full bg-white/25"></div></div>
+            </div>
+            <div>
+              <p class="text-white font-bold text-sm leading-tight">L'immobilier urbain</p>
+              <p class="text-white/60 text-[10px]">Madrid · Barcelone · Paris</p>
+            </div>
+          </div>
+        </div>
+        <div class="p-5">
+          <h4 class="font-bold text-on-background mb-1">Urban</h4>
+          <p class="text-label text-on-surface-variant mb-3">Navy &amp; teal · Marchés de ville dynamiques</p>
+          <div class="flex flex-wrap gap-1.5 mb-4">
+            <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-0.5 rounded-full">Madrid</span>
+            <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-0.5 rounded-full">Barcelone</span>
+            <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-0.5 rounded-full">Paris</span>
+          </div>
+          <a href="experience.html" class="text-brand text-label font-semibold hover:underline">Voir la démo →</a>
+        </div>
+      </div>
+
+      <!-- Soleil -->
+      <div class="tpl-card bg-white rounded-2xl border border-outline-variant overflow-hidden fade-up d1">
+        <div class="h-36" style="background:linear-gradient(135deg,#7c2d12 0%,#c2410c 40%,#fb923c 100%)">
+          <div class="h-full flex flex-col justify-between p-4">
+            <div class="flex justify-between items-start">
+              <span class="bg-white/20 backdrop-blur-sm text-white text-[10px] font-bold px-2.5 py-1 rounded-full">Soleil</span>
+              <div class="flex gap-1"><div class="w-2 h-2 rounded-full bg-white/50"></div><div class="w-2 h-2 rounded-full bg-white/25"></div><div class="w-2 h-2 rounded-full bg-white/25"></div></div>
+            </div>
+            <div>
+              <p class="text-white font-bold text-sm leading-tight">Vie sous le soleil</p>
+              <p class="text-white/70 text-[10px]">Andalousie · Valence · Murcie</p>
+            </div>
+          </div>
+        </div>
+        <div class="p-5">
+          <h4 class="font-bold text-on-background mb-1">Soleil</h4>
+          <p class="text-label text-on-surface-variant mb-3">Terracotta · Marchés méditerranéens soleil</p>
+          <div class="flex flex-wrap gap-1.5 mb-4">
+            <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-0.5 rounded-full">Andalousie</span>
+            <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-0.5 rounded-full">Valence</span>
+            <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-0.5 rounded-full">Alicante</span>
+          </div>
+          <a href="experience.html" class="text-brand text-label font-semibold hover:underline">Voir la démo →</a>
+        </div>
+      </div>
+
+      <!-- Nordic -->
+      <div class="tpl-card bg-white rounded-2xl border border-outline-variant overflow-hidden fade-up d2">
+        <div class="h-36" style="background:linear-gradient(135deg,#f8fafc 0%,#e2e8f0 50%,#cbd5e1 100%)">
+          <div class="h-full flex flex-col justify-between p-4">
+            <div class="flex justify-between items-start">
+              <span class="bg-slate-200/70 text-slate-600 text-[10px] font-bold px-2.5 py-1 rounded-full">Nordic</span>
+              <div class="flex gap-1"><div class="w-2 h-2 rounded-full bg-slate-400/60"></div><div class="w-2 h-2 rounded-full bg-slate-300/60"></div><div class="w-2 h-2 rounded-full bg-slate-300/60"></div></div>
+            </div>
+            <div>
+              <p class="text-slate-800 font-bold text-sm leading-tight">Design épuré</p>
+              <p class="text-slate-500 text-[10px]">Suède · Norvège · Alpes</p>
+            </div>
+          </div>
+        </div>
+        <div class="p-5">
+          <h4 class="font-bold text-on-background mb-1">Nordic</h4>
+          <p class="text-label text-on-surface-variant mb-3">Gris &amp; blanc · Acheteurs nordiques &amp; alpins</p>
+          <div class="flex flex-wrap gap-1.5 mb-4">
+            <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-0.5 rounded-full">Suède</span>
+            <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-0.5 rounded-full">Norvège</span>
+            <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-0.5 rounded-full">Alpes</span>
+          </div>
+          <a href="experience.html" class="text-brand text-label font-semibold hover:underline">Voir la démo →</a>
+        </div>
+      </div>
+
+      <!-- Verde -->
+      <div class="tpl-card bg-white rounded-2xl border border-outline-variant overflow-hidden fade-up d3">
+        <div class="h-36" style="background:linear-gradient(135deg,#14532d 0%,#16a34a 50%,#86efac 100%)">
+          <div class="h-full flex flex-col justify-between p-4">
+            <div class="flex justify-between items-start">
+              <span class="bg-white/20 backdrop-blur-sm text-white text-[10px] font-bold px-2.5 py-1 rounded-full">Verde</span>
+              <div class="flex gap-1"><div class="w-2 h-2 rounded-full bg-white/50"></div><div class="w-2 h-2 rounded-full bg-white/25"></div><div class="w-2 h-2 rounded-full bg-white/25"></div></div>
+            </div>
+            <div>
+              <p class="text-white font-bold text-sm leading-tight">Immobilier durable</p>
+              <p class="text-white/70 text-[10px]">Portugal · Toscane · Madeira</p>
+            </div>
+          </div>
+        </div>
+        <div class="p-5">
+          <h4 class="font-bold text-on-background mb-1">Verde</h4>
+          <p class="text-label text-on-surface-variant mb-3">Vert sauge · Éco-habitat &amp; campagne</p>
+          <div class="flex flex-wrap gap-1.5 mb-4">
+            <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-0.5 rounded-full">Portugal</span>
+            <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-0.5 rounded-full">Toscane</span>
+            <span class="bg-surface-container text-on-surface-variant text-xs px-2 py-0.5 rounded-full">Madeira</span>
+          </div>
+          <a href="experience.html" class="text-brand text-label font-semibold hover:underline">Voir la démo →</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="text-center mt-10 fade-up">
+      <a href="templates.html" class="inline-flex items-center gap-2 border border-brand text-brand font-semibold text-body px-7 py-3 rounded-xl hover:bg-brand-lt transition-all">
+        Voir tous les templates
+        <span class="material-symbols-outlined" style="font-size:18px">arrow_forward</span>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ═══ PRICING ══════════════════════════════════════════════ -->
-<section id="pricing" class="py-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-  <div class="text-center mb-16 fade-up">
-    <p class="text-label-sm font-label-sm text-primary-container uppercase tracking-[0.08em] mb-3">Tarifs</p>
-    <h2 class="font-headline-lg text-headline-lg text-on-background mb-4">Simple, transparent, sans surprise</h2>
-    <p class="font-body-md text-body-md text-on-surface-variant">15 jours d'essai gratuit inclus dans tous les plans · Sans carte bancaire</p>
+<!-- ████ 7 · PRICING ██████████████████████████████████████ -->
+<section id="pricing" class="py-28 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+  <div class="text-center mb-14 fade-up">
+    <p class="text-xs font-semibold text-brand uppercase tracking-[0.1em] mb-3">Tarifs</p>
+    <h2 class="text-h2 text-on-background mb-4">Simple et transparent.</h2>
+    <p class="text-body-lg text-on-surface-variant">15 jours d'essai gratuit dans tous les plans · Sans carte bancaire</p>
   </div>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter items-start">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
 
     <!-- Silver -->
-    <div class="bg-white border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow fade-up d1">
-      <div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-4">Silver</div>
-      <div class="flex items-baseline gap-1 mb-2">
-        <span class="text-2xl font-bold text-on-surface mt-1">€</span>
-        <span class="font-bold text-on-background" style="font-size:60px;letter-spacing:-0.04em;line-height:1">50</span>
-        <span class="text-on-surface-variant text-body-md">/mois</span>
+    <div class="bg-white border border-outline-variant rounded-2xl p-8 hover:shadow-lg transition-shadow fade-up d1">
+      <p class="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-4">Silver</p>
+      <div class="flex items-baseline gap-1 mb-1">
+        <span class="font-bold text-xl text-on-surface mt-1">€</span>
+        <span class="font-bold text-on-background" style="font-size:58px;line-height:1;letter-spacing:-0.04em">50</span>
+        <span class="text-on-surface-variant text-body">/mois</span>
       </div>
-      <p class="font-body-md text-body-md text-on-surface-variant mb-6">Lancer votre première présence en ligne professionnelle.</p>
+      <p class="text-body text-on-surface-variant mb-6">Idéal pour lancer votre première présence en ligne.</p>
       <div class="h-px bg-outline-variant mb-6"></div>
-      <ul class="space-y-3 mb-8">
-        <li class="flex items-start gap-3 font-body-md text-body-md text-on-surface">
-          <span class="material-symbols-outlined text-green-500 flex-shrink-0" style="font-size:18px;font-variation-settings:'FILL' 1;margin-top:3px">check_circle</span>1 site · 1 template
-        </li>
-        <li class="flex items-start gap-3 font-body-md text-body-md text-on-surface">
-          <span class="material-symbols-outlined text-green-500 flex-shrink-0" style="font-size:18px;font-variation-settings:'FILL' 1;margin-top:3px">check_circle</span>Jusqu'à 100 biens synchronisés
-        </li>
-        <li class="flex items-start gap-3 font-body-md text-body-md text-on-surface">
-          <span class="material-symbols-outlined text-green-500 flex-shrink-0" style="font-size:18px;font-variation-settings:'FILL' 1;margin-top:3px">check_circle</span>3 langues
-        </li>
-        <li class="flex items-start gap-3 font-body-md text-body-md text-on-surface">
-          <span class="material-symbols-outlined text-green-500 flex-shrink-0" style="font-size:18px;font-variation-settings:'FILL' 1;margin-top:3px">check_circle</span>Domaine + SSL inclus
-        </li>
-        <li class="flex items-start gap-3 font-body-md text-body-md text-on-surface">
-          <span class="material-symbols-outlined text-green-500 flex-shrink-0" style="font-size:18px;font-variation-settings:'FILL' 1;margin-top:3px">check_circle</span>Support email
-        </li>
+      <ul class="space-y-3 mb-8 text-body text-on-surface">
+        <li class="flex gap-3"><span class="material-symbols-outlined text-green-500 ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px">check_circle</span>1 site · 1 template</li>
+        <li class="flex gap-3"><span class="material-symbols-outlined text-green-500 ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px">check_circle</span>Jusqu'à 100 biens XML</li>
+        <li class="flex gap-3"><span class="material-symbols-outlined text-green-500 ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px">check_circle</span>3 langues</li>
+        <li class="flex gap-3"><span class="material-symbols-outlined text-green-500 ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px">check_circle</span>Domaine + SSL inclus</li>
+        <li class="flex gap-3"><span class="material-symbols-outlined text-green-500 ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px">check_circle</span>Mini CRM leads</li>
+        <li class="flex gap-3"><span class="material-symbols-outlined text-green-500 ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px">check_circle</span>Support email</li>
       </ul>
-      <a href="onboarding.html" class="block w-full text-center border border-outline text-on-background py-3 rounded-lg font-label-md text-label-md hover:bg-surface-container transition-all">Démarrer</a>
+      <a href="onboarding.html" class="block text-center border border-outline text-on-background font-semibold py-3 rounded-xl hover:bg-surface-container transition-all">Démarrer</a>
     </div>
 
     <!-- Gold -->
-    <div class="bg-white border-2 border-primary-container p-8 rounded-lg relative fade-up d2" style="box-shadow:0 0 0 4px rgba(29,78,216,.08),0 16px 56px rgba(17,24,39,.14)">
-      <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary-container text-white text-xs font-bold px-4 py-1.5 rounded-full whitespace-nowrap">⭐ Le plus populaire</div>
-      <div class="font-label-sm text-label-sm text-primary-container uppercase tracking-wider mb-4">Gold</div>
-      <div class="flex items-baseline gap-1 mb-2">
-        <span class="text-2xl font-bold text-on-surface mt-1">€</span>
-        <span class="font-bold text-on-background" style="font-size:60px;letter-spacing:-0.04em;line-height:1">129</span>
-        <span class="text-on-surface-variant text-body-md">/mois</span>
+    <div class="bg-white border-2 border-brand rounded-2xl p-8 relative fade-up d2" style="box-shadow:0 0 0 4px rgba(29,78,216,.08),0 20px 60px rgba(17,24,39,.13)">
+      <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand text-white text-xs font-bold px-4 py-1.5 rounded-full whitespace-nowrap">⭐ Le plus choisi</div>
+      <p class="text-xs font-bold text-brand uppercase tracking-wider mb-4">Gold</p>
+      <div class="flex items-baseline gap-1 mb-1">
+        <span class="font-bold text-xl text-on-surface mt-1">€</span>
+        <span class="font-bold text-on-background" style="font-size:58px;line-height:1;letter-spacing:-0.04em">129</span>
+        <span class="text-on-surface-variant text-body">/mois</span>
       </div>
-      <p class="font-body-md text-body-md text-on-surface-variant mb-6">La solution complète pour les agences actives sur plusieurs marchés.</p>
+      <p class="text-body text-on-surface-variant mb-6">La solution complète pour les agences multi-marchés.</p>
       <div class="h-px bg-outline-variant mb-6"></div>
-      <ul class="space-y-3 mb-8">
-        <li class="flex items-start gap-3 font-body-md text-body-md text-on-surface">
-          <span class="material-symbols-outlined text-green-500 flex-shrink-0" style="font-size:18px;font-variation-settings:'FILL' 1;margin-top:3px">check_circle</span>1 site · 6 templates au choix
-        </li>
-        <li class="flex items-start gap-3 font-body-md text-body-md text-on-surface">
-          <span class="material-symbols-outlined text-green-500 flex-shrink-0" style="font-size:18px;font-variation-settings:'FILL' 1;margin-top:3px">check_circle</span>Jusqu'à 1 000 biens synchronisés
-        </li>
-        <li class="flex items-start gap-3 font-body-md text-body-md text-on-surface">
-          <span class="material-symbols-outlined text-green-500 flex-shrink-0" style="font-size:18px;font-variation-settings:'FILL' 1;margin-top:3px">check_circle</span>8 langues incluses
-        </li>
-        <li class="flex items-start gap-3 font-body-md text-body-md text-on-surface">
-          <span class="material-symbols-outlined text-green-500 flex-shrink-0" style="font-size:18px;font-variation-settings:'FILL' 1;margin-top:3px">check_circle</span>Chatbot IA + CRM leads
-        </li>
-        <li class="flex items-start gap-3 font-body-md text-body-md text-on-surface">
-          <span class="material-symbols-outlined text-green-500 flex-shrink-0" style="font-size:18px;font-variation-settings:'FILL' 1;margin-top:3px">check_circle</span>Analytics & rapports leads
-        </li>
-        <li class="flex items-start gap-3 font-body-md text-body-md text-on-surface">
-          <span class="material-symbols-outlined text-green-500 flex-shrink-0" style="font-size:18px;font-variation-settings:'FILL' 1;margin-top:3px">check_circle</span>Chat support prioritaire
-        </li>
-        <li class="flex items-start gap-3 font-body-md text-body-md text-on-surface">
-          <span class="material-symbols-outlined text-green-500 flex-shrink-0" style="font-size:18px;font-variation-settings:'FILL' 1;margin-top:3px">check_circle</span>Mise en ligne 48h garantie
-        </li>
+      <ul class="space-y-3 mb-8 text-body text-on-surface">
+        <li class="flex gap-3"><span class="material-symbols-outlined text-green-500 ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px">check_circle</span>1 site · 6 templates au choix</li>
+        <li class="flex gap-3"><span class="material-symbols-outlined text-green-500 ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px">check_circle</span>Jusqu'à 1 000 biens XML</li>
+        <li class="flex gap-3"><span class="material-symbols-outlined text-green-500 ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px">check_circle</span>8 langues incluses</li>
+        <li class="flex gap-3"><span class="material-symbols-outlined text-green-500 ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px">check_circle</span>Mini CRM leads gratuit</li>
+        <li class="flex gap-3"><span class="material-symbols-outlined text-green-500 ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px">check_circle</span>Analytics & rapports leads</li>
+        <li class="flex gap-3"><span class="material-symbols-outlined text-green-500 ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px">check_circle</span>Chat support prioritaire</li>
+        <li class="flex gap-3"><span class="material-symbols-outlined text-green-500 ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px">check_circle</span>Mise en ligne 48h garantie</li>
       </ul>
-      <a href="onboarding.html" class="block w-full text-center bg-primary-container text-white py-3 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all">Démarrer gratuitement</a>
+      <a href="onboarding.html" class="block text-center bg-brand text-white font-semibold py-3 rounded-xl hover:bg-brand-dk transition-all">Démarrer gratuitement</a>
     </div>
 
     <!-- Platinum -->
-    <div class="bg-white border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow fade-up d3">
-      <div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-4">Platinum</div>
-      <div class="flex items-baseline gap-1 mb-2">
-        <span class="text-2xl font-bold text-on-surface mt-1">€</span>
-        <span class="font-bold text-on-background" style="font-size:60px;letter-spacing:-0.04em;line-height:1">179</span>
-        <span class="text-on-surface-variant text-body-md">/mois</span>
+    <div class="bg-white border border-outline-variant rounded-2xl p-8 hover:shadow-lg transition-shadow fade-up d3">
+      <p class="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-4">Platinum</p>
+      <div class="flex items-baseline gap-1 mb-1">
+        <span class="font-bold text-xl text-on-surface mt-1">€</span>
+        <span class="font-bold text-on-background" style="font-size:58px;line-height:1;letter-spacing:-0.04em">179</span>
+        <span class="text-on-surface-variant text-body">/mois</span>
       </div>
-      <p class="font-body-md text-body-md text-on-surface-variant mb-6">Pour les réseaux d'agences qui veulent une présence multi-sites scalable.</p>
+      <p class="text-body text-on-surface-variant mb-6">Pour les réseaux d'agences avec présence multi-sites.</p>
       <div class="h-px bg-outline-variant mb-6"></div>
-      <ul class="space-y-3 mb-8">
-        <li class="flex items-start gap-3 font-body-md text-body-md text-on-surface">
-          <span class="material-symbols-outlined text-green-500 flex-shrink-0" style="font-size:18px;font-variation-settings:'FILL' 1;margin-top:3px">check_circle</span>Jusqu'à 5 sites
-        </li>
-        <li class="flex items-start gap-3 font-body-md text-body-md text-on-surface">
-          <span class="material-symbols-outlined text-green-500 flex-shrink-0" style="font-size:18px;font-variation-settings:'FILL' 1;margin-top:3px">check_circle</span>Biens illimités
-        </li>
-        <li class="flex items-start gap-3 font-body-md text-body-md text-on-surface">
-          <span class="material-symbols-outlined text-green-500 flex-shrink-0" style="font-size:18px;font-variation-settings:'FILL' 1;margin-top:3px">check_circle</span>8 langues + traductions custom
-        </li>
-        <li class="flex items-start gap-3 font-body-md text-body-md text-on-surface">
-          <span class="material-symbols-outlined text-green-500 flex-shrink-0" style="font-size:18px;font-variation-settings:'FILL' 1;margin-top:3px">check_circle</span>API publique incluse
-        </li>
-        <li class="flex items-start gap-3 font-body-md text-body-md text-on-surface">
-          <span class="material-symbols-outlined text-green-500 flex-shrink-0" style="font-size:18px;font-variation-settings:'FILL' 1;margin-top:3px">check_circle</span>Account manager dédié
-        </li>
-        <li class="flex items-start gap-3 font-body-md text-body-md text-on-surface">
-          <span class="material-symbols-outlined text-green-500 flex-shrink-0" style="font-size:18px;font-variation-settings:'FILL' 1;margin-top:3px">check_circle</span>SLA 99,9% uptime garanti
-        </li>
+      <ul class="space-y-3 mb-8 text-body text-on-surface">
+        <li class="flex gap-3"><span class="material-symbols-outlined text-green-500 ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px">check_circle</span>Jusqu'à 5 sites</li>
+        <li class="flex gap-3"><span class="material-symbols-outlined text-green-500 ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px">check_circle</span>Biens XML illimités</li>
+        <li class="flex gap-3"><span class="material-symbols-outlined text-green-500 ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px">check_circle</span>8 langues + traductions custom</li>
+        <li class="flex gap-3"><span class="material-symbols-outlined text-green-500 ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px">check_circle</span>API publique incluse</li>
+        <li class="flex gap-3"><span class="material-symbols-outlined text-green-500 ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px">check_circle</span>Account manager dédié</li>
+        <li class="flex gap-3"><span class="material-symbols-outlined text-green-500 ms-fill flex-shrink-0" style="font-size:18px;margin-top:2px">check_circle</span>SLA 99,9% uptime garanti</li>
       </ul>
-      <a href="support.html" class="block w-full text-center border border-outline text-on-background py-3 rounded-lg font-label-md text-label-md hover:bg-surface-container transition-all">Nous contacter</a>
+      <a href="onboarding.html" class="block text-center border border-outline text-on-background font-semibold py-3 rounded-xl hover:bg-surface-container transition-all">Nous contacter</a>
     </div>
 
   </div>
-  <p class="text-center font-label-md text-label-md text-on-surface-variant mt-8 fade-up">Tous les prix HT · Facturation mensuelle ou annuelle (−20%) · Annulation à tout moment</p>
+  <p class="text-center text-label text-on-surface-variant mt-8 fade-up">Tous les prix HT · Facturation mensuelle ou annuelle (−20 %) · Annulation à tout moment</p>
 </section>
 
-<!-- ═══ FAQ ══════════════════════════════════════════════════ -->
-<section id="faq" class="py-32 bg-surface-container-low">
+<!-- ████ 8 · TESTIMONIALS ████████████████████████████████ -->
+<section class="py-28 bg-inverse-surface">
   <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-    <div class="text-center mb-16 fade-up">
-      <p class="text-label-sm font-label-sm text-primary-container uppercase tracking-[0.08em] mb-3">FAQ</p>
-      <h2 class="font-headline-lg text-headline-lg text-on-background">Questions fréquentes</h2>
+    <div class="text-center mb-14 fade-up">
+      <p class="text-xs font-semibold text-primary-fixed-dim uppercase tracking-[0.1em] mb-3">Témoignages</p>
+      <h2 class="text-h2 text-white">Ce que disent nos agences clientes.</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/8 transition-colors fade-up d1">
+        <p class="text-yellow-400 tracking-widest text-base mb-5">★★★★★</p>
+        <blockquote class="text-body-lg text-white/75 italic mb-7 leading-relaxed">"En 48h nous avions un site professionnel avec nos 340 villas connectées à HabiHub. Nos leads britanniques ont doublé en deux mois. Je regrette de ne pas l'avoir fait plus tôt."</blockquote>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-brand flex items-center justify-center text-white font-bold text-sm flex-shrink-0">MC</div>
+          <div>
+            <p class="font-semibold text-white text-sm">María Carmen López</p>
+            <p class="text-white/45 text-xs">Directrice · Costa Homes Marbella</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/8 transition-colors fade-up d2">
+        <p class="text-yellow-400 tracking-widest text-base mb-5">★★★★★</p>
+        <blockquote class="text-body-lg text-white/75 italic mb-7 leading-relaxed">"Le template Riviera correspond exactement à notre positionnement. La traduction en allemand et néerlandais nous a ouvert deux marchés d'un coup. Support très réactif."</blockquote>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-violet-600 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">PD</div>
+          <div>
+            <p class="font-semibold text-white text-sm">Pierre Delacroix</p>
+            <p class="text-white/45 text-xs">Associé · Riviera Prestige Cannes</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/8 transition-colors fade-up d3">
+        <p class="text-yellow-400 tracking-widest text-base mb-5">★★★★★</p>
+        <blockquote class="text-body-lg text-white/75 italic mb-7 leading-relaxed">"Nous gérons 3 agences au Portugal avec Platinum. La synchronisation Inmovilla est parfaite et les biens s'affichent en temps réel. Indispensable pour notre réseau."</blockquote>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-teal-600 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">RS</div>
+          <div>
+            <p class="font-semibold text-white text-sm">Ricardo Sousa</p>
+            <p class="text-white/45 text-xs">CEO · Grupo Sousa Imobiliária</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ████ 9 · FAQ ███████████████████████████████████████████ -->
+<section id="faq" class="py-28 bg-surface-container-low">
+  <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+    <div class="text-center mb-14 fade-up">
+      <p class="text-xs font-semibold text-brand uppercase tracking-[0.1em] mb-3">FAQ</p>
+      <h2 class="text-h2 text-on-background">Questions fréquentes.</h2>
     </div>
     <div class="max-w-2xl mx-auto space-y-3 fade-up d1">
 
-      <div class="faq-item bg-white border border-outline-variant rounded-lg overflow-hidden">
-        <button class="faq-q w-full flex items-center justify-between p-6 text-left font-semibold text-on-background hover:text-primary-container transition-colors gap-4">
+      <div class="faq-item bg-white border border-outline-variant rounded-2xl overflow-hidden">
+        <button class="faq-q w-full flex items-center justify-between p-6 text-left font-semibold text-on-background hover:text-brand transition-colors gap-4">
           <span>Comment fonctionne la mise en ligne en 48h ?</span>
-          <span class="material-symbols-outlined text-primary-container faq-icon flex-shrink-0">add</span>
+          <span class="material-symbols-outlined text-brand faq-plus flex-shrink-0">add</span>
         </button>
-        <div class="faq-answer">
-          <p class="px-6 pb-6 font-body-md text-body-md text-on-surface-variant">Après votre inscription, notre équipe configure votre site à partir du template choisi, intègre votre flux CRM, configure votre domaine et effectue les vérifications qualité. Vous recevez un lien de validation sous 24h, et votre site est public sous 48h ouvrées.</p>
+        <div class="faq-body">
+          <p class="px-6 pb-6 text-body text-on-surface-variant">Après votre inscription, notre équipe configure votre site depuis le template choisi, intègre votre flux CRM, pointe votre domaine et valide le tout. Vous recevez un lien de prévisualisation sous 24h et votre site est public sous 48h ouvrées.</p>
         </div>
       </div>
 
-      <div class="faq-item bg-white border border-outline-variant rounded-lg overflow-hidden">
-        <button class="faq-q w-full flex items-center justify-between p-6 text-left font-semibold text-on-background hover:text-primary-container transition-colors gap-4">
+      <div class="faq-item bg-white border border-outline-variant rounded-2xl overflow-hidden">
+        <button class="faq-q w-full flex items-center justify-between p-6 text-left font-semibold text-on-background hover:text-brand transition-colors gap-4">
           <span>Quels CRM et portails sont compatibles ?</span>
-          <span class="material-symbols-outlined text-primary-container faq-icon flex-shrink-0">add</span>
+          <span class="material-symbols-outlined text-brand faq-plus flex-shrink-0">add</span>
         </button>
-        <div class="faq-answer">
-          <p class="px-6 pb-6 font-body-md text-body-md text-on-surface-variant">DATAhome se connecte nativement à HabiHub, Inmovilla, Witei, Inmoweb et Casafari. Tout CRM qui exporte un flux XML standard est également compatible. Contactez-nous pour une intégration spécifique.</p>
+        <div class="faq-body">
+          <p class="px-6 pb-6 text-body text-on-surface-variant">DATAhome se connecte nativement à HabiHub, Inmovilla, Witei, Inmoweb, Casafari, Inmogesco et Habitat Soft. Tout CRM exécutant un flux XML standard est également compatible. Contactez-nous pour une intégration sur mesure.</p>
         </div>
       </div>
 
-      <div class="faq-item bg-white border border-outline-variant rounded-lg overflow-hidden">
-        <button class="faq-q w-full flex items-center justify-between p-6 text-left font-semibold text-on-background hover:text-primary-container transition-colors gap-4">
+      <div class="faq-item bg-white border border-outline-variant rounded-2xl overflow-hidden">
+        <button class="faq-q w-full flex items-center justify-between p-6 text-left font-semibold text-on-background hover:text-brand transition-colors gap-4">
           <span>Puis-je personnaliser les couleurs et le logo ?</span>
-          <span class="material-symbols-outlined text-primary-container faq-icon flex-shrink-0">add</span>
+          <span class="material-symbols-outlined text-brand faq-plus flex-shrink-0">add</span>
         </button>
-        <div class="faq-answer">
-          <p class="px-6 pb-6 font-body-md text-body-md text-on-surface-variant">Oui, dans tous les plans. Vous pouvez modifier les couleurs principales, télécharger votre logo, choisir vos polices et ajuster le contenu des sections clés. Des personnalisations avancées sont disponibles en Platinum.</p>
+        <div class="faq-body">
+          <p class="px-6 pb-6 text-body text-on-surface-variant">Oui, dans tous les plans. Couleurs principales, logo, polices et contenu des sections clés sont modifiables depuis votre tableau de bord. Des personnalisations avancées (mise en page, sections custom) sont disponibles en Platinum.</p>
         </div>
       </div>
 
-      <div class="faq-item bg-white border border-outline-variant rounded-lg overflow-hidden">
-        <button class="faq-q w-full flex items-center justify-between p-6 text-left font-semibold text-on-background hover:text-primary-container transition-colors gap-4">
-          <span>Les traductions sont-elles automatiques ou manuelles ?</span>
-          <span class="material-symbols-outlined text-primary-container faq-icon flex-shrink-0">add</span>
+      <div class="faq-item bg-white border border-outline-variant rounded-2xl overflow-hidden">
+        <button class="faq-q w-full flex items-center justify-between p-6 text-left font-semibold text-on-background hover:text-brand transition-colors gap-4">
+          <span>Les traductions sont-elles automatiques ?</span>
+          <span class="material-symbols-outlined text-brand faq-plus flex-shrink-0">add</span>
         </button>
-        <div class="faq-answer">
-          <p class="px-6 pb-6 font-body-md text-body-md text-on-surface-variant">Les descriptions de biens sont traduites automatiquement via notre moteur IA optimisé pour le vocabulaire immobilier. Le contenu éditorial (pages fixes, menus) peut être traduit manuellement ou laissé en traduction automatique.</p>
+        <div class="faq-body">
+          <p class="px-6 pb-6 text-body text-on-surface-variant">Les fiches de biens sont traduites automatiquement par notre moteur IA entraîné sur le vocabulaire immobilier. Le contenu éditorial (pages fixes, menus) peut être traduit manuellement pour plus de finesse ou laissé en traduction automatique.</p>
         </div>
       </div>
 
-      <div class="faq-item bg-white border border-outline-variant rounded-lg overflow-hidden">
-        <button class="faq-q w-full flex items-center justify-between p-6 text-left font-semibold text-on-background hover:text-primary-container transition-colors gap-4">
-          <span>Que se passe-t-il si j'annule mon abonnement ?</span>
-          <span class="material-symbols-outlined text-primary-container faq-icon flex-shrink-0">add</span>
+      <div class="faq-item bg-white border border-outline-variant rounded-2xl overflow-hidden">
+        <button class="faq-q w-full flex items-center justify-between p-6 text-left font-semibold text-on-background hover:text-brand transition-colors gap-4">
+          <span>Que se passe-t-il si j'annule ?</span>
+          <span class="material-symbols-outlined text-brand faq-plus flex-shrink-0">add</span>
         </button>
-        <div class="faq-answer">
-          <p class="px-6 pb-6 font-body-md text-body-md text-on-surface-variant">Vous pouvez annuler à tout moment depuis votre tableau de bord. Votre site reste actif jusqu'à la fin de la période payée. Vous pouvez exporter vos données avant la fermeture. Aucune pénalité, aucun engagement minimum.</p>
+        <div class="faq-body">
+          <p class="px-6 pb-6 text-body text-on-surface-variant">Annulation en un clic depuis votre tableau de bord. Votre site reste actif jusqu'à la fin de la période payée. Vous pouvez exporter vos leads et données avant fermeture. Aucune pénalité, aucun engagement minimum.</p>
         </div>
       </div>
 
-      <div class="faq-item bg-white border border-outline-variant rounded-lg overflow-hidden">
-        <button class="faq-q w-full flex items-center justify-between p-6 text-left font-semibold text-on-background hover:text-primary-container transition-colors gap-4">
-          <span>Mon nom de domaine existant est-il transférable ?</span>
-          <span class="material-symbols-outlined text-primary-container faq-icon flex-shrink-0">add</span>
+      <div class="faq-item bg-white border border-outline-variant rounded-2xl overflow-hidden">
+        <button class="faq-q w-full flex items-center justify-between p-6 text-left font-semibold text-on-background hover:text-brand transition-colors gap-4">
+          <span>Mon domaine existant est-il transférable ?</span>
+          <span class="material-symbols-outlined text-brand faq-plus flex-shrink-0">add</span>
         </button>
-        <div class="faq-answer">
-          <p class="px-6 pb-6 font-body-md text-body-md text-on-surface-variant">Oui. Si vous possédez déjà un domaine, notre équipe vous guide pour pointer votre DNS vers DATAhome. La procédure prend généralement moins d'une heure et n'interrompt pas votre site actuel pendant la transition.</p>
+        <div class="faq-body">
+          <p class="px-6 pb-6 text-body text-on-surface-variant">Oui. Si vous possédez déjà un domaine, notre équipe vous guide pour pointer votre DNS vers DATAhome en moins d'une heure, sans interrompre votre site actuel pendant la transition.</p>
         </div>
       </div>
 
-      <div class="faq-item bg-white border border-outline-variant rounded-lg overflow-hidden">
-        <button class="faq-q w-full flex items-center justify-between p-6 text-left font-semibold text-on-background hover:text-primary-container transition-colors gap-4">
-          <span>Puis-je tester sans carte bancaire ?</span>
-          <span class="material-symbols-outlined text-primary-container faq-icon flex-shrink-0">add</span>
+      <div class="faq-item bg-white border border-outline-variant rounded-2xl overflow-hidden">
+        <button class="faq-q w-full flex items-center justify-between p-6 text-left font-semibold text-on-background hover:text-brand transition-colors gap-4">
+          <span>L'essai est-il vraiment gratuit et sans CB ?</span>
+          <span class="material-symbols-outlined text-brand faq-plus flex-shrink-0">add</span>
         </button>
-        <div class="faq-answer">
-          <p class="px-6 pb-6 font-body-md text-body-md text-on-surface-variant">Absolument. L'essai de 15 jours est entièrement gratuit et ne nécessite aucune carte bancaire. Vous accédez à l'ensemble des fonctionnalités du plan Gold. À la fin de l'essai, vous choisissez votre plan ou supprimez votre compte en un clic.</p>
+        <div class="faq-body">
+          <p class="px-6 pb-6 text-body text-on-surface-variant">Absolument. 15 jours complets sans carte bancaire, avec accès à toutes les fonctionnalités du plan Gold. À l'issue de l'essai, vous choisissez votre plan ou supprimez votre compte en un clic. Aucun prélèvement automatique.</p>
         </div>
       </div>
 
@@ -676,105 +778,106 @@
   </div>
 </section>
 
-<!-- ═══ CTA FINAL ════════════════════════════════════════════ -->
-<section class="py-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-  <div class="bg-primary-container p-12 md:p-24 rounded-lg text-center relative overflow-hidden fade-up">
+<!-- ████ 10 · CTA FINAL ███████████████████████████████████ -->
+<section class="py-28 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+  <div class="bg-brand rounded-3xl p-12 md:p-20 text-center relative overflow-hidden fade-up">
     <div class="relative z-10">
-      <h2 class="font-bold text-surface-bright mb-6" style="font-size:clamp(28px,4vw,48px);letter-spacing:-0.02em;line-height:1.15">
-        Votre agence mérite<br/>mieux que la moyenne.
+      <h2 class="font-bold text-white mb-5" style="font-size:clamp(28px,4vw,50px);line-height:1.15;letter-spacing:-0.025em">
+        Votre concurrence améliore<br class="hidden sm:block"/> déjà son site. Et vous ?
       </h2>
-      <p class="font-body-lg text-body-lg text-white/75 mb-10 max-w-xl mx-auto">
-        Rejoignez les agences qui ont choisi DATAhome pour dominer leur marché en ligne en 48 heures.
-      </p>
+      <p class="text-body-lg text-white/70 mb-10 max-w-lg mx-auto">Rejoignez les agences qui ont choisi DATAhome pour dominer leur marché en ligne en 48 heures.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="onboarding.html" class="bg-white text-primary-container px-10 py-4 rounded-lg font-label-md text-body-md font-bold hover:shadow-lg transition-all">Démarrer gratuitement →</a>
-        <a href="experience.html" class="bg-white/10 border border-white/25 text-white px-10 py-4 rounded-lg font-label-md text-body-md hover:bg-white/20 transition-all">Voir une démo live</a>
+        <a href="onboarding.html" class="inline-flex items-center justify-center gap-2 bg-white text-brand font-bold text-body px-9 py-4 rounded-xl hover:shadow-xl transition-all">
+          <span class="material-symbols-outlined ms-fill" style="font-size:18px">rocket_launch</span>
+          Démarrer l'essai gratuit
+        </a>
+        <a href="experience.html" class="inline-flex items-center justify-center gap-2 bg-white/10 border border-white/25 text-white font-semibold text-body px-9 py-4 rounded-xl hover:bg-white/18 transition-all">Voir une démo live</a>
       </div>
-      <p class="text-white/45 font-label-md text-label-md mt-6">Sans carte bancaire · Mise en ligne 48h · Support humain inclus</p>
+      <p class="text-white/40 text-label mt-7">Sans carte bancaire · Mise en ligne 48h · Support humain inclus</p>
     </div>
-    <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 w-[600px] h-[600px] bg-white/5 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 w-[500px] h-[500px] bg-white/5 rounded-full blur-3xl pointer-events-none"></div>
     <div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/3 w-[400px] h-[400px] bg-white/5 rounded-full blur-3xl pointer-events-none"></div>
   </div>
 </section>
 
 </main>
 
-<!-- ═══ FOOTER ════════════════════════════════════════════════ -->
+<!-- ████ 11 · FOOTER ██████████████████████████████████████ -->
 <footer class="bg-inverse-surface">
-  <div class="flex flex-col md:flex-row justify-between items-start gap-gutter py-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-    <div class="flex flex-col gap-6 max-w-xs">
-      <div class="flex items-center gap-2">
-        <span class="material-symbols-outlined text-primary-fixed" style="font-size:22px">home_work</span>
-        <span class="font-bold text-[22px] tracking-tight text-surface-bright">DATA<span class="text-on-primary-container">home</span></span>
+  <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto pt-20 pb-8">
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-16">
+
+      <!-- Brand -->
+      <div class="md:col-span-1">
+        <div class="flex items-center gap-2 mb-5">
+          <span class="material-symbols-outlined text-primary-fixed-dim ms-fill" style="font-size:20px">home_work</span>
+          <span class="font-bold text-[20px] tracking-tight text-white">DATA<span class="text-primary-fixed-dim">home</span></span>
+        </div>
+        <p class="text-body text-white/45 mb-5 leading-relaxed">La plateforme SaaS qui met votre agence immobilière en ligne en 48h, connectée à votre CRM, en 8 langues.</p>
+        <div class="inline-flex items-center gap-2 bg-white/6 border border-white/10 rounded-full px-4 py-2">
+          <span class="material-symbols-outlined text-white/40 ms-fill" style="font-size:13px">shield</span>
+          <span class="text-xs text-white/40">Hébergé EU · RGPD</span>
+        </div>
       </div>
-      <p class="font-body-md text-body-md text-outline-variant">La plateforme SaaS qui met votre agence immobilière en ligne en 48h, connectée à votre CRM, en 8 langues, sans compétence technique.</p>
-      <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2 w-fit">
-        <span class="material-symbols-outlined text-outline-variant" style="font-size:14px">shield</span>
-        <span class="text-xs text-outline-variant">Hébergé en Europe · RGPD conforme</span>
+
+      <!-- Produit -->
+      <div>
+        <h4 class="text-xs font-bold text-white uppercase tracking-[0.1em] mb-5">Produit</h4>
+        <ul class="space-y-3">
+          <li><a href="#features" class="text-body text-white/50 hover:text-white transition-colors">Fonctionnalités</a></li>
+          <li><a href="templates.html" class="text-body text-white/50 hover:text-white transition-colors">Templates</a></li>
+          <li><a href="#pricing" class="text-body text-white/50 hover:text-white transition-colors">Tarifs</a></li>
+          <li><a href="experience.html" class="text-body text-white/50 hover:text-white transition-colors">Démo live</a></li>
+          <li><a href="onboarding.html" class="text-body text-white/50 hover:text-white transition-colors">Démarrer</a></li>
+        </ul>
+      </div>
+
+      <!-- Entreprise -->
+      <div>
+        <h4 class="text-xs font-bold text-white uppercase tracking-[0.1em] mb-5">Entreprise</h4>
+        <ul class="space-y-3">
+          <li><a href="support.html" class="text-body text-white/50 hover:text-white transition-colors">Support</a></li>
+          <li><a href="support.html" class="text-body text-white/50 hover:text-white transition-colors">Documentation</a></li>
+          <li><a href="#faq" class="text-body text-white/50 hover:text-white transition-colors">FAQ</a></li>
+          <li><a href="support.html" class="text-body text-white/50 hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Légal -->
+      <div>
+        <h4 class="text-xs font-bold text-white uppercase tracking-[0.1em] mb-5">Légal</h4>
+        <ul class="space-y-3">
+          <li><a href="legal.html" class="text-body text-white/50 hover:text-white transition-colors">Mentions légales</a></li>
+          <li><a href="privacy.html" class="text-body text-white/50 hover:text-white transition-colors">Confidentialité</a></li>
+          <li><a href="legal.html" class="text-body text-white/50 hover:text-white transition-colors">CGV</a></li>
+          <li><a href="privacy.html" class="text-body text-white/50 hover:text-white transition-colors">Cookies</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="border-t border-white/7 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-body text-white/30">© 2025 DATAhome. Tous droits réservés.</p>
+      <div class="flex gap-6">
+        <a href="legal.html" class="text-label text-white/30 hover:text-white/70 transition-colors">Légal</a>
+        <a href="privacy.html" class="text-label text-white/30 hover:text-white/70 transition-colors">Confidentialité</a>
+        <a href="support.html" class="text-label text-white/30 hover:text-white/70 transition-colors">Contact</a>
       </div>
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-10 w-full md:w-auto">
-      <div class="flex flex-col gap-4">
-        <h4 class="font-label-md text-label-md text-surface-bright font-bold">Produit</h4>
-        <div class="flex flex-col gap-2">
-          <a href="#features" class="font-body-md text-body-md text-surface-variant hover:text-primary-fixed transition-all">Fonctionnalités</a>
-          <a href="templates.html" class="font-body-md text-body-md text-surface-variant hover:text-primary-fixed transition-all">Templates</a>
-          <a href="#pricing" class="font-body-md text-body-md text-surface-variant hover:text-primary-fixed transition-all">Tarifs</a>
-          <a href="experience.html" class="font-body-md text-body-md text-surface-variant hover:text-primary-fixed transition-all">Démo live</a>
-        </div>
-      </div>
-      <div class="flex flex-col gap-4">
-        <h4 class="font-label-md text-label-md text-surface-bright font-bold">Ressources</h4>
-        <div class="flex flex-col gap-2">
-          <a href="onboarding.html" class="font-body-md text-body-md text-surface-variant hover:text-primary-fixed transition-all">Démarrer</a>
-          <a href="support.html" class="font-body-md text-body-md text-surface-variant hover:text-primary-fixed transition-all">Support</a>
-          <a href="#faq" class="font-body-md text-body-md text-surface-variant hover:text-primary-fixed transition-all">FAQ</a>
-          <a href="support.html" class="font-body-md text-body-md text-surface-variant hover:text-primary-fixed transition-all">Documentation</a>
-        </div>
-      </div>
-      <div class="flex flex-col gap-4">
-        <h4 class="font-label-md text-label-md text-surface-bright font-bold">Partenaires</h4>
-        <div class="flex flex-col gap-2">
-          <a href="#logos" class="font-body-md text-body-md text-surface-variant hover:text-primary-fixed transition-all">HabiHub</a>
-          <a href="#logos" class="font-body-md text-body-md text-surface-variant hover:text-primary-fixed transition-all">Inmovilla</a>
-          <a href="#logos" class="font-body-md text-body-md text-surface-variant hover:text-primary-fixed transition-all">Witei</a>
-          <a href="#logos" class="font-body-md text-body-md text-surface-variant hover:text-primary-fixed transition-all">Casafari</a>
-        </div>
-      </div>
-      <div class="flex flex-col gap-4">
-        <h4 class="font-label-md text-label-md text-surface-bright font-bold">Légal</h4>
-        <div class="flex flex-col gap-2">
-          <a href="legal.html" class="font-body-md text-body-md text-surface-variant hover:text-primary-fixed transition-all">Mentions légales</a>
-          <a href="privacy.html" class="font-body-md text-body-md text-surface-variant hover:text-primary-fixed transition-all">Confidentialité</a>
-          <a href="legal.html" class="font-body-md text-body-md text-surface-variant hover:text-primary-fixed transition-all">CGV</a>
-          <a href="privacy.html" class="font-body-md text-body-md text-surface-variant hover:text-primary-fixed transition-all">Cookies</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="border-t border-white/5 py-8 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-    <span class="font-body-md text-body-md text-outline-variant">© 2024 DATAhome · data-home.app · Tous droits réservés</span>
-    <div class="flex gap-6">
-      <a href="legal.html" class="font-body-md text-body-md text-outline-variant hover:text-surface-variant transition-colors">Légal</a>
-      <a href="privacy.html" class="font-body-md text-body-md text-outline-variant hover:text-surface-variant transition-colors">Confidentialité</a>
-      <a href="support.html" class="font-body-md text-body-md text-outline-variant hover:text-surface-variant transition-colors">Contact</a>
-    </div>
+
   </div>
 </footer>
 
 <script>
-  // Navbar scroll shadow
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('shadow-md', window.scrollY > 10);
-  }, { passive: true });
+  // Navbar shadow on scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('shadow-md', scrollY > 8), {passive:true});
 
-  // IntersectionObserver — fade-up
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
-    });
-  }, { threshold: 0.1 });
+  // Fade-up via IntersectionObserver
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold: 0.1});
   document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
 
   // FAQ accordion
