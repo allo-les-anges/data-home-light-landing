@@ -1,325 +1,452 @@
 ﻿<!DOCTYPE html>
-<html class="light" lang="fr"><head>
+<html lang="fr">
+<head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>DATAhome | Site premium pour agences immobilières en 24h</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        colors: {
-          "primary-fixed-dim":"#b7c4ff","on-surface":"#1b1b1c","primary-fixed":"#dce1ff",
-          "on-background":"#1b1b1c","surface-container-high":"#eae7e8","secondary-container":"#fedd7c",
-          "on-tertiary-container":"#cdd5ef","surface":"#fcf8f9","error":"#ba1a1a",
-          "inverse-surface":"#1a2b5e","tertiary":"#3d445a","surface-bright":"#fcf8f9",
-          "surface-container":"#f0edee","background":"#fcf8f9","primary-container":"#2367ff",
-          "on-tertiary-fixed":"#131b2e","on-secondary-container":"#786005","on-error":"#ffffff",
-          "on-tertiary":"#ffffff","tertiary-fixed":"#dae2fd","error-container":"#ffdad6",
-          "surface-dim":"#dcd9da","surface-container-highest":"#e4e2e3","on-secondary":"#ffffff",
-          "primary":"#2367ff","on-surface-variant":"#434655","outline-variant":"#c4c5d7",
-          "secondary-fixed":"#ffe086","inverse-primary":"#b7c4ff","surface-variant":"#e4e2e3",
-          "on-tertiary-fixed-variant":"#3f465c","on-primary":"#ffffff","on-error-container":"#93000a",
-          "outline":"#747686","inverse-on-surface":"#f3f0f1","tertiary-container":"#db3cc7",
-          "on-secondary-fixed-variant":"#574500","tertiary-fixed-dim":"#bec6e0",
-          "on-primary-fixed":"#001551","secondary-fixed-dim":"#e3c466","on-primary-container":"#ffffff",
-          "surface-container-low":"#f6f3f4","on-secondary-fixed":"#231a00",
-          "on-primary-fixed-variant":"#0039b5","surface-tint":"#2367ff",
-          "surface-container-lowest":"#ffffff","secondary":"#735c00"
-        },
-        borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},
-        spacing:{"margin-desktop":"48px","container-max":"1280px","margin-mobile":"20px","unit":"4px","gutter":"24px"},
-        fontFamily:{"headline-md":["Inter"],"display-lg":["Inter"],"body-lg":["Inter"],"headline-lg":["Inter"],"headline-lg-mobile":["Inter"],"body-md":["Inter"],"label-md":["Inter"],"label-sm":["Inter"]},
-        fontSize:{
-          "headline-md":["24px",{"lineHeight":"32px","fontWeight":"600"}],
-          "display-lg":["64px",{"lineHeight":"72px","letterSpacing":"-0.02em","fontWeight":"700"}],
-          "body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],
-          "headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"600"}],
-          "headline-lg-mobile":["24px",{"lineHeight":"32px","fontWeight":"600"}],
-          "body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],
-          "label-md":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"500"}],
-          "label-sm":["12px",{"lineHeight":"16px","fontWeight":"600"}]
-        }
-      }
-    }
-  }
-</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet"/>
 <style>
-  body{font-family:'Inter',sans-serif;background-color:#fcf8f9;min-height:max(884px,100dvh)}
-  .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24}
-  .btn-grad{background:linear-gradient(135deg,#2367ff,#db3cc7)}
+:root{--red:#E8424A;--orange:#F28444;--gold:#F5C842;--green:#4CAF7D;--blue:#2196C9;--purple:#7C5CBF;--dark:#1a1a1a;--dark2:#2d2d2d;--light:#F8F9FA;--max:1280px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:#fff;color:var(--dark);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.container{width:min(var(--max),calc(100% - 40px));margin:0 auto}
+header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #e5e7eb}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
+.logo{height:40px;width:auto;border-radius:8px;object-fit:contain}
+.nav-links{display:flex;gap:28px;font-size:14px;font-weight:600;color:#555}
+.nav-links a:hover{color:var(--blue)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 24px;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s;border:none;text-decoration:none}
+.btn-primary{background:linear-gradient(90deg,var(--red),var(--orange),var(--gold));color:#fff;box-shadow:0 4px 16px rgba(232,66,74,.3)}
+.btn-primary:hover{opacity:.9;transform:translateY(-1px)}
+.btn-secondary{background:#fff;color:var(--blue);border:2px solid var(--blue)}
+.btn-secondary:hover{background:#EBF5FB;transform:translateY(-1px)}
+.hero{padding:80px 0 60px;background:#fff;text-align:center}
+.eyebrow{display:inline-block;background:var(--gold);color:var(--dark);font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;padding:6px 16px;border-radius:999px;margin-bottom:24px}
+h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(40px,6vw,80px);line-height:1.05;font-weight:700;max-width:900px;margin:0 auto 24px;text-align:center}
+.grad-text{background:linear-gradient(90deg,var(--red),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:18px;line-height:1.7;color:#555;max-width:640px;margin:0 auto 40px}
+.hero-ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.hero-img{margin-top:56px;border-radius:16px;overflow:hidden;border:1px solid #e5e7eb;box-shadow:0 20px 60px rgba(0,0,0,.12);position:relative}
+.hero-img img{width:100%;height:500px;object-fit:cover;object-position:center}
+.hero-badge{position:absolute;bottom:20px;left:20px;background:linear-gradient(90deg,var(--red),var(--orange),var(--gold));color:#fff;font-size:13px;font-weight:700;padding:8px 18px;border-radius:999px}
+.stats{background:linear-gradient(135deg,var(--purple),var(--blue),var(--green));padding:56px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+.stat-num{font-size:48px;font-weight:900;color:#fff;line-height:1}
+.stat-lbl{font-size:14px;color:rgba(255,255,255,.8);margin-top:6px;font-weight:500}
+.regions{padding:64px 0;background:var(--light)}
+.section-label{font-size:11px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:#888;text-align:center;margin-bottom:40px}
+.regions-row{display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
+.region-chip{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #e5e7eb;border-radius:999px;padding:12px 24px;font-size:14px;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.features{padding:96px 0;background:#fff}
+.section-head{text-align:center;margin-bottom:64px}
+.section-head h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(28px,4vw,48px);font-weight:700;margin-bottom:16px}
+.section-head p{font-size:17px;color:#555;max-width:560px;margin:0 auto}
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.feat-card{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:32px;transition:all .25s}
+.feat-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.1)}
+.feat-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.feat-card h3{font-size:18px;font-weight:700;margin-bottom:10px}
+.feat-card p{font-size:14px;color:#555;line-height:1.65}
+.showcase{padding:96px 0;background:var(--light)}
+.villa-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.villa-card{background:#fff;border:1px solid #e5e7eb;border-radius:16px;overflow:hidden;transition:all .25s}
+.villa-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.12)}
+.villa-img{position:relative;height:210px;overflow:hidden}
+.villa-img img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+.villa-card:hover .villa-img img{transform:scale(1.06)}
+.villa-img .ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.6),transparent)}
+.villa-badge{position:absolute;top:12px;left:12px;font-size:11px;font-weight:800;padding:5px 12px;border-radius:999px;color:#fff}
+.villa-price{position:absolute;bottom:12px;left:12px;font-size:20px;font-weight:900;color:#fff}
+.villa-info{padding:16px}
+.villa-info h3{font-size:15px;font-weight:700;margin-bottom:4px}
+.villa-info p{font-size:13px;color:#777;display:flex;align-items:center;gap:4px}
+.pricing{padding:96px 0;background:#fff}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:960px;margin:0 auto}
+.pricing-card{border:2px solid #e5e7eb;border-radius:20px;padding:36px;transition:all .25s}
+.pricing-card:hover{box-shadow:0 16px 48px rgba(0,0,0,.1)}
+.pricing-card.featured{border-color:var(--gold);box-shadow:0 8px 32px rgba(245,200,66,.25)}
+.pricing-name{font-size:13px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px}
+.pricing-price{font-size:48px;font-weight:900;line-height:1;margin-bottom:6px}
+.pricing-price span{font-size:16px;font-weight:500;color:#888}
+.pricing-sub{font-size:13px;color:#888;margin-bottom:28px}
+.pricing-badge{display:inline-block;background:var(--gold);color:var(--dark);font-size:11px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;padding:4px 12px;border-radius:999px;margin-bottom:20px}
+.pf{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:32px}
+.pf li{display:flex;align-items:center;gap:10px;font-size:14px;color:#444}
+.pf li::before{content:"checkmark";font-weight:900;font-size:14px;flex-shrink:0}
+.testimonials{padding:96px 0;background:linear-gradient(135deg,var(--blue),var(--purple))}
+.testimonials .section-head h2{color:#fff}
+.testimonials .section-head p{color:rgba(255,255,255,.75)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.testi-card{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:16px;padding:36px;backdrop-filter:blur(8px)}
+.testi-q{font-size:16px;color:#fff;line-height:1.7;font-style:italic;margin-bottom:24px}
+.testi-author{display:flex;align-items:center;gap:14px}
+.testi-av{width:48px;height:48px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;color:#fff;flex-shrink:0}
+.testi-name{font-size:14px;font-weight:700;color:#fff}
+.testi-role{font-size:12px;color:rgba(255,255,255,.65)}
+.faq{padding:96px 0;background:#fff}
+.faq-list{max-width:720px;margin:0 auto}
+.faq-item{border-bottom:1px solid #e5e7eb}
+.faq-item.active{border-left:3px solid var(--red);padding-left:0}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:24px 20px;cursor:pointer;font-size:16px;font-weight:600;gap:16px;user-select:none}
+.faq-icon{flex-shrink:0;width:28px;height:28px;border-radius:999px;background:var(--light);display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--red);transition:transform .25s;line-height:1}
+.faq-item.active .faq-icon{transform:rotate(45deg)}
+.faq-a{padding:0 20px 24px;font-size:15px;color:#555;line-height:1.7;display:none}
+.faq-item.active .faq-a{display:block}
+.cta-section{padding:96px 0}
+.cta-box{background:linear-gradient(135deg,var(--red),var(--orange),var(--gold),var(--green),var(--blue),var(--purple));padding:4px;border-radius:24px}
+.cta-inner{background:#fff;border-radius:22px;padding:72px 48px;text-align:center}
+.cta-inner h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(28px,4vw,48px);font-weight:700;margin-bottom:16px}
+.cta-inner p{font-size:17px;color:#555;max-width:520px;margin:0 auto 36px}
+footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 0 0}
+.footer-grid{display:grid;grid-template-columns:260px repeat(4,1fr);gap:40px;padding-bottom:48px}
+.footer-brand p{font-size:14px;color:rgba(255,255,255,.5);line-height:1.65;margin-top:14px}
+.footer-col h4{font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.footer-col a{display:block;font-size:14px;color:rgba(255,255,255,.55);margin-bottom:10px;transition:color .2s}
+.footer-col a:hover{color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding:20px 0;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:rgba(255,255,255,.35)}
+.footer-bottom .acc{color:var(--gold)}
+@media(max-width:1024px){.features-grid,.villa-grid,.testi-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){.nav-links{display:none}.stats-grid{grid-template-columns:repeat(2,1fr)}.features-grid,.villa-grid,.pricing-grid,.testi-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.cta-inner{padding:48px 24px}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
 </style>
 </head>
-<body class="text-on-background">
-
-<header class="w-full top-0 sticky bg-surface border-b border-outline-variant z-50">
-  <div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-    <a href="/"><img src="images/DH_V2.jpg" alt="DATAhome" class="h-10 w-auto rounded-lg object-contain"/></a>
-    <nav class="hidden md:flex items-center gap-8">
-      <a class="text-primary font-bold border-b-2 border-primary font-label-md text-label-md" href="#">Accueil</a>
-      <a class="text-on-surface-variant font-medium font-label-md text-label-md hover:text-primary transition-colors" href="templates.html">Templates</a>
-      <a class="text-on-surface-variant font-medium font-label-md text-label-md hover:text-primary transition-colors" href="#regions">Regions</a>
-      <a class="text-on-surface-variant font-medium font-label-md text-label-md hover:text-primary transition-colors" href="#showcase">Vitrines</a>
+<body>
+<header>
+  <div class="container nav">
+    <a href="/"><img src="images/DH_V2.jpg" alt="DATAhome" class="logo"/></a>
+    <nav class="nav-links">
+      <a href="#features">Fonctionnalites</a>
+      <a href="#showcase">Vitrines</a>
+      <a href="#pricing">Tarifs</a>
+      <a href="templates.html">Templates</a>
+      <a href="#faq">FAQ</a>
     </nav>
-    <div class="flex items-center gap-4">
-      <button class="hidden md:block font-label-md text-label-md text-on-surface-variant hover:text-primary px-4 py-2 transition-colors">Connexion</button>
-      <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="btn-grad text-white px-6 py-3 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all">Créer mon site</button>
+    <div style="display:flex;gap:12px;align-items:center">
+      <a href="templates.html" class="btn btn-secondary" style="padding:10px 20px">Templates</a>
+      <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="btn btn-primary">Creer mon site</button>
     </div>
   </div>
 </header>
-
-<main>
-
-<section class="relative py-20 md:py-32 overflow-hidden px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-  <div class="flex flex-col items-center text-center max-w-4xl mx-auto">
-    <span class="font-label-sm text-label-sm px-4 py-1 rounded-full mb-6 uppercase tracking-wider border" style="background:linear-gradient(135deg,rgba(35,103,255,.1),rgba(219,60,199,.1));color:#2367ff;border-color:rgba(35,103,255,.25)">SaaS exclusif pour agences immobilières premium</span>
-    <h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-background mb-8 leading-tight">
-      Votre agence immobilière <span style="background:linear-gradient(135deg,#2367ff,#db3cc7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">en ligne en 24h</span>
-    </h1>
-    <p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-2xl">Sites web haut de gamme pour la vente de villas de luxe en Costa Blanca, Costa del Sol, Portugal et Côte d'Azur. Connecté à votre CRM, livré en 24h.</p>
-    <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-      <a href="templates.html" class="btn-grad text-white px-8 py-4 rounded font-label-md text-body-md hover:opacity-90 transition-all shadow-sm">Voir les templates</a>
-      <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="border border-on-background text-on-background px-8 py-4 rounded font-label-md text-body-md hover:bg-surface-container transition-all">Demander un site</button>
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">SaaS exclusif - Agences immobilieres premium</span>
+    <h1>Votre agence immobiliere<br/><span class="grad-text">en ligne en 24h</span></h1>
+    <p class="hero-sub">Sites web haut de gamme pour la vente de villas de luxe en Costa Blanca, Costa del Sol, Portugal et Cote d'Azur. Connecte a votre CRM, livre en 24h.</p>
+    <div class="hero-ctas">
+      <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="btn btn-primary" style="padding:16px 36px;font-size:16px">Creer mon site</button>
+      <a href="templates.html" class="btn btn-secondary" style="padding:16px 36px;font-size:16px">Voir les templates</a>
     </div>
-  </div>
-  <div class="mt-20 relative rounded-xl overflow-hidden border border-outline-variant shadow-xl" style="max-height:520px">
-    <img alt="The Hills 14 — El Herrojo, Costa del Sol · 22 M€" class="w-full h-auto object-cover opacity-95" src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/87929424/media/images/outdoor/1.jpg" style="max-height:520px;object-position:center"/>
-    <div class="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent"></div>
-    <div class="absolute bottom-6 left-6">
-      <span class="font-label-sm text-label-sm px-4 py-2 rounded-full text-white font-bold btn-grad">✦ The Hills 14 · El Herrojo · 22 M€</span>
+    <div class="hero-img">
+      <img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/87929424/media/images/outdoor/1.jpg" alt="The Hills 14 - Costa del Sol 22M EUR"/>
+      <div class="hero-badge">The Hills 14 - El Herrojo, Costa del Sol - 22 M EUR</div>
     </div>
   </div>
 </section>
-
-<section id="regions" class="py-16 border-y border-outline-variant bg-surface-container-low">
-  <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-    <p class="text-center font-label-sm text-label-sm text-outline uppercase tracking-[0.2em] mb-12">Destinations côtières &amp; urbaines premium</p>
-    <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-60 grayscale">
-      <div class="flex items-center gap-2"><span class="material-symbols-outlined text-4xl">beach_access</span><span class="font-bold text-xl uppercase">Costa Blanca</span></div>
-      <div class="flex items-center gap-2"><span class="material-symbols-outlined text-4xl">waves</span><span class="font-bold text-xl uppercase">Costa del Sol</span></div>
-      <div class="flex items-center gap-2"><span class="material-symbols-outlined text-4xl">villa</span><span class="font-bold text-xl uppercase">Portugal</span></div>
-      <div class="flex items-center gap-2"><span class="material-symbols-outlined text-4xl">wb_sunny</span><span class="font-bold text-xl uppercase">Côte d'Azur</span></div>
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div><div class="stat-num">24h</div><div class="stat-lbl">Delai de livraison garanti</div></div>
+      <div><div class="stat-num">200+</div><div class="stat-lbl">Agences clientes</div></div>
+      <div><div class="stat-num">6</div><div class="stat-lbl">Pays couverts</div></div>
+      <div><div class="stat-num">95+</div><div class="stat-lbl">Score Lighthouse moyen</div></div>
     </div>
   </div>
 </section>
-
-<section class="py-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-  <div class="mb-20 text-center md:text-left">
-    <h2 class="font-headline-lg text-headline-lg text-on-background mb-4">Conçu pour convertir les acheteurs premium</h2>
-    <p class="font-body-md text-body-md text-on-surface-variant max-w-xl">Chaque site DATAhome reflète l'exclusivité de votre portefeuille et transforme les visiteurs à fort pouvoir d'achat en clients.</p>
+<section class="regions">
+  <div class="container">
+    <p class="section-label">Destinations cotieres et urbaines premium</p>
+    <div class="regions-row">
+      <div class="region-chip"><span style="color:var(--red)">&#9679;</span> Costa Blanca</div>
+      <div class="region-chip"><span style="color:var(--orange)">&#9679;</span> Costa del Sol</div>
+      <div class="region-chip"><span style="color:var(--gold)">&#9679;</span> Costa Calida</div>
+      <div class="region-chip"><span style="color:var(--green)">&#9679;</span> Algarve, Portugal</div>
+      <div class="region-chip"><span style="color:var(--blue)">&#9679;</span> Cote d'Azur</div>
+      <div class="region-chip"><span style="color:var(--purple)">&#9679;</span> Baleares</div>
+    </div>
   </div>
-  <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
-    <div class="md:col-span-8 bg-white border border-outline-variant p-8 md:p-12 rounded-lg flex flex-col justify-between hover:shadow-lg transition-shadow duration-300">
-      <div>
-        <div class="w-12 h-12 rounded-full flex items-center justify-center mb-8" style="background:linear-gradient(135deg,rgba(35,103,255,.1),rgba(219,60,199,.1))">
-          <span class="material-symbols-outlined text-primary">visibility</span>
-        </div>
-        <h3 class="font-headline-md text-headline-md text-on-background mb-4">Vitrines immersives de vos biens</h3>
-        <p class="font-body-md text-body-md text-on-surface-variant mb-12 max-w-md">Galeries photo plein écran pour villas à Marbella ou penthouse en Algarve. Des présentations qui justifient des prix à 7 chiffres.</p>
-      </div>
-      <div class="relative overflow-hidden rounded-lg h-64 border border-outline-variant">
-        <img alt="Villa Marbella · 19,5 M€" class="w-full h-full object-cover" src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/37089450/media/images/outdoor/1.jpg"/>
-        <div class="absolute bottom-4 left-4"><span class="text-xs font-bold text-white px-3 py-1 rounded-full" style="background:rgba(35,103,255,.85)">Villa Marbella · 19,5 M€</span></div>
-      </div>
+</section>
+<section class="features" id="features">
+  <div class="container">
+    <div class="section-head">
+      <h2>Concu pour convertir les acheteurs premium</h2>
+      <p>Chaque site DATAhome reflete l'exclusivite de votre portefeuille et transforme les visiteurs a fort pouvoir d'achat en clients.</p>
     </div>
-    <div class="md:col-span-4 bg-white border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow duration-300">
-      <div class="w-12 h-12 rounded-full flex items-center justify-center mb-6" style="background:linear-gradient(135deg,rgba(35,103,255,.1),rgba(219,60,199,.1))">
-        <span class="material-symbols-outlined text-primary">language</span>
+    <div class="features-grid">
+      <div class="feat-card">
+        <div class="feat-icon" style="background:rgba(232,66,74,.1)"><svg width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="#E8424A" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
+        <h3>Galeries immersives 4K</h3>
+        <p>Presentations plein ecran qui justifient des prix a 7 chiffres. Zoom, visite virtuelle et video integres.</p>
       </div>
-      <h3 class="font-headline-md text-headline-md text-on-background mb-4">Multilingue natif</h3>
-      <p class="font-body-md text-body-md text-on-surface-variant">Localisation intégrée pour acheteurs européens, du Moyen-Orient et d'Asie. FR, EN, ES, DE, NL et plus.</p>
-    </div>
-    <div class="md:col-span-4 bg-white border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow duration-300">
-      <div class="w-12 h-12 rounded-full flex items-center justify-center mb-6" style="background:linear-gradient(135deg,rgba(35,103,255,.1),rgba(219,60,199,.1))">
-        <span class="material-symbols-outlined text-primary">speed</span>
+      <div class="feat-card">
+        <div class="feat-icon" style="background:rgba(242,132,68,.1)"><svg width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="#F28444" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+        <h3>Livraison en 24h</h3>
+        <p>De la commande a la mise en ligne en moins de 24 heures. Domaine personnalise inclus des le premier jour.</p>
       </div>
-      <h3 class="font-headline-md text-headline-md text-on-background mb-4">Performance maximale</h3>
-      <p class="font-body-md text-body-md text-on-surface-variant">Chargement ultra-rapide même avec des galeries en 4K. Score Lighthouse 95+ garanti.</p>
-    </div>
-    <div class="md:col-span-8 text-white p-8 md:p-12 rounded-lg flex flex-col md:flex-row gap-8 items-center" style="background:linear-gradient(135deg,#1a2b5e,#2367ff)">
-      <div class="md:w-1/2">
-        <h3 class="font-headline-md text-headline-md text-white mb-4">La Collection Costa del Sol</h3>
-        <p class="font-body-md text-body-md" style="color:rgba(255,255,255,.75)">Templates exclusifs pour l'architecture méditerranéenne. De Marbella à Benahavís, chaque bien est mis en scène avec élégance.</p>
-        <a href="templates.html" class="inline-block mt-6 px-5 py-2.5 rounded-lg text-sm font-bold" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.25)">Voir les templates →</a>
+      <div class="feat-card">
+        <div class="feat-icon" style="background:rgba(245,200,66,.15)"><svg width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="#F5C842" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/></svg></div>
+        <h3>Multilingue natif</h3>
+        <p>FR, EN, ES, DE, NL et plus. Localisation automatique pour toucher les acheteurs internationaux.</p>
       </div>
-      <div class="md:w-1/2 w-full h-48 rounded-lg overflow-hidden">
-        <img alt="Calle Bach — Marbella · 19 M€" class="w-full h-full object-cover" src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/32156547/media/images/outdoor/1.jpg"/>
+      <div class="feat-card">
+        <div class="feat-icon" style="background:rgba(76,175,125,.1)"><svg width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="#4CAF7D" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg></div>
+        <h3>Connecte a votre CRM</h3>
+        <p>Synchronisation automatique HabiHub, Inmovilla, Witei, Casafari. Vos biens toujours a jour, sans effort.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon" style="background:rgba(33,150,201,.1)"><svg width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="#2196C9" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div>
+        <h3>SEO premium</h3>
+        <p>Score Lighthouse 95+, Core Web Vitals optimises, sitemap automatique. Visible sur Google des le jour 1.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon" style="background:rgba(124,92,191,.1)"><svg width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="#7C5CBF" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+        <h3>Securite et RGPD</h3>
+        <p>SSL inclus, mentions legales automatiques, cookies conforme RGPD. Hebergement EU souverain.</p>
       </div>
     </div>
   </div>
 </section>
-
-<section id="showcase" class="py-16 bg-surface-container-low border-y border-outline-variant">
-  <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-    <div class="text-center mb-14">
-      <p class="font-label-sm text-label-sm uppercase tracking-[0.12em] mb-3" style="color:#2367ff">Vos biens en vitrine</p>
-      <h2 class="font-headline-lg text-headline-lg text-on-background mb-4">Des propriétés d'exception, présentées avec élégance</h2>
-      <p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto">Voici comment vos biens à plus de 1M€ apparaissent sur votre site DATAhome, synchronisés depuis HabiHub.</p>
+<section class="showcase" id="showcase">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" style="display:inline-block;margin-bottom:16px">Vos biens en vitrine</span>
+      <h2>Des proprietes d'exception, presentees avec elegance</h2>
+      <p>Voici comment vos biens a plus de 1M EUR apparaissent sur votre site DATAhome, synchronises depuis HabiHub.</p>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-      <div class="group rounded-2xl overflow-hidden border border-outline-variant bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-        <div class="relative h-52 overflow-hidden">
-          <img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/87929424/media/images/outdoor/3.jpg" alt="The Hills 14" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-          <span class="absolute top-3 left-3 text-xs font-bold text-white px-3 py-1 rounded-full btn-grad">✦ Coup de cœur</span>
-          <p class="absolute bottom-3 left-3 text-white font-bold text-lg">22 M€</p>
+    <div class="villa-grid">
+      <div class="villa-card">
+        <div class="villa-img">
+          <img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/87929424/media/images/outdoor/3.jpg" alt="The Hills 14"/>
+          <div class="ov"></div>
+          <span class="villa-badge" style="background:linear-gradient(90deg,var(--red),var(--orange))">Coup de coeur</span>
+          <p class="villa-price">22 M EUR</p>
         </div>
-        <div class="p-4">
-          <h3 class="font-semibold text-on-background mb-1">The Hills 14</h3>
-          <p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:16px;color:#2367ff">location_on</span> El Herrojo, Costa del Sol</p>
-        </div>
+        <div class="villa-info"><h3>The Hills 14</h3><p>El Herrojo, Costa del Sol</p></div>
       </div>
-
-      <div class="group rounded-2xl overflow-hidden border border-outline-variant bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-        <div class="relative h-52 overflow-hidden">
-          <img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/37089450/media/images/outdoor/4.jpg" alt="Villa Marbella" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-          <span class="absolute top-3 left-3 text-xs font-bold text-white px-3 py-1 rounded-full" style="background:rgba(35,103,255,.85)">Vue mer</span>
-          <p class="absolute bottom-3 left-3 text-white font-bold text-lg">19,5 M€</p>
+      <div class="villa-card">
+        <div class="villa-img">
+          <img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/37089450/media/images/outdoor/4.jpg" alt="Villa Marbella"/>
+          <div class="ov"></div>
+          <span class="villa-badge" style="background:var(--orange)">Vue mer</span>
+          <p class="villa-price">19,5 M EUR</p>
         </div>
-        <div class="p-4">
-          <h3 class="font-semibold text-on-background mb-1">Villa Marbella</h3>
-          <p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:16px;color:#2367ff">location_on</span> Marbella, Málaga</p>
-        </div>
+        <div class="villa-info"><h3>Villa Marbella</h3><p>Marbella, Malaga</p></div>
       </div>
-
-      <div class="group rounded-2xl overflow-hidden border border-outline-variant bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-        <div class="relative h-52 overflow-hidden">
-          <img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/32156547/media/images/outdoor/3.jpg" alt="Calle Bach" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-          <span class="absolute top-3 left-3 text-xs font-bold text-white px-3 py-1 rounded-full" style="background:rgba(219,60,199,.85)">Luxe</span>
-          <p class="absolute bottom-3 left-3 text-white font-bold text-lg">19 M€</p>
+      <div class="villa-card">
+        <div class="villa-img">
+          <img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/32156547/media/images/outdoor/3.jpg" alt="Calle Bach"/>
+          <div class="ov"></div>
+          <span class="villa-badge" style="background:var(--gold);color:var(--dark)">Luxe</span>
+          <p class="villa-price">19 M EUR</p>
         </div>
-        <div class="p-4">
-          <h3 class="font-semibold text-on-background mb-1">Calle Bach</h3>
-          <p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:16px;color:#2367ff">location_on</span> Marbella, Costa del Sol</p>
-        </div>
+        <div class="villa-info"><h3>Calle Bach</h3><p>Marbella, Costa del Sol</p></div>
       </div>
-
-      <div class="group rounded-2xl overflow-hidden border border-outline-variant bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-        <div class="relative h-52 overflow-hidden">
-          <img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/70091589/media/images/outdoor/1.jpg" alt="Villa Pueblo Nuevo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-          <span class="absolute top-3 left-3 text-xs font-bold text-white px-3 py-1 rounded-full bg-amber-500">Prestige</span>
-          <p class="absolute bottom-3 left-3 text-white font-bold text-lg">12,5 M€</p>
+      <div class="villa-card">
+        <div class="villa-img">
+          <img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/70091589/media/images/outdoor/1.jpg" alt="Villa Pueblo Nuevo"/>
+          <div class="ov"></div>
+          <span class="villa-badge" style="background:var(--green)">Prestige</span>
+          <p class="villa-price">12,5 M EUR</p>
         </div>
-        <div class="p-4">
-          <h3 class="font-semibold text-on-background mb-1">Villa Pueblo Nuevo</h3>
-          <p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:16px;color:#2367ff">location_on</span> Pueblo Nuevo, Andalousie</p>
-        </div>
+        <div class="villa-info"><h3>Villa Pueblo Nuevo</h3><p>Pueblo Nuevo, Andalousie</p></div>
       </div>
-
-      <div class="group rounded-2xl overflow-hidden border border-outline-variant bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-        <div class="relative h-52 overflow-hidden">
-          <img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/82064372/media/images/1.jpg" alt="Villa Benahavis" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-          <span class="absolute top-3 left-3 text-xs font-bold text-white px-3 py-1 rounded-full bg-emerald-600">Exclusif</span>
-          <p class="absolute bottom-3 left-3 text-white font-bold text-lg">12,1 M€</p>
+      <div class="villa-card">
+        <div class="villa-img">
+          <img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/82064372/media/images/1.jpg" alt="Villa Benahavis"/>
+          <div class="ov"></div>
+          <span class="villa-badge" style="background:var(--blue)">Exclusif</span>
+          <p class="villa-price">12,1 M EUR</p>
         </div>
-        <div class="p-4">
-          <h3 class="font-semibold text-on-background mb-1">Villa Benahavís</h3>
-          <p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:16px;color:#2367ff">location_on</span> Benahavís, Málaga</p>
-        </div>
+        <div class="villa-info"><h3>Villa Benahavis</h3><p>Benahavis, Malaga</p></div>
       </div>
-
-      <div class="group rounded-2xl overflow-hidden border border-outline-variant bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-        <div class="relative h-52 overflow-hidden">
-          <img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/25407071/media/images/outdoor/1.jpg" alt="Villa Alcala 70" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-          <span class="absolute top-3 left-3 text-xs font-bold px-3 py-1 rounded-full" style="background:#fedd7c;color:#1a1a1a">Premium</span>
-          <p class="absolute bottom-3 left-3 text-white font-bold text-lg">11,5 M€</p>
+      <div class="villa-card">
+        <div class="villa-img">
+          <img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/25407071/media/images/outdoor/1.jpg" alt="Villa Alcala 70"/>
+          <div class="ov"></div>
+          <span class="villa-badge" style="background:var(--purple)">Premium</span>
+          <p class="villa-price">11,5 M EUR</p>
         </div>
-        <div class="p-4">
-          <h3 class="font-semibold text-on-background mb-1">Villa Alcalá 70</h3>
-          <p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:16px;color:#2367ff">location_on</span> Marbella, Costa del Sol</p>
-        </div>
+        <div class="villa-info"><h3>Villa Alcala 70</h3><p>Marbella, Costa del Sol</p></div>
       </div>
-
     </div>
-    <p class="mt-8 text-center font-label-sm text-label-sm text-outline">Biens réels issus de votre catalogue HabiHub · Synchronisés automatiquement</p>
+    <p style="text-align:center;margin-top:32px;font-size:13px;color:#999">Biens reels issus de votre catalogue HabiHub - Synchronises automatiquement</p>
   </div>
 </section>
-
-<section class="py-32 bg-surface">
-  <div class="px-margin-mobile md:px-margin-desktop max-w-4xl mx-auto text-center">
-    <span class="material-symbols-outlined text-6xl mb-8 block" style="font-variation-settings:'FILL' 1;color:#2367ff">format_quote</span>
-    <blockquote class="font-headline-lg text-headline-lg text-on-background mb-10 italic">
-      « DATAhome a transformé la présentation de nos villas sur la Costa del Sol. Nos demandes de contact ont augmenté de 40% depuis le lancement de notre site. »
-    </blockquote>
-    <div class="flex flex-col items-center">
-      <div class="w-16 h-16 rounded-full mb-4 flex items-center justify-center text-white font-bold text-xl btn-grad">ER</div>
-      <cite class="not-italic">
-        <p class="font-label-md text-label-md text-on-surface font-bold">Elena Rodriguez</p>
-        <p class="font-label-sm text-label-sm text-on-surface-variant">Fondatrice, Marbella Estate Group</p>
-      </cite>
+<section class="pricing" id="pricing">
+  <div class="container">
+    <div class="section-head">
+      <h2>Des offres simples, sans surprise</h2>
+      <p>Choisissez le plan adapte a la taille de votre agence. Resiliable a tout moment.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-name" style="color:var(--blue)">Starter</div>
+        <div class="pricing-price">49 <span>EUR / mois</span></div>
+        <div class="pricing-sub">Engagement mensuel - Sans carte requise</div>
+        <ul class="pf" style="margin-bottom:32px">
+          <li style="color:#444"><span style="color:var(--blue);font-weight:900;margin-right:8px">&#10003;</span>1 site avec domaine personnalise</li>
+          <li style="color:#444"><span style="color:var(--blue);font-weight:900;margin-right:8px">&#10003;</span>Jusqu'a 100 biens affiches</li>
+          <li style="color:#444"><span style="color:var(--blue);font-weight:900;margin-right:8px">&#10003;</span>2 langues</li>
+          <li style="color:#444"><span style="color:var(--blue);font-weight:900;margin-right:8px">&#10003;</span>Template inclus (3 choix)</li>
+          <li style="color:#444"><span style="color:var(--blue);font-weight:900;margin-right:8px">&#10003;</span>Support par email</li>
+        </ul>
+        <a href="templates.html" class="btn btn-secondary" style="width:100%;justify-content:center">Commencer</a>
+      </div>
+      <div class="pricing-card featured">
+        <span class="pricing-badge">Le plus populaire</span>
+        <div class="pricing-name" style="color:var(--orange)">Pro</div>
+        <div class="pricing-price">99 <span>EUR / mois</span></div>
+        <div class="pricing-sub">Engagement mensuel - Livraison en 24h</div>
+        <ul class="pf" style="margin-bottom:32px">
+          <li style="color:#444"><span style="color:var(--gold);font-weight:900;margin-right:8px">&#10003;</span>Biens illimites + sync CRM auto</li>
+          <li style="color:#444"><span style="color:var(--gold);font-weight:900;margin-right:8px">&#10003;</span>5 langues</li>
+          <li style="color:#444"><span style="color:var(--gold);font-weight:900;margin-right:8px">&#10003;</span>Templates premium (6 choix)</li>
+          <li style="color:#444"><span style="color:var(--gold);font-weight:900;margin-right:8px">&#10003;</span>Lead capture + webhook Google Sheets</li>
+          <li style="color:#444"><span style="color:var(--gold);font-weight:900;margin-right:8px">&#10003;</span>Support prioritaire sous 4h</li>
+          <li style="color:#444"><span style="color:var(--gold);font-weight:900;margin-right:8px">&#10003;</span>Analytics avances</li>
+        </ul>
+        <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="btn btn-primary" style="width:100%;justify-content:center">Choisir Pro</button>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-name" style="color:var(--purple)">Elite</div>
+        <div class="pricing-price">199 <span>EUR / mois</span></div>
+        <div class="pricing-sub">Contrat annuel - White label disponible</div>
+        <ul class="pf" style="margin-bottom:32px">
+          <li style="color:#444"><span style="color:var(--green);font-weight:900;margin-right:8px">&#10003;</span>Tout Pro inclus</li>
+          <li style="color:#444"><span style="color:var(--green);font-weight:900;margin-right:8px">&#10003;</span>White label (votre marque)</li>
+          <li style="color:#444"><span style="color:var(--green);font-weight:900;margin-right:8px">&#10003;</span>API sur mesure</li>
+          <li style="color:#444"><span style="color:var(--green);font-weight:900;margin-right:8px">&#10003;</span>Support dedie 7j/7</li>
+          <li style="color:#444"><span style="color:var(--green);font-weight:900;margin-right:8px">&#10003;</span>SLA 99.9% uptime</li>
+        </ul>
+        <button class="btn btn-secondary" style="width:100%;justify-content:center;border-color:var(--purple);color:var(--purple)">Nous contacter</button>
+      </div>
     </div>
   </div>
 </section>
-
-<section id="contact" class="py-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-  <div class="p-12 md:p-24 rounded-lg text-center relative overflow-hidden" style="background:linear-gradient(135deg,#2367ff,#1a2b5e)">
-    <div class="relative z-10">
-      <h2 class="font-display-lg text-headline-lg md:text-headline-lg text-white mb-6">Élevez la présence digitale de votre agence.</h2>
-      <p class="font-body-lg text-body-lg mb-12 max-w-xl mx-auto" style="color:rgba(255,255,255,.8)">Rejoignez les agences d'élite en Espagne, Portugal et France qui utilisent DATAhome pour dominer le marché du luxe.</p>
-      <a href="templates.html" class="inline-block px-12 py-5 rounded-full font-label-md text-body-md hover:shadow-lg transition-all font-bold" style="background:#fedd7c;color:#1a2b5e">Voir les templates premium</a>
+<section class="testimonials">
+  <div class="container">
+    <div class="section-head" style="margin-bottom:48px">
+      <h2>Ce que disent nos clients</h2>
+      <p>Agences immobilieres en Espagne, Portugal et France</p>
     </div>
-    <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 w-96 h-96 rounded-full blur-3xl" style="background:rgba(219,60,199,.2)"></div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <p class="testi-q">"DATAhome a transforme la presentation de nos villas. Nos demandes de contact ont augmente de 40% depuis le lancement de notre site."</p>
+        <div class="testi-author">
+          <div class="testi-av" style="background:linear-gradient(135deg,var(--red),var(--orange))">ER</div>
+          <div><div class="testi-name">Elena Rodriguez</div><div class="testi-role">Fondatrice, Marbella Estate Group</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <p class="testi-q">"En 24h nous avions un site professionnel connecte a HabiHub. Nos acheteurs anglais et allemands peuvent enfin naviguer en leur langue."</p>
+        <div class="testi-author">
+          <div class="testi-av" style="background:linear-gradient(135deg,var(--blue),var(--purple))">MT</div>
+          <div><div class="testi-name">Marc Torres</div><div class="testi-role">Directeur, Costa Blanca Premium</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <p class="testi-q">"Le score SEO de notre site est passe a 97. Nous apparaissons maintenant en premiere page pour nos requetes cles sur l'Algarve."</p>
+        <div class="testi-author">
+          <div class="testi-av" style="background:linear-gradient(135deg,var(--green),var(--blue))">SF</div>
+          <div><div class="testi-name">Sofia Ferreira</div><div class="testi-role">CEO, Algarve Luxury Homes</div></div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
-
-</main>
-
-<footer style="background:#1a2b5e">
-  <div class="flex flex-col md:flex-row justify-between items-start gap-gutter py-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-    <div class="flex flex-col gap-6 max-w-xs">
-      <img src="images/DH_V2.jpg" alt="DATAhome" class="h-10 w-auto rounded-lg object-contain"/>
-      <p class="font-body-md text-body-md" style="color:rgba(255,255,255,.6)">Sites web premium pour les marchés immobiliers les plus prestigieux d'Europe.</p>
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <h2>Questions frequentes</h2>
+      <p>Tout ce que vous devez savoir avant de vous lancer.</p>
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-12 w-full md:w-auto">
-      <div class="flex flex-col gap-4">
-        <h4 class="font-label-md text-label-md text-white font-bold">Templates</h4>
-        <div class="flex flex-col gap-2">
-          <a class="font-body-md text-body-md hover:text-white transition-all cursor-pointer" style="color:rgba(255,255,255,.6)" href="templates.html">La Méditerranée</a>
-          <a class="font-body-md text-body-md hover:text-white transition-all cursor-pointer" style="color:rgba(255,255,255,.6)" href="templates.html">Collection Prestige</a>
-          <a class="font-body-md text-body-md hover:text-white transition-all cursor-pointer" style="color:rgba(255,255,255,.6)" href="templates.html">Portal Catalogue</a>
-        </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>Qu'est-ce que DATAhome exactement ?</span><div class="faq-icon">+</div></div>
+        <div class="faq-a">DATAhome est un SaaS qui cree et heberge des sites web premium pour les agences immobilieres. Nous gerons tout : design, domaine, hebergement, synchronisation CRM et SEO. Vous vous concentrez sur la vente.</div>
       </div>
-      <div class="flex flex-col gap-4">
-        <h4 class="font-label-md text-label-md text-white font-bold">Régions</h4>
-        <div class="flex flex-col gap-2">
-          <a class="font-body-md text-body-md hover:text-white transition-all cursor-pointer" style="color:rgba(255,255,255,.6)" href="#">Costa Blanca</a>
-          <a class="font-body-md text-body-md hover:text-white transition-all cursor-pointer" style="color:rgba(255,255,255,.6)" href="#">Costa del Sol</a>
-          <a class="font-body-md text-body-md hover:text-white transition-all cursor-pointer" style="color:rgba(255,255,255,.6)" href="#">Portugal</a>
-        </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>Quels CRM sont compatibles ?</span><div class="faq-icon">+</div></div>
+        <div class="faq-a">Nous sommes connectes a HabiHub, Inmovilla, Witei, Casafari et Inmoweb. La synchronisation de vos biens est automatique et se met a jour en temps reel.</div>
       </div>
-      <div class="flex flex-col gap-4">
-        <h4 class="font-label-md text-label-md text-white font-bold">Partenariat</h4>
-        <div class="flex flex-col gap-2">
-          <a class="font-body-md text-body-md hover:text-white transition-all cursor-pointer" style="color:rgba(255,255,255,.6)" href="#">Affiliés</a>
-          <a class="font-body-md text-body-md hover:text-white transition-all cursor-pointer" style="color:rgba(255,255,255,.6)" href="#">Plans agences</a>
-          <a class="font-body-md text-body-md hover:text-white transition-all cursor-pointer" style="color:rgba(255,255,255,.6)" href="#">Support</a>
-        </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>Combien de temps pour mettre mon site en ligne ?</span><div class="faq-icon">+</div></div>
+        <div class="faq-a">Nous garantissons la livraison en 24 heures ouvrees apres reception de vos informations (logo, couleurs, CRM). Votre domaine personnalise est configure en meme temps.</div>
       </div>
-      <div class="flex flex-col gap-4">
-        <h4 class="font-label-md text-label-md text-white font-bold">Légal</h4>
-        <div class="flex flex-col gap-2">
-          <a class="font-body-md text-body-md hover:text-white transition-all cursor-pointer" style="color:rgba(255,255,255,.6)" href="privacy.html">Confidentialité</a>
-          <a class="font-body-md text-body-md hover:text-white transition-all cursor-pointer" style="color:rgba(255,255,255,.6)" href="legal.html">CGU</a>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>Puis-je personnaliser les couleurs, le logo et les textes ?</span><div class="faq-icon">+</div></div>
+        <div class="faq-a">Oui, entierement. Vous choisissez votre template, vos couleurs de marque, votre logo et vos textes. Des modifications illimitees sont incluses dans tous les plans.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>Y a-t-il un engagement de duree ?</span><div class="faq-icon">+</div></div>
+        <div class="faq-a">Non. Les plans Starter et Pro sont mensuels et resiliables a tout moment. Le plan Elite propose une tarification annuelle avantageuse avec un SLA garanti.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cta-section" id="contact">
+  <div class="container">
+    <div class="cta-box">
+      <div class="cta-inner">
+        <h2>Elevez la presence digitale de votre agence.</h2>
+        <p>Rejoignez 200+ agences d'elite en Espagne, Portugal et France qui utilisent DATAhome pour dominer le marche du luxe immobilier.</p>
+        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+          <a href="templates.html" class="btn btn-primary" style="padding:16px 40px;font-size:16px">Voir les templates premium</a>
+          <a href="mailto:contact@data-home.app" class="btn btn-secondary" style="padding:16px 40px;font-size:16px">Nous contacter</a>
         </div>
       </div>
     </div>
   </div>
-  <div class="py-8 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4" style="border-top:1px solid rgba(255,255,255,.08)">
-    <span class="font-body-md text-body-md" style="color:rgba(255,255,255,.4)">© 2025 DATAhome. Tous droits réservés.</span>
-    <div class="flex gap-6">
-      <span class="material-symbols-outlined cursor-pointer hover:text-white transition-colors" style="color:rgba(255,255,255,.4)">language</span>
-      <span class="material-symbols-outlined cursor-pointer hover:text-white transition-colors" style="color:rgba(255,255,255,.4)">share</span>
+</section>
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/DH_V2.jpg" alt="DATAhome" style="height:36px;border-radius:8px;object-fit:contain"/>
+        <p>Sites web premium pour les marches immobiliers les plus prestigieux d'Europe. Livraison en 24h.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Templates</h4>
+        <a href="templates.html">La Mediterranee</a>
+        <a href="templates.html">Collection Prestige</a>
+        <a href="templates.html">Portal Catalogue</a>
+        <a href="templates.html">Tierra Nature</a>
+      </div>
+      <div class="footer-col">
+        <h4>Regions</h4>
+        <a href="#">Costa Blanca</a>
+        <a href="#">Costa del Sol</a>
+        <a href="#">Algarve, Portugal</a>
+        <a href="#">Cote d'Azur</a>
+      </div>
+      <div class="footer-col">
+        <h4>Partenariat</h4>
+        <a href="#">Affilies</a>
+        <a href="#">Plans agences</a>
+        <a href="#">Support</a>
+        <a href="onboarding.html">Essai gratuit</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="privacy.html">Confidentialite</a>
+        <a href="legal.html">CGU</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&#169; 2025 <span class="acc">DATAhome</span>. Tous droits reserves.</span>
+      <span>Fait avec amour pour les agences immobilieres premium</span>
     </div>
   </div>
 </footer>
-
+<script>
+function toggleFaq(el){
+  var item=el.parentElement;
+  var isOpen=item.classList.contains('active');
+  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('active')});
+  if(!isOpen)item.classList.add('active');
+}
+document.querySelector('.faq-item .faq-q').click();
+</script>
 </body></html>
