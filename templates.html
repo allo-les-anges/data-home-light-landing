@@ -207,7 +207,7 @@
     ];
 
     function previewUrl(template) {
-      return `${PREVIEW_BASE}/${template.id}`;
+      return `${PREVIEW_BASE}/${template.id}?source=landing`;
     }
 
     function propertyCard(template, image, index) {
@@ -324,7 +324,7 @@
     const modalClose = document.getElementById("modalClose");
 
     function openPreview(templateId, name) {
-      const url = `${PREVIEW_BASE}/${templateId}`;
+      const url = `${PREVIEW_BASE}/${templateId}?source=landing`;
       modalTitle.textContent = `Previsualisation - ${name}`;
       modalOpen.href = url;
       frame.src = url;

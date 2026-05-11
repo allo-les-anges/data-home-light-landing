@@ -743,7 +743,7 @@ function toggleFaq(el) {
 const TEMPLATE_PREVIEW_SLUG = "demo-datahome";
 function templatePreviewUrl(templateId) {
   const previewLang = T[lang] ? lang : "en";
-  return `https://datahome.vercel.app/${previewLang}/${TEMPLATE_PREVIEW_SLUG}/template-preview/${templateId}`;
+  return `https://datahome.vercel.app/${previewLang}/${TEMPLATE_PREVIEW_SLUG}/template-preview/${templateId}?source=landing`;
 }
 const HOME_TEMPLATES = [
   { id:"riviera", name:"Riviera", tier:"base", priceKey:"tplIncluded", color:"#C8A84E", image:"https://medianewbuild.com/file/hh-media-bucket/developments_v2/87929424/media/images/outdoor/1.jpg", descriptionKey:"tplDescRiviera" },
