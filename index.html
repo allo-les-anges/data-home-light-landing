@@ -457,49 +457,43 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
       <h2 data-i18n="price_h">Tarifs transparents</h2>
       <p data-i18n="price_sub">Choisissez le plan adapté à votre agence.</p>
     </div>
-    <div class="billing-toggle">
-      <span class="tog-lbl" id="tog-lbl-monthly" data-i18n="tog_monthly">Mensuel</span>
-      <button class="toggle-switch" id="billing-toggle" onclick="toggleBilling()" aria-label="Toggle billing period"><span class="toggle-knob"></span></button>
-      <span class="tog-lbl active" id="tog-lbl-annual" data-i18n="tog_annual">Annuel</span>
-      <span class="tog-save" data-i18n="tog_save">Économisez 17%</span>
-    </div>
     <div class="pricing-grid">
       <div class="pricing-card">
-        <div class="pricing-name" style="color:var(--blue)" data-i18n="p1n">SILVER</div>
-        <div class="pricing-price"><span data-i18n="p1p" data-monthly="99" data-annual="990">990</span>&nbsp;<span>€<span class="per-m" style="display:none" data-i18n="per_month"> / mois</span></span></div>
-        <div class="pricing-sub" data-i18n="p1s">Paiement unique</div>
+        <div class="pricing-name" style="color:var(--blue)" data-i18n="p1n">SITE VITRINE</div>
+        <div class="pricing-price"><span data-i18n="p1p">50</span>&nbsp;<span>€<span class="per-m" data-i18n="per_month"> / mois</span></span></div>
+        <div class="pricing-sub" data-i18n="p1s">Hors flux XML</div>
         <ul class="pf">
-          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p1f1">Site 1 page</span></li>
-          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p1f2">CRM connecté</span></li>
-          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p1f3">Domaine inclus</span></li>
-          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p1f4">Support 30 jours</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p1f1">Site public professionnel</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p1f2">Mon espace client</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p1f3">Hébergement & HTTPS</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p1f4">Mini CRM Leads inclus</span></li>
         </ul>
         <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="btn btn-secondary" style="width:100%" data-i18n="p1cta">Commencer</button>
       </div>
       <div class="pricing-card featured">
-        <div class="pricing-badge" data-i18n="p2badge">Le plus populaire</div>
-        <div class="pricing-name" style="color:var(--gold)" data-i18n="p2n">GOLD</div>
-        <div class="pricing-price"><span data-i18n="p2p" data-monthly="149" data-annual="1 490">1 490</span>&nbsp;<span>€<span class="per-m" style="display:none" data-i18n="per_month"> / mois</span></span></div>
-        <div class="pricing-sub" data-i18n="p2s">Paiement unique</div>
+        <div class="pricing-badge" data-i18n="p2badge">Option catalogue</div>
+        <div class="pricing-name" style="color:var(--gold)" data-i18n="p2n">FLUX XML</div>
+        <div class="pricing-price"><span data-i18n="p2p">+50</span>&nbsp;<span>€<span class="per-m" data-i18n="per_month"> / mois</span></span></div>
+        <div class="pricing-sub" data-i18n="p2s">Par source XML connectée</div>
         <ul class="pf">
-          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p2f1">Site multipage</span></li>
-          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p2f2">CRM connecté</span></li>
-          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p2f3">Blog intégré</span></li>
-          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p2f4">Multilingue 8 langues</span></li>
-          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p2f5">Support 90 jours</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p2f1">Import des biens depuis XML</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p2f2">Catalogue complet sur le site</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p2f3">Pagination & recherche avancée</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p2f4">Biens floutés après les premiers résultats</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p2f5">Connexion gérée par DataHome</span></li>
         </ul>
         <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="btn btn-primary" style="width:100%" data-i18n="p2cta">Commencer</button>
       </div>
       <div class="pricing-card">
-        <div class="pricing-name" style="color:var(--purple)" data-i18n="p3n">PLATINUM</div>
-        <div class="pricing-price"><span data-i18n="p3p" data-monthly="249" data-annual="2 490">2 490</span>&nbsp;<span>€<span class="per-m" style="display:none" data-i18n="per_month"> / mois</span></span></div>
-        <div class="pricing-sub" data-i18n="p3s">Paiement unique</div>
+        <div class="pricing-name" style="color:var(--purple)" data-i18n="p3n">MODULES</div>
+        <div class="pricing-price"><span data-i18n="p3p">dès 2</span>&nbsp;<span>€<span class="per-m" data-i18n="per_month"> / mois</span></span></div>
+        <div class="pricing-sub" data-i18n="p3s">Activez uniquement ce dont vous avez besoin</div>
         <ul class="pf">
-          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p3f1">Site sur-mesure</span></li>
-          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p3f2">CRM connecté</span></li>
-          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p3f3">Module réservations</span></li>
-          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p3f4">Dashboard analytics</span></li>
-          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p3f5">Support 12 mois</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p3f1">Chatbot IA : 39 €/mois</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p3f2">Langue supplémentaire : 2 €/mois</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p3f3">SEO avancé : 19 €/mois</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p3f4">Hero vidéo : 9 €/mois</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p3f5">Visites immersives : 29 €/mois</span></li>
         </ul>
         <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="btn btn-secondary" style="width:100%" data-i18n="p3cta">Commencer</button>
       </div>
@@ -680,6 +674,66 @@ const FEATURE_TEXT = {
 };
 Object.keys(FEATURE_TEXT).forEach((lc) => Object.assign(T[lc] || T.fr, FEATURE_TEXT[lc]));
 
+const PRICING_TEXT = {
+  fr: {
+    price_h:"Tarifs simples et modulaires", price_sub:"Un site à 50 €/mois. Le flux XML est une option claire, facturée séparément.",
+    p1n:"SITE VITRINE", p1p:"50", p1s:"Hors flux XML", p1f1:"Site public professionnel", p1f2:"Mon espace client", p1f3:"Hébergement & HTTPS", p1f4:"Mini CRM Leads inclus", p1cta:"Commencer",
+    p2n:"FLUX XML", p2p:"+50", p2s:"Par source XML connectée", p2badge:"Option catalogue", p2f1:"Import des biens depuis XML", p2f2:"Catalogue complet sur le site", p2f3:"Pagination & recherche avancée", p2f4:"Biens floutés après les premiers résultats", p2f5:"Connexion gérée par DataHome", p2cta:"Connecter mon XML",
+    p3n:"MODULES", p3p:"dès 2", p3s:"Activez uniquement ce dont vous avez besoin", p3f1:"Chatbot IA : 39 €/mois", p3f2:"Langue supplémentaire : 2 €/mois", p3f3:"SEO avancé : 19 €/mois", p3f4:"Hero vidéo : 9 €/mois", p3f5:"Visites immersives : 29 €/mois", p3cta:"Voir les modules",
+    per_month:"/ mois"
+  },
+  en: {
+    price_h:"Simple modular pricing", price_sub:"A website for €50/month. XML feeds are clear optional add-ons billed separately.",
+    p1n:"WEBSITE", p1p:"50", p1s:"XML feed not included", p1f1:"Professional public website", p1f2:"Client workspace", p1f3:"Hosting & HTTPS", p1f4:"Mini CRM Leads included", p1cta:"Get started",
+    p2n:"XML FEED", p2p:"+50", p2s:"Per connected XML source", p2badge:"Catalogue option", p2f1:"Import listings from XML", p2f2:"Full catalogue on the website", p2f3:"Pagination & advanced search", p2f4:"Blurred listings after the first results", p2f5:"Connection managed by DataHome", p2cta:"Connect my XML",
+    p3n:"MODULES", p3p:"from 2", p3s:"Activate only what you need", p3f1:"AI Chatbot: €39/month", p3f2:"Extra language: €2/month", p3f3:"Advanced SEO: €19/month", p3f4:"Hero video: €9/month", p3f5:"Immersive tours: €29/month", p3cta:"View modules",
+    per_month:"/ month"
+  },
+  es: {
+    price_h:"Precios simples y modulares", price_sub:"Un sitio web por 50 €/mes. El XML es una opción clara, facturada por separado.",
+    p1n:"SITIO WEB", p1p:"50", p1s:"Sin flujo XML", p1f1:"Sitio público profesional", p1f2:"Espacio cliente", p1f3:"Hosting & HTTPS", p1f4:"Mini CRM Leads incluido", p1cta:"Empezar",
+    p2n:"FLUJO XML", p2p:"+50", p2s:"Por fuente XML conectada", p2badge:"Opción catálogo", p2f1:"Importación de propiedades desde XML", p2f2:"Catálogo completo en el sitio", p2f3:"Paginación y búsqueda avanzada", p2f4:"Propiedades difuminadas tras los primeros resultados", p2f5:"Conexión gestionada por DataHome", p2cta:"Conectar mi XML",
+    p3n:"MÓDULOS", p3p:"desde 2", p3s:"Activa solo lo que necesitas", p3f1:"Chatbot IA: 39 €/mes", p3f2:"Idioma adicional: 2 €/mes", p3f3:"SEO avanzado: 19 €/mes", p3f4:"Vídeo hero: 9 €/mes", p3f5:"Visitas inmersivas: 29 €/mes", p3cta:"Ver módulos",
+    per_month:"/ mes"
+  },
+  de: {
+    price_h:"Einfache modulare Preise", price_sub:"Eine Website für 50 €/Monat. XML-Feeds sind klare optionale Add-ons.",
+    p1n:"WEBSITE", p1p:"50", p1s:"Ohne XML-Feed", p1f1:"Professionelle öffentliche Website", p1f2:"Kundenbereich", p1f3:"Hosting & HTTPS", p1f4:"Mini CRM Leads inklusive", p1cta:"Starten",
+    p2n:"XML-FEED", p2p:"+50", p2s:"Pro verbundener XML-Quelle", p2badge:"Katalogoption", p2f1:"Objekte aus XML importieren", p2f2:"Vollständiger Katalog auf der Website", p2f3:"Paginierung & erweiterte Suche", p2f4:"Verpixelte Objekte nach den ersten Ergebnissen", p2f5:"Verbindung durch DataHome verwaltet", p2cta:"XML verbinden",
+    p3n:"MODULE", p3p:"ab 2", p3s:"Aktivieren Sie nur, was Sie brauchen", p3f1:"KI-Chatbot: 39 €/Monat", p3f2:"Zusätzliche Sprache: 2 €/Monat", p3f3:"Erweitertes SEO: 19 €/Monat", p3f4:"Hero-Video: 9 €/Monat", p3f5:"Immersive Touren: 29 €/Monat", p3cta:"Module ansehen",
+    per_month:"/ Monat"
+  },
+  nl: {
+    price_h:"Eenvoudige modulaire prijzen", price_sub:"Een website voor €50/maand. XML-feeds zijn duidelijke opties apart gefactureerd.",
+    p1n:"WEBSITE", p1p:"50", p1s:"Zonder XML-feed", p1f1:"Professionele publieke website", p1f2:"Client workspace", p1f3:"Hosting & HTTPS", p1f4:"Mini CRM Leads inbegrepen", p1cta:"Starten",
+    p2n:"XML-FEED", p2p:"+50", p2s:"Per gekoppelde XML-bron", p2badge:"Catalogusoptie", p2f1:"Panden importeren via XML", p2f2:"Volledige catalogus op de website", p2f3:"Paginatie & geavanceerd zoeken", p2f4:"Vage panden na de eerste resultaten", p2f5:"Koppeling beheerd door DataHome", p2cta:"Mijn XML koppelen",
+    p3n:"MODULES", p3p:"vanaf 2", p3s:"Activeer alleen wat u nodig heeft", p3f1:"AI Chatbot: €39/maand", p3f2:"Extra taal: €2/maand", p3f3:"Geavanceerde SEO: €19/maand", p3f4:"Hero-video: €9/maand", p3f5:"Immersieve tours: €29/maand", p3cta:"Bekijk modules",
+    per_month:"/ maand"
+  },
+  pt: {
+    price_h:"Preços simples e modulares", price_sub:"Um site por 50 €/mês. Os feeds XML são opções claras cobradas separadamente.",
+    p1n:"SITE", p1p:"50", p1s:"Sem feed XML", p1f1:"Site público profissional", p1f2:"Espaço cliente", p1f3:"Alojamento & HTTPS", p1f4:"Mini CRM Leads incluído", p1cta:"Começar",
+    p2n:"FEED XML", p2p:"+50", p2s:"Por fonte XML ligada", p2badge:"Opção catálogo", p2f1:"Importar imóveis por XML", p2f2:"Catálogo completo no site", p2f3:"Paginação e pesquisa avançada", p2f4:"Imóveis desfocados após os primeiros resultados", p2f5:"Ligação gerida pela DataHome", p2cta:"Ligar o meu XML",
+    p3n:"MÓDULOS", p3p:"desde 2", p3s:"Ative apenas o que precisa", p3f1:"Chatbot IA: 39 €/mês", p3f2:"Idioma adicional: 2 €/mês", p3f3:"SEO avançado: 19 €/mês", p3f4:"Vídeo hero: 9 €/mês", p3f5:"Visitas imersivas: 29 €/mês", p3cta:"Ver módulos",
+    per_month:"/ mês"
+  },
+  ru: {
+    price_h:"Простые модульные тарифы", price_sub:"Сайт за 50 €/мес. XML-фид подключается отдельно за прозрачную стоимость.",
+    p1n:"САЙТ", p1p:"50", p1s:"Без XML-фида", p1f1:"Профессиональный публичный сайт", p1f2:"Клиентский кабинет", p1f3:"Хостинг и HTTPS", p1f4:"Mini CRM Leads включен", p1cta:"Начать",
+    p2n:"XML-ФИД", p2p:"+50", p2s:"За каждый подключенный XML-источник", p2badge:"Опция каталога", p2f1:"Импорт объектов из XML", p2f2:"Полный каталог на сайте", p2f3:"Пагинация и расширенный поиск", p2f4:"Размытые объекты после первых результатов", p2f5:"Подключение управляется DataHome", p2cta:"Подключить XML",
+    p3n:"МОДУЛИ", p3p:"от 2", p3s:"Подключайте только нужные функции", p3f1:"AI Chatbot: 39 €/мес", p3f2:"Дополнительный язык: 2 €/мес", p3f3:"Расширенный SEO: 19 €/мес", p3f4:"Hero video: 9 €/мес", p3f5:"Иммерсивные туры: 29 €/мес", p3cta:"Смотреть модули",
+    per_month:"/ мес"
+  },
+  pl: {
+    price_h:"Proste ceny modułowe", price_sub:"Strona za 50 €/mies. Feed XML to jasna opcja rozliczana osobno.",
+    p1n:"STRONA", p1p:"50", p1s:"Bez feedu XML", p1f1:"Profesjonalna publiczna strona", p1f2:"Panel klienta", p1f3:"Hosting i HTTPS", p1f4:"Mini CRM Leads w cenie", p1cta:"Zacznij",
+    p2n:"FEED XML", p2p:"+50", p2s:"Za podłączone źródło XML", p2badge:"Opcja katalogu", p2f1:"Import ofert z XML", p2f2:"Pełny katalog na stronie", p2f3:"Paginacja i zaawansowane wyszukiwanie", p2f4:"Rozmyte oferty po pierwszych wynikach", p2f5:"Połączenie zarządzane przez DataHome", p2cta:"Podłącz XML",
+    p3n:"MODUŁY", p3p:"od 2", p3s:"Aktywuj tylko to, czego potrzebujesz", p3f1:"AI Chatbot: 39 €/mies", p3f2:"Dodatkowy język: 2 €/mies", p3f3:"Zaawansowane SEO: 19 €/mies", p3f4:"Hero video: 9 €/mies", p3f5:"Wizyty immersyjne: 29 €/mies", p3cta:"Zobacz moduły",
+    per_month:"/ mies"
+  }
+};
+Object.keys(PRICING_TEXT).forEach((lc) => Object.assign(T[lc] || T.fr, PRICING_TEXT[lc]));
+
 const CHAT_NAV_TEXT = {
   fr:{nChat:"Chatbot"},
   en:{nChat:"AI Chatbot"},
@@ -695,28 +749,30 @@ Object.keys(CHAT_NAV_TEXT).forEach((lc) => Object.assign(T[lc] || T.fr, CHAT_NAV
 let billingMode = 'annual';
 
 function toggleBilling() {
-  billingMode = billingMode === 'annual' ? 'monthly' : 'annual';
+  billingMode = 'monthly';
   updatePricingDisplay();
 }
 
 function updatePricingDisplay() {
-  const isMonthly = billingMode === 'monthly';
   const d = T[lang] || T.fr;
-  document.getElementById('billing-toggle').classList.toggle('monthly', isMonthly);
-  document.getElementById('tog-lbl-monthly').classList.toggle('active', isMonthly);
-  document.getElementById('tog-lbl-annual').classList.toggle('active', !isMonthly);
-  const priceMap = {p1p:{m:'99',a:'990'}, p2p:{m:'149',a:'1 490'}, p3p:{m:'249',a:'2 490'}};
+  const toggle = document.getElementById('billing-toggle');
+  if (toggle) toggle.classList.add('monthly');
+  const monthlyLabel = document.getElementById('tog-lbl-monthly');
+  const annualLabel = document.getElementById('tog-lbl-annual');
+  if (monthlyLabel) monthlyLabel.classList.add('active');
+  if (annualLabel) annualLabel.classList.remove('active');
+  const priceMap = {p1p:d.p1p || '50', p2p:d.p2p || '+50', p3p:d.p3p || 'dès 2'};
   Object.entries(priceMap).forEach(([key,v]) => {
     const el = document.querySelector('[data-i18n="'+key+'"]');
-    if (el) el.textContent = isMonthly ? v.m : v.a;
+    if (el) el.textContent = v;
   });
   document.querySelectorAll('.per-m').forEach(el => {
-    el.style.display = isMonthly ? 'inline' : 'none';
+    el.style.display = 'inline';
     el.textContent = ' ' + (d.per_month || '/ mois');
   });
   ['p1s','p2s','p3s'].forEach(key => {
     const el = document.querySelector('[data-i18n="'+key+'"]');
-    if (el) el.textContent = isMonthly ? (d.sub_monthly || 'par mois') : (d[key] || '');
+    if (el) el.textContent = d[key] || '';
   });
 }
 
