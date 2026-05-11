@@ -154,27 +154,46 @@ h1{font-family:'Montserrat',sans-serif;font-size:clamp(40px,6vw,80px);line-heigh
 .villa-info p{font-size:13px;color:#777;display:flex;align-items:center;gap:4px}
 /* PRICING */
 .pricing{padding:96px 0;background:#fff}
-.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:960px;margin:0 auto}
-.pricing-card{border:2px solid #e5e7eb;border-radius:20px;padding:36px;transition:all .25s}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto}
+.pricing-card{border:2px solid #e5e7eb;border-radius:20px;padding:36px;transition:all .25s;display:flex;flex-direction:column}
 .pricing-card:hover{box-shadow:0 16px 48px rgba(0,0,0,.1)}
-.pricing-card.featured{border-color:var(--gold);box-shadow:0 8px 32px rgba(245,200,66,.25)}
+.pricing-card.featured{border-color:var(--pink);border-width:2px;box-shadow:0 12px 48px rgba(215,105,169,.22);transform:translateY(-6px)}
 .pricing-name{font-size:13px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px}
-.pricing-price{font-size:48px;font-weight:900;line-height:1;margin-bottom:6px}
-.pricing-price span{font-size:16px;font-weight:500;color:#888}
-.pricing-sub{font-size:13px;color:#888;margin-bottom:28px}
-.billing-toggle{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:40px;flex-wrap:wrap}
-.toggle-switch{position:relative;width:52px;height:28px;border-radius:999px;border:none;cursor:pointer;background:#e5e7eb;transition:background .25s;flex-shrink:0;padding:0}
-.toggle-switch.monthly{background:var(--blue)}
-.toggle-knob{position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.25);transition:transform .25s;pointer-events:none}
-.toggle-switch.monthly .toggle-knob{transform:translateX(24px)}
-.tog-lbl{font-size:14px;font-weight:600;color:#aaa;transition:color .2s}
-.tog-lbl.active{color:var(--dark)}
-.tog-save{font-size:12px;font-weight:700;color:#fff;background:var(--green);border-radius:999px;padding:3px 10px}
-.per-m{font-size:18px;font-weight:500;color:#aaa;margin-left:2px}
-.pricing-badge{display:inline-block;background:var(--gold);color:var(--dark);font-size:11px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;padding:4px 12px;border-radius:999px;margin-bottom:20px}
-.pf{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:32px}
+.pricing-price-wrap{margin-bottom:28px}
+.pricing-price{font-size:48px;font-weight:900;line-height:1;display:flex;align-items:baseline;gap:2px}
+.pricing-price .price-val{transition:all .2s}
+.pricing-price .price-currency{font-size:22px;font-weight:700;color:#444;margin-left:1px}
+.per-m{font-size:16px;font-weight:500;color:#aaa;margin-left:4px}
+.price-billed{font-size:12px;color:var(--green);font-weight:700;margin-top:4px;transition:opacity .2s}
+.price-setup{font-size:12px;color:#aaa;margin-top:4px}
+.billing-toggle{display:flex;align-items:center;justify-content:center;gap:0;margin-bottom:48px;background:#f3f4f6;border-radius:12px;padding:4px;width:fit-content;margin-left:auto;margin-right:auto}
+.tog-btn{padding:10px 24px;border:none;background:transparent;border-radius:9px;font-size:14px;font-weight:700;cursor:pointer;color:#888;transition:all .2s;white-space:nowrap}
+.tog-btn.active{background:#fff;color:var(--dark);box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.pricing-badge{display:inline-block;background:var(--btn-grad);color:#fff;font-size:11px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;padding:5px 14px;border-radius:999px;margin-bottom:16px}
+.pricing-badge--agency{background:linear-gradient(90deg,var(--blue),var(--purple))}
+.pf{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:28px;flex:1}
 .pf li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#444;line-height:1.5}
 .pf li .ck{font-weight:900;font-size:14px;flex-shrink:0;margin-top:1px}
+.feat-badge{display:inline-block;background:var(--green);color:#fff;font-size:10px;font-weight:900;padding:2px 8px;border-radius:999px;margin-left:6px;vertical-align:middle}
+.btn-outline{border:2px solid #e5e7eb;background:#fff;color:var(--dark);font-weight:700;font-size:14px;border-radius:8px;transition:all .2s}
+.btn-outline:hover{border-color:var(--blue);color:var(--blue)}
+/* ADD-ONS */
+.addons-section{max-width:1100px;margin:56px auto 0}
+.addons-title{font-size:20px;font-weight:900;text-align:center;margin-bottom:24px;color:var(--dark)}
+.addons-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.addon-card{border:1px solid #e5e7eb;border-radius:14px;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;background:#fafafa;transition:border-color .2s}
+.addon-card:hover{border-color:var(--blue)}
+.addon-name{font-size:14px;font-weight:700;color:var(--dark)}
+.addon-price{font-size:13px;font-weight:800;color:var(--blue);white-space:nowrap}
+@media(max-width:900px){
+  .pricing-grid{grid-template-columns:1fr;max-width:480px}
+  .pricing-card.featured{transform:none;order:-1}
+  .addons-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .addons-grid{grid-template-columns:1fr}
+  .billing-toggle{width:100%}
+}
 /* TESTIMONIALS */
 .testimonials{padding:96px 0;background:linear-gradient(135deg,var(--blue),var(--pink))}
 .testimonials .section-head h2{color:#fff}
@@ -407,48 +426,104 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
 <section class="pricing" id="pricing">
   <div class="container">
     <div class="section-head">
-      <h2 data-i18n="price_h">Tarifs transparents</h2>
-      <p data-i18n="price_sub">Choisissez le plan adapté à votre agence.</p>
+      <span class="eyebrow" data-i18n="price_badge">Tarification simple et évolutive</span>
+      <h2 data-i18n="price_h">Un plan pour chaque étape de votre croissance.</h2>
+      <p data-i18n="price_sub">Sans frais cachés. Résiliable à tout moment.</p>
     </div>
+    <!-- Billing toggle -->
+    <div class="billing-toggle">
+      <button class="tog-btn active" id="tog-monthly" onclick="setBilling('monthly')" data-i18n="tog_monthly">Mensuel</button>
+      <button class="tog-btn" id="tog-annual" onclick="setBilling('annual')" data-i18n="tog_annual">Annuel (-20%)</button>
+    </div>
+    <!-- Plans -->
     <div class="pricing-grid">
+      <!-- STARTER -->
       <div class="pricing-card">
-        <div class="pricing-name" style="color:var(--blue)" data-i18n="p1n">SITE VITRINE</div>
-        <div class="pricing-price"><span data-i18n="p1p">50</span>&nbsp;<span>€<span class="per-m" data-i18n="per_month"> / mois</span></span></div>
-        <div class="pricing-sub" data-i18n="p1s">Hors flux XML</div>
+        <div class="pricing-name" style="color:var(--blue)" data-i18n="p1n">STARTER</div>
+        <div class="pricing-price-wrap">
+          <div class="pricing-price">
+            <span class="price-val" data-monthly="49" data-annual="39">49</span><span class="price-currency">€</span><span class="per-m" data-i18n="per_month">/mois</span>
+          </div>
+          <div class="price-billed" data-i18n="p1_billed" style="display:none">Facturé 468€/an</div>
+          <div class="price-setup" data-i18n="p1_setup">Frais d'installation : 149€ unique</div>
+        </div>
         <ul class="pf">
-          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p1f1">Site public professionnel</span></li>
-          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p1f2">Mon espace client</span></li>
-          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p1f3">Hébergement & HTTPS</span></li>
-          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p1f4">Mini CRM Leads inclus</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p1f1">Site vitrine professionnel</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p1f2">1 flux XML inclus</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p1f3">500 biens maximum</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p1f4">Mini CRM leads gratuit</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p1f5">2 langues (FR + 1 au choix)</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p1f6">6 templates premium</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p1f7">Sous-domaine .data-home.io</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p1f8">500 crédits IA/mois</span></li>
+          <li><span class="ck" style="color:#ccc">✗</span><span data-i18n="p1x1" style="color:#bbb">Chatbot OpenAI</span></li>
+          <li><span class="ck" style="color:#ccc">✗</span><span data-i18n="p1x2" style="color:#bbb">Domaine personnalisé</span></li>
+          <li><span class="ck" style="color:#ccc">✗</span><span data-i18n="p1x3" style="color:#bbb">Landing pages IA</span></li>
+          <li><span class="ck" style="color:#ccc">✗</span><span data-i18n="p1x4" style="color:#bbb">Traductions automatiques</span></li>
         </ul>
-        <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="btn btn-secondary" style="width:100%" data-i18n="p1cta">Commencer</button>
+        <a href="/onboarding.html" class="btn btn-outline" style="width:100%;text-align:center" data-i18n="p1cta">Démarrer l'essai</a>
       </div>
+      <!-- PRO (featured) -->
       <div class="pricing-card featured">
-        <div class="pricing-badge" data-i18n="p2badge">Option catalogue</div>
-        <div class="pricing-name" style="color:var(--gold)" data-i18n="p2n">FLUX XML</div>
-        <div class="pricing-price"><span data-i18n="p2p">+50</span>&nbsp;<span>€<span class="per-m" data-i18n="per_month"> / mois</span></span></div>
-        <div class="pricing-sub" data-i18n="p2s">Par source XML connectée</div>
+        <div class="pricing-badge" data-i18n="p2badge">Le plus choisi</div>
+        <div class="pricing-name" style="color:var(--pink)" data-i18n="p2n">PRO</div>
+        <div class="pricing-price-wrap">
+          <div class="pricing-price">
+            <span class="price-val" data-monthly="99" data-annual="79">99</span><span class="price-currency">€</span><span class="per-m" data-i18n="per_month">/mois</span>
+          </div>
+          <div class="price-billed" data-i18n="p2_billed" style="display:none">Facturé 948€/an</div>
+          <div class="price-setup" data-i18n="p2_setup">Frais d'installation : 199€ unique</div>
+        </div>
         <ul class="pf">
-          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p2f1">Import des biens depuis XML</span></li>
-          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p2f2">Catalogue complet sur le site</span></li>
-          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p2f3">Pagination & recherche avancée</span></li>
-          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p2f4">Biens floutés après les premiers résultats</span></li>
-          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p2f5">Connexion gérée par DataHome</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p2f1">Tout Starter inclus</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p2f2">Biens illimités</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p2f3">8 langues automatiques</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p2f4">Domaine personnalisé</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p2f5">Chatbot OpenAI inclus</span><span class="feat-badge" data-i18n="p2f5badge">Inclus</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p2f6">2 000 crédits IA/mois</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p2f7">3 landing pages IA/mois</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p2f8">WhatsApp intégré</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p2f9">HabiHub natif</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p2f10">Analytics avancées</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p2f11">Support prioritaire</span></li>
         </ul>
-        <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="btn btn-primary" style="width:100%" data-i18n="p2cta">Commencer</button>
+        <a href="/onboarding.html" class="btn btn-primary" style="width:100%;text-align:center" data-i18n="p2cta">Démarrer l'essai</a>
       </div>
+      <!-- AGENCY -->
       <div class="pricing-card">
-        <div class="pricing-name" style="color:var(--purple)" data-i18n="p3n">MODULES</div>
-        <div class="pricing-price"><span data-i18n="p3p">dès 2</span>&nbsp;<span>€<span class="per-m" data-i18n="per_month"> / mois</span></span></div>
-        <div class="pricing-sub" data-i18n="p3s">Activez uniquement ce dont vous avez besoin</div>
+        <div class="pricing-badge pricing-badge--agency" data-i18n="p3badge">Meilleur ROI</div>
+        <div class="pricing-name" style="color:var(--purple)" data-i18n="p3n">AGENCY</div>
+        <div class="pricing-price-wrap">
+          <div class="pricing-price">
+            <span class="price-val" data-monthly="179" data-annual="143">179</span><span class="price-currency">€</span><span class="per-m" data-i18n="per_month">/mois</span>
+          </div>
+          <div class="price-billed" data-i18n="p3_billed" style="display:none">Facturé 1 716€/an</div>
+          <div class="price-setup" data-i18n="p3_setup">Frais d'installation : 299€ unique</div>
+        </div>
         <ul class="pf">
-          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p3f1">Chatbot IA : 39 €/mois</span></li>
-          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p3f2">Langue supplémentaire : 2 €/mois</span></li>
-          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p3f3">SEO avancé : 19 €/mois</span></li>
-          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p3f4">Hero vidéo : 9 €/mois</span></li>
-          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p3f5">Visites immersives : 29 €/mois</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p3f1">Tout Pro inclus</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p3f2">Landing pages IA illimitées</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p3f3">5 000 crédits IA/mois</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p3f4">Visites immersives 3D</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p3f5">Sync CRM externe (Zoho/HubSpot)</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p3f6">Multi-domaines</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p3f7">Marque blanche possible</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p3f8">Onboarding dédié 2h</span></li>
+          <li><span class="ck" style="color:var(--green)">✓</span><span data-i18n="p3f9">Support téléphonique</span></li>
         </ul>
-        <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="btn btn-secondary" style="width:100%" data-i18n="p3cta">Commencer</button>
+        <a href="mailto:contact@data-home.app" class="btn btn-outline" style="width:100%;text-align:center" data-i18n="p3cta">Contacter l'équipe</a>
+      </div>
+    </div>
+    <!-- ADD-ONS -->
+    <div class="addons-section">
+      <h3 class="addons-title" data-i18n="addons_title">Modules à la carte</h3>
+      <div class="addons-grid">
+        <div class="addon-card"><span class="addon-name" data-i18n="addon1_name">Flux XML supplémentaire</span><span class="addon-price" data-i18n="addon1_price">+30€/source/mois</span></div>
+        <div class="addon-card"><span class="addon-name" data-i18n="addon2_name">Langue supplémentaire</span><span class="addon-price" data-i18n="addon2_price">+2€/langue/mois</span></div>
+        <div class="addon-card"><span class="addon-name" data-i18n="addon3_name">Crédits IA</span><span class="addon-price" data-i18n="addon3_price">+9€/1 000 crédits/mois</span></div>
+        <div class="addon-card"><span class="addon-name" data-i18n="addon4_name">SEO avancé</span><span class="addon-price" data-i18n="addon4_price">+19€/mois</span></div>
+        <div class="addon-card"><span class="addon-name" data-i18n="addon5_name">Vidéo hero</span><span class="addon-price" data-i18n="addon5_price">+9€/mois</span></div>
+        <div class="addon-card"><span class="addon-name" data-i18n="addon6_name">Landing pages IA</span><span class="addon-price" data-i18n="addon6_price">+19€/mois (+5 pages)</span></div>
       </div>
     </div>
   </div>
@@ -630,60 +705,276 @@ Object.keys(FEATURE_TEXT).forEach((lc) => Object.assign(T[lc] || T.fr, FEATURE_T
 
 const PRICING_TEXT = {
   fr: {
-    price_h:"Tarifs simples et modulaires", price_sub:"Un site à 50 €/mois. Le flux XML est une option claire, facturée séparément.",
-    p1n:"SITE VITRINE", p1p:"50", p1s:"Hors flux XML", p1f1:"Site public professionnel", p1f2:"Mon espace client", p1f3:"Hébergement & HTTPS", p1f4:"Mini CRM Leads inclus", p1cta:"Commencer",
-    p2n:"FLUX XML", p2p:"+50", p2s:"Par source XML connectée", p2badge:"Option catalogue", p2f1:"Import des biens depuis XML", p2f2:"Catalogue complet sur le site", p2f3:"Pagination & recherche avancée", p2f4:"Biens floutés après les premiers résultats", p2f5:"Connexion gérée par DataHome", p2cta:"Connecter mon XML",
-    p3n:"MODULES", p3p:"dès 2", p3s:"Activez uniquement ce dont vous avez besoin", p3f1:"Chatbot IA : 39 €/mois", p3f2:"Langue supplémentaire : 2 €/mois", p3f3:"SEO avancé : 19 €/mois", p3f4:"Hero vidéo : 9 €/mois", p3f5:"Visites immersives : 29 €/mois", p3cta:"Voir les modules",
-    per_month:"/ mois"
+    price_badge:"Tarification simple et évolutive",
+    price_h:"Un plan pour chaque étape de votre croissance.",
+    price_sub:"Sans frais cachés. Résiliable à tout moment.",
+    tog_monthly:"Mensuel", tog_annual:"Annuel (-20%)",
+    p1n:"STARTER",
+    p1_setup:"Frais d'installation : 149€ unique", p1_billed:"Facturé 468€/an",
+    p1f1:"Site vitrine professionnel", p1f2:"1 flux XML inclus", p1f3:"500 biens maximum",
+    p1f4:"Mini CRM leads gratuit", p1f5:"2 langues (FR + 1 au choix)", p1f6:"6 templates premium",
+    p1f7:"Sous-domaine .data-home.io", p1f8:"500 crédits IA/mois",
+    p1x1:"Chatbot OpenAI", p1x2:"Domaine personnalisé", p1x3:"Landing pages IA", p1x4:"Traductions automatiques",
+    p1cta:"Démarrer l'essai",
+    p2n:"PRO", p2badge:"Le plus choisi",
+    p2_setup:"Frais d'installation : 199€ unique", p2_billed:"Facturé 948€/an",
+    p2f1:"Tout Starter inclus", p2f2:"Biens illimités", p2f3:"8 langues automatiques",
+    p2f4:"Domaine personnalisé", p2f5:"Chatbot OpenAI inclus", p2f5badge:"Inclus",
+    p2f6:"2 000 crédits IA/mois", p2f7:"3 landing pages IA/mois",
+    p2f8:"WhatsApp intégré", p2f9:"HabiHub natif", p2f10:"Analytics avancées", p2f11:"Support prioritaire",
+    p2cta:"Démarrer l'essai",
+    p3n:"AGENCY", p3badge:"Meilleur ROI",
+    p3_setup:"Frais d'installation : 299€ unique", p3_billed:"Facturé 1 716€/an",
+    p3f1:"Tout Pro inclus", p3f2:"Landing pages IA illimitées", p3f3:"5 000 crédits IA/mois",
+    p3f4:"Visites immersives 3D", p3f5:"Sync CRM externe (Zoho/HubSpot)", p3f6:"Multi-domaines",
+    p3f7:"Marque blanche possible", p3f8:"Onboarding dédié 2h", p3f9:"Support téléphonique",
+    p3cta:"Contacter l'équipe",
+    addons_title:"Modules à la carte",
+    addon1_name:"Flux XML supplémentaire", addon1_price:"+30€/source/mois",
+    addon2_name:"Langue supplémentaire", addon2_price:"+2€/langue/mois",
+    addon3_name:"Crédits IA", addon3_price:"+9€/1 000 crédits/mois",
+    addon4_name:"SEO avancé", addon4_price:"+19€/mois",
+    addon5_name:"Vidéo hero", addon5_price:"+9€/mois",
+    addon6_name:"Landing pages IA", addon6_price:"+19€/mois (+5 pages)",
+    per_month:"/mois"
   },
   en: {
-    price_h:"Simple modular pricing", price_sub:"A website for €50/month. XML feeds are clear optional add-ons billed separately.",
-    p1n:"WEBSITE", p1p:"50", p1s:"XML feed not included", p1f1:"Professional public website", p1f2:"Client workspace", p1f3:"Hosting & HTTPS", p1f4:"Mini CRM Leads included", p1cta:"Get started",
-    p2n:"XML FEED", p2p:"+50", p2s:"Per connected XML source", p2badge:"Catalogue option", p2f1:"Import listings from XML", p2f2:"Full catalogue on the website", p2f3:"Pagination & advanced search", p2f4:"Blurred listings after the first results", p2f5:"Connection managed by DataHome", p2cta:"Connect my XML",
-    p3n:"MODULES", p3p:"from 2", p3s:"Activate only what you need", p3f1:"AI Chatbot: €39/month", p3f2:"Extra language: €2/month", p3f3:"Advanced SEO: €19/month", p3f4:"Hero video: €9/month", p3f5:"Immersive tours: €29/month", p3cta:"View modules",
-    per_month:"/ month"
+    price_badge:"Simple, scalable pricing",
+    price_h:"A plan for every stage of your growth.",
+    price_sub:"No hidden fees. Cancel anytime.",
+    tog_monthly:"Monthly", tog_annual:"Annual (-20%)",
+    p1n:"STARTER",
+    p1_setup:"Setup fee: 149€ one-time", p1_billed:"Billed 468€/year",
+    p1f1:"Professional agency website", p1f2:"1 XML feed included", p1f3:"500 listings max",
+    p1f4:"Free mini CRM leads", p1f5:"2 languages (FR + 1 of your choice)", p1f6:"6 premium templates",
+    p1f7:"Subdomain .data-home.io", p1f8:"500 AI credits/month",
+    p1x1:"OpenAI chatbot", p1x2:"Custom domain", p1x3:"AI landing pages", p1x4:"Automatic translations",
+    p1cta:"Start free trial",
+    p2n:"PRO", p2badge:"Most popular",
+    p2_setup:"Setup fee: 199€ one-time", p2_billed:"Billed 948€/year",
+    p2f1:"Everything in Starter", p2f2:"Unlimited listings", p2f3:"8 automatic languages",
+    p2f4:"Custom domain", p2f5:"OpenAI chatbot included", p2f5badge:"Included",
+    p2f6:"2,000 AI credits/month", p2f7:"3 AI landing pages/month",
+    p2f8:"WhatsApp integrated", p2f9:"Native HabiHub", p2f10:"Advanced analytics", p2f11:"Priority support",
+    p2cta:"Start free trial",
+    p3n:"AGENCY", p3badge:"Best ROI",
+    p3_setup:"Setup fee: 299€ one-time", p3_billed:"Billed 1,716€/year",
+    p3f1:"Everything in Pro", p3f2:"Unlimited AI landing pages", p3f3:"5,000 AI credits/month",
+    p3f4:"3D immersive tours", p3f5:"External CRM sync (Zoho/HubSpot)", p3f6:"Multi-domains",
+    p3f7:"White-label option", p3f8:"Dedicated 2h onboarding", p3f9:"Phone support",
+    p3cta:"Contact us",
+    addons_title:"À la carte modules",
+    addon1_name:"Extra XML feed", addon1_price:"+30€/source/month",
+    addon2_name:"Extra language", addon2_price:"+2€/language/month",
+    addon3_name:"AI credits", addon3_price:"+9€/1,000 credits/month",
+    addon4_name:"Advanced SEO", addon4_price:"+19€/month",
+    addon5_name:"Hero video", addon5_price:"+9€/month",
+    addon6_name:"AI landing pages", addon6_price:"+19€/month (+5 pages)",
+    per_month:"/month"
   },
   es: {
-    price_h:"Precios simples y modulares", price_sub:"Un sitio web por 50 €/mes. El XML es una opción clara, facturada por separado.",
-    p1n:"SITIO WEB", p1p:"50", p1s:"Sin flujo XML", p1f1:"Sitio público profesional", p1f2:"Espacio cliente", p1f3:"Hosting & HTTPS", p1f4:"Mini CRM Leads incluido", p1cta:"Empezar",
-    p2n:"FLUJO XML", p2p:"+50", p2s:"Por fuente XML conectada", p2badge:"Opción catálogo", p2f1:"Importación de propiedades desde XML", p2f2:"Catálogo completo en el sitio", p2f3:"Paginación y búsqueda avanzada", p2f4:"Propiedades difuminadas tras los primeros resultados", p2f5:"Conexión gestionada por DataHome", p2cta:"Conectar mi XML",
-    p3n:"MÓDULOS", p3p:"desde 2", p3s:"Activa solo lo que necesitas", p3f1:"Chatbot IA: 39 €/mes", p3f2:"Idioma adicional: 2 €/mes", p3f3:"SEO avanzado: 19 €/mes", p3f4:"Vídeo hero: 9 €/mes", p3f5:"Visitas inmersivas: 29 €/mes", p3cta:"Ver módulos",
-    per_month:"/ mes"
+    price_badge:"Precios simples y escalables",
+    price_h:"Un plan para cada etapa de tu crecimiento.",
+    price_sub:"Sin tarifas ocultas. Cancela en cualquier momento.",
+    tog_monthly:"Mensual", tog_annual:"Anual (-20%)",
+    p1n:"STARTER",
+    p1_setup:"Tarifa de instalación: 149€ única", p1_billed:"Facturado 468€/año",
+    p1f1:"Sitio vitrina profesional", p1f2:"1 flujo XML incluido", p1f3:"500 propiedades máximo",
+    p1f4:"Mini CRM leads gratuito", p1f5:"2 idiomas (FR + 1 a elegir)", p1f6:"6 templates premium",
+    p1f7:"Subdominio .data-home.io", p1f8:"500 créditos IA/mes",
+    p1x1:"Chatbot OpenAI", p1x2:"Dominio personalizado", p1x3:"Landing pages IA", p1x4:"Traducciones automáticas",
+    p1cta:"Empezar prueba gratis",
+    p2n:"PRO", p2badge:"El más elegido",
+    p2_setup:"Tarifa de instalación: 199€ única", p2_billed:"Facturado 948€/año",
+    p2f1:"Todo Starter incluido", p2f2:"Propiedades ilimitadas", p2f3:"8 idiomas automáticos",
+    p2f4:"Dominio personalizado", p2f5:"Chatbot OpenAI incluido", p2f5badge:"Incluido",
+    p2f6:"2 000 créditos IA/mes", p2f7:"3 landing pages IA/mes",
+    p2f8:"WhatsApp integrado", p2f9:"HabiHub nativo", p2f10:"Analytics avanzadas", p2f11:"Soporte prioritario",
+    p2cta:"Empezar prueba gratis",
+    p3n:"AGENCY", p3badge:"Mejor ROI",
+    p3_setup:"Tarifa de instalación: 299€ única", p3_billed:"Facturado 1 716€/año",
+    p3f1:"Todo Pro incluido", p3f2:"Landing pages IA ilimitadas", p3f3:"5 000 créditos IA/mes",
+    p3f4:"Visitas inmersivas 3D", p3f5:"Sync CRM externo (Zoho/HubSpot)", p3f6:"Multi-dominios",
+    p3f7:"Marca blanca posible", p3f8:"Onboarding dedicado 2h", p3f9:"Soporte telefónico",
+    p3cta:"Contactar",
+    addons_title:"Módulos à la carte",
+    addon1_name:"Flujo XML adicional", addon1_price:"+30€/fuente/mes",
+    addon2_name:"Idioma adicional", addon2_price:"+2€/idioma/mes",
+    addon3_name:"Créditos IA", addon3_price:"+9€/1 000 créditos/mes",
+    addon4_name:"SEO avanzado", addon4_price:"+19€/mes",
+    addon5_name:"Vídeo hero", addon5_price:"+9€/mes",
+    addon6_name:"Landing pages IA", addon6_price:"+19€/mes (+5 páginas)",
+    per_month:"/mes"
   },
   de: {
-    price_h:"Einfache modulare Preise", price_sub:"Eine Website für 50 €/Monat. XML-Feeds sind klare optionale Add-ons.",
-    p1n:"WEBSITE", p1p:"50", p1s:"Ohne XML-Feed", p1f1:"Professionelle öffentliche Website", p1f2:"Kundenbereich", p1f3:"Hosting & HTTPS", p1f4:"Mini CRM Leads inklusive", p1cta:"Starten",
-    p2n:"XML-FEED", p2p:"+50", p2s:"Pro verbundener XML-Quelle", p2badge:"Katalogoption", p2f1:"Objekte aus XML importieren", p2f2:"Vollständiger Katalog auf der Website", p2f3:"Paginierung & erweiterte Suche", p2f4:"Verpixelte Objekte nach den ersten Ergebnissen", p2f5:"Verbindung durch DataHome verwaltet", p2cta:"XML verbinden",
-    p3n:"MODULE", p3p:"ab 2", p3s:"Aktivieren Sie nur, was Sie brauchen", p3f1:"KI-Chatbot: 39 €/Monat", p3f2:"Zusätzliche Sprache: 2 €/Monat", p3f3:"Erweitertes SEO: 19 €/Monat", p3f4:"Hero-Video: 9 €/Monat", p3f5:"Immersive Touren: 29 €/Monat", p3cta:"Module ansehen",
-    per_month:"/ Monat"
+    price_badge:"Einfache, skalierbare Preise",
+    price_h:"Ein Plan für jede Wachstumsphase.",
+    price_sub:"Keine versteckten Kosten. Jederzeit kündbar.",
+    tog_monthly:"Monatlich", tog_annual:"Jährlich (-20%)",
+    p1n:"STARTER",
+    p1_setup:"Einrichtungsgebühr: 149€ einmalig", p1_billed:"Abgerechnet 468€/Jahr",
+    p1f1:"Professionelle Agentur-Website", p1f2:"1 XML-Feed inklusive", p1f3:"Max. 500 Objekte",
+    p1f4:"Gratis Mini CRM Leads", p1f5:"2 Sprachen (FR + 1 nach Wahl)", p1f6:"6 Premium-Templates",
+    p1f7:"Subdomain .data-home.io", p1f8:"500 KI-Credits/Monat",
+    p1x1:"OpenAI Chatbot", p1x2:"Eigene Domain", p1x3:"KI-Landingpages", p1x4:"Automatische Übersetzungen",
+    p1cta:"Kostenlos testen",
+    p2n:"PRO", p2badge:"Am beliebtesten",
+    p2_setup:"Einrichtungsgebühr: 199€ einmalig", p2_billed:"Abgerechnet 948€/Jahr",
+    p2f1:"Alles aus Starter", p2f2:"Unbegrenzte Objekte", p2f3:"8 automatische Sprachen",
+    p2f4:"Eigene Domain", p2f5:"OpenAI Chatbot inklusive", p2f5badge:"Inklusive",
+    p2f6:"2 000 KI-Credits/Monat", p2f7:"3 KI-Landingpages/Monat",
+    p2f8:"WhatsApp integriert", p2f9:"HabiHub nativ", p2f10:"Erweiterte Analytics", p2f11:"Prioritäts-Support",
+    p2cta:"Kostenlos testen",
+    p3n:"AGENCY", p3badge:"Bestes ROI",
+    p3_setup:"Einrichtungsgebühr: 299€ einmalig", p3_billed:"Abgerechnet 1 716€/Jahr",
+    p3f1:"Alles aus Pro", p3f2:"Unbegrenzte KI-Landingpages", p3f3:"5 000 KI-Credits/Monat",
+    p3f4:"3D-Immersionsbesichtigungen", p3f5:"Externes CRM-Sync (Zoho/HubSpot)", p3f6:"Multi-Domains",
+    p3f7:"White-Label möglich", p3f8:"Dediziertes 2h-Onboarding", p3f9:"Telefon-Support",
+    p3cta:"Kontakt aufnehmen",
+    addons_title:"À-la-carte-Module",
+    addon1_name:"Zusätzlicher XML-Feed", addon1_price:"+30€/Quelle/Monat",
+    addon2_name:"Zusätzliche Sprache", addon2_price:"+2€/Sprache/Monat",
+    addon3_name:"KI-Credits", addon3_price:"+9€/1 000 Credits/Monat",
+    addon4_name:"Erweitertes SEO", addon4_price:"+19€/Monat",
+    addon5_name:"Hero-Video", addon5_price:"+9€/Monat",
+    addon6_name:"KI-Landingpages", addon6_price:"+19€/Monat (+5 Seiten)",
+    per_month:"/Monat"
   },
   nl: {
-    price_h:"Eenvoudige modulaire prijzen", price_sub:"Een website voor €50/maand. XML-feeds zijn duidelijke opties apart gefactureerd.",
-    p1n:"WEBSITE", p1p:"50", p1s:"Zonder XML-feed", p1f1:"Professionele publieke website", p1f2:"Client workspace", p1f3:"Hosting & HTTPS", p1f4:"Mini CRM Leads inbegrepen", p1cta:"Starten",
-    p2n:"XML-FEED", p2p:"+50", p2s:"Per gekoppelde XML-bron", p2badge:"Catalogusoptie", p2f1:"Panden importeren via XML", p2f2:"Volledige catalogus op de website", p2f3:"Paginatie & geavanceerd zoeken", p2f4:"Vage panden na de eerste resultaten", p2f5:"Koppeling beheerd door DataHome", p2cta:"Mijn XML koppelen",
-    p3n:"MODULES", p3p:"vanaf 2", p3s:"Activeer alleen wat u nodig heeft", p3f1:"AI Chatbot: €39/maand", p3f2:"Extra taal: €2/maand", p3f3:"Geavanceerde SEO: €19/maand", p3f4:"Hero-video: €9/maand", p3f5:"Immersieve tours: €29/maand", p3cta:"Bekijk modules",
-    per_month:"/ maand"
+    price_badge:"Eenvoudige, schaalbare prijzen",
+    price_h:"Een plan voor elke groeifase.",
+    price_sub:"Geen verborgen kosten. Altijd opzegbaar.",
+    tog_monthly:"Maandelijks", tog_annual:"Jaarlijks (-20%)",
+    p1n:"STARTER",
+    p1_setup:"Installatiekosten: 149€ eenmalig", p1_billed:"Gefactureerd 468€/jaar",
+    p1f1:"Professionele agency website", p1f2:"1 XML-feed inbegrepen", p1f3:"Max. 500 panden",
+    p1f4:"Gratis mini CRM leads", p1f5:"2 talen (FR + 1 naar keuze)", p1f6:"6 premium templates",
+    p1f7:"Subdomein .data-home.io", p1f8:"500 AI-credits/maand",
+    p1x1:"OpenAI chatbot", p1x2:"Eigen domein", p1x3:"AI-landingspagina's", p1x4:"Automatische vertalingen",
+    p1cta:"Gratis proberen",
+    p2n:"PRO", p2badge:"Meest gekozen",
+    p2_setup:"Installatiekosten: 199€ eenmalig", p2_billed:"Gefactureerd 948€/jaar",
+    p2f1:"Alles uit Starter", p2f2:"Onbeperkte panden", p2f3:"8 automatische talen",
+    p2f4:"Eigen domein", p2f5:"OpenAI chatbot inbegrepen", p2f5badge:"Inbegrepen",
+    p2f6:"2 000 AI-credits/maand", p2f7:"3 AI-landingspagina's/maand",
+    p2f8:"WhatsApp geïntegreerd", p2f9:"HabiHub natief", p2f10:"Geavanceerde analytics", p2f11:"Prioriteitsondersteuning",
+    p2cta:"Gratis proberen",
+    p3n:"AGENCY", p3badge:"Beste ROI",
+    p3_setup:"Installatiekosten: 299€ eenmalig", p3_billed:"Gefactureerd 1 716€/jaar",
+    p3f1:"Alles uit Pro", p3f2:"Onbeperkte AI-landingspagina's", p3f3:"5 000 AI-credits/maand",
+    p3f4:"3D immersieve rondleidingen", p3f5:"Extern CRM-sync (Zoho/HubSpot)", p3f6:"Multi-domeinen",
+    p3f7:"White-label mogelijk", p3f8:"Dedicated 2u onboarding", p3f9:"Telefonische ondersteuning",
+    p3cta:"Contact opnemen",
+    addons_title:"À-la-carte modules",
+    addon1_name:"Extra XML-feed", addon1_price:"+30€/bron/maand",
+    addon2_name:"Extra taal", addon2_price:"+2€/taal/maand",
+    addon3_name:"AI-credits", addon3_price:"+9€/1 000 credits/maand",
+    addon4_name:"Geavanceerde SEO", addon4_price:"+19€/maand",
+    addon5_name:"Hero-video", addon5_price:"+9€/maand",
+    addon6_name:"AI-landingspagina's", addon6_price:"+19€/maand (+5 pagina's)",
+    per_month:"/maand"
   },
   pt: {
-    price_h:"Preços simples e modulares", price_sub:"Um site por 50 €/mês. Os feeds XML são opções claras cobradas separadamente.",
-    p1n:"SITE", p1p:"50", p1s:"Sem feed XML", p1f1:"Site público profissional", p1f2:"Espaço cliente", p1f3:"Alojamento & HTTPS", p1f4:"Mini CRM Leads incluído", p1cta:"Começar",
-    p2n:"FEED XML", p2p:"+50", p2s:"Por fonte XML ligada", p2badge:"Opção catálogo", p2f1:"Importar imóveis por XML", p2f2:"Catálogo completo no site", p2f3:"Paginação e pesquisa avançada", p2f4:"Imóveis desfocados após os primeiros resultados", p2f5:"Ligação gerida pela DataHome", p2cta:"Ligar o meu XML",
-    p3n:"MÓDULOS", p3p:"desde 2", p3s:"Ative apenas o que precisa", p3f1:"Chatbot IA: 39 €/mês", p3f2:"Idioma adicional: 2 €/mês", p3f3:"SEO avançado: 19 €/mês", p3f4:"Vídeo hero: 9 €/mês", p3f5:"Visitas imersivas: 29 €/mês", p3cta:"Ver módulos",
-    per_month:"/ mês"
+    price_badge:"Preços simples e escaláveis",
+    price_h:"Um plano para cada fase do seu crescimento.",
+    price_sub:"Sem taxas ocultas. Cancele a qualquer momento.",
+    tog_monthly:"Mensal", tog_annual:"Anual (-20%)",
+    p1n:"STARTER",
+    p1_setup:"Taxa de instalação: 149€ única", p1_billed:"Faturado 468€/ano",
+    p1f1:"Site vitrine profissional", p1f2:"1 feed XML incluído", p1f3:"500 imóveis máximo",
+    p1f4:"Mini CRM leads gratuito", p1f5:"2 idiomas (FR + 1 à escolha)", p1f6:"6 templates premium",
+    p1f7:"Subdomínio .data-home.io", p1f8:"500 créditos IA/mês",
+    p1x1:"Chatbot OpenAI", p1x2:"Domínio personalizado", p1x3:"Landing pages IA", p1x4:"Traduções automáticas",
+    p1cta:"Iniciar teste grátis",
+    p2n:"PRO", p2badge:"O mais escolhido",
+    p2_setup:"Taxa de instalação: 199€ única", p2_billed:"Faturado 948€/ano",
+    p2f1:"Tudo do Starter incluído", p2f2:"Imóveis ilimitados", p2f3:"8 idiomas automáticos",
+    p2f4:"Domínio personalizado", p2f5:"Chatbot OpenAI incluído", p2f5badge:"Incluído",
+    p2f6:"2 000 créditos IA/mês", p2f7:"3 landing pages IA/mês",
+    p2f8:"WhatsApp integrado", p2f9:"HabiHub nativo", p2f10:"Analytics avançadas", p2f11:"Suporte prioritário",
+    p2cta:"Iniciar teste grátis",
+    p3n:"AGENCY", p3badge:"Melhor ROI",
+    p3_setup:"Taxa de instalação: 299€ única", p3_billed:"Faturado 1 716€/ano",
+    p3f1:"Tudo do Pro incluído", p3f2:"Landing pages IA ilimitadas", p3f3:"5 000 créditos IA/mês",
+    p3f4:"Visitas imersivas 3D", p3f5:"Sync CRM externo (Zoho/HubSpot)", p3f6:"Multi-domínios",
+    p3f7:"Marca branca possível", p3f8:"Onboarding dedicado 2h", p3f9:"Suporte telefónico",
+    p3cta:"Contactar equipa",
+    addons_title:"Módulos à la carte",
+    addon1_name:"Feed XML adicional", addon1_price:"+30€/fonte/mês",
+    addon2_name:"Idioma adicional", addon2_price:"+2€/idioma/mês",
+    addon3_name:"Créditos IA", addon3_price:"+9€/1 000 créditos/mês",
+    addon4_name:"SEO avançado", addon4_price:"+19€/mês",
+    addon5_name:"Vídeo hero", addon5_price:"+9€/mês",
+    addon6_name:"Landing pages IA", addon6_price:"+19€/mês (+5 páginas)",
+    per_month:"/mês"
   },
   ru: {
-    price_h:"Простые модульные тарифы", price_sub:"Сайт за 50 €/мес. XML-фид подключается отдельно за прозрачную стоимость.",
-    p1n:"САЙТ", p1p:"50", p1s:"Без XML-фида", p1f1:"Профессиональный публичный сайт", p1f2:"Клиентский кабинет", p1f3:"Хостинг и HTTPS", p1f4:"Mini CRM Leads включен", p1cta:"Начать",
-    p2n:"XML-ФИД", p2p:"+50", p2s:"За каждый подключенный XML-источник", p2badge:"Опция каталога", p2f1:"Импорт объектов из XML", p2f2:"Полный каталог на сайте", p2f3:"Пагинация и расширенный поиск", p2f4:"Размытые объекты после первых результатов", p2f5:"Подключение управляется DataHome", p2cta:"Подключить XML",
-    p3n:"МОДУЛИ", p3p:"от 2", p3s:"Подключайте только нужные функции", p3f1:"AI Chatbot: 39 €/мес", p3f2:"Дополнительный язык: 2 €/мес", p3f3:"Расширенный SEO: 19 €/мес", p3f4:"Hero video: 9 €/мес", p3f5:"Иммерсивные туры: 29 €/мес", p3cta:"Смотреть модули",
-    per_month:"/ мес"
+    price_badge:"Простые масштабируемые тарифы",
+    price_h:"Тариф для каждого этапа роста.",
+    price_sub:"Без скрытых платежей. Отмена в любое время.",
+    tog_monthly:"Ежемесячно", tog_annual:"Ежегодно (-20%)",
+    p1n:"STARTER",
+    p1_setup:"Стоимость подключения: 149€ единоразово", p1_billed:"Оплата 468€/год",
+    p1f1:"Профессиональный сайт агентства", p1f2:"1 XML-фид включен", p1f3:"Максимум 500 объектов",
+    p1f4:"Бесплатный mini CRM", p1f5:"2 языка (FR + 1 на выбор)", p1f6:"6 premium шаблонов",
+    p1f7:"Поддомен .data-home.io", p1f8:"500 AI-кредитов/мес",
+    p1x1:"Чатбот OpenAI", p1x2:"Собственный домен", p1x3:"AI лендинги", p1x4:"Автоматические переводы",
+    p1cta:"Начать бесплатно",
+    p2n:"PRO", p2badge:"Самый популярный",
+    p2_setup:"Стоимость подключения: 199€ единоразово", p2_billed:"Оплата 948€/год",
+    p2f1:"Всё из Starter включено", p2f2:"Неограниченные объекты", p2f3:"8 автоматических языков",
+    p2f4:"Собственный домен", p2f5:"Чатбот OpenAI включен", p2f5badge:"Включено",
+    p2f6:"2 000 AI-кредитов/мес", p2f7:"3 AI лендинга/мес",
+    p2f8:"WhatsApp интегрирован", p2f9:"HabiHub нативно", p2f10:"Расширенная аналитика", p2f11:"Приоритетная поддержка",
+    p2cta:"Начать бесплатно",
+    p3n:"AGENCY", p3badge:"Лучший ROI",
+    p3_setup:"Стоимость подключения: 299€ единоразово", p3_billed:"Оплата 1 716€/год",
+    p3f1:"Всё из Pro включено", p3f2:"Неограниченные AI лендинги", p3f3:"5 000 AI-кредитов/мес",
+    p3f4:"3D иммерсивные туры", p3f5:"Синхронизация CRM (Zoho/HubSpot)", p3f6:"Мультидомены",
+    p3f7:"White-label возможен", p3f8:"Персональный онбординг 2ч", p3f9:"Телефонная поддержка",
+    p3cta:"Связаться с нами",
+    addons_title:"Модули à la carte",
+    addon1_name:"Дополнительный XML-фид", addon1_price:"+30€/источник/мес",
+    addon2_name:"Дополнительный язык", addon2_price:"+2€/язык/мес",
+    addon3_name:"AI-кредиты", addon3_price:"+9€/1 000 кредитов/мес",
+    addon4_name:"Расширенный SEO", addon4_price:"+19€/мес",
+    addon5_name:"Hero-видео", addon5_price:"+9€/мес",
+    addon6_name:"AI лендинги", addon6_price:"+19€/мес (+5 страниц)",
+    per_month:"/мес"
   },
   pl: {
-    price_h:"Proste ceny modułowe", price_sub:"Strona za 50 €/mies. Feed XML to jasna opcja rozliczana osobno.",
-    p1n:"STRONA", p1p:"50", p1s:"Bez feedu XML", p1f1:"Profesjonalna publiczna strona", p1f2:"Panel klienta", p1f3:"Hosting i HTTPS", p1f4:"Mini CRM Leads w cenie", p1cta:"Zacznij",
-    p2n:"FEED XML", p2p:"+50", p2s:"Za podłączone źródło XML", p2badge:"Opcja katalogu", p2f1:"Import ofert z XML", p2f2:"Pełny katalog na stronie", p2f3:"Paginacja i zaawansowane wyszukiwanie", p2f4:"Rozmyte oferty po pierwszych wynikach", p2f5:"Połączenie zarządzane przez DataHome", p2cta:"Podłącz XML",
-    p3n:"MODUŁY", p3p:"od 2", p3s:"Aktywuj tylko to, czego potrzebujesz", p3f1:"AI Chatbot: 39 €/mies", p3f2:"Dodatkowy język: 2 €/mies", p3f3:"Zaawansowane SEO: 19 €/mies", p3f4:"Hero video: 9 €/mies", p3f5:"Wizyty immersyjne: 29 €/mies", p3cta:"Zobacz moduły",
-    per_month:"/ mies"
+    price_badge:"Proste, skalowalne ceny",
+    price_h:"Plan dla każdego etapu wzrostu.",
+    price_sub:"Bez ukrytych opłat. Anuluj w dowolnym momencie.",
+    tog_monthly:"Miesięcznie", tog_annual:"Rocznie (-20%)",
+    p1n:"STARTER",
+    p1_setup:"Opłata instalacyjna: 149€ jednorazowo", p1_billed:"Płatność 468€/rok",
+    p1f1:"Profesjonalna strona agencji", p1f2:"1 feed XML w cenie", p1f3:"Maks. 500 ofert",
+    p1f4:"Darmowy mini CRM leads", p1f5:"2 języki (FR + 1 do wyboru)", p1f6:"6 premium szablonów",
+    p1f7:"Subdomena .data-home.io", p1f8:"500 kredytów AI/mies",
+    p1x1:"Chatbot OpenAI", p1x2:"Własna domena", p1x3:"Strony lądowania AI", p1x4:"Automatyczne tłumaczenia",
+    p1cta:"Zacznij za darmo",
+    p2n:"PRO", p2badge:"Najpopularniejszy",
+    p2_setup:"Opłata instalacyjna: 199€ jednorazowo", p2_billed:"Płatność 948€/rok",
+    p2f1:"Wszystko ze Startera", p2f2:"Nieograniczone oferty", p2f3:"8 automatycznych języków",
+    p2f4:"Własna domena", p2f5:"Chatbot OpenAI w cenie", p2f5badge:"W cenie",
+    p2f6:"2 000 kredytów AI/mies", p2f7:"3 strony lądowania AI/mies",
+    p2f8:"WhatsApp zintegrowany", p2f9:"HabiHub natywnie", p2f10:"Zaawansowana analityka", p2f11:"Wsparcie priorytetowe",
+    p2cta:"Zacznij za darmo",
+    p3n:"AGENCY", p3badge:"Najlepszy ROI",
+    p3_setup:"Opłata instalacyjna: 299€ jednorazowo", p3_billed:"Płatność 1 716€/rok",
+    p3f1:"Wszystko z Pro", p3f2:"Nieograniczone strony lądowania AI", p3f3:"5 000 kredytów AI/mies",
+    p3f4:"Wizyty immersyjne 3D", p3f5:"Sync zewnętrznego CRM (Zoho/HubSpot)", p3f6:"Multi-domeny",
+    p3f7:"White-label możliwy", p3f8:"Dedykowany onboarding 2h", p3f9:"Wsparcie telefoniczne",
+    p3cta:"Skontaktuj się",
+    addons_title:"Moduły à la carte",
+    addon1_name:"Dodatkowy feed XML", addon1_price:"+30€/źródło/mies",
+    addon2_name:"Dodatkowy język", addon2_price:"+2€/język/mies",
+    addon3_name:"Kredyty AI", addon3_price:"+9€/1 000 kredytów/mies",
+    addon4_name:"Zaawansowane SEO", addon4_price:"+19€/mies",
+    addon5_name:"Wideo hero", addon5_price:"+9€/mies",
+    addon6_name:"Strony lądowania AI", addon6_price:"+19€/mies (+5 stron)",
+    per_month:"/mies"
   }
 };
 Object.keys(PRICING_TEXT).forEach((lc) => Object.assign(T[lc] || T.fr, PRICING_TEXT[lc]));
@@ -700,33 +991,30 @@ const CHAT_NAV_TEXT = {
 };
 Object.keys(CHAT_NAV_TEXT).forEach((lc) => Object.assign(T[lc] || T.fr, CHAT_NAV_TEXT[lc]));
 
-let billingMode = 'annual';
+let billingMode = 'monthly';
 
-function toggleBilling() {
-  billingMode = 'monthly';
+function setBilling(mode) {
+  billingMode = mode;
   updatePricingDisplay();
 }
 
 function updatePricingDisplay() {
   const d = T[lang] || T.fr;
-  const toggle = document.getElementById('billing-toggle');
-  if (toggle) toggle.classList.add('monthly');
-  const monthlyLabel = document.getElementById('tog-lbl-monthly');
-  const annualLabel = document.getElementById('tog-lbl-annual');
-  if (monthlyLabel) monthlyLabel.classList.add('active');
-  if (annualLabel) annualLabel.classList.remove('active');
-  const priceMap = {p1p:d.p1p || '50', p2p:d.p2p || '+50', p3p:d.p3p || 'dès 2'};
-  Object.entries(priceMap).forEach(([key,v]) => {
-    const el = document.querySelector('[data-i18n="'+key+'"]');
-    if (el) el.textContent = v;
+  const isAnnual = billingMode === 'annual';
+  const togM = document.getElementById('tog-monthly');
+  const togA = document.getElementById('tog-annual');
+  if (togM) togM.classList.toggle('active', !isAnnual);
+  if (togA) togA.classList.toggle('active', isAnnual);
+  document.querySelectorAll('.price-val').forEach(el => {
+    el.textContent = isAnnual ? el.dataset.annual : el.dataset.monthly;
+  });
+  const billedKeys = ['p1_billed','p2_billed','p3_billed'];
+  document.querySelectorAll('.price-billed').forEach((el, i) => {
+    el.style.display = isAnnual ? 'block' : 'none';
+    if (isAnnual && d[billedKeys[i]]) el.textContent = d[billedKeys[i]];
   });
   document.querySelectorAll('.per-m').forEach(el => {
-    el.style.display = 'inline';
-    el.textContent = ' ' + (d.per_month || '/ mois');
-  });
-  ['p1s','p2s','p3s'].forEach(key => {
-    const el = document.querySelector('[data-i18n="'+key+'"]');
-    if (el) el.textContent = d[key] || '';
+    el.textContent = d.per_month || '/mois';
   });
 }
 
