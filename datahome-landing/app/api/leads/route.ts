@@ -13,7 +13,7 @@
  *   Browser form  →  POST /api/leads  →  Google Apps Script  →  Google Sheet + Email
  */
 
-export const dynamic = "force-static"
+export const dynamic = "force-dynamic"
 
 import { NextRequest, NextResponse } from "next/server"
 
@@ -35,6 +35,7 @@ export interface LeadPayload {
   email: string
   phone?: string
   message?: string
+  recipients: string[]
   /** Pricing plan the user clicked (only present for pricing_cta source) */
   plan?: "silver" | "gold" | "platinum"
   /** ISO 8601 timestamp — easier to parse in GAS with `new Date(timestamp)` */
@@ -55,6 +56,16 @@ export interface LeadPayload {
 interface ApiResponse {
   success: boolean
   message: string
+}
+
+const DEFAULT_LEAD_RECIPIENTS = ["gillian@amaru-homes.com", "gaetan@amaru-homes.com"]
+
+function getLeadRecipients(): string[] {
+  const configuredRecipients = process.env.LEAD_NOTIFICATION_EMAILS?.split(",")
+    .map((email) => email.trim())
+    .filter(Boolean)
+
+  return configuredRecipients?.length ? configuredRecipients : DEFAULT_LEAD_RECIPIENTS
 }
 
 // ─── Validation ───────────────────────────────────────────────────────────────
@@ -102,6 +113,7 @@ export async function POST(request: NextRequest): Promise<NextResponse<ApiRespon
   // so it cannot be spoofed by the client.
   const payload: LeadPayload = {
     ...(body as Omit<LeadPayload, "timestamp">),
+    recipients: getLeadRecipients(),
     timestamp: new Date().toISOString(),
   }
 

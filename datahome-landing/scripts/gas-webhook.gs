@@ -10,7 +10,7 @@
  * HOW TO DEPLOY:
  *   1. Open Google Apps Script: script.google.com
  *   2. Paste this entire file into the editor.
- *   3. Update the SHEET_ID and NOTIFICATION_EMAIL constants below.
+ *   3. Update the SHEET_ID and NOTIFICATION_EMAILS constants below.
  *   4. Click Deploy > New deployment > Web app.
  *      - Execute as: "Me"
  *      - Who has access: "Anyone" (so the Next.js server can reach it)
@@ -31,8 +31,8 @@ var SHEET_ID = "YOUR_GOOGLE_SHEET_ID_HERE";
 /** The sheet (tab) name where leads will be written */
 var SHEET_NAME = "Leads";
 
-/** Email address that receives lead notifications */
-var NOTIFICATION_EMAIL = "your@email.com";
+/** Email addresses that receive lead notifications */
+var NOTIFICATION_EMAILS = ["gillian@amaru-homes.com", "gaetan@amaru-homes.com"];
 
 /** Must match the WEBHOOK_SECRET variable in your Next.js .env.local */
 var WEBHOOK_SECRET = "your-webhook-secret-here";
@@ -135,12 +135,15 @@ function appendLeadToSheet(payload) {
 // ─── Email notification ───────────────────────────────────────────────────────
 
 /**
- * Sends a plain-text email to NOTIFICATION_EMAIL with the lead details.
+ * Sends a plain-text email to the configured recipients with the lead details.
  * The format is intentionally simple so it is easy to read on mobile.
  *
  * @param {Object} payload - The LeadPayload object.
  */
 function sendNotificationEmail(payload) {
+  var recipients = payload.recipients && payload.recipients.length
+    ? payload.recipients
+    : NOTIFICATION_EMAILS;
   var subject = "🏠 Nouveau lead DATAhome — " + payload.name;
 
   var lines = [
@@ -173,7 +176,7 @@ function sendNotificationEmail(payload) {
   lines.push("Reçu le : " + new Date(payload.timestamp).toLocaleString("fr-FR"));
 
   MailApp.sendEmail({
-    to: NOTIFICATION_EMAIL,
+    to: recipients.join(","),
     subject: subject,
     body: lines.join("\n"),
   });
