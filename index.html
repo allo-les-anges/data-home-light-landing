@@ -219,6 +219,7 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
       <a href="#showcase" data-i18n="nShow">Vitrines</a>
       <a href="#pricing" data-i18n="nPrice">Tarifs</a>
       <a href="#templates" data-i18n="nTpl">Templates</a>
+      <a href="chatbot.html" data-i18n="nChat">Chatbot</a>
       <a href="#faq" data-i18n="nFaq">FAQ</a>
     </nav>
     <div class="nav-actions">
@@ -250,6 +251,7 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
     <a href="#showcase" data-i18n="nShow" onclick="closeMobileMenu()">Vitrines</a>
     <a href="#pricing" data-i18n="nPrice" onclick="closeMobileMenu()">Tarifs</a>
     <a href="#templates" data-i18n="nTpl" onclick="closeMobileMenu()">Templates</a>
+    <a href="chatbot.html" data-i18n="nChat" onclick="closeMobileMenu()">Chatbot</a>
     <a href="#faq" data-i18n="nFaq" onclick="closeMobileMenu()">FAQ</a>
     <div class="mobile-lang">
       <div class="mobile-lang-title">Langue</div>
@@ -677,6 +679,18 @@ const FEATURE_TEXT = {
   pl: {feat_h:"Everything you need, zgodne z realnym produktem",feat_sub:"DataHome obejmuje caly workflow agencji: strone, oferty, moduly, leady i publikacje.",f1t:"Publiczna strona agencji",f1d:"Homepage, oferty, wynajem, kontakt i tresci prawne gotowe do publikacji.",f2t:"Zarzadzane importy XML",f2d:"Podlacz feedy partnerow w AgencyDashboard i publikuj oferty klienta.",f3t:"Property Manager",f3d:"Klient zarzadza ofertami, wynajmem, mediami, wideo i ustawieniami w swoim panelu.",f4t:"Personalizowane templates",f4d:"Darmowe i premium templates z kolorami, typografia, kartami oraz image lub video hero.",f5t:"Chatbot IA",f5d:"Asystent premium do kwalifikacji odwiedzajacych, limit 20 zapytan dziennie na agencje.",f6t:"Mini CRM i moduly",f6d:"Mini CRM Leads w cenie, dodatkowe jezyki, hero video, wizyty immersyjne, SEO i domena."}
 };
 Object.keys(FEATURE_TEXT).forEach((lc) => Object.assign(T[lc] || T.fr, FEATURE_TEXT[lc]));
+
+const CHAT_NAV_TEXT = {
+  fr:{nChat:"Chatbot"},
+  en:{nChat:"AI Chatbot"},
+  es:{nChat:"Chatbot IA"},
+  de:{nChat:"KI-Chatbot"},
+  nl:{nChat:"AI Chatbot"},
+  pt:{nChat:"Chatbot IA"},
+  ru:{nChat:"AI Chatbot"},
+  pl:{nChat:"AI Chatbot"}
+};
+Object.keys(CHAT_NAV_TEXT).forEach((lc) => Object.assign(T[lc] || T.fr, CHAT_NAV_TEXT[lc]));
 
 let billingMode = 'annual';
 

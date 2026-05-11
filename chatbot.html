@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DATA-HOME | Chatbot IA & Mini CRM Leads</title>
+  <meta name="description" content="Page dediee au chatbot IA DataHome: qualification des visiteurs, recommandations de biens et creation automatique de leads dans le Mini CRM.">
+  <link rel="apple-touch-icon" sizes="57x57" href="images/apple-touch-icon-57x57.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pink:#D769A9; --red:#EF4B5A; --gold:#FCC010; --green:#32B55E; --blue:#18A1CE;
+      --btn-grad:linear-gradient(90deg,#D769A9,#EF4B5A);
+      --blue-grad:linear-gradient(90deg,#18A1CE,#D769A9);
+      --ink:#111827; --muted:#64748b; --line:#e5e7eb; --soft:#f8fafc; --max:1240px;
+    }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Montserrat,system-ui,sans-serif; color:var(--ink); background:#fff; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+    a { color:inherit; text-decoration:none; }
+    img { display:block; max-width:100%; }
+    .container { width:min(var(--max),calc(100% - 40px)); margin:0 auto; }
+    header { position:sticky; top:0; z-index:50; background:rgba(255,255,255,.88); border-bottom:1px solid rgba(15,23,42,.08); backdrop-filter:blur(18px); }
+    .nav { min-height:74px; display:flex; align-items:center; justify-content:space-between; gap:22px; }
+    .logo img { width:190px; height:auto; }
+    .links { display:flex; align-items:center; gap:22px; font-size:13px; font-weight:800; color:#475569; }
+    .links a:hover { color:var(--blue); }
+    .actions { display:flex; align-items:center; gap:10px; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:46px; padding:0 20px; border:0; border-radius:999px; font-size:13px; font-weight:900; cursor:pointer; transition:transform .2s, box-shadow .2s, opacity .2s; }
+    .btn:hover { transform:translateY(-1px); }
+    .btn-primary { color:#fff; background:var(--btn-grad); box-shadow:0 14px 34px rgba(239,75,90,.22); }
+    .btn-secondary { color:var(--blue); background:#fff; border:1px solid rgba(24,161,206,.24); box-shadow:0 12px 30px rgba(15,23,42,.06); }
+    .lang { position:relative; }
+    .lang button { min-height:42px; border:1px solid rgba(15,23,42,.10); background:#fff; border-radius:999px; padding:0 14px; font-weight:900; cursor:pointer; }
+    .lang-menu { position:absolute; right:0; top:48px; display:none; width:190px; padding:8px; border:1px solid var(--line); border-radius:18px; background:#fff; box-shadow:0 20px 60px rgba(15,23,42,.12); }
+    .lang.open .lang-menu { display:grid; gap:4px; }
+    .lang-menu button { width:100%; justify-content:flex-start; border:0; border-radius:12px; text-align:left; color:#334155; }
+    .hero { position:relative; overflow:hidden; padding:88px 0 74px; background:linear-gradient(135deg,#ffffff 0%,#f5fbff 46%,#fff7fb 100%); }
+    .hero:before { content:""; position:absolute; inset:-20% -10% auto 48%; height:520px; background:radial-gradient(circle,rgba(24,161,206,.18),rgba(215,105,169,.12) 46%,transparent 70%); pointer-events:none; }
+    .hero-grid { position:relative; z-index:1; display:grid; grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr); gap:48px; align-items:center; }
+    .eyebrow { display:inline-flex; align-items:center; gap:10px; border:1px solid rgba(24,161,206,.20); background:#fff; border-radius:999px; padding:9px 15px; color:var(--blue); font-size:11px; font-weight:900; letter-spacing:.14em; text-transform:uppercase; }
+    h1 { margin:20px 0 18px; max-width:720px; font-size:clamp(38px,5vw,72px); line-height:1.02; letter-spacing:-.055em; font-weight:900; }
+    .grad { background:var(--blue-grad); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+    .lead { max-width:620px; color:#536273; font-size:18px; line-height:1.75; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:14px; margin-top:30px; }
+    .hero-metrics { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:34px; max-width:620px; }
+    .metric { border:1px solid rgba(15,23,42,.08); background:rgba(255,255,255,.74); border-radius:18px; padding:16px; box-shadow:0 12px 36px rgba(15,23,42,.05); }
+    .metric strong { display:block; font-size:22px; font-weight:900; }
+    .metric span { display:block; margin-top:5px; color:var(--muted); font-size:12px; font-weight:800; line-height:1.4; }
+    .demo-card { position:relative; border-radius:30px; border:1px solid rgba(15,23,42,.08); background:#fff; box-shadow:0 30px 90px rgba(15,23,42,.13); overflow:hidden; }
+    .demo-top { display:flex; align-items:center; gap:8px; padding:15px 18px; border-bottom:1px solid #edf2f7; background:#fff; }
+    .dot { width:10px; height:10px; border-radius:999px; background:var(--red); }
+    .dot:nth-child(2) { background:var(--gold); } .dot:nth-child(3) { background:var(--green); }
+    .url { margin-left:10px; flex:1; border-radius:999px; background:#f5f8fc; color:#7b8798; padding:8px 12px; font-size:12px; font-weight:800; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; }
+    .film { position:relative; min-height:560px; padding:24px; background:linear-gradient(150deg,#f8fbff,#ffffff 48%,#fff7fb); }
+    .phone { position:absolute; left:24px; top:24px; bottom:24px; width:44%; min-width:280px; border-radius:34px; border:10px solid #101828; background:#0f172a; box-shadow:0 24px 70px rgba(15,23,42,.32); overflow:hidden; }
+    .phone-screen { position:absolute; inset:0; background:linear-gradient(180deg,#0f172a,#111827); padding:26px 18px; color:#fff; }
+    .phone-head { display:flex; align-items:center; justify-content:space-between; margin-bottom:18px; font-size:11px; color:rgba(255,255,255,.56); font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
+    .messages { display:grid; gap:12px; }
+    .bubble { max-width:84%; padding:12px 14px; border-radius:18px; font-size:12px; line-height:1.45; opacity:0; transform:translateY(14px); animation:message 18s infinite; }
+    .bot { justify-self:start; background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.12); }
+    .user { justify-self:end; background:linear-gradient(135deg,#18A1CE,#D769A9); }
+    .bubble:nth-child(1){animation-delay:.3s}.bubble:nth-child(2){animation-delay:2.4s}.bubble:nth-child(3){animation-delay:4.5s}.bubble:nth-child(4){animation-delay:6.8s}.bubble:nth-child(5){animation-delay:9s}.bubble:nth-child(6){animation-delay:11.2s}
+    @keyframes message { 0%,8%{opacity:0;transform:translateY(14px)} 12%,78%{opacity:1;transform:translateY(0)} 92%,100%{opacity:0;transform:translateY(-8px)} }
+    .property-strip { position:absolute; left:18px; right:18px; bottom:24px; display:grid; grid-template-columns:1fr 1fr; gap:10px; opacity:0; animation:cards 18s infinite 12.2s; }
+    @keyframes cards { 0%,8%{opacity:0;transform:translateY(16px)} 14%,72%{opacity:1;transform:translateY(0)} 92%,100%{opacity:0;transform:translateY(-8px)} }
+    .mini-card { overflow:hidden; border-radius:18px; background:#fff; color:#111827; }
+    .mini-card img { height:86px; width:100%; object-fit:cover; }
+    .mini-card div { padding:10px; font-size:11px; font-weight:900; }
+    .crm-panel { margin-left:46%; min-height:512px; padding:20px; border-radius:26px; background:#fff; border:1px solid rgba(15,23,42,.08); box-shadow:0 20px 60px rgba(15,23,42,.08); }
+    .crm-title { display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; }
+    .crm-title h3 { margin:0; font-size:18px; }
+    .status { border-radius:999px; padding:7px 10px; background:rgba(50,181,94,.12); color:#188342; font-size:10px; font-weight:900; text-transform:uppercase; letter-spacing:.12em; }
+    .lead-card { border:1px solid #e8eef6; border-radius:18px; padding:14px; margin-bottom:12px; opacity:.45; transform:scale(.98); animation:lead 18s infinite; }
+    .lead-card.hot { opacity:0; transform:translateY(18px) scale(.98); animation:hotlead 18s infinite 13.4s; border-color:rgba(239,75,90,.24); box-shadow:0 14px 36px rgba(239,75,90,.10); }
+    @keyframes lead { 0%,100%{opacity:.45;transform:scale(.98)} 55%,85%{opacity:.32;transform:scale(.98)} }
+    @keyframes hotlead { 0%,6%{opacity:0;transform:translateY(18px) scale(.98)} 14%,76%{opacity:1;transform:translateY(0) scale(1)} 92%,100%{opacity:0;transform:translateY(-10px) scale(.98)} }
+    .lead-row { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+    .avatar { width:42px; height:42px; border-radius:14px; display:grid; place-items:center; background:var(--btn-grad); color:#fff; font-weight:900; }
+    .lead-main { flex:1; min-width:0; }
+    .lead-main strong { display:block; font-size:13px; }
+    .lead-main span { display:block; margin-top:3px; color:var(--muted); font-size:11px; font-weight:700; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .score { font-size:11px; font-weight:900; color:var(--red); }
+    .tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:12px; }
+    .tag { border-radius:999px; background:#f1f5f9; color:#475569; padding:7px 9px; font-size:10px; font-weight:900; }
+    .sync-line { position:absolute; left:43%; top:50%; width:12%; height:2px; background:linear-gradient(90deg,#18A1CE,#D769A9,#EF4B5A); opacity:0; animation:sync 18s infinite 12.6s; }
+    @keyframes sync { 0%,12%{opacity:0;transform:scaleX(.15)} 18%,62%{opacity:1;transform:scaleX(1)} 82%,100%{opacity:0;transform:scaleX(.4)} }
+    .progress { height:5px; background:#eef2f7; overflow:hidden; }
+    .progress span { display:block; height:100%; background:var(--btn-grad); transform-origin:left; animation:progress 18s linear infinite; }
+    @keyframes progress { from{transform:scaleX(0)} to{transform:scaleX(1)} }
+    .section { padding:86px 0; }
+    .section-head { max-width:760px; margin:0 auto 42px; text-align:center; }
+    .section-head h2 { margin:0 0 14px; font-size:clamp(30px,4vw,54px); line-height:1.05; letter-spacing:-.05em; }
+    .section-head p { margin:0; color:var(--muted); line-height:1.7; }
+    .workflow { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+    .step { border:1px solid var(--line); border-radius:22px; padding:24px; background:linear-gradient(180deg,#fff,#fbfdff); box-shadow:0 18px 52px rgba(15,23,42,.06); }
+    .step-num { width:42px; height:42px; border-radius:15px; display:grid; place-items:center; color:#fff; background:var(--blue-grad); font-weight:900; margin-bottom:18px; }
+    .step h3 { margin:0 0 10px; font-size:18px; }
+    .step p { margin:0; color:var(--muted); line-height:1.65; font-size:14px; }
+    .split { display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:stretch; }
+    .panel { border:1px solid var(--line); border-radius:28px; padding:34px; background:#fff; box-shadow:0 20px 70px rgba(15,23,42,.07); }
+    .panel h2 { margin:0 0 12px; font-size:clamp(28px,3.5vw,46px); letter-spacing:-.045em; }
+    .panel p { color:var(--muted); line-height:1.75; }
+    .check { display:grid; gap:12px; margin-top:22px; }
+    .check div { display:flex; gap:10px; align-items:flex-start; color:#334155; font-size:14px; font-weight:700; }
+    .check span { width:22px; height:22px; border-radius:999px; display:grid; place-items:center; flex:0 0 auto; color:#fff; background:var(--btn-grad); font-size:12px; }
+    .cta { padding:82px 0; }
+    .cta-box { display:grid; grid-template-columns:1fr auto; gap:28px; align-items:center; padding:38px; border-radius:30px; background:linear-gradient(135deg,#f8fbff,rgba(24,161,206,.08),rgba(215,105,169,.12)); border:1px solid rgba(15,23,42,.08); box-shadow:0 24px 80px rgba(15,23,42,.08); }
+    .cta h2 { margin:0 0 10px; font-size:clamp(30px,4vw,56px); letter-spacing:-.05em; }
+    .cta p { margin:0; color:var(--muted); line-height:1.7; }
+    footer { padding:34px 0; border-top:1px solid var(--line); color:var(--muted); font-size:13px; }
+    footer .container { display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    @media(max-width:1040px) { .hero-grid,.split,.cta-box { grid-template-columns:1fr; } .workflow { grid-template-columns:repeat(2,1fr); } .phone { position:relative; left:auto; top:auto; bottom:auto; width:100%; min-width:0; height:560px; } .crm-panel { margin:18px 0 0; } .sync-line { display:none; } .film { min-height:auto; } }
+    @media(max-width:720px) { .container { width:min(100% - 28px,var(--max)); } .links { display:none; } .logo img { width:166px; } .actions .btn-secondary { display:none; } .hero { padding:56px 0; } .hero-metrics,.workflow { grid-template-columns:1fr; } .film { padding:14px; } .phone { height:520px; border-width:8px; border-radius:28px; } .crm-panel { padding:15px; border-radius:22px; } .property-strip { grid-template-columns:1fr; } .mini-card:nth-child(2) { display:none; } .section,.cta { padding:58px 0; } .cta-box { padding:26px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="logo" href="index.html"><img src="images/DH_V2.png" alt="DATA-HOME"></a>
+      <nav class="links">
+        <a href="index.html" data-i18n="navHome">Accueil</a>
+        <a href="templates.html" data-i18n="navTemplates">Templates</a>
+        <a href="index.html#pricing" data-i18n="navPricing">Tarifs</a>
+        <a href="index.html#contact" data-i18n="navContact">Contact</a>
+      </nav>
+      <div class="actions">
+        <a class="btn btn-secondary" href="https://datahome.vercel.app/demo" data-i18n="demo">Demo</a>
+        <div class="lang" id="langBox">
+          <button type="button" onclick="toggleLang()" id="langBtn">FR</button>
+          <div class="lang-menu">
+            <button type="button" onclick="setLang('fr')">FR Francais</button>
+            <button type="button" onclick="setLang('en')">EN English</button>
+            <button type="button" onclick="setLang('es')">ES Espanol</button>
+            <button type="button" onclick="setLang('de')">DE Deutsch</button>
+            <button type="button" onclick="setLang('nl')">NL Nederlands</button>
+            <button type="button" onclick="setLang('pt')">PT Portugues</button>
+            <button type="button" onclick="setLang('ru')">RU Русский</button>
+            <button type="button" onclick="setLang('pl')">PL Polski</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow" data-i18n="eyebrow">Chatbot IA + Mini CRM</span>
+          <h1 data-i18n-html="h1">Transformez vos visiteurs en <span class="grad">leads qualifies</span>.</h1>
+          <p class="lead" data-i18n="lead">Le chatbot DataHome dialogue dans la langue du visiteur, comprend ses criteres, propose les biens pertinents, puis transmet le contact au Mini CRM Leads de l'agence.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://datahome.vercel.app/register" data-i18n="trial">Commencer l'essai 15 jours</a>
+            <a class="btn btn-secondary" href="https://datahome.vercel.app/demo" data-i18n="openDemo">Ouvrir la demo SaaS</a>
+          </div>
+          <div class="hero-metrics">
+            <div class="metric"><strong>20</strong><span data-i18n="m1">requêtes par jour et par agence</span></div>
+            <div class="metric"><strong>8+</strong><span data-i18n="m2">langues prêtes pour les visiteurs</span></div>
+            <div class="metric"><strong>CRM</strong><span data-i18n="m3">lead créé automatiquement</span></div>
+          </div>
+        </div>
+
+        <div class="demo-card" aria-label="Video demo chatbot DataHome">
+          <div class="demo-top">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="url">datahome.vercel.app/fr/marina-tobridoni</span>
+          </div>
+          <div class="film">
+            <div class="phone">
+              <div class="phone-screen">
+                <div class="phone-head"><span>DataHome AI</span><span>Live</span></div>
+                <div class="messages">
+                  <div class="bubble bot" data-i18n="b1">Bonjour, quel type de bien recherchez-vous ?</div>
+                  <div class="bubble user" data-i18n="b2">Une villa avec piscine, Costa Blanca, budget 850k.</div>
+                  <div class="bubble bot" data-i18n="b3">J'ai trouve 3 biens proches de vos criteres.</div>
+                  <div class="bubble user" data-i18n="b4">Je veux recevoir les details par email.</div>
+                  <div class="bubble bot" data-i18n="b5">Parfait. Je transmets votre demande a l'agence.</div>
+                  <div class="bubble bot" data-i18n="b6">Lead qualifie cree dans le Mini CRM.</div>
+                </div>
+                <div class="property-strip">
+                  <div class="mini-card"><img src="images/img216.jpg" alt="Villa"><div data-i18n="card1">Villa piscine · 825 000 EUR</div></div>
+                  <div class="mini-card"><img src="images/img181.jpg" alt="Villa"><div data-i18n="card2">Vue mer · 3 chambres</div></div>
+                </div>
+              </div>
+            </div>
+            <div class="sync-line"></div>
+            <div class="crm-panel">
+              <div class="crm-title">
+                <h3 data-i18n="crmTitle">Mini CRM Leads</h3>
+                <span class="status" data-i18n="status">Synchronise</span>
+              </div>
+              <div class="lead-card">
+                <div class="lead-row">
+                  <div class="avatar">ER</div>
+                  <div class="lead-main"><strong>Elena Rossi</strong><span>Costa del Sol · 650k · Appartement</span></div>
+                  <div class="score">72%</div>
+                </div>
+              </div>
+              <div class="lead-card hot">
+                <div class="lead-row">
+                  <div class="avatar">AM</div>
+                  <div class="lead-main"><strong>Alex Martin</strong><span data-i18n="hotLead">Costa Blanca · villa · piscine · 850k</span></div>
+                  <div class="score">96%</div>
+                </div>
+                <div class="tags">
+                  <span class="tag" data-i18n="tag1">Lead chaud</span>
+                  <span class="tag" data-i18n="tag2">Budget valide</span>
+                  <span class="tag" data-i18n="tag3">Email capture</span>
+                </div>
+              </div>
+              <div class="lead-card">
+                <div class="lead-row">
+                  <div class="avatar">MS</div>
+                  <div class="lead-main"><strong>Marie Smith</strong><span>Marbella · 1.2M · Villa</span></div>
+                  <div class="score">84%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="progress"><span></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-i18n="workflowTitle">Un workflow complet, du premier message au suivi commercial.</h2>
+          <p data-i18n="workflowText">La page montre exactement la logique produit : le chatbot qualifie, recommande, capture le contact et alimente le Mini CRM Leads.</p>
+        </div>
+        <div class="workflow">
+          <div class="step"><div class="step-num">1</div><h3 data-i18n="s1t">Conversation</h3><p data-i18n="s1d">Le visiteur pose sa question dans sa langue et precise son projet immobilier.</p></div>
+          <div class="step"><div class="step-num">2</div><h3 data-i18n="s2t">Qualification</h3><p data-i18n="s2d">Le chatbot extrait budget, zone, type de bien, chambres et niveau d'intention.</p></div>
+          <div class="step"><div class="step-num">3</div><h3 data-i18n="s3t">Recommandation</h3><p data-i18n="s3d">Les biens pertinents sont proposes depuis le catalogue de l'agence.</p></div>
+          <div class="step"><div class="step-num">4</div><h3 data-i18n="s4t">Mini CRM</h3><p data-i18n="s4d">Le lead arrive dans l'espace client avec son contexte et ses criteres.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background:var(--soft)">
+      <div class="container split">
+        <div class="panel">
+          <h2 data-i18n="agentTitle">Pour l'agence : moins de friction, plus de suivi.</h2>
+          <p data-i18n="agentText">Chaque demande utile devient une fiche exploitable. Le commercial sait ce que le visiteur cherche avant le premier appel.</p>
+          <div class="check">
+            <div><span>✓</span><p data-i18n="a1">Historique de conversation conserve avec le lead.</p></div>
+            <div><span>✓</span><p data-i18n="a2">Criteres de recherche visibles dans le Mini CRM.</p></div>
+            <div><span>✓</span><p data-i18n="a3">Module premium limite a 20 requetes par jour et par agence.</p></div>
+          </div>
+        </div>
+        <div class="panel">
+          <h2 data-i18n="visitorTitle">Pour le visiteur : une recherche plus naturelle.</h2>
+          <p data-i18n="visitorText">Il ne remplit pas un formulaire froid. Il explique son projet, recoit des biens pertinents et peut demander un suivi immediat.</p>
+          <div class="check">
+            <div><span>✓</span><p data-i18n="v1">Reponses adaptees a la langue du site.</p></div>
+            <div><span>✓</span><p data-i18n="v2">Propositions de biens issues de la base de l'agence.</p></div>
+            <div><span>✓</span><p data-i18n="v3">Capture email, nom, telephone et projet si le visiteur est interesse.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container cta-box">
+        <div>
+          <h2 data-i18n="ctaTitle">Activez le duo Chatbot IA + Mini CRM.</h2>
+          <p data-i18n="ctaText">Testez le parcours complet dans la demo, puis lancez votre periode d'essai DataHome.</p>
+        </div>
+        <div class="hero-actions" style="margin-top:0">
+          <a class="btn btn-primary" href="https://datahome.vercel.app/register" data-i18n="trial">Commencer l'essai 15 jours</a>
+          <a class="btn btn-secondary" href="index.html#contact" data-i18n="talk">Parler a l'equipe</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <span>© 2026 DATA-HOME</span>
+      <span data-i18n="footer">Chatbot IA, Mini CRM Leads et sites immobiliers multilingues.</span>
+    </div>
+  </footer>
+
+  <script>
+    const I18N = {
+      fr:{navHome:"Accueil",navTemplates:"Templates",navPricing:"Tarifs",navContact:"Contact",demo:"Demo",eyebrow:"Chatbot IA + Mini CRM",h1:"Transformez vos visiteurs en <span class=\"grad\">leads qualifies</span>.",lead:"Le chatbot DataHome dialogue dans la langue du visiteur, comprend ses criteres, propose les biens pertinents, puis transmet le contact au Mini CRM Leads de l'agence.",trial:"Commencer l'essai 15 jours",openDemo:"Ouvrir la demo SaaS",m1:"requetes par jour et par agence",m2:"langues pretes pour les visiteurs",m3:"lead cree automatiquement",b1:"Bonjour, quel type de bien recherchez-vous ?",b2:"Une villa avec piscine, Costa Blanca, budget 850k.",b3:"J'ai trouve 3 biens proches de vos criteres.",b4:"Je veux recevoir les details par email.",b5:"Parfait. Je transmets votre demande a l'agence.",b6:"Lead qualifie cree dans le Mini CRM.",card1:"Villa piscine · 825 000 EUR",card2:"Vue mer · 3 chambres",crmTitle:"Mini CRM Leads",status:"Synchronise",hotLead:"Costa Blanca · villa · piscine · 850k",tag1:"Lead chaud",tag2:"Budget valide",tag3:"Email capture",workflowTitle:"Un workflow complet, du premier message au suivi commercial.",workflowText:"La page montre exactement la logique produit : le chatbot qualifie, recommande, capture le contact et alimente le Mini CRM Leads.",s1t:"Conversation",s1d:"Le visiteur pose sa question dans sa langue et precise son projet immobilier.",s2t:"Qualification",s2d:"Le chatbot extrait budget, zone, type de bien, chambres et niveau d'intention.",s3t:"Recommandation",s3d:"Les biens pertinents sont proposes depuis le catalogue de l'agence.",s4t:"Mini CRM",s4d:"Le lead arrive dans l'espace client avec son contexte et ses criteres.",agentTitle:"Pour l'agence : moins de friction, plus de suivi.",agentText:"Chaque demande utile devient une fiche exploitable. Le commercial sait ce que le visiteur cherche avant le premier appel.",a1:"Historique de conversation conserve avec le lead.",a2:"Criteres de recherche visibles dans le Mini CRM.",a3:"Module premium limite a 20 requetes par jour et par agence.",visitorTitle:"Pour le visiteur : une recherche plus naturelle.",visitorText:"Il ne remplit pas un formulaire froid. Il explique son projet, recoit des biens pertinents et peut demander un suivi immediat.",v1:"Reponses adaptees a la langue du site.",v2:"Propositions de biens issues de la base de l'agence.",v3:"Capture email, nom, telephone et projet si le visiteur est interesse.",ctaTitle:"Activez le duo Chatbot IA + Mini CRM.",ctaText:"Testez le parcours complet dans la demo, puis lancez votre periode d'essai DataHome.",talk:"Parler a l'equipe",footer:"Chatbot IA, Mini CRM Leads et sites immobiliers multilingues."},
+      en:{navHome:"Home",navTemplates:"Templates",navPricing:"Pricing",navContact:"Contact",demo:"Demo",eyebrow:"AI Chatbot + Mini CRM",h1:"Turn visitors into <span class=\"grad\">qualified leads</span>.",lead:"The DataHome chatbot speaks the visitor's language, understands their criteria, recommends relevant listings and sends the contact to the agency Mini CRM Leads.",trial:"Start 15-day trial",openDemo:"Open SaaS demo",m1:"requests per day per agency",m2:"visitor-ready languages",m3:"lead created automatically",b1:"Hello, what kind of property are you looking for?",b2:"A villa with pool, Costa Blanca, budget 850k.",b3:"I found 3 listings close to your criteria.",b4:"I want to receive the details by email.",b5:"Perfect. I am sending your request to the agency.",b6:"Qualified lead created in Mini CRM.",card1:"Pool villa · 825,000 EUR",card2:"Sea view · 3 bedrooms",crmTitle:"Mini CRM Leads",status:"Synced",hotLead:"Costa Blanca · villa · pool · 850k",tag1:"Hot lead",tag2:"Budget confirmed",tag3:"Email captured",workflowTitle:"A complete workflow, from first message to sales follow-up.",workflowText:"This page shows the real product logic: the chatbot qualifies, recommends, captures contact details and feeds Mini CRM Leads.",s1t:"Conversation",s1d:"The visitor asks in their language and describes the real estate project.",s2t:"Qualification",s2d:"The chatbot extracts budget, area, property type, bedrooms and intent level.",s3t:"Recommendation",s3d:"Relevant listings are suggested from the agency catalogue.",s4t:"Mini CRM",s4d:"The lead lands in the client workspace with context and search criteria.",agentTitle:"For the agency: less friction, better follow-up.",agentText:"Every useful request becomes an actionable lead. The sales team knows what the visitor wants before the first call.",a1:"Conversation history stored with the lead.",a2:"Search criteria visible in Mini CRM.",a3:"Premium module limited to 20 requests per day per agency.",visitorTitle:"For visitors: a more natural search.",visitorText:"They do not fill in a cold form. They explain the project, receive relevant listings and can request immediate follow-up.",v1:"Answers adapted to the website language.",v2:"Property suggestions from the agency database.",v3:"Capture email, name, phone and project when the visitor is interested.",ctaTitle:"Activate the AI Chatbot + Mini CRM duo.",ctaText:"Test the full journey in the demo, then launch your DataHome trial.",talk:"Talk to the team",footer:"AI Chatbot, Mini CRM Leads and multilingual real estate websites."},
+      es:{navHome:"Inicio",navTemplates:"Templates",navPricing:"Precios",navContact:"Contacto",demo:"Demo",eyebrow:"Chatbot IA + Mini CRM",h1:"Convierte visitantes en <span class=\"grad\">leads cualificados</span>.",lead:"El chatbot DataHome conversa en el idioma del visitante, entiende sus criterios, recomienda propiedades relevantes y envia el contacto al Mini CRM Leads de la agencia.",trial:"Empezar prueba de 15 dias",openDemo:"Abrir demo SaaS",m1:"solicitudes por dia y agencia",m2:"idiomas listos para visitantes",m3:"lead creado automaticamente",b1:"Hola, que tipo de propiedad buscas?",b2:"Una villa con piscina, Costa Blanca, presupuesto 850k.",b3:"He encontrado 3 propiedades cercanas a tus criterios.",b4:"Quiero recibir los detalles por email.",b5:"Perfecto. Envio tu solicitud a la agencia.",b6:"Lead cualificado creado en Mini CRM.",card1:"Villa con piscina · 825 000 EUR",card2:"Vista al mar · 3 dormitorios",crmTitle:"Mini CRM Leads",status:"Sincronizado",hotLead:"Costa Blanca · villa · piscina · 850k",tag1:"Lead caliente",tag2:"Presupuesto validado",tag3:"Email capturado",workflowTitle:"Un workflow completo, del primer mensaje al seguimiento comercial.",workflowText:"La pagina muestra la logica real del producto: el chatbot cualifica, recomienda, captura el contacto y alimenta el Mini CRM Leads.",s1t:"Conversacion",s1d:"El visitante pregunta en su idioma y describe su proyecto inmobiliario.",s2t:"Cualificacion",s2d:"El chatbot extrae presupuesto, zona, tipo de propiedad, habitaciones e intencion.",s3t:"Recomendacion",s3d:"Se proponen propiedades relevantes desde el catalogo de la agencia.",s4t:"Mini CRM",s4d:"El lead llega al espacio cliente con contexto y criterios.",agentTitle:"Para la agencia: menos friccion, mejor seguimiento.",agentText:"Cada solicitud util se convierte en una ficha accionable. El comercial sabe que busca el visitante antes de la primera llamada.",a1:"Historial de conversacion guardado con el lead.",a2:"Criterios de busqueda visibles en Mini CRM.",a3:"Modulo premium limitado a 20 solicitudes por dia y agencia.",visitorTitle:"Para el visitante: una busqueda mas natural.",visitorText:"No rellena un formulario frio. Explica su proyecto, recibe propiedades relevantes y puede pedir seguimiento inmediato.",v1:"Respuestas adaptadas al idioma del sitio.",v2:"Propuestas desde la base de datos de la agencia.",v3:"Captura email, nombre, telefono y proyecto si hay interes.",ctaTitle:"Activa el duo Chatbot IA + Mini CRM.",ctaText:"Prueba el recorrido completo en la demo y lanza tu trial DataHome.",talk:"Hablar con el equipo",footer:"Chatbot IA, Mini CRM Leads y sitios inmobiliarios multilingues."}
+    };
+    I18N.de = Object.assign({}, I18N.en, {navHome:"Startseite",navPricing:"Preise",navContact:"Kontakt",eyebrow:"KI-Chatbot + Mini CRM",trial:"15-Tage-Test starten",openDemo:"SaaS-Demo öffnen"});
+    I18N.nl = Object.assign({}, I18N.en, {navHome:"Home",navPricing:"Prijzen",navContact:"Contact",eyebrow:"AI Chatbot + Mini CRM",trial:"Start proefperiode van 15 dagen",openDemo:"Open SaaS-demo"});
+    I18N.pt = Object.assign({}, I18N.en, {navHome:"Inicio",navPricing:"Precos",navContact:"Contacto",eyebrow:"Chatbot IA + Mini CRM",trial:"Iniciar teste de 15 dias",openDemo:"Abrir demo SaaS"});
+    I18N.ru = Object.assign({}, I18N.en, {navHome:"Главная",navTemplates:"Шаблоны",navPricing:"Цены",navContact:"Контакт",eyebrow:"AI Chatbot + Mini CRM",trial:"Начать пробный период 15 дней",openDemo:"Открыть SaaS демо"});
+    I18N.pl = Object.assign({}, I18N.en, {navHome:"Start",navTemplates:"Szablony",navPricing:"Cennik",navContact:"Kontakt",eyebrow:"AI Chatbot + Mini CRM",trial:"Rozpocznij 15-dniowy trial",openDemo:"Otworz demo SaaS"});
+    let lang = localStorage.getItem("dh_lang") || (navigator.language || "fr").slice(0,2);
+    if (!I18N[lang]) lang = "fr";
+    function setLang(lc) {
+      lang = I18N[lc] ? lc : "fr";
+      localStorage.setItem("dh_lang", lang);
+      document.documentElement.lang = lang;
+      document.getElementById("langBtn").textContent = lang.toUpperCase();
+      document.getElementById("langBox").classList.remove("open");
+      const d = I18N[lang];
+      document.querySelectorAll("[data-i18n]").forEach((el) => { if (d[el.dataset.i18n] !== undefined) el.textContent = d[el.dataset.i18n]; });
+      document.querySelectorAll("[data-i18n-html]").forEach((el) => { if (d[el.dataset.i18nHtml] !== undefined) el.innerHTML = d[el.dataset.i18nHtml]; });
+    }
+    function toggleLang() { document.getElementById("langBox").classList.toggle("open"); }
+    document.addEventListener("click", (e) => { if (!e.target.closest(".lang")) document.getElementById("langBox").classList.remove("open"); });
+    setLang(lang);
+  </script>
+</body>
+</html>
