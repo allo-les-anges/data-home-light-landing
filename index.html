@@ -269,7 +269,7 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
     <p class="hero-sub" data-i18n="sub"></p>
     <div class="hero-ctas">
       <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="btn btn-primary" style="padding:16px 36px;font-size:16px" data-i18n="btn1">Creer mon site</button>
-      <a href="https://datahome.vercel.app/demo" class="btn btn-secondary" style="padding:16px 36px;font-size:16px">Voir une demo</a>
+      <a href="https://datahome.vercel.app/demo" class="btn btn-secondary" style="padding:16px 36px;font-size:16px" data-i18n="demoCta">Voir une demo</a>
     </div>
     <div class="hero-img">
       <img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/87929424/media/images/outdoor/1.jpg" alt="The Hills 14"/>
@@ -306,12 +306,12 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
 <section class="template-strip" id="templates">
   <div class="container">
     <div class="section-head">
-      <h2>Templates previsualisables</h2>
-      <p>Ouvrez les modeles reels de l'application SaaS directement depuis la homepage. Chaque preview utilise l'agence demo DATA-HOME et les routes live du produit.</p>
+      <h2 data-i18n="homeTplTitle">Templates previsualisables</h2>
+      <p data-i18n="homeTplText">Ouvrez les modeles reels de l'application SaaS directement depuis la homepage. Chaque preview utilise les routes live du produit.</p>
     </div>
     <div class="template-preview-grid" id="homeTemplateGrid"></div>
     <div style="display:flex;justify-content:center;margin-top:28px">
-      <a href="templates.html" class="btn btn-secondary">Voir toute la galerie</a>
+      <a href="templates.html" class="btn btn-secondary" data-i18n="homeTplGallery">Voir toute la galerie</a>
     </div>
   </div>
 </section>
@@ -649,14 +649,14 @@ let lang = localStorage.getItem("dh_lang") || (navigator.language||"fr").slice(0
 if (!T[lang]) lang = "fr";
 
 const DEMO_TEXT = {
-  fr: {demoKicker:"Dashboard interactif",demoTitle:"Essayez le dashboard en direct",demoText:"Ouvrez une vraie agence de demonstration, explorez les reglages, les modules, les templates et la gestion du site. Les sauvegardes sont bloquees, vous pouvez tester sans risque.",demoP1Label:"Client",demoP1:"Mon espace, settings, modules",demoP2Label:"SaaS",demoP2:"Experience reelle, donnees protegees",demoP3Label:"Site",demoP3:"Templates, langues, branding",demoP4Label:"Demo",demoP4:"Aucune modification sauvegardee",demoCta:"Voir une demo",trialCta:"Commencer l'essai 15 jours"},
-  en: {demoKicker:"Interactive dashboard",demoTitle:"Try the dashboard live",demoText:"Open a real demo agency, explore settings, modules, templates and website management. Saving is disabled, so you can test safely.",demoP1Label:"Client",demoP1:"Workspace, settings, modules",demoP2Label:"SaaS",demoP2:"Real product, protected data",demoP3Label:"Website",demoP3:"Templates, languages, branding",demoP4Label:"Demo",demoP4:"No changes are saved",demoCta:"View demo",trialCta:"Start 15-day trial"},
-  es: {demoKicker:"Dashboard interactivo",demoTitle:"Prueba el dashboard en directo",demoText:"Abre una agencia demo real, explora ajustes, modulos, templates y gestion del sitio. El guardado esta bloqueado para que puedas probar sin riesgo.",demoP1Label:"Cliente",demoP1:"Mi espacio, ajustes, modulos",demoP2Label:"SaaS",demoP2:"Producto real, datos protegidos",demoP3Label:"Sitio",demoP3:"Templates, idiomas, branding",demoP4Label:"Demo",demoP4:"No se guarda ningun cambio",demoCta:"Ver demo",trialCta:"Empezar prueba de 15 dias"},
-  de: {demoKicker:"Interaktives Dashboard",demoTitle:"Testen Sie das Dashboard live",demoText:"Offnen Sie eine echte Demo-Agentur und testen Sie Einstellungen, Module, Templates und Website-Verwaltung. Speichern ist deaktiviert, damit Sie sicher testen konnen.",demoP1Label:"Kunde",demoP1:"Workspace, Einstellungen, Module",demoP2Label:"SaaS",demoP2:"Echtes Produkt, geschutzte Daten",demoP3Label:"Website",demoP3:"Templates, Sprachen, Branding",demoP4Label:"Demo",demoP4:"Keine Anderungen werden gespeichert",demoCta:"Demo ansehen",trialCta:"15-Tage-Test starten"},
-  nl: {demoKicker:"Interactief dashboard",demoTitle:"Probeer het dashboard live",demoText:"Open een echte demo-agency en ontdek instellingen, modules, templates en websitebeheer. Opslaan is geblokkeerd, dus u kunt veilig testen.",demoP1Label:"Klant",demoP1:"Workspace, instellingen, modules",demoP2Label:"SaaS",demoP2:"Echt product, beschermde data",demoP3Label:"Website",demoP3:"Templates, talen, branding",demoP4Label:"Demo",demoP4:"Wijzigingen worden niet opgeslagen",demoCta:"Bekijk demo",trialCta:"Start proefperiode van 15 dagen"},
-  pt: {demoKicker:"Dashboard interativo",demoTitle:"Experimente o dashboard ao vivo",demoText:"Abra uma agencia demo real e explore definicoes, modulos, templates e gestao do site. A gravacao esta bloqueada para testar sem risco.",demoP1Label:"Cliente",demoP1:"Espaco, definicoes, modulos",demoP2Label:"SaaS",demoP2:"Produto real, dados protegidos",demoP3Label:"Site",demoP3:"Templates, idiomas, branding",demoP4Label:"Demo",demoP4:"Nenhuma alteracao e guardada",demoCta:"Ver demo",trialCta:"Iniciar teste de 15 dias"},
-  ru: {demoKicker:"Интерактивная панель",demoTitle:"Попробуйте панель вживую",demoText:"Откройте демо-агентство и изучите настройки, модули, шаблоны и управление сайтом. Сохранение отключено, чтобы тестировать безопасно.",demoP1Label:"Клиент",demoP1:"Рабочая зона, настройки, модули",demoP2Label:"SaaS",demoP2:"Реальный продукт, защищенные данные",demoP3Label:"Сайт",demoP3:"Шаблоны, языки, брендинг",demoP4Label:"Демо",demoP4:"Изменения не сохраняются",demoCta:"Открыть демо",trialCta:"Начать пробный период 15 дней"},
-  pl: {demoKicker:"Interaktywny dashboard",demoTitle:"Wyprobuj dashboard na zywo",demoText:"Otworz prawdziwa agencje demo i sprawdz ustawienia, moduly, szablony oraz zarzadzanie strona. Zapisywanie jest zablokowane, wiec mozesz testowac bez ryzyka.",demoP1Label:"Klient",demoP1:"Panel, ustawienia, moduly",demoP2Label:"SaaS",demoP2:"Prawdziwy produkt, chronione dane",demoP3Label:"Strona",demoP3:"Szablony, jezyki, branding",demoP4Label:"Demo",demoP4:"Zmiany nie sa zapisywane",demoCta:"Zobacz demo",trialCta:"Rozpocznij 15-dniowy trial"}
+  fr: {demoKicker:"Dashboard interactif",demoTitle:"Essayez le dashboard en direct",demoText:"Ouvrez une vraie agence de demonstration, explorez les reglages, les modules, les templates et la gestion du site. Les sauvegardes sont bloquees, vous pouvez tester sans risque.",demoP1Label:"Client",demoP1:"Mon espace, settings, modules",demoP2Label:"SaaS",demoP2:"Experience reelle, donnees protegees",demoP3Label:"Site",demoP3:"Templates, langues, branding",demoP4Label:"Demo",demoP4:"Aucune modification sauvegardee",demoCta:"Voir une demo",trialCta:"Commencer l'essai 15 jours",homeTplTitle:"Templates previsualisables",homeTplText:"Ouvrez les modeles reels de l'application SaaS directement depuis la homepage. Chaque preview utilise les routes live du produit.",homeTplGallery:"Voir toute la galerie",tplLive:"Voir live",tplPreview:"Previsualiser",tplIncluded:"Inclus",tplPremium:"Premium",tplDescRiviera:"Luxe clair, editorial, ideal pour biens mediterraneens.",tplDescPrestige:"Style premium sombre pour agences haut de gamme.",tplDescUrban:"Affichage catalogue efficace pour gros volumes XML.",tplDescBlack:"Experience sombre immersive pour biens d'exception."},
+  en: {demoKicker:"Interactive dashboard",demoTitle:"Try the dashboard live",demoText:"Open a real demo agency, explore settings, modules, templates and website management. Saving is disabled, so you can test safely.",demoP1Label:"Client",demoP1:"Workspace, settings, modules",demoP2Label:"SaaS",demoP2:"Real product, protected data",demoP3Label:"Website",demoP3:"Templates, languages, branding",demoP4Label:"Demo",demoP4:"No changes are saved",demoCta:"View demo",trialCta:"Start 15-day trial",homeTplTitle:"Previewable templates",homeTplText:"Open the real SaaS templates directly from the homepage. Each preview uses the product's live routes.",homeTplGallery:"View full gallery",tplLive:"Live view",tplPreview:"Preview",tplIncluded:"Included",tplPremium:"Premium",tplDescRiviera:"Light luxury editorial style for Mediterranean listings.",tplDescPrestige:"Dark premium style for high-end agencies.",tplDescUrban:"Efficient catalogue layout for large XML feeds.",tplDescBlack:"Immersive dark experience for exceptional properties."},
+  es: {demoKicker:"Dashboard interactivo",demoTitle:"Prueba el dashboard en directo",demoText:"Abre una agencia demo real, explora ajustes, modulos, templates y gestion del sitio. El guardado esta bloqueado para que puedas probar sin riesgo.",demoP1Label:"Cliente",demoP1:"Mi espacio, ajustes, modulos",demoP2Label:"SaaS",demoP2:"Producto real, datos protegidos",demoP3Label:"Sitio",demoP3:"Templates, idiomas, branding",demoP4Label:"Demo",demoP4:"No se guarda ningun cambio",demoCta:"Ver demo",trialCta:"Empezar prueba de 15 dias",homeTplTitle:"Templates con vista previa",homeTplText:"Abre los templates reales del SaaS directamente desde la homepage. Cada vista previa usa las rutas live del producto.",homeTplGallery:"Ver toda la galeria",tplLive:"Ver live",tplPreview:"Vista previa",tplIncluded:"Incluido",tplPremium:"Premium",tplDescRiviera:"Lujo claro y editorial para propiedades mediterraneas.",tplDescPrestige:"Estilo premium oscuro para agencias de alta gama.",tplDescUrban:"Catalogo eficaz para grandes feeds XML.",tplDescBlack:"Experiencia oscura inmersiva para propiedades excepcionales."},
+  de: {demoKicker:"Interaktives Dashboard",demoTitle:"Testen Sie das Dashboard live",demoText:"Offnen Sie eine echte Demo-Agentur und testen Sie Einstellungen, Module, Templates und Website-Verwaltung. Speichern ist deaktiviert, damit Sie sicher testen konnen.",demoP1Label:"Kunde",demoP1:"Workspace, Einstellungen, Module",demoP2Label:"SaaS",demoP2:"Echtes Produkt, geschutzte Daten",demoP3Label:"Website",demoP3:"Templates, Sprachen, Branding",demoP4Label:"Demo",demoP4:"Keine Anderungen werden gespeichert",demoCta:"Demo ansehen",trialCta:"15-Tage-Test starten",homeTplTitle:"Templates mit Vorschau",homeTplText:"Offnen Sie die echten SaaS-Templates direkt von der Homepage. Jede Vorschau nutzt die Live-Routen des Produkts.",homeTplGallery:"Ganze Galerie ansehen",tplLive:"Live ansehen",tplPreview:"Vorschau",tplIncluded:"Inklusive",tplPremium:"Premium",tplDescRiviera:"Heller Luxus im Editorial-Stil fuer mediterrane Immobilien.",tplDescPrestige:"Dunkler Premium-Stil fuer High-End-Agenturen.",tplDescUrban:"Effizientes Kataloglayout fuer grosse XML-Feeds.",tplDescBlack:"Immersives dunkles Erlebnis fuer aussergewoehnliche Immobilien."},
+  nl: {demoKicker:"Interactief dashboard",demoTitle:"Probeer het dashboard live",demoText:"Open een echte demo-agency en ontdek instellingen, modules, templates en websitebeheer. Opslaan is geblokkeerd, dus u kunt veilig testen.",demoP1Label:"Klant",demoP1:"Workspace, instellingen, modules",demoP2Label:"SaaS",demoP2:"Echt product, beschermde data",demoP3Label:"Website",demoP3:"Templates, talen, branding",demoP4Label:"Demo",demoP4:"Wijzigingen worden niet opgeslagen",demoCta:"Bekijk demo",trialCta:"Start proefperiode van 15 dagen",homeTplTitle:"Templates met preview",homeTplText:"Open de echte SaaS-templates rechtstreeks vanaf de homepage. Elke preview gebruikt de live routes van het product.",homeTplGallery:"Bekijk volledige galerij",tplLive:"Live bekijken",tplPreview:"Preview",tplIncluded:"Inbegrepen",tplPremium:"Premium",tplDescRiviera:"Lichte luxe editorial stijl voor mediterrane panden.",tplDescPrestige:"Donkere premium stijl voor high-end kantoren.",tplDescUrban:"Efficient cataloguslayout voor grote XML-feeds.",tplDescBlack:"Meeslepende donkere ervaring voor uitzonderlijke panden."},
+  pt: {demoKicker:"Dashboard interativo",demoTitle:"Experimente o dashboard ao vivo",demoText:"Abra uma agencia demo real e explore definicoes, modulos, templates e gestao do site. A gravacao esta bloqueada para testar sem risco.",demoP1Label:"Cliente",demoP1:"Espaco, definicoes, modulos",demoP2Label:"SaaS",demoP2:"Produto real, dados protegidos",demoP3Label:"Site",demoP3:"Templates, idiomas, branding",demoP4Label:"Demo",demoP4:"Nenhuma alteracao e guardada",demoCta:"Ver demo",trialCta:"Iniciar teste de 15 dias",homeTplTitle:"Templates com pre-visualizacao",homeTplText:"Abra os templates reais do SaaS diretamente na homepage. Cada pre-visualizacao usa as rotas live do produto.",homeTplGallery:"Ver galeria completa",tplLive:"Ver live",tplPreview:"Pre-visualizar",tplIncluded:"Incluido",tplPremium:"Premium",tplDescRiviera:"Luxo claro e editorial para imoveis mediterranicos.",tplDescPrestige:"Estilo premium escuro para agencias de topo.",tplDescUrban:"Catalogo eficiente para grandes feeds XML.",tplDescBlack:"Experiencia escura imersiva para propriedades excecionais."},
+  ru: {demoKicker:"Интерактивная панель",demoTitle:"Попробуйте панель вживую",demoText:"Откройте демо-агентство и изучите настройки, модули, шаблоны и управление сайтом. Сохранение отключено, чтобы тестировать безопасно.",demoP1Label:"Клиент",demoP1:"Рабочая зона, настройки, модули",demoP2Label:"SaaS",demoP2:"Реальный продукт, защищенные данные",demoP3Label:"Сайт",demoP3:"Шаблоны, языки, брендинг",demoP4Label:"Демо",demoP4:"Изменения не сохраняются",demoCta:"Открыть демо",trialCta:"Начать пробный период 15 дней",homeTplTitle:"Шаблоны с предпросмотром",homeTplText:"Откройте реальные SaaS-шаблоны прямо с главной страницы. Каждый предпросмотр использует live-маршруты продукта.",homeTplGallery:"Открыть всю галерею",tplLive:"Live просмотр",tplPreview:"Предпросмотр",tplIncluded:"Включено",tplPremium:"Premium",tplDescRiviera:"Светлый luxury editorial стиль для средиземноморских объектов.",tplDescPrestige:"Темный premium стиль для агентств высокого класса.",tplDescUrban:"Эффективный каталог для больших XML-фидов.",tplDescBlack:"Иммерсивный темный опыт для исключительных объектов."},
+  pl: {demoKicker:"Interaktywny dashboard",demoTitle:"Wyprobuj dashboard na zywo",demoText:"Otworz prawdziwa agencje demo i sprawdz ustawienia, moduly, szablony oraz zarzadzanie strona. Zapisywanie jest zablokowane, wiec mozesz testowac bez ryzyka.",demoP1Label:"Klient",demoP1:"Panel, ustawienia, moduly",demoP2Label:"SaaS",demoP2:"Prawdziwy produkt, chronione dane",demoP3Label:"Strona",demoP3:"Szablony, jezyki, branding",demoP4Label:"Demo",demoP4:"Zmiany nie sa zapisywane",demoCta:"Zobacz demo",trialCta:"Rozpocznij 15-dniowy trial",homeTplTitle:"Szablony z podgladem",homeTplText:"Otworz prawdziwe szablony SaaS bezposrednio ze strony glownej. Kazdy podglad korzysta z live routingu produktu.",homeTplGallery:"Zobacz cala galerie",tplLive:"Zobacz live",tplPreview:"Podglad",tplIncluded:"W cenie",tplPremium:"Premium",tplDescRiviera:"Jasny luksusowy styl editorial dla ofert srodziemnomorskich.",tplDescPrestige:"Ciemny premium styl dla agencji high-end.",tplDescUrban:"Efektywny katalog dla duzych feedow XML.",tplDescBlack:"Immersyjne ciemne doswiadczenie dla wyjatkowych nieruchomosci."}
 };
 Object.keys(DEMO_TEXT).forEach((lc) => Object.assign(T[lc] || T.fr, DEMO_TEXT[lc]));
 
@@ -700,6 +700,7 @@ function setLang(lc) {
   document.querySelectorAll("[data-i18n-html]").forEach(el => { if (d[el.dataset.i18nHtml] !== undefined) el.innerHTML = d[el.dataset.i18nHtml]; });
   document.querySelectorAll("[data-i18n-ph]").forEach(el => { if (d[el.dataset.i18nPh] !== undefined) el.placeholder = d[el.dataset.i18nPh]; });
   document.documentElement.lang = lang;
+  renderHomeTemplates();
   updatePricingDisplay();
 }
 
@@ -727,22 +728,27 @@ function toggleFaq(el) {
   if (!wasOpen) item.classList.add("active");
 }
 
-const TEMPLATE_PREVIEW_BASE = "https://datahome.vercel.app/fr/demo-datahome/template-preview";
+const TEMPLATE_PREVIEW_SLUG = "demo-datahome";
+function templatePreviewUrl(templateId) {
+  const previewLang = T[lang] ? lang : "en";
+  return `https://datahome.vercel.app/${previewLang}/${TEMPLATE_PREVIEW_SLUG}/template-preview/${templateId}`;
+}
 const HOME_TEMPLATES = [
-  { id:"riviera", name:"Riviera", tier:"base", price:"Inclus", color:"#C8A84E", image:"https://medianewbuild.com/file/hh-media-bucket/developments_v2/87929424/media/images/outdoor/1.jpg", description:"Luxe clair, editorial, ideal pour biens mediterraneens." },
-  { id:"prestige", name:"Prestige", tier:"base", price:"Inclus", color:"#B859C5", image:"https://medianewbuild.com/file/hh-media-bucket/developments_v2/37089450/media/images/outdoor/1.jpg", description:"Style premium sombre pour agences haut de gamme." },
-  { id:"urban", name:"Urban", tier:"base", price:"Inclus", color:"#2563EB", image:"https://medianewbuild.com/file/hh-media-bucket/developments_v2/32156547/media/images/outdoor/1.jpg", description:"Affichage catalogue efficace pour gros volumes XML." },
-  { id:"prestige-black-premium", name:"Prestige Black", tier:"premium", price:"790 EUR", color:"#D4AF37", image:"https://medianewbuild.com/file/hh-media-bucket/developments_v2/70091589/media/images/outdoor/1.jpg", description:"Experience sombre immersive pour biens d'exception." }
+  { id:"riviera", name:"Riviera", tier:"base", priceKey:"tplIncluded", color:"#C8A84E", image:"https://medianewbuild.com/file/hh-media-bucket/developments_v2/87929424/media/images/outdoor/1.jpg", descriptionKey:"tplDescRiviera" },
+  { id:"prestige", name:"Prestige", tier:"base", priceKey:"tplIncluded", color:"#B859C5", image:"https://medianewbuild.com/file/hh-media-bucket/developments_v2/37089450/media/images/outdoor/1.jpg", descriptionKey:"tplDescPrestige" },
+  { id:"urban", name:"Urban", tier:"base", priceKey:"tplIncluded", color:"#2563EB", image:"https://medianewbuild.com/file/hh-media-bucket/developments_v2/32156547/media/images/outdoor/1.jpg", descriptionKey:"tplDescUrban" },
+  { id:"prestige-black-premium", name:"Prestige Black", tier:"premium", priceKey:"tplPremium", color:"#D4AF37", image:"https://medianewbuild.com/file/hh-media-bucket/developments_v2/70091589/media/images/outdoor/1.jpg", descriptionKey:"tplDescBlack" }
 ];
 
 function renderHomeTemplates() {
   const grid = document.getElementById("homeTemplateGrid");
   if (!grid) return;
+  const d = T[lang] || T.fr;
   grid.innerHTML = HOME_TEMPLATES.map((template) => `
     <article class="template-preview-card">
       <div class="template-preview-screen">
-        <button class="template-preview-live" type="button" data-template-preview="${template.id}" data-template-name="${template.name}">Voir live</button>
-        <span class="template-preview-tier ${template.tier === "base" ? "base" : ""}">${template.tier === "base" ? "Inclus" : "Premium"}</span>
+        <button class="template-preview-live" type="button" data-template-preview="${template.id}" data-template-name="${template.name}">${d.tplLive || "Live"}</button>
+        <span class="template-preview-tier ${template.tier === "base" ? "base" : ""}">${template.tier === "base" ? (d.tplIncluded || "Included") : (d.tplPremium || "Premium")}</span>
         <div class="template-mini">
           <div class="template-mini-hero" style="background-image:url('${template.image}')">
             <div class="template-mini-lines">
@@ -761,10 +767,10 @@ function renderHomeTemplates() {
       </div>
       <div class="template-preview-info">
         <h3>${template.name}</h3>
-        <p>${template.description}</p>
+        <p>${d[template.descriptionKey] || ""}</p>
         <div class="template-preview-actions">
-          <button class="btn btn-primary" type="button" data-template-preview="${template.id}" data-template-name="${template.name}">Previsualiser</button>
-          <a class="btn btn-secondary" href="${TEMPLATE_PREVIEW_BASE}/${template.id}" target="_blank" rel="noopener">${template.price}</a>
+          <button class="btn btn-primary" type="button" data-template-preview="${template.id}" data-template-name="${template.name}">${d.tplPreview || "Preview"}</button>
+          <a class="btn btn-secondary" href="${templatePreviewUrl(template.id)}" target="_blank" rel="noopener">${d[template.priceKey] || ""}</a>
         </div>
       </div>
     </article>
@@ -776,9 +782,10 @@ function openTemplatePreview(templateId, templateName) {
   const frame = document.getElementById("templatePreviewFrame");
   const title = document.getElementById("templatePreviewTitle");
   const open = document.getElementById("templatePreviewOpen");
-  const url = `${TEMPLATE_PREVIEW_BASE}/${templateId}`;
+  const d = T[lang] || T.en || T.fr;
+  const url = templatePreviewUrl(templateId);
   if (!modal || !frame || !title || !open) return;
-  title.textContent = `Previsualisation - ${templateName}`;
+  title.textContent = `${d.tplPreview || "Preview"} - ${templateName}`;
   open.href = url;
   frame.src = url;
   modal.classList.add("open");
