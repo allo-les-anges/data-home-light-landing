@@ -3,273 +3,349 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Templates DATA-HOME - Inclus et premium</title>
-  <meta name="description" content="Galerie des templates DATA-HOME pour agences immobilieres: modeles inclus, premium et futurs templates sur mesure.">
+  <title>Templates DATA-HOME - Previsualisation en direct</title>
+  <meta name="description" content="Galerie des templates DATA-HOME disponibles dans le dashboard client: templates inclus et premium avec previsualisation live.">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&family=Cormorant+Garamond:wght@600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --red: #E8424A;
-      --orange: #F28444;
-      --gold: #F5C842;
-      --blue: #2196C9;
-      --dark: #1a1a1a;
-      --dark2: #2d2d2d;
-      --light: #F8F9FA;
-      --muted: #6b7280;
-      --line: #e5e7eb;
-      --max: 1180px;
+      --red:#E8424A; --orange:#F28444; --gold:#F5C842; --green:#4CAF7D;
+      --blue:#2196C9; --purple:#7C5CBF; --ink:#111827; --muted:#64748b;
+      --line:#e5e7eb; --soft:#f8fafc; --max:1240px;
     }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      color: var(--dark);
-      background: #fff;
-      font-family: 'Montserrat', sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
-    a { color: inherit; text-decoration: none; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#f6f8fb; color:var(--ink); font-family:Montserrat, sans-serif; -webkit-font-smoothing:antialiased; }
+    a { color:inherit; text-decoration:none; }
     img { display:block; max-width:100%; }
     .container { width:min(var(--max), calc(100% - 40px)); margin:0 auto; }
-    header {
-      position: sticky; top:0; z-index:20;
-      background: #fff;
-      border-bottom:1px solid var(--line);
-    }
-    .nav { min-height:72px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
-    .logo { flex-shrink:0; }
+    header { position:sticky; top:0; z-index:40; background:rgba(255,255,255,.92); border-bottom:1px solid rgba(15,23,42,.08); backdrop-filter:blur(18px); }
+    .nav { min-height:76px; display:flex; align-items:center; justify-content:space-between; gap:22px; }
     .logo img { width:220px; height:50px; object-fit:contain; border-radius:8px; }
-    .links { display:flex; gap:24px; align-items:center; font-size:14px; font-weight:600; color:#555; }
+    .links { display:flex; align-items:center; gap:24px; color:#526173; font-size:13px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
     .links a:hover { color:var(--blue); }
-    .btn {
-      display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:0 24px;
-      border-radius:8px; border:none; font-size:14px; font-weight:700;
-      cursor:pointer; text-decoration:none;
-      transition: transform .2s ease, opacity .2s ease;
-    }
-    .btn:hover { transform: translateY(-1px); }
-    .btn-primary { color:#fff; background:linear-gradient(90deg,var(--red),var(--orange),var(--gold)); box-shadow:0 4px 16px rgba(232,66,74,.3); }
-    .btn-primary:hover { opacity:.9; }
-    .hero { padding:78px 0 46px; }
-    .eyebrow { color:var(--blue); font-size:12px; font-weight:700; letter-spacing:.15em; text-transform:uppercase; }
-    h1, h2 { letter-spacing:-.02em; line-height:1.1; font-weight:800; }
-    h1 { max-width:930px; margin:18px 0; font-size:clamp(36px,6vw,72px); }
-    .lead { max-width:760px; color:var(--muted); font-size:18px; line-height:1.75; }
-    .filters { display:flex; flex-wrap:wrap; gap:10px; margin-top:28px; }
-    .chip { border:1px solid var(--line); background:#fff; color:#39465c; border-radius:8px; padding:10px 16px; font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; cursor:pointer; transition:all .2s; }
-    .chip:hover { border-color:var(--blue); color:var(--blue); }
-    .chip.active { color:#fff; border-color:transparent; background:linear-gradient(90deg,var(--red),var(--orange),var(--gold)); }
-    .grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; padding-bottom:88px; }
-    .card {
-      position:relative; overflow:hidden; border:1px solid var(--line); border-radius:16px; background:#fff;
-      box-shadow:0 4px 24px rgba(0,0,0,.07); transition:transform .24s ease, box-shadow .24s ease;
-    }
-    .card:hover { transform:translateY(-4px); box-shadow:0 12px 40px rgba(0,0,0,.12); }
-    .preview { height:420px; background:#f3f4f6; padding:18px; overflow:hidden; }
-    .mini-page { height:640px; border-radius:12px; overflow:hidden; background:#fff; box-shadow:0 8px 24px rgba(0,0,0,.12); transform-origin:top center; transform:scale(.68); width:145%; margin-left:-22.5%; }
-    .mini-hero { height:210px; position:relative; color:#fff; display:flex; align-items:end; padding:24px; background-size:cover; background-position:center; }
-    .mini-hero::after { content:""; position:absolute; inset:0; background:linear-gradient(to top,rgba(0,0,0,.62),transparent); }
-    .mini-hero div { position:relative; z-index:1; }
-    .mini-hero strong { display:block; font-size:28px; font-weight:800; }
-    .mini-section { padding:22px; display:grid; gap:12px; }
-    .mini-row { display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; }
-    .mini-prop { border:1px solid var(--line); border-radius:10px; overflow:hidden; font-size:10px; color:#64748b; }
-    .mini-prop img { height:70px; width:100%; object-fit:cover; }
-    .mini-prop span { display:block; padding:8px; }
-    .mini-color { background:var(--light); color:var(--dark); }
-    .mini-color .mini-prop { background:#fff; border-color:var(--line); color:#64748b; }
-    .card-body { padding:20px; display:flex; justify-content:space-between; gap:16px; align-items:flex-start; }
-    .card h3 { margin:0 0 6px; font-size:18px; font-weight:700; letter-spacing:-.02em; }
-    .card p { margin:0; color:var(--muted); line-height:1.55; font-size:14px; }
-    .tag { position:absolute; top:16px; left:16px; z-index:2; border-radius:6px; padding:5px 10px; background:linear-gradient(90deg,var(--red),var(--orange)); color:#fff; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; }
-    .price { white-space:nowrap; color:var(--blue); font-weight:800; font-size:14px; }
-    .cta { padding:64px 0 86px; background:var(--light); }
-    .cta-box { display:grid; grid-template-columns:1fr auto; gap:24px; align-items:center; }
-    .cta p { color:var(--muted); }
-    .reveal { opacity:0; transform:translateY(20px); transition:opacity .65s ease, transform .65s ease; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:46px; padding:0 20px; border:0; border-radius:999px; font-size:13px; font-weight:900; cursor:pointer; transition:transform .2s ease, box-shadow .2s ease, opacity .2s ease; }
+    .btn:hover { transform:translateY(-1px); }
+    .btn-primary { color:#fff; background:linear-gradient(90deg,var(--red),var(--orange),var(--gold)); box-shadow:0 14px 34px rgba(232,66,74,.22); }
+    .btn-secondary { color:var(--blue); background:#fff; border:1px solid rgba(33,150,201,.24); box-shadow:0 12px 30px rgba(15,23,42,.06); }
+    .hero { position:relative; overflow:hidden; padding:84px 0 58px; background:linear-gradient(135deg,#ffffff 0%,#f4fbff 48%,#fff7df 100%); }
+    .hero:before { content:""; position:absolute; inset:auto -10% -35% 40%; height:420px; background:radial-gradient(circle,rgba(33,150,201,.20),transparent 62%); pointer-events:none; }
+    .eyebrow { display:inline-flex; align-items:center; gap:10px; border:1px solid rgba(33,150,201,.20); background:#fff; border-radius:999px; padding:8px 14px; color:var(--blue); font-size:11px; font-weight:900; letter-spacing:.16em; text-transform:uppercase; }
+    h1 { max-width:960px; margin:20px 0 18px; font-size:clamp(38px,6vw,78px); line-height:1.03; letter-spacing:-.05em; font-weight:900; }
+    .lead { max-width:760px; color:#536273; font-size:18px; line-height:1.75; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:14px; margin-top:30px; }
+    .filters { display:flex; flex-wrap:wrap; gap:10px; margin-top:34px; }
+    .chip { border:1px solid rgba(15,23,42,.10); background:#fff; color:#39465c; border-radius:999px; padding:11px 16px; font-size:11px; font-weight:900; letter-spacing:.12em; text-transform:uppercase; cursor:pointer; transition:all .2s; }
+    .chip:hover, .chip.active { color:#fff; border-color:transparent; background:linear-gradient(90deg,var(--red),var(--orange),var(--gold)); box-shadow:0 12px 28px rgba(232,66,74,.18); }
+    .section { padding:54px 0 92px; }
+    .section-head { display:flex; align-items:end; justify-content:space-between; gap:24px; margin-bottom:22px; }
+    .section-head h2 { margin:0; font-size:clamp(26px,3vw,42px); line-height:1.08; letter-spacing:-.04em; }
+    .section-head p { max-width:540px; margin:0; color:var(--muted); line-height:1.65; }
+    .grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; }
+    .card { position:relative; overflow:hidden; border:1px solid rgba(15,23,42,.08); border-radius:22px; background:#fff; box-shadow:0 18px 55px rgba(15,23,42,.08); transition:transform .24s ease, box-shadow .24s ease, border-color .24s ease; }
+    .card:hover { transform:translateY(-5px); border-color:rgba(33,150,201,.28); box-shadow:0 28px 75px rgba(15,23,42,.14); }
+    .preview-wrap { position:relative; background:#d9d9d9; padding:14px 14px 0; }
+    .live-pill { position:absolute; left:14px; top:14px; z-index:2; display:inline-flex; align-items:center; gap:6px; border:0; border-radius:8px; background:#f5c400; color:#111827; padding:7px 10px; font-size:10px; font-weight:900; cursor:pointer; box-shadow:0 10px 22px rgba(15,23,42,.12); }
+    .tier { position:absolute; right:14px; top:14px; z-index:2; border-radius:999px; padding:7px 10px; background:#111827; color:#fff; font-size:9px; font-weight:900; letter-spacing:.14em; text-transform:uppercase; }
+    .tier.base { background:#10b981; }
+    .mock { height:410px; overflow:hidden; border-radius:14px 14px 0 0; background:#fff; box-shadow:0 14px 36px rgba(15,23,42,.16); transform-origin:top center; }
+    .mock-header { height:34px; display:flex; align-items:center; justify-content:center; border-bottom:1px solid rgba(15,23,42,.06); background:#fff; }
+    .mock-logo { height:10px; width:76px; border-radius:999px; background:#111827; }
+    .mock-hero { position:relative; height:150px; overflow:hidden; display:flex; align-items:end; padding:22px; color:#fff; background-size:cover; background-position:center; }
+    .mock-hero:after { content:""; position:absolute; inset:0; background:linear-gradient(to top,rgba(0,0,0,.62),transparent); }
+    .mock-hero-content { position:relative; z-index:1; max-width:75%; }
+    .mock-kicker { height:7px; width:72px; border-radius:999px; background:rgba(255,255,255,.72); margin-bottom:8px; }
+    .mock-title { height:15px; width:160px; border-radius:999px; background:#fff; }
+    .mock-cta { height:18px; width:82px; border-radius:999px; margin-top:14px; }
+    .mock-body { padding:18px; }
+    .mock-body.dark { background:#0B1020; min-height:226px; }
+    .mock-heading { display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; }
+    .line { display:block; height:8px; border-radius:999px; background:#111827; opacity:.86; }
+    .line.muted { background:#cbd5e1; }
+    .prop-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
+    .prop { overflow:hidden; border:1px solid rgba(15,23,42,.07); border-radius:10px; background:#fff; }
+    .prop.square { border-radius:2px; }
+    .prop img { height:74px; width:100%; object-fit:cover; }
+    .prop-body { padding:9px; display:grid; gap:6px; }
+    .portal-list { display:grid; gap:10px; }
+    .portal-item { display:grid; grid-template-columns:86px 1fr auto; gap:12px; align-items:center; border-radius:12px; background:#fff; padding:10px; box-shadow:0 8px 22px rgba(15,23,42,.08); }
+    .portal-item img { height:64px; width:86px; object-fit:cover; border-radius:8px; }
+    .card-body { padding:18px; }
+    .card-title-row { display:flex; align-items:flex-start; justify-content:space-between; gap:16px; }
+    .card h3 { margin:0 0 7px; font-size:19px; letter-spacing:-.03em; }
+    .card p { margin:0; color:var(--muted); line-height:1.55; font-size:13px; }
+    .price { white-space:nowrap; font-size:13px; font-weight:900; color:#111827; }
+    .meta { display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
+    .meta span { border-radius:999px; background:#f1f5f9; color:#475569; padding:6px 9px; font-size:10px; font-weight:800; }
+    .card-actions { display:flex; gap:10px; margin-top:18px; }
+    .card-actions .btn { flex:1; min-height:42px; padding:0 12px; font-size:11px; }
+    .cta { padding:70px 0 88px; background:#fff; }
+    .cta-box { display:grid; grid-template-columns:1fr auto; gap:28px; align-items:center; border:1px solid rgba(15,23,42,.08); border-radius:28px; padding:34px; background:linear-gradient(135deg,#f8fbff,#fff7df); box-shadow:0 22px 70px rgba(15,23,42,.08); }
+    .cta h2 { margin:0 0 10px; font-size:clamp(30px,4vw,56px); line-height:1.04; letter-spacing:-.05em; }
+    .cta p { margin:0; color:var(--muted); line-height:1.7; }
+    .modal { position:fixed; inset:0; z-index:100; display:none; background:rgba(15,23,42,.72); backdrop-filter:blur(12px); padding:28px; }
+    .modal.open { display:flex; }
+    .modal-shell { position:relative; flex:1; max-width:1480px; margin:auto; height:min(860px, calc(100vh - 56px)); overflow:hidden; border-radius:26px; background:#fff; box-shadow:0 35px 100px rgba(0,0,0,.36); }
+    .modal-bar { height:58px; display:flex; align-items:center; justify-content:space-between; gap:16px; border-bottom:1px solid var(--line); padding:0 16px 0 20px; background:#fff; }
+    .modal-title { min-width:0; font-size:13px; font-weight:900; letter-spacing:.08em; text-transform:uppercase; color:#334155; }
+    .modal-actions { display:flex; gap:10px; align-items:center; }
+    .modal iframe { width:100%; height:calc(100% - 58px); border:0; background:#fff; }
+    .close { width:40px; height:40px; border:0; border-radius:14px; background:#f1f5f9; color:#0f172a; font-size:22px; cursor:pointer; }
+    .reveal { opacity:0; transform:translateY(18px); transition:opacity .62s ease, transform .62s ease; }
     .reveal.in { opacity:1; transform:none; }
-    @media (max-width: 980px) {
-      .links { display:none; }
-      .grid { grid-template-columns:1fr 1fr; }
-      .cta-box { grid-template-columns:1fr; }
-    }
-    @media (max-width: 640px) {
-      .container { width:min(100% - 28px, var(--max)); }
-      .logo img { width:176px; }
-      .grid { grid-template-columns:1fr; }
-      .preview { height:380px; }
-    }
-    @media (max-width: 640px) {
-      .nav .btn { display:none; }
-    }
-    @media (max-width: 480px) {
-      .logo img { width:150px; height:42px; }
-    }
+    @media (max-width:1024px) { .grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .section-head, .cta-box { grid-template-columns:1fr; display:grid; } .links { display:none; } }
+    @media (max-width:680px) { .container { width:min(100% - 28px, var(--max)); } .grid { grid-template-columns:1fr; } .nav .btn { display:none; } .logo img { width:172px; } .mock { height:370px; } .modal { padding:12px; } .modal-shell { height:calc(100vh - 24px); border-radius:18px; } .modal-title { font-size:11px; } }
   </style>
 </head>
 <body>
   <header>
     <div class="container nav">
       <a class="logo" href="/"><img src="images/DH_V2.jpg" alt="DATA-HOME"></a>
-      <div class="links">
+      <nav class="links">
         <a href="/">Accueil</a>
-        <a href="#included">Inclus</a>
+        <a href="#base">Inclus</a>
         <a href="#premium">Premium</a>
-        <a href="/#contact">Demander un site</a>
-      </div>
-      <a class="btn btn-primary" href="/#contact">Demander un site</a>
+        <a href="https://datahome.vercel.app/demo">Demo live</a>
+      </nav>
+      <a class="btn btn-primary" href="https://datahome.vercel.app/register">Essai 15 jours</a>
     </div>
   </header>
 
   <main>
     <section class="hero">
       <div class="container reveal">
-        <div class="eyebrow">Galerie templates DATA-HOME</div>
-        <h1>Des modeles web dignes d'une agence premium.</h1>
-        <p class="lead">Choisissez une base visuelle, puis adaptez logo, couleurs, police, hero, affichage des biens, pages, domaines et modules dans l'espace client.</p>
+        <span class="eyebrow">Templates synchronises avec le SaaS</span>
+        <h1>Les memes templates que dans le dashboard client.</h1>
+        <p class="lead">Cette galerie reprend les templates disponibles dans la section settings de l'application DATA-HOME. Chaque modele peut etre previsualise en live avant d'etre choisi dans le dashboard.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://datahome.vercel.app/demo">Ouvrir la demo SaaS</a>
+          <a class="btn btn-secondary" href="https://datahome.vercel.app/register">Commencer l'essai 15 jours</a>
+        </div>
         <div class="filters" aria-label="Filtres templates">
           <button class="chip active" data-filter="all">Tous</button>
-          <button class="chip" data-filter="included">Inclus</button>
+          <button class="chip" data-filter="base">Inclus</button>
           <button class="chip" data-filter="premium">Premium</button>
           <button class="chip" data-filter="portal">Catalogue</button>
+          <button class="chip" data-filter="editorial">Editorial</button>
         </div>
       </div>
     </section>
 
-    <section class="container grid" id="templates">
-      <!-- TIERRA -->
-      <article class="card reveal" data-kind="premium">
-        <span class="tag">Premium</span>
-        <div class="preview">
-          <div class="mini-page">
-            <div class="mini-hero" style="background-image:url('https://medianewbuild.com/file/hh-media-bucket/developments_v2/87929424/media/images/5.jpg')"><div><span>Tierra</span><strong>Nature, architecture et silence.</strong></div></div>
-            <div class="mini-section"><p>Approche editoriale inspiree des agences lifestyle.</p><div class="mini-row">
-              <div class="mini-prop"><img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/37089450/media/images/commonareas/6.jpg" loading="lazy"><span>19,5 M&euro;</span></div>
-              <div class="mini-prop"><img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/32156547/media/images/outdoor/5.jpg" loading="lazy"><span>19 M&euro;</span></div>
-              <div class="mini-prop"><img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/70091589/media/images/outdoor/11.jpg" loading="lazy"><span>12,5 M&euro;</span></div>
-            </div></div>
+    <section class="section" id="base">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Inclus dans l'offre</span>
+            <h2>Templates de base</h2>
           </div>
+          <p>Des bases visuelles solides, directement personnalisables depuis Mon Espace: couleurs, police, hero, affichage des vignettes et modules.</p>
         </div>
-        <div class="card-body"><div><h3>Tierra</h3><p>Hero scinde, textes aeres, rythme editorial, ideal agences luxe nature.</p></div><span class="price">299 EUR</span></div>
-      </article>
+        <div class="grid" id="baseGrid"></div>
+      </div>
+    </section>
 
-      <!-- PRESTIGE -->
-      <article class="card reveal" data-kind="included" id="included">
-        <span class="tag">Inclus</span>
-        <div class="preview">
-          <div class="mini-page mini-color">
-            <div class="mini-hero" style="background-image:url('https://medianewbuild.com/file/hh-media-bucket/developments_v2/82064372/media/images/8.jpg')"><div><span>Prestige</span><strong>Dreams can come true.</strong></div></div>
-            <div class="mini-section"><p>Ambiance sombre, typographie serif, biens mis en scene.</p><div class="mini-row">
-              <div class="mini-prop"><img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/85770703/media/images/outdoor/3.jpg" loading="lazy"><span>12 M&euro;</span></div>
-              <div class="mini-prop"><img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/61414385/media/images/outdoor/4.jpg" loading="lazy"><span>11,5 M&euro;</span></div>
-              <div class="mini-prop"><img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/25407071/media/images/outdoor/2.jpg" loading="lazy"><span>11,5 M&euro;</span></div>
-            </div></div>
+    <section class="section" id="premium" style="padding-top:0">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Options payantes</span>
+            <h2>Templates premium</h2>
           </div>
+          <p>Des designs plus marques pour agences qui veulent une direction artistique forte ou une experience catalogue plus poussee.</p>
         </div>
-        <div class="card-body"><div><h3>Prestige</h3><p>Style premium sombre, parfait pour une agence haut de gamme.</p></div><span class="price">Inclus</span></div>
-      </article>
-
-      <!-- PORTAL -->
-      <article class="card reveal" data-kind="premium portal">
-        <span class="tag">Premium</span>
-        <div class="preview">
-          <div class="mini-page">
-            <div class="mini-hero" style="background-image:url('https://medianewbuild.com/file/hh-media-bucket/developments_v2/75114616/media/images/outdoor/12.jpg')"><div><span>Portal</span><strong>Trouvez le bien parfait.</strong></div></div>
-            <div class="mini-section"><p>Recherche avancee, filtres, liste dense et pagination.</p><div class="mini-row">
-              <div class="mini-prop"><img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/13981925/media/images/outdoor/2.jpg" loading="lazy"><span>9,8 M&euro;</span></div>
-              <div class="mini-prop"><img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/54036936/media/images/3.jpg" loading="lazy"><span>9,75 M&euro;</span></div>
-              <div class="mini-prop"><img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/71134143/media/images/outdoor/3.jpg" loading="lazy"><span>8,99 M&euro;</span></div>
-            </div></div>
-          </div>
-        </div>
-        <div class="card-body"><div><h3>Portal</h3><p>Experience catalogue pour agences avec beaucoup de biens XML.</p></div><span class="price">249 EUR</span></div>
-      </article>
-
-      <!-- LUMINA -->
-      <article class="card reveal" data-kind="included">
-        <span class="tag">Inclus</span>
-        <div class="preview">
-          <div class="mini-page">
-            <div class="mini-hero" style="background-image:url('https://medianewbuild.com/file/hh-media-bucket/developments_v2/60772630/media/images/outdoor/14.jpg')"><div><span>Lumina</span><strong>Clair, rapide, elegant.</strong></div></div>
-            <div class="mini-section"><p>Look lumineux, couleurs modernes, cartes compactes.</p><div class="mini-row">
-              <div class="mini-prop"><img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/19618186/media/images/outdoor/1.jpg" loading="lazy"><span>8,8 M&euro;</span></div>
-              <div class="mini-prop"><img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/66812358/media/images/outdoor/3.jpg" loading="lazy"><span>8,7 M&euro;</span></div>
-              <div class="mini-prop"><img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/33794195/media/images/outdoor/1.jpg" loading="lazy"><span>8,65 M&euro;</span></div>
-            </div></div>
-          </div>
-        </div>
-        <div class="card-body"><div><h3>Lumina</h3><p>Base claire et coloree pour agences locales et modernes.</p></div><span class="price">Inclus</span></div>
-      </article>
-
-      <!-- CHROMIA -->
-      <article class="card reveal" data-kind="premium" id="premium">
-        <span class="tag">Premium</span>
-        <div class="preview">
-          <div class="mini-page mini-color">
-            <div class="mini-hero" style="background-image:url('https://medianewbuild.com/file/hh-media-bucket/developments_v2/54142260/media/images/outdoor/12.jpg')"><div><span>Chromia</span><strong>Immobilier confidentiel.</strong></div></div>
-            <div class="mini-section"><p>Design colore, sections immersives, vignettes elegantes.</p><div class="mini-row">
-              <div class="mini-prop"><img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/31652867/media/images/outdoor/1.jpg" loading="lazy"><span>8 M&euro;</span></div>
-              <div class="mini-prop"><img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/20947011/media/images/outdoor/2.jpg" loading="lazy"><span>7,99 M&euro;</span></div>
-              <div class="mini-prop"><img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/21371748/media/images/11.jpg" loading="lazy"><span>7,8 M&euro;</span></div>
-            </div></div>
-          </div>
-        </div>
-        <div class="card-body"><div><h3>Chromia</h3><p>Pour une presentation haut de gamme, coloree et cinematographique.</p></div><span class="price">349 EUR</span></div>
-      </article>
-
-      <!-- ATLAS -->
-      <article class="card reveal" data-kind="premium portal">
-        <span class="tag">Premium</span>
-        <div class="preview">
-          <div class="mini-page">
-            <div class="mini-hero" style="background-image:url('https://medianewbuild.com/file/hh-media-bucket/developments_v2/76120816/media/images/outdoor/1.jpg')"><div><span>Atlas</span><strong>Carte, regions et recherche.</strong></div></div>
-            <div class="mini-section"><p>Approche catalogue geographique pour plusieurs zones.</p><div class="mini-row">
-              <div class="mini-prop"><img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/60211160/media/images/outdoor/10.jpg" loading="lazy"><span>6,99 M&euro;</span></div>
-              <div class="mini-prop"><img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/20947011/media/images/outdoor/1.jpg" loading="lazy"><span>6,99 M&euro;</span></div>
-              <div class="mini-prop"><img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/82064372/media/images/20.jpg" loading="lazy"><span>8,49 M&euro;</span></div>
-            </div></div>
-          </div>
-        </div>
-        <div class="card-body"><div><h3>Atlas</h3><p>Ideal pour mettre en avant regions, villes et volumes de biens.</p></div><span class="price">299 EUR</span></div>
-      </article>
+        <div class="grid" id="premiumGrid"></div>
+      </div>
     </section>
 
     <section class="cta">
       <div class="container cta-box reveal">
         <div>
-          <div class="eyebrow">Workflow commercial</div>
-          <h2 style="font-size:clamp(36px,5vw,64px);margin:14px 0 8px">Un template n'est que le debut.</h2>
-          <p>DATA-HOME ajoute la configuration client, le flux XML, les modules, les domaines et les demandes d'options premium.</p>
+          <span class="eyebrow">Workflow reel</span>
+          <h2>Choisissez, previsualisez, appliquez.</h2>
+          <p>La selection finale se fait dans le dashboard client, avec les vrais reglages de l'agence et les memes templates que cette page.</p>
         </div>
-        <a class="btn btn-primary" href="/#contact">Lancer mon projet</a>
+        <a class="btn btn-primary" href="https://datahome.vercel.app/register">Creer mon espace</a>
       </div>
     </section>
   </main>
 
-  <script>
-    const reveal = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add('in');
-      });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach((el) => reveal.observe(el));
+  <div class="modal" id="previewModal" aria-hidden="true">
+    <div class="modal-shell">
+      <div class="modal-bar">
+        <div class="modal-title" id="modalTitle">Previsualisation template</div>
+        <div class="modal-actions">
+          <a class="btn btn-secondary" id="modalOpen" href="#" target="_blank" rel="noopener">Ouvrir dans un onglet</a>
+          <button class="close" type="button" id="modalClose" aria-label="Fermer">&times;</button>
+        </div>
+      </div>
+      <iframe id="modalFrame" title="Previsualisation template DATA-HOME"></iframe>
+    </div>
+  </div>
 
-    const chips = document.querySelectorAll('.chip');
-    const cards = document.querySelectorAll('.card[data-kind]');
+  <script>
+    const PREVIEW_BASE = "https://datahome.vercel.app/fr/demo-datahome/template-preview";
+    const images = [
+      "https://medianewbuild.com/file/hh-media-bucket/developments_v2/13112583/media/images/1.jpg",
+      "https://medianewbuild.com/file/hh-media-bucket/developments_v2/13112583/media/images/outdoor/1.jpg",
+      "https://medianewbuild.com/file/hh-media-bucket/developments_v2/13112583/media/images/outdoor/2.jpg",
+      "https://medianewbuild.com/file/hh-media-bucket/developments_v2/13112583/media/images/outdoor/4.jpg"
+    ];
+
+    const templates = [
+      { id:"riviera", tier:"base", name:"Riviera", price:"Inclus", description:"Elegance mediterraneenne, fond clair, or doux et vignettes editoriales.", markets:["Cote d'Azur","Marbella","Monaco"], positioning:"Luxe balneaire", primary:"#C8A84E", button:"#D4AF37", font:"'Playfair Display', serif", style:"editorial", corners:"rounded", bg:"#F8FAFC", cols:3, hero:"Decouvrez nos proprietes d'exception en bord de mer.", badge:"Best-seller" },
+      { id:"prestige", tier:"base", name:"Prestige", price:"Inclus", description:"Style premium sombre, accents violets et cartes compactes.", markets:["Paris","London","Geneve"], positioning:"Ultra-premium urbain", primary:"#B859C5", button:"#B859C5", font:"Cormorant Garamond, serif", style:"compact editorial", corners:"rounded", bg:"#F3F4F6", cols:3, hero:"L'exception immobiliere dans les plus grandes capitales.", badge:"Nouveau" },
+      { id:"urban", tier:"base", name:"Urban", price:"Inclus", description:"Affichage horizontal type portail, bleu vif, pour un volume eleve de biens.", markets:["Paris","Lyon","Bordeaux"], positioning:"Portail urbain", primary:"#2563EB", button:"#2563EB", font:"Inter, sans-serif", style:"portal-list", corners:"rounded", bg:"#F8FAFC", cols:4, hero:"Trouvez votre bien ideal parmi des centaines d'annonces.", badge:"Populaire" },
+      { id:"soleil", tier:"base", name:"Soleil", price:"Inclus", description:"Tons chauds ambre et orange, convivial et ensoleille.", markets:["Provence","Languedoc","Andalousie"], positioning:"Art de vivre mediterraneen", primary:"#D97706", button:"#EA580C", font:"Poppins, sans-serif", style:"editorial", corners:"rounded", bg:"#FFFBEB", cols:3, hero:"L'art de vivre sous le soleil du Sud.", badge:"Inclus" },
+      { id:"nordic", tier:"base", name:"Nordic", price:"Inclus", description:"Presentation sobre, bords droits, espaces blancs et accent bleu froid.", markets:["Belgique","Pays-Bas","Suede"], positioning:"Minimalisme scandinave", primary:"#0EA5E9", button:"#0F172A", font:"Montserrat, sans-serif", style:"minimal", corners:"square", bg:"#FFFFFF", cols:4, hero:"Des espaces concus pour votre quotidien.", badge:"Inclus" },
+      { id:"verde", tier:"base", name:"Verde", price:"Inclus", description:"Palette verte naturelle, engagement durable, vignettes arrondies douces.", markets:["Campagne","Eco-quartiers","Montagne"], positioning:"Immobilier durable & nature", primary:"#16A34A", button:"#15803D", font:"Inter, sans-serif", style:"editorial", corners:"rounded", bg:"#F0FDF4", cols:3, hero:"Vivez en harmonie avec la nature.", badge:"Inclus" },
+      { id:"riviera-light-premium", tier:"premium", name:"Riviera Light", price:"490 EUR", description:"Template premium clair avec hero solaire, rythme editorial et presentation tres haut de gamme.", markets:["Marbella","Costa Blanca","Cote d'Azur"], positioning:"Premium lumineux", primary:"#D4AF37", button:"#C99700", font:"'Playfair Display', serif", style:"editorial", corners:"rounded", bg:"#FBF7EF", cols:3, hero:"Une selection exclusive presentee avec elegance.", badge:"Premium" },
+      { id:"prestige-black-premium", tier:"premium", name:"Prestige Black", price:"790 EUR", description:"Template premium sombre pour biens d'exception, photos immersives et contraste luxueux.", markets:["Luxury","Ibiza","Monaco"], positioning:"Luxury dark", primary:"#B859C5", button:"#D4AF37", font:"Cormorant Garamond, serif", style:"editorial dark", corners:"square", bg:"#0B1020", cols:3, hero:"Une experience sombre, immersive et memorisable.", badge:"Premium" },
+      { id:"urban-minimal-premium", tier:"premium", name:"Urban Minimal", price:"390 EUR", description:"Template premium rapide et sobre pour agences urbaines avec recherche et cartes tres efficaces.", markets:["Bruxelles","Paris","Madrid"], positioning:"Minimal premium", primary:"#2563EB", button:"#111827", font:"Inter, sans-serif", style:"portal-list", corners:"square", bg:"#FFFFFF", cols:4, hero:"Une interface directe pour convertir plus vite.", badge:"Premium" },
+      { id:"signature-family-premium", tier:"premium", name:"Signature Family", price:"590 EUR", description:"Template premium chaleureux pour agences locales, residences familiales et relation de confiance.", markets:["Familles","Local","Residentiel"], positioning:"Confiance locale", primary:"#0EA5E9", button:"#F97316", font:"Poppins, sans-serif", style:"classic", corners:"rounded", bg:"#F8FAFC", cols:3, hero:"Des biens presentes avec chaleur, clarte et proximite.", badge:"Premium" }
+    ];
+
+    function previewUrl(template) {
+      return `${PREVIEW_BASE}/${template.id}`;
+    }
+
+    function propertyCard(template, image, index) {
+      const square = template.corners === "square";
+      return `
+        <div class="prop ${square ? "square" : ""}">
+          <img src="${image}" loading="lazy" alt="">
+          <div class="prop-body">
+            <span class="line" style="width:${index % 2 ? "74%" : "88%"}"></span>
+            <span class="line muted" style="width:54%"></span>
+            <span class="line" style="width:38%;background:${template.button}"></span>
+          </div>
+        </div>
+      `;
+    }
+
+    function portalPreview(template) {
+      return `
+        <div class="portal-list">
+          ${images.slice(0,3).map((image, index) => `
+            <div class="portal-item">
+              <img src="${image}" loading="lazy" alt="">
+              <div>
+                <span class="line" style="width:${index === 0 ? "92%" : "72%"}"></span>
+                <span class="line muted" style="width:54%;margin-top:8px"></span>
+                <span class="line" style="width:40%;margin-top:10px;background:${index === 1 ? template.button : template.primary}"></span>
+              </div>
+              <span class="line" style="width:44px"></span>
+            </div>
+          `).join("")}
+        </div>
+      `;
+    }
+
+    function card(template, index) {
+      const isPortal = template.style.includes("portal");
+      const isDark = template.bg.toLowerCase().startsWith("#0") || template.id.includes("prestige");
+      const heroImage = images[index % images.length];
+      const tags = [template.tier, isPortal ? "portal" : "", template.style.includes("editorial") ? "editorial" : ""].filter(Boolean).join(" ");
+      return `
+        <article class="card reveal" data-kind="${tags}" style="font-family:${template.font}">
+          <div class="preview-wrap">
+            <button class="live-pill" type="button" data-preview="${template.id}" data-name="${template.name}">Voir en live</button>
+            <span class="tier ${template.tier === "base" ? "base" : ""}">${template.tier === "base" ? "Inclus" : "Premium"}</span>
+            <div class="mock">
+              <div class="mock-header"><span class="mock-logo" style="background:${isDark ? "#111827" : template.primary}"></span></div>
+              <div class="mock-hero" style="background-image:url('${heroImage}')">
+                <div class="mock-hero-content">
+                  <span class="mock-kicker"></span>
+                  <span class="mock-title"></span>
+                  <span class="mock-cta" style="display:block;background:${template.button}"></span>
+                </div>
+              </div>
+              <div class="mock-body ${isDark ? "dark" : ""}" style="background:${template.bg}">
+                <div class="mock-heading">
+                  <div>
+                    <span class="line ${isDark ? "muted" : ""}" style="width:72px;background:${isDark ? "rgba(255,255,255,.55)" : template.primary}"></span>
+                    <span class="line" style="width:128px;margin-top:8px;background:${isDark ? "rgba(255,255,255,.9)" : "#111827"}"></span>
+                  </div>
+                  <span class="line" style="width:70px;background:${template.button}"></span>
+                </div>
+                ${isPortal ? portalPreview(template) : `<div class="prop-grid">${images.map((image, i) => propertyCard(template, image, i)).join("")}</div>`}
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-title-row">
+              <div>
+                <h3>${template.name}</h3>
+                <p>${template.description}</p>
+              </div>
+              <span class="price">${template.price}</span>
+            </div>
+            <div class="meta">
+              <span>${template.positioning}</span>
+              <span>${template.cols} / ligne</span>
+              <span>${template.corners === "square" ? "Bords droits" : "Bords arrondis"}</span>
+            </div>
+            <div class="card-actions">
+              <button class="btn btn-primary" type="button" data-preview="${template.id}" data-name="${template.name}">Previsualiser</button>
+              <a class="btn btn-secondary" href="${previewUrl(template)}" target="_blank" rel="noopener">Nouvel onglet</a>
+            </div>
+          </div>
+        </article>
+      `;
+    }
+
+    document.getElementById("baseGrid").innerHTML = templates.filter(t => t.tier === "base").map(card).join("");
+    document.getElementById("premiumGrid").innerHTML = templates.filter(t => t.tier === "premium").map(card).join("");
+
+    const reveal = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add("in"); });
+    }, { threshold:0.12 });
+    document.querySelectorAll(".reveal").forEach((el) => reveal.observe(el));
+
+    const chips = document.querySelectorAll(".chip");
+    const cards = () => document.querySelectorAll(".card[data-kind]");
     chips.forEach((chip) => {
-      chip.addEventListener('click', () => {
-        chips.forEach((c) => c.classList.remove('active'));
-        chip.classList.add('active');
+      chip.addEventListener("click", () => {
+        chips.forEach((c) => c.classList.remove("active"));
+        chip.classList.add("active");
         const filter = chip.dataset.filter;
-        cards.forEach((card) => {
-          const show = filter === 'all' || card.dataset.kind.includes(filter);
-          card.style.display = show ? '' : 'none';
+        cards().forEach((templateCard) => {
+          const show = filter === "all" || templateCard.dataset.kind.includes(filter);
+          templateCard.style.display = show ? "" : "none";
         });
       });
     });
+
+    const modal = document.getElementById("previewModal");
+    const frame = document.getElementById("modalFrame");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalOpen = document.getElementById("modalOpen");
+    const modalClose = document.getElementById("modalClose");
+
+    function openPreview(templateId, name) {
+      const url = `${PREVIEW_BASE}/${templateId}`;
+      modalTitle.textContent = `Previsualisation - ${name}`;
+      modalOpen.href = url;
+      frame.src = url;
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+    }
+
+    function closePreview() {
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+      frame.src = "";
+    }
+
+    document.addEventListener("click", (event) => {
+      const target = event.target.closest("[data-preview]");
+      if (!target) return;
+      openPreview(target.dataset.preview, target.dataset.name || "Template");
+    });
+    modalClose.addEventListener("click", closePreview);
+    modal.addEventListener("click", (event) => { if (event.target === modal) closePreview(); });
+    document.addEventListener("keydown", (event) => { if (event.key === "Escape") closePreview(); });
   </script>
 </body>
 </html>
