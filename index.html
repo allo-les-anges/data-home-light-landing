@@ -6,7 +6,7 @@
 <title>DATA-HOME | Site premium pour agences immobilières en 24h</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <style>
-:root{--red:#E8424A;--orange:#F28444;--gold:#F5C842;--green:#4CAF7D;--blue:#2196C9;--purple:#7C5CBF;--dark:#1a1a1a;--dark2:#2d2d2d;--light:#F8F9FA;--max:1280px}
+:root{--pink:#D769A9;--red:#EF4B5A;--orange:#EF4B5A;--gold:#FCC010;--green:#32B55E;--blue:#18A1CE;--purple:#D769A9;--btn-grad:linear-gradient(90deg,#D769A9,#EF4B5A);--blue-grad:linear-gradient(90deg,#18A1CE,#D769A9);--dark:#1a1a1a;--dark2:#2d2d2d;--light:#F8F9FA;--max:1280px}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Montserrat',sans-serif;background:#fff;color:var(--dark);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
@@ -18,10 +18,10 @@ header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid 
 .nav-links{display:flex;gap:24px;font-size:14px;font-weight:600;color:#555}
 .nav-links a:hover{color:var(--blue)}
 .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 24px;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s;border:none;text-decoration:none}
-.btn-primary{background:linear-gradient(90deg,var(--red),var(--orange),var(--gold));color:#fff;box-shadow:0 4px 16px rgba(232,66,74,.3)}
+.btn-primary{background:var(--btn-grad);color:#fff;box-shadow:0 4px 16px rgba(239,75,90,.28)}
 .btn-primary:hover{opacity:.9;transform:translateY(-1px)}
-.btn-secondary{background:#fff;color:var(--blue);border:2px solid var(--blue)}
-.btn-secondary:hover{background:#EBF5FB;transform:translateY(-1px)}
+.btn-secondary{background:#fff;color:var(--blue);border:2px solid transparent;background-image:linear-gradient(#fff,#fff),var(--blue-grad);background-origin:border-box;background-clip:padding-box,border-box}
+.btn-secondary:hover{background-image:linear-gradient(#F8FBFF,#F8FBFF),var(--blue-grad);transform:translateY(-1px)}
 /* LANG SWITCHER */
 .lang-switcher{position:relative}
 .lang-btn{display:flex;align-items:center;gap:6px;background:#F8F9FA;border:1px solid #e5e7eb;border-radius:8px;padding:8px 12px;font-size:13px;font-weight:700;cursor:pointer;color:var(--dark);transition:all .2s}
@@ -50,12 +50,12 @@ header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid 
 .hero{padding:80px 0 60px;background:#fff;text-align:center}
 .eyebrow{display:inline-block;background:var(--gold);color:var(--dark);font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;padding:6px 16px;border-radius:999px;margin-bottom:24px}
 h1{font-family:'Montserrat',sans-serif;font-size:clamp(40px,6vw,80px);line-height:1.05;font-weight:700;max-width:900px;margin:0 auto 24px;text-align:center}
-.grad-text{background:linear-gradient(90deg,var(--red),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.grad-text{background:var(--blue-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero-sub{font-size:18px;line-height:1.7;color:#555;max-width:640px;margin:0 auto 40px}
 .hero-ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
 .hero-img{margin-top:56px;border-radius:16px;overflow:hidden;border:1px solid #e5e7eb;box-shadow:0 20px 60px rgba(0,0,0,.12);position:relative}
 .hero-img img{width:100%;height:500px;object-fit:cover;object-position:center}
-.hero-badge{position:absolute;bottom:20px;left:20px;background:linear-gradient(90deg,var(--red),var(--orange),var(--gold));color:#fff;font-size:13px;font-weight:700;padding:8px 18px;border-radius:999px}
+.hero-badge{position:absolute;bottom:20px;left:20px;background:var(--btn-grad);color:#fff;font-size:13px;font-weight:700;padding:8px 18px;border-radius:999px}
 /* LIVE DEMO */
 .demo-live{padding:86px 0;background:linear-gradient(135deg,#f8fbff,#fff7df 52%,#f5fbf8)}
 .demo-live-grid{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);gap:42px;align-items:center}
@@ -105,7 +105,7 @@ h1{font-family:'Montserrat',sans-serif;font-size:clamp(40px,6vw,80px);line-heigh
 .preview-modal-close{width:40px;height:40px;border:0;border-radius:14px;background:#f1f5f9;color:#0f172a;font-size:22px;cursor:pointer}
 .preview-modal iframe{width:100%;height:calc(100% - 58px);border:0;background:#fff}
 /* STATS */
-.stats{background:linear-gradient(135deg,var(--purple),var(--blue),var(--green));padding:56px 0}
+.stats{background:linear-gradient(135deg,var(--blue),var(--pink));padding:56px 0}
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
 .stat-num{font-size:48px;font-weight:900;color:#fff;line-height:1}
 .stat-lbl{font-size:14px;color:rgba(255,255,255,.8);margin-top:6px;font-weight:500}
@@ -163,7 +163,7 @@ h1{font-family:'Montserrat',sans-serif;font-size:clamp(40px,6vw,80px);line-heigh
 .pf li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#444;line-height:1.5}
 .pf li .ck{font-weight:900;font-size:14px;flex-shrink:0;margin-top:1px}
 /* TESTIMONIALS */
-.testimonials{padding:96px 0;background:linear-gradient(135deg,var(--blue),var(--purple))}
+.testimonials{padding:96px 0;background:linear-gradient(135deg,var(--blue),var(--pink))}
 .testimonials .section-head h2{color:#fff}
 .testimonials .section-head p{color:rgba(255,255,255,.75)}
 .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
@@ -185,7 +185,7 @@ h1{font-family:'Montserrat',sans-serif;font-size:clamp(40px,6vw,80px);line-heigh
 .faq-item.active .faq-a{display:block}
 /* CTA */
 .cta-section{padding:96px 0}
-.cta-box{background:linear-gradient(135deg,var(--red),var(--orange),var(--gold),var(--green),var(--blue),var(--purple));padding:4px;border-radius:24px}
+.cta-box{background:linear-gradient(135deg,var(--blue),var(--pink),var(--red));padding:4px;border-radius:24px}
 .cta-inner{background:#fff;border-radius:22px;padding:72px 48px;text-align:center}
 .cta-inner h2{font-family:'Montserrat',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:700;margin-bottom:16px}
 .cta-inner p{font-size:17px;color:#555;max-width:520px;margin:0 auto 36px}
@@ -346,7 +346,7 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
     </div>
     <div class="features-grid">
       <div class="feat-card">
-        <div class="feat-icon" style="background:#EBF5FB"><svg width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="#2196C9" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg></div>
+        <div class="feat-icon" style="background:#EBF5FB"><svg width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="#18A1CE" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg></div>
         <h3 data-i18n="f1t">Site vitrine public</h3>
         <p data-i18n="f1d">Homepage agence, pages biens, locations, contact et contenus légaux prêts pour la mise en ligne.</p>
       </div>
@@ -366,7 +366,7 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
         <p data-i18n="f4d">Templates gratuits et premium avec couleurs, typographies, vignettes et hero image ou vidéo.</p>
       </div>
       <div class="feat-card">
-        <div class="feat-icon" style="background:#FDEDEE"><svg width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="#E8424A" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+        <div class="feat-icon" style="background:#FDEDEE"><svg width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="#EF4B5A" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
         <h3 data-i18n="f5t">Chatbot IA</h3>
         <p data-i18n="f5d">Assistant premium pour qualifier les visiteurs, limité à 20 requêtes par jour et par agence.</p>
       </div>
