@@ -66,7 +66,8 @@ h1{font-family:'Montserrat',sans-serif;font-size:clamp(40px,6vw,80px);line-heigh
 .demo-browser img{width:100%;height:430px;object-fit:cover;object-position:top}
 .demo-points{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:28px 0}
 .demo-point{border:1px solid rgba(26,26,26,.07);background:rgba(255,255,255,.76);border-radius:16px;padding:14px 16px;font-size:13px;font-weight:800;color:#334155}
-.demo-point span{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--blue);margin-bottom:4px}
+.demo-point .demo-label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--blue);margin-bottom:4px}
+.demo-actions{display:flex;gap:14px;flex-wrap:wrap}
 /* STATS */
 .stats{background:linear-gradient(135deg,var(--purple),var(--blue),var(--green));padding:56px 0}
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
@@ -163,7 +164,7 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
 .footer-bottom .acc{color:var(--gold)}
 @media(max-width:1024px){.features-grid,.villa-grid,.testi-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:1024px){.demo-live-grid{grid-template-columns:1fr}.demo-browser img{height:360px}}
-@media(max-width:768px){.nav-links{display:none}.nav-actions{display:none}.hamburger{display:flex}.nav{height:64px}.stats-grid{grid-template-columns:repeat(2,1fr)}.features-grid,.villa-grid,.pricing-grid,.testi-grid{grid-template-columns:1fr}.demo-points{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.cta-inner{padding:48px 24px}.hero{padding:64px 0 40px}h1{font-size:clamp(32px,8vw,56px)}.hero-sub{font-size:16px;line-height:1.6;margin-bottom:32px}.hero-ctas{flex-direction:column;align-items:stretch}.hero-ctas .btn{width:100%;height:56px;font-size:16px;box-sizing:border-box}.hero-img img{height:260px}.demo-live{padding:64px 0}.demo-browser img{height:260px}.section-head{margin-bottom:40px}.feat-card{padding:24px}.pricing-card{padding:24px 20px}.testi-card{padding:24px}.features{padding:64px 0}.showcase{padding:64px 0}.pricing{padding:64px 0}.testimonials{padding:64px 0}.faq{padding:64px 0}.cta-section{padding:64px 0}.stats{padding:40px 0}}
+@media(max-width:768px){.nav-links{display:none}.nav-actions{display:none}.hamburger{display:flex}.nav{height:64px}.stats-grid{grid-template-columns:repeat(2,1fr)}.features-grid,.villa-grid,.pricing-grid,.testi-grid{grid-template-columns:1fr}.demo-points{grid-template-columns:1fr}.demo-actions .btn{width:100%;height:56px}.footer-grid{grid-template-columns:1fr 1fr}.cta-inner{padding:48px 24px}.hero{padding:64px 0 40px}h1{font-size:clamp(32px,8vw,56px)}.hero-sub{font-size:16px;line-height:1.6;margin-bottom:32px}.hero-ctas{flex-direction:column;align-items:stretch}.hero-ctas .btn{width:100%;height:56px;font-size:16px;box-sizing:border-box}.hero-img img{height:260px}.demo-live{padding:64px 0}.demo-browser img{height:260px}.section-head{margin-bottom:40px}.feat-card{padding:24px}.pricing-card{padding:24px 20px}.testi-card{padding:24px}.features{padding:64px 0}.showcase{padding:64px 0}.pricing{padding:64px 0}.testimonials{padding:64px 0}.faq{padding:64px 0}.cta-section{padding:64px 0}.stats{padding:40px 0}}
 @media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
 </style>
 </head>
@@ -215,7 +216,6 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
 </header>
 <section class="hero">
   <div class="container">
-    <span class="eyebrow" data-i18n="badge"></span>
     <h1 data-i18n-html="h1"></h1>
     <p class="hero-sub" data-i18n="sub"></p>
     <div class="hero-ctas">
@@ -231,23 +231,26 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
 <section class="demo-live" id="demo">
   <div class="container demo-live-grid">
     <div>
-      <span class="demo-kicker">Dashboard interactif</span>
-      <h2>Essayez le dashboard en direct</h2>
-      <p>Ouvrez une vraie agence de demonstration, explorez les reglages, les modules, les templates et la gestion du site. Les sauvegardes sont bloquees, vous pouvez tester sans risque.</p>
+      <span class="demo-kicker" data-i18n="demoKicker">Dashboard interactif</span>
+      <h2 data-i18n="demoTitle">Essayez le dashboard en direct</h2>
+      <p data-i18n="demoText">Ouvrez une vraie agence de demonstration, explorez les reglages, les modules, les templates et la gestion du site. Les sauvegardes sont bloquees, vous pouvez tester sans risque.</p>
       <div class="demo-points">
-        <div class="demo-point"><span>Client</span>Mon espace, settings, modules</div>
-        <div class="demo-point"><span>SaaS</span>Experience reelle, donnees protegees</div>
-        <div class="demo-point"><span>Site</span>Templates, langues, branding</div>
-        <div class="demo-point"><span>Demo</span>Aucune modification sauvegardee</div>
+        <div class="demo-point"><span class="demo-label" data-i18n="demoP1Label">Client</span><span data-i18n="demoP1">Mon espace, settings, modules</span></div>
+        <div class="demo-point"><span class="demo-label" data-i18n="demoP2Label">SaaS</span><span data-i18n="demoP2">Experience reelle, donnees protegees</span></div>
+        <div class="demo-point"><span class="demo-label" data-i18n="demoP3Label">Site</span><span data-i18n="demoP3">Templates, langues, branding</span></div>
+        <div class="demo-point"><span class="demo-label" data-i18n="demoP4Label">Demo</span><span data-i18n="demoP4">Aucune modification sauvegardee</span></div>
       </div>
-      <a href="https://datahome.vercel.app/demo" class="btn btn-primary" style="padding:16px 32px;font-size:16px">Voir une demo</a>
+      <div class="demo-actions">
+        <a href="https://datahome.vercel.app/demo" class="btn btn-primary" style="padding:16px 32px;font-size:16px" data-i18n="demoCta">Voir une demo</a>
+        <a href="https://datahome.vercel.app/register" class="btn btn-secondary" style="padding:16px 32px;font-size:16px" data-i18n="trialCta">Commencer l'essai 15 jours</a>
+      </div>
     </div>
     <a href="https://datahome.vercel.app/demo" class="demo-browser" aria-label="Ouvrir la demo DataHome">
       <div class="demo-browser-top">
         <span class="demo-dot"></span><span class="demo-dot"></span><span class="demo-dot"></span>
         <span class="demo-url">datahome.vercel.app/demo</span>
       </div>
-      <img src="images/simplicity-ui.jpg" alt="Dashboard DataHome en demonstration"/>
+      <img src="images/hero-villa.jpg" alt="Villa contemporaine pour la demo DataHome"/>
     </a>
   </div>
 </section>
@@ -571,6 +574,18 @@ pl:{nFeat:"Funkcje",nShow:"Portfolio",nPrice:"Cennik",nTpl:"Szablony",nFaq:"FAQ"
 };
 let lang = localStorage.getItem("dh_lang") || (navigator.language||"fr").slice(0,2);
 if (!T[lang]) lang = "fr";
+
+const DEMO_TEXT = {
+  fr: {demoKicker:"Dashboard interactif",demoTitle:"Essayez le dashboard en direct",demoText:"Ouvrez une vraie agence de demonstration, explorez les reglages, les modules, les templates et la gestion du site. Les sauvegardes sont bloquees, vous pouvez tester sans risque.",demoP1Label:"Client",demoP1:"Mon espace, settings, modules",demoP2Label:"SaaS",demoP2:"Experience reelle, donnees protegees",demoP3Label:"Site",demoP3:"Templates, langues, branding",demoP4Label:"Demo",demoP4:"Aucune modification sauvegardee",demoCta:"Voir une demo",trialCta:"Commencer l'essai 15 jours"},
+  en: {demoKicker:"Interactive dashboard",demoTitle:"Try the dashboard live",demoText:"Open a real demo agency, explore settings, modules, templates and website management. Saving is disabled, so you can test safely.",demoP1Label:"Client",demoP1:"Workspace, settings, modules",demoP2Label:"SaaS",demoP2:"Real product, protected data",demoP3Label:"Website",demoP3:"Templates, languages, branding",demoP4Label:"Demo",demoP4:"No changes are saved",demoCta:"View demo",trialCta:"Start 15-day trial"},
+  es: {demoKicker:"Dashboard interactivo",demoTitle:"Prueba el dashboard en directo",demoText:"Abre una agencia demo real, explora ajustes, modulos, templates y gestion del sitio. El guardado esta bloqueado para que puedas probar sin riesgo.",demoP1Label:"Cliente",demoP1:"Mi espacio, ajustes, modulos",demoP2Label:"SaaS",demoP2:"Producto real, datos protegidos",demoP3Label:"Sitio",demoP3:"Templates, idiomas, branding",demoP4Label:"Demo",demoP4:"No se guarda ningun cambio",demoCta:"Ver demo",trialCta:"Empezar prueba de 15 dias"},
+  de: {demoKicker:"Interaktives Dashboard",demoTitle:"Testen Sie das Dashboard live",demoText:"Offnen Sie eine echte Demo-Agentur und testen Sie Einstellungen, Module, Templates und Website-Verwaltung. Speichern ist deaktiviert, damit Sie sicher testen konnen.",demoP1Label:"Kunde",demoP1:"Workspace, Einstellungen, Module",demoP2Label:"SaaS",demoP2:"Echtes Produkt, geschutzte Daten",demoP3Label:"Website",demoP3:"Templates, Sprachen, Branding",demoP4Label:"Demo",demoP4:"Keine Anderungen werden gespeichert",demoCta:"Demo ansehen",trialCta:"15-Tage-Test starten"},
+  nl: {demoKicker:"Interactief dashboard",demoTitle:"Probeer het dashboard live",demoText:"Open een echte demo-agency en ontdek instellingen, modules, templates en websitebeheer. Opslaan is geblokkeerd, dus u kunt veilig testen.",demoP1Label:"Klant",demoP1:"Workspace, instellingen, modules",demoP2Label:"SaaS",demoP2:"Echt product, beschermde data",demoP3Label:"Website",demoP3:"Templates, talen, branding",demoP4Label:"Demo",demoP4:"Wijzigingen worden niet opgeslagen",demoCta:"Bekijk demo",trialCta:"Start proefperiode van 15 dagen"},
+  pt: {demoKicker:"Dashboard interativo",demoTitle:"Experimente o dashboard ao vivo",demoText:"Abra uma agencia demo real e explore definicoes, modulos, templates e gestao do site. A gravacao esta bloqueada para testar sem risco.",demoP1Label:"Cliente",demoP1:"Espaco, definicoes, modulos",demoP2Label:"SaaS",demoP2:"Produto real, dados protegidos",demoP3Label:"Site",demoP3:"Templates, idiomas, branding",demoP4Label:"Demo",demoP4:"Nenhuma alteracao e guardada",demoCta:"Ver demo",trialCta:"Iniciar teste de 15 dias"},
+  ru: {demoKicker:"Интерактивная панель",demoTitle:"Попробуйте панель вживую",demoText:"Откройте демо-агентство и изучите настройки, модули, шаблоны и управление сайтом. Сохранение отключено, чтобы тестировать безопасно.",demoP1Label:"Клиент",demoP1:"Рабочая зона, настройки, модули",demoP2Label:"SaaS",demoP2:"Реальный продукт, защищенные данные",demoP3Label:"Сайт",demoP3:"Шаблоны, языки, брендинг",demoP4Label:"Демо",demoP4:"Изменения не сохраняются",demoCta:"Открыть демо",trialCta:"Начать пробный период 15 дней"},
+  pl: {demoKicker:"Interaktywny dashboard",demoTitle:"Wyprobuj dashboard na zywo",demoText:"Otworz prawdziwa agencje demo i sprawdz ustawienia, moduly, szablony oraz zarzadzanie strona. Zapisywanie jest zablokowane, wiec mozesz testowac bez ryzyka.",demoP1Label:"Klient",demoP1:"Panel, ustawienia, moduly",demoP2Label:"SaaS",demoP2:"Prawdziwy produkt, chronione dane",demoP3Label:"Strona",demoP3:"Szablony, jezyki, branding",demoP4Label:"Demo",demoP4:"Zmiany nie sa zapisywane",demoCta:"Zobacz demo",trialCta:"Rozpocznij 15-dniowy trial"}
+};
+Object.keys(DEMO_TEXT).forEach((lc) => Object.assign(T[lc] || T.fr, DEMO_TEXT[lc]));
 
 let billingMode = 'annual';
 
