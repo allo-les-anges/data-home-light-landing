@@ -8,13 +8,13 @@
 <style>
 :root{--red:#E8424A;--orange:#F28444;--gold:#F5C842;--green:#4CAF7D;--blue:#2196C9;--purple:#7C5CBF;--dark:#1a1a1a;--dark2:#2d2d2d;--light:#F8F9FA;--max:1280px}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Inter',sans-serif;background:#fff;color:var(--dark);-webkit-font-smoothing:antialiased}
+body{font-family:'Inter',sans-serif;background:#fff;color:var(--dark);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
 .container{width:min(var(--max),calc(100% - 40px));margin:0 auto}
 header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #e5e7eb}
 .nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
-.logo{height:40px;width:auto;border-radius:8px;object-fit:contain}
+.logo{height:40px;width:auto;border-radius:8px;object-fit:contain;flex-shrink:0}
 .nav-links{display:flex;gap:24px;font-size:14px;font-weight:600;color:#555}
 .nav-links a:hover{color:var(--blue)}
 .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 24px;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s;border:none;text-decoration:none}
@@ -33,6 +33,14 @@ header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid 
 .lang-menu button{display:flex;align-items:center;gap:10px;width:100%;padding:10px 16px;font-size:13px;font-weight:600;background:none;border:none;cursor:pointer;color:var(--dark);text-align:left;transition:background .15s}
 .lang-menu button:hover{background:var(--light)}
 .lang-menu button.active{color:var(--blue);background:#EBF5FB}
+/* HAMBURGER + MOBILE MENU */
+.nav-actions{display:flex;gap:10px;align-items:center}
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;flex-shrink:0}
+.hamburger span{display:block;width:22px;height:2px;background:var(--dark);border-radius:2px}
+.mobile-menu{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid #e5e7eb;box-shadow:0 8px 24px rgba(0,0,0,.08);z-index:40}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;padding:14px 20px;font-size:16px;font-weight:600;color:var(--dark);border-bottom:1px solid #f0f0f0;text-decoration:none}
+.mobile-menu-cta{padding:16px 20px;border-top:1px solid #f0f0f0}
 /* HERO */
 .hero{padding:80px 0 60px;background:#fff;text-align:center}
 .eyebrow{display:inline-block;background:var(--gold);color:var(--dark);font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;padding:6px 16px;border-radius:999px;margin-bottom:24px}
@@ -129,7 +137,7 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
 .footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding:20px 0;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:rgba(255,255,255,.35)}
 .footer-bottom .acc{color:var(--gold)}
 @media(max-width:1024px){.features-grid,.villa-grid,.testi-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:768px){.nav-links{display:none}.stats-grid{grid-template-columns:repeat(2,1fr)}.features-grid,.villa-grid,.pricing-grid,.testi-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.cta-inner{padding:48px 24px}}
+@media(max-width:768px){.nav-links{display:none}.nav-actions{display:none}.hamburger{display:flex}.nav{height:64px}.stats-grid{grid-template-columns:repeat(2,1fr)}.features-grid,.villa-grid,.pricing-grid,.testi-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.cta-inner{padding:48px 24px}.hero{padding:64px 0 40px}h1{font-size:clamp(32px,8vw,56px)}.hero-sub{font-size:16px;line-height:1.6;margin-bottom:32px}.hero-ctas{flex-direction:column;align-items:stretch}.hero-ctas .btn{width:100%;height:56px;font-size:16px;box-sizing:border-box}.hero-img img{height:260px}.section-head{margin-bottom:40px}.feat-card{padding:24px}.pricing-card{padding:24px 20px}.testi-card{padding:24px}.features{padding:64px 0}.showcase{padding:64px 0}.pricing{padding:64px 0}.testimonials{padding:64px 0}.faq{padding:64px 0}.cta-section{padding:64px 0}.stats{padding:40px 0}}
 @media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
 </style>
 </head>
@@ -144,7 +152,7 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
       <a href="templates.html" data-i18n="nTpl">Templates</a>
       <a href="#faq" data-i18n="nFaq">FAQ</a>
     </nav>
-    <div style="display:flex;gap:10px;align-items:center">
+    <div class="nav-actions">
       <a href="templates.html" class="btn btn-secondary" style="padding:10px 18px" data-i18n="btnTpl">Templates</a>
       <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="btn btn-primary" data-i18n="btnCta">Creer mon site</button>
       <div class="lang-switcher" id="ls">
@@ -163,6 +171,19 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
           <button onclick="setLang('pl')" data-lc="pl">PL &nbsp;Polski</button>
         </div>
       </div>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#features" data-i18n="nFeat" onclick="closeMobileMenu()">Fonctionnalites</a>
+    <a href="#showcase" data-i18n="nShow" onclick="closeMobileMenu()">Vitrines</a>
+    <a href="#pricing" data-i18n="nPrice" onclick="closeMobileMenu()">Tarifs</a>
+    <a href="templates.html" data-i18n="nTpl" onclick="closeMobileMenu()">Templates</a>
+    <a href="#faq" data-i18n="nFaq" onclick="closeMobileMenu()">FAQ</a>
+    <div class="mobile-menu-cta">
+      <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});closeMobileMenu()" class="btn btn-primary" style="width:100%;height:56px;font-size:16px" data-i18n="btnCta">Creer mon site</button>
     </div>
   </div>
 </header>
@@ -512,8 +533,18 @@ function setLang(lc) {
 function toggleLS() {
   document.getElementById("ls").classList.toggle("open");
 }
+function closeMobileMenu() {
+  document.getElementById("mobile-menu").classList.remove("open");
+}
+function toggleMobileMenu() {
+  document.getElementById("mobile-menu").classList.toggle("open");
+  document.getElementById("ls").classList.remove("open");
+}
 document.addEventListener("click", function(e) {
   if (!document.getElementById("ls").contains(e.target)) document.getElementById("ls").classList.remove("open");
+  var mm = document.getElementById("mobile-menu");
+  var hb = document.getElementById("hamburger");
+  if (mm && !mm.contains(e.target) && !hb.contains(e.target)) mm.classList.remove("open");
 });
 
 function toggleFaq(el) {
