@@ -126,9 +126,9 @@ h1{font-family:'Montserrat',sans-serif;font-size:clamp(40px,6vw,80px);line-heigh
 .feat-card{background:linear-gradient(180deg,#fff,#fbfdff);border:1px solid #e5e7eb;border-radius:18px;padding:32px;transition:all .25s;position:relative;overflow:hidden}
 .feat-card:before{content:"";position:absolute;inset:0 0 auto auto;width:130px;height:130px;background:radial-gradient(circle,rgba(24,161,206,.10),transparent 64%);pointer-events:none}
 .feat-card:hover{transform:translateY(-4px);box-shadow:0 18px 52px rgba(15,23,42,.12);border-color:rgba(24,161,206,.22)}
-.feat-icon{width:58px;height:58px;border-radius:18px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;position:relative;box-shadow:inset 0 1px 0 rgba(255,255,255,.75),0 12px 30px rgba(15,23,42,.10)}
-.feat-icon:after{content:"";position:absolute;inset:8px 8px auto auto;width:10px;height:10px;border-radius:999px;background:rgba(255,255,255,.82)}
-.feat-icon svg{position:relative;z-index:1;filter:drop-shadow(0 4px 8px rgba(15,23,42,.14))}
+.feat-icon{width:66px;height:66px;border-radius:20px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;position:relative;background:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.85),0 14px 34px rgba(15,23,42,.12);border:1px solid rgba(226,232,240,.9);overflow:hidden}
+.feat-icon:after{content:"";position:absolute;inset:auto -18px -20px auto;width:54px;height:54px;border-radius:999px;background:linear-gradient(135deg,rgba(215,105,169,.18),rgba(24,161,206,.18));filter:blur(1px)}
+.feat-icon img{position:relative;z-index:1;width:52px;height:52px;object-fit:contain;display:block;filter:drop-shadow(0 6px 10px rgba(15,23,42,.12))}
 .feat-card h3{font-size:18px;font-weight:700;margin-bottom:10px}
 .feat-card p{font-size:14px;color:#555;line-height:1.65}
 /* SHOWCASE */
@@ -354,32 +354,32 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
     </div>
     <div class="features-grid">
       <div class="feat-card">
-        <div class="feat-icon" style="background:linear-gradient(135deg,#18A1CE,#D769A9)"><svg width="30" height="30" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M4 11.5 12 5l8 6.5"/><path stroke-linecap="round" stroke-linejoin="round" d="M6.5 10.5V19h11v-8.5"/><path stroke-linecap="round" stroke-linejoin="round" d="M9.5 19v-5h5v5"/><path stroke-linecap="round" stroke-linejoin="round" d="M16 7.5V5h2v4.1"/></svg></div>
+        <div class="feat-icon"><img src="images/modules/lead_funnel.png" alt="Lead funnel module" loading="lazy"/></div>
         <h3 data-i18n="f1t">Site vitrine public</h3>
         <p data-i18n="f1d">Homepage agence, pages biens, locations, contact et contenus légaux prêts pour la mise en ligne.</p>
       </div>
       <div class="feat-card">
-        <div class="feat-icon" style="background:linear-gradient(135deg,#32B55E,#18A1CE)"><svg width="30" height="30" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M5 7.5h7.5M5 12h14M11.5 16.5H19"/><path stroke-linecap="round" stroke-linejoin="round" d="M15.5 4.5 19 8l-3.5 3.5"/><path stroke-linecap="round" stroke-linejoin="round" d="M8.5 12.5 5 16l3.5 3.5"/></svg></div>
+        <div class="feat-icon"><img src="images/modules/crm_sync.png" alt="CRM sync module" loading="lazy"/></div>
         <h3 data-i18n="f2t">Imports XML pilotés</h3>
         <p data-i18n="f2d">Associez les flux fournis par vos partenaires depuis AgencyDashboard et publiez les biens client.</p>
       </div>
       <div class="feat-card">
-        <div class="feat-icon" style="background:linear-gradient(135deg,#FCC010,#EF4B5A)"><svg width="30" height="30" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="1.8"><rect x="4.5" y="5" width="15" height="12.5" rx="2.5"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 9h4.5M8 12.5h8M8 16h5"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 20h6"/></svg></div>
+        <div class="feat-icon"><img src="images/modules/languages.png" alt="Languages module" loading="lazy"/></div>
         <h3 data-i18n="f3t">Property Manager</h3>
         <p data-i18n="f3d">Le client gère ses biens, locations, médias, vidéos et réglages depuis Mon Espace.</p>
       </div>
       <div class="feat-card">
-        <div class="feat-icon" style="background:linear-gradient(135deg,#D769A9,#18A1CE)"><svg width="30" height="30" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="3"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 8h8M8 12h3.5M14 12h2M8 16h8"/><path stroke-linecap="round" stroke-linejoin="round" d="M6.5 10.5h11"/></svg></div>
+        <div class="feat-icon"><img src="images/modules/seo.png" alt="SEO module" loading="lazy"/></div>
         <h3 data-i18n="f4t">Templates personnalisables</h3>
         <p data-i18n="f4d">Templates gratuits et premium avec couleurs, typographies, vignettes et hero image ou vidéo.</p>
       </div>
       <div class="feat-card">
-        <div class="feat-icon" style="background:linear-gradient(135deg,#EF4B5A,#D769A9)"><svg width="30" height="30" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M6 16.5h-.5A2.5 2.5 0 0 1 3 14V8a2.5 2.5 0 0 1 2.5-2.5h9A2.5 2.5 0 0 1 17 8v5.5"/><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 9.5h5M7.5 12.5h3"/><path stroke-linecap="round" stroke-linejoin="round" d="M14.5 18.5 18 15l3.5 3.5"/><path stroke-linecap="round" stroke-linejoin="round" d="M18 15v6"/></svg></div>
+        <div class="feat-icon"><img src="images/modules/video_hero.png" alt="Hero video module" loading="lazy"/></div>
         <h3 data-i18n="f5t">Chatbot IA</h3>
         <p data-i18n="f5d">Assistant premium pour qualifier les visiteurs, limité à 20 requêtes par jour et par agence.</p>
       </div>
       <div class="feat-card">
-        <div class="feat-icon" style="background:linear-gradient(135deg,#18A1CE,#32B55E)"><svg width="30" height="30" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 7.5h15M7 4.5v6M17 4.5v6"/><rect x="5" y="5.5" width="14" height="14" rx="3"/><path stroke-linecap="round" stroke-linejoin="round" d="M8.5 14h2.5l1 2 2.5-5 1.5 3h1.5"/></svg></div>
+        <div class="feat-icon"><img src="images/modules/immersive_tour.png" alt="Immersive tours module" loading="lazy"/></div>
         <h3 data-i18n="f6t">Mini CRM & modules</h3>
         <p data-i18n="f6d">Mini CRM Leads inclus, langues additionnelles, vidéo hero, visites immersives, SEO et domaine.</p>
       </div>
