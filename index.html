@@ -68,6 +68,37 @@ h1{font-family:'Montserrat',sans-serif;font-size:clamp(40px,6vw,80px);line-heigh
 .demo-point{border:1px solid rgba(26,26,26,.07);background:rgba(255,255,255,.76);border-radius:16px;padding:14px 16px;font-size:13px;font-weight:800;color:#334155}
 .demo-point .demo-label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--blue);margin-bottom:4px}
 .demo-actions{display:flex;gap:14px;flex-wrap:wrap}
+/* TEMPLATE PREVIEW */
+.template-strip{padding:86px 0;background:#fff}
+.template-strip .section-head{margin-bottom:38px}
+.template-preview-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.template-preview-card{overflow:hidden;border:1px solid #e5e7eb;border-radius:20px;background:#fff;box-shadow:0 16px 46px rgba(26,26,26,.08);transition:transform .24s,box-shadow .24s,border-color .24s}
+.template-preview-card:hover{transform:translateY(-4px);border-color:rgba(33,150,201,.35);box-shadow:0 22px 64px rgba(33,150,201,.16)}
+.template-preview-screen{position:relative;height:245px;background:#eef2f7;padding:12px 12px 0;overflow:hidden}
+.template-preview-live{position:absolute;top:12px;left:12px;z-index:2;border:0;border-radius:999px;background:var(--gold);color:var(--dark);padding:7px 11px;font-size:10px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;box-shadow:0 8px 18px rgba(26,26,26,.12)}
+.template-preview-tier{position:absolute;top:12px;right:12px;z-index:2;border-radius:999px;background:#111827;color:#fff;padding:7px 10px;font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
+.template-preview-tier.base{background:var(--green)}
+.template-mini{height:320px;border-radius:14px 14px 0 0;overflow:hidden;background:#fff;box-shadow:0 10px 28px rgba(26,26,26,.14)}
+.template-mini-hero{height:112px;background-size:cover;background-position:center;position:relative;display:flex;align-items:end;padding:16px}
+.template-mini-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.62),transparent)}
+.template-mini-lines{position:relative;z-index:1;display:grid;gap:7px;width:78%}
+.template-mini-line{height:8px;border-radius:999px;background:#fff}
+.template-mini-body{padding:14px;display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
+.template-mini-card{height:70px;border-radius:10px;background:#fff;border:1px solid rgba(15,23,42,.08);overflow:hidden}
+.template-mini-card:before{content:"";display:block;height:38px;background:linear-gradient(135deg,#dbeafe,#fef3c7)}
+.template-preview-info{padding:16px}
+.template-preview-info h3{font-size:17px;font-weight:900;margin-bottom:6px}
+.template-preview-info p{font-size:13px;line-height:1.55;color:#64748b;margin-bottom:14px}
+.template-preview-actions{display:flex;gap:10px}
+.template-preview-actions .btn{flex:1;padding:11px 12px;font-size:12px}
+.preview-modal{position:fixed;inset:0;z-index:200;display:none;background:rgba(15,23,42,.74);backdrop-filter:blur(12px);padding:24px}
+.preview-modal.open{display:flex}
+.preview-modal-shell{flex:1;max-width:1480px;height:min(860px,calc(100vh - 48px));margin:auto;background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 35px 100px rgba(0,0,0,.34)}
+.preview-modal-bar{height:58px;display:flex;align-items:center;justify-content:space-between;gap:14px;border-bottom:1px solid #e5e7eb;padding:0 16px 0 20px}
+.preview-modal-title{font-size:13px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:#334155}
+.preview-modal-actions{display:flex;align-items:center;gap:10px}
+.preview-modal-close{width:40px;height:40px;border:0;border-radius:14px;background:#f1f5f9;color:#0f172a;font-size:22px;cursor:pointer}
+.preview-modal iframe{width:100%;height:calc(100% - 58px);border:0;background:#fff}
 /* STATS */
 .stats{background:linear-gradient(135deg,var(--purple),var(--blue),var(--green));padding:56px 0}
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
@@ -162,9 +193,9 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
 .footer-col a:hover{color:#fff}
 .footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding:20px 0;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:rgba(255,255,255,.35)}
 .footer-bottom .acc{color:var(--gold)}
-@media(max-width:1024px){.features-grid,.villa-grid,.testi-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:1024px){.features-grid,.villa-grid,.testi-grid,.template-preview-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:1024px){.demo-live-grid{grid-template-columns:1fr}.demo-browser img{height:360px}}
-@media(max-width:768px){.nav-links{display:none}.nav-actions{display:none}.hamburger{display:flex}.nav{height:64px}.stats-grid{grid-template-columns:repeat(2,1fr)}.features-grid,.villa-grid,.pricing-grid,.testi-grid{grid-template-columns:1fr}.demo-points{grid-template-columns:1fr}.demo-actions .btn{width:100%;height:56px}.footer-grid{grid-template-columns:1fr 1fr}.cta-inner{padding:48px 24px}.hero{padding:64px 0 40px}h1{font-size:clamp(32px,8vw,56px)}.hero-sub{font-size:16px;line-height:1.6;margin-bottom:32px}.hero-ctas{flex-direction:column;align-items:stretch}.hero-ctas .btn{width:100%;height:56px;font-size:16px;box-sizing:border-box}.hero-img img{height:260px}.demo-live{padding:64px 0}.demo-browser img{height:260px}.section-head{margin-bottom:40px}.feat-card{padding:24px}.pricing-card{padding:24px 20px}.testi-card{padding:24px}.features{padding:64px 0}.showcase{padding:64px 0}.pricing{padding:64px 0}.testimonials{padding:64px 0}.faq{padding:64px 0}.cta-section{padding:64px 0}.stats{padding:40px 0}}
+@media(max-width:768px){.nav-links{display:none}.nav-actions{display:none}.hamburger{display:flex}.nav{height:64px}.stats-grid{grid-template-columns:repeat(2,1fr)}.features-grid,.villa-grid,.pricing-grid,.testi-grid,.template-preview-grid{grid-template-columns:1fr}.demo-points{grid-template-columns:1fr}.demo-actions .btn{width:100%;height:56px}.footer-grid{grid-template-columns:1fr 1fr}.cta-inner{padding:48px 24px}.hero{padding:64px 0 40px}h1{font-size:clamp(32px,8vw,56px)}.hero-sub{font-size:16px;line-height:1.6;margin-bottom:32px}.hero-ctas{flex-direction:column;align-items:stretch}.hero-ctas .btn{width:100%;height:56px;font-size:16px;box-sizing:border-box}.hero-img img{height:260px}.demo-live{padding:64px 0}.demo-browser img{height:260px}.template-strip{padding:64px 0}.preview-modal{padding:10px}.preview-modal-shell{height:calc(100vh - 20px);border-radius:18px}.preview-modal-title{font-size:11px}.preview-modal-actions .btn{display:none}.section-head{margin-bottom:40px}.feat-card{padding:24px}.pricing-card{padding:24px 20px}.testi-card{padding:24px}.features{padding:64px 0}.showcase{padding:64px 0}.pricing{padding:64px 0}.testimonials{padding:64px 0}.faq{padding:64px 0}.cta-section{padding:64px 0}.stats{padding:40px 0}}
 @media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
 </style>
 </head>
@@ -176,11 +207,11 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
       <a href="#features" data-i18n="nFeat">Fonctionnalites</a>
       <a href="#showcase" data-i18n="nShow">Vitrines</a>
       <a href="#pricing" data-i18n="nPrice">Tarifs</a>
-      <a href="templates.html" data-i18n="nTpl">Templates</a>
+      <a href="#templates" data-i18n="nTpl">Templates</a>
       <a href="#faq" data-i18n="nFaq">FAQ</a>
     </nav>
     <div class="nav-actions">
-      <a href="templates.html" class="btn btn-secondary" style="padding:10px 18px" data-i18n="btnTpl">Templates</a>
+      <a href="#templates" class="btn btn-secondary" style="padding:10px 18px" data-i18n="btnTpl">Templates</a>
       <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="btn btn-primary" data-i18n="btnCta">Creer mon site</button>
       <div class="lang-switcher" id="ls">
         <button class="lang-btn" onclick="toggleLS()" id="lbtn">
@@ -207,7 +238,7 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
     <a href="#features" data-i18n="nFeat" onclick="closeMobileMenu()">Fonctionnalites</a>
     <a href="#showcase" data-i18n="nShow" onclick="closeMobileMenu()">Vitrines</a>
     <a href="#pricing" data-i18n="nPrice" onclick="closeMobileMenu()">Tarifs</a>
-    <a href="templates.html" data-i18n="nTpl" onclick="closeMobileMenu()">Templates</a>
+    <a href="#templates" data-i18n="nTpl" onclick="closeMobileMenu()">Templates</a>
     <a href="#faq" data-i18n="nFaq" onclick="closeMobileMenu()">FAQ</a>
     <div class="mobile-menu-cta">
       <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});closeMobileMenu()" class="btn btn-primary" style="width:100%;height:56px;font-size:16px" data-i18n="btnCta">Creer mon site</button>
@@ -252,6 +283,18 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
       </div>
       <img src="images/hero-villa.jpg" alt="Villa contemporaine pour la demo DataHome"/>
     </a>
+  </div>
+</section>
+<section class="template-strip" id="templates">
+  <div class="container">
+    <div class="section-head">
+      <h2>Templates previsualisables</h2>
+      <p>Ouvrez les modeles reels de l'application SaaS directement depuis la homepage. Chaque preview utilise l'agence demo DATA-HOME et les routes live du produit.</p>
+    </div>
+    <div class="template-preview-grid" id="homeTemplateGrid"></div>
+    <div style="display:flex;justify-content:center;margin-top:28px">
+      <a href="templates.html" class="btn btn-secondary">Voir toute la galerie</a>
+    </div>
   </div>
 </section>
 <section class="stats">
@@ -561,6 +604,18 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
     </div>
   </div>
 </footer>
+<div class="preview-modal" id="templatePreviewModal" aria-hidden="true">
+  <div class="preview-modal-shell">
+    <div class="preview-modal-bar">
+      <div class="preview-modal-title" id="templatePreviewTitle">Previsualisation template</div>
+      <div class="preview-modal-actions">
+        <a class="btn btn-secondary" id="templatePreviewOpen" href="#" target="_blank" rel="noopener">Ouvrir dans un onglet</a>
+        <button class="preview-modal-close" id="templatePreviewClose" type="button" aria-label="Fermer">&times;</button>
+      </div>
+    </div>
+    <iframe id="templatePreviewFrame" title="Previsualisation template DATA-HOME"></iframe>
+  </div>
+</div>
 <script>
 const T = {
 fr:{nFeat:"Fonctionnalites",nShow:"Vitrines",nPrice:"Tarifs",nTpl:"Templates",nFaq:"FAQ",btnTpl:"Templates",btnCta:"Creer mon site",badge:"Nouveau — Connecte a HabiHub & Inmovilla",h1:"Votre agence immobiliere <span class=\"grad-text\">en ligne en 24h</span>",sub:"Site professionnel, domaine personnalise, connecte a votre CRM. Tout est gere pour vous.",btn1:"Creer mon site",btn2:"Voir les templates",s1:"Delai garanti",s2:"Agences clientes",s3:"Langues",s4:"Score Lighthouse",rlbl:"Destinations premium",feat_h:"Tout ce dont vous avez besoin",feat_sub:"Une solution cle en main pour votre agence immobiliere.",f1t:"CRM connecte",f1d:"Synchronisation automatique avec HabiHub, Inmovilla, Witei et plus.",f2t:"SEO optimise",f2d:"Balises meta, sitemap, schema.org — classe des le lancement.",f3t:"Livraison 24h",f3d:"Site operationnel en moins de deux jours, sans stress.",f4t:"Multilingue",f4d:"8 langues incluses — FR, EN, ES, DE, NL, PT, RU, PL.",f5t:"Domaine personnalise",f5d:"Votre domaine configure et securise avec HTTPS.",f6t:"Support dedie",f6d:"Une equipe reactive pour vous accompagner apres la livraison.",show_h:"Des vitrines qui vendent",show_sub:"Villas premium directement depuis votre CRM.",show_note:"Biens reels issus du catalogue HabiHub · Synchronises automatiquement",vb1:"Coup de coeur",vb2:"Vue mer",vb3:"Luxe",vb4:"Prestige",vb5:"Exclusif",vb6:"Premium",price_h:"Tarifs transparents",price_sub:"Choisissez le plan adapte a votre agence.",p1n:"SILVER",p1p:"990",p1s:"Paiement unique",p1f1:"Site 1 page",p1f2:"CRM connecte",p1f3:"Domaine inclus",p1f4:"Support 30 jours",p1cta:"Commencer",p2n:"GOLD",p2p:"1 490",p2s:"Paiement unique",p2badge:"Le plus populaire",p2f1:"Site multipage",p2f2:"CRM connecte",p2f3:"Blog integre",p2f4:"Multilingue 8 langues",p2f5:"Support 90 jours",p2cta:"Commencer",p3n:"PLATINUM",p3p:"2 490",p3s:"Paiement unique",p3f1:"Site sur-mesure",p3f2:"CRM connecte",p3f3:"Module reservations",p3f4:"Dashboard analytics",p3f5:"Support 12 mois",p3cta:"Commencer",testi_h:"Ils nous font confiance",testi_sub:"Plus de 200 agences en Europe.",t1q:"“Livre en 36h, un site magnifique. Mes clients adorent la version espagnole et francaise.”",t1role:"Directrice, Riviera Homes",t2q:"“Le CRM HabiHub est parfaitement synchronise. Je gagne un temps considerable chaque semaine.”",t2role:"Agent, Barcelona Luxury",t3q:"“Le site multilingue m’a permis de cibler des acheteurs allemands et neerlandais directement.”",t3role:"Fondatrice, Algarve Premium",faq_h:"Questions frequentes",faq_sub:"Tout ce que vous devez savoir.",q1:"Quel est le delai de livraison ?",a1:"Votre site est livre en 24h apres validation du brief et du paiement.",q2:"Puis-je changer de template apres ?",a2:"Oui, la migration vers un autre template est possible avec un forfait de mise a jour.",q3:"Quels CRM sont supportes ?",a3:"Zoho et HubSpot sont supportés nativement. Contactez-nous pour toute demande spécifique.",q4:"Le site est-il heberge ?",a4:"Oui, hebergement rapide et securise inclus dans tous les plans.",q5:"Puis-je modifier le contenu moi-meme ?",a5:"Oui, via un tableau de bord simple ou en nous contactant.",cta_h:"Pret a lancer votre agence en ligne ?",cta_sub:"Rejoignez 200+ agences qui font confiance a DATA-HOME.",cf_name:"Votre nom",cf_email:"Votre email",cf_phone:"Telephone (optionnel)",cf_msg:"Votre projet en quelques mots...",cf_send:"Envoyer ma demande",cf_ok:"Message envoye ! On vous contacte sous 24h.",cf_err:"Erreur, reessayez.",ft_desc:"Sites web premium pour agences immobilieres en Europe. Connecte, multilingue, livre en 24h.",ft_col1:"PRODUIT",ft_col2:"DESTINATIONS",ft_col3:"LANGUES",ft_col4:"LEGAL",ft_privacy:"Confidentialite",ft_terms:"Conditions",ft_cookies:"Cookies",ft_copy:"Tous droits reserves.",ft_made:"Fait avec passion pour l’immobilier de prestige.",tog_monthly:"Mensuel",tog_annual:"Annuel",tog_save:"Économisez 17%",per_month:"/ mois",sub_monthly:"par mois · sans engagement"},
@@ -652,6 +707,86 @@ function toggleFaq(el) {
   document.querySelectorAll(".faq-item").forEach(i => i.classList.remove("active"));
   if (!wasOpen) item.classList.add("active");
 }
+
+const TEMPLATE_PREVIEW_BASE = "https://datahome.vercel.app/fr/demo-datahome/template-preview";
+const HOME_TEMPLATES = [
+  { id:"riviera", name:"Riviera", tier:"base", price:"Inclus", color:"#C8A84E", image:"https://medianewbuild.com/file/hh-media-bucket/developments_v2/87929424/media/images/outdoor/1.jpg", description:"Luxe clair, editorial, ideal pour biens mediterraneens." },
+  { id:"prestige", name:"Prestige", tier:"base", price:"Inclus", color:"#B859C5", image:"https://medianewbuild.com/file/hh-media-bucket/developments_v2/37089450/media/images/outdoor/1.jpg", description:"Style premium sombre pour agences haut de gamme." },
+  { id:"urban", name:"Urban", tier:"base", price:"Inclus", color:"#2563EB", image:"https://medianewbuild.com/file/hh-media-bucket/developments_v2/32156547/media/images/outdoor/1.jpg", description:"Affichage catalogue efficace pour gros volumes XML." },
+  { id:"prestige-black-premium", name:"Prestige Black", tier:"premium", price:"790 EUR", color:"#D4AF37", image:"https://medianewbuild.com/file/hh-media-bucket/developments_v2/70091589/media/images/outdoor/1.jpg", description:"Experience sombre immersive pour biens d'exception." }
+];
+
+function renderHomeTemplates() {
+  const grid = document.getElementById("homeTemplateGrid");
+  if (!grid) return;
+  grid.innerHTML = HOME_TEMPLATES.map((template) => `
+    <article class="template-preview-card">
+      <div class="template-preview-screen">
+        <button class="template-preview-live" type="button" data-template-preview="${template.id}" data-template-name="${template.name}">Voir live</button>
+        <span class="template-preview-tier ${template.tier === "base" ? "base" : ""}">${template.tier === "base" ? "Inclus" : "Premium"}</span>
+        <div class="template-mini">
+          <div class="template-mini-hero" style="background-image:url('${template.image}')">
+            <div class="template-mini-lines">
+              <span class="template-mini-line" style="width:44%;background:${template.color}"></span>
+              <span class="template-mini-line" style="width:86%"></span>
+              <span class="template-mini-line" style="width:62%"></span>
+            </div>
+          </div>
+          <div class="template-mini-body">
+            <span class="template-mini-card"></span>
+            <span class="template-mini-card"></span>
+            <span class="template-mini-card"></span>
+            <span class="template-mini-card"></span>
+          </div>
+        </div>
+      </div>
+      <div class="template-preview-info">
+        <h3>${template.name}</h3>
+        <p>${template.description}</p>
+        <div class="template-preview-actions">
+          <button class="btn btn-primary" type="button" data-template-preview="${template.id}" data-template-name="${template.name}">Previsualiser</button>
+          <a class="btn btn-secondary" href="${TEMPLATE_PREVIEW_BASE}/${template.id}" target="_blank" rel="noopener">${template.price}</a>
+        </div>
+      </div>
+    </article>
+  `).join("");
+}
+
+function openTemplatePreview(templateId, templateName) {
+  const modal = document.getElementById("templatePreviewModal");
+  const frame = document.getElementById("templatePreviewFrame");
+  const title = document.getElementById("templatePreviewTitle");
+  const open = document.getElementById("templatePreviewOpen");
+  const url = `${TEMPLATE_PREVIEW_BASE}/${templateId}`;
+  if (!modal || !frame || !title || !open) return;
+  title.textContent = `Previsualisation - ${templateName}`;
+  open.href = url;
+  frame.src = url;
+  modal.classList.add("open");
+  modal.setAttribute("aria-hidden", "false");
+}
+
+function closeTemplatePreview() {
+  const modal = document.getElementById("templatePreviewModal");
+  const frame = document.getElementById("templatePreviewFrame");
+  if (!modal || !frame) return;
+  modal.classList.remove("open");
+  modal.setAttribute("aria-hidden", "true");
+  frame.src = "";
+}
+
+renderHomeTemplates();
+document.addEventListener("click", (event) => {
+  const target = event.target.closest("[data-template-preview]");
+  if (target) openTemplatePreview(target.dataset.templatePreview, target.dataset.templateName || "Template");
+});
+document.getElementById("templatePreviewClose")?.addEventListener("click", closeTemplatePreview);
+document.getElementById("templatePreviewModal")?.addEventListener("click", (event) => {
+  if (event.target.id === "templatePreviewModal") closeTemplatePreview();
+});
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") closeTemplatePreview();
+});
 
 async function submitLead(e) {
   e.preventDefault();
