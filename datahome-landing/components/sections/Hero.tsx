@@ -44,7 +44,7 @@ const floatingBadges = [
   },
   {
     icon: "⚡",
-    text: "48h de livraison",
+    text: "24h de livraison",
     color: "bg-white dark:bg-neutral-900 border-gray-200 dark:border-white/10 text-gray-700 dark:text-gray-300",
     position: "-right-10 top-28",
     floatDelay: 0.8,
@@ -115,7 +115,7 @@ export function Hero() {
             className="max-w-3xl text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl md:text-6xl lg:text-[4.5rem] lg:leading-[1.08]"
           >
             Votre agence immobilière{" "}
-            <span className="text-[#1d4ed8]">en ligne en 48h</span>
+            <span className="text-[#1d4ed8]">en ligne en 24h</span>
           </motion.h1>
 
           {/* Subtitle */}
@@ -163,7 +163,7 @@ export function Hero() {
             animate="visible"
             className="mt-4 text-xs text-gray-400 dark:text-neutral-600"
           >
-            Aucune carte requise · Livraison garantie en 48h · Résiliable à tout moment
+            Aucune carte requise · Livraison garantie en 24h · Résiliable à tout moment
           </motion.p>
         </div>
 

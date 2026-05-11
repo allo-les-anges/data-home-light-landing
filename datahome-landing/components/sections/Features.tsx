@@ -44,8 +44,8 @@ const features: Feature[] = [
   },
   {
     Icon: Zap,
-    title: "Livraison en 48h",
-    description: "Votre site est en ligne 48h après la commande. Configuré, testé, prêt à convertir.",
+    title: "Livraison en 24h",
+    description: "Votre site est en ligne 24h après la commande. Configuré, testé, prêt à convertir.",
   },
   {
     Icon: BarChart3,

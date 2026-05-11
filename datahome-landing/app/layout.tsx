@@ -12,9 +12,9 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "DATAhome — Votre agence immobilière en ligne en 48h",
+  title: "DATAhome — Votre agence immobilière en ligne en 24h",
   description:
-    "Créez le site de votre agence immobilière en 48h. Connecté à HabiHub, Inmovilla, Witei et Casafari. Templates premium, SEO optimisé, domaine personnalisé.",
+    "Créez le site de votre agence immobilière en 24h. Connecté à HabiHub, Inmovilla, Witei et Casafari. Templates premium, SEO optimisé, domaine personnalisé.",
   keywords: [
     "site agence immobilière",
     "logiciel immobilier",
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "DATAhome — Votre agence immobilière en ligne en 48h",
+    title: "DATAhome — Votre agence immobilière en ligne en 24h",
     description:
-      "Créez le site de votre agence immobilière en 48h. Connecté aux meilleurs CRM du marché.",
+      "Créez le site de votre agence immobilière en 24h. Connecté aux meilleurs CRM du marché.",
     url: "https://data-home.app",
     siteName: "DATAhome",
     locale: "fr_FR",
@@ -41,8 +41,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "DATAhome — Votre agence immobilière en ligne en 48h",
-    description: "Créez le site de votre agence immobilière en 48h. Connecté à HabiHub & co.",
+    title: "DATAhome — Votre agence immobilière en ligne en 24h",
+    description: "Créez le site de votre agence immobilière en 24h. Connecté à HabiHub & co.",
     creator: "@datahome",
   },
   robots: {

@@ -96,7 +96,7 @@ export function Pricing() {
             custom={2}
             className="text-lg text-[hsl(var(--muted-foreground))] max-w-2xl mx-auto text-center"
           >
-            Tous les plans incluent l&apos;hébergement, la livraison en 48h et les mises à jour. Sans engagement.
+            Tous les plans incluent l&apos;hébergement, la livraison en 24h et les mises à jour. Sans engagement.
           </motion.p>
         </motion.div>
 

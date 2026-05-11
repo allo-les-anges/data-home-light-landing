@@ -6,7 +6,7 @@ import { Accordion, AccordionItem } from "@/components/ui/accordion"
 const faqs = [
   {
     q: "Combien de temps faut-il pour avoir mon site en ligne ?",
-    a: "Votre site est en ligne 48h après votre commande et la réception de vos informations d'agence (logo, couleurs, textes). Nous gérons tout : configuration, hébergement, SSL, et mise en production.",
+    a: "Votre site est en ligne 24h après votre commande et la réception de vos informations d'agence (logo, couleurs, textes). Nous gérons tout : configuration, hébergement, SSL, et mise en production.",
   },
   {
     q: "Comment fonctionne la synchronisation avec mon CRM ?",

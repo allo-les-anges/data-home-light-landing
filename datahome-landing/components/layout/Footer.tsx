@@ -43,7 +43,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-sm text-[hsl(var(--muted-foreground))] leading-relaxed max-w-xs">
-              Votre agence immobilière en ligne en 48h. Connectée aux meilleurs CRM du marché.
+              Votre agence immobilière en ligne en 24h. Connectée aux meilleurs CRM du marché.
             </p>
             <div className="mt-4 flex gap-3">
               {["linkedin", "twitter", "instagram"].map((social) => (
