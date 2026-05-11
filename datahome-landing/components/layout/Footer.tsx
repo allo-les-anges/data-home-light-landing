@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 
 const footerLinks = {
   Produit: [
@@ -34,13 +35,15 @@ export function Footer() {
         <div className="grid grid-cols-2 gap-8 md:grid-cols-5">
           {/* Brand column */}
           <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="flex items-center gap-2 font-bold text-xl tracking-tight mb-4">
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#1d4ed8] text-white text-sm font-black">
-                D
-              </span>
-              <span className="text-gray-900 dark:text-white">
-                DATA<span className="text-[#1d4ed8]">home</span>
-              </span>
+            <Link href="/" className="mb-5 block w-fit" aria-label="DATA HOME">
+              <Image
+                src="/data-home-footer-logo.png"
+                alt="DATA HOME"
+                width={320}
+                height={75}
+                className="h-auto w-48 max-w-full"
+                priority={false}
+              />
             </Link>
             <p className="text-sm text-[hsl(var(--muted-foreground))] leading-relaxed max-w-xs">
               Votre agence immobilière en ligne en 24h. Connectée aux meilleurs CRM du marché.
