@@ -120,9 +120,12 @@ h1{font-family:'Montserrat',sans-serif;font-size:clamp(40px,6vw,80px);line-heigh
 .section-head h2{font-family:'Montserrat',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:700;margin-bottom:16px}
 .section-head p{font-size:17px;color:#555;max-width:560px;margin:0 auto}
 .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.feat-card{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:32px;transition:all .25s}
-.feat-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.1)}
-.feat-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.feat-card{background:linear-gradient(180deg,#fff,#fbfdff);border:1px solid #e5e7eb;border-radius:18px;padding:32px;transition:all .25s;position:relative;overflow:hidden}
+.feat-card:before{content:"";position:absolute;inset:0 0 auto auto;width:130px;height:130px;background:radial-gradient(circle,rgba(24,161,206,.10),transparent 64%);pointer-events:none}
+.feat-card:hover{transform:translateY(-4px);box-shadow:0 18px 52px rgba(15,23,42,.12);border-color:rgba(24,161,206,.22)}
+.feat-icon{width:58px;height:58px;border-radius:18px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;position:relative;box-shadow:inset 0 1px 0 rgba(255,255,255,.75),0 12px 30px rgba(15,23,42,.10)}
+.feat-icon:after{content:"";position:absolute;inset:8px 8px auto auto;width:10px;height:10px;border-radius:999px;background:rgba(255,255,255,.82)}
+.feat-icon svg{position:relative;z-index:1;filter:drop-shadow(0 4px 8px rgba(15,23,42,.14))}
 .feat-card h3{font-size:18px;font-weight:700;margin-bottom:10px}
 .feat-card p{font-size:14px;color:#555;line-height:1.65}
 /* SHOWCASE */
@@ -346,32 +349,32 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
     </div>
     <div class="features-grid">
       <div class="feat-card">
-        <div class="feat-icon" style="background:#EBF5FB"><svg width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="#18A1CE" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg></div>
+        <div class="feat-icon" style="background:linear-gradient(135deg,#18A1CE,#D769A9)"><svg width="30" height="30" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M4 11.5 12 5l8 6.5"/><path stroke-linecap="round" stroke-linejoin="round" d="M6.5 10.5V19h11v-8.5"/><path stroke-linecap="round" stroke-linejoin="round" d="M9.5 19v-5h5v5"/><path stroke-linecap="round" stroke-linejoin="round" d="M16 7.5V5h2v4.1"/></svg></div>
         <h3 data-i18n="f1t">Site vitrine public</h3>
         <p data-i18n="f1d">Homepage agence, pages biens, locations, contact et contenus légaux prêts pour la mise en ligne.</p>
       </div>
       <div class="feat-card">
-        <div class="feat-icon" style="background:#EAFAF1"><svg width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="#4CAF7D" stroke-width="2"><circle cx="11" cy="11" r="8"/><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35"/></svg></div>
+        <div class="feat-icon" style="background:linear-gradient(135deg,#32B55E,#18A1CE)"><svg width="30" height="30" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M5 7.5h7.5M5 12h14M11.5 16.5H19"/><path stroke-linecap="round" stroke-linejoin="round" d="M15.5 4.5 19 8l-3.5 3.5"/><path stroke-linecap="round" stroke-linejoin="round" d="M8.5 12.5 5 16l3.5 3.5"/></svg></div>
         <h3 data-i18n="f2t">Imports XML pilotés</h3>
         <p data-i18n="f2d">Associez les flux fournis par vos partenaires depuis AgencyDashboard et publiez les biens client.</p>
       </div>
       <div class="feat-card">
-        <div class="feat-icon" style="background:#FEF9E7"><svg width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="#F5C842" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+        <div class="feat-icon" style="background:linear-gradient(135deg,#FCC010,#EF4B5A)"><svg width="30" height="30" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="1.8"><rect x="4.5" y="5" width="15" height="12.5" rx="2.5"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 9h4.5M8 12.5h8M8 16h5"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 20h6"/></svg></div>
         <h3 data-i18n="f3t">Property Manager</h3>
         <p data-i18n="f3d">Le client gère ses biens, locations, médias, vidéos et réglages depuis Mon Espace.</p>
       </div>
       <div class="feat-card">
-        <div class="feat-icon" style="background:#F5EEF8"><svg width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="#7C5CBF" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9"/></svg></div>
+        <div class="feat-icon" style="background:linear-gradient(135deg,#D769A9,#18A1CE)"><svg width="30" height="30" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="3"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 8h8M8 12h3.5M14 12h2M8 16h8"/><path stroke-linecap="round" stroke-linejoin="round" d="M6.5 10.5h11"/></svg></div>
         <h3 data-i18n="f4t">Templates personnalisables</h3>
         <p data-i18n="f4d">Templates gratuits et premium avec couleurs, typographies, vignettes et hero image ou vidéo.</p>
       </div>
       <div class="feat-card">
-        <div class="feat-icon" style="background:#FDEDEE"><svg width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="#EF4B5A" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+        <div class="feat-icon" style="background:linear-gradient(135deg,#EF4B5A,#D769A9)"><svg width="30" height="30" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M6 16.5h-.5A2.5 2.5 0 0 1 3 14V8a2.5 2.5 0 0 1 2.5-2.5h9A2.5 2.5 0 0 1 17 8v5.5"/><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 9.5h5M7.5 12.5h3"/><path stroke-linecap="round" stroke-linejoin="round" d="M14.5 18.5 18 15l3.5 3.5"/><path stroke-linecap="round" stroke-linejoin="round" d="M18 15v6"/></svg></div>
         <h3 data-i18n="f5t">Chatbot IA</h3>
         <p data-i18n="f5d">Assistant premium pour qualifier les visiteurs, limité à 20 requêtes par jour et par agence.</p>
       </div>
       <div class="feat-card">
-        <div class="feat-icon" style="background:#FEF3EB"><svg width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="#F28444" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg></div>
+        <div class="feat-icon" style="background:linear-gradient(135deg,#18A1CE,#32B55E)"><svg width="30" height="30" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 7.5h15M7 4.5v6M17 4.5v6"/><rect x="5" y="5.5" width="14" height="14" rx="3"/><path stroke-linecap="round" stroke-linejoin="round" d="M8.5 14h2.5l1 2 2.5-5 1.5 3h1.5"/></svg></div>
         <h3 data-i18n="f6t">Mini CRM & modules</h3>
         <p data-i18n="f6d">Mini CRM Leads inclus, langues additionnelles, vidéo hero, visites immersives, SEO et domaine.</p>
       </div>
