@@ -6,11 +6,11 @@ import {
   Link2,
   Search,
   LayoutTemplate,
-  Zap,
-  BarChart3,
   Mail,
-  RefreshCw,
-  Users,
+  Bot,
+  Languages,
+  Video,
+  Building2,
 } from "lucide-react"
 import type { LucideIcon } from "lucide-react"
 import { staggerContainer, staggerItem, fadeInUp } from "@/lib/variants"
@@ -24,48 +24,48 @@ interface Feature {
 const features: Feature[] = [
   {
     Icon: Globe,
-    title: "Domaine personnalisé",
-    description: "Votre agence sur votre-agence.com ou agence.data-home.app. Configuration DNS incluse.",
+    title: "Site vitrine public",
+    description: "Une homepage agence, des pages de biens, locations, contact et contenus légaux prêts pour la mise en ligne.",
   },
   {
     Icon: Link2,
-    title: "Synchronisation CRM",
-    description: "Vos biens s'importent automatiquement depuis HabiHub, Inmovilla, Witei ou Casafari.",
+    title: "Imports XML pilotés",
+    description: "Associez les flux fournis par vos partenaires depuis AgencyDashboard et publiez les biens sur le site client.",
   },
   {
-    Icon: Search,
-    title: "SEO technique inclus",
-    description: "Balises méta, sitemap XML, schema.org immobilier, Core Web Vitals optimisés.",
+    Icon: Building2,
+    title: "Property Manager",
+    description: "Le client gère ses biens, ses locations, ses médias, ses vidéos et ses réglages depuis Mon Espace.",
   },
   {
     Icon: LayoutTemplate,
-    title: "Templates premium",
-    description: "6 designs conçus pour l'immobilier. Adaptatifs mobile-first, sans code à écrire.",
+    title: "Templates personnalisables",
+    description: "Templates gratuits et premium avec couleurs, typographies, style de vignettes, hero image ou vidéo.",
   },
   {
-    Icon: Zap,
-    title: "Livraison en 24h",
-    description: "Votre site est en ligne 24h après la commande. Configuré, testé, prêt à convertir.",
-  },
-  {
-    Icon: BarChart3,
-    title: "Analytics & stats",
-    description: "Tableau de bord avec visiteurs, leads, performances des annonces. Tout en un.",
+    Icon: Bot,
+    title: "Chatbot IA",
+    description: "Un assistant premium pour qualifier les visiteurs, limité à 20 requêtes par jour et par agence.",
   },
   {
     Icon: Mail,
-    title: "Formulaires & leads",
-    description: "Capture de contacts, prise de RDV, alertes immobilières. Leads directement dans votre CRM.",
+    title: "Mini CRM Leads",
+    description: "Les demandes issues du site et du chatbot arrivent dans un CRM simple, inclus dans l'offre premium.",
   },
   {
-    Icon: RefreshCw,
-    title: "Mises à jour auto",
-    description: "Nouvelles fonctionnalités et correctifs déployés sans action de votre part.",
+    Icon: Languages,
+    title: "Langues additionnelles",
+    description: "Ajoutez les langues dont votre agence a besoin, avec traduction des pages, cartes biens et détails.",
   },
   {
-    Icon: Users,
-    title: "Support dédié",
-    description: "Chat, email ou visio. Une équipe humaine qui connaît l'immobilier pour vous accompagner.",
+    Icon: Video,
+    title: "Vidéo hero & visites immersives",
+    description: "Modules pour mettre une vidéo en hero et ajouter des visites 360, Matterport ou liens immersifs aux biens.",
+  },
+  {
+    Icon: Search,
+    title: "SEO et domaine",
+    description: "Domaine personnalisé, base SEO technique et module SEO avancé prévu pour accompagner la croissance.",
   },
 ]
 
@@ -92,15 +92,15 @@ export function Features() {
             custom={1}
             className="text-4xl font-bold text-gray-900 dark:text-white mb-4"
           >
-            Tout ce dont votre agence a besoin
+            Everything you need, aligné avec le produit réel
           </motion.h2>
           <motion.p
             variants={fadeInUp}
             custom={2}
             className="text-lg text-[hsl(var(--muted-foreground))] max-w-2xl mx-auto text-center"
           >
-            Un site pro, des intégrations puissantes, zéro maintenance. Vous faites de l&apos;immobilier,
-            pas du dev.
+            DataHome couvre le workflow complet de l'agence : création du site, import des biens,
+            personnalisation, leads, modules premium et accompagnement de publication.
           </motion.p>
         </motion.div>
 
