@@ -116,7 +116,14 @@ h1{font-family:'Montserrat',sans-serif;font-size:clamp(40px,6vw,80px);line-heigh
 .regions{padding:64px 0;background:var(--light)}
 .section-label{font-size:11px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:#888;text-align:center;margin-bottom:40px}
 .regions-row{display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
-.region-chip{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #e5e7eb;border-radius:999px;padding:12px 24px;font-size:14px;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.region-chip{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #e5e7eb;border-radius:999px;padding:12px 24px;font-size:14px;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.06);animation:destinationFloat 6.5s ease-in-out infinite}
+.region-chip:nth-child(2){animation-delay:.18s}
+.region-chip:nth-child(3){animation-delay:.36s}
+.region-chip:nth-child(4){animation-delay:.54s}
+.region-chip:nth-child(5){animation-delay:.72s}
+.region-chip:nth-child(6){animation-delay:.9s}
+@keyframes destinationFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@media (prefers-reduced-motion:reduce){.region-chip{animation:none}}
 /* FEATURES */
 .features{padding:96px 0;background:#fff}
 .section-head{text-align:center;margin-bottom:64px}
@@ -342,8 +349,8 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
       <div class="region-chip"><span style="color:var(--orange)">&#9679;</span> Costa del Sol</div>
       <div class="region-chip"><span style="color:var(--gold)">&#9679;</span> Costa Calida</div>
       <div class="region-chip"><span style="color:var(--green)">&#9679;</span> Algarve, Portugal</div>
-      <div class="region-chip"><span style="color:var(--blue)">&#9679;</span> Cote d'Azur</div>
-      <div class="region-chip"><span style="color:var(--purple)">&#9679;</span> Baleares</div>
+      <div class="region-chip"><span style="color:var(--blue)">&#9679;</span> Dubai</div>
+      <div class="region-chip"><span style="color:var(--purple)">&#9679;</span> Georgia</div>
     </div>
   </div>
 </section>
@@ -393,62 +400,7 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
       <h2 data-i18n="show_h">Des vitrines qui vendent</h2>
       <p data-i18n="show_sub">Villas premium directement depuis votre CRM.</p>
     </div>
-    <div class="villa-grid">
-      <div class="villa-card">
-        <div class="villa-img">
-          <img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/87929424/media/images/outdoor/1.jpg" alt="The Hills 14" loading="lazy"/>
-          <div class="ov"></div>
-          <div class="villa-badge" style="background:var(--red)" data-i18n="vb1">Coup de coeur</div>
-          <div class="villa-price">22 M&euro;</div>
-        </div>
-        <div class="villa-info"><h3>The Hills 14</h3><p>&#9679; El Herrojo, Costa del Sol</p></div>
-      </div>
-      <div class="villa-card">
-        <div class="villa-img">
-          <img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/37089450/media/images/outdoor/1.jpg" alt="Villa Marbella" loading="lazy"/>
-          <div class="ov"></div>
-          <div class="villa-badge" style="background:var(--blue)" data-i18n="vb2">Vue mer</div>
-          <div class="villa-price">19,5 M&euro;</div>
-        </div>
-        <div class="villa-info"><h3>Villa Marbella</h3><p>&#9679; Marbella, Málaga</p></div>
-      </div>
-      <div class="villa-card">
-        <div class="villa-img">
-          <img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/32156547/media/images/outdoor/1.jpg" alt="Calle Bach" loading="lazy"/>
-          <div class="ov"></div>
-          <div class="villa-badge" style="background:var(--purple)" data-i18n="vb3">Luxe</div>
-          <div class="villa-price">19 M&euro;</div>
-        </div>
-        <div class="villa-info"><h3>Calle Bach</h3><p>&#9679; Marbella, Costa del Sol</p></div>
-      </div>
-      <div class="villa-card">
-        <div class="villa-img">
-          <img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/70091589/media/images/outdoor/1.jpg" alt="Villa Pueblo Nuevo" loading="lazy"/>
-          <div class="ov"></div>
-          <div class="villa-badge" style="background:var(--orange)" data-i18n="vb4">Prestige</div>
-          <div class="villa-price">12,5 M&euro;</div>
-        </div>
-        <div class="villa-info"><h3>Villa Pueblo Nuevo</h3><p>&#9679; Pueblo Nuevo, Andalousie</p></div>
-      </div>
-      <div class="villa-card">
-        <div class="villa-img">
-          <img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/82064372/media/images/1.jpg" alt="Villa Benahavis" loading="lazy"/>
-          <div class="ov"></div>
-          <div class="villa-badge" style="background:var(--green)" data-i18n="vb5">Exclusif</div>
-          <div class="villa-price">12,1 M&euro;</div>
-        </div>
-        <div class="villa-info"><h3>Villa Benahavís</h3><p>&#9679; Benahavís, Málaga</p></div>
-      </div>
-      <div class="villa-card">
-        <div class="villa-img">
-          <img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/25407071/media/images/outdoor/1.jpg" alt="Villa Alcala 70" loading="lazy"/>
-          <div class="ov"></div>
-          <div class="villa-badge" style="background:var(--gold);color:var(--dark)" data-i18n="vb6">Premium</div>
-          <div class="villa-price">11,5 M&euro;</div>
-        </div>
-        <div class="villa-info"><h3>Villa Alcalá 70</h3><p>&#9679; Marbella, Costa del Sol</p></div>
-      </div>
-    </div>
+    <div class="villa-grid" id="villaShowcaseGrid"></div>
     <p style="text-align:center;margin-top:32px;font-size:13px;color:#aaa" data-i18n="show_note">Biens réels issus du catalogue HabiHub · Synchronisés automatiquement</p>
   </div>
 </section>
@@ -601,7 +553,8 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
         <a href="#">Costa Blanca</a>
         <a href="#">Costa del Sol</a>
         <a href="#">Algarve</a>
-        <a href="#">Côte d'Azur</a>
+        <a href="#">Dubai</a>
+        <a href="#">Georgia</a>
       </div>
       <div class="footer-col">
         <h4 data-i18n="ft_col3">LANGUES</h4>
@@ -790,6 +743,7 @@ function setLang(lc) {
   document.querySelectorAll("[data-i18n-ph]").forEach(el => { if (d[el.dataset.i18nPh] !== undefined) el.placeholder = d[el.dataset.i18nPh]; });
   document.documentElement.lang = lang;
   renderHomeTemplates();
+  if (window.__villaShowcaseItems) renderVillaShowcase(window.__villaShowcaseItems);
   updatePricingDisplay();
 }
 
@@ -891,6 +845,110 @@ function closeTemplatePreview() {
 }
 
 renderHomeTemplates();
+
+const VILLA_SHOWCASE_FALLBACK = [
+  { title:"Villa Victoria", location:"Ciudad Quesada, Alicante", price:883210, image:"https://medianewbuild.com/file/hh-media-bucket/developments_v2/13112583/media/images/1.jpg", badge:"vb1" },
+  { title:"Modern Sea View Villa", location:"Marbella, Costa del Sol", price:1245000, image:"https://medianewbuild.com/file/hh-media-bucket/developments_v2/37089450/media/images/outdoor/1.jpg", badge:"vb2" },
+  { title:"Golf Residence", location:"Benahavis, Malaga", price:695000, image:"https://medianewbuild.com/file/hh-media-bucket/developments_v2/82064372/media/images/1.jpg", badge:"vb3" },
+  { title:"Family Villa", location:"Costa Calida, Murcia", price:525000, image:"https://medianewbuild.com/file/hh-media-bucket/developments_v2/60846833/media/images/1.jpg", badge:"vb4" },
+  { title:"Design Villa", location:"Altea, Alicante", price:1590000, image:"https://medianewbuild.com/file/hh-media-bucket/developments_v2/25407071/media/images/outdoor/1.jpg", badge:"vb5" },
+  { title:"Mediterranean Home", location:"Estepona, Malaga", price:1995000, image:"https://medianewbuild.com/file/hh-media-bucket/developments_v2/70091589/media/images/outdoor/1.jpg", badge:"vb6" }
+];
+
+function parseVillaImages(images) {
+  if (Array.isArray(images)) return images.filter(Boolean);
+  if (!images || typeof images !== "string") return [];
+  const value = images.trim();
+  if (value.startsWith("{") && value.endsWith("}")) {
+    return value.slice(1, -1).split(",").map((url) => url.trim().replace(/^"|"$/g, "")).filter(Boolean);
+  }
+  try {
+    const parsed = JSON.parse(value);
+    return Array.isArray(parsed) ? parsed.filter(Boolean) : [];
+  } catch {
+    return value.startsWith("http") ? [value] : [];
+  }
+}
+
+function numericPrice(value) {
+  if (typeof value === "number") return value;
+  if (!value) return 0;
+  return Number(String(value).replace(/[^\d.]/g, "")) || 0;
+}
+
+function formatVillaPrice(price) {
+  return new Intl.NumberFormat(lang || "en", {
+    style: "currency",
+    currency: "EUR",
+    maximumFractionDigits: 0
+  }).format(price);
+}
+
+function renderVillaShowcase(villas) {
+  const grid = document.getElementById("villaShowcaseGrid");
+  if (!grid) return;
+  window.__villaShowcaseItems = villas;
+  const d = T[lang] || T.en || T.fr;
+  const colors = ["var(--red)", "var(--blue)", "var(--purple)", "var(--orange)", "var(--green)", "var(--gold)"];
+  grid.innerHTML = villas.slice(0, 6).map((villa, index) => {
+    const badgeKey = villa.badge || `vb${(index % 6) + 1}`;
+    const badgeStyle = index === 5 ? `background:${colors[index]};color:var(--dark)` : `background:${colors[index]}`;
+    return `
+      <article class="villa-card">
+        <div class="villa-img">
+          <img src="${villa.image}" alt="${villa.title}" loading="lazy"/>
+          <div class="ov"></div>
+          <div class="villa-badge" style="${badgeStyle}">${d[badgeKey] || "Premium"}</div>
+          <div class="villa-price">${formatVillaPrice(villa.price)}</div>
+        </div>
+        <div class="villa-info"><h3>${villa.title}</h3><p>&#9679; ${villa.location}</p></div>
+      </article>
+    `;
+  }).join("");
+}
+
+function pickVariedVillas(items) {
+  const sorted = items
+    .map((item) => ({ ...item, price: numericPrice(item.price || item.prix) }))
+    .filter((item) => item.price >= 500000 && item.price <= 2000000 && item.image)
+    .sort((a, b) => a.price - b.price);
+  const buckets = [[500000, 700000], [700000, 900000], [900000, 1200000], [1200000, 1500000], [1500000, 1750000], [1750000, 2000000]];
+  const picked = [];
+  buckets.forEach(([min, max]) => {
+    const found = sorted.find((item) => item.price >= min && item.price < max && !picked.includes(item));
+    if (found) picked.push(found);
+  });
+  sorted.forEach((item) => {
+    if (picked.length < 6 && !picked.includes(item)) picked.push(item);
+  });
+  return picked.slice(0, 6);
+}
+
+async function loadVillaShowcase() {
+  renderVillaShowcase(VILLA_SHOWCASE_FALLBACK);
+  try {
+    const res = await fetch("/api/showcase-villas", { cache: "no-store" });
+    if (!res.ok) return;
+    const payload = await res.json();
+    const source = Array.isArray(payload.properties) ? payload.properties : [];
+    const mapped = source.map((property, index) => {
+      const image = property.image || parseVillaImages(property.images)[0];
+      return {
+        title: property.titre || property.title || property.ref || `Property ${index + 1}`,
+        location: [property.town || property.ville, property.province || property.region].filter(Boolean).join(", "),
+        price: numericPrice(property.price || property.prix),
+        image,
+        badge: `vb${(index % 6) + 1}`
+      };
+    });
+    const selected = pickVariedVillas(mapped);
+    if (selected.length) renderVillaShowcase(selected);
+  } catch {
+    renderVillaShowcase(VILLA_SHOWCASE_FALLBACK);
+  }
+}
+
+loadVillaShowcase();
 document.addEventListener("click", (event) => {
   const target = event.target.closest("[data-template-preview]");
   if (target) openTemplatePreview(target.dataset.templatePreview, target.dataset.templateName || "Template");
