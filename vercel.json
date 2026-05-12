@@ -4,16 +4,12 @@
     {
       "src": "datahome-landing/package.json",
       "use": "@vercel/next"
-    },
-    {
-      "src": "api/leads.js",
-      "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/api/leads",
-      "dest": "/api/leads.js"
+      "dest": "/datahome-landing/api/leads"
     },
     {
       "src": "/(.*)",
