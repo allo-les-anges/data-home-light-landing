@@ -1256,7 +1256,7 @@ async function submitLead(e) {
   btn.disabled = true;
   btn.textContent = "...";
   try {
-    const res = await fetch("https://datahome-landing.vercel.app/api/leads", {
+    const res = await fetch("https://data-home-light-landing.vercel.app/api/leads", {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({
