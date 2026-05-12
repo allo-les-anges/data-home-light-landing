@@ -13,7 +13,7 @@
   "routes": [
     {
       "src": "/api/leads",
-      "dest": "/api/leads"
+      "dest": "/api/leads.js"
     },
     {
       "src": "/(.*)",
