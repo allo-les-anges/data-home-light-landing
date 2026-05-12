@@ -5,6 +5,7 @@ import { Features } from "@/components/sections/Features"
 import { Templates } from "@/components/sections/Templates"
 import { Pricing } from "@/components/sections/Pricing"
 import { FAQ } from "@/components/sections/FAQ"
+import { Contact } from "@/components/sections/Contact"
 
 export default function Page() {
   return (
@@ -16,6 +17,7 @@ export default function Page() {
       <Templates />
       <Pricing />
       <FAQ />
+      <Contact />
     </>
   )
 }

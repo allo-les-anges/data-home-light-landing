@@ -1256,7 +1256,7 @@ async function submitLead(e) {
   btn.disabled = true;
   btn.textContent = "...";
   try {
-    const res = await fetch("/api/leads", {
+    const res = await fetch("https://datahome-landing.vercel.app/api/leads", {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({
@@ -1268,13 +1268,16 @@ async function submitLead(e) {
         metadata: {page_url: location.href}
       })
     });
+    const payload = await res.json().catch(() => null);
     msg.style.color = res.ok ? "var(--green)" : "var(--red)";
-    msg.textContent = res.ok ? T[lang].cf_ok : T[lang].cf_err;
+    msg.textContent = res.ok
+      ? T[lang].cf_ok
+      : (payload?.error || T[lang].cf_err);
     msg.style.display = "block";
     if (res.ok) e.target.reset();
-  } catch {
+  } catch (err) {
     msg.style.color = "var(--red)";
-    msg.textContent = T[lang].cf_err;
+    msg.textContent = err instanceof Error ? err.message : T[lang].cf_err;
     msg.style.display = "block";
   }
   btn.disabled = false;
