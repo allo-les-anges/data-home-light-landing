@@ -5,5 +5,8 @@
       "src": "datahome-landing/package.json",
       "use": "@vercel/next"
     }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/datahome-landing/$1" }
   ]
 }
