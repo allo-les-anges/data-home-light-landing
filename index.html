@@ -642,9 +642,9 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
       </div>
       <div class="footer-col">
         <h4 data-i18n="ft_col4">LÉGAL</h4>
-        <a href="#" data-i18n="ft_privacy">Confidentialité</a>
-        <a href="#" data-i18n="ft_terms">Conditions</a>
-        <a href="#" data-i18n="ft_cookies">Cookies</a>
+        <a href="privacy.html" data-i18n="ft_privacy">Confidentialité</a>
+        <a href="legal.html" data-i18n="ft_terms">Mentions légales</a>
+        <a href="privacy.html#cookies" data-i18n="ft_cookies">Cookies</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -1087,6 +1087,18 @@ const CURRENT_PRICING_TEXT = {
 };
 Object.keys(T).forEach((lc) => Object.assign(T[lc], CURRENT_PRICING_TEXT[lc] || CURRENT_PRICING_TEXT.en));
 
+const LEGAL_FOOTER_TEXT = {
+  fr: { ft_privacy:"Politique de confidentialite", ft_terms:"Mentions legales", ft_cookies:"Cookies" },
+  en: { ft_privacy:"Privacy policy", ft_terms:"Legal notices", ft_cookies:"Cookies" },
+  es: { ft_privacy:"Politica de privacidad", ft_terms:"Aviso legal", ft_cookies:"Cookies" },
+  de: { ft_privacy:"Datenschutz", ft_terms:"Impressum", ft_cookies:"Cookies" },
+  nl: { ft_privacy:"Privacybeleid", ft_terms:"Juridische vermeldingen", ft_cookies:"Cookies" },
+  pt: { ft_privacy:"Politica de privacidade", ft_terms:"Aviso legal", ft_cookies:"Cookies" },
+  ru: { ft_privacy:"Политика конфиденциальности", ft_terms:"Правовая информация", ft_cookies:"Cookies" },
+  pl: { ft_privacy:"Polityka prywatnosci", ft_terms:"Informacje prawne", ft_cookies:"Cookies" }
+};
+Object.keys(T).forEach((lc) => Object.assign(T[lc], LEGAL_FOOTER_TEXT[lc] || LEGAL_FOOTER_TEXT.en));
+
 const CHAT_NAV_TEXT = {
   fr:{nChat:"Chatbot"},
   en:{nChat:"AI Chatbot"},
@@ -1393,6 +1405,14 @@ async function submitLead(e) {
 }
 
 setLang(lang);
+</script>
+<script src="https://assets.taskade.com/embeds/latest/taskade-embed.min.js"></script>
+<script type="module">
+  TaskadeEmbed.AgentPublicChatPopup.init({
+    publicAgentId: "01KNY1Q8QVX0MN4PTC75KZFS9C",
+    position: "bottom-right",
+    theme: "light"
+  });
 </script>
 </body>
 </html>

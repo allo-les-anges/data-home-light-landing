@@ -9,19 +9,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%); color: #0a0c10; }
+        body { font-family: 'Inter', sans-serif; background: radial-gradient(circle at 10% 10%, rgba(24,161,206,.14), transparent 28%), radial-gradient(circle at 92% 4%, rgba(215,105,169,.18), transparent 30%), linear-gradient(135deg, #f8fafc 0%, #ffffff 100%); color: #0a0c10; }
         .glass-card { background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(20px); border: 1px solid rgba(0, 0, 0, 0.04); border-radius: 2rem; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08); }
-        .gradient-text { background: linear-gradient(125deg, #1E2B6E 0%, #2B4A8C 40%, #4A7AB5 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-        .btn-back { background: #1E2B6E; color: white; transition: all 0.3s ease; border-radius: 99px; }
-        .btn-back:hover { background: #2B4A8C; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(30, 43, 110, 0.2); }
+        .gradient-text { background: linear-gradient(125deg, #D769A9 0%, #EF4B5A 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .btn-back { background: linear-gradient(125deg, #D769A9 0%, #EF4B5A 100%); color: white; transition: all 0.3s ease; border-radius: 99px; box-shadow: 0 14px 30px rgba(239,75,90,.22); }
+        .btn-back:hover { transform: translateY(-2px); box-shadow: 0 18px 36px rgba(215,105,169,.26); text-decoration: none; }
         h1, h2 { font-family: 'Plus Jakarta Sans', sans-serif; }
         .content-section { transition: all 0.3s ease; }
         .content-section:hover { transform: translateX(4px); }
-        a { color: #1E2B6E; text-decoration: none; transition: all 0.2s; }
-        a:hover { color: #2B4A8C; text-decoration: underline; }
-        .info-temporaire { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 12px 16px; border-radius: 12px; margin-bottom: 24px; }
+        a { color: #18A1CE; text-decoration: none; transition: all 0.2s; }
+        a:hover { color: #D769A9; text-decoration: underline; }
+        .info-temporaire { background: rgba(215,105,169,.09); border-left: 4px solid #D769A9; padding: 12px 16px; border-radius: 12px; margin-bottom: 24px; }
         .lang-selector { background: rgba(255,255,255,0.95); border-radius: 40px; padding: 6px 12px; font-size: 13px; font-weight: 600; border: 1px solid #e2e8f0; cursor: pointer; transition: all 0.2s; }
-        .lang-selector:hover { border-color: #1E2B6E; background: #f8fafc; }
+        .lang-selector:hover { border-color: #D769A9; background: #f8fafc; }
+        .brand-logo { width: 220px; max-width: 70vw; height: auto; object-fit: contain; }
+        .content-section { border-color: #D769A9 !important; }
     </style>
 </head>
 <body class="antialiased">
@@ -42,10 +44,7 @@
         <!-- Contenu principal -->
         <div class="glass-card p-8 md:p-12">
             <div class="flex items-center gap-3 mb-6">
-                <div class="w-10 h-10 bg-gradient-to-br from-[#1E2B6E] to-[#2B4A8C] rounded-xl flex items-center justify-center shadow-sm">
-                    <span class="text-white text-sm font-black">DH</span>
-                </div>
-                <span class="font-extrabold text-xl tracking-tight text-slate-800">Data<span class="text-[#1E2B6E]">Home</span> Light</span>
+                <img src="images/data-home-footer-logo.png" alt="DATA-HOME" class="brand-logo">
             </div>
             
             <div id="tempInfo" class="info-temporaire">
@@ -103,7 +102,7 @@
         TaskadeEmbed.AgentPublicChatPopup.init({
             publicAgentId: '01KNY1Q8QVX0MN4PTC75KZFS9C',
             position: 'bottom-right',
-            theme: 'auto'
+            theme: 'light'
         });
     </script>
 
