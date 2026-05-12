@@ -34,8 +34,8 @@ var SHEET_NAME = "Leads";
 /** Email addresses that receive lead notifications */
 var NOTIFICATION_EMAILS = ["gillian@amaru-homes.com", "gaetan@amaru-homes.com"];
 
-/** Must match the WEBHOOK_SECRET variable in your Next.js .env.local */
-var WEBHOOK_SECRET = "your-webhook-secret-here";
+/** Optional secret — only checked when called from the Next.js API (not from the browser directly) */
+var WEBHOOK_SECRET = "";
 
 // ─── Column headers (order matters — matches appendRow calls below) ───────────
 
@@ -65,13 +65,15 @@ var HEADERS = [
  */
 function doPost(e) {
   try {
-    // Authenticate the request using the shared secret in the header
-    var secret = e.parameter["X-Webhook-Secret"] || (e.headers && e.headers["X-Webhook-Secret"]);
-    if (secret !== WEBHOOK_SECRET) {
-      return buildResponse(false, "Unauthorized request.", 403);
+    // Authenticate only when a secret is configured (Next.js server calls)
+    if (WEBHOOK_SECRET) {
+      var secret = e.parameter["X-Webhook-Secret"] || (e.headers && e.headers["X-Webhook-Secret"]);
+      if (secret !== WEBHOOK_SECRET) {
+        return buildResponse(false, "Unauthorized request.", 403);
+      }
     }
 
-    // Parse the JSON body sent by the Next.js API route
+    // Parse the JSON body (sent by browser or by the Next.js API route)
     var payload = JSON.parse(e.postData.contents);
 
     // Write the lead to the spreadsheet

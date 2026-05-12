@@ -1258,7 +1258,7 @@ async function submitLead(e) {
   try {
     const res = await fetch("/api/leads", {
       method: "POST",
-      headers: {"Content-Type":"application/json"},
+      headers: {"Content-Type": "application/json"},
       body: JSON.stringify({
         source: "contact_form",
         name: document.getElementById("f_name").value,
@@ -1268,9 +1268,8 @@ async function submitLead(e) {
         metadata: {page_url: location.href}
       })
     });
-    const d = T[lang];
     msg.style.color = res.ok ? "var(--green)" : "var(--red)";
-    msg.textContent = res.ok ? d.cf_ok : d.cf_err;
+    msg.textContent = res.ok ? T[lang].cf_ok : T[lang].cf_err;
     msg.style.display = "block";
     if (res.ok) e.target.reset();
   } catch {
