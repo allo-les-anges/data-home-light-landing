@@ -152,6 +152,19 @@ h1{font-family:'Montserrat',sans-serif;font-size:clamp(40px,6vw,80px);line-heigh
 .feat-icon img{position:relative;z-index:1;width:52px;height:52px;object-fit:contain;display:block;filter:drop-shadow(0 6px 10px rgba(15,23,42,.12))}
 .feat-card h3{font-size:18px;font-weight:700;margin-bottom:10px}
 .feat-card p{font-size:14px;color:#555;line-height:1.65}
+.partners{padding:96px 0;background:linear-gradient(135deg,#fff 0%,#f8fbff 52%,#fff7fb 100%)}
+.partner-card{max-width:1040px;margin:0 auto;display:grid;grid-template-columns:.8fr 1.2fr;gap:32px;align-items:center;border:1px solid #e5e7eb;border-radius:28px;background:rgba(255,255,255,.94);box-shadow:0 24px 70px rgba(24,161,206,.13);overflow:hidden}
+.partner-logo-pane{min-height:280px;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 28% 22%,rgba(215,105,169,.18),transparent 34%),radial-gradient(circle at 74% 76%,rgba(24,161,206,.16),transparent 34%),#fff}
+.partner-logo-pane img{width:min(230px,70%);height:auto;display:block}
+.partner-content{padding:40px 44px 40px 0}
+.partner-tag{display:inline-flex;align-items:center;gap:8px;margin-bottom:16px;padding:8px 12px;border-radius:999px;background:linear-gradient(135deg,rgba(215,105,169,.12),rgba(24,161,206,.12));color:#D769A9;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.partner-tag:before{content:"";width:8px;height:8px;border-radius:999px;background:linear-gradient(135deg,#D769A9,#EF4B5A)}
+.partner-content h3{font-family:'Montserrat',sans-serif;font-size:clamp(30px,4vw,48px);line-height:1.05;margin-bottom:14px}
+.partner-content p{color:#556477;line-height:1.75;font-size:16px;margin-bottom:22px}
+.partner-points{display:grid;gap:12px}
+.partner-point{display:flex;align-items:flex-start;gap:10px;color:#233044;font-size:14px;line-height:1.55}
+.partner-dot{flex:0 0 auto;width:20px;height:20px;border-radius:999px;background:linear-gradient(135deg,#18A1CE,#D769A9);box-shadow:0 8px 22px rgba(215,105,169,.22);position:relative}
+.partner-dot:after{content:"";position:absolute;left:7px;top:5px;width:5px;height:8px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
 /* SHOWCASE */
 .showcase{padding:96px 0;background:var(--light)}
 .villa-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
@@ -245,9 +258,10 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
 .footer-col a:hover{color:#fff}
 .footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding:20px 0;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:rgba(255,255,255,.35)}
 .footer-bottom .acc{color:var(--gold)}
-@media(max-width:1024px){.features-grid,.villa-grid,.testi-grid,.template-preview-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:1024px){.features-grid,.villa-grid,.testi-grid,.template-preview-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}.partner-card{grid-template-columns:1fr}.partner-content{padding:0 32px 36px}.partner-logo-pane{min-height:220px}}
 @media(max-width:1024px){.demo-live-grid{grid-template-columns:1fr}.demo-browser img{height:360px}}
 @media(max-width:768px){.nav-links{display:none}.nav-actions{display:none}.hamburger{display:flex}.nav{height:64px}.stats-grid{grid-template-columns:repeat(2,1fr)}.features-grid,.villa-grid,.pricing-grid,.testi-grid,.template-preview-grid{grid-template-columns:1fr}.demo-live-grid{gap:28px}.demo-points{grid-template-columns:1fr}.demo-actions .btn{width:100%;height:56px}.footer-grid{grid-template-columns:1fr 1fr}.cta-inner{padding:48px 24px}.hero{padding:64px 0 40px}h1{font-size:clamp(32px,8vw,56px)}.hero-sub{font-size:16px;line-height:1.6;margin-bottom:32px}.hero-ctas{flex-direction:column;align-items:stretch}.hero-ctas .btn{width:100%;height:56px;font-size:16px;box-sizing:border-box}.hero-img img{height:260px}.demo-live{padding:56px 0}.demo-live h2{font-size:clamp(30px,9vw,42px)}.demo-live p{font-size:15px;line-height:1.65}.demo-browser{transform:none;border-radius:18px;box-shadow:0 18px 48px rgba(33,150,201,.14)}.demo-browser:hover{transform:translateY(-2px)}.demo-browser-top{padding:10px 12px}.demo-url{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px}.demo-browser img{height:auto;aspect-ratio:16/11;object-fit:cover}.template-strip{padding:64px 0}.preview-modal{padding:10px}.preview-modal-shell{height:calc(100vh - 20px);border-radius:18px}.preview-modal-title{font-size:11px}.preview-modal-actions .btn{display:none}.cookie-consent{right:16px;bottom:16px}.cookie-actions .btn{width:100%}.section-head{margin-bottom:40px}.feat-card{padding:24px}.pricing-card{padding:24px 20px}.testi-card{padding:24px}.features{padding:64px 0}.showcase{padding:64px 0}.pricing{padding:64px 0}.testimonials{padding:64px 0}.faq{padding:64px 0}.cta-section{padding:64px 0}.stats{padding:40px 0}}
+@media(max-width:768px){.partners{padding:64px 0}.partner-content{padding:0 24px 28px}.partner-logo-pane{min-height:190px}.partner-card{border-radius:22px}.partner-content p{font-size:15px}}
 @media(max-width:480px){.footer-grid{grid-template-columns:1fr}.mobile-lang-grid{grid-template-columns:repeat(2,1fr)}.demo-kicker{font-size:10px}.demo-browser img{aspect-ratio:4/3}.template-preview-actions{flex-direction:column}}
 </style>
 </head>
@@ -258,6 +272,7 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
     <nav class="nav-links">
       <a href="#features" data-i18n="nFeat">Fonctionnalites</a>
       <a href="#showcase" data-i18n="nShow">Vitrines</a>
+      <a href="#partners" data-i18n="nPartners">Partenaires</a>
       <a href="#pricing" data-i18n="nPrice">Tarifs</a>
       <a href="#templates" data-i18n="nTpl">Templates</a>
       <a href="chatbot.html" data-i18n="nChat">Chatbot</a>
@@ -290,6 +305,7 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
   <div class="mobile-menu" id="mobile-menu">
     <a href="#features" data-i18n="nFeat" onclick="closeMobileMenu()">Fonctionnalites</a>
     <a href="#showcase" data-i18n="nShow" onclick="closeMobileMenu()">Vitrines</a>
+    <a href="#partners" data-i18n="nPartners" onclick="closeMobileMenu()">Partenaires</a>
     <a href="#pricing" data-i18n="nPrice" onclick="closeMobileMenu()">Tarifs</a>
     <a href="#templates" data-i18n="nTpl" onclick="closeMobileMenu()">Templates</a>
     <a href="chatbot.html" data-i18n="nChat" onclick="closeMobileMenu()">Chatbot</a>
@@ -423,6 +439,30 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
         <div class="feat-icon"><img src="images/modules/immersive_tour.png" alt="Immersive tours module" loading="lazy"/></div>
         <h3 data-i18n="f6t">Mini CRM & modules</h3>
         <p data-i18n="f6d">Mini CRM Leads inclus, langues additionnelles, vidéo hero, visites immersives, SEO et domaine.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="partners" id="partners">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="partners_kicker">Partenaires</span>
+      <h2 data-i18n="partners_h">Des connexions utiles pour accélérer votre agence.</h2>
+      <p data-i18n="partners_sub">DataHome s'intègre progressivement avec les outils et flux immobiliers utilisés par les professionnels.</p>
+    </div>
+    <div class="partner-card">
+      <div class="partner-logo-pane">
+        <img src="images/Habihub_wipe_bg.png" alt="HabiHub" loading="lazy"/>
+      </div>
+      <div class="partner-content">
+        <span class="partner-tag" data-i18n="partner_habihub_tag">Partenaire flux & CRM</span>
+        <h3 data-i18n="partner_habihub_title">HabiHub</h3>
+        <p data-i18n="partner_habihub_desc">HabiHub accompagne les professionnels de l'immobilier dans la centralisation des biens, la gestion des agences et la distribution de flux XML. DataHome utilise ces flux pour publier rapidement des sites d'agence multilingues.</p>
+        <div class="partner-points">
+          <div class="partner-point"><span class="partner-dot"></span><span data-i18n="partner_habihub_point1">Connexion aux flux de biens fournis par les partenaires.</span></div>
+          <div class="partner-point"><span class="partner-dot"></span><span data-i18n="partner_habihub_point2">Synchronisation vers les vitrines DataHome et les pages de propriétés.</span></div>
+          <div class="partner-point"><span class="partner-dot"></span><span data-i18n="partner_habihub_point3">Workflow pensé pour les agences, promoteurs et réseaux immobiliers.</span></div>
+        </div>
       </div>
     </div>
   </div>
@@ -633,6 +673,7 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
       <div class="footer-col">
         <h4 data-i18n="ft_col1">PRODUIT</h4>
         <a href="#features" data-i18n="nFeat">Fonctionnalités</a>
+        <a href="#partners" data-i18n="nPartners">Partenaires</a>
         <a href="#pricing" data-i18n="nPrice">Tarifs</a>
         <a href="templates.html" data-i18n="nTpl">Templates</a>
         <a href="#faq" data-i18n="nFaq">FAQ</a>
@@ -730,6 +771,18 @@ const FEATURE_TEXT = {
   pl: {feat_h:"Everything you need, zgodne z realnym produktem",feat_sub:"DataHome obejmuje caly workflow agencji: strone, oferty, moduly, leady i publikacje.",f1t:"Publiczna strona agencji",f1d:"Homepage, oferty, wynajem, kontakt i tresci prawne gotowe do publikacji.",f2t:"Zarzadzane importy XML",f2d:"Podlacz feedy partnerow w AgencyDashboard i publikuj oferty klienta.",f3t:"Property Manager",f3d:"Klient zarzadza ofertami, wynajmem, mediami, wideo i ustawieniami w swoim panelu.",f4t:"Personalizowane templates",f4d:"Darmowe i premium templates z kolorami, typografia, kartami oraz image lub video hero.",f5t:"Chatbot IA",f5d:"Asystent premium do kwalifikacji odwiedzajacych, limit 20 zapytan dziennie na agencje.",f6t:"Mini CRM i moduly",f6d:"Mini CRM Leads w cenie, dodatkowe jezyki, hero video, wizyty immersyjne, SEO i domena."}
 };
 Object.keys(FEATURE_TEXT).forEach((lc) => Object.assign(T[lc] || T.fr, FEATURE_TEXT[lc]));
+
+const PARTNER_TEXT = {
+  fr:{nPartners:"Partenaires",partners_kicker:"Partenaires",partners_h:"Des connexions utiles pour accélérer votre agence.",partners_sub:"DataHome s'intègre progressivement avec les outils et flux immobiliers utilisés par les professionnels.",partner_habihub_tag:"Partenaire flux & CRM",partner_habihub_title:"HabiHub",partner_habihub_desc:"HabiHub accompagne les professionnels de l'immobilier dans la centralisation des biens, la gestion des agences et la distribution de flux XML. DataHome utilise ces flux pour publier rapidement des sites d'agence multilingues.",partner_habihub_point1:"Connexion aux flux de biens fournis par les partenaires.",partner_habihub_point2:"Synchronisation vers les vitrines DataHome et les pages de propriétés.",partner_habihub_point3:"Workflow pensé pour les agences, promoteurs et réseaux immobiliers."},
+  en:{nPartners:"Partners",partners_kicker:"Partners",partners_h:"Useful connections to move your agency faster.",partners_sub:"DataHome progressively connects with the real estate tools and property feeds used by professionals.",partner_habihub_tag:"Feed & CRM partner",partner_habihub_title:"HabiHub",partner_habihub_desc:"HabiHub helps real estate professionals centralize listings, manage agencies and distribute XML property feeds. DataHome uses those feeds to publish multilingual agency websites faster.",partner_habihub_point1:"Connection to partner property feeds.",partner_habihub_point2:"Synchronization with DataHome showcases and property pages.",partner_habihub_point3:"A workflow designed for agencies, developers and real estate networks."},
+  es:{nPartners:"Partners",partners_kicker:"Partners",partners_h:"Conexiones útiles para acelerar tu agencia.",partners_sub:"DataHome se conecta progresivamente con las herramientas y feeds inmobiliarios usados por profesionales.",partner_habihub_tag:"Partner de feeds y CRM",partner_habihub_title:"HabiHub",partner_habihub_desc:"HabiHub ayuda a los profesionales inmobiliarios a centralizar propiedades, gestionar agencias y distribuir feeds XML. DataHome usa esos feeds para publicar webs inmobiliarias multilingües más rápido.",partner_habihub_point1:"Conexión con feeds inmobiliarios de partners.",partner_habihub_point2:"Sincronización con vitrinas DataHome y páginas de propiedades.",partner_habihub_point3:"Workflow diseñado para agencias, promotores y redes inmobiliarias."},
+  de:{nPartners:"Partner",partners_kicker:"Partner",partners_h:"Nützliche Verbindungen, die Ihre Agentur beschleunigen.",partners_sub:"DataHome verbindet sich Schritt für Schritt mit den Immobilien-Tools und Objekt-Feeds professioneller Anbieter.",partner_habihub_tag:"Feed- & CRM-Partner",partner_habihub_title:"HabiHub",partner_habihub_desc:"HabiHub unterstützt Immobilienprofis dabei, Objekte zu zentralisieren, Agenturen zu verwalten und XML-Feeds zu verteilen. DataHome nutzt diese Feeds, um mehrsprachige Agentur-Websites schneller zu veröffentlichen.",partner_habihub_point1:"Anbindung an Immobilien-Feeds von Partnern.",partner_habihub_point2:"Synchronisierung mit DataHome-Websites und Objektseiten.",partner_habihub_point3:"Workflow für Agenturen, Bauträger und Immobiliennetzwerke."},
+  nl:{nPartners:"Partners",partners_kicker:"Partners",partners_h:"Nuttige koppelingen om je kantoor sneller vooruit te helpen.",partners_sub:"DataHome koppelt geleidelijk met vastgoedtools en vastgoedfeeds die professionals gebruiken.",partner_habihub_tag:"Feed- & CRM-partner",partner_habihub_title:"HabiHub",partner_habihub_desc:"HabiHub helpt vastgoedprofessionals om panden te centraliseren, agentschappen te beheren en XML-feeds te verdelen. DataHome gebruikt die feeds om meertalige agency websites sneller te publiceren.",partner_habihub_point1:"Koppeling met vastgoedfeeds van partners.",partner_habihub_point2:"Synchronisatie met DataHome websites en pandpagina's.",partner_habihub_point3:"Workflow voor agentschappen, ontwikkelaars en vastgoednetwerken."},
+  pt:{nPartners:"Parceiros",partners_kicker:"Parceiros",partners_h:"Ligações úteis para acelerar a sua agência.",partners_sub:"A DataHome liga-se progressivamente às ferramentas e feeds imobiliários usados por profissionais.",partner_habihub_tag:"Parceiro de feeds e CRM",partner_habihub_title:"HabiHub",partner_habihub_desc:"A HabiHub ajuda profissionais imobiliários a centralizar imóveis, gerir agências e distribuir feeds XML. A DataHome usa esses feeds para publicar websites imobiliários multilingues mais rapidamente.",partner_habihub_point1:"Ligação a feeds imobiliários de parceiros.",partner_habihub_point2:"Sincronização com vitrines DataHome e páginas de imóveis.",partner_habihub_point3:"Workflow pensado para agências, promotores e redes imobiliárias."},
+  ru:{nPartners:"Партнеры",partners_kicker:"Партнеры",partners_h:"Полезные интеграции для более быстрой работы агентства.",partners_sub:"DataHome постепенно подключается к инструментам и XML-файлам объектов, которыми пользуются профессионалы недвижимости.",partner_habihub_tag:"Партнер по фидам и CRM",partner_habihub_title:"HabiHub",partner_habihub_desc:"HabiHub помогает специалистам по недвижимости централизовать объекты, управлять агентствами и распространять XML-фиды. DataHome использует эти фиды для быстрой публикации многоязычных сайтов агентств.",partner_habihub_point1:"Подключение к фидам объектов от партнеров.",partner_habihub_point2:"Синхронизация с сайтами DataHome и страницами объектов.",partner_habihub_point3:"Процесс для агентств, девелоперов и сетей недвижимости."},
+  pl:{nPartners:"Partnerzy",partners_kicker:"Partnerzy",partners_h:"Przydatne integracje, które przyspieszają pracę agencji.",partners_sub:"DataHome stopniowo łączy się z narzędziami i feedami nieruchomości używanymi przez profesjonalistów.",partner_habihub_tag:"Partner feedów i CRM",partner_habihub_title:"HabiHub",partner_habihub_desc:"HabiHub pomaga profesjonalistom rynku nieruchomości centralizować oferty, zarządzać agencjami i dystrybuować feedy XML. DataHome wykorzystuje te feedy, aby szybciej publikować wielojęzyczne strony agencji.",partner_habihub_point1:"Połączenie z feedami nieruchomości od partnerów.",partner_habihub_point2:"Synchronizacja z witrynami DataHome i stronami nieruchomości.",partner_habihub_point3:"Workflow dla agencji, deweloperów i sieci nieruchomości."}
+};
+Object.keys(PARTNER_TEXT).forEach((lc) => Object.assign(T[lc] || T.fr, PARTNER_TEXT[lc]));
 
 const PRICING_TEXT = {
   fr: {
