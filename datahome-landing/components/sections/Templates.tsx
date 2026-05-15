@@ -24,6 +24,18 @@ function previewUrl() {
 function SignaturePreview() {
   return (
     <div className="overflow-hidden rounded-[2rem] border border-black/10 bg-[#f7f1ea] shadow-2xl shadow-black/10">
+      <div className="flex h-16 items-center justify-between border-b border-[#e8ded2] bg-[#f7f1ea] px-6">
+        <div className="flex items-center gap-3">
+          <span className="h-7 w-16 rounded-full bg-[#14231f]" />
+          <span className="h-2 w-20 rounded-full bg-[#14231f]/70" />
+        </div>
+        <div className="hidden items-center gap-5 md:flex">
+          <span className="h-2 w-14 rounded-full bg-[#14231f]/45" />
+          <span className="h-2 w-14 rounded-full bg-[#14231f]/45" />
+          <span className="h-2 w-14 rounded-full bg-[#14231f]/45" />
+          <span className="h-8 w-24 rounded-full bg-[#A77B4F]" />
+        </div>
+      </div>
       <div className="grid min-h-[430px] grid-cols-1 lg:grid-cols-[1.05fr_0.95fr]">
         <div className="relative min-h-[260px] overflow-hidden">
           <img src={template.images[0]} alt="" className="h-full w-full object-cover" loading="lazy" />
@@ -43,9 +55,12 @@ function SignaturePreview() {
             <h3 className="mb-4 font-serif text-4xl leading-tight text-neutral-950">{template.name}</h3>
             <p className="max-w-md text-sm leading-7 text-neutral-600">{template.tagline}</p>
           </div>
-          <div className="mt-8 grid grid-cols-3 gap-3">
-            {template.images.map((image) => (
-              <img key={image} src={image} alt="" className="h-24 w-full rounded-2xl object-cover shadow-sm" loading="lazy" />
+          <div className="mt-7 grid grid-cols-4 gap-px overflow-hidden rounded-2xl border border-[#d9cbbb] bg-[#d9cbbb]">
+            {["Listings", "Markets", "Team", "Languages"].map((label, index) => (
+              <div key={label} className="bg-white/70 p-3">
+                <span className="mb-2 block h-4 w-5 rounded-full bg-[#14231f]" />
+                <span className="block h-1.5 w-full rounded-full bg-[#7c8b86]/45" />
+              </div>
             ))}
           </div>
           <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -59,6 +74,32 @@ function SignaturePreview() {
             </a>
             <span className="rounded-full border border-[#c8a96a]/40 px-4 py-2 text-sm font-semibold text-neutral-800">{template.price}</span>
           </div>
+        </div>
+      </div>
+      <div className="grid gap-4 border-t border-[#e8ded2] bg-[#f7f1ea] p-6 lg:grid-cols-[1.15fr_0.85fr]">
+        <div className="grid overflow-hidden rounded-[1.5rem] border border-[#d9cbbb] bg-white shadow-sm lg:grid-cols-[0.9fr_1.1fr]">
+          <img src={template.images[1]} alt="" className="h-44 w-full object-cover lg:h-full" loading="lazy" />
+          <div className="p-6">
+            <span className="mb-4 block h-2 w-28 rounded-full bg-[#A77B4F]" />
+            <span className="mb-3 block h-5 w-48 rounded-full bg-[#14231f]" />
+            <span className="mb-6 block h-2 w-32 rounded-full bg-[#7c8b86]/45" />
+            <div className="grid grid-cols-3 gap-2 border-y border-[#efe5d8] py-4">
+              <span className="h-2 rounded-full bg-[#A77B4F]" />
+              <span className="h-2 rounded-full bg-[#A77B4F]" />
+              <span className="h-2 rounded-full bg-[#A77B4F]" />
+            </div>
+          </div>
+        </div>
+        <div className="grid gap-3">
+          {template.images.slice(1).map((image) => (
+            <div key={image} className="flex items-center gap-3 rounded-2xl border border-[#e5d9ca] bg-white p-3 shadow-sm">
+              <img src={image} alt="" className="h-16 w-20 rounded-xl object-cover" loading="lazy" />
+              <div className="flex-1">
+                <span className="mb-2 block h-3 w-28 rounded-full bg-[#14231f]" />
+                <span className="block h-2 w-16 rounded-full bg-[#7c8b86]/45" />
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>

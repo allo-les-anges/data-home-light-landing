@@ -96,19 +96,21 @@ h1{font-family:'Montserrat',sans-serif;font-size:clamp(40px,6vw,80px);line-heigh
 .template-mini-card:before{content:"";display:block;height:38px;background:linear-gradient(135deg,#dbeafe,#fef3c7)}
 .signature-template-card .template-preview-screen{background:linear-gradient(145deg,#f7f1ea,#fffaf3);padding:0}
 .signature-template-card .template-mini{height:245px;border-radius:0;box-shadow:none;background:#f7f1ea}
-.signature-template-card .signature-mini-hero{height:116px;display:grid;grid-template-columns:1.08fr .92fr;background:#f7f1ea}
+.signature-template-card .signature-mini-nav{height:30px;display:flex;align-items:center;justify-content:space-between;padding:0 12px;border-bottom:1px solid #e8ded2;background:#f7f1ea}
+.signature-template-card .signature-mini-hero{height:100px;display:grid;grid-template-columns:1.08fr .92fr;background:#f7f1ea}
 .signature-template-card .signature-mini-photo{background-size:cover;background-position:center;position:relative}
 .signature-template-card .signature-mini-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,16,12,.52),rgba(20,16,12,.06))}
-.signature-template-card .signature-mini-editorial{padding:30px 18px;background:#fbf7f0}
+.signature-template-card .signature-mini-editorial{padding:16px 14px;background:#fbf7f0}
 .signature-template-card .signature-mini-editorial span{display:block;border-radius:999px}
-.signature-template-card .signature-mini-body{padding:14px;display:grid;grid-template-columns:.92fr 1.08fr;gap:10px}
+.signature-template-card .signature-mini-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;overflow:hidden;border:1px solid #d9cbbb;border-radius:11px;background:#d9cbbb;margin-top:8px}
+.signature-template-card .signature-mini-stats span{height:20px;background:rgba(255,255,255,.72)}
+.signature-template-card .signature-mini-body{padding:12px;display:grid;grid-template-columns:1.12fr .88fr;gap:10px}
 .signature-template-card .signature-mini-list,.signature-template-card .signature-mini-feature{background:#fff;border:1px solid rgba(15,23,42,.08);border-radius:14px;box-shadow:0 10px 26px rgba(15,23,42,.08)}
-.signature-template-card .signature-mini-list{padding:12px;display:grid;gap:8px}
-.signature-template-card .signature-mini-row{display:grid;grid-template-columns:42px 1fr;gap:8px;align-items:center}
-.signature-template-card .signature-mini-row img{width:42px;height:32px;object-fit:cover;border-radius:8px}
-.signature-template-card .signature-mini-feature{padding:10px}
-.signature-template-card .signature-mini-feature-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin-top:8px}
-.signature-template-card .signature-mini-tile{height:44px;border-radius:9px;background-size:cover;background-position:center}
+.signature-template-card .signature-mini-list{padding:9px;display:grid;grid-template-columns:44px 1fr;gap:8px;align-items:center}
+.signature-template-card .signature-mini-list img{width:44px;height:56px;object-fit:cover;border-radius:10px}
+.signature-template-card .signature-mini-feature{padding:9px;display:grid;gap:8px}
+.signature-template-card .signature-mini-row{display:grid;grid-template-columns:38px 1fr;gap:7px;align-items:center}
+.signature-template-card .signature-mini-row img{width:38px;height:28px;object-fit:cover;border-radius:8px}
 .template-preview-info{padding:16px}
 .template-preview-info h3{font-size:17px;font-weight:900;margin-bottom:6px}
 .template-preview-info p{font-size:13px;line-height:1.55;color:#64748b;margin-bottom:14px}
@@ -1325,27 +1327,33 @@ function renderHomeTemplates() {
         <span class="template-preview-tier ${template.tier === "base" ? "base" : ""}">${template.tier === "base" ? (d.tplIncluded || "Included") : (d.tplPremium || "Premium")}</span>
         ${template.id === "signature-mediterranean-premium" ? `
         <div class="template-mini">
+          <div class="signature-mini-nav">
+            <span style="width:48px;height:12px;background:#14231f;border-radius:999px"></span>
+            <span style="width:132px;height:6px;background:linear-gradient(90deg,#14231f66 0 25%,transparent 25% 34%,#14231f66 34% 58%,transparent 58% 67%,#14231f66 67% 100%);border-radius:999px"></span>
+            <span style="width:42px;height:16px;background:#A77B4F;border-radius:999px"></span>
+          </div>
           <div class="signature-mini-hero">
             <div class="signature-mini-photo" style="background-image:url('${template.image}')"></div>
             <div class="signature-mini-editorial">
-              <span style="width:42px;height:5px;background:${template.color};margin-bottom:12px"></span>
-              <span style="width:116px;height:12px;background:#111827;margin-bottom:7px"></span>
-              <span style="width:82px;height:12px;background:#111827cc;margin-bottom:12px"></span>
-              <span style="width:76px;height:18px;background:#B88A44"></span>
+              <span style="width:44px;height:5px;background:${template.color};margin-bottom:9px"></span>
+              <span style="width:112px;height:13px;background:#14231f;margin-bottom:6px"></span>
+              <span style="width:78px;height:13px;background:#14231f;margin-bottom:8px"></span>
+              <span style="width:90px;height:5px;background:#52635e66;margin-bottom:8px"></span>
+              <div class="signature-mini-stats"><span></span><span></span><span></span><span></span></div>
             </div>
           </div>
           <div class="signature-mini-body">
             <div class="signature-mini-list">
-              <span style="width:74px;height:8px;background:#111827;border-radius:999px"></span>
-              <div class="signature-mini-row"><img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/13112583/media/images/1.jpg" alt="" loading="lazy"><span style="height:7px;background:#94a3b8;border-radius:999px"></span></div>
-              <div class="signature-mini-row"><img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/13112583/media/images/outdoor/2.jpg" alt="" loading="lazy"><span style="height:7px;background:#94a3b8;border-radius:999px"></span></div>
+              <img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/13112583/media/images/1.jpg" alt="" loading="lazy">
+              <div>
+                <span style="display:block;width:86px;height:8px;background:#14231f;border-radius:999px;margin-bottom:7px"></span>
+                <span style="display:block;width:54px;height:6px;background:#94a3b8;border-radius:999px;margin-bottom:9px"></span>
+                <span style="display:block;width:96px;height:14px;background:#efe5d8;border-radius:999px"></span>
+              </div>
             </div>
             <div class="signature-mini-feature">
-              <span style="display:block;width:95px;height:9px;background:#111827;border-radius:999px"></span>
-              <div class="signature-mini-feature-grid">
-                <span class="signature-mini-tile" style="background-image:url('https://medianewbuild.com/file/hh-media-bucket/developments_v2/13112583/media/images/outdoor/1.jpg')"></span>
-                <span class="signature-mini-tile" style="background-image:url('https://medianewbuild.com/file/hh-media-bucket/developments_v2/13112583/media/images/outdoor/4.jpg')"></span>
-              </div>
+              <div class="signature-mini-row"><img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/13112583/media/images/outdoor/1.jpg" alt="" loading="lazy"><span style="height:7px;background:#14231fcc;border-radius:999px"></span></div>
+              <div class="signature-mini-row"><img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/13112583/media/images/outdoor/4.jpg" alt="" loading="lazy"><span style="height:7px;background:#94a3b8;border-radius:999px"></span></div>
             </div>
           </div>
         </div>` : `

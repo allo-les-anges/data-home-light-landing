@@ -65,6 +65,21 @@
     .mock-heading { display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; }
     .line { display:block; height:8px; border-radius:999px; background:#111827; opacity:.86; }
     .line.muted { background:#cbd5e1; }
+    .mock.signature { background:#f7f1ea; }
+    .signature-nav { height:38px; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:0 16px; border-bottom:1px solid #e8ded2; background:#f7f1ea; }
+    .signature-hero { height:170px; display:grid; grid-template-columns:1.08fr .92fr; background:#fbf7f0; }
+    .signature-photo { position:relative; background-size:cover; background-position:center; }
+    .signature-photo:after { content:""; position:absolute; inset:0; background:rgba(11,22,19,.35); }
+    .signature-photo-copy { position:absolute; left:20px; bottom:20px; z-index:1; border-left:1px solid rgba(255,255,255,.55); padding-left:12px; }
+    .signature-editorial { padding:24px 18px; }
+    .signature-stats { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; overflow:hidden; border:1px solid #d9cbbb; border-radius:14px; background:#d9cbbb; margin:14px 0; }
+    .signature-stats span { height:34px; background:rgba(255,255,255,.72); }
+    .signature-body { padding:16px; background:#f7f1ea; }
+    .signature-feature { display:grid; grid-template-columns:.92fr 1.08fr; overflow:hidden; border:1px solid #d9cbbb; border-radius:22px; background:#fff; box-shadow:0 16px 36px rgba(20,35,31,.08); }
+    .signature-feature img { height:94px; width:100%; object-fit:cover; }
+    .signature-feature-copy { padding:14px; }
+    .signature-mini-row { display:flex; align-items:center; gap:9px; border:1px solid #e5d9ca; border-radius:14px; background:#fff; padding:7px; }
+    .signature-mini-row img { width:46px; height:36px; object-fit:cover; border-radius:10px; }
     .prop-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
     .prop { overflow:hidden; border:1px solid rgba(15,23,42,.07); border-radius:10px; background:#fff; }
     .prop.square { border-radius:2px; }
@@ -245,11 +260,54 @@
       const isDark = template.bg.toLowerCase().startsWith("#0") || template.id.includes("prestige");
       const heroImage = images[index % images.length];
       const tags = [template.tier, isPortal ? "portal" : "", template.style.includes("editorial") ? "editorial" : ""].filter(Boolean).join(" ");
-      return `
-        <article class="card reveal" data-kind="${tags}" style="font-family:${template.font}">
-          <div class="preview-wrap">
-            <button class="live-pill" type="button" data-preview="${template.id}" data-name="${template.name}">Voir en live</button>
-            <span class="tier ${template.tier === "base" ? "base" : ""}">${template.tier === "base" ? "Inclus" : "Premium"}</span>
+      const previewMarkup = template.id === "signature-mediterranean-premium"
+        ? `
+            <div class="mock signature">
+              <div class="signature-nav">
+                <span class="line" style="width:86px;background:#14231f"></span>
+                <span class="line" style="width:160px;background:linear-gradient(90deg,#14231f66 0 25%,transparent 25% 34%,#14231f66 34% 58%,transparent 58% 67%,#14231f66 67% 100%)"></span>
+                <span class="line" style="width:66px;height:18px;background:${template.primary}"></span>
+              </div>
+              <div class="signature-hero">
+                <div class="signature-photo" style="background-image:url('${heroImage}')">
+                  <div class="signature-photo-copy">
+                    <span class="line" style="width:72px;background:rgba(255,255,255,.82)"></span>
+                    <span class="line" style="width:116px;margin-top:9px;background:rgba(255,255,255,.48)"></span>
+                  </div>
+                </div>
+                <div class="signature-editorial">
+                  <span class="line" style="width:66px;height:6px;background:${template.primary}"></span>
+                  <span class="line" style="width:140px;height:17px;margin-top:13px;background:#14231f"></span>
+                  <span class="line" style="width:96px;height:17px;margin-top:8px;background:#14231f"></span>
+                  <span class="line muted" style="width:128px;margin-top:12px"></span>
+                  <div class="signature-stats"><span></span><span></span><span></span><span></span></div>
+                  <span class="line" style="width:104px;height:20px;background:${template.button}"></span>
+                </div>
+              </div>
+              <div class="signature-body">
+                <div class="mock-heading">
+                  <div>
+                    <span class="line" style="width:78px;background:${template.primary}"></span>
+                    <span class="line" style="width:142px;margin-top:8px;background:#14231f"></span>
+                  </div>
+                  <span class="line" style="width:78px;background:${template.button}"></span>
+                </div>
+                <div class="signature-feature">
+                  <img src="${images[0]}" loading="lazy" alt="">
+                  <div class="signature-feature-copy">
+                    <span class="line" style="width:112px;background:#14231f"></span>
+                    <span class="line muted" style="width:80px;margin-top:9px"></span>
+                    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:5px;border-top:1px solid #efe5d8;border-bottom:1px solid #efe5d8;margin-top:13px;padding:10px 0">
+                      <span class="line" style="height:7px;background:${template.primary}"></span>
+                      <span class="line" style="height:7px;background:${template.primary}"></span>
+                      <span class="line" style="height:7px;background:${template.primary}"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `
+        : `
             <div class="mock">
               <div class="mock-header"><span class="mock-logo" style="background:${isDark ? "#111827" : template.primary}"></span></div>
               <div class="mock-hero" style="background-image:url('${heroImage}')">
@@ -270,6 +328,13 @@
                 ${isPortal ? portalPreview(template) : `<div class="prop-grid">${images.map((image, i) => propertyCard(template, image, i)).join("")}</div>`}
               </div>
             </div>
+          `;
+      return `
+        <article class="card reveal" data-kind="${tags}" style="font-family:${template.font}">
+          <div class="preview-wrap">
+            <button class="live-pill" type="button" data-preview="${template.id}" data-name="${template.name}">Voir en live</button>
+            <span class="tier ${template.tier === "base" ? "base" : ""}">${template.tier === "base" ? "Inclus" : "Premium"}</span>
+            ${previewMarkup}
           </div>
           <div class="card-body">
             <div class="card-title-row">
