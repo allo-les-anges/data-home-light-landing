@@ -94,6 +94,21 @@ h1{font-family:'Montserrat',sans-serif;font-size:clamp(40px,6vw,80px);line-heigh
 .template-mini-body{padding:14px;display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
 .template-mini-card{height:70px;border-radius:10px;background:#fff;border:1px solid rgba(15,23,42,.08);overflow:hidden}
 .template-mini-card:before{content:"";display:block;height:38px;background:linear-gradient(135deg,#dbeafe,#fef3c7)}
+.signature-template-card .template-preview-screen{background:linear-gradient(145deg,#f7f1ea,#fffaf3);padding:0}
+.signature-template-card .template-mini{height:245px;border-radius:0;box-shadow:none;background:#f7f1ea}
+.signature-template-card .signature-mini-hero{height:116px;display:grid;grid-template-columns:1.08fr .92fr;background:#f7f1ea}
+.signature-template-card .signature-mini-photo{background-size:cover;background-position:center;position:relative}
+.signature-template-card .signature-mini-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,16,12,.52),rgba(20,16,12,.06))}
+.signature-template-card .signature-mini-editorial{padding:30px 18px;background:#fbf7f0}
+.signature-template-card .signature-mini-editorial span{display:block;border-radius:999px}
+.signature-template-card .signature-mini-body{padding:14px;display:grid;grid-template-columns:.92fr 1.08fr;gap:10px}
+.signature-template-card .signature-mini-list,.signature-template-card .signature-mini-feature{background:#fff;border:1px solid rgba(15,23,42,.08);border-radius:14px;box-shadow:0 10px 26px rgba(15,23,42,.08)}
+.signature-template-card .signature-mini-list{padding:12px;display:grid;gap:8px}
+.signature-template-card .signature-mini-row{display:grid;grid-template-columns:42px 1fr;gap:8px;align-items:center}
+.signature-template-card .signature-mini-row img{width:42px;height:32px;object-fit:cover;border-radius:8px}
+.signature-template-card .signature-mini-feature{padding:10px}
+.signature-template-card .signature-mini-feature-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin-top:8px}
+.signature-template-card .signature-mini-tile{height:44px;border-radius:9px;background-size:cover;background-position:center}
 .template-preview-info{padding:16px}
 .template-preview-info h3{font-size:17px;font-weight:900;margin-bottom:6px}
 .template-preview-info p{font-size:13px;line-height:1.55;color:#64748b;margin-bottom:14px}
@@ -759,6 +774,14 @@ const DEMO_TEXT = {
   pl: {demoKicker:"Interaktywny dashboard",demoTitle:"Wyprobuj dashboard na zywo",demoText:"Otworz prawdziwa agencje demo i sprawdz ustawienia, moduly, szablony oraz zarzadzanie strona. Zapisywanie jest zablokowane, wiec mozesz testowac bez ryzyka.",demoP1Label:"Klient",demoP1:"Panel, ustawienia, moduly",demoP2Label:"SaaS",demoP2:"Prawdziwy produkt, chronione dane",demoP3Label:"Strona",demoP3:"Szablony, jezyki, branding",demoP4Label:"Demo",demoP4:"Zmiany nie sa zapisywane",demoCta:"Zobacz demo",trialCta:"Rozpocznij 15-dniowy trial",homeTplTitle:"Szablony z podgladem",homeTplText:"Otworz prawdziwe szablony SaaS bezposrednio ze strony glownej. Kazdy podglad korzysta z live routingu produktu.",homeTplGallery:"Zobacz cala galerie",tplLive:"Zobacz live",tplPreview:"Podglad",tplIncluded:"W cenie",tplPremium:"Premium",tplDescRiviera:"Jasny luksusowy styl editorial dla ofert srodziemnomorskich.",tplDescPrestige:"Ciemny premium styl dla agencji high-end.",tplDescUrban:"Efektywny katalog dla duzych feedow XML.",tplDescBlack:"Immersyjne ciemne doswiadczenie dla wyjatkowych nieruchomosci."}
 };
 Object.keys(DEMO_TEXT).forEach((lc) => Object.assign(T[lc] || T.fr, DEMO_TEXT[lc]));
+Object.assign(T.fr, { tplDescSignatureMediterranean:"Template premium cinematographique pour villas mediterraneennes, acheteurs internationaux et agences haut de gamme." });
+Object.assign(T.en, { tplDescSignatureMediterranean:"Cinematic premium template for Mediterranean villas, international buyers and high-end agencies." });
+Object.assign(T.es, { tplDescSignatureMediterranean:"Template premium cinematografico para villas mediterraneas, compradores internacionales y agencias de alta gama." });
+Object.assign(T.de, { tplDescSignatureMediterranean:"Kinematisches Premium-Template fuer mediterrane Villen, internationale Kaeufer und High-End-Agenturen." });
+Object.assign(T.nl, { tplDescSignatureMediterranean:"Cinematisch premium template voor mediterrane villas, internationale kopers en high-end kantoren." });
+Object.assign(T.pt, { tplDescSignatureMediterranean:"Template premium cinematografico para villas mediterranicas, compradores internacionais e agencias de topo." });
+Object.assign(T.ru, { tplDescSignatureMediterranean:"Кинематографичный premium-шаблон для средиземноморских вилл, международных покупателей и агентств высокого класса." });
+Object.assign(T.pl, { tplDescSignatureMediterranean:"Kinowy szablon premium dla willi srodziemnomorskich, klientow miedzynarodowych i agencji high-end." });
 
 const FEATURE_TEXT = {
   fr: {feat_h:"Everything you need, aligné avec le produit réel",feat_sub:"DataHome couvre le workflow complet de l'agence : site, biens, modules, leads et publication.",f1t:"Site vitrine public",f1d:"Homepage agence, pages biens, locations, contact et contenus légaux prêts pour la mise en ligne.",f2t:"Imports XML pilotés",f2d:"Associez les flux fournis par vos partenaires depuis AgencyDashboard et publiez les biens client.",f3t:"Property Manager",f3d:"Le client gère ses biens, locations, médias, vidéos et réglages depuis Mon Espace.",f4t:"Templates personnalisables",f4d:"Templates gratuits et premium avec couleurs, typographies, vignettes et hero image ou vidéo.",f5t:"Chatbot IA",f5d:"Assistant premium pour qualifier les visiteurs, limité à 20 requêtes par jour et par agence.",f6t:"Mini CRM & modules",f6d:"Mini CRM Leads inclus, langues additionnelles, vidéo hero, visites immersives, SEO et domaine."},
@@ -1288,7 +1311,7 @@ const HOME_TEMPLATES = [
   { id:"riviera", name:"Riviera", tier:"base", priceKey:"tplIncluded", color:"#C8A84E", image:"https://medianewbuild.com/file/hh-media-bucket/developments_v2/87929424/media/images/outdoor/1.jpg", descriptionKey:"tplDescRiviera" },
   { id:"prestige", name:"Prestige", tier:"base", priceKey:"tplIncluded", color:"#B859C5", image:"https://medianewbuild.com/file/hh-media-bucket/developments_v2/37089450/media/images/outdoor/1.jpg", descriptionKey:"tplDescPrestige" },
   { id:"urban", name:"Urban", tier:"base", priceKey:"tplIncluded", color:"#2563EB", image:"https://medianewbuild.com/file/hh-media-bucket/developments_v2/32156547/media/images/outdoor/1.jpg", descriptionKey:"tplDescUrban" },
-  { id:"prestige-black-premium", name:"Prestige Black", tier:"premium", priceKey:"tplPremium", color:"#D4AF37", image:"https://medianewbuild.com/file/hh-media-bucket/developments_v2/70091589/media/images/outdoor/1.jpg", descriptionKey:"tplDescBlack" }
+  { id:"signature-mediterranean-premium", name:"Signature Mediterranean", tier:"premium", priceKey:"tplPremium", color:"#C8A96A", image:"https://medianewbuild.com/file/hh-media-bucket/developments_v2/70091589/media/images/outdoor/1.jpg", descriptionKey:"tplDescSignatureMediterranean" }
 ];
 
 function renderHomeTemplates() {
@@ -1296,10 +1319,36 @@ function renderHomeTemplates() {
   if (!grid) return;
   const d = T[lang] || T.fr;
   grid.innerHTML = HOME_TEMPLATES.map((template) => `
-    <article class="template-preview-card">
+    <article class="template-preview-card ${template.id === "signature-mediterranean-premium" ? "signature-template-card" : ""}">
       <div class="template-preview-screen">
         <button class="template-preview-live" type="button" data-template-preview="${template.id}" data-template-name="${template.name}">${d.tplLive || "Live"}</button>
         <span class="template-preview-tier ${template.tier === "base" ? "base" : ""}">${template.tier === "base" ? (d.tplIncluded || "Included") : (d.tplPremium || "Premium")}</span>
+        ${template.id === "signature-mediterranean-premium" ? `
+        <div class="template-mini">
+          <div class="signature-mini-hero">
+            <div class="signature-mini-photo" style="background-image:url('${template.image}')"></div>
+            <div class="signature-mini-editorial">
+              <span style="width:42px;height:5px;background:${template.color};margin-bottom:12px"></span>
+              <span style="width:116px;height:12px;background:#111827;margin-bottom:7px"></span>
+              <span style="width:82px;height:12px;background:#111827cc;margin-bottom:12px"></span>
+              <span style="width:76px;height:18px;background:#B88A44"></span>
+            </div>
+          </div>
+          <div class="signature-mini-body">
+            <div class="signature-mini-list">
+              <span style="width:74px;height:8px;background:#111827;border-radius:999px"></span>
+              <div class="signature-mini-row"><img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/13112583/media/images/1.jpg" alt="" loading="lazy"><span style="height:7px;background:#94a3b8;border-radius:999px"></span></div>
+              <div class="signature-mini-row"><img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/13112583/media/images/outdoor/2.jpg" alt="" loading="lazy"><span style="height:7px;background:#94a3b8;border-radius:999px"></span></div>
+            </div>
+            <div class="signature-mini-feature">
+              <span style="display:block;width:95px;height:9px;background:#111827;border-radius:999px"></span>
+              <div class="signature-mini-feature-grid">
+                <span class="signature-mini-tile" style="background-image:url('https://medianewbuild.com/file/hh-media-bucket/developments_v2/13112583/media/images/outdoor/1.jpg')"></span>
+                <span class="signature-mini-tile" style="background-image:url('https://medianewbuild.com/file/hh-media-bucket/developments_v2/13112583/media/images/outdoor/4.jpg')"></span>
+              </div>
+            </div>
+          </div>
+        </div>` : `
         <div class="template-mini">
           <div class="template-mini-hero" style="background-image:url('${template.image}')">
             <div class="template-mini-lines">
@@ -1314,7 +1363,7 @@ function renderHomeTemplates() {
             <span class="template-mini-card"></span>
             <span class="template-mini-card"></span>
           </div>
-        </div>
+        </div>`}
       </div>
       <div class="template-preview-info">
         <h3>${template.name}</h3>
