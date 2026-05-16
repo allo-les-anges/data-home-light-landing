@@ -111,6 +111,20 @@ h1{font-family:'Montserrat',sans-serif;font-size:clamp(40px,6vw,80px);line-heigh
 .signature-template-card .signature-mini-feature{padding:9px;display:grid;gap:8px}
 .signature-template-card .signature-mini-row{display:grid;grid-template-columns:38px 1fr;gap:7px;align-items:center}
 .signature-template-card .signature-mini-row img{width:38px;height:28px;object-fit:cover;border-radius:8px}
+.dreams-template-card .template-preview-screen{background:linear-gradient(145deg,#fffaf3,#f8fbff);padding:0}
+.dreams-template-card .template-mini{height:245px;border-radius:0;box-shadow:none;background:#fffaf6}
+.dreams-template-card .dreams-mini-hero{height:132px;background-size:cover;background-position:center;position:relative;display:flex;align-items:flex-end;padding:18px}
+.dreams-template-card .dreams-mini-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(22,20,18,.48),rgba(22,20,18,.04))}
+.dreams-template-card .dreams-mini-copy{position:relative;z-index:1;width:75%;display:grid;gap:7px}
+.dreams-template-card .dreams-mini-copy span{display:block;border-radius:999px;background:#fff}
+.dreams-template-card .dreams-mini-body{padding:12px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.dreams-template-card .dreams-mini-card{height:84px;border-radius:18px;background:#fff;border:1px solid rgba(15,23,42,.08);box-shadow:0 12px 28px rgba(15,23,42,.08);overflow:hidden}
+.dreams-template-card .dreams-mini-card:before{content:"";display:block;height:45px;background:linear-gradient(135deg,#fef3c7,#fce7f3)}
+.custom-template-card .template-preview-screen{background:linear-gradient(145deg,#f8fbff,#fff7df);padding:20px}
+.custom-template-mini{height:205px;border-radius:22px;border:1px solid rgba(24,161,206,.18);background:radial-gradient(circle at 18% 18%,rgba(215,105,169,.18),transparent 30%),radial-gradient(circle at 80% 14%,rgba(24,161,206,.18),transparent 32%),#fff;display:grid;align-content:center;justify-items:center;text-align:center;padding:20px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.6)}
+.custom-template-icon{width:58px;height:58px;border-radius:18px;background:var(--btn-grad);display:grid;place-items:center;color:#fff;font-weight:900;font-size:24px;box-shadow:0 18px 36px rgba(215,105,169,.28)}
+.custom-template-mini strong{display:block;margin-top:16px;font-size:19px}
+.custom-template-mini span{display:block;margin-top:7px;color:#64748b;font-size:12px;line-height:1.45}
 .template-preview-info{padding:16px}
 .template-preview-info h3{font-size:17px;font-weight:900;margin-bottom:6px}
 .template-preview-info p{font-size:13px;line-height:1.55;color:#64748b;margin-bottom:14px}
@@ -793,6 +807,15 @@ Object.assign(T.pt, { tplDescKaiaEstate:"Template premium arquitetonico, minimal
 Object.assign(T.ru, { tplDescKaiaEstate:"Архитектурный минималистичный premium-шаблон для агентств высокого класса." });
 Object.assign(T.pl, { tplDescKaiaEstate:"Architektoniczny, minimalistyczny szablon premium dla agencji high-end." });
 
+Object.assign(T.fr, { tplDescDreams:"Template premium lumineux, editorial et mediterraneen pour agences qui veulent une experience douce et haut de gamme.", customTemplateBadge:"Sur mesure", customTemplateTitle:"Site sur mesure", customTemplateDesc:"Un design exclusif concu pour votre positionnement, vos marches et votre image de marque.", customTemplateCta:"Demander un devis", customTemplatePrice:"Sur devis" });
+Object.assign(T.en, { tplDescDreams:"Bright, editorial and Mediterranean premium template for agencies that want a soft high-end experience.", customTemplateBadge:"Bespoke", customTemplateTitle:"Bespoke website", customTemplateDesc:"An exclusive design created around your positioning, markets and brand identity.", customTemplateCta:"Request a quote", customTemplatePrice:"On request" });
+Object.assign(T.es, { tplDescDreams:"Template premium luminoso, editorial y mediterraneo para agencias que buscan una experiencia suave y de alta gama.", customTemplateBadge:"A medida", customTemplateTitle:"Sitio a medida", customTemplateDesc:"Un diseno exclusivo creado para tu posicionamiento, mercados e identidad de marca.", customTemplateCta:"Pedir presupuesto", customTemplatePrice:"A consultar" });
+Object.assign(T.de, { tplDescDreams:"Helles, editoriales und mediterranes Premium-Template fuer Agenturen mit sanfter High-End-Erfahrung.", customTemplateBadge:"Massarbeit", customTemplateTitle:"Website nach Mass", customTemplateDesc:"Ein exklusives Design fuer Positionierung, Maerkte und Markenidentitaet.", customTemplateCta:"Angebot anfragen", customTemplatePrice:"Auf Anfrage" });
+Object.assign(T.nl, { tplDescDreams:"Licht, editorial en mediterraan premium template voor kantoren die een zachte high-end ervaring willen.", customTemplateBadge:"Maatwerk", customTemplateTitle:"Website op maat", customTemplateDesc:"Een exclusief ontwerp rond je positionering, markten en merkidentiteit.", customTemplateCta:"Offerte aanvragen", customTemplatePrice:"Op aanvraag" });
+Object.assign(T.pt, { tplDescDreams:"Template premium luminoso, editorial e mediterranico para agencias que querem uma experiencia suave e topo de gama.", customTemplateBadge:"Sob medida", customTemplateTitle:"Site sob medida", customTemplateDesc:"Um design exclusivo criado para o seu posicionamento, mercados e identidade.", customTemplateCta:"Pedir orcamento", customTemplatePrice:"Sob consulta" });
+Object.assign(T.ru, { tplDescDreams:"Светлый editorial premium-шаблон в средиземноморском стиле для агентств с high-end позиционированием.", customTemplateBadge:"На заказ", customTemplateTitle:"Сайт на заказ", customTemplateDesc:"Эксклюзивный дизайн под ваше позиционирование, рынки и бренд.", customTemplateCta:"Запросить смету", customTemplatePrice:"По запросу" });
+Object.assign(T.pl, { tplDescDreams:"Jasny, editorialny szablon premium w stylu srodziemnomorskim dla agencji high-end.", customTemplateBadge:"Na zamowienie", customTemplateTitle:"Strona na zamowienie", customTemplateDesc:"Ekskluzywny projekt dopasowany do pozycjonowania, rynkow i marki.", customTemplateCta:"Popros o wycene", customTemplatePrice:"Na zapytanie" });
+
 const FEATURE_TEXT = {
   fr: {feat_h:"Everything you need, aligné avec le produit réel",feat_sub:"DataHome couvre le workflow complet de l'agence : site, biens, modules, leads et publication.",f1t:"Site vitrine public",f1d:"Homepage agence, pages biens, locations, contact et contenus légaux prêts pour la mise en ligne.",f2t:"Imports XML pilotés",f2d:"Associez les flux fournis par vos partenaires depuis AgencyDashboard et publiez les biens client.",f3t:"Property Manager",f3d:"Le client gère ses biens, locations, médias, vidéos et réglages depuis Mon Espace.",f4t:"Templates personnalisables",f4d:"Templates gratuits et premium avec couleurs, typographies, vignettes et hero image ou vidéo.",f5t:"Chatbot IA",f5d:"Assistant premium pour qualifier les visiteurs, limité à 20 requêtes par jour et par agence.",f6t:"Mini CRM & modules",f6d:"Mini CRM Leads inclus, langues additionnelles, vidéo hero, visites immersives, SEO et domaine."},
   en: {feat_h:"Everything you need, aligned with the real product",feat_sub:"DataHome covers the full agency workflow: website, listings, modules, leads and publishing.",f1t:"Public agency website",f1d:"Agency homepage, listings, rentals, contact and legal content ready to publish.",f2t:"Managed XML imports",f2d:"Connect partner feeds from AgencyDashboard and publish client listings on the website.",f3t:"Property Manager",f3d:"Clients manage listings, rentals, media, videos and settings from their workspace.",f4t:"Customizable templates",f4d:"Free and premium templates with colors, typography, card styles and image or video hero.",f5t:"AI Chatbot",f5d:"Premium assistant to qualify visitors, limited to 20 requests per day per agency.",f6t:"Mini CRM & modules",f6d:"Mini CRM Leads included, extra languages, hero video, immersive tours, SEO and domain."},
@@ -1322,15 +1345,16 @@ const HOME_TEMPLATES = [
   { id:"prestige", name:"Prestige", tier:"base", priceKey:"tplIncluded", color:"#B859C5", image:"https://medianewbuild.com/file/hh-media-bucket/developments_v2/37089450/media/images/outdoor/1.jpg", descriptionKey:"tplDescPrestige" },
   { id:"urban", name:"Urban", tier:"base", priceKey:"tplIncluded", color:"#2563EB", image:"https://medianewbuild.com/file/hh-media-bucket/developments_v2/32156547/media/images/outdoor/1.jpg", descriptionKey:"tplDescUrban" },
   { id:"kaia-estate-premium", name:"Kaia Estate", tier:"premium", priceKey:"tplPremium", color:"#B5864E", image:"https://medianewbuild.com/file/hh-media-bucket/developments_v2/32156547/media/images/outdoor/1.jpg", descriptionKey:"tplDescKaiaEstate" },
-  { id:"signature-mediterranean-premium", name:"Signature Mediterranean", tier:"premium", priceKey:"tplPremium", color:"#C8A96A", image:"https://medianewbuild.com/file/hh-media-bucket/developments_v2/70091589/media/images/outdoor/1.jpg", descriptionKey:"tplDescSignatureMediterranean" }
+  { id:"signature-mediterranean-premium", name:"Signature Mediterranean", tier:"premium", priceKey:"tplPremium", color:"#C8A96A", image:"https://medianewbuild.com/file/hh-media-bucket/developments_v2/70091589/media/images/outdoor/1.jpg", descriptionKey:"tplDescSignatureMediterranean" },
+  { id:"dreams-premium", name:"Dreams", tier:"premium", priceKey:"tplPremium", color:"#D769A9", image:"https://medianewbuild.com/file/hh-media-bucket/developments_v2/13112583/media/images/outdoor/1.jpg", descriptionKey:"tplDescDreams" }
 ];
 
 function renderHomeTemplates() {
   const grid = document.getElementById("homeTemplateGrid");
   if (!grid) return;
   const d = T[lang] || T.fr;
-  grid.innerHTML = HOME_TEMPLATES.map((template) => `
-    <article class="template-preview-card ${template.id === "signature-mediterranean-premium" ? "signature-template-card" : ""}">
+  const templateCards = HOME_TEMPLATES.map((template) => `
+    <article class="template-preview-card ${template.id === "signature-mediterranean-premium" ? "signature-template-card" : ""} ${template.id === "dreams-premium" ? "dreams-template-card" : ""}">
       <div class="template-preview-screen">
         <button class="template-preview-live" type="button" data-template-preview="${template.id}" data-template-name="${template.name}">${d.tplLive || "Live"}</button>
         <span class="template-preview-tier ${template.tier === "base" ? "base" : ""}">${template.tier === "base" ? (d.tplIncluded || "Included") : (d.tplPremium || "Premium")}</span>
@@ -1366,6 +1390,20 @@ function renderHomeTemplates() {
             </div>
           </div>
         </div>` : `
+        ${template.id === "dreams-premium" ? `
+        <div class="template-mini">
+          <div class="dreams-mini-hero" style="background-image:url('${template.image}')">
+            <div class="dreams-mini-copy">
+              <span style="width:42%;height:6px;background:${template.color}"></span>
+              <span style="width:88%;height:15px"></span>
+              <span style="width:60%;height:15px"></span>
+            </div>
+          </div>
+          <div class="dreams-mini-body">
+            <span class="dreams-mini-card"></span>
+            <span class="dreams-mini-card"></span>
+          </div>
+        </div>` : `
         <div class="template-mini">
           <div class="template-mini-hero" style="background-image:url('${template.image}')">
             <div class="template-mini-lines">
@@ -1380,7 +1418,7 @@ function renderHomeTemplates() {
             <span class="template-mini-card"></span>
             <span class="template-mini-card"></span>
           </div>
-        </div>`}
+        </div>`}`}
       </div>
       <div class="template-preview-info">
         <h3>${template.name}</h3>
@@ -1392,6 +1430,26 @@ function renderHomeTemplates() {
       </div>
     </article>
   `).join("");
+  const customCard = `
+    <article class="template-preview-card custom-template-card">
+      <div class="template-preview-screen">
+        <span class="template-preview-tier">${d.customTemplateBadge || "Bespoke"}</span>
+        <div class="custom-template-mini">
+          <div class="custom-template-icon">+</div>
+          <strong>${d.customTemplateTitle || "Bespoke website"}</strong>
+          <span>${d.customTemplateDesc || "An exclusive design created around your brand."}</span>
+        </div>
+      </div>
+      <div class="template-preview-info">
+        <h3>${d.customTemplateTitle || "Bespoke website"}</h3>
+        <p>${d.customTemplateDesc || ""}</p>
+        <div class="template-preview-actions">
+          <a class="btn btn-primary" href="#contact">${d.customTemplateCta || "Request a quote"}</a>
+          <a class="btn btn-secondary" href="#contact">${d.customTemplatePrice || "On request"}</a>
+        </div>
+      </div>
+    </article>`;
+  grid.innerHTML = templateCards + customCard;
 }
 
 function openTemplatePreview(templateId, templateName) {
