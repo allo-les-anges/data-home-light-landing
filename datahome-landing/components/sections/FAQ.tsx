@@ -1,107 +1,29 @@
-"use client"
+﻿"use client"
 
-import { motion } from "framer-motion"
 import { Accordion, AccordionItem } from "@/components/ui/accordion"
 
 const faqs = [
-  {
-    q: "Combien de temps faut-il pour avoir mon site en ligne ?",
-    a: "Votre site est en ligne 24h après votre commande et la réception de vos informations d'agence (logo, couleurs, textes). Nous gérons tout : configuration, hébergement, SSL, et mise en production.",
-  },
-  {
-    q: "Comment fonctionne la synchronisation avec mon CRM ?",
-    a: "DATAhome se connecte à votre CRM (HabiHub, Inmovilla, Witei, Casafari) via API. Vos biens, photos et prix sont automatiquement importés et mis à jour en temps réel sur votre site. Aucune action manuelle nécessaire.",
-  },
-  {
-    q: "Puis-je utiliser mon propre nom de domaine ?",
-    a: "Oui, à partir du plan Gold. Nous gérons la configuration DNS pour vous. En plan Silver, votre site est disponible sur votre-agence.data-home.app avec certificat SSL inclus.",
-  },
-  {
-    q: "Y a-t-il un engagement minimum ?",
-    a: "Non. Tous nos plans sont sans engagement, résiliables à tout moment depuis votre espace client. La résiliation prend effet à la fin de la période de facturation en cours.",
-  },
-  {
-    q: "Puis-je changer de template après la mise en ligne ?",
-    a: "Oui, vous pouvez changer de template à tout moment depuis votre tableau de bord. Le changement est effectif sous 24h. Votre contenu et vos biens sont conservés.",
-  },
-  {
-    q: "Que se passe-t-il si mon CRM n'est pas dans la liste ?",
-    a: "Nous ajoutons régulièrement de nouvelles intégrations. Si votre CRM n'est pas encore supporté, contactez-nous — nous étudions chaque demande. En attendant, vous pouvez importer vos biens manuellement ou via fichier CSV.",
-  },
-  {
-    q: "L'hébergement et la maintenance sont-ils inclus ?",
-    a: "Oui, entièrement. L'hébergement haute performance, les sauvegardes quotidiennes, les mises à jour de sécurité et les nouvelles fonctionnalités sont inclus dans tous les plans, sans surcoût.",
-  },
+  { q: "How fast can an agency website go live?", a: "The standard workflow is built for launch within 24 hours once the agency details, logo, colors and media are ready." },
+  { q: "Is XML included in the base price?", a: "No. The website starts separately, and XML feed supply is priced separately so agencies only pay for the feeds they need." },
+  { q: "Can agencies manage properties manually?", a: "Yes. The Property Manager lets agencies create sales and rental listings, upload images and videos, and edit content from their workspace." },
+  { q: "Can I use my own domain?", a: "Yes. Custom domain configuration is part of the workflow, with DNS instructions generated for the client." },
+  { q: "Are premium templates mandatory?", a: "No. Base templates are included. Premium templates are optional one-time upgrades for agencies that want stronger visual differentiation." },
 ]
 
 export function FAQ() {
   return (
-    <section id="faq" className="py-24 md:py-32 bg-gray-50/50 dark:bg-gray-950/50">
+    <section id="faq" className="bg-white py-24 md:py-32">
       <div className="mx-auto max-w-3xl px-6">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-sm font-semibold uppercase tracking-widest text-[#1d4ed8] mb-3"
-          >
-            FAQ
-          </motion.p>
-          <motion.h2
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
-          >
-            Questions fréquentes
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="mt-4 text-lg text-gray-500 dark:text-gray-400"
-          >
-            Tout ce que vous voulez savoir avant de démarrer.
-          </motion.p>
+        <div className="mb-12 text-center">
+          <p className="text-sm font-black uppercase tracking-[.22em] text-[#18A1CE]">FAQ</p>
+          <h2 className="mt-4 text-4xl font-black text-[#080B1D]">Questions before launch.</h2>
+          <p className="mt-4 text-lg leading-8 text-slate-600">The essentials about setup, XML, modules and customization.</p>
         </div>
-
-        {/* Accordion */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
-          className="rounded-2xl border border-[hsl(var(--border))] bg-[hsl(var(--card))] px-6 py-2"
-        >
+        <div className="rounded-[2rem] border border-slate-200 bg-white px-6 py-3 shadow-sm">
           <Accordion>
-            {faqs.map((faq, i) => (
-              <AccordionItem key={i} value={`faq-${i}`} question={faq.q}>
-                {faq.a}
-              </AccordionItem>
-            ))}
+            {faqs.map((faq, i) => <AccordionItem key={faq.q} value={`faq-${i}`} question={faq.q}>{faq.a}</AccordionItem>)}
           </Accordion>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-          className="mt-10 text-center"
-        >
-          <p className="text-sm text-gray-500 dark:text-gray-400">
-            Vous n&apos;avez pas trouvé votre réponse ?{" "}
-            <a
-              href="mailto:hello@data-home.app"
-              className="font-medium text-[#1d4ed8] underline-offset-2 hover:underline"
-            >
-              Écrivez-nous
-            </a>
-          </p>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

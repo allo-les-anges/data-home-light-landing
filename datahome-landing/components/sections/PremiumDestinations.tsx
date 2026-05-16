@@ -1,47 +1,27 @@
-"use client"
+﻿"use client"
 
 import { motion } from "framer-motion"
 
-const destinations = [
-  { name: "Costa Blanca", color: "#EF4B5A" },
-  { name: "Costa del Sol", color: "#FCC010" },
-  { name: "Costa Calida", color: "#32B55E" },
-  { name: "Algarve, Portugal", color: "#18A1CE" },
-  { name: "Dubai", color: "#D769A9" },
-  { name: "Georgia", color: "#8B5CF6" },
-]
+const destinations = ["Costa Blanca", "Costa del Sol", "Costa Calida", "Dubai", "Georgia", "Algarve"]
 
 export function PremiumDestinations() {
   return (
-    <section className="bg-slate-50 py-16">
-      <div className="mx-auto max-w-7xl px-6 text-center">
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-40px" }}
-          className="mb-10 text-xs font-black uppercase tracking-[0.22em] text-slate-500"
-        >
-          Premium destinations
-        </motion.p>
-        <div className="flex flex-wrap justify-center gap-4">
-          {destinations.map((destination, index) => (
-            <motion.div
-              key={destination.name}
-              initial={{ opacity: 0, y: 18, scale: 0.96 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              animate={{ y: [0, -7, 0] }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{
-                opacity: { delay: index * 0.04, duration: 0.35 },
-                scale: { delay: index * 0.04, duration: 0.35 },
-                y: { delay: index * 0.12, duration: 5.8, repeat: Infinity, ease: "easeInOut" },
-              }}
-              className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-800 shadow-sm"
-            >
-              <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: destination.color }} />
-              {destination.name}
-            </motion.div>
-          ))}
+    <section className="overflow-hidden bg-white py-16">
+      <div className="dh-container">
+        <div className="rounded-[2rem] border border-slate-200 bg-gradient-to-r from-[#f8fbff] via-white to-[#fff5fa] p-8 md:p-10">
+          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+            <div>
+              <p className="text-xs font-black uppercase tracking-[.22em] text-[#18A1CE]">Premium destinations</p>
+              <h2 className="mt-3 text-3xl font-black text-[#080B1D]">Sell across the markets your buyers actually search.</h2>
+            </div>
+            <div className="flex flex-wrap gap-3 md:justify-end">
+              {destinations.map((destination, index) => (
+                <motion.span key={destination} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} animate={{ y: [0, -5, 0] }} viewport={{ once: true }} transition={{ opacity: { delay: index * .04 }, y: { delay: index * .18, duration: 5, repeat: Infinity } }} className="rounded-full bg-white px-5 py-3 text-sm font-bold text-slate-700 shadow-sm ring-1 ring-slate-200">
+                  {destination}
+                </motion.span>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

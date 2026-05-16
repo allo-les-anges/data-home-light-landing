@@ -1,62 +1,35 @@
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+﻿import type { Metadata } from "next"
+import { Montserrat } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/providers/ThemeProvider"
 import { Navbar } from "@/components/layout/Navbar"
 import { Footer } from "@/components/layout/Footer"
 import { CookieConsent } from "@/components/layout/CookieConsent"
 
-const inter = Inter({
+const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
 })
 
 export const metadata: Metadata = {
-  title: "DATAhome — Votre agence immobilière en ligne en 24h",
+  title: "Data Home - Your agency online, selling in 24 hours",
   description:
-    "Créez le site de votre agence immobilière en 24h. Connecté à HabiHub, Inmovilla, Witei et Casafari. Templates premium, SEO optimisé, domaine personnalisé.",
-  keywords: [
-    "site agence immobilière",
-    "logiciel immobilier",
-    "HabiHub",
-    "CRM immobilier",
-    "création site immobilier",
-    "DATAhome",
-  ],
-  authors: [{ name: "DATAhome", url: "https://data-home.app" }],
-  creator: "DATAhome",
-  publisher: "DATAhome",
+    "Premium SaaS for real estate agencies: websites, templates, XML feeds, property manager, AI chatbot and lead workflows.",
   metadataBase: new URL("https://data-home.app"),
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
-    title: "DATAhome — Votre agence immobilière en ligne en 24h",
-    description:
-      "Créez le site de votre agence immobilière en 24h. Connecté aux meilleurs CRM du marché.",
+    title: "Data Home - Your agency online, selling in 24 hours",
+    description: "Launch a premium real estate agency website with XML feeds, modules and dashboards.",
     url: "https://data-home.app",
-    siteName: "DATAhome",
-    locale: "fr_FR",
+    siteName: "Data Home",
     type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "DATAhome — Votre agence immobilière en ligne en 24h",
-    description: "Créez le site de votre agence immobilière en 24h. Connecté à HabiHub & co.",
-    creator: "@datahome",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: { index: true, follow: true },
   },
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="fr" suppressHydrationWarning className={inter.variable}>
-      <body className="min-h-screen bg-[hsl(var(--background))] font-sans antialiased">
+    <html lang="en" suppressHydrationWarning className={montserrat.variable}>
+      <body className="font-sans antialiased">
         <ThemeProvider>
           <Navbar />
           <main>{children}</main>

@@ -1,184 +1,41 @@
-"use client"
+﻿"use client"
 
 import { motion } from "framer-motion"
-import {
-  Globe,
-  Link2,
-  Search,
-  LayoutTemplate,
-  Mail,
-  Bot,
-  Languages,
-  Video,
-  Building2,
-} from "lucide-react"
-import type { LucideIcon } from "lucide-react"
-import { staggerContainer, staggerItem, fadeInUp } from "@/lib/variants"
+import { Bot, Building2, Globe2, Languages, LayoutTemplate, Link2, Search, Video, Workflow } from "lucide-react"
 
-interface Feature {
-  Icon: LucideIcon
-  title: string
-  description: string
-}
-
-const features: Feature[] = [
-  {
-    Icon: Globe,
-    title: "Site vitrine public",
-    description: "Une homepage agence, des pages de biens, locations, contact et contenus légaux prêts pour la mise en ligne.",
-  },
-  {
-    Icon: Link2,
-    title: "Imports XML pilotés",
-    description: "Associez les flux fournis par vos partenaires depuis AgencyDashboard et publiez les biens sur le site client.",
-  },
-  {
-    Icon: Building2,
-    title: "Property Manager",
-    description: "Le client gère ses biens, ses locations, ses médias, ses vidéos et ses réglages depuis Mon Espace.",
-  },
-  {
-    Icon: LayoutTemplate,
-    title: "Templates personnalisables",
-    description: "Templates gratuits et premium avec couleurs, typographies, style de vignettes, hero image ou vidéo.",
-  },
-  {
-    Icon: Bot,
-    title: "Chatbot IA",
-    description: "Un assistant premium pour qualifier les visiteurs, limité à 20 requêtes par jour et par agence.",
-  },
-  {
-    Icon: Mail,
-    title: "Mini CRM Leads",
-    description: "Les demandes issues du site et du chatbot arrivent dans un CRM simple, inclus dans l'offre premium.",
-  },
-  {
-    Icon: Languages,
-    title: "Langues additionnelles",
-    description: "Ajoutez les langues dont votre agence a besoin, avec traduction des pages, cartes biens et détails.",
-  },
-  {
-    Icon: Video,
-    title: "Vidéo hero & visites immersives",
-    description: "Modules pour mettre une vidéo en hero et ajouter des visites 360, Matterport ou liens immersifs aux biens.",
-  },
-  {
-    Icon: Search,
-    title: "SEO et domaine",
-    description: "Domaine personnalisé, base SEO technique et module SEO avancé prévu pour accompagner la croissance.",
-  },
+const modules = [
+  { icon: Globe2, title: "Public website", text: "A polished agency website with sales, rentals, contact, legal pages and responsive layouts." },
+  { icon: Link2, title: "XML feed workflow", text: "Connect HabiHub XML feeds from the agency dashboard while keeping client onboarding simple." },
+  { icon: Building2, title: "Property Manager", text: "Agencies can add sales and rentals, photos, videos and property details from their workspace." },
+  { icon: LayoutTemplate, title: "Premium templates", text: "Free and paid templates with editable colors, typography, hero media, cards and footer copy." },
+  { icon: Bot, title: "AI chatbot", text: "Qualifies visitors, proposes properties and sends structured leads to the Mini CRM." },
+  { icon: Workflow, title: "Landing page generator", text: "Dedicated pages for properties and developments, ready for targeted campaigns." },
+  { icon: Languages, title: "Multilingual websites", text: "Core languages included, with extra languages available when agencies need more markets." },
+  { icon: Video, title: "Video hero & immersive tours", text: "MP4 hero videos and immersive-tour modules for more emotional property discovery." },
+  { icon: Search, title: "SEO-ready structure", text: "Clean pages, metadata foundations and a roadmap SEO module for future growth." },
 ]
 
 export function Features() {
   return (
     <section id="features" className="py-24 md:py-32">
-      <div className="mx-auto max-w-7xl px-6">
-        {/* Section header animates as a group so all three lines feel connected */}
-        <motion.div
-          className="mx-auto max-w-2xl text-center mb-16"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-60px" }}
-        >
-          <motion.p
-            variants={fadeInUp}
-            custom={0}
-            className="text-sm font-semibold uppercase tracking-[0.12em] text-[#1d4ed8] mb-3"
-          >
-            Fonctionnalités
-          </motion.p>
-          <motion.h2
-            variants={fadeInUp}
-            custom={1}
-            className="text-4xl font-bold text-gray-900 dark:text-white mb-4"
-          >
-            Everything you need, aligné avec le produit réel
-          </motion.h2>
-          <motion.p
-            variants={fadeInUp}
-            custom={2}
-            className="text-lg text-[hsl(var(--muted-foreground))] max-w-2xl mx-auto text-center"
-          >
-            DataHome couvre le workflow complet de l'agence : création du site, import des biens,
-            personnalisation, leads, modules premium et accompagnement de publication.
-          </motion.p>
-        </motion.div>
+      <div className="dh-container">
+        <div className="mx-auto mb-16 max-w-3xl text-center">
+          <p className="text-sm font-black uppercase tracking-[.22em] text-[#D769A9]">Everything you need</p>
+          <h2 className="mt-4 text-4xl font-black text-[#080B1D] md:text-5xl">Built around the real Data Home workflow.</h2>
+          <p className="mt-5 text-lg leading-8 text-slate-600">From onboarding to XML imports, from property cards to lead capture, the landing page reflects what the SaaS actually does.</p>
+        </div>
 
-        {/* `staggerContainer` on the grid triggers children in sequence as they scroll into view */}
-        <motion.div
-          className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-40px" }}
-        >
-          {features.map((feature) => (
-            <motion.div
-              key={feature.title}
-              // Entrance animation comes from the staggerContainer parent
-              variants={staggerItem}
-              // Hover state is separate — it names its own "rest"/"hover" states
-              // so child motion elements (the icon) can pick them up automatically.
-              initial="rest"
-              whileHover="hover"
-              animate="rest"
-              className="group relative rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--card))] p-6 cursor-default overflow-hidden"
-              style={{ boxShadow: "0 1px 3px 0 rgb(0 0 0 / 0.04)" }}
-            >
-              {/* Faint blue tint fills the card background on hover */}
-              <motion.div
-                className="absolute inset-0 rounded-xl"
-                variants={{
-                  rest: { opacity: 0 },
-                  hover: { opacity: 1, transition: { duration: 0.3 } },
-                }}
-                style={{
-                  background:
-                    "radial-gradient(ellipse at top left, hsl(221 83% 53% / 0.06), transparent 70%)",
-                }}
-              />
-
-              {/* Icon inherits the "hover" variant from the card above — no whileHover needed here.
-                  Framer Motion propagates variant names down the tree automatically. */}
-              <motion.div
-                className="relative mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl"
-                variants={{
-                  rest: {
-                    backgroundColor: "hsl(239 84% 67% / 0.07)",
-                    color: "#1d4ed8",
-                    scale: 1,
-                    rotate: 0,
-                    transition: { duration: 0.25, ease: "easeOut" },
-                  },
-                  hover: {
-                    backgroundColor: "#1d4ed8",
-                    color: "#ffffff",
-                    scale: 1.12,
-                    rotate: 6,
-                    transition: { duration: 0.25, ease: "easeOut" },
-                  },
-                }}
-              >
-                <feature.Icon className="h-5 w-5" />
-              </motion.div>
-
-              <h3 className="relative mb-2 font-semibold text-gray-900 dark:text-white">{feature.title}</h3>
-              <p className="relative text-sm text-[hsl(var(--muted-foreground))] leading-relaxed">
-                {feature.description}
-              </p>
-
-              {/* Bottom accent bar grows from left to right on hover — a small detail
-                  that makes the interaction feel more intentional than a simple shadow. */}
-              <motion.div
-                className="absolute bottom-0 left-0 h-0.5 bg-[#1d4ed8] rounded-full"
-                variants={{
-                  rest: { width: 0, transition: { duration: 0.25 } },
-                  hover: { width: "100%", transition: { duration: 0.35, ease: "easeOut" } },
-                }}
-              />
-            </motion.div>
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {modules.map((module, index) => (
+            <motion.article key={module.title} initial={{ opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ delay: index * .035 }} className="group rounded-[1.7rem] border border-slate-200/80 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-2xl hover:shadow-slate-200/80">
+              <div className="mb-5 flex h-13 w-13 items-center justify-center rounded-2xl bg-gradient-to-br from-[#18A1CE] to-[#D769A9] text-white shadow-lg shadow-[#D769A9]/20">
+                <module.icon className="h-6 w-6" />
+              </div>
+              <h3 className="text-xl font-extrabold text-[#080B1D]">{module.title}</h3>
+              <p className="mt-3 text-sm leading-7 text-slate-600">{module.text}</p>
+            </motion.article>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   )
