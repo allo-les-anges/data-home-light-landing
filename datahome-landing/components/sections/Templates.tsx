@@ -23,6 +23,15 @@ const templates = [
     dark: "#14231f",
     image: "https://medianewbuild.com/file/hh-media-bucket/developments_v2/70091589/media/images/outdoor/1.jpg",
   },
+  {
+    id: "dreams-premium",
+    name: "Dreams",
+    price: "490 EUR",
+    tagline: "Bright, soft and editorial template for Mediterranean agencies selling homes in the sun.",
+    accent: "#C8A76A",
+    dark: "#1d1b18",
+    image: "https://medianewbuild.com/file/hh-media-bucket/developments_v2/13112583/media/images/outdoor/1.jpg",
+  },
 ]
 
 function previewUrl(id: string) {
@@ -140,6 +149,54 @@ export function Templates() {
                 <SignaturePreview template={template} />
               </motion.div>
             ))}
+            <motion.div variants={staggerItem}>
+              <div className="overflow-hidden rounded-[2rem] border border-[#D769A9]/25 bg-gradient-to-br from-white via-[#fff7fb] to-[#eefaff] shadow-2xl shadow-black/10">
+                <div className="grid min-h-[360px] grid-cols-1 lg:grid-cols-[0.92fr_1.08fr]">
+                  <div className="relative min-h-[260px] overflow-hidden bg-[#111827]">
+                    <img
+                      src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1200&h=900&fit=crop"
+                      alt=""
+                      className="h-full w-full object-cover opacity-80"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/25 to-transparent" />
+                    <div className="absolute left-8 top-8 rounded-full bg-white/90 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-neutral-900">
+                      Bespoke
+                    </div>
+                    <div className="absolute bottom-8 left-8 max-w-md text-white">
+                      <p className="mb-3 text-xs uppercase tracking-[0.32em] text-white/75">Made-to-measure website</p>
+                      <h3 className="font-serif text-4xl leading-tight">A custom website for agencies that need a unique digital signature.</h3>
+                    </div>
+                  </div>
+                  <div className="flex flex-col justify-between p-8">
+                    <div>
+                      <span className="mb-6 block h-1 w-16 rounded-full bg-gradient-to-r from-[#D769A9] to-[#EF4B5A]" />
+                      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-[#D769A9]">Custom project</p>
+                      <h3 className="mb-4 font-serif text-4xl leading-tight text-neutral-950">Site sur mesure</h3>
+                      <p className="max-w-md text-sm leading-7 text-neutral-600">
+                        For agencies that want a fully tailored visual identity, specific pages, advanced storytelling or a premium launch experience.
+                      </p>
+                    </div>
+                    <div className="mt-8 grid grid-cols-2 gap-3 text-sm text-neutral-700">
+                      {["Unique UX/UI", "Premium art direction", "Custom sections", "Launch support"].map((item) => (
+                        <div key={item} className="rounded-2xl border border-black/10 bg-white/70 px-4 py-3">
+                          {item}
+                        </div>
+                      ))}
+                    </div>
+                    <div className="mt-8 flex flex-wrap items-center gap-3">
+                      <a
+                        href="#contact"
+                        className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#D769A9] to-[#EF4B5A] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#D769A9]/25 transition hover:-translate-y-0.5"
+                      >
+                        Demander un devis <ExternalLink className="h-4 w-4" />
+                      </a>
+                      <span className="rounded-full border border-[#D769A9]/30 px-4 py-2 text-sm font-semibold text-neutral-800">On request</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </motion.div>
       </div>
