@@ -77,59 +77,32 @@ h1{font-family:'Montserrat',sans-serif;font-size:clamp(40px,6vw,80px);line-heigh
 .demo-point .demo-label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--blue);margin-bottom:4px}
 .demo-actions{display:flex;gap:14px;flex-wrap:wrap}
 /* TEMPLATE PREVIEW */
-.template-strip{padding:86px 0;background:#fff}
-.template-strip .section-head{margin-bottom:38px}
-.template-preview-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.template-preview-card{overflow:hidden;border:1px solid #e5e7eb;border-radius:20px;background:#fff;box-shadow:0 16px 46px rgba(26,26,26,.08);transition:transform .24s,box-shadow .24s,border-color .24s}
-.template-preview-card:hover{transform:translateY(-4px);border-color:rgba(33,150,201,.35);box-shadow:0 22px 64px rgba(33,150,201,.16)}
-.template-preview-screen{position:relative;height:245px;background:#eef2f7;padding:12px 12px 0;overflow:hidden}
-.template-preview-live{position:absolute;top:12px;left:12px;z-index:2;border:0;border-radius:999px;background:var(--gold);color:var(--dark);padding:7px 11px;font-size:10px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;box-shadow:0 8px 18px rgba(26,26,26,.12)}
-.template-preview-tier{position:absolute;top:12px;right:12px;z-index:2;border-radius:999px;background:#111827;color:#fff;padding:7px 10px;font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
+.template-strip{padding:104px 0;background:linear-gradient(180deg,#fff 0%,#f8fbff 52%,#fff 100%)}
+.template-strip .section-head{margin-bottom:42px}
+.template-preview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;align-items:stretch}
+.template-preview-card{position:relative;overflow:hidden;border:1px solid rgba(15,23,42,.10);border-radius:24px;background:#fff;box-shadow:0 24px 70px rgba(15,23,42,.10);transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease}
+.template-preview-card:hover{transform:translateY(-7px);border-color:rgba(215,105,169,.34);box-shadow:0 34px 90px rgba(15,23,42,.16)}
+.template-preview-screen{position:relative;height:520px;background:#d7dbe2;padding:18px 18px 0;overflow:hidden}
+.template-preview-screen:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.35),rgba(255,255,255,0));pointer-events:none}
+.template-preview-live{position:absolute;top:16px;left:16px;z-index:4;border:0;border-radius:999px;background:var(--gold);color:var(--dark);padding:8px 12px;font-size:10px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;box-shadow:0 12px 24px rgba(15,23,42,.16);display:inline-flex;align-items:center;gap:6px}
+.template-preview-live:before{content:"?";font-size:9px}
+.template-preview-tier{position:absolute;top:16px;right:16px;z-index:4;border-radius:999px;background:#111827;color:#fff;padding:8px 12px;font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;box-shadow:0 12px 24px rgba(15,23,42,.16)}
 .template-preview-tier.base{background:var(--green)}
-.template-mini{height:320px;border-radius:14px 14px 0 0;overflow:hidden;background:#fff;box-shadow:0 10px 28px rgba(26,26,26,.14)}
-.template-mini-hero{height:112px;background-size:cover;background-position:center;position:relative;display:flex;align-items:end;padding:16px}
-.template-mini-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.62),transparent)}
-.template-mini-lines{position:relative;z-index:1;display:grid;gap:7px;width:78%}
-.template-mini-line{height:8px;border-radius:999px;background:#fff}
-.template-mini-body{padding:14px;display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
-.template-mini-card{height:70px;border-radius:10px;background:#fff;border:1px solid rgba(15,23,42,.08);overflow:hidden}
-.template-mini-card:before{content:"";display:block;height:38px;background:linear-gradient(135deg,#dbeafe,#fef3c7)}
-.signature-template-card .template-preview-screen{background:linear-gradient(145deg,#f7f1ea,#fffaf3);padding:0}
-.signature-template-card .template-mini{height:245px;border-radius:0;box-shadow:none;background:#f7f1ea}
-.signature-template-card .signature-mini-nav{height:30px;display:flex;align-items:center;justify-content:space-between;padding:0 12px;border-bottom:1px solid #e8ded2;background:#f7f1ea}
-.signature-template-card .signature-mini-hero{height:100px;display:grid;grid-template-columns:1.08fr .92fr;background:#f7f1ea}
-.signature-template-card .signature-mini-photo{background-size:cover;background-position:center;position:relative}
-.signature-template-card .signature-mini-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,16,12,.52),rgba(20,16,12,.06))}
-.signature-template-card .signature-mini-editorial{padding:16px 14px;background:#fbf7f0}
-.signature-template-card .signature-mini-editorial span{display:block;border-radius:999px}
-.signature-template-card .signature-mini-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;overflow:hidden;border:1px solid #d9cbbb;border-radius:11px;background:#d9cbbb;margin-top:8px}
-.signature-template-card .signature-mini-stats span{height:20px;background:rgba(255,255,255,.72)}
-.signature-template-card .signature-mini-body{padding:12px;display:grid;grid-template-columns:1.12fr .88fr;gap:10px}
-.signature-template-card .signature-mini-list,.signature-template-card .signature-mini-feature{background:#fff;border:1px solid rgba(15,23,42,.08);border-radius:14px;box-shadow:0 10px 26px rgba(15,23,42,.08)}
-.signature-template-card .signature-mini-list{padding:9px;display:grid;grid-template-columns:44px 1fr;gap:8px;align-items:center}
-.signature-template-card .signature-mini-list img{width:44px;height:56px;object-fit:cover;border-radius:10px}
-.signature-template-card .signature-mini-feature{padding:9px;display:grid;gap:8px}
-.signature-template-card .signature-mini-row{display:grid;grid-template-columns:38px 1fr;gap:7px;align-items:center}
-.signature-template-card .signature-mini-row img{width:38px;height:28px;object-fit:cover;border-radius:8px}
-.dreams-template-card .template-preview-screen{background:linear-gradient(145deg,#fffaf3,#f8fbff);padding:0}
-.dreams-template-card .template-mini{height:245px;border-radius:0;box-shadow:none;background:#fffaf6}
-.dreams-template-card .dreams-mini-hero{height:132px;background-size:cover;background-position:center;position:relative;display:flex;align-items:flex-end;padding:18px}
-.dreams-template-card .dreams-mini-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(22,20,18,.48),rgba(22,20,18,.04))}
-.dreams-template-card .dreams-mini-copy{position:relative;z-index:1;width:75%;display:grid;gap:7px}
-.dreams-template-card .dreams-mini-copy span{display:block;border-radius:999px;background:#fff}
-.dreams-template-card .dreams-mini-body{padding:12px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.dreams-template-card .dreams-mini-card{height:84px;border-radius:18px;background:#fff;border:1px solid rgba(15,23,42,.08);box-shadow:0 12px 28px rgba(15,23,42,.08);overflow:hidden}
-.dreams-template-card .dreams-mini-card:before{content:"";display:block;height:45px;background:linear-gradient(135deg,#fef3c7,#fce7f3)}
-.custom-template-card .template-preview-screen{background:linear-gradient(145deg,#f8fbff,#fff7df);padding:20px}
-.custom-template-mini{height:205px;border-radius:22px;border:1px solid rgba(24,161,206,.18);background:radial-gradient(circle at 18% 18%,rgba(215,105,169,.18),transparent 30%),radial-gradient(circle at 80% 14%,rgba(24,161,206,.18),transparent 32%),#fff;display:grid;align-content:center;justify-items:center;text-align:center;padding:20px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.6)}
-.custom-template-icon{width:58px;height:58px;border-radius:18px;background:var(--btn-grad);display:grid;place-items:center;color:#fff;font-weight:900;font-size:24px;box-shadow:0 18px 36px rgba(215,105,169,.28)}
-.custom-template-mini strong{display:block;margin-top:16px;font-size:19px}
-.custom-template-mini span{display:block;margin-top:7px;color:#64748b;font-size:12px;line-height:1.45}
-.template-preview-info{padding:16px}
-.template-preview-info h3{font-size:17px;font-weight:900;margin-bottom:6px}
-.template-preview-info p{font-size:13px;line-height:1.55;color:#64748b;margin-bottom:14px}
-.template-preview-actions{display:flex;gap:10px}
-.template-preview-actions .btn{flex:1;padding:11px 12px;font-size:12px}
+.template-browser{position:relative;height:100%;overflow:hidden;border-radius:18px 18px 0 0;background:#fff;box-shadow:0 20px 52px rgba(15,23,42,.24)}
+.template-browser-top{height:24px;display:flex;align-items:center;gap:6px;padding:0 10px;border-bottom:1px solid rgba(15,23,42,.08);background:#fff}
+.template-browser-top span{width:6px;height:6px;border-radius:999px;background:#ef4444}.template-browser-top span:nth-child(2){background:#f59e0b}.template-browser-top span:nth-child(3){background:#22c55e}
+.template-page{height:660px;background:#fff;transform-origin:top center;transform:scale(.76);width:132%;margin-left:-16%;overflow:hidden}
+.template-nav-mini{height:48px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;border-bottom:1px solid rgba(15,23,42,.07);background:#fff}
+.template-logo-mini{height:13px;width:84px;border-radius:999px;background:#101828}.template-menu-mini{display:flex;gap:15px}.template-menu-mini span{height:5px;width:44px;border-radius:999px;background:rgba(15,23,42,.28)}
+.template-hero-mini{height:240px;position:relative;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;background:#f8fafc}
+.template-hero-image{background-size:cover;background-position:center;min-height:100%}
+.template-hero-copy{position:relative;padding:48px 38px;background:#fff;display:flex;flex-direction:column;justify-content:center}.template-hero-copy span{display:block;border-radius:999px}.template-eyebrow-mini{height:6px;width:88px;margin-bottom:18px}.template-title-mini{height:22px;width:86%;background:#111827;margin-bottom:10px}.template-title-mini.short{width:62%}.template-text-mini{height:7px;width:78%;background:#94a3b8;margin-top:9px}.template-cta-mini{height:26px;width:118px;margin-top:22px;border-radius:999px}
+.template-section-mini{padding:34px 34px 0;background:#fff}.template-section-heading{display:block;width:170px;height:15px;background:#111827;border-radius:999px;margin-bottom:20px}.template-cards-mini{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.template-property-mini{overflow:hidden;border:1px solid rgba(15,23,42,.08);border-radius:14px;background:#fff;box-shadow:0 10px 24px rgba(15,23,42,.08)}.template-property-mini img{width:100%;height:82px;object-fit:cover;display:block}.template-property-mini div{padding:10px}.template-property-mini span{display:block;height:7px;border-radius:999px;background:#111827;margin-bottom:7px}.template-property-mini small{display:block;width:68%;height:5px;border-radius:999px;background:#94a3b8}
+.template-footer-mini{margin-top:32px;height:120px;background:#f5f5f4;display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px;padding:30px 34px}.template-footer-mini span{height:7px;border-radius:999px;background:#94a3b8;display:block;margin-bottom:9px}.template-footer-mini strong{height:12px;border-radius:999px;background:#111827;display:block;width:62%;margin-bottom:14px}
+.template-preview-info{padding:20px 20px 22px;background:#fff}.template-preview-meta{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}.template-preview-info h3{font-size:18px;font-weight:900;margin:0;color:#0f172a}.template-preview-price{font-size:12px;font-weight:900;color:#0f172a}.template-preview-info p{font-size:13px;line-height:1.65;color:#64748b;margin:0 0 18px;min-height:64px}.template-preview-actions{display:flex;gap:10px}.template-preview-actions .btn{flex:1;padding:12px 13px;font-size:12px;min-height:44px}
+.template-card-riviera .template-hero-copy{background:#fffaf0}.template-card-prestige .template-page{background:#0f172a}.template-card-prestige .template-nav-mini{background:#111827}.template-card-prestige .template-logo-mini,.template-card-prestige .template-menu-mini span{background:#fff}.template-card-prestige .template-hero-copy{background:#16111e}.template-card-prestige .template-title-mini{background:#fff}.template-card-prestige .template-text-mini{background:rgba(255,255,255,.45)}.template-card-prestige .template-section-mini{background:#0f172a}.template-card-prestige .template-section-heading{background:#fff}.template-card-prestige .template-footer-mini{background:#111827}
+.template-card-urban .template-hero-mini{grid-template-columns:1.15fr .85fr}.template-card-kaia-estate-premium .template-page{background:#f5f0e8}.template-card-kaia-estate-premium .template-hero-copy{background:#f7f1ea}.template-card-signature-mediterranean-premium .template-hero-mini{grid-template-columns:.95fr 1.05fr}.template-card-signature-mediterranean-premium .template-hero-copy{background:#fbf7f0}.template-card-dreams-premium .template-page{background:#fffaf3}.template-card-dreams-premium .template-hero-copy{background:#fffaf3}.template-card-dreams-premium .template-property-mini{border-radius:22px}
+.custom-template-card .template-preview-screen{height:520px;background:linear-gradient(145deg,#f8fbff,#fff7df);padding:28px}.custom-template-mini{height:100%;border-radius:28px;border:1px solid rgba(24,161,206,.18);background:radial-gradient(circle at 18% 18%,rgba(215,105,169,.18),transparent 30%),radial-gradient(circle at 80% 14%,rgba(24,161,206,.18),transparent 32%),#fff;display:grid;align-content:center;justify-items:center;text-align:center;padding:28px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.6),0 18px 55px rgba(15,23,42,.12)}.custom-template-icon{width:78px;height:78px;border-radius:26px;background:var(--btn-grad);display:grid;place-items:center;color:#fff;font-weight:900;font-size:32px;box-shadow:0 18px 36px rgba(215,105,169,.28)}.custom-template-mini strong{display:block;margin-top:22px;font-size:27px;line-height:1.1}.custom-template-mini span{display:block;margin-top:12px;color:#64748b;font-size:14px;line-height:1.55;max-width:260px}
 .preview-modal{position:fixed;inset:0;z-index:200;display:none;background:rgba(15,23,42,.74);backdrop-filter:blur(12px);padding:24px}
 .preview-modal.open{display:flex}
 .preview-modal-shell{flex:1;max-width:1480px;height:min(860px,calc(100vh - 48px));margin:auto;background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 35px 100px rgba(0,0,0,.34)}
@@ -1353,102 +1326,80 @@ function renderHomeTemplates() {
   const grid = document.getElementById("homeTemplateGrid");
   if (!grid) return;
   const d = T[lang] || T.fr;
-  const templateCards = HOME_TEMPLATES.map((template) => `
-    <article class="template-preview-card ${template.id === "signature-mediterranean-premium" ? "signature-template-card" : ""} ${template.id === "dreams-premium" ? "dreams-template-card" : ""}">
-      <div class="template-preview-screen">
-        <button class="template-preview-live" type="button" data-template-preview="${template.id}" data-template-name="${template.name}">${d.tplLive || "Live"}</button>
-        <span class="template-preview-tier ${template.tier === "base" ? "base" : ""}">${template.tier === "base" ? (d.tplIncluded || "Included") : (d.tplPremium || "Premium")}</span>
-        ${template.id === "signature-mediterranean-premium" ? `
-        <div class="template-mini">
-          <div class="signature-mini-nav">
-            <span style="width:48px;height:12px;background:#14231f;border-radius:999px"></span>
-            <span style="width:132px;height:6px;background:linear-gradient(90deg,#14231f66 0 25%,transparent 25% 34%,#14231f66 34% 58%,transparent 58% 67%,#14231f66 67% 100%);border-radius:999px"></span>
-            <span style="width:42px;height:16px;background:#A77B4F;border-radius:999px"></span>
-          </div>
-          <div class="signature-mini-hero">
-            <div class="signature-mini-photo" style="background-image:url('${template.image}')"></div>
-            <div class="signature-mini-editorial">
-              <span style="width:44px;height:5px;background:${template.color};margin-bottom:9px"></span>
-              <span style="width:112px;height:13px;background:#14231f;margin-bottom:6px"></span>
-              <span style="width:78px;height:13px;background:#14231f;margin-bottom:8px"></span>
-              <span style="width:90px;height:5px;background:#52635e66;margin-bottom:8px"></span>
-              <div class="signature-mini-stats"><span></span><span></span><span></span><span></span></div>
-            </div>
-          </div>
-          <div class="signature-mini-body">
-            <div class="signature-mini-list">
-              <img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/13112583/media/images/1.jpg" alt="" loading="lazy">
-              <div>
-                <span style="display:block;width:86px;height:8px;background:#14231f;border-radius:999px;margin-bottom:7px"></span>
-                <span style="display:block;width:54px;height:6px;background:#94a3b8;border-radius:999px;margin-bottom:9px"></span>
-                <span style="display:block;width:96px;height:14px;background:#efe5d8;border-radius:999px"></span>
-              </div>
-            </div>
-            <div class="signature-mini-feature">
-              <div class="signature-mini-row"><img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/13112583/media/images/outdoor/1.jpg" alt="" loading="lazy"><span style="height:7px;background:#14231fcc;border-radius:999px"></span></div>
-              <div class="signature-mini-row"><img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/13112583/media/images/outdoor/4.jpg" alt="" loading="lazy"><span style="height:7px;background:#94a3b8;border-radius:999px"></span></div>
-            </div>
-          </div>
-        </div>` : `
-        ${template.id === "dreams-premium" ? `
-        <div class="template-mini">
-          <div class="dreams-mini-hero" style="background-image:url('${template.image}')">
-            <div class="dreams-mini-copy">
-              <span style="width:42%;height:6px;background:${template.color}"></span>
-              <span style="width:88%;height:15px"></span>
-              <span style="width:60%;height:15px"></span>
-            </div>
-          </div>
-          <div class="dreams-mini-body">
-            <span class="dreams-mini-card"></span>
-            <span class="dreams-mini-card"></span>
-          </div>
-        </div>` : `
-        <div class="template-mini">
-          <div class="template-mini-hero" style="background-image:url('${template.image}')">
-            <div class="template-mini-lines">
-              <span class="template-mini-line" style="width:44%;background:${template.color}"></span>
-              <span class="template-mini-line" style="width:86%"></span>
-              <span class="template-mini-line" style="width:62%"></span>
-            </div>
-          </div>
-          <div class="template-mini-body">
-            <span class="template-mini-card"></span>
-            <span class="template-mini-card"></span>
-            <span class="template-mini-card"></span>
-            <span class="template-mini-card"></span>
-          </div>
-        </div>`}`}
-      </div>
-      <div class="template-preview-info">
-        <h3>${template.name}</h3>
-        <p>${d[template.descriptionKey] || ""}</p>
-        <div class="template-preview-actions">
-          <button class="btn btn-primary" type="button" data-template-preview="${template.id}" data-template-name="${template.name}">${d.tplPreview || "Preview"}</button>
-          <a class="btn btn-secondary" href="${templatePreviewUrl(template.id)}" target="_blank" rel="noopener">${d[template.priceKey] || ""}</a>
-        </div>
-      </div>
-    </article>
-  `).join("");
-  const customCard = `
-    <article class="template-preview-card custom-template-card">
-      <div class="template-preview-screen">
-        <span class="template-preview-tier">${d.customTemplateBadge || "Bespoke"}</span>
-        <div class="custom-template-mini">
-          <div class="custom-template-icon">+</div>
-          <strong>${d.customTemplateTitle || "Bespoke website"}</strong>
-          <span>${d.customTemplateDesc || "An exclusive design created around your brand."}</span>
-        </div>
-      </div>
-      <div class="template-preview-info">
-        <h3>${d.customTemplateTitle || "Bespoke website"}</h3>
-        <p>${d.customTemplateDesc || ""}</p>
-        <div class="template-preview-actions">
-          <a class="btn btn-primary" href="#contact">${d.customTemplateCta || "Request a quote"}</a>
-          <a class="btn btn-secondary" href="#contact">${d.customTemplatePrice || "On request"}</a>
-        </div>
-      </div>
-    </article>`;
+  const templateCards = HOME_TEMPLATES.map((template) => {
+    const tierLabel = template.tier === "base" ? (d.tplIncluded || "Included") : (d.tplPremium || "Premium");
+    const desc = d[template.descriptionKey] || "";
+    const price = d[template.priceKey] || "";
+    const live = d.tplLive || "View live";
+    const preview = d.tplPreview || "Preview";
+    const url = templatePreviewUrl(template.id);
+    return [
+      `<article class="template-preview-card template-card-${template.id}">`,
+      `  <div class="template-preview-screen">`,
+      `    <button class="template-preview-live" type="button" data-template-preview="${template.id}" data-template-name="${template.name}">${live}</button>`,
+      `    <span class="template-preview-tier ${template.tier === "base" ? "base" : ""}">${tierLabel}</span>`,
+      `    <div class="template-browser">`,
+      `      <div class="template-browser-top"><span></span><span></span><span></span></div>`,
+      `      <div class="template-page">`,
+      `        <div class="template-nav-mini"><div class="template-logo-mini"></div><div class="template-menu-mini"><span></span><span></span><span></span></div></div>`,
+      `        <div class="template-hero-mini">`,
+      `          <div class="template-hero-copy">`,
+      `            <span class="template-eyebrow-mini" style="background:${template.color}"></span>`,
+      `            <span class="template-title-mini"></span>`,
+      `            <span class="template-title-mini short"></span>`,
+      `            <span class="template-text-mini"></span>`,
+      `            <span class="template-text-mini" style="width:56%"></span>`,
+      `            <span class="template-cta-mini" style="background:${template.color}"></span>`,
+      `          </div>`,
+      `          <div class="template-hero-image" style="background-image:url('${template.image}')"></div>`,
+      `        </div>`,
+      `        <div class="template-section-mini">`,
+      `          <span class="template-section-heading"></span>`,
+      `          <div class="template-cards-mini">`,
+      `            <div class="template-property-mini"><img src="${template.image}" alt="" loading="lazy"><div><span></span><small></small></div></div>`,
+      `            <div class="template-property-mini"><img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/13112583/media/images/outdoor/1.jpg" alt="" loading="lazy"><div><span></span><small></small></div></div>`,
+      `            <div class="template-property-mini"><img src="https://medianewbuild.com/file/hh-media-bucket/developments_v2/60846833/media/images/1.jpg" alt="" loading="lazy"><div><span></span><small></small></div></div>`,
+      `          </div>`,
+      `        </div>`,
+      `        <div class="template-footer-mini">`,
+      `          <div><strong></strong><span></span><span style="width:70%"></span></div>`,
+      `          <div><strong></strong><span></span><span style="width:55%"></span></div>`,
+      `          <div><strong></strong><span></span><span style="width:62%"></span></div>`,
+      `        </div>`,
+      `      </div>`,
+      `    </div>`,
+      `  </div>`,
+      `  <div class="template-preview-info">`,
+      `    <div class="template-preview-meta"><h3>${template.name}</h3><span class="template-preview-price">${price}</span></div>`,
+      `    <p>${desc}</p>`,
+      `    <div class="template-preview-actions">`,
+      `      <button class="btn btn-primary" type="button" data-template-preview="${template.id}" data-template-name="${template.name}">${preview}</button>`,
+      `      <a class="btn btn-secondary" href="${url}" target="_blank" rel="noopener">${live}</a>`,
+      `    </div>`,
+      `  </div>`,
+      `</article>`
+    ].join("");
+  }).join("");
+  const customCard = [
+    `<article class="template-preview-card custom-template-card">`,
+    `  <div class="template-preview-screen">`,
+    `    <span class="template-preview-tier">${d.customTemplateBadge || "Bespoke"}</span>`,
+    `    <div class="custom-template-mini">`,
+    `      <div class="custom-template-icon">+</div>`,
+    `      <strong>${d.customTemplateTitle || "Bespoke website"}</strong>`,
+    `      <span>${d.customTemplateDesc || "An exclusive design created around your brand."}</span>`,
+    `    </div>`,
+    `  </div>`,
+    `  <div class="template-preview-info">`,
+    `    <div class="template-preview-meta"><h3>${d.customTemplateTitle || "Bespoke website"}</h3><span class="template-preview-price">${d.customTemplatePrice || "On request"}</span></div>`,
+    `    <p>${d.customTemplateDesc || ""}</p>`,
+    `    <div class="template-preview-actions">`,
+    `      <a class="btn btn-primary" href="#contact">${d.customTemplateCta || "Request a quote"}</a>`,
+    `      <a class="btn btn-secondary" href="#contact">${d.customTemplatePrice || "On request"}</a>`,
+    `    </div>`,
+    `  </div>`,
+    `</article>`
+  ].join("");
   grid.innerHTML = templateCards + customCard;
 }
 
