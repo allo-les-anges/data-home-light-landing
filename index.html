@@ -279,6 +279,7 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
       <a href="#partners" data-i18n="nPartners">Partenaires</a>
       <a href="#pricing" data-i18n="nPrice">Tarifs</a>
       <a href="#templates" data-i18n="nTpl">Templates</a>
+      <a href="landing-pages.html" data-i18n="nLanding">Landing pages</a>
       <a href="chatbot.html" data-i18n="nChat">Chatbot</a>
       <a href="#faq" data-i18n="nFaq">FAQ</a>
     </nav>
@@ -312,6 +313,7 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
     <a href="#partners" data-i18n="nPartners" onclick="closeMobileMenu()">Partenaires</a>
     <a href="#pricing" data-i18n="nPrice" onclick="closeMobileMenu()">Tarifs</a>
     <a href="#templates" data-i18n="nTpl" onclick="closeMobileMenu()">Templates</a>
+    <a href="landing-pages.html" data-i18n="nLanding" onclick="closeMobileMenu()">Landing pages</a>
     <a href="chatbot.html" data-i18n="nChat" onclick="closeMobileMenu()">Chatbot</a>
     <a href="#faq" data-i18n="nFaq" onclick="closeMobileMenu()">FAQ</a>
     <div class="mobile-lang">
@@ -812,6 +814,14 @@ const PARTNER_TEXT = {
   pl:{nPartners:"Partnerzy",partners_kicker:"Partnerzy",partners_h:"Przydatne integracje, które przyspieszają pracę agencji.",partners_sub:"DataHome stopniowo łączy się z narzędziami i feedami nieruchomości używanymi przez profesjonalistów.",partner_habihub_tag:"Partner feedów i CRM",partner_habihub_title:"HabiHub",partner_habihub_desc:"HabiHub pomaga profesjonalistom rynku nieruchomości centralizować oferty, zarządzać agencjami i dystrybuować feedy XML. DataHome wykorzystuje te feedy, aby szybciej publikować wielojęzyczne strony agencji.",partner_habihub_point1:"Połączenie z feedami nieruchomości od partnerów.",partner_habihub_point2:"Synchronizacja z witrynami DataHome i stronami nieruchomości.",partner_habihub_point3:"Workflow dla agencji, deweloperów i sieci nieruchomości."}
 };
 Object.keys(PARTNER_TEXT).forEach((lc) => Object.assign(T[lc] || T.fr, PARTNER_TEXT[lc]));
+Object.assign(T.fr, { nLanding:"Landing pages" });
+Object.assign(T.en, { nLanding:"Landing pages" });
+Object.assign(T.es, { nLanding:"Landing pages" });
+Object.assign(T.de, { nLanding:"Landing pages" });
+Object.assign(T.nl, { nLanding:"Landing pages" });
+Object.assign(T.pt, { nLanding:"Landing pages" });
+Object.assign(T.ru, { nLanding:"Landing pages" });
+Object.assign(T.pl, { nLanding:"Landing pages" });
 
 const PRICING_TEXT = {
   fr: {

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DATA-HOME | Landing Page Generator</title>
+  <meta name="description" content="Discover the DataHome landing page module: real property campaigns, SEO, analytics, inline editing, QR codes, A/B testing and custom domains.">
+  <link rel="apple-touch-icon" sizes="57x57" href="images/apple-touch-icon-57x57.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pink:#D769A9;
+      --red:#EF4B5A;
+      --gold:#FCC010;
+      --green:#32B55E;
+      --blue:#18A1CE;
+      --btn-grad:linear-gradient(90deg,#D769A9,#EF4B5A);
+      --blue-grad:linear-gradient(90deg,#18A1CE,#D769A9);
+      --ink:#101828;
+      --muted:#667085;
+      --line:#e5eaf2;
+      --soft:#f7fbff;
+      --cream:#fffaf2;
+      --max:1220px;
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; font-family:Montserrat,system-ui,sans-serif; color:var(--ink); background:#fff; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+    a { color:inherit; text-decoration:none; }
+    img { display:block; max-width:100%; }
+    .container { width:min(var(--max),calc(100% - 40px)); margin:0 auto; }
+    header { position:sticky; top:0; z-index:50; background:rgba(255,255,255,.9); border-bottom:1px solid rgba(16,24,40,.08); backdrop-filter:blur(18px); }
+    .nav { min-height:76px; display:flex; align-items:center; justify-content:space-between; gap:22px; }
+    .logo img { width:190px; height:auto; }
+    .links { display:flex; align-items:center; gap:22px; font-size:13px; font-weight:800; color:#475467; }
+    .links a:hover { color:var(--blue); }
+    .actions { display:flex; align-items:center; gap:10px; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:46px; padding:0 20px; border:0; border-radius:999px; font-size:13px; font-weight:900; cursor:pointer; transition:transform .2s ease, box-shadow .2s ease, opacity .2s ease; }
+    .btn:hover { transform:translateY(-1px); }
+    .btn-primary { color:#fff; background:var(--btn-grad); box-shadow:0 16px 34px rgba(239,75,90,.24); }
+    .btn-secondary { color:var(--blue); background:#fff; border:1px solid rgba(24,161,206,.22); box-shadow:0 12px 30px rgba(15,23,42,.06); }
+    .lang { position:relative; }
+    .lang button { min-height:42px; border:1px solid rgba(16,24,40,.10); background:#fff; border-radius:999px; padding:0 14px; font-weight:900; cursor:pointer; color:#344054; }
+    .lang-menu { position:absolute; right:0; top:50px; display:none; width:190px; padding:8px; border:1px solid var(--line); border-radius:18px; background:#fff; box-shadow:0 20px 60px rgba(15,23,42,.12); }
+    .lang.open .lang-menu { display:grid; gap:4px; }
+    .lang-menu button { width:100%; border:0; border-radius:12px; text-align:left; color:#334155; justify-content:flex-start; }
+    .hero { position:relative; overflow:hidden; padding:88px 0 76px; background:linear-gradient(135deg,#ffffff 0%,#f4fbff 46%,#fff7fb 100%); }
+    .hero:before { content:""; position:absolute; inset:auto 0 0 0; height:1px; background:linear-gradient(90deg,transparent,var(--pink),var(--blue),transparent); opacity:.35; }
+    .hero-grid { display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:48px; align-items:center; }
+    .eyebrow { display:inline-flex; align-items:center; gap:10px; border:1px solid rgba(24,161,206,.18); background:#fff; border-radius:999px; padding:9px 15px; color:var(--blue); font-size:11px; font-weight:900; letter-spacing:.14em; text-transform:uppercase; box-shadow:0 12px 28px rgba(15,23,42,.05); }
+    h1 { margin:20px 0 18px; max-width:720px; font-size:clamp(38px,5.2vw,72px); line-height:1.02; letter-spacing:-.055em; font-weight:900; }
+    .grad { background:var(--blue-grad); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+    .lead { max-width:630px; color:#536273; font-size:18px; line-height:1.75; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:14px; margin-top:30px; }
+    .hero-metrics { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:34px; max-width:650px; }
+    .metric { border:1px solid rgba(16,24,40,.08); background:rgba(255,255,255,.78); border-radius:18px; padding:16px; box-shadow:0 12px 36px rgba(15,23,42,.05); }
+    .metric strong { display:block; font-size:22px; font-weight:900; }
+    .metric span { display:block; margin-top:5px; color:var(--muted); font-size:12px; font-weight:800; line-height:1.4; }
+    .builder { position:relative; border-radius:30px; overflow:hidden; background:#fff; border:1px solid rgba(16,24,40,.08); box-shadow:0 30px 90px rgba(15,23,42,.13); }
+    .builder-top { display:flex; align-items:center; gap:8px; padding:15px 18px; border-bottom:1px solid #edf2f7; background:#fff; }
+    .dot { width:10px; height:10px; border-radius:999px; background:var(--red); }
+    .dot:nth-child(2) { background:var(--gold); }
+    .dot:nth-child(3) { background:var(--green); }
+    .url { margin-left:10px; flex:1; border-radius:999px; background:#f5f8fc; color:#7b8798; padding:8px 12px; font-size:12px; font-weight:800; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .builder-stage { position:relative; min-height:570px; padding:22px; background:linear-gradient(145deg,#f8fbff,#fff 48%,#fff7fb); }
+    .page-preview { position:absolute; left:22px; top:22px; bottom:22px; width:60%; border-radius:24px; background:#fff; overflow:hidden; border:1px solid rgba(16,24,40,.08); box-shadow:0 24px 70px rgba(15,23,42,.10); }
+    .preview-hero { position:relative; height:210px; background:url("images/hero-villa.jpg") center/cover; }
+    .preview-hero:after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(16,24,40,.62),rgba(16,24,40,.05)); }
+    .preview-copy { position:absolute; left:24px; bottom:24px; right:24px; z-index:1; color:#fff; }
+    .preview-copy small { display:block; margin-bottom:8px; font-size:10px; font-weight:900; letter-spacing:.16em; text-transform:uppercase; color:#fff; }
+    .preview-copy strong { display:block; font-size:30px; line-height:1.02; letter-spacing:-.05em; }
+    .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; padding:18px; }
+    .property-card { overflow:hidden; border-radius:16px; border:1px solid rgba(16,24,40,.08); background:#fff; transform:translateY(12px); opacity:0; animation:cardsIn 9s infinite; }
+    .property-card:nth-child(2){ animation-delay:.25s; }
+    .property-card:nth-child(3){ animation-delay:.5s; }
+    .property-card img { width:100%; height:78px; object-fit:cover; }
+    .property-card div { padding:10px; }
+    .line { display:block; height:8px; border-radius:999px; background:#d6deea; margin-bottom:8px; }
+    .line.short { width:64%; }
+    .line.gold { width:52%; background:linear-gradient(90deg,var(--gold),var(--pink)); }
+    @keyframes cardsIn { 0%,12%{opacity:0;transform:translateY(12px)} 20%,82%{opacity:1;transform:translateY(0)} 100%{opacity:0;transform:translateY(-8px)} }
+    .editor { position:relative; z-index:2; margin-left:52%; margin-top:42px; border-radius:24px; border:1px solid rgba(16,24,40,.08); background:#fff; box-shadow:0 24px 70px rgba(15,23,42,.12); padding:18px; }
+    .editor h3 { margin:0 0 14px; font-size:18px; }
+    .tabs { display:flex; gap:6px; margin-bottom:15px; overflow:hidden; }
+    .tab { flex:1; height:30px; border-radius:999px; display:grid; place-items:center; font-size:10px; font-weight:900; color:#667085; background:#f2f5f9; }
+    .tab.active { color:#fff; background:var(--btn-grad); }
+    .field { margin:11px 0; }
+    .field label { display:block; margin-bottom:6px; font-size:10px; font-weight:900; color:#667085; letter-spacing:.12em; text-transform:uppercase; }
+    .input { height:38px; border:1px solid var(--line); border-radius:13px; background:#fbfdff; display:flex; align-items:center; padding:0 12px; color:#344054; font-size:12px; font-weight:800; }
+    .color-row { display:flex; gap:8px; }
+    .swatch { flex:1; height:36px; border-radius:12px; background:var(--btn-grad); animation:pulseSoft 3s infinite; }
+    .swatch:nth-child(2) { background:var(--blue-grad); animation-delay:.4s; }
+    .swatch:nth-child(3) { background:linear-gradient(90deg,var(--gold),var(--green)); animation-delay:.8s; }
+    @keyframes pulseSoft { 0%,100%{transform:scale(1);opacity:.9} 50%{transform:scale(.96);opacity:1} }
+    .save { margin-top:14px; width:100%; min-height:44px; border-radius:14px; border:0; color:#fff; background:var(--btn-grad); font-weight:900; box-shadow:0 12px 30px rgba(239,75,90,.18); animation:saveGlow 4s infinite; }
+    @keyframes saveGlow { 0%,100%{box-shadow:0 12px 30px rgba(239,75,90,.18)} 50%{box-shadow:0 18px 46px rgba(215,105,169,.30)} }
+    .cursor { position:absolute; right:30%; bottom:24%; width:28px; height:28px; border-radius:50% 50% 50% 0; transform:rotate(-35deg); background:#101828; box-shadow:0 8px 24px rgba(16,24,40,.25); animation:cursorMove 6s infinite; }
+    @keyframes cursorMove { 0%,100%{transform:translate(0,0) rotate(-35deg)} 42%{transform:translate(-84px,-120px) rotate(-35deg)} 68%{transform:translate(-36px,-42px) rotate(-35deg)} }
+    .section { padding:86px 0; }
+    .section.alt { background:linear-gradient(180deg,#fff,var(--soft)); }
+    .section-head { max-width:770px; margin:0 auto 42px; text-align:center; }
+    .section-head h2 { margin:0 0 14px; font-size:clamp(30px,4vw,54px); line-height:1.05; letter-spacing:-.05em; }
+    .section-head p { margin:0; color:var(--muted); line-height:1.7; }
+    .workflow { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+    .step { position:relative; border:1px solid var(--line); border-radius:22px; padding:24px; background:linear-gradient(180deg,#fff,#fbfdff); box-shadow:0 18px 52px rgba(15,23,42,.06); overflow:hidden; }
+    .step:before { content:""; position:absolute; top:0; left:0; width:100%; height:4px; background:var(--blue-grad); transform:scaleX(.4); transform-origin:left; transition:transform .25s ease; }
+    .step:hover:before { transform:scaleX(1); }
+    .step-num { width:42px; height:42px; border-radius:15px; display:grid; place-items:center; color:#fff; background:var(--blue-grad); font-weight:900; margin-bottom:18px; }
+    .step h3 { margin:0 0 10px; font-size:18px; }
+    .step p { margin:0; color:var(--muted); line-height:1.65; font-size:14px; }
+    .phase-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+    .phase { border:1px solid var(--line); border-radius:30px; padding:34px; background:#fff; box-shadow:0 24px 80px rgba(15,23,42,.08); }
+    .phase .badge { display:inline-flex; align-items:center; height:30px; padding:0 12px; border-radius:999px; background:rgba(24,161,206,.10); color:var(--blue); font-size:11px; font-weight:900; letter-spacing:.12em; text-transform:uppercase; }
+    .phase h2 { margin:18px 0 12px; font-size:clamp(28px,3.6vw,46px); letter-spacing:-.045em; }
+    .phase p { color:var(--muted); line-height:1.72; }
+    .feature-list { display:grid; gap:12px; margin-top:22px; }
+    .feature-item { display:grid; grid-template-columns:34px 1fr; gap:12px; align-items:flex-start; color:#344054; font-size:14px; font-weight:700; }
+    .icon { width:34px; height:34px; border-radius:12px; display:grid; place-items:center; color:#fff; background:var(--btn-grad); font-size:14px; font-weight:900; }
+    .feature-item strong { display:block; color:#101828; margin-bottom:3px; }
+    .feature-item span:last-child { color:var(--muted); line-height:1.55; font-weight:600; }
+    .showcase { display:grid; grid-template-columns:.9fr 1.1fr; gap:28px; align-items:center; }
+    .image-stack { position:relative; min-height:520px; border-radius:34px; background:linear-gradient(135deg,#fff8ec,#eefaff); border:1px solid rgba(16,24,40,.08); overflow:hidden; box-shadow:0 24px 70px rgba(15,23,42,.08); }
+    .image-stack img { position:absolute; object-fit:cover; border-radius:24px; box-shadow:0 24px 70px rgba(15,23,42,.16); }
+    .image-stack img:nth-child(1) { left:34px; top:34px; width:62%; height:245px; animation:floatOne 7s ease-in-out infinite; }
+    .image-stack img:nth-child(2) { right:34px; top:154px; width:48%; height:210px; animation:floatTwo 8s ease-in-out infinite; }
+    .image-stack img:nth-child(3) { left:72px; bottom:38px; width:54%; height:180px; animation:floatThree 9s ease-in-out infinite; }
+    @keyframes floatOne { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-14px)} }
+    @keyframes floatTwo { 0%,100%{transform:translateY(0)} 50%{transform:translateY(12px)} }
+    @keyframes floatThree { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+    .text-panel { padding:8px 0; }
+    .text-panel h2 { margin:0 0 16px; font-size:clamp(30px,4vw,56px); line-height:1.05; letter-spacing:-.05em; }
+    .text-panel p { color:var(--muted); line-height:1.75; }
+    .mini-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-top:24px; }
+    .mini { border:1px solid var(--line); border-radius:20px; padding:18px; background:#fff; }
+    .mini strong { display:block; margin-bottom:8px; }
+    .mini span { color:var(--muted); font-size:13px; line-height:1.55; }
+    .cta { padding:82px 0; }
+    .cta-box { display:grid; grid-template-columns:1fr auto; gap:28px; align-items:center; padding:38px; border-radius:30px; background:linear-gradient(135deg,#f8fbff,rgba(24,161,206,.08),rgba(215,105,169,.12)); border:1px solid rgba(16,24,40,.08); box-shadow:0 24px 80px rgba(15,23,42,.08); }
+    .cta h2 { margin:0 0 10px; font-size:clamp(30px,4vw,56px); letter-spacing:-.05em; }
+    .cta p { margin:0; color:var(--muted); line-height:1.7; }
+    footer { padding:34px 0; border-top:1px solid var(--line); color:var(--muted); font-size:13px; }
+    footer .container { display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    @media(max-width:1040px) {
+      .hero-grid,.phase-grid,.showcase,.cta-box { grid-template-columns:1fr; }
+      .workflow { grid-template-columns:repeat(2,1fr); }
+      .builder-stage { min-height:auto; }
+      .page-preview { position:relative; left:auto; top:auto; bottom:auto; width:100%; }
+      .editor { margin:18px 0 0; }
+      .cursor { display:none; }
+    }
+    @media(max-width:720px) {
+      .container { width:min(100% - 28px,var(--max)); }
+      .links { display:none; }
+      .logo img { width:166px; }
+      .actions .btn-secondary { display:none; }
+      .hero { padding:56px 0; }
+      .hero-metrics,.workflow,.mini-grid { grid-template-columns:1fr; }
+      .builder-stage { padding:14px; }
+      .preview-hero { height:240px; }
+      .cards { grid-template-columns:1fr; }
+      .property-card:nth-child(2),.property-card:nth-child(3) { display:none; }
+      .section,.cta { padding:58px 0; }
+      .phase,.cta-box { padding:26px; border-radius:24px; }
+      .image-stack { min-height:460px; }
+      .image-stack img:nth-child(1) { left:18px; top:22px; width:72%; }
+      .image-stack img:nth-child(2) { right:18px; top:170px; width:62%; }
+      .image-stack img:nth-child(3) { left:30px; bottom:28px; width:64%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="logo" href="index.html"><img src="images/DH_V2.png" alt="DATA-HOME"></a>
+      <nav class="links">
+        <a href="index.html" data-i18n="navHome">Accueil</a>
+        <a href="templates.html" data-i18n="navTemplates">Templates</a>
+        <a href="landing-pages.html" data-i18n="navLanding">Landing pages</a>
+        <a href="chatbot.html" data-i18n="navChatbot">Chatbot</a>
+        <a href="index.html#pricing" data-i18n="navPricing">Tarifs</a>
+        <a href="index.html#contact" data-i18n="navContact">Contact</a>
+      </nav>
+      <div class="actions">
+        <a class="btn btn-secondary" href="https://datahome.vercel.app/demo" data-i18n="demo">Demo</a>
+        <div class="lang" id="langBox">
+          <button type="button" onclick="toggleLang()" id="langBtn">FR</button>
+          <div class="lang-menu">
+            <button type="button" onclick="setLang('fr')">FR Francais</button>
+            <button type="button" onclick="setLang('en')">EN English</button>
+            <button type="button" onclick="setLang('es')">ES Espanol</button>
+            <button type="button" onclick="setLang('de')">DE Deutsch</button>
+            <button type="button" onclick="setLang('nl')">NL Nederlands</button>
+            <button type="button" onclick="setLang('pt')">PT Portugues</button>
+            <button type="button" onclick="setLang('pl')">PL Polski</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow" data-i18n="eyebrow">Module landing pages</span>
+          <h1 data-i18n-html="heroTitle">Transformez un bien en <span class="grad">campagne commerciale</span>.</h1>
+          <p class="lead" data-i18n="heroLead">DataHome genere des pages dediees pour vos biens, vos developpements ou vos campagnes locales, avec proprietes reelles, SEO, formulaires, QR code et suivi des leads.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://datahome.vercel.app/register" data-i18n="trial">Commencer l'essai 15 jours</a>
+            <a class="btn btn-secondary" href="https://datahome.vercel.app/demo" data-i18n="openDemo">Ouvrir la demo SaaS</a>
+          </div>
+          <div class="hero-metrics">
+            <div class="metric"><strong>3</strong><span data-i18n="m1">biens reels injectes</span></div>
+            <div class="metric"><strong>SEO</strong><span data-i18n="m2">metas et ciblage local</span></div>
+            <div class="metric"><strong>A/B</strong><span data-i18n="m3">test et analytics</span></div>
+          </div>
+        </div>
+        <div class="builder" aria-label="DataHome landing page generator animation">
+          <div class="builder-top">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <div class="url">agency.datahome.app/pages/villa-costa-blanca</div>
+          </div>
+          <div class="builder-stage">
+            <div class="page-preview">
+              <div class="preview-hero">
+                <div class="preview-copy">
+                  <small data-i18n="mockEyebrow">Campagne premium</small>
+                  <strong data-i18n="mockTitle">Villa avec vue mer a vendre</strong>
+                </div>
+              </div>
+              <div class="cards">
+                <article class="property-card">
+                  <img src="images/img216.jpg" alt="Villa">
+                  <div><span class="line gold"></span><span class="line"></span><span class="line short"></span></div>
+                </article>
+                <article class="property-card">
+                  <img src="images/img243.jpg" alt="Villa">
+                  <div><span class="line gold"></span><span class="line"></span><span class="line short"></span></div>
+                </article>
+                <article class="property-card">
+                  <img src="images/img36.jpg" alt="Villa">
+                  <div><span class="line gold"></span><span class="line"></span><span class="line short"></span></div>
+                </article>
+              </div>
+            </div>
+            <aside class="editor">
+              <h3 data-i18n="editorTitle">Editeur visuel</h3>
+              <div class="tabs"><span class="tab active">Hero</span><span class="tab">SEO</span><span class="tab">A/B</span></div>
+              <div class="field"><label data-i18n="fieldTitle">Titre</label><div class="input" data-i18n="fieldTitleValue">Villa premium a Altea</div></div>
+              <div class="field"><label data-i18n="fieldCta">CTA</label><div class="input" data-i18n="fieldCtaValue">Demander le dossier</div></div>
+              <div class="field"><label data-i18n="fieldStyle">Style</label><div class="color-row"><span class="swatch"></span><span class="swatch"></span><span class="swatch"></span></div></div>
+              <button class="save" data-i18n="save">Sauvegarder</button>
+            </aside>
+            <span class="cursor" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-i18n="workflowTitle">Du bien a la page publiee, sans friction.</h2>
+          <p data-i18n="workflowText">Le module reprend les donnees de l'agence et transforme une propriete ou un developpement en page de conversion partageable.</p>
+        </div>
+        <div class="workflow">
+          <div class="step"><div class="step-num">1</div><h3 data-i18n="s1t">Choisir le bien</h3><p data-i18n="s1d">Selectionnez une propriete XML ou manuelle depuis le catalogue de l'agence.</p></div>
+          <div class="step"><div class="step-num">2</div><h3 data-i18n="s2t">Generer la page</h3><p data-i18n="s2d">DataHome cree une page dediee avec image hero, contenu, formulaire et biens associes.</p></div>
+          <div class="step"><div class="step-num">3</div><h3 data-i18n="s3t">Editer visuellement</h3><p data-i18n="s3d">Modifiez les textes, le hero, les couleurs, le formulaire et les biens mis en avant.</p></div>
+          <div class="step"><div class="step-num">4</div><h3 data-i18n="s4t">Partager et mesurer</h3><p data-i18n="s4d">Diffusez l'URL ou le QR code et suivez vues, leads et conversion.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container phase-grid">
+        <article class="phase">
+          <span class="badge" data-i18n="phase1Badge">Phase 1 deja creee</span>
+          <h2 data-i18n="phase1Title">Une page commerciale connectee a vos biens.</h2>
+          <p data-i18n="phase1Text">La premiere version donne deja une base solide pour lancer des campagnes rapides depuis Mon Espace.</p>
+          <div class="feature-list">
+            <div class="feature-item"><span class="icon">01</span><span><strong data-i18n="p1a">Biens reels</strong><span data-i18n="p1b">Injection de proprietes issues du catalogue XML ou manuel.</span></span></div>
+            <div class="feature-item"><span class="icon">02</span><span><strong data-i18n="p1c">SEO automatique</strong><span data-i18n="p1d">Title, description, Open Graph, canonical et image de partage.</span></span></div>
+            <div class="feature-item"><span class="icon">03</span><span><strong data-i18n="p1e">Formulaire multi-etapes</strong><span data-i18n="p1f">Capture plus propre du nom, email, telephone, budget et message.</span></span></div>
+            <div class="feature-item"><span class="icon">04</span><span><strong data-i18n="p1g">Analytics utiles</strong><span data-i18n="p1h">Compteurs de vues, leads, taux de conversion et date d'expiration.</span></span></div>
+          </div>
+        </article>
+        <article class="phase">
+          <span class="badge" data-i18n="phase2Badge">Phase 2 avancee</span>
+          <h2 data-i18n="phase2Title">Un mini builder pour optimiser chaque campagne.</h2>
+          <p data-i18n="phase2Text">La deuxieme phase ajoute les outils premium pour personnaliser, tester et distribuer les pages.</p>
+          <div class="feature-list">
+            <div class="feature-item"><span class="icon">05</span><span><strong data-i18n="p2a">Editeur inline</strong><span data-i18n="p2b">Cliquez sur les textes, modifiez-les, puis sauvegardez la page.</span></span></div>
+            <div class="feature-item"><span class="icon">06</span><span><strong data-i18n="p2c">Video hero</strong><span data-i18n="p2d">Support image, YouTube, Vimeo ou video MP4 directe.</span></span></div>
+            <div class="feature-item"><span class="icon">07</span><span><strong data-i18n="p2e">A/B testing</strong><span data-i18n="p2f">Comparez deux variantes et gardez celle qui convertit le mieux.</span></span></div>
+            <div class="feature-item"><span class="icon">08</span><span><strong data-i18n="p2g">Domaine et QR code</strong><span data-i18n="p2h">Domaine dedie, verification DNS, QR code et partage WhatsApp/email.</span></span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container showcase">
+        <div class="image-stack" aria-hidden="true">
+          <img src="images/premium-design.jpg" alt="">
+          <img src="images/speed-metrics.jpg" alt="">
+          <img src="images/infra.jpg" alt="">
+        </div>
+        <div class="text-panel">
+          <span class="eyebrow" data-i18n="distribution">Distribution</span>
+          <h2 data-i18n="shareTitle">Une page pour une propriete, un developpement ou une campagne locale.</h2>
+          <p data-i18n="shareText">Les agences peuvent creer une URL dediee pour une villa, un programme neuf, une operation portes ouvertes ou une campagne publicitaire locale. Chaque page peut recevoir un QR code, un domaine propre et une optimisation SEO par ville.</p>
+          <div class="mini-grid">
+            <div class="mini"><strong data-i18n="mini1t">SEO local</strong><span data-i18n="mini1d">Ciblage ville ou quartier pour renforcer les recherches Google locales.</span></div>
+            <div class="mini"><strong data-i18n="mini2t">WhatsApp</strong><span data-i18n="mini2d">Bouton rapide vers le numero configure par l'agence.</span></div>
+            <div class="mini"><strong data-i18n="mini3t">Expiration</strong><span data-i18n="mini3d">Date limite et bandeau d'urgence pour les offres temporaires.</span></div>
+            <div class="mini"><strong data-i18n="mini4t">Leads</strong><span data-i18n="mini4d">Chaque demande rejoint le Mini CRM avec le contexte de la campagne.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container cta-box">
+        <div>
+          <h2 data-i18n="ctaTitle">Pret a vendre une propriete comme une campagne premium ?</h2>
+          <p data-i18n="ctaText">Testez DataHome, puis activez le generateur de landing pages dans Mon Espace ou depuis AgencyDashboard.</p>
+        </div>
+        <a class="btn btn-primary" href="https://datahome.vercel.app/register" data-i18n="ctaBtn">Demarrer l'essai</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <span>DATA-HOME</span>
+      <span data-i18n="footer">Landing pages, sites immobiliers multilingues et modules SaaS pour agences.</span>
+    </div>
+  </footer>
+
+  <script>
+    const I18N = {
+      fr: {
+        navHome:"Accueil", navTemplates:"Templates", navLanding:"Landing pages", navChatbot:"Chatbot", navPricing:"Tarifs", navContact:"Contact", demo:"Demo",
+        eyebrow:"Module landing pages", heroTitle:"Transformez un bien en <span class=\"grad\">campagne commerciale</span>.", heroLead:"DataHome genere des pages dediees pour vos biens, vos developpements ou vos campagnes locales, avec proprietes reelles, SEO, formulaires, QR code et suivi des leads.", trial:"Commencer l'essai 15 jours", openDemo:"Ouvrir la demo SaaS", m1:"biens reels injectes", m2:"metas et ciblage local", m3:"test et analytics",
+        mockEyebrow:"Campagne premium", mockTitle:"Villa avec vue mer a vendre", editorTitle:"Editeur visuel", fieldTitle:"Titre", fieldTitleValue:"Villa premium a Altea", fieldCta:"CTA", fieldCtaValue:"Demander le dossier", fieldStyle:"Style", save:"Sauvegarder",
+        workflowTitle:"Du bien a la page publiee, sans friction.", workflowText:"Le module reprend les donnees de l'agence et transforme une propriete ou un developpement en page de conversion partageable.", s1t:"Choisir le bien", s1d:"Selectionnez une propriete XML ou manuelle depuis le catalogue de l'agence.", s2t:"Generer la page", s2d:"DataHome cree une page dediee avec image hero, contenu, formulaire et biens associes.", s3t:"Editer visuellement", s3d:"Modifiez les textes, le hero, les couleurs, le formulaire et les biens mis en avant.", s4t:"Partager et mesurer", s4d:"Diffusez l'URL ou le QR code et suivez vues, leads et conversion.",
+        phase1Badge:"Phase 1 deja creee", phase1Title:"Une page commerciale connectee a vos biens.", phase1Text:"La premiere version donne deja une base solide pour lancer des campagnes rapides depuis Mon Espace.", p1a:"Biens reels", p1b:"Injection de proprietes issues du catalogue XML ou manuel.", p1c:"SEO automatique", p1d:"Title, description, Open Graph, canonical et image de partage.", p1e:"Formulaire multi-etapes", p1f:"Capture plus propre du nom, email, telephone, budget et message.", p1g:"Analytics utiles", p1h:"Compteurs de vues, leads, taux de conversion et date d'expiration.",
+        phase2Badge:"Phase 2 avancee", phase2Title:"Un mini builder pour optimiser chaque campagne.", phase2Text:"La deuxieme phase ajoute les outils premium pour personnaliser, tester et distribuer les pages.", p2a:"Editeur inline", p2b:"Cliquez sur les textes, modifiez-les, puis sauvegardez la page.", p2c:"Video hero", p2d:"Support image, YouTube, Vimeo ou video MP4 directe.", p2e:"A/B testing", p2f:"Comparez deux variantes et gardez celle qui convertit le mieux.", p2g:"Domaine et QR code", p2h:"Domaine dedie, verification DNS, QR code et partage WhatsApp/email.",
+        distribution:"Distribution", shareTitle:"Une page pour une propriete, un developpement ou une campagne locale.", shareText:"Les agences peuvent creer une URL dediee pour une villa, un programme neuf, une operation portes ouvertes ou une campagne publicitaire locale. Chaque page peut recevoir un QR code, un domaine propre et une optimisation SEO par ville.", mini1t:"SEO local", mini1d:"Ciblage ville ou quartier pour renforcer les recherches Google locales.", mini2t:"WhatsApp", mini2d:"Bouton rapide vers le numero configure par l'agence.", mini3t:"Expiration", mini3d:"Date limite et bandeau d'urgence pour les offres temporaires.", mini4t:"Leads", mini4d:"Chaque demande rejoint le Mini CRM avec le contexte de la campagne.",
+        ctaTitle:"Pret a vendre une propriete comme une campagne premium ?", ctaText:"Testez DataHome, puis activez le generateur de landing pages dans Mon Espace ou depuis AgencyDashboard.", ctaBtn:"Demarrer l'essai", footer:"Landing pages, sites immobiliers multilingues et modules SaaS pour agences."
+      },
+      en: {
+        navHome:"Home", navTemplates:"Templates", navLanding:"Landing pages", navChatbot:"Chatbot", navPricing:"Pricing", navContact:"Contact", demo:"Demo",
+        eyebrow:"Landing page module", heroTitle:"Turn one listing into a <span class=\"grad\">sales campaign</span>.", heroLead:"DataHome generates dedicated pages for listings, developments and local campaigns, with real properties, SEO, forms, QR codes and lead tracking.", trial:"Start 15-day trial", openDemo:"Open SaaS demo", m1:"real listings injected", m2:"meta tags and local SEO", m3:"testing and analytics",
+        mockEyebrow:"Premium campaign", mockTitle:"Sea-view villa for sale", editorTitle:"Visual editor", fieldTitle:"Title", fieldTitleValue:"Premium villa in Altea", fieldCta:"CTA", fieldCtaValue:"Request dossier", fieldStyle:"Style", save:"Save changes",
+        workflowTitle:"From listing to published page, without friction.", workflowText:"The module uses the agency data and turns a listing or development into a shareable conversion page.", s1t:"Choose a listing", s1d:"Select an XML or manual property from the agency catalogue.", s2t:"Generate the page", s2d:"DataHome creates a dedicated page with hero image, copy, form and related listings.", s3t:"Edit visually", s3d:"Change the copy, hero, colors, form and highlighted listings.", s4t:"Share and measure", s4d:"Share the URL or QR code and track views, leads and conversion.",
+        phase1Badge:"Phase 1 already built", phase1Title:"A campaign page connected to your listings.", phase1Text:"The first version already gives agencies a solid base to launch fast campaigns from the client workspace.", p1a:"Real listings", p1b:"Inject properties from XML or manual catalogue data.", p1c:"Automatic SEO", p1d:"Title, description, Open Graph, canonical and sharing image.", p1e:"Multi-step form", p1f:"Cleaner capture of name, email, phone, budget and message.", p1g:"Useful analytics", p1h:"Views, leads, conversion rate and expiry date.",
+        phase2Badge:"Advanced phase 2", phase2Title:"A mini builder to optimize every campaign.", phase2Text:"The second phase adds premium tools to personalize, test and distribute pages.", p2a:"Inline editor", p2b:"Click text, edit it, then save the page.", p2c:"Video hero", p2d:"Image, YouTube, Vimeo or direct MP4 support.", p2e:"A/B testing", p2f:"Compare two variants and keep the better converting version.", p2g:"Domain and QR code", p2h:"Dedicated domain, DNS verification, QR code and WhatsApp/email sharing.",
+        distribution:"Distribution", shareTitle:"One page for a listing, a development or a local campaign.", shareText:"Agencies can create a dedicated URL for a villa, a new development, an open-house campaign or local advertising. Each page can receive a QR code, a custom domain and city-focused SEO.", mini1t:"Local SEO", mini1d:"City or district targeting to support local Google searches.", mini2t:"WhatsApp", mini2d:"Fast button to the number configured by the agency.", mini3t:"Expiry", mini3d:"Deadline and urgency banner for temporary offers.", mini4t:"Leads", mini4d:"Every request lands in Mini CRM with the campaign context.",
+        ctaTitle:"Ready to sell a property like a premium campaign?", ctaText:"Try DataHome, then activate the landing page generator from the client workspace or AgencyDashboard.", ctaBtn:"Start trial", footer:"Landing pages, multilingual real estate websites and SaaS modules for agencies."
+      },
+      es: {
+        navHome:"Inicio", navTemplates:"Templates", navLanding:"Landing pages", navChatbot:"Chatbot", navPricing:"Precios", navContact:"Contacto", demo:"Demo",
+        eyebrow:"Modulo landing pages", heroTitle:"Convierte una propiedad en una <span class=\"grad\">campana comercial</span>.", heroLead:"DataHome genera paginas dedicadas para propiedades, promociones y campanas locales, con propiedades reales, SEO, formularios, QR y seguimiento de leads.", trial:"Empezar prueba de 15 dias", openDemo:"Abrir demo SaaS", m1:"propiedades reales", m2:"metas y SEO local", m3:"test y analytics",
+        mockEyebrow:"Campana premium", mockTitle:"Villa con vista al mar en venta", editorTitle:"Editor visual", fieldTitle:"Titulo", fieldTitleValue:"Villa premium en Altea", fieldCta:"CTA", fieldCtaValue:"Pedir dossier", fieldStyle:"Estilo", save:"Guardar",
+        workflowTitle:"De la propiedad a la pagina publicada, sin friccion.", workflowText:"El modulo usa los datos de la agencia y convierte una propiedad o desarrollo en una pagina compartible de conversion.", s1t:"Elegir propiedad", s1d:"Selecciona una propiedad XML o manual del catalogo.", s2t:"Generar pagina", s2d:"DataHome crea una pagina con hero, contenido, formulario y propiedades asociadas.", s3t:"Editar visualmente", s3d:"Cambia textos, hero, colores, formulario y propiedades destacadas.", s4t:"Compartir y medir", s4d:"Difunde la URL o QR y mide vistas, leads y conversion.",
+        phase1Badge:"Fase 1 creada", phase1Title:"Una pagina comercial conectada a tus propiedades.", phase1Text:"La primera version ya ofrece una base solida para lanzar campanas rapidas.", p1a:"Propiedades reales", p1b:"Inyeccion de propiedades desde catalogo XML o manual.", p1c:"SEO automatico", p1d:"Title, description, Open Graph, canonical e imagen social.", p1e:"Formulario multi-paso", p1f:"Captura nombre, email, telefono, presupuesto y mensaje.", p1g:"Analytics utiles", p1h:"Vistas, leads, conversion y fecha de expiracion.",
+        phase2Badge:"Fase 2 avanzada", phase2Title:"Un mini builder para optimizar cada campana.", phase2Text:"La segunda fase anade herramientas premium para personalizar, probar y distribuir.", p2a:"Editor inline", p2b:"Haz clic en los textos, editalos y guarda la pagina.", p2c:"Video hero", p2d:"Soporte imagen, YouTube, Vimeo o MP4 directo.", p2e:"A/B testing", p2f:"Compara dos variantes y conserva la que convierte mejor.", p2g:"Dominio y QR", p2h:"Dominio dedicado, verificacion DNS, QR y compartir por WhatsApp/email.",
+        distribution:"Distribucion", shareTitle:"Una pagina para una propiedad, promocion o campana local.", shareText:"Las agencias pueden crear una URL dedicada para una villa, obra nueva, open house o campana local. Cada pagina puede tener QR, dominio propio y SEO por ciudad.", mini1t:"SEO local", mini1d:"Ciudad o barrio objetivo para reforzar busquedas locales.", mini2t:"WhatsApp", mini2d:"Boton rapido al numero configurado por la agencia.", mini3t:"Expiracion", mini3d:"Fecha limite y banner de urgencia para ofertas temporales.", mini4t:"Leads", mini4d:"Cada solicitud llega al Mini CRM con el contexto de la campana.",
+        ctaTitle:"Listo para vender una propiedad como una campana premium?", ctaText:"Prueba DataHome y activa el generador desde Mon Espace o AgencyDashboard.", ctaBtn:"Empezar prueba", footer:"Landing pages, webs inmobiliarias multilingues y modulos SaaS para agencias."
+      }
+    };
+    I18N.de = Object.assign({}, I18N.en, {navHome:"Startseite",navPricing:"Preise",navContact:"Kontakt",trial:"15-Tage-Test starten",openDemo:"SaaS-Demo offnen"});
+    I18N.nl = Object.assign({}, I18N.en, {navHome:"Home",navPricing:"Prijzen",navContact:"Contact",trial:"Start proefperiode van 15 dagen",openDemo:"Open SaaS-demo"});
+    I18N.pt = Object.assign({}, I18N.en, {navHome:"Inicio",navPricing:"Precos",navContact:"Contacto",trial:"Iniciar teste de 15 dias",openDemo:"Abrir demo SaaS"});
+    I18N.pl = Object.assign({}, I18N.en, {navHome:"Start",navTemplates:"Szablony",navPricing:"Cennik",navContact:"Kontakt",trial:"Rozpocznij 15-dniowy trial",openDemo:"Otworz demo SaaS"});
+    let lang = localStorage.getItem("dh_lang") || (navigator.language || "fr").slice(0,2);
+    if (!I18N[lang]) lang = "fr";
+    function setLang(lc) {
+      lang = I18N[lc] ? lc : "fr";
+      localStorage.setItem("dh_lang", lang);
+      document.documentElement.lang = lang;
+      document.getElementById("langBtn").textContent = lang.toUpperCase();
+      document.getElementById("langBox").classList.remove("open");
+      const d = I18N[lang];
+      document.querySelectorAll("[data-i18n]").forEach((el) => { if (d[el.dataset.i18n] !== undefined) el.textContent = d[el.dataset.i18n]; });
+      document.querySelectorAll("[data-i18n-html]").forEach((el) => { if (d[el.dataset.i18nHtml] !== undefined) el.innerHTML = d[el.dataset.i18nHtml]; });
+    }
+    function toggleLang() { document.getElementById("langBox").classList.toggle("open"); }
+    document.addEventListener("click", (e) => { if (!e.target.closest(".lang")) document.getElementById("langBox").classList.remove("open"); });
+    setLang(lang);
+  </script>
+</body>
+</html>
