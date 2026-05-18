@@ -206,6 +206,9 @@ h1{font-family:'Montserrat',sans-serif;font-size:clamp(40px,6vw,80px);line-heigh
 .pricing-price{font-size:48px;font-weight:900;line-height:1;display:flex;align-items:baseline;gap:2px}
 .pricing-price .price-val{transition:all .2s}
 .pricing-price .price-currency{font-size:22px;font-weight:700;color:#444;margin-left:1px}
+.pricing-regular{display:flex;align-items:center;gap:9px;margin:0 0 10px;color:#94a3b8;font-size:13px;font-weight:800}
+.pricing-regular .regular-price{text-decoration:line-through;text-decoration-thickness:2px}
+.pricing-deal{display:inline-flex;align-items:center;gap:7px;margin-bottom:10px;padding:6px 11px;border-radius:999px;background:rgba(239,75,90,.1);color:var(--red);font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
 .per-m{font-size:16px;font-weight:500;color:#aaa;margin-left:4px}
 .price-billed{font-size:12px;color:var(--green);font-weight:700;margin-top:4px;transition:opacity .2s}
 .price-setup{font-size:12px;color:#aaa;margin-top:4px}
@@ -500,12 +503,12 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
     <div class="section-head">
       <span class="eyebrow" data-i18n="price_badge">Tarifs SaaS flexibles</span>
       <h2 data-i18n="price_h">Une base claire, puis seulement les modules utiles.</h2>
-      <p data-i18n="price_sub">Le site agence commence à 50 EUR/mois. Les flux XML sont facturés séparément à 50 EUR/mois par flux.</p>
+      <p data-i18n="price_sub">Prix publics: Site 75 EUR/mois, Pro 135 EUR/mois, Premium 199 EUR/mois. Offre exclusive limitee: -33% sur chaque pack. Les flux XML restent factures separement.</p>
     </div>
     <!-- Billing toggle -->
     <div class="billing-toggle">
       <button class="tog-btn active" id="tog-monthly" onclick="setBilling('monthly')" data-i18n="tog_monthly">Mensuel</button>
-      <button class="tog-btn" id="tog-annual" onclick="setBilling('annual')" data-i18n="tog_annual">Annuel (-20%)</button>
+      <button class="tog-btn" id="tog-annual" onclick="setBilling('annual')" data-i18n="tog_annual">Annuel</button>
     </div>
     <!-- Plans -->
     <div class="pricing-grid">
@@ -513,10 +516,12 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
       <div class="pricing-card">
         <div class="pricing-name" style="color:var(--blue)" data-i18n="p1n">SITE</div>
         <div class="pricing-price-wrap">
+          <div class="pricing-deal" data-i18n="price_deal">Offre exclusive -33%</div>
+          <div class="pricing-regular"><span data-i18n="price_public">Prix public</span> <span class="regular-price" data-monthly="75" data-annual="75">75€</span></div>
           <div class="pricing-price">
-            <span class="price-val" data-monthly="50" data-annual="45">50</span><span class="price-currency">€</span><span class="per-m" data-i18n="per_month">/mois</span>
+            <span class="price-val" data-monthly="50" data-annual="50">50</span><span class="price-currency">€</span><span class="per-m" data-i18n="per_month">/mois</span>
           </div>
-          <div class="price-billed" data-i18n="p1_billed" style="display:none">Facturé 540 EUR/an</div>
+          <div class="price-billed" data-i18n="p1_billed" style="display:none">Facturé 600 EUR/an</div>
           <div class="price-setup" data-i18n="p1_setup">Setup fee : 125 EUR unique</div>
         </div>
         <ul class="pf">
@@ -540,10 +545,12 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
         <div class="pricing-badge" data-i18n="p2badge">Le plus choisi</div>
         <div class="pricing-name" style="color:var(--pink)" data-i18n="p2n">PRO</div>
         <div class="pricing-price-wrap">
+          <div class="pricing-deal" data-i18n="price_deal">Offre exclusive -33%</div>
+          <div class="pricing-regular"><span data-i18n="price_public">Prix public</span> <span class="regular-price" data-monthly="135" data-annual="135">135€</span></div>
           <div class="pricing-price">
-            <span class="price-val" data-monthly="99" data-annual="89">99</span><span class="price-currency">€</span><span class="per-m" data-i18n="per_month">/mois</span>
+            <span class="price-val" data-monthly="90" data-annual="90">90</span><span class="price-currency">€</span><span class="per-m" data-i18n="per_month">/mois</span>
           </div>
-          <div class="price-billed" data-i18n="p2_billed" style="display:none">Facturé 1 068 EUR/an</div>
+          <div class="price-billed" data-i18n="p2_billed" style="display:none">Facturé 1 080 EUR/an</div>
           <div class="price-setup" data-i18n="p2_setup">Setup fee : 125 EUR unique</div>
         </div>
         <ul class="pf">
@@ -566,10 +573,12 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
         <div class="pricing-badge pricing-badge--agency" data-i18n="p3badge">Meilleur ROI</div>
         <div class="pricing-name" style="color:var(--purple)" data-i18n="p3n">PREMIUM</div>
         <div class="pricing-price-wrap">
+          <div class="pricing-deal" data-i18n="price_deal">Offre exclusive -33%</div>
+          <div class="pricing-regular"><span data-i18n="price_public">Prix public</span> <span class="regular-price" data-monthly="199" data-annual="199">199€</span></div>
           <div class="pricing-price">
-            <span class="price-val" data-monthly="149" data-annual="134">149</span><span class="price-currency">€</span><span class="per-m" data-i18n="per_month">/mois</span>
+            <span class="price-val" data-monthly="133" data-annual="133">133</span><span class="price-currency">€</span><span class="per-m" data-i18n="per_month">/mois</span>
           </div>
-          <div class="price-billed" data-i18n="p3_billed" style="display:none">Facturé 1 608 EUR/an</div>
+          <div class="price-billed" data-i18n="p3_billed" style="display:none">Facturé 1 596 EUR/an</div>
           <div class="price-setup" data-i18n="p3_setup">Setup fee : 125 EUR unique</div>
         </div>
         <ul class="pf">
@@ -1115,18 +1124,19 @@ const CURRENT_PRICING_TEXT = {
   fr: {
     price_badge:"Tarifs SaaS flexibles",
     price_h:"Une base claire, puis seulement les modules utiles.",
-    price_sub:"Le site agence commence a 50 EUR/mois. Les flux XML sont factures separement a 50 EUR/mois par flux.",
-    tog_monthly:"Mensuel", tog_annual:"Annuel (-10%)",
-    p1n:"SITE", p1_setup:"Setup fee : 125 EUR unique", p1_billed:"Facture 540 EUR/an",
+    price_sub:"Prix publics: Site 75 EUR/mois, Pro 135 EUR/mois, Premium 199 EUR/mois. Offre exclusive limitee: -33% sur chaque pack. Les flux XML restent factures separement.",
+    price_deal:"Offre exclusive -33%", price_public:"Prix public",
+    tog_monthly:"Mensuel", tog_annual:"Annuel",
+    p1n:"SITE", p1_setup:"Setup fee : 125 EUR unique", p1_billed:"Facture 600 EUR/an",
     p1f1:"Site vitrine public", p1f2:"Property Manager manuel", p1f3:"Vente et location", p1f4:"Mini CRM Leads inclus", p1f5:"WhatsApp et formulaire contact", p1f6:"6 langues incluses: FR, EN, NL, ES, PL, AR", p1f7:"Templates de base", p1f8:"1 utilisateur",
     p1x1:"Flux XML: +50 EUR/mois", p1x2:"Chatbot IA: +39 EUR/mois", p1x3:"Generateur de landing pages: +49 EUR/mois", p1x4:"SEO avance: bientot",
     p1cta:"Demarrer l'essai",
     p2n:"PRO", p2badge:"Le plus coherent",
-    p2_setup:"Setup fee : 125 EUR unique", p2_billed:"Facture 1 068 EUR/an",
+    p2_setup:"Setup fee : 125 EUR unique", p2_billed:"Facture 1 080 EUR/an",
     p2f1:"Tout le plan Site", p2f2:"1 flux XML inclus", p2f3:"Property Manager avance", p2f4:"Generateur de landing pages", p2f5:"Chatbot IA inclus", p2f5badge:"Inclus", p2f6:"Video hero", p2f7:"5 utilisateurs", p2f8:"Support prioritaire", p2f9:"HabiHub natif", p2f10:"Analytics essentiels", p2f11:"Domaine personnalise",
     p2cta:"Demarrer l'essai",
     p3n:"PREMIUM", p3badge:"Croissance",
-    p3_setup:"Setup fee : 125 EUR unique", p3_billed:"Facture 1 608 EUR/an",
+    p3_setup:"Setup fee : 125 EUR unique", p3_billed:"Facture 1 596 EUR/an",
     p3f1:"Tout le plan Pro", p3f2:"2 flux XML inclus", p3f3:"Landing pages illimitees", p3f4:"Quota chatbot augmente", p3f5:"SEO et visites immersives en beta", p3f6:"10 utilisateurs", p3f7:"Accompagnement renforce", p3f8:"Templates premium prioritaires", p3f9:"Support prioritaire",
     p3cta:"Contacter l'equipe",
     addons_title:"Modules a la carte",
@@ -1141,18 +1151,19 @@ const CURRENT_PRICING_TEXT = {
   en: {
     price_badge:"Flexible SaaS pricing",
     price_h:"A clear base, then only the modules you need.",
-    price_sub:"Agency websites start at 50 EUR/month. XML feeds are billed separately at 50 EUR/month per feed.",
-    tog_monthly:"Monthly", tog_annual:"Annual (-10%)",
-    p1n:"SITE", p1_setup:"Setup fee: 125 EUR one-time", p1_billed:"Billed 540 EUR/year",
+    price_sub:"Public prices: Site 75 EUR/month, Pro 135 EUR/month, Premium 199 EUR/month. Limited exclusive offer: 33% off every pack. XML feeds remain billed separately.",
+    price_deal:"Exclusive offer -33%", price_public:"Public price",
+    tog_monthly:"Monthly", tog_annual:"Annual",
+    p1n:"SITE", p1_setup:"Setup fee: 125 EUR one-time", p1_billed:"Billed 600 EUR/year",
     p1f1:"Public agency website", p1f2:"Manual Property Manager", p1f3:"Sales and rentals", p1f4:"Mini CRM Leads included", p1f5:"WhatsApp and contact form", p1f6:"6 languages included: FR, EN, NL, ES, PL, AR", p1f7:"Base templates", p1f8:"1 user",
     p1x1:"XML feed: +50 EUR/month", p1x2:"AI chatbot: +39 EUR/month", p1x3:"Landing page generator: +49 EUR/month", p1x4:"Advanced SEO: coming soon",
     p1cta:"Start free trial",
     p2n:"PRO", p2badge:"Best fit",
-    p2_setup:"Setup fee: 125 EUR one-time", p2_billed:"Billed 1,068 EUR/year",
+    p2_setup:"Setup fee: 125 EUR one-time", p2_billed:"Billed 1,080 EUR/year",
     p2f1:"Everything in Site", p2f2:"1 XML feed included", p2f3:"Advanced Property Manager", p2f4:"Landing page generator", p2f5:"AI chatbot included", p2f5badge:"Included", p2f6:"Hero video", p2f7:"5 users", p2f8:"Priority support", p2f9:"Native HabiHub", p2f10:"Essential analytics", p2f11:"Custom domain",
     p2cta:"Start free trial",
     p3n:"PREMIUM", p3badge:"Growth",
-    p3_setup:"Setup fee: 125 EUR one-time", p3_billed:"Billed 1,608 EUR/year",
+    p3_setup:"Setup fee: 125 EUR one-time", p3_billed:"Billed 1,596 EUR/year",
     p3f1:"Everything in Pro", p3f2:"2 XML feeds included", p3f3:"Unlimited landing pages", p3f4:"Higher chatbot quota", p3f5:"SEO and immersive tours in beta", p3f6:"10 users", p3f7:"Enhanced onboarding", p3f8:"Priority premium templates", p3f9:"Priority support",
     p3cta:"Contact us",
     addons_title:"A la carte modules",
@@ -1167,18 +1178,19 @@ const CURRENT_PRICING_TEXT = {
   es: {
     price_badge:"Precios SaaS flexibles",
     price_h:"Una base clara y solo los modulos que necesitas.",
-    price_sub:"El sitio de agencia empieza en 50 EUR/mes. Los feeds XML se facturan aparte a 50 EUR/mes por feed.",
-    tog_monthly:"Mensual", tog_annual:"Anual (-10%)",
-    p1n:"SITE", p1_setup:"Setup fee: 125 EUR unico", p1_billed:"Facturado 540 EUR/ano",
+    price_sub:"Precios publicos: Site 75 EUR/mes, Pro 135 EUR/mes, Premium 199 EUR/mes. Oferta exclusiva limitada: -33% en cada pack. Los feeds XML se facturan aparte.",
+    price_deal:"Oferta exclusiva -33%", price_public:"Precio publico",
+    tog_monthly:"Mensual", tog_annual:"Anual",
+    p1n:"SITE", p1_setup:"Setup fee: 125 EUR unico", p1_billed:"Facturado 600 EUR/ano",
     p1f1:"Sitio publico de agencia", p1f2:"Property Manager manual", p1f3:"Venta y alquiler", p1f4:"Mini CRM Leads incluido", p1f5:"WhatsApp y formulario", p1f6:"6 idiomas incluidos: FR, EN, NL, ES, PL, AR", p1f7:"Templates de base", p1f8:"1 usuario",
     p1x1:"Feed XML: +50 EUR/mes", p1x2:"Chatbot IA: +39 EUR/mes", p1x3:"Generador de landing pages: +49 EUR/mes", p1x4:"SEO avanzado: pronto",
     p1cta:"Empezar prueba gratis",
     p2n:"PRO", p2badge:"Mejor equilibrio",
-    p2_setup:"Setup fee: 125 EUR unico", p2_billed:"Facturado 1 068 EUR/ano",
+    p2_setup:"Setup fee: 125 EUR unico", p2_billed:"Facturado 1 080 EUR/ano",
     p2f1:"Todo el plan Site", p2f2:"1 feed XML incluido", p2f3:"Property Manager avanzado", p2f4:"Generador de landing pages", p2f5:"Chatbot IA incluido", p2f5badge:"Incluido", p2f6:"Video hero", p2f7:"5 usuarios", p2f8:"Soporte prioritario", p2f9:"HabiHub nativo", p2f10:"Analytics esenciales", p2f11:"Dominio personalizado",
     p2cta:"Empezar prueba gratis",
     p3n:"PREMIUM", p3badge:"Crecimiento",
-    p3_setup:"Setup fee: 125 EUR unico", p3_billed:"Facturado 1 608 EUR/ano",
+    p3_setup:"Setup fee: 125 EUR unico", p3_billed:"Facturado 1 596 EUR/ano",
     p3f1:"Todo el plan Pro", p3f2:"2 feeds XML incluidos", p3f3:"Landing pages ilimitadas", p3f4:"Mayor cuota de chatbot", p3f5:"SEO y visitas inmersivas en beta", p3f6:"10 usuarios", p3f7:"Acompanamiento reforzado", p3f8:"Templates premium prioritarios", p3f9:"Soporte prioritario",
     p3cta:"Contactar",
     addons_title:"Modulos a la carta",
@@ -1193,18 +1205,19 @@ const CURRENT_PRICING_TEXT = {
   nl: {
     price_badge:"Flexibele SaaS prijzen",
     price_h:"Een duidelijke basis, daarna alleen de modules die je nodig hebt.",
-    price_sub:"Een agency website start aan 50 EUR/maand. XML-feeds worden apart gefactureerd aan 50 EUR/maand per feed.",
-    tog_monthly:"Maandelijks", tog_annual:"Jaarlijks (-10%)",
-    p1n:"SITE", p1_setup:"Setup fee: 125 EUR eenmalig", p1_billed:"Gefactureerd 540 EUR/jaar",
+    price_sub:"Publieke prijzen: Site 75 EUR/maand, Pro 135 EUR/maand, Premium 199 EUR/maand. Tijdelijke exclusieve aanbieding: -33% op elk pack. XML-feeds blijven apart gefactureerd.",
+    price_deal:"Exclusieve aanbieding -33%", price_public:"Publieke prijs",
+    tog_monthly:"Maandelijks", tog_annual:"Jaarlijks",
+    p1n:"SITE", p1_setup:"Setup fee: 125 EUR eenmalig", p1_billed:"Gefactureerd 600 EUR/jaar",
     p1f1:"Publieke agency website", p1f2:"Handmatige Property Manager", p1f3:"Verkoop en verhuur", p1f4:"Mini CRM Leads inbegrepen", p1f5:"WhatsApp en contactformulier", p1f6:"6 talen inbegrepen: FR, EN, NL, ES, PL, AR", p1f7:"Basis templates", p1f8:"1 gebruiker",
     p1x1:"XML-feed: +50 EUR/maand", p1x2:"AI chatbot: +39 EUR/maand", p1x3:"Landingpage generator: +49 EUR/maand", p1x4:"Geavanceerde SEO: binnenkort",
     p1cta:"Start gratis proef",
     p2n:"PRO", p2badge:"Beste keuze",
-    p2_setup:"Setup fee: 125 EUR eenmalig", p2_billed:"Gefactureerd 1 068 EUR/jaar",
+    p2_setup:"Setup fee: 125 EUR eenmalig", p2_billed:"Gefactureerd 1 080 EUR/jaar",
     p2f1:"Alles uit Site", p2f2:"1 XML-feed inbegrepen", p2f3:"Geavanceerde Property Manager", p2f4:"Landingpage generator", p2f5:"AI chatbot inbegrepen", p2f5badge:"Inbegrepen", p2f6:"Hero video", p2f7:"5 gebruikers", p2f8:"Prioritaire support", p2f9:"Native HabiHub", p2f10:"Essentiele analytics", p2f11:"Eigen domein",
     p2cta:"Start gratis proef",
     p3n:"PREMIUM", p3badge:"Groei",
-    p3_setup:"Setup fee: 125 EUR eenmalig", p3_billed:"Gefactureerd 1 608 EUR/jaar",
+    p3_setup:"Setup fee: 125 EUR eenmalig", p3_billed:"Gefactureerd 1 596 EUR/jaar",
     p3f1:"Alles uit Pro", p3f2:"2 XML-feeds inbegrepen", p3f3:"Onbeperkte landingpages", p3f4:"Hogere chatbotlimiet", p3f5:"SEO en immersieve tours in beta", p3f6:"10 gebruikers", p3f7:"Extra begeleiding", p3f8:"Prioritaire premium templates", p3f9:"Prioritaire support",
     p3cta:"Contacteer ons",
     addons_title:"Modules a la carte",
@@ -1259,6 +1272,9 @@ function updatePricingDisplay() {
   if (togA) togA.classList.toggle('active', isAnnual);
   document.querySelectorAll('.price-val').forEach(el => {
     el.textContent = isAnnual ? el.dataset.annual : el.dataset.monthly;
+  });
+  document.querySelectorAll('.regular-price').forEach(el => {
+    el.textContent = `${isAnnual ? el.dataset.annual : el.dataset.monthly}€`;
   });
   const billedKeys = ['p1_billed','p2_billed','p3_billed'];
   document.querySelectorAll('.price-billed').forEach((el, i) => {
