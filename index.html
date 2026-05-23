@@ -293,6 +293,7 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
       <a href="#showcase" data-i18n="nShow">Vitrines</a>
       <a href="#partners" data-i18n="nPartners">Partenaires</a>
       <a href="#pricing" data-i18n="nPrice">Tarifs</a>
+      <a href="https://datahome.vercel.app/modules?locale=en" data-module-marketplace data-i18n="nModules">Modules</a>
       <a href="#templates" data-i18n="nTpl">Templates</a>
       <a href="landing-pages.html" data-i18n="nLanding">Landing pages</a>
       <a href="chatbot.html" data-i18n="nChat">Chatbot</a>
@@ -327,6 +328,7 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
     <a href="#showcase" data-i18n="nShow" onclick="closeMobileMenu()">Vitrines</a>
     <a href="#partners" data-i18n="nPartners" onclick="closeMobileMenu()">Partenaires</a>
     <a href="#pricing" data-i18n="nPrice" onclick="closeMobileMenu()">Tarifs</a>
+    <a href="https://datahome.vercel.app/modules?locale=en" data-module-marketplace data-i18n="nModules" onclick="closeMobileMenu()">Modules</a>
     <a href="#templates" data-i18n="nTpl" onclick="closeMobileMenu()">Templates</a>
     <a href="landing-pages.html" data-i18n="nLanding" onclick="closeMobileMenu()">Landing pages</a>
     <a href="chatbot.html" data-i18n="nChat" onclick="closeMobileMenu()">Chatbot</a>
@@ -835,14 +837,14 @@ const PARTNER_TEXT = {
   pl:{nPartners:"Partnerzy",partners_kicker:"Partnerzy",partners_h:"Przydatne integracje, które przyspieszają pracę agencji.",partners_sub:"DataHome stopniowo łączy się z narzędziami i feedami nieruchomości używanymi przez profesjonalistów.",partner_habihub_tag:"Partner feedów i CRM",partner_habihub_title:"HabiHub",partner_habihub_desc:"HabiHub pomaga profesjonalistom rynku nieruchomości centralizować oferty, zarządzać agencjami i dystrybuować feedy XML. DataHome wykorzystuje te feedy, aby szybciej publikować wielojęzyczne strony agencji.",partner_habihub_point1:"Połączenie z feedami nieruchomości od partnerów.",partner_habihub_point2:"Synchronizacja z witrynami DataHome i stronami nieruchomości.",partner_habihub_point3:"Workflow dla agencji, deweloperów i sieci nieruchomości."}
 };
 Object.keys(PARTNER_TEXT).forEach((lc) => Object.assign(T[lc] || T.fr, PARTNER_TEXT[lc]));
-Object.assign(T.fr, { nLanding:"Landing pages" });
-Object.assign(T.en, { nLanding:"Landing pages" });
-Object.assign(T.es, { nLanding:"Landing pages" });
-Object.assign(T.de, { nLanding:"Landing pages" });
-Object.assign(T.nl, { nLanding:"Landing pages" });
-Object.assign(T.pt, { nLanding:"Landing pages" });
-Object.assign(T.ru, { nLanding:"Landing pages" });
-Object.assign(T.pl, { nLanding:"Landing pages" });
+Object.assign(T.fr, { nLanding:"Landing pages", nModules:"Modules" });
+Object.assign(T.en, { nLanding:"Landing pages", nModules:"Modules" });
+Object.assign(T.es, { nLanding:"Landing pages", nModules:"Módulos" });
+Object.assign(T.de, { nLanding:"Landing pages", nModules:"Module" });
+Object.assign(T.nl, { nLanding:"Landing pages", nModules:"Modules" });
+Object.assign(T.pt, { nLanding:"Landing pages", nModules:"Módulos" });
+Object.assign(T.ru, { nLanding:"Landing pages", nModules:"Модули" });
+Object.assign(T.pl, { nLanding:"Landing pages", nModules:"Moduły" });
 
 const PRICING_TEXT = {
   fr: {
@@ -1297,6 +1299,9 @@ function setLang(lc) {
   document.querySelectorAll("[data-i18n]").forEach(el => { if (d[el.dataset.i18n] !== undefined) el.textContent = d[el.dataset.i18n]; });
   document.querySelectorAll("[data-i18n-html]").forEach(el => { if (d[el.dataset.i18nHtml] !== undefined) el.innerHTML = d[el.dataset.i18nHtml]; });
   document.querySelectorAll("[data-i18n-ph]").forEach(el => { if (d[el.dataset.i18nPh] !== undefined) el.placeholder = d[el.dataset.i18nPh]; });
+  document.querySelectorAll("[data-module-marketplace]").forEach(el => {
+    el.href = `https://datahome.vercel.app/modules?locale=${encodeURIComponent(lang)}`;
+  });
   document.documentElement.lang = lang;
   renderHomeTemplates();
   if (window.__villaShowcaseItems) renderVillaShowcase(window.__villaShowcaseItems);
