@@ -1366,9 +1366,11 @@ function toggleFaq(el) {
 }
 
 const TEMPLATE_PREVIEW_SLUG = "demo";
-const TEMPLATE_PREVIEW_LANG = "en";
-function templatePreviewUrl(templateId) {
-  return `template-preview.html?template=${templateId}`;
+const TEMPLATE_PREVIEW_ORIGIN = "https://datahome.vercel.app";
+function templatePreviewUrl(templateId, embed = false) {
+  const previewLang = ["fr", "en", "es", "de", "nl", "pt", "ru", "pl", "ar"].includes(lang) ? lang : "fr";
+  const previewUrl = `${TEMPLATE_PREVIEW_ORIGIN}/${previewLang}/${TEMPLATE_PREVIEW_SLUG}/template-preview/${encodeURIComponent(templateId)}`;
+  return embed ? `${previewUrl}?embed=1` : previewUrl;
 }
 const HOME_TEMPLATES = [
   { id:"riviera", name:"Riviera", tier:"base", priceKey:"tplIncluded", color:"#C8A84E", image:"https://medianewbuild.com/file/hh-media-bucket/developments_v2/87929424/media/images/outdoor/1.jpg", descriptionKey:"tplDescRiviera" },
@@ -1538,10 +1540,11 @@ function openTemplatePreview(templateId, templateName) {
   const open = document.getElementById("templatePreviewOpen");
   const d = T[lang] || T.en || T.fr;
   const url = templatePreviewUrl(templateId);
+  const embeddedUrl = templatePreviewUrl(templateId, true);
   if (!modal || !frame || !title || !open) return;
   title.textContent = `${d.tplPreview || "Preview"} - ${templateName}`;
   open.href = url;
-  frame.src = url;
+  frame.src = embeddedUrl;
   modal.classList.add("open");
   modal.setAttribute("aria-hidden", "false");
 }
