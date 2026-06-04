@@ -48,6 +48,7 @@
     <select class="language" id="langSelect" aria-label="Language">
       <option value="fr">FR</option><option value="en">EN</option><option value="es">ES</option><option value="de">DE</option>
       <option value="nl">NL</option><option value="pt">PT</option><option value="ru">RU</option><option value="pl">PL</option>
+      <option value="ar">AR</option>
     </select>
     <div class="devices" aria-label="Taille de previsualisation">
       <button class="device active" type="button" data-width="100%" title="Desktop">&#9635;</button>
@@ -73,7 +74,8 @@
       nl:{premium:"Premium template",choose:"Kies een template",devices:"Voorbeeldgrootte",desktop:"Desktop",tablet:"Tablet",mobile:"Mobiel",request:"Dit template aanvragen",requestShort:"Aanvragen",close:"Sluiten",preview:"DATA-HOME premium preview"},
       pt:{premium:"Template premium",choose:"Escolher um template",devices:"Tamanho da pré-visualização",desktop:"Desktop",tablet:"Tablet",mobile:"Mobile",request:"Solicitar este template",requestShort:"Solicitar",close:"Fechar",preview:"Pré-visualização premium DATA-HOME"},
       ru:{premium:"Премиум-шаблон",choose:"Выбрать шаблон",devices:"Размер просмотра",desktop:"Компьютер",tablet:"Планшет",mobile:"Телефон",request:"Запросить этот шаблон",requestShort:"Запросить",close:"Закрыть",preview:"Премиум-просмотр DATA-HOME"},
-      pl:{premium:"Szablon premium",choose:"Wybierz szablon",devices:"Rozmiar podglądu",desktop:"Komputer",tablet:"Tablet",mobile:"Telefon",request:"Zapytaj o ten szablon",requestShort:"Zapytaj",close:"Zamknij",preview:"Podgląd premium DATA-HOME"}
+      pl:{premium:"Szablon premium",choose:"Wybierz szablon",devices:"Rozmiar podglądu",desktop:"Komputer",tablet:"Tablet",mobile:"Telefon",request:"Zapytaj o ten szablon",requestShort:"Zapytaj",close:"Zamknij",preview:"Podgląd premium DATA-HOME"},
+      ar:{premium:"قالب مميز",choose:"اختر قالباً",devices:"حجم المعاينة",desktop:"سطح المكتب",tablet:"الجهاز اللوحي",mobile:"الهاتف",request:"اطلب هذا القالب",requestShort:"اطلب",close:"إغلاق",preview:"معاينة DATA-HOME المميزة"}
     };
     const templates = [
       ["coastal-authority-premium","Coastal Authority"],
@@ -123,6 +125,7 @@
       const d = I18N[lang];
       localStorage.setItem("dh_lang", lang);
       document.documentElement.lang = lang;
+      document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
       langSelect.value = lang;
       selector.setAttribute("aria-label", d.choose);
       document.querySelector(".devices").setAttribute("aria-label", d.devices);
