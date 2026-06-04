@@ -22,13 +22,17 @@
     a { color:inherit; text-decoration:none; }
     img { display:block; max-width:100%; }
     .container { width:min(var(--max), calc(100% - 40px)); margin:0 auto; }
-    header { position:sticky; top:0; z-index:40; background:#262626; border-bottom:1px solid #363636; box-shadow:0 2px 10px rgba(0,0,0,.16); }
-    .nav { min-height:66px; display:flex; align-items:center; justify-content:space-between; gap:22px; }
-    .logo { display:flex; align-items:center; gap:11px; color:#fff; font-size:15px; font-weight:900; letter-spacing:.02em; }
-    .logo img { width:38px; height:38px; object-fit:contain; border-radius:5px; }
-    .links { display:flex; align-items:center; gap:24px; color:#c5c5c5; font-size:11px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
-    .links a:hover { color:#fff; }
-    .lang-select { height:38px; border:1px solid #4b4b4b; border-radius:4px; background:#333; color:#fff; padding:0 9px; font:800 11px Montserrat,sans-serif; cursor:pointer; }
+    header { position:sticky; top:0; z-index:40; background:rgba(255,255,255,.92); border-bottom:1px solid rgba(16,24,40,.08); backdrop-filter:blur(18px); }
+    .nav { min-height:76px; display:flex; align-items:center; justify-content:space-between; gap:22px; }
+    .logo img { width:190px; height:auto; object-fit:contain; }
+    .links { display:flex; align-items:center; gap:22px; color:#475467; font-size:13px; font-weight:800; }
+    .links a:hover { color:var(--blue); }
+    .actions { display:flex; align-items:center; gap:10px; }
+    .lang-select { height:42px; border:1px solid rgba(16,24,40,.10); border-radius:999px; background:#fff; color:#344054; padding:0 12px; font:800 11px Montserrat,sans-serif; cursor:pointer; }
+    .hamburger { display:none; width:42px; height:42px; border:1px solid rgba(16,24,40,.10); border-radius:999px; background:#fff; cursor:pointer; font-size:20px; }
+    .mobile-menu { display:none; padding:12px 20px 20px; border-top:1px solid var(--line); background:#fff; }
+    .mobile-menu.open { display:grid; gap:4px; }
+    .mobile-menu a { padding:12px 4px; color:#475467; font-size:13px; font-weight:800; }
     .btn { display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:46px; padding:0 20px; border:0; border-radius:999px; font-size:13px; font-weight:900; cursor:pointer; transition:transform .2s ease, box-shadow .2s ease, opacity .2s ease; }
     .btn:hover { transform:translateY(-1px); }
     .btn-primary { color:#fff; background:var(--btn-grad); box-shadow:0 14px 34px rgba(239,75,90,.22); }
@@ -109,8 +113,9 @@
     @media (max-width:680px) {
       .container { width:min(100% - 28px, var(--max)); }
       .nav { min-height:58px; }
-      .nav .btn, .links { display:none; }
-      .logo img { width:34px; height:34px; }
+      .links, .actions .btn { display:none; }
+      .hamburger { display:block; }
+      .logo img { width:166px; }
       .hero { padding:28px 0 8px; }
       .hero .eyebrow { padding:7px 10px; font-size:9px; }
       h1 { margin-top:12px; font-size:30px; }
@@ -127,18 +132,34 @@
 <body>
   <header>
     <div class="container nav">
-      <a class="logo" href="/"><img src="images/favicon-32.png" alt="">DATA-HOME Templates</a>
+      <a class="logo" href="index.html"><img src="images/DH_V2.png" alt="DATA-HOME"></a>
       <nav class="links">
-        <a href="/" data-i18n="home">Accueil</a>
-        <a href="#premium">09 Premium</a>
-        <a href="https://datahome.vercel.app/demo" data-i18n="liveDemo">Démo live</a>
+        <a href="index.html" data-i18n="navHome">Accueil</a>
+        <a href="templates.html" data-i18n="navTemplates">Templates</a>
+        <a href="landing-pages.html" data-i18n="navLanding">Landing pages</a>
+        <a href="chatbot.html" data-i18n="navChatbot">Chatbot</a>
+        <a href="index.html#pricing" data-i18n="navPricing">Tarifs</a>
+        <a href="index.html#contact" data-i18n="navContact">Contact</a>
       </nav>
-      <select class="lang-select" id="langSelect" aria-label="Language">
-        <option value="fr">FR</option><option value="en">EN</option><option value="es">ES</option><option value="de">DE</option>
-        <option value="nl">NL</option><option value="pt">PT</option><option value="ru">RU</option><option value="pl">PL</option>
-      </select>
-      <a class="btn btn-primary" href="https://datahome.vercel.app/register" data-i18n="trial">Essai 15 jours</a>
+      <div class="actions">
+        <a class="btn btn-secondary" href="https://datahome.vercel.app/demo" data-i18n="demo">Démo</a>
+        <a class="btn btn-primary" href="https://datahome.vercel.app/register" data-i18n="createSite">Créer mon site</a>
+        <select class="lang-select" id="langSelect" aria-label="Language">
+          <option value="fr">FR</option><option value="en">EN</option><option value="es">ES</option><option value="de">DE</option>
+          <option value="nl">NL</option><option value="pt">PT</option><option value="ru">RU</option><option value="pl">PL</option>
+        </select>
+      </div>
+      <button class="hamburger" id="hamburger" type="button" aria-label="Menu">☰</button>
     </div>
+    <nav class="mobile-menu" id="mobileMenu">
+      <a href="index.html" data-i18n="navHome">Accueil</a>
+      <a href="templates.html" data-i18n="navTemplates">Templates</a>
+      <a href="landing-pages.html" data-i18n="navLanding">Landing pages</a>
+      <a href="chatbot.html" data-i18n="navChatbot">Chatbot</a>
+      <a href="index.html#pricing" data-i18n="navPricing">Tarifs</a>
+      <a href="index.html#contact" data-i18n="navContact">Contact</a>
+      <a href="https://datahome.vercel.app/register" data-i18n="createSite">Créer mon site</a>
+    </nav>
   </header>
 
   <main>
@@ -190,6 +211,17 @@
       ru:{home:"Главная",liveDemo:"Демо",trial:"Попробовать 15 дней",eyebrow:"09 платных премиум-шаблонов",title:"Премиум-шаблоны недвижимости",lead:"Девять уникальных визуальных направлений с реальными версиями для компьютера и телефона. Выберите дизайн для просмотра.",openDemo:"Открыть SaaS-демо",startTrial:"Начать пробный период",collection:"Профессиональная коллекция",collectionTitle:"09 премиум-шаблонов",collectionText:"Выразительные дизайны для агентств, которым важны бренд, конверсия и сильный визуальный образ.",workflow:"Реальный процесс",workflowTitle:"Выберите, просмотрите, примените.",workflowText:"Окончательный выбор выполняется в кабинете клиента с реальными настройками агентства.",createAccount:"Создать аккаунт",preview:"Открыть просмотр →",newTab:"Новая вкладка",desktopAlt:"Версия для компьютера",mobileAlt:"Мобильная версия"},
       pl:{home:"Strona główna",liveDemo:"Demo na żywo",trial:"Wypróbuj przez 15 dni",eyebrow:"09 płatnych szablonów premium",title:"Szablony premium dla nieruchomości",lead:"Dziewięć różnych kierunków kreatywnych pokazanych w rzeczywistych wersjach desktop i mobile. Wybierz projekt, aby zobaczyć go na żywo.",openDemo:"Otwórz demo SaaS",startTrial:"Rozpocznij okres próbny",collection:"Profesjonalna kolekcja",collectionTitle:"09 szablonów premium",collectionText:"Wyraziste projekty dla agencji, które chcą wzmocnić markę, konwersję i kierunek kreatywny.",workflow:"Prawdziwy workflow",workflowTitle:"Wybierz, zobacz, zastosuj.",workflowText:"Ostatecznego wyboru dokonasz w panelu klienta z rzeczywistymi ustawieniami agencji.",createAccount:"Utwórz konto",preview:"Zobacz podgląd →",newTab:"Nowa karta",desktopAlt:"Podgląd desktop",mobileAlt:"Podgląd mobile"}
     };
+    const COMMON_NAV = {
+      fr:{navHome:"Accueil",navTemplates:"Templates",navLanding:"Landing pages",navChatbot:"Chatbot",navPricing:"Tarifs",navContact:"Contact",demo:"Démo",createSite:"Créer mon site"},
+      en:{navHome:"Home",navTemplates:"Templates",navLanding:"Landing pages",navChatbot:"AI Chatbot",navPricing:"Pricing",navContact:"Contact",demo:"Demo",createSite:"Create my site"},
+      es:{navHome:"Inicio",navTemplates:"Templates",navLanding:"Landing pages",navChatbot:"Chatbot IA",navPricing:"Precios",navContact:"Contacto",demo:"Demo",createSite:"Crear mi sitio"},
+      de:{navHome:"Startseite",navTemplates:"Templates",navLanding:"Landing pages",navChatbot:"KI-Chatbot",navPricing:"Preise",navContact:"Kontakt",demo:"Demo",createSite:"Website erstellen"},
+      nl:{navHome:"Home",navTemplates:"Templates",navLanding:"Landing pages",navChatbot:"AI Chatbot",navPricing:"Prijzen",navContact:"Contact",demo:"Demo",createSite:"Mijn site maken"},
+      pt:{navHome:"Início",navTemplates:"Templates",navLanding:"Landing pages",navChatbot:"Chatbot IA",navPricing:"Preços",navContact:"Contacto",demo:"Demo",createSite:"Criar o meu site"},
+      ru:{navHome:"Главная",navTemplates:"Шаблоны",navLanding:"Лендинги",navChatbot:"AI Чатбот",navPricing:"Цены",navContact:"Контакт",demo:"Демо",createSite:"Создать сайт"},
+      pl:{navHome:"Start",navTemplates:"Szablony",navLanding:"Landing pages",navChatbot:"AI Chatbot",navPricing:"Cennik",navContact:"Kontakt",demo:"Demo",createSite:"Utwórz stronę"}
+    };
+    Object.keys(I18N).forEach((locale) => Object.assign(I18N[locale], COMMON_NAV[locale]));
     const languageParams = new URLSearchParams(location.search);
     let lang = I18N[languageParams.get("lang")] ? languageParams.get("lang") : (I18N[localStorage.getItem("dh_lang")] ? localStorage.getItem("dh_lang") : "fr");
 
@@ -287,6 +319,7 @@
       history.replaceState(null, "", `templates.html?lang=${lang}`);
     }
     document.getElementById("langSelect").addEventListener("change", (event) => setLang(event.target.value));
+    document.getElementById("hamburger").addEventListener("click", () => document.getElementById("mobileMenu").classList.toggle("open"));
     setLang(lang);
 
     const reveal = new IntersectionObserver((entries) => {

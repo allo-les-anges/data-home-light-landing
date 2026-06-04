@@ -289,18 +289,15 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
   <div class="container nav">
     <a href="/"><img src="images/DH_V2.png" alt="DATA-HOME" class="logo"/></a>
     <nav class="nav-links">
-      <a href="#features" data-i18n="nFeat">Fonctionnalites</a>
-      <a href="#showcase" data-i18n="nShow">Vitrines</a>
-      <a href="#partners" data-i18n="nPartners">Partenaires</a>
-      <a href="#pricing" data-i18n="nPrice">Tarifs</a>
-      <a href="https://datahome.vercel.app/modules?locale=en" data-module-marketplace data-i18n="nModules">Modules</a>
+      <a href="index.html" data-i18n="nHome">Accueil</a>
       <a href="templates.html" data-i18n="nTpl">Templates</a>
       <a href="landing-pages.html" data-i18n="nLanding">Landing pages</a>
       <a href="chatbot.html" data-i18n="nChat">Chatbot</a>
-      <a href="#faq" data-i18n="nFaq">FAQ</a>
+      <a href="#pricing" data-i18n="nPrice">Tarifs</a>
+      <a href="#contact" data-i18n="nContact">Contact</a>
     </nav>
     <div class="nav-actions">
-      <a href="templates.html" class="btn btn-secondary" style="padding:10px 18px" data-i18n="btnTpl">Templates</a>
+      <a href="https://datahome.vercel.app/demo" class="btn btn-secondary" style="padding:10px 18px" data-i18n="nDemo">Demo</a>
       <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="btn btn-primary" data-i18n="btnCta">Creer mon site</button>
       <div class="lang-switcher" id="ls">
         <button class="lang-btn" onclick="toggleLS()" id="lbtn">
@@ -324,15 +321,12 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
     </button>
   </div>
   <div class="mobile-menu" id="mobile-menu">
-    <a href="#features" data-i18n="nFeat" onclick="closeMobileMenu()">Fonctionnalites</a>
-    <a href="#showcase" data-i18n="nShow" onclick="closeMobileMenu()">Vitrines</a>
-    <a href="#partners" data-i18n="nPartners" onclick="closeMobileMenu()">Partenaires</a>
-    <a href="#pricing" data-i18n="nPrice" onclick="closeMobileMenu()">Tarifs</a>
-    <a href="https://datahome.vercel.app/modules?locale=en" data-module-marketplace data-i18n="nModules" onclick="closeMobileMenu()">Modules</a>
+    <a href="index.html" data-i18n="nHome" onclick="closeMobileMenu()">Accueil</a>
     <a href="templates.html" data-i18n="nTpl" onclick="closeMobileMenu()">Templates</a>
     <a href="landing-pages.html" data-i18n="nLanding" onclick="closeMobileMenu()">Landing pages</a>
     <a href="chatbot.html" data-i18n="nChat" onclick="closeMobileMenu()">Chatbot</a>
-    <a href="#faq" data-i18n="nFaq" onclick="closeMobileMenu()">FAQ</a>
+    <a href="#pricing" data-i18n="nPrice" onclick="closeMobileMenu()">Tarifs</a>
+    <a href="#contact" data-i18n="nContact" onclick="closeMobileMenu()">Contact</a>
     <div class="mobile-lang">
       <div class="mobile-lang-title">Langue</div>
       <div class="mobile-lang-grid">
@@ -848,6 +842,22 @@ Object.assign(T.nl, { nLanding:"Landing pages", nModules:"Modules" });
 Object.assign(T.pt, { nLanding:"Landing pages", nModules:"Módulos" });
 Object.assign(T.ru, { nLanding:"Landing pages", nModules:"Модули" });
 Object.assign(T.pl, { nLanding:"Landing pages", nModules:"Moduły" });
+Object.assign(T.fr, { nContact:"Contact" });
+Object.assign(T.en, { nContact:"Contact" });
+Object.assign(T.es, { nContact:"Contacto" });
+Object.assign(T.de, { nContact:"Kontakt" });
+Object.assign(T.nl, { nContact:"Contact" });
+Object.assign(T.pt, { nContact:"Contacto" });
+Object.assign(T.ru, { nContact:"Контакт" });
+Object.assign(T.pl, { nContact:"Kontakt" });
+Object.assign(T.fr, { nHome:"Accueil", nDemo:"Démo" });
+Object.assign(T.en, { nHome:"Home", nDemo:"Demo" });
+Object.assign(T.es, { nHome:"Inicio", nDemo:"Demo" });
+Object.assign(T.de, { nHome:"Startseite", nDemo:"Demo" });
+Object.assign(T.nl, { nHome:"Home", nDemo:"Demo" });
+Object.assign(T.pt, { nHome:"Início", nDemo:"Demo" });
+Object.assign(T.ru, { nHome:"Главная", nDemo:"Демо" });
+Object.assign(T.pl, { nHome:"Start", nDemo:"Demo" });
 
 const PRICING_TEXT = {
   fr: {

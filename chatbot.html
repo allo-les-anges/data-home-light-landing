@@ -38,6 +38,10 @@
     .lang-menu { position:absolute; right:0; top:48px; display:none; width:190px; padding:8px; border:1px solid var(--line); border-radius:18px; background:#fff; box-shadow:0 20px 60px rgba(15,23,42,.12); }
     .lang.open .lang-menu { display:grid; gap:4px; }
     .lang-menu button { width:100%; justify-content:flex-start; border:0; border-radius:12px; text-align:left; color:#334155; }
+    .hamburger { display:none; width:42px; height:42px; border:1px solid rgba(16,24,40,.10); border-radius:999px; background:#fff; cursor:pointer; font-size:20px; }
+    .mobile-menu { display:none; padding:12px 20px 20px; border-top:1px solid var(--line); background:#fff; }
+    .mobile-menu.open { display:grid; gap:4px; }
+    .mobile-menu a { padding:12px 4px; color:#475467; font-size:13px; font-weight:800; }
     .hero { position:relative; overflow:hidden; padding:88px 0 74px; background:linear-gradient(135deg,#ffffff 0%,#f5fbff 46%,#fff7fb 100%); }
     .hero:before { content:""; position:absolute; inset:-20% -10% auto 48%; height:520px; background:radial-gradient(circle,rgba(24,161,206,.18),rgba(215,105,169,.12) 46%,transparent 70%); pointer-events:none; }
     .hero-grid { position:relative; z-index:1; display:grid; grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr); gap:48px; align-items:center; }
@@ -122,7 +126,7 @@
     footer { padding:34px 0; border-top:1px solid var(--line); color:var(--muted); font-size:13px; }
     footer .container { display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
     @media(max-width:1040px) { .hero-grid,.split,.cta-box { grid-template-columns:1fr; } .workflow { grid-template-columns:repeat(2,1fr); } .phone { position:relative; left:auto; top:auto; bottom:auto; width:100%; min-width:0; height:560px; } .crm-panel { margin:18px 0 0; } .sync-line { display:none; } .film { min-height:auto; } }
-    @media(max-width:720px) { .container { width:min(100% - 28px,var(--max)); } .links { display:none; } .logo img { width:166px; } .actions .btn-secondary { display:none; } .hero { padding:56px 0; } .hero-metrics,.workflow { grid-template-columns:1fr; } .film { padding:14px; } .phone { height:520px; border-radius:40px; } .phone-screen { border-radius:31px; padding-top:50px; } .phone:after { border-radius:31px; } .crm-panel { padding:15px; border-radius:22px; } .property-strip { grid-template-columns:1fr; } .mini-card:nth-child(2) { display:none; } .section,.cta { padding:58px 0; } .cta-box { padding:26px; } }
+    @media(max-width:720px) { .container { width:min(100% - 28px,var(--max)); } .links { display:none; } .logo img { width:166px; } .actions .btn { display:none; } .hamburger { display:block; } .hero { padding:56px 0; } .hero-metrics,.workflow { grid-template-columns:1fr; } .film { padding:14px; } .phone { height:520px; border-radius:40px; } .phone-screen { border-radius:31px; padding-top:50px; } .phone:after { border-radius:31px; } .crm-panel { padding:15px; border-radius:22px; } .property-strip { grid-template-columns:1fr; } .mini-card:nth-child(2) { display:none; } .section,.cta { padding:58px 0; } .cta-box { padding:26px; } }
   </style>
 </head>
 <body>
@@ -133,11 +137,13 @@
         <a href="index.html" data-i18n="navHome">Accueil</a>
         <a href="templates.html" data-i18n="navTemplates">Templates</a>
         <a href="landing-pages.html" data-i18n="navLanding">Landing pages</a>
+        <a href="chatbot.html" data-i18n="navChatbot">Chatbot</a>
         <a href="index.html#pricing" data-i18n="navPricing">Tarifs</a>
         <a href="index.html#contact" data-i18n="navContact">Contact</a>
       </nav>
       <div class="actions">
         <a class="btn btn-secondary" href="https://datahome.vercel.app/demo" data-i18n="demo">Demo</a>
+        <a class="btn btn-primary" href="https://datahome.vercel.app/register" data-i18n="createSite">Créer mon site</a>
         <div class="lang" id="langBox">
           <button type="button" onclick="toggleLang()" id="langBtn">FR</button>
           <div class="lang-menu">
@@ -152,7 +158,17 @@
           </div>
         </div>
       </div>
+      <button class="hamburger" id="hamburger" type="button" aria-label="Menu">☰</button>
     </div>
+    <nav class="mobile-menu" id="mobileMenu">
+      <a href="index.html" data-i18n="navHome">Accueil</a>
+      <a href="templates.html" data-i18n="navTemplates">Templates</a>
+      <a href="landing-pages.html" data-i18n="navLanding">Landing pages</a>
+      <a href="chatbot.html" data-i18n="navChatbot">Chatbot</a>
+      <a href="index.html#pricing" data-i18n="navPricing">Tarifs</a>
+      <a href="index.html#contact" data-i18n="navContact">Contact</a>
+      <a href="https://datahome.vercel.app/register" data-i18n="createSite">Créer mon site</a>
+    </nav>
   </header>
 
   <main>
@@ -309,6 +325,22 @@
     I18N.pt = Object.assign({}, I18N.en, {navHome:"Inicio",navPricing:"Precos",navContact:"Contacto",eyebrow:"Chatbot IA + Mini CRM",trial:"Iniciar teste de 15 dias",openDemo:"Abrir demo SaaS"});
     I18N.ru = Object.assign({}, I18N.en, {navHome:"Главная",navTemplates:"Шаблоны",navPricing:"Цены",navContact:"Контакт",eyebrow:"AI Chatbot + Mini CRM",trial:"Начать пробный период 15 дней",openDemo:"Открыть SaaS демо"});
     I18N.pl = Object.assign({}, I18N.en, {navHome:"Start",navTemplates:"Szablony",navPricing:"Cennik",navContact:"Kontakt",eyebrow:"AI Chatbot + Mini CRM",trial:"Rozpocznij 15-dniowy trial",openDemo:"Otworz demo SaaS"});
+    Object.assign(I18N.fr, {navLanding:"Landing pages",navChatbot:"Chatbot"});
+    Object.assign(I18N.en, {navLanding:"Landing pages",navChatbot:"AI Chatbot"});
+    Object.assign(I18N.es, {navLanding:"Landing pages",navChatbot:"Chatbot IA"});
+    Object.assign(I18N.de, {navLanding:"Landing pages",navChatbot:"KI-Chatbot"});
+    Object.assign(I18N.nl, {navLanding:"Landing pages",navChatbot:"AI Chatbot"});
+    Object.assign(I18N.pt, {navLanding:"Landing pages",navChatbot:"Chatbot IA"});
+    Object.assign(I18N.ru, {navLanding:"Лендинги",navChatbot:"AI Чатбот"});
+    Object.assign(I18N.pl, {navLanding:"Landing pages",navChatbot:"AI Chatbot"});
+    Object.assign(I18N.fr, {createSite:"Créer mon site"});
+    Object.assign(I18N.en, {createSite:"Create my site"});
+    Object.assign(I18N.es, {createSite:"Crear mi sitio"});
+    Object.assign(I18N.de, {createSite:"Website erstellen"});
+    Object.assign(I18N.nl, {createSite:"Mijn site maken"});
+    Object.assign(I18N.pt, {createSite:"Criar o meu site"});
+    Object.assign(I18N.ru, {createSite:"Создать сайт"});
+    Object.assign(I18N.pl, {createSite:"Utwórz stronę"});
     let lang = localStorage.getItem("dh_lang") || (navigator.language || "fr").slice(0,2);
     if (!I18N[lang]) lang = "fr";
     function setLang(lc) {
@@ -322,6 +354,7 @@
       document.querySelectorAll("[data-i18n-html]").forEach((el) => { if (d[el.dataset.i18nHtml] !== undefined) el.innerHTML = d[el.dataset.i18nHtml]; });
     }
     function toggleLang() { document.getElementById("langBox").classList.toggle("open"); }
+    document.getElementById("hamburger").addEventListener("click", () => document.getElementById("mobileMenu").classList.toggle("open"));
     document.addEventListener("click", (e) => { if (!e.target.closest(".lang")) document.getElementById("langBox").classList.remove("open"); });
     setLang(lang);
   </script>
