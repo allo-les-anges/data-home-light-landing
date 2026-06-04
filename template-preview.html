@@ -89,6 +89,7 @@
     const params = new URLSearchParams(location.search);
     let lang = I18N[params.get("lang")] ? params.get("lang") : (I18N[localStorage.getItem("dh_lang")] ? localStorage.getItem("dh_lang") : "fr");
     const defaultId = "coastal-authority-premium";
+    const requestedId = templates.some(([id]) => id === params.get("template")) ? params.get("template") : defaultId;
     const selector = document.getElementById("templateSelector");
     const frame = document.getElementById("previewFrame");
     const viewport = document.getElementById("viewport");
@@ -132,7 +133,7 @@
       requestLink.dataset.short = d.requestShort;
       closeButton.title = d.close;
       frame.title = d.preview;
-      loadTemplate(selector.value || params.get("template") || defaultId);
+      loadTemplate(selector.value || requestedId);
     }
     langSelect.addEventListener("change", () => setLang(langSelect.value));
     document.querySelector(".brand a").addEventListener("click", (event) => {
@@ -149,6 +150,7 @@
         viewport.style.width = button.dataset.width;
       });
     });
+    selector.value = requestedId;
     setLang(lang);
   </script>
 </body>
