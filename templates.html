@@ -305,6 +305,17 @@
       `;
     }
 
+    const reveal = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add("in"); });
+    }, { threshold:0.12 });
+
+    function observeReveals() {
+      document.querySelectorAll(".reveal:not([data-reveal-bound])").forEach((element) => {
+        element.dataset.revealBound = "true";
+        reveal.observe(element);
+      });
+    }
+
     function setLang(nextLang) {
       lang = I18N[nextLang] ? nextLang : "fr";
       localStorage.setItem("dh_lang", lang);
@@ -315,16 +326,12 @@
         if (value !== undefined) element.textContent = value;
       });
       document.getElementById("premiumGrid").innerHTML = templates.filter(t => t.tier === "premium").map(card).join("");
+      observeReveals();
       history.replaceState(null, "", `templates.html?lang=${lang}`);
     }
     document.getElementById("langSelect").addEventListener("change", (event) => setLang(event.target.value));
     document.getElementById("hamburger").addEventListener("click", () => document.getElementById("mobileMenu").classList.toggle("open"));
     setLang(lang);
-
-    const reveal = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add("in"); });
-    }, { threshold:0.12 });
-    document.querySelectorAll(".reveal").forEach((el) => reveal.observe(el));
 
     const chips = document.querySelectorAll(".chip");
     const cards = () => document.querySelectorAll(".card[data-kind]");
