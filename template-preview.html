@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apercu template premium DATA-HOME</title>
+  <meta name="robots" content="noindex">
+  <style>
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:#262626;font-family:Arial,sans-serif}
+    body{overflow:hidden}
+    .bar{position:relative;z-index:10;height:60px;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:0 16px;background:#262626;color:#fff;border-bottom:1px solid #3b3b3b;box-shadow:0 2px 8px rgba(0,0,0,.28)}
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}
+    .brand a{color:#fff;text-decoration:none;font-weight:800;font-size:14px}
+    .brand span{color:#a6a6a6;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .selector{height:38px;max-width:270px;padding:0 34px 0 12px;border:1px solid #4b4b4b;border-radius:3px;background:#333;color:#fff;font-size:12px;font-weight:700}
+    .devices{display:flex;align-items:center;gap:2px}
+    .device,.close{width:38px;height:38px;border:0;background:transparent;color:#aaa;cursor:pointer;font-size:17px}
+    .device:hover,.device.active,.close:hover{background:#3a3a3a;color:#fff}
+    .actions{display:flex;align-items:center;gap:8px}
+    .request{display:inline-flex;align-items:center;justify-content:center;height:38px;padding:0 16px;border-radius:3px;background:#82b440;color:#fff;text-decoration:none;font-size:12px;font-weight:800;box-shadow:0 2px 0 #6f9a37}
+    .request:hover{background:#75a438}
+    .stage{height:calc(100vh - 60px);overflow:auto;background:#111;padding:0;transition:padding .25s ease}
+    .viewport{height:100%;width:100%;margin:0 auto;background:#fff;transition:width .3s ease;box-shadow:0 0 30px rgba(0,0,0,.45)}
+    iframe{display:block;width:100%;height:100%;border:0;background:#fff}
+    @media(max-width:760px){
+      .bar{height:56px;padding:0 8px}
+      .stage{height:calc(100vh - 56px)}
+      .brand span,.devices{display:none}
+      .selector{max-width:145px}
+      .request{padding:0 10px;font-size:0}
+      .request:after{content:"Demander";font-size:11px}
+    }
+    @media(max-width:430px){
+      .brand{display:none}
+      .selector{max-width:150px}
+    }
+  </style>
+</head>
+<body>
+  <header class="bar">
+    <div class="brand">
+      <a href="templates.html">DATA-HOME</a>
+      <span id="templateName">Template premium</span>
+    </div>
+    <select class="selector" id="templateSelector" aria-label="Choisir un template"></select>
+    <div class="devices" aria-label="Taille de previsualisation">
+      <button class="device active" type="button" data-width="100%" title="Desktop">&#9635;</button>
+      <button class="device" type="button" data-width="820px" title="Tablette">&#9645;</button>
+      <button class="device" type="button" data-width="390px" title="Mobile">&#9647;</button>
+    </div>
+    <div class="actions">
+      <a class="request" id="requestLink" href="https://datahome.vercel.app/register">Demander ce template</a>
+      <button class="close" type="button" title="Fermer" onclick="location.href='templates.html'">&times;</button>
+    </div>
+  </header>
+  <main class="stage">
+    <div class="viewport" id="viewport">
+      <iframe id="previewFrame" title="Apercu live du template DATA-HOME"></iframe>
+    </div>
+  </main>
+  <script>
+    const templates = [
+      ["coastal-authority-premium","Coastal Authority"],
+      ["brokerage-mls-premium","Brokerage MLS"],
+      ["personal-realtor-premium","Personal Realtor"],
+      ["luxury-estate-premium","Luxury Estate"],
+      ["international-brokerage-premium","International Brokerage"],
+      ["lead-generation-premium","Lead Generation"],
+      ["kaia-estate-premium","Kaia Estate"],
+      ["signature-mediterranean-premium","Signature Mediterranean"],
+      ["dreams-premium","Dreams"]
+    ];
+    const params = new URLSearchParams(location.search);
+    const defaultId = "coastal-authority-premium";
+    const selector = document.getElementById("templateSelector");
+    const frame = document.getElementById("previewFrame");
+    const viewport = document.getElementById("viewport");
+    const templateName = document.getElementById("templateName");
+    const requestLink = document.getElementById("requestLink");
+
+    templates.forEach(([id,name]) => {
+      const option = document.createElement("option");
+      option.value = id;
+      option.textContent = name;
+      selector.appendChild(option);
+    });
+
+    function loadTemplate(id) {
+      const selected = templates.find(([templateId]) => templateId === id) || templates[0];
+      selector.value = selected[0];
+      templateName.textContent = selected[1];
+      document.title = `${selected[1]} - Apercu premium DATA-HOME`;
+      frame.src = `https://datahome.vercel.app/fr/demo/template-preview/${selected[0]}?embed=1`;
+      requestLink.href = `https://datahome.vercel.app/register?template=${selected[0]}`;
+      history.replaceState(null, "", `template-preview.html?template=${selected[0]}`);
+    }
+
+    selector.addEventListener("change", () => loadTemplate(selector.value));
+    document.querySelectorAll(".device").forEach((button) => {
+      button.addEventListener("click", () => {
+        document.querySelectorAll(".device").forEach((item) => item.classList.remove("active"));
+        button.classList.add("active");
+        viewport.style.width = button.dataset.width;
+      });
+    });
+    loadTemplate(params.get("template") || defaultId);
+  </script>
+</body>
+</html>

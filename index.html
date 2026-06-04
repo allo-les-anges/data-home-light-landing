@@ -394,8 +394,8 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
 <section class="template-strip" id="templates">
   <div class="container">
     <div class="section-head">
-      <h2 data-i18n="homeTplTitle">Templates previsualisables</h2>
-      <p data-i18n="homeTplText">Ouvrez les modeles reels de l'application SaaS directement depuis la homepage. Chaque preview utilise les routes live du produit.</p>
+      <h2 data-i18n="homeTplTitle">06 templates de base inclus</h2>
+      <p data-i18n="homeTplText">Explorez les six styles inclus. La collection distincte de neuf templates premium payants dispose de sa propre galerie professionnelle.</p>
     </div>
     <div class="template-preview-grid" id="homeTemplateGrid"></div>
     <div style="display:flex;justify-content:center;margin-top:28px">
@@ -813,6 +813,9 @@ Object.assign(T.nl, { tplDescDreams:"Licht, editorial en mediterraan premium tem
 Object.assign(T.pt, { tplDescDreams:"Template premium luminoso, editorial e mediterranico para agencias que querem uma experiencia suave e topo de gama.", customTemplateBadge:"Sob medida", customTemplateTitle:"Site sob medida", customTemplateDesc:"Um design exclusivo criado para o seu posicionamento, mercados e identidade.", customTemplateCta:"Pedir orcamento", customTemplatePrice:"Sob consulta", customTemplateExampleBadge:"Primeiro site sob medida", customTemplateExampleCta:"Ver exemplo" });
 Object.assign(T.ru, { tplDescDreams:"Светлый editorial premium-шаблон в средиземноморском стиле для агентств с high-end позиционированием.", customTemplateBadge:"На заказ", customTemplateTitle:"Сайт на заказ", customTemplateDesc:"Эксклюзивный дизайн под ваше позиционирование, рынки и бренд.", customTemplateCta:"Запросить смету", customTemplatePrice:"По запросу", customTemplateExampleBadge:"Первый сайт на заказ", customTemplateExampleCta:"Смотреть пример" });
 Object.assign(T.pl, { tplDescDreams:"Jasny, editorialny szablon premium w stylu srodziemnomorskim dla agencji high-end.", customTemplateBadge:"Na zamowienie", customTemplateTitle:"Strona na zamowienie", customTemplateDesc:"Ekskluzywny projekt dopasowany do pozycjonowania, rynkow i marki.", customTemplateCta:"Popros o wycene", customTemplatePrice:"Na zapytanie", customTemplateExampleBadge:"Pierwsza strona na zamowienie", customTemplateExampleCta:"Zobacz przyklad" });
+Object.assign(T.fr, { homeTplTitle:"06 templates de base inclus", homeTplText:"Explorez les six styles inclus. La collection distincte de neuf templates premium payants dispose de sa propre galerie professionnelle.", homeTplGallery:"Voir les 09 templates premium", tplDescSoleil:"Un style chaleureux et lumineux inspire de l'art de vivre mediterraneen.", tplDescNordic:"Une presentation sobre et structuree pour les agences contemporaines.", tplDescVerde:"Une identite naturelle et rassurante pour les marches durables." });
+Object.assign(T.en, { homeTplTitle:"06 included base templates", homeTplText:"Explore the six included styles. The separate collection of nine paid premium templates has its own professional gallery.", homeTplGallery:"View the 09 premium templates", tplDescSoleil:"A warm and bright style inspired by Mediterranean living.", tplDescNordic:"A clean, structured presentation for contemporary agencies.", tplDescVerde:"A natural and reassuring identity for sustainable markets." });
+Object.assign(T.es, { homeTplTitle:"06 plantillas base incluidas", homeTplText:"Explora los seis estilos incluidos. La coleccion separada de nueve plantillas premium de pago tiene su propia galeria profesional.", homeTplGallery:"Ver las 09 plantillas premium", tplDescSoleil:"Un estilo calido y luminoso inspirado en la vida mediterranea.", tplDescNordic:"Una presentacion limpia y estructurada para agencias contemporaneas.", tplDescVerde:"Una identidad natural y fiable para mercados sostenibles." });
 
 const FEATURE_TEXT = {
   fr: {feat_h:"Everything you need, aligné avec le produit réel",feat_sub:"DataHome couvre le workflow complet de l'agence : site, biens, modules, leads et publication.",f1t:"Site vitrine public",f1d:"Homepage agence, pages biens, locations, contact et contenus légaux prêts pour la mise en ligne.",f2t:"Imports XML pilotés",f2d:"Associez les flux fournis par vos partenaires depuis AgencyDashboard et publiez les biens client.",f3t:"Property Manager",f3d:"Le client gère ses biens, locations, médias, vidéos et réglages depuis Mon Espace.",f4t:"Templates personnalisables",f4d:"Templates gratuits et premium avec couleurs, typographies, vignettes et hero image ou vidéo.",f5t:"Chatbot IA",f5d:"Assistant premium pour qualifier les visiteurs, limité à 20 requêtes par jour et par agence.",f6t:"Mini CRM & modules",f6d:"Mini CRM Leads inclus, langues additionnelles, vidéo hero, visites immersives, SEO et domaine."},
@@ -1354,15 +1357,15 @@ function toggleFaq(el) {
 const TEMPLATE_PREVIEW_SLUG = "demo";
 const TEMPLATE_PREVIEW_LANG = "en";
 function templatePreviewUrl(templateId) {
-  return `https://datahome.vercel.app/${TEMPLATE_PREVIEW_LANG}/${TEMPLATE_PREVIEW_SLUG}/template-preview/${templateId}?source=landing`;
+  return `template-preview.html?template=${templateId}`;
 }
 const HOME_TEMPLATES = [
   { id:"riviera", name:"Riviera", tier:"base", priceKey:"tplIncluded", color:"#C8A84E", image:"https://medianewbuild.com/file/hh-media-bucket/developments_v2/87929424/media/images/outdoor/1.jpg", descriptionKey:"tplDescRiviera" },
   { id:"prestige", name:"Prestige", tier:"base", priceKey:"tplIncluded", color:"#B859C5", image:"https://medianewbuild.com/file/hh-media-bucket/developments_v2/37089450/media/images/outdoor/1.jpg", descriptionKey:"tplDescPrestige" },
   { id:"urban", name:"Urban", tier:"base", priceKey:"tplIncluded", color:"#2563EB", image:"https://medianewbuild.com/file/hh-media-bucket/developments_v2/32156547/media/images/outdoor/1.jpg", descriptionKey:"tplDescUrban" },
-  { id:"kaia-estate-premium", name:"Kaia Estate", tier:"premium", priceKey:"tplPremium", color:"#B5864E", image:"https://medianewbuild.com/file/hh-media-bucket/developments_v2/32156547/media/images/outdoor/1.jpg", descriptionKey:"tplDescKaiaEstate" },
-  { id:"signature-mediterranean-premium", name:"Signature Mediterranean", tier:"premium", priceKey:"tplPremium", color:"#C8A96A", image:"https://medianewbuild.com/file/hh-media-bucket/developments_v2/70091589/media/images/outdoor/1.jpg", descriptionKey:"tplDescSignatureMediterranean" },
-  { id:"dreams-premium", name:"Dreams", tier:"premium", priceKey:"tplPremium", color:"#D769A9", image:"https://medianewbuild.com/file/hh-media-bucket/developments_v2/13112583/media/images/outdoor/1.jpg", descriptionKey:"tplDescDreams" }
+  { id:"soleil", name:"Soleil", tier:"base", priceKey:"tplIncluded", color:"#D97706", image:"https://medianewbuild.com/file/hh-media-bucket/developments_v2/70091589/media/images/outdoor/1.jpg", descriptionKey:"tplDescSoleil" },
+  { id:"nordic", name:"Nordic", tier:"base", priceKey:"tplIncluded", color:"#0EA5E9", image:"https://medianewbuild.com/file/hh-media-bucket/developments_v2/60846833/media/images/1.jpg", descriptionKey:"tplDescNordic" },
+  { id:"verde", name:"Verde", tier:"base", priceKey:"tplIncluded", color:"#16A34A", image:"https://medianewbuild.com/file/hh-media-bucket/developments_v2/13112583/media/images/outdoor/1.jpg", descriptionKey:"tplDescVerde" }
 ];
 
 const TEMPLATE_THUMB_IMAGES = [

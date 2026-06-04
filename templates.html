@@ -18,38 +18,40 @@
       --line:#e5e7eb; --soft:#f8fafc; --max:1240px;
     }
     * { box-sizing:border-box; }
-    body { margin:0; background:#f6f8fb; color:var(--ink); font-family:Montserrat, sans-serif; -webkit-font-smoothing:antialiased; }
+    body { margin:0; background:#fff; color:var(--ink); font-family:Montserrat, sans-serif; -webkit-font-smoothing:antialiased; }
     a { color:inherit; text-decoration:none; }
     img { display:block; max-width:100%; }
     .container { width:min(var(--max), calc(100% - 40px)); margin:0 auto; }
-    header { position:sticky; top:0; z-index:40; background:rgba(255,255,255,.92); border-bottom:1px solid rgba(15,23,42,.08); backdrop-filter:blur(18px); }
-    .nav { min-height:76px; display:flex; align-items:center; justify-content:space-between; gap:22px; }
-    .logo img { width:220px; height:50px; object-fit:contain; border-radius:8px; }
-    .links { display:flex; align-items:center; gap:24px; color:#526173; font-size:13px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
-    .links a:hover { color:var(--blue); }
+    header { position:sticky; top:0; z-index:40; background:#262626; border-bottom:1px solid #363636; box-shadow:0 2px 10px rgba(0,0,0,.16); }
+    .nav { min-height:66px; display:flex; align-items:center; justify-content:space-between; gap:22px; }
+    .logo { display:flex; align-items:center; gap:11px; color:#fff; font-size:15px; font-weight:900; letter-spacing:.02em; }
+    .logo img { width:38px; height:38px; object-fit:contain; border-radius:5px; }
+    .links { display:flex; align-items:center; gap:24px; color:#c5c5c5; font-size:11px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+    .links a:hover { color:#fff; }
     .btn { display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:46px; padding:0 20px; border:0; border-radius:999px; font-size:13px; font-weight:900; cursor:pointer; transition:transform .2s ease, box-shadow .2s ease, opacity .2s ease; }
     .btn:hover { transform:translateY(-1px); }
     .btn-primary { color:#fff; background:var(--btn-grad); box-shadow:0 14px 34px rgba(239,75,90,.22); }
     .btn-secondary { color:var(--blue); background:#fff; border:1px solid rgba(24,161,206,.24); box-shadow:0 12px 30px rgba(15,23,42,.06); }
-    .hero { position:relative; overflow:hidden; padding:84px 0 58px; background:linear-gradient(135deg,#ffffff 0%,#f4fbff 48%,#fff7df 100%); }
-    .hero:before { content:""; position:absolute; inset:auto -10% -35% 40%; height:420px; background:radial-gradient(circle,rgba(24,161,206,.18),rgba(215,105,169,.12) 42%,transparent 68%); pointer-events:none; }
+    .hero { padding:48px 0 18px; background:#fff; }
+    .hero:before { display:none; }
     .eyebrow { display:inline-flex; align-items:center; gap:10px; border:1px solid rgba(24,161,206,.20); background:#fff; border-radius:999px; padding:8px 14px; color:var(--blue); font-size:11px; font-weight:900; letter-spacing:.16em; text-transform:uppercase; }
-    h1 { max-width:960px; margin:20px 0 18px; font-size:clamp(38px,6vw,78px); line-height:1.03; letter-spacing:-.05em; font-weight:900; }
-    .lead { max-width:760px; color:#536273; font-size:18px; line-height:1.75; }
-    .hero-actions { display:flex; flex-wrap:wrap; gap:14px; margin-top:30px; }
+    h1 { max-width:960px; margin:15px 0 10px; font-size:clamp(30px,4vw,48px); line-height:1.08; letter-spacing:-.04em; font-weight:900; }
+    .lead { max-width:760px; margin:0; color:#667085; font-size:15px; line-height:1.7; }
+    .hero-actions { display:none; }
     .filters { display:flex; flex-wrap:wrap; gap:10px; margin-top:34px; }
     .chip { border:1px solid rgba(15,23,42,.10); background:#fff; color:#39465c; border-radius:999px; padding:11px 16px; font-size:11px; font-weight:900; letter-spacing:.12em; text-transform:uppercase; cursor:pointer; transition:all .2s; }
     .chip:hover, .chip.active { color:#fff; border-color:transparent; background:var(--btn-grad); box-shadow:0 12px 28px rgba(239,75,90,.18); }
-    .section { padding:54px 0 92px; }
-    .section-head { display:flex; align-items:end; justify-content:space-between; gap:24px; margin-bottom:22px; }
-    .section-head h2 { margin:0; font-size:clamp(26px,3vw,42px); line-height:1.08; letter-spacing:-.04em; }
-    .section-head p { max-width:540px; margin:0; color:var(--muted); line-height:1.65; }
-    .grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; }
-    .card { position:relative; overflow:hidden; border:1px solid rgba(15,23,42,.08); border-radius:22px; background:#fff; box-shadow:0 18px 55px rgba(15,23,42,.08); transition:transform .24s ease, box-shadow .24s ease, border-color .24s ease; }
-    .card:hover { transform:translateY(-5px); border-color:rgba(33,150,201,.28); box-shadow:0 28px 75px rgba(15,23,42,.14); }
-    .preview-wrap { position:relative; background:#d9d9d9; padding:14px 14px 0; }
-    .live-pill { position:absolute; left:14px; top:14px; z-index:2; display:inline-flex; align-items:center; gap:6px; border:0; border-radius:8px; background:#f5c400; color:#111827; padding:7px 10px; font-size:10px; font-weight:900; cursor:pointer; box-shadow:0 10px 22px rgba(15,23,42,.12); }
-    .tier { position:absolute; right:14px; top:14px; z-index:2; border-radius:999px; padding:7px 10px; background:#111827; color:#fff; font-size:9px; font-weight:900; letter-spacing:.14em; text-transform:uppercase; }
+    .section { padding:24px 0 92px; }
+    .section-head { display:none; }
+    .grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:60px 54px; }
+    .card { position:relative; min-width:0; background:#fff; transition:transform .24s ease; }
+    .card:hover { transform:translateY(-5px); }
+    .preview-wrap { position:relative; padding:20px 22px 28px; background:#fff; }
+    .preview-showcase { position:relative; display:block; aspect-ratio:1.28; }
+    .preview-showcase:before { content:""; position:absolute; inset:8% 13% 5% 0; z-index:0; background:#fff; box-shadow:0 12px 30px rgba(15,23,42,.20); }
+    .preview-desktop { position:absolute; z-index:1; left:0; top:8%; width:87%; border:5px solid #fff; border-radius:2px; box-shadow:0 14px 30px rgba(15,23,42,.20); }
+    .preview-mobile { position:absolute; z-index:2; right:0; bottom:4%; width:27%; border:6px solid #fff; border-radius:16px; box-shadow:0 16px 34px rgba(15,23,42,.28); }
+    .live-pill, .tier { display:none; }
     .tier.base { background:#10b981; }
     .mock { height:410px; overflow:hidden; border-radius:14px 14px 0 0; background:#fff; box-shadow:0 14px 36px rgba(15,23,42,.16); transform-origin:top center; }
     .mock-header { height:34px; display:flex; align-items:center; justify-content:center; border-bottom:1px solid rgba(15,23,42,.06); background:#fff; }
@@ -88,37 +90,43 @@
     .portal-list { display:grid; gap:10px; }
     .portal-item { display:grid; grid-template-columns:86px 1fr auto; gap:12px; align-items:center; border-radius:12px; background:#fff; padding:10px; box-shadow:0 8px 22px rgba(15,23,42,.08); }
     .portal-item img { height:64px; width:86px; object-fit:cover; border-radius:8px; }
-    .card-body { padding:18px; }
-    .card-title-row { display:flex; align-items:flex-start; justify-content:space-between; gap:16px; }
-    .card h3 { margin:0 0 7px; font-size:19px; letter-spacing:-.03em; }
-    .card p { margin:0; color:var(--muted); line-height:1.55; font-size:13px; }
-    .price { white-space:nowrap; font-size:13px; font-weight:900; color:#111827; }
-    .meta { display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
-    .meta span { border-radius:999px; background:#f1f5f9; color:#475569; padding:6px 9px; font-size:10px; font-weight:800; }
-    .card-actions { display:flex; gap:10px; margin-top:18px; }
-    .card-actions .btn { flex:1; min-height:42px; padding:0 12px; font-size:11px; }
+    .card-body { padding:0 22px; text-align:left; }
+    .card-title-row { display:flex; align-items:center; justify-content:space-between; gap:12px; border-top:1px solid #eceff3; padding-top:18px; }
+    .card h3 { margin:0; font-family:Montserrat,sans-serif; font-size:18px; letter-spacing:0; }
+    .card p, .price, .meta { display:none; }
+    .card-actions { margin-top:10px; }
+    .card-actions .btn { min-height:36px; padding:0; border-radius:0; background:none; box-shadow:none; color:#18A1CE; font-size:11px; letter-spacing:.08em; text-transform:uppercase; }
+    .card-actions .btn:hover { transform:none; color:#111827; }
+    .card-actions .btn-secondary { display:none; }
     .cta { padding:70px 0 88px; background:#fff; }
     .cta-box { display:grid; grid-template-columns:1fr auto; gap:28px; align-items:center; border:1px solid rgba(15,23,42,.08); border-radius:28px; padding:34px; background:linear-gradient(135deg,#f8fbff,rgba(24,161,206,.08),rgba(215,105,169,.10)); box-shadow:0 22px 70px rgba(15,23,42,.08); }
     .cta h2 { margin:0 0 10px; font-size:clamp(30px,4vw,56px); line-height:1.04; letter-spacing:-.05em; }
     .cta p { margin:0; color:var(--muted); line-height:1.7; }
-    .modal { position:fixed; inset:0; z-index:100; display:none; background:rgba(15,23,42,.72); backdrop-filter:blur(12px); padding:28px; }
-    .modal.open { display:flex; }
-    .modal-shell { position:relative; flex:1; max-width:1480px; margin:auto; height:min(860px, calc(100vh - 56px)); overflow:hidden; border-radius:26px; background:#fff; box-shadow:0 35px 100px rgba(0,0,0,.36); }
-    .modal-bar { height:58px; display:flex; align-items:center; justify-content:space-between; gap:16px; border-bottom:1px solid var(--line); padding:0 16px 0 20px; background:#fff; }
-    .modal-title { min-width:0; font-size:13px; font-weight:900; letter-spacing:.08em; text-transform:uppercase; color:#334155; }
-    .modal-actions { display:flex; gap:10px; align-items:center; }
-    .modal iframe { width:100%; height:calc(100% - 58px); border:0; background:#fff; }
-    .close { width:40px; height:40px; border:0; border-radius:14px; background:#f1f5f9; color:#0f172a; font-size:22px; cursor:pointer; }
     .reveal { opacity:0; transform:translateY(18px); transition:opacity .62s ease, transform .62s ease; }
     .reveal.in { opacity:1; transform:none; }
-    @media (max-width:1024px) { .grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .section-head, .cta-box { grid-template-columns:1fr; display:grid; } .links { display:none; } }
-    @media (max-width:680px) { .container { width:min(100% - 28px, var(--max)); } .grid { grid-template-columns:1fr; } .nav .btn { display:none; } .logo img { width:172px; } .mock { height:370px; } .modal { padding:12px; } .modal-shell { height:calc(100vh - 24px); border-radius:18px; } .modal-title { font-size:11px; } }
+    @media (max-width:1024px) { .grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .cta-box { grid-template-columns:1fr; display:grid; } .links { display:none; } }
+    @media (max-width:680px) {
+      .container { width:min(100% - 28px, var(--max)); }
+      .nav { min-height:58px; }
+      .nav .btn, .links { display:none; }
+      .logo img { width:34px; height:34px; }
+      .hero { padding:28px 0 8px; }
+      .hero .eyebrow { padding:7px 10px; font-size:9px; }
+      h1 { margin-top:12px; font-size:30px; }
+      .lead { font-size:13px; line-height:1.6; }
+      .section { padding-top:20px; }
+      .grid { grid-template-columns:1fr; gap:34px; }
+      .preview-wrap { padding:8px 4px 18px; }
+      .card-body { padding:0 4px; }
+      .preview-showcase { aspect-ratio:1.34; }
+      .mock { height:370px; }
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="container nav">
-      <a class="logo" href="/"><img src="images/DH_V2.png" alt="DATA-HOME"></a>
+      <a class="logo" href="/"><img src="images/favicon-32.png" alt="">DATA-HOME Templates</a>
       <nav class="links">
         <a href="/">Accueil</a>
         <a href="#premium">09 Premium</a>
@@ -132,8 +140,8 @@
     <section class="hero">
       <div class="container reveal">
         <span class="eyebrow">09 templates premium payants</span>
-        <h1>Une collection premium dediee aux agences immobilieres.</h1>
-        <p class="lead">Comparez les neuf directions artistiques premium DATA-HOME et ouvrez chaque modele dans une previsualisation professionnelle en direct.</p>
+        <h1>Templates immobiliers premium</h1>
+        <p class="lead">Neuf directions artistiques distinctes, présentées avec leurs véritables interfaces desktop et mobile. Sélectionnez un modèle pour l’ouvrir en direct.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="https://datahome.vercel.app/demo">Ouvrir la demo SaaS</a>
           <a class="btn btn-secondary" href="https://datahome.vercel.app/register">Commencer l'essai 15 jours</a>
@@ -166,21 +174,7 @@
     </section>
   </main>
 
-  <div class="modal" id="previewModal" aria-hidden="true">
-    <div class="modal-shell">
-      <div class="modal-bar">
-        <div class="modal-title" id="modalTitle">Previsualisation template</div>
-        <div class="modal-actions">
-          <a class="btn btn-secondary" id="modalOpen" href="#" target="_blank" rel="noopener">Ouvrir dans un onglet</a>
-          <button class="close" type="button" id="modalClose" aria-label="Fermer">&times;</button>
-        </div>
-      </div>
-      <iframe id="modalFrame" title="Previsualisation template DATA-HOME"></iframe>
-    </div>
-  </div>
-
   <script>
-    const PREVIEW_BASE = "https://datahome.vercel.app/en/schmidt-privilege/template-preview";
     const images = [
       "https://medianewbuild.com/file/hh-media-bucket/developments_v2/13112583/media/images/1.jpg",
       "https://medianewbuild.com/file/hh-media-bucket/developments_v2/13112583/media/images/outdoor/1.jpg",
@@ -195,13 +189,13 @@
       { id:"luxury-estate-premium", tier:"premium", name:"Luxury Estate", price:"690 EUR + VAT", description:"Institutional luxury brand for prestigious property portfolios.", markets:["Prestige","Portfolio","Luxury"], positioning:"Institutional prestige real estate brand", primary:"#B8925A", button:"#111827", font:"'Playfair Display', serif", style:"editorial", corners:"square", bg:"#F5F1EA", cols:3, hero:"Rare addresses presented with authority and discretion.", badge:"Premium" },
       { id:"international-brokerage-premium", tier:"premium", name:"International Brokerage", price:"690 EUR + VAT", description:"Multi-market brokerage credibility with a visible team.", markets:["International","Team","Network"], positioning:"International brokerage credibility", primary:"#C0A16B", button:"#0B1220", font:"'Playfair Display', serif", style:"editorial", corners:"square", bg:"#F4F0E8", cols:3, hero:"Teams, markets and collective international performance.", badge:"Premium" },
       { id:"lead-generation-premium", tier:"premium", name:"Lead Generation", price:"690 EUR + VAT", description:"Conversion-led website for seller and buyer capture.", markets:["Conversion","Valuation","Leads"], positioning:"Conversion-led real estate website", primary:"#16A34A", button:"#111827", font:"'Playfair Display', serif", style:"editorial", corners:"square", bg:"#F3F7F1", cols:3, hero:"Turn property interest into qualified conversations.", badge:"Premium" },
-      { id:"kaia-estate-premium", tier:"premium", name:"Kaia Estate", price:"590 EUR", description:"Architectural, minimal and editorial premium template for high-end agencies.", markets:["Architecture","Luxury villas","International"], positioning:"Architectural calm", primary:"#B5864E", button:"#11100E", font:"Cormorant Garamond, serif", style:"editorial architectural", corners:"square", bg:"#F2EEE7", cols:3, hero:"Quiet luxury, architectural homes and curated Mediterranean living.", badge:"Premium" },
+      { id:"kaia-estate-premium", tier:"premium", name:"Kaia Estate", price:"590 EUR + VAT", description:"Architectural, minimal and editorial premium template for high-end agencies.", markets:["Architecture","Luxury villas","International"], positioning:"Architectural calm", primary:"#B5864E", button:"#11100E", font:"Cormorant Garamond, serif", style:"editorial architectural", corners:"square", bg:"#F2EEE7", cols:3, hero:"Quiet luxury, architectural homes and curated Mediterranean living.", badge:"Premium" },
       { id:"signature-mediterranean-premium", tier:"premium", name:"Signature Mediterranean", price:"690 EUR + VAT", description:"A cinematic premium template for Mediterranean villa specialists.", markets:["Mediterranean","Villas","International"], positioning:"Mediterranean signature", primary:"#C8A96A", button:"#B88A44", font:"Cormorant Garamond, serif", style:"editorial signature", corners:"rounded", bg:"#F7F1EA", cols:3, hero:"Mediterranean villas presented with emotion and elegance.", badge:"Premium" },
       { id:"dreams-premium", tier:"premium", name:"Dreams", price:"490 EUR + VAT", description:"Bright Mediterranean editorial experience for premium villas.", markets:["Bright","Editorial","Lifestyle"], positioning:"Bright Mediterranean editorial", primary:"#C8A76A", button:"#B58A52", font:"'Playfair Display', serif", style:"editorial", corners:"rounded", bg:"#FBF7EF", cols:3, hero:"Find your place in the sun.", badge:"Premium" }
     ];
 
     function previewUrl(template) {
-      return `${PREVIEW_BASE}/${template.id}?source=landing`;
+      return `template-preview.html?template=${template.id}`;
     }
 
     function propertyCard(template, image, index) {
@@ -236,102 +230,25 @@
       `;
     }
 
-    function card(template, index) {
-      const isPortal = template.style.includes("portal");
-      const isDark = template.bg.toLowerCase().startsWith("#0") || template.id.includes("prestige");
-      const heroImage = images[index % images.length];
-      const tags = [template.tier, isPortal ? "portal" : "", template.style.includes("editorial") ? "editorial" : ""].filter(Boolean).join(" ");
-      const previewMarkup = template.id === "signature-mediterranean-premium"
-        ? `
-            <div class="mock signature">
-              <div class="signature-nav">
-                <span class="line" style="width:86px;background:#14231f"></span>
-                <span class="line" style="width:160px;background:linear-gradient(90deg,#14231f66 0 25%,transparent 25% 34%,#14231f66 34% 58%,transparent 58% 67%,#14231f66 67% 100%)"></span>
-                <span class="line" style="width:66px;height:18px;background:${template.primary}"></span>
-              </div>
-              <div class="signature-hero">
-                <div class="signature-photo" style="background-image:url('${heroImage}')">
-                  <div class="signature-photo-copy">
-                    <span class="line" style="width:72px;background:rgba(255,255,255,.82)"></span>
-                    <span class="line" style="width:116px;margin-top:9px;background:rgba(255,255,255,.48)"></span>
-                  </div>
-                </div>
-                <div class="signature-editorial">
-                  <span class="line" style="width:66px;height:6px;background:${template.primary}"></span>
-                  <span class="line" style="width:140px;height:17px;margin-top:13px;background:#14231f"></span>
-                  <span class="line" style="width:96px;height:17px;margin-top:8px;background:#14231f"></span>
-                  <span class="line muted" style="width:128px;margin-top:12px"></span>
-                  <div class="signature-stats"><span></span><span></span><span></span><span></span></div>
-                  <span class="line" style="width:104px;height:20px;background:${template.button}"></span>
-                </div>
-              </div>
-              <div class="signature-body">
-                <div class="mock-heading">
-                  <div>
-                    <span class="line" style="width:78px;background:${template.primary}"></span>
-                    <span class="line" style="width:142px;margin-top:8px;background:#14231f"></span>
-                  </div>
-                  <span class="line" style="width:78px;background:${template.button}"></span>
-                </div>
-                <div class="signature-feature">
-                  <img src="${images[0]}" loading="lazy" alt="">
-                  <div class="signature-feature-copy">
-                    <span class="line" style="width:112px;background:#14231f"></span>
-                    <span class="line muted" style="width:80px;margin-top:9px"></span>
-                    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:5px;border-top:1px solid #efe5d8;border-bottom:1px solid #efe5d8;margin-top:13px;padding:10px 0">
-                      <span class="line" style="height:7px;background:${template.primary}"></span>
-                      <span class="line" style="height:7px;background:${template.primary}"></span>
-                      <span class="line" style="height:7px;background:${template.primary}"></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          `
-        : `
-            <div class="mock">
-              <div class="mock-header"><span class="mock-logo" style="background:${isDark ? "#111827" : template.primary}"></span></div>
-              <div class="mock-hero" style="background-image:url('${heroImage}')">
-                <div class="mock-hero-content">
-                  <span class="mock-kicker"></span>
-                  <span class="mock-title"></span>
-                  <span class="mock-cta" style="display:block;background:${template.button}"></span>
-                </div>
-              </div>
-              <div class="mock-body ${isDark ? "dark" : ""}" style="background:${template.bg}">
-                <div class="mock-heading">
-                  <div>
-                    <span class="line ${isDark ? "muted" : ""}" style="width:72px;background:${isDark ? "rgba(255,255,255,.55)" : template.primary}"></span>
-                    <span class="line" style="width:128px;margin-top:8px;background:${isDark ? "rgba(255,255,255,.9)" : "#111827"}"></span>
-                  </div>
-                  <span class="line" style="width:70px;background:${template.button}"></span>
-                </div>
-                ${isPortal ? portalPreview(template) : `<div class="prop-grid">${images.map((image, i) => propertyCard(template, image, i)).join("")}</div>`}
-              </div>
-            </div>
-          `;
+    function card(template) {
+      const previewPath = "images/templates-premium";
       return `
-        <article class="card reveal" data-kind="${tags}" style="font-family:${template.font}">
+        <article class="card reveal">
           <div class="preview-wrap">
-            <button class="live-pill" type="button" data-preview="${template.id}" data-name="${template.name}">Voir en live</button>
-            <span class="tier ${template.tier === "base" ? "base" : ""}">${template.tier === "base" ? "Inclus" : "Premium"}</span>
-            ${previewMarkup}
+            <a class="live-pill" href="${previewUrl(template)}">Voir en live</a>
+            <span class="tier">Premium</span>
+            <a class="preview-showcase" href="${previewUrl(template)}">
+              <img class="preview-desktop" src="${previewPath}/${template.id}-desktop.png" loading="lazy" alt="Apercu desktop ${template.name}">
+              <img class="preview-mobile" src="${previewPath}/${template.id}-mobile.png" loading="lazy" alt="Apercu mobile ${template.name}">
+            </a>
           </div>
           <div class="card-body">
             <div class="card-title-row">
-              <div>
-                <h3>${template.name}</h3>
-                <p>${template.description}</p>
-              </div>
+              <h3>${template.name}</h3>
               <span class="price">${template.price}</span>
             </div>
-            <div class="meta">
-              <span>${template.positioning}</span>
-              <span>${template.cols} / ligne</span>
-              <span>${template.corners === "square" ? "Bords droits" : "Bords arrondis"}</span>
-            </div>
             <div class="card-actions">
-              <button class="btn btn-primary" type="button" data-preview="${template.id}" data-name="${template.name}">Previsualiser</button>
+              <a class="btn btn-primary" href="${previewUrl(template)}">Voir la prévisualisation →</a>
               <a class="btn btn-secondary" href="${previewUrl(template)}" target="_blank" rel="noopener">Nouvel onglet</a>
             </div>
           </div>
@@ -360,35 +277,6 @@
       });
     });
 
-    const modal = document.getElementById("previewModal");
-    const frame = document.getElementById("modalFrame");
-    const modalTitle = document.getElementById("modalTitle");
-    const modalOpen = document.getElementById("modalOpen");
-    const modalClose = document.getElementById("modalClose");
-
-    function openPreview(templateId, name) {
-      const url = `${PREVIEW_BASE}/${templateId}?source=landing`;
-      modalTitle.textContent = `Previsualisation - ${name}`;
-      modalOpen.href = url;
-      frame.src = url;
-      modal.classList.add("open");
-      modal.setAttribute("aria-hidden", "false");
-    }
-
-    function closePreview() {
-      modal.classList.remove("open");
-      modal.setAttribute("aria-hidden", "true");
-      frame.src = "";
-    }
-
-    document.addEventListener("click", (event) => {
-      const target = event.target.closest("[data-preview]");
-      if (!target) return;
-      openPreview(target.dataset.preview, target.dataset.name || "Template");
-    });
-    modalClose.addEventListener("click", closePreview);
-    modal.addEventListener("click", (event) => { if (event.target === modal) closePreview(); });
-    document.addEventListener("keydown", (event) => { if (event.key === "Escape") closePreview(); });
   </script>
 </body>
 </html>
