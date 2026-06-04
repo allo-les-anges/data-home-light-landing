@@ -148,6 +148,8 @@
     .cta p { margin:0; color:var(--muted); line-height:1.7; }
     footer { padding:34px 0; border-top:1px solid var(--line); color:var(--muted); font-size:13px; }
     footer .container { display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    @media(min-width:1025px) { .mobile-menu { display:none !important; } }
+    @media(max-width:1024px) { .links, .actions .btn { display:none !important; } .hamburger { display:block; } }
     @media(max-width:1040px) {
       .hero-grid,.phase-grid,.showcase,.cta-box { grid-template-columns:1fr; }
       .workflow { grid-template-columns:repeat(2,1fr); }
@@ -158,10 +160,7 @@
     }
     @media(max-width:720px) {
       .container { width:min(100% - 28px,var(--max)); }
-      .links { display:none; }
       .logo img { width:166px; }
-      .actions .btn { display:none; }
-      .hamburger { display:block; }
       .hero { padding:56px 0; }
       .hero-metrics,.workflow,.mini-grid { grid-template-columns:1fr; }
       .builder-stage { padding:14px; }
