@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Templates DATA-HOME - Previsualisation en direct</title>
-  <meta name="description" content="Galerie des templates DATA-HOME disponibles dans le dashboard client: templates inclus et premium avec previsualisation live.">
+  <title>Templates premium DATA-HOME - Previsualisation en direct</title>
+  <meta name="description" content="Galerie professionnelle des neuf templates premium payants DATA-HOME avec previsualisation live.">
   <link rel="apple-touch-icon" sizes="57x57" href="images/apple-touch-icon-57x57.png">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
@@ -121,8 +121,7 @@
       <a class="logo" href="/"><img src="images/DH_V2.png" alt="DATA-HOME"></a>
       <nav class="links">
         <a href="/">Accueil</a>
-        <a href="#base">Inclus</a>
-        <a href="#premium">Premium</a>
+        <a href="#premium">09 Premium</a>
         <a href="https://datahome.vercel.app/demo">Demo live</a>
       </nav>
       <a class="btn btn-primary" href="https://datahome.vercel.app/register">Essai 15 jours</a>
@@ -132,44 +131,24 @@
   <main>
     <section class="hero">
       <div class="container reveal">
-        <span class="eyebrow">Templates synchronises avec le SaaS</span>
-        <h1>Les memes templates que dans le dashboard client.</h1>
-        <p class="lead">Cette galerie reprend les templates disponibles dans la section settings de l'application DATA-HOME. Chaque modele peut etre previsualise en live avant d'etre choisi dans le dashboard.</p>
+        <span class="eyebrow">09 templates premium payants</span>
+        <h1>Une collection premium dediee aux agences immobilieres.</h1>
+        <p class="lead">Comparez les neuf directions artistiques premium DATA-HOME et ouvrez chaque modele dans une previsualisation professionnelle en direct.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="https://datahome.vercel.app/demo">Ouvrir la demo SaaS</a>
           <a class="btn btn-secondary" href="https://datahome.vercel.app/register">Commencer l'essai 15 jours</a>
         </div>
-        <div class="filters" aria-label="Filtres templates">
-          <button class="chip active" data-filter="all">Tous</button>
-          <button class="chip" data-filter="base">Inclus</button>
-          <button class="chip" data-filter="premium">Premium</button>
-          <button class="chip" data-filter="portal">Catalogue</button>
-          <button class="chip" data-filter="editorial">Editorial</button>
-        </div>
       </div>
     </section>
 
-    <section class="section" id="base">
+    <section class="section" id="premium">
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <span class="eyebrow">Inclus dans l'offre</span>
-            <h2>Templates de base</h2>
+            <span class="eyebrow">Collection professionnelle</span>
+            <h2>09 Templates premium payants</h2>
           </div>
-          <p>Des bases visuelles solides, directement personnalisables depuis Mon Espace: couleurs, police, hero, affichage des vignettes et modules.</p>
-        </div>
-        <div class="grid" id="baseGrid"></div>
-      </div>
-    </section>
-
-    <section class="section" id="premium" style="padding-top:0">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <span class="eyebrow">Options payantes</span>
-            <h2>Templates premium</h2>
-          </div>
-          <p>Des designs plus marques pour agences qui veulent une direction artistique forte ou une experience catalogue plus poussee.</p>
+          <p>Des designs marques pour les agences qui veulent une direction artistique forte, une meilleure conversion et une image de marque distinctive.</p>
         </div>
         <div class="grid" id="premiumGrid"></div>
       </div>
@@ -210,14 +189,15 @@
     ];
 
     const templates = [
-      { id:"riviera", tier:"base", name:"Riviera", price:"Inclus", description:"Elegance mediterraneenne, fond clair, or doux et vignettes editoriales.", markets:["Cote d'Azur","Marbella","Monaco"], positioning:"Luxe balneaire", primary:"#C8A84E", button:"#D4AF37", font:"'Playfair Display', serif", style:"editorial", corners:"rounded", bg:"#F8FAFC", cols:3, hero:"Decouvrez nos proprietes d'exception en bord de mer.", badge:"Best-seller" },
-      { id:"prestige", tier:"base", name:"Prestige", price:"Inclus", description:"Style premium sombre, accents violets et cartes compactes.", markets:["Paris","London","Geneve"], positioning:"Ultra-premium urbain", primary:"#B859C5", button:"#B859C5", font:"Cormorant Garamond, serif", style:"compact editorial", corners:"rounded", bg:"#F3F4F6", cols:3, hero:"L'exception immobiliere dans les plus grandes capitales.", badge:"Nouveau" },
-      { id:"urban", tier:"base", name:"Urban", price:"Inclus", description:"Affichage horizontal type portail, bleu vif, pour un volume eleve de biens.", markets:["Paris","Lyon","Bordeaux"], positioning:"Portail urbain", primary:"#2563EB", button:"#2563EB", font:"Inter, sans-serif", style:"portal-list", corners:"rounded", bg:"#F8FAFC", cols:4, hero:"Trouvez votre bien ideal parmi des centaines d'annonces.", badge:"Populaire" },
-      { id:"soleil", tier:"base", name:"Soleil", price:"Inclus", description:"Tons chauds ambre et orange, convivial et ensoleille.", markets:["Provence","Languedoc","Andalousie"], positioning:"Art de vivre mediterraneen", primary:"#D97706", button:"#EA580C", font:"Poppins, sans-serif", style:"editorial", corners:"rounded", bg:"#FFFBEB", cols:3, hero:"L'art de vivre sous le soleil du Sud.", badge:"Inclus" },
-      { id:"nordic", tier:"base", name:"Nordic", price:"Inclus", description:"Presentation sobre, bords droits, espaces blancs et accent bleu froid.", markets:["Belgique","Pays-Bas","Suede"], positioning:"Minimalisme scandinave", primary:"#0EA5E9", button:"#0F172A", font:"Montserrat, sans-serif", style:"minimal", corners:"square", bg:"#FFFFFF", cols:4, hero:"Des espaces concus pour votre quotidien.", badge:"Inclus" },
-      { id:"verde", tier:"base", name:"Verde", price:"Inclus", description:"Palette verte naturelle, engagement durable, vignettes arrondies douces.", markets:["Campagne","Eco-quartiers","Montagne"], positioning:"Immobilier durable & nature", primary:"#16A34A", button:"#15803D", font:"Inter, sans-serif", style:"editorial", corners:"rounded", bg:"#F0FDF4", cols:3, hero:"Vivez en harmonie avec la nature.", badge:"Inclus" },
+      { id:"coastal-authority-premium", tier:"premium", name:"Coastal Authority", price:"590 EUR + VAT", description:"Luxury coastal lifestyle and local real estate authority.", markets:["Coastal","Communities","Luxury"], positioning:"Local real estate authority", primary:"#B7905A", button:"#111827", font:"'Playfair Display', serif", style:"editorial", corners:"square", bg:"#F6F3EF", cols:3, hero:"Exclusive coastal listings and community expertise.", badge:"Premium" },
+      { id:"brokerage-mls-premium", tier:"premium", name:"Brokerage MLS", price:"590 EUR + VAT", description:"Search-led brokerage experience for property discovery.", markets:["MLS","Search","Open houses"], positioning:"Search-led real estate brokerage", primary:"#A67744", button:"#0F172A", font:"'Playfair Display', serif", style:"portal-list editorial", corners:"square", bg:"#F7F5F1", cols:3, hero:"A premium search experience for local brokerage.", badge:"Premium" },
+      { id:"personal-realtor-premium", tier:"premium", name:"Personal Realtor", price:"590 EUR + VAT", description:"A personal advisor website built around trust and expertise.", markets:["Personal brand","Advisor","Local"], positioning:"Personal premium real estate advisor", primary:"#9A6A45", button:"#17211D", font:"'Playfair Display', serif", style:"editorial", corners:"rounded", bg:"#F8F4EE", cols:3, hero:"Premium real estate guidance with a human face.", badge:"Premium" },
+      { id:"luxury-estate-premium", tier:"premium", name:"Luxury Estate", price:"690 EUR + VAT", description:"Institutional luxury brand for prestigious property portfolios.", markets:["Prestige","Portfolio","Luxury"], positioning:"Institutional prestige real estate brand", primary:"#B8925A", button:"#111827", font:"'Playfair Display', serif", style:"editorial", corners:"square", bg:"#F5F1EA", cols:3, hero:"Rare addresses presented with authority and discretion.", badge:"Premium" },
+      { id:"international-brokerage-premium", tier:"premium", name:"International Brokerage", price:"690 EUR + VAT", description:"Multi-market brokerage credibility with a visible team.", markets:["International","Team","Network"], positioning:"International brokerage credibility", primary:"#C0A16B", button:"#0B1220", font:"'Playfair Display', serif", style:"editorial", corners:"square", bg:"#F4F0E8", cols:3, hero:"Teams, markets and collective international performance.", badge:"Premium" },
+      { id:"lead-generation-premium", tier:"premium", name:"Lead Generation", price:"690 EUR + VAT", description:"Conversion-led website for seller and buyer capture.", markets:["Conversion","Valuation","Leads"], positioning:"Conversion-led real estate website", primary:"#16A34A", button:"#111827", font:"'Playfair Display', serif", style:"editorial", corners:"square", bg:"#F3F7F1", cols:3, hero:"Turn property interest into qualified conversations.", badge:"Premium" },
       { id:"kaia-estate-premium", tier:"premium", name:"Kaia Estate", price:"590 EUR", description:"Architectural, minimal and editorial premium template for high-end agencies.", markets:["Architecture","Luxury villas","International"], positioning:"Architectural calm", primary:"#B5864E", button:"#11100E", font:"Cormorant Garamond, serif", style:"editorial architectural", corners:"square", bg:"#F2EEE7", cols:3, hero:"Quiet luxury, architectural homes and curated Mediterranean living.", badge:"Premium" },
-      { id:"signature-mediterranean-premium", tier:"premium", name:"Signature Mediterranean", price:"690 EUR", description:"A cinematic premium template for Costa Blanca, Costa del Sol and international villa specialists.", markets:["Costa Blanca","Costa del Sol","International"], positioning:"Mediterranean ultra premium", primary:"#C8A96A", button:"#B88A44", font:"Cormorant Garamond, serif", style:"editorial signature", corners:"rounded", bg:"#F7F1EA", cols:3, hero:"Mediterranean villas presented with emotion, confidence and elegance.", badge:"Premium" }
+      { id:"signature-mediterranean-premium", tier:"premium", name:"Signature Mediterranean", price:"690 EUR + VAT", description:"A cinematic premium template for Mediterranean villa specialists.", markets:["Mediterranean","Villas","International"], positioning:"Mediterranean signature", primary:"#C8A96A", button:"#B88A44", font:"Cormorant Garamond, serif", style:"editorial signature", corners:"rounded", bg:"#F7F1EA", cols:3, hero:"Mediterranean villas presented with emotion and elegance.", badge:"Premium" },
+      { id:"dreams-premium", tier:"premium", name:"Dreams", price:"490 EUR + VAT", description:"Bright Mediterranean editorial experience for premium villas.", markets:["Bright","Editorial","Lifestyle"], positioning:"Bright Mediterranean editorial", primary:"#C8A76A", button:"#B58A52", font:"'Playfair Display', serif", style:"editorial", corners:"rounded", bg:"#FBF7EF", cols:3, hero:"Find your place in the sun.", badge:"Premium" }
     ];
 
     function previewUrl(template) {
@@ -359,7 +339,6 @@
       `;
     }
 
-    document.getElementById("baseGrid").innerHTML = templates.filter(t => t.tier === "base").map(card).join("");
     document.getElementById("premiumGrid").innerHTML = templates.filter(t => t.tier === "premium").map(card).join("");
 
     const reveal = new IntersectionObserver((entries) => {
