@@ -28,6 +28,7 @@
     .logo img { width:38px; height:38px; object-fit:contain; border-radius:5px; }
     .links { display:flex; align-items:center; gap:24px; color:#c5c5c5; font-size:11px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
     .links a:hover { color:#fff; }
+    .lang-select { height:38px; border:1px solid #4b4b4b; border-radius:4px; background:#333; color:#fff; padding:0 9px; font:800 11px Montserrat,sans-serif; cursor:pointer; }
     .btn { display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:46px; padding:0 20px; border:0; border-radius:999px; font-size:13px; font-weight:900; cursor:pointer; transition:transform .2s ease, box-shadow .2s ease, opacity .2s ease; }
     .btn:hover { transform:translateY(-1px); }
     .btn-primary { color:#fff; background:var(--btn-grad); box-shadow:0 14px 34px rgba(239,75,90,.22); }
@@ -128,23 +129,27 @@
     <div class="container nav">
       <a class="logo" href="/"><img src="images/favicon-32.png" alt="">DATA-HOME Templates</a>
       <nav class="links">
-        <a href="/">Accueil</a>
+        <a href="/" data-i18n="home">Accueil</a>
         <a href="#premium">09 Premium</a>
-        <a href="https://datahome.vercel.app/demo">Demo live</a>
+        <a href="https://datahome.vercel.app/demo" data-i18n="liveDemo">Démo live</a>
       </nav>
-      <a class="btn btn-primary" href="https://datahome.vercel.app/register">Essai 15 jours</a>
+      <select class="lang-select" id="langSelect" aria-label="Language">
+        <option value="fr">FR</option><option value="en">EN</option><option value="es">ES</option><option value="de">DE</option>
+        <option value="nl">NL</option><option value="pt">PT</option><option value="ru">RU</option><option value="pl">PL</option>
+      </select>
+      <a class="btn btn-primary" href="https://datahome.vercel.app/register" data-i18n="trial">Essai 15 jours</a>
     </div>
   </header>
 
   <main>
     <section class="hero">
       <div class="container reveal">
-        <span class="eyebrow">09 templates premium payants</span>
-        <h1>Templates immobiliers premium</h1>
-        <p class="lead">Neuf directions artistiques distinctes, présentées avec leurs véritables interfaces desktop et mobile. Sélectionnez un modèle pour l’ouvrir en direct.</p>
+        <span class="eyebrow" data-i18n="eyebrow">09 templates premium payants</span>
+        <h1 data-i18n="title">Templates immobiliers premium</h1>
+        <p class="lead" data-i18n="lead">Neuf directions artistiques distinctes, présentées avec leurs véritables interfaces desktop et mobile. Sélectionnez un modèle pour l’ouvrir en direct.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="https://datahome.vercel.app/demo">Ouvrir la demo SaaS</a>
-          <a class="btn btn-secondary" href="https://datahome.vercel.app/register">Commencer l'essai 15 jours</a>
+          <a class="btn btn-primary" href="https://datahome.vercel.app/demo" data-i18n="openDemo">Ouvrir la démo SaaS</a>
+          <a class="btn btn-secondary" href="https://datahome.vercel.app/register" data-i18n="startTrial">Commencer l'essai 15 jours</a>
         </div>
       </div>
     </section>
@@ -153,10 +158,10 @@
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <span class="eyebrow">Collection professionnelle</span>
-            <h2>09 Templates premium payants</h2>
+            <span class="eyebrow" data-i18n="collection">Collection professionnelle</span>
+            <h2 data-i18n="collectionTitle">09 Templates premium payants</h2>
           </div>
-          <p>Des designs marques pour les agences qui veulent une direction artistique forte, une meilleure conversion et une image de marque distinctive.</p>
+          <p data-i18n="collectionText">Des designs marqués pour les agences qui veulent une direction artistique forte, une meilleure conversion et une image de marque distinctive.</p>
         </div>
         <div class="grid" id="premiumGrid"></div>
       </div>
@@ -165,16 +170,29 @@
     <section class="cta">
       <div class="container cta-box reveal">
         <div>
-          <span class="eyebrow">Workflow reel</span>
-          <h2>Choisissez, previsualisez, appliquez.</h2>
-          <p>La selection finale se fait dans le dashboard client, avec les vrais reglages de l'agence et les memes templates que cette page.</p>
+          <span class="eyebrow" data-i18n="workflow">Workflow réel</span>
+          <h2 data-i18n="workflowTitle">Choisissez, prévisualisez, appliquez.</h2>
+          <p data-i18n="workflowText">La sélection finale se fait dans le dashboard client, avec les vrais réglages de l'agence et les mêmes templates que cette page.</p>
         </div>
-        <a class="btn btn-primary" href="https://datahome.vercel.app/register">Creer mon espace</a>
+        <a class="btn btn-primary" href="https://datahome.vercel.app/register" data-i18n="createAccount">Créer mon espace</a>
       </div>
     </section>
   </main>
 
   <script>
+    const I18N = {
+      fr:{home:"Accueil",liveDemo:"Démo live",trial:"Essai 15 jours",eyebrow:"09 templates premium payants",title:"Templates immobiliers premium",lead:"Neuf directions artistiques distinctes, présentées avec leurs véritables interfaces desktop et mobile. Sélectionnez un modèle pour l’ouvrir en direct.",openDemo:"Ouvrir la démo SaaS",startTrial:"Commencer l'essai 15 jours",collection:"Collection professionnelle",collectionTitle:"09 Templates premium payants",collectionText:"Des designs marqués pour les agences qui veulent une direction artistique forte, une meilleure conversion et une image de marque distinctive.",workflow:"Workflow réel",workflowTitle:"Choisissez, prévisualisez, appliquez.",workflowText:"La sélection finale se fait dans le dashboard client, avec les vrais réglages de l'agence et les mêmes templates que cette page.",createAccount:"Créer mon espace",preview:"Voir la prévisualisation →",newTab:"Nouvel onglet",desktopAlt:"Aperçu desktop",mobileAlt:"Aperçu mobile"},
+      en:{home:"Home",liveDemo:"Live demo",trial:"15-day trial",eyebrow:"09 paid premium templates",title:"Premium real estate templates",lead:"Nine distinct creative directions, presented with their real desktop and mobile interfaces. Select a design to open it live.",openDemo:"Open SaaS demo",startTrial:"Start 15-day trial",collection:"Professional collection",collectionTitle:"09 paid premium templates",collectionText:"Distinctive designs for agencies seeking stronger creative direction, better conversion and a memorable brand.",workflow:"Real workflow",workflowTitle:"Choose, preview, apply.",workflowText:"Make the final selection from the client dashboard using the agency's real settings and the same templates shown here.",createAccount:"Create my account",preview:"View preview →",newTab:"New tab",desktopAlt:"Desktop preview",mobileAlt:"Mobile preview"},
+      es:{home:"Inicio",liveDemo:"Demo en vivo",trial:"Prueba de 15 días",eyebrow:"09 plantillas premium de pago",title:"Plantillas inmobiliarias premium",lead:"Nueve direcciones creativas distintas, presentadas con sus interfaces reales de escritorio y móvil. Seleccione un diseño para abrirlo en vivo.",openDemo:"Abrir demo SaaS",startTrial:"Iniciar prueba de 15 días",collection:"Colección profesional",collectionTitle:"09 plantillas premium de pago",collectionText:"Diseños distintivos para agencias que buscan una dirección artística fuerte, mejor conversión y una marca memorable.",workflow:"Flujo real",workflowTitle:"Elija, previsualice, aplique.",workflowText:"La selección final se realiza desde el dashboard cliente con los ajustes reales de la agencia.",createAccount:"Crear mi cuenta",preview:"Ver previsualización →",newTab:"Nueva pestaña",desktopAlt:"Vista de escritorio",mobileAlt:"Vista móvil"},
+      de:{home:"Startseite",liveDemo:"Live-Demo",trial:"15 Tage testen",eyebrow:"09 kostenpflichtige Premium-Templates",title:"Premium-Immobilien-Templates",lead:"Neun eigenständige Designrichtungen mit ihren echten Desktop- und Mobilansichten. Wählen Sie ein Design für die Live-Vorschau.",openDemo:"SaaS-Demo öffnen",startTrial:"15-Tage-Test starten",collection:"Professionelle Kollektion",collectionTitle:"09 Premium-Templates",collectionText:"Markante Designs für Immobilienagenturen mit Anspruch an Marke, Konversion und kreative Führung.",workflow:"Echter Workflow",workflowTitle:"Auswählen, ansehen, anwenden.",workflowText:"Die endgültige Auswahl erfolgt im Kunden-Dashboard mit den echten Agentureinstellungen.",createAccount:"Konto erstellen",preview:"Vorschau ansehen →",newTab:"Neuer Tab",desktopAlt:"Desktop-Vorschau",mobileAlt:"Mobile Vorschau"},
+      nl:{home:"Home",liveDemo:"Live demo",trial:"15 dagen proberen",eyebrow:"09 betaalde premium templates",title:"Premium vastgoedtemplates",lead:"Negen onderscheidende creatieve richtingen met hun echte desktop- en mobiele interfaces. Kies een ontwerp om het live te openen.",openDemo:"SaaS-demo openen",startTrial:"Start proefperiode",collection:"Professionele collectie",collectionTitle:"09 betaalde premium templates",collectionText:"Onderscheidende ontwerpen voor kantoren die merkwaarde, conversie en creatieve richting willen versterken.",workflow:"Echte workflow",workflowTitle:"Kies, bekijk, pas toe.",workflowText:"De definitieve selectie gebeurt in het klantendashboard met de echte kantoorinstellingen.",createAccount:"Account aanmaken",preview:"Bekijk preview →",newTab:"Nieuw tabblad",desktopAlt:"Desktopvoorbeeld",mobileAlt:"Mobiel voorbeeld"},
+      pt:{home:"Início",liveDemo:"Demo ao vivo",trial:"Teste de 15 dias",eyebrow:"09 templates premium pagos",title:"Templates imobiliários premium",lead:"Nove direções criativas distintas, apresentadas com as interfaces reais para desktop e mobile. Selecione um design para o abrir ao vivo.",openDemo:"Abrir demo SaaS",startTrial:"Iniciar teste de 15 dias",collection:"Coleção profissional",collectionTitle:"09 templates premium pagos",collectionText:"Designs distintos para agências que procuram uma marca forte, mais conversão e direção criativa.",workflow:"Workflow real",workflowTitle:"Escolha, visualize, aplique.",workflowText:"A seleção final é feita no dashboard do cliente com as configurações reais da agência.",createAccount:"Criar conta",preview:"Ver pré-visualização →",newTab:"Novo separador",desktopAlt:"Prévia desktop",mobileAlt:"Prévia mobile"},
+      ru:{home:"Главная",liveDemo:"Демо",trial:"Попробовать 15 дней",eyebrow:"09 платных премиум-шаблонов",title:"Премиум-шаблоны недвижимости",lead:"Девять уникальных визуальных направлений с реальными версиями для компьютера и телефона. Выберите дизайн для просмотра.",openDemo:"Открыть SaaS-демо",startTrial:"Начать пробный период",collection:"Профессиональная коллекция",collectionTitle:"09 премиум-шаблонов",collectionText:"Выразительные дизайны для агентств, которым важны бренд, конверсия и сильный визуальный образ.",workflow:"Реальный процесс",workflowTitle:"Выберите, просмотрите, примените.",workflowText:"Окончательный выбор выполняется в кабинете клиента с реальными настройками агентства.",createAccount:"Создать аккаунт",preview:"Открыть просмотр →",newTab:"Новая вкладка",desktopAlt:"Версия для компьютера",mobileAlt:"Мобильная версия"},
+      pl:{home:"Strona główna",liveDemo:"Demo na żywo",trial:"Wypróbuj przez 15 dni",eyebrow:"09 płatnych szablonów premium",title:"Szablony premium dla nieruchomości",lead:"Dziewięć różnych kierunków kreatywnych pokazanych w rzeczywistych wersjach desktop i mobile. Wybierz projekt, aby zobaczyć go na żywo.",openDemo:"Otwórz demo SaaS",startTrial:"Rozpocznij okres próbny",collection:"Profesjonalna kolekcja",collectionTitle:"09 szablonów premium",collectionText:"Wyraziste projekty dla agencji, które chcą wzmocnić markę, konwersję i kierunek kreatywny.",workflow:"Prawdziwy workflow",workflowTitle:"Wybierz, zobacz, zastosuj.",workflowText:"Ostatecznego wyboru dokonasz w panelu klienta z rzeczywistymi ustawieniami agencji.",createAccount:"Utwórz konto",preview:"Zobacz podgląd →",newTab:"Nowa karta",desktopAlt:"Podgląd desktop",mobileAlt:"Podgląd mobile"}
+    };
+    const languageParams = new URLSearchParams(location.search);
+    let lang = I18N[languageParams.get("lang")] ? languageParams.get("lang") : (I18N[localStorage.getItem("dh_lang")] ? localStorage.getItem("dh_lang") : "fr");
+
     const images = [
       "https://medianewbuild.com/file/hh-media-bucket/developments_v2/13112583/media/images/1.jpg",
       "https://medianewbuild.com/file/hh-media-bucket/developments_v2/13112583/media/images/outdoor/1.jpg",
@@ -195,7 +213,7 @@
     ];
 
     function previewUrl(template) {
-      return `template-preview.html?template=${template.id}`;
+      return `template-preview.html?template=${template.id}&lang=${lang}`;
     }
 
     function propertyCard(template, image, index) {
@@ -238,8 +256,8 @@
             <a class="live-pill" href="${previewUrl(template)}">Voir en live</a>
             <span class="tier">Premium</span>
             <a class="preview-showcase" href="${previewUrl(template)}">
-              <img class="preview-desktop" src="${previewPath}/${template.id}-desktop.png" loading="lazy" alt="Apercu desktop ${template.name}">
-              <img class="preview-mobile" src="${previewPath}/${template.id}-mobile.png" loading="lazy" alt="Apercu mobile ${template.name}">
+              <img class="preview-desktop" src="${previewPath}/${template.id}-desktop.png" loading="lazy" alt="${I18N[lang].desktopAlt} ${template.name}">
+              <img class="preview-mobile" src="${previewPath}/${template.id}-mobile.png" loading="lazy" alt="${I18N[lang].mobileAlt} ${template.name}">
             </a>
           </div>
           <div class="card-body">
@@ -248,15 +266,28 @@
               <span class="price">${template.price}</span>
             </div>
             <div class="card-actions">
-              <a class="btn btn-primary" href="${previewUrl(template)}">Voir la prévisualisation →</a>
-              <a class="btn btn-secondary" href="${previewUrl(template)}" target="_blank" rel="noopener">Nouvel onglet</a>
+              <a class="btn btn-primary" href="${previewUrl(template)}">${I18N[lang].preview}</a>
+              <a class="btn btn-secondary" href="${previewUrl(template)}" target="_blank" rel="noopener">${I18N[lang].newTab}</a>
             </div>
           </div>
         </article>
       `;
     }
 
-    document.getElementById("premiumGrid").innerHTML = templates.filter(t => t.tier === "premium").map(card).join("");
+    function setLang(nextLang) {
+      lang = I18N[nextLang] ? nextLang : "fr";
+      localStorage.setItem("dh_lang", lang);
+      document.documentElement.lang = lang;
+      document.getElementById("langSelect").value = lang;
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const value = I18N[lang][element.dataset.i18n];
+        if (value !== undefined) element.textContent = value;
+      });
+      document.getElementById("premiumGrid").innerHTML = templates.filter(t => t.tier === "premium").map(card).join("");
+      history.replaceState(null, "", `templates.html?lang=${lang}`);
+    }
+    document.getElementById("langSelect").addEventListener("change", (event) => setLang(event.target.value));
+    setLang(lang);
 
     const reveal = new IntersectionObserver((entries) => {
       entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add("in"); });

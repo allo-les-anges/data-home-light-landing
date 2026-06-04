@@ -14,6 +14,7 @@
     .brand a{color:#fff;text-decoration:none;font-weight:800;font-size:14px}
     .brand span{color:#a6a6a6;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
     .selector{height:38px;max-width:270px;padding:0 34px 0 12px;border:1px solid #4b4b4b;border-radius:3px;background:#333;color:#fff;font-size:12px;font-weight:700}
+    .language{height:38px;padding:0 8px;border:1px solid #4b4b4b;border-radius:3px;background:#333;color:#fff;font-size:11px;font-weight:800}
     .devices{display:flex;align-items:center;gap:2px}
     .device,.close{width:38px;height:38px;border:0;background:transparent;color:#aaa;cursor:pointer;font-size:17px}
     .device:hover,.device.active,.close:hover{background:#3a3a3a;color:#fff}
@@ -29,7 +30,7 @@
       .brand span,.devices{display:none}
       .selector{max-width:145px}
       .request{padding:0 10px;font-size:0}
-      .request:after{content:"Demander";font-size:11px}
+      .request:after{content:attr(data-short);font-size:11px}
     }
     @media(max-width:430px){
       .brand{display:none}
@@ -44,14 +45,18 @@
       <span id="templateName">Template premium</span>
     </div>
     <select class="selector" id="templateSelector" aria-label="Choisir un template"></select>
+    <select class="language" id="langSelect" aria-label="Language">
+      <option value="fr">FR</option><option value="en">EN</option><option value="es">ES</option><option value="de">DE</option>
+      <option value="nl">NL</option><option value="pt">PT</option><option value="ru">RU</option><option value="pl">PL</option>
+    </select>
     <div class="devices" aria-label="Taille de previsualisation">
       <button class="device active" type="button" data-width="100%" title="Desktop">&#9635;</button>
       <button class="device" type="button" data-width="820px" title="Tablette">&#9645;</button>
       <button class="device" type="button" data-width="390px" title="Mobile">&#9647;</button>
     </div>
     <div class="actions">
-      <a class="request" id="requestLink" href="https://datahome.vercel.app/register">Demander ce template</a>
-      <button class="close" type="button" title="Fermer" onclick="location.href='templates.html'">&times;</button>
+      <a class="request" id="requestLink" data-short="Demander" href="https://datahome.vercel.app/register">Demander ce template</a>
+      <button class="close" type="button" title="Fermer">&times;</button>
     </div>
   </header>
   <main class="stage">
@@ -60,6 +65,16 @@
     </div>
   </main>
   <script>
+    const I18N = {
+      fr:{premium:"Template premium",choose:"Choisir un template",devices:"Taille de prévisualisation",desktop:"Ordinateur",tablet:"Tablette",mobile:"Mobile",request:"Demander ce template",requestShort:"Demander",close:"Fermer",preview:"Aperçu premium DATA-HOME"},
+      en:{premium:"Premium template",choose:"Choose a template",devices:"Preview size",desktop:"Desktop",tablet:"Tablet",mobile:"Mobile",request:"Request this template",requestShort:"Request",close:"Close",preview:"DATA-HOME premium preview"},
+      es:{premium:"Plantilla premium",choose:"Elegir una plantilla",devices:"Tamaño de vista previa",desktop:"Escritorio",tablet:"Tableta",mobile:"Móvil",request:"Solicitar esta plantilla",requestShort:"Solicitar",close:"Cerrar",preview:"Vista premium DATA-HOME"},
+      de:{premium:"Premium-Template",choose:"Template auswählen",devices:"Vorschaugröße",desktop:"Desktop",tablet:"Tablet",mobile:"Mobil",request:"Dieses Template anfragen",requestShort:"Anfragen",close:"Schließen",preview:"DATA-HOME Premium-Vorschau"},
+      nl:{premium:"Premium template",choose:"Kies een template",devices:"Voorbeeldgrootte",desktop:"Desktop",tablet:"Tablet",mobile:"Mobiel",request:"Dit template aanvragen",requestShort:"Aanvragen",close:"Sluiten",preview:"DATA-HOME premium preview"},
+      pt:{premium:"Template premium",choose:"Escolher um template",devices:"Tamanho da pré-visualização",desktop:"Desktop",tablet:"Tablet",mobile:"Mobile",request:"Solicitar este template",requestShort:"Solicitar",close:"Fechar",preview:"Pré-visualização premium DATA-HOME"},
+      ru:{premium:"Премиум-шаблон",choose:"Выбрать шаблон",devices:"Размер просмотра",desktop:"Компьютер",tablet:"Планшет",mobile:"Телефон",request:"Запросить этот шаблон",requestShort:"Запросить",close:"Закрыть",preview:"Премиум-просмотр DATA-HOME"},
+      pl:{premium:"Szablon premium",choose:"Wybierz szablon",devices:"Rozmiar podglądu",desktop:"Komputer",tablet:"Tablet",mobile:"Telefon",request:"Zapytaj o ten szablon",requestShort:"Zapytaj",close:"Zamknij",preview:"Podgląd premium DATA-HOME"}
+    };
     const templates = [
       ["coastal-authority-premium","Coastal Authority"],
       ["brokerage-mls-premium","Brokerage MLS"],
@@ -72,12 +87,16 @@
       ["dreams-premium","Dreams"]
     ];
     const params = new URLSearchParams(location.search);
+    let lang = I18N[params.get("lang")] ? params.get("lang") : (I18N[localStorage.getItem("dh_lang")] ? localStorage.getItem("dh_lang") : "fr");
     const defaultId = "coastal-authority-premium";
     const selector = document.getElementById("templateSelector");
     const frame = document.getElementById("previewFrame");
     const viewport = document.getElementById("viewport");
     const templateName = document.getElementById("templateName");
     const requestLink = document.getElementById("requestLink");
+    const langSelect = document.getElementById("langSelect");
+    const closeButton = document.querySelector(".close");
+    const deviceButtons = document.querySelectorAll(".device");
 
     templates.forEach(([id,name]) => {
       const option = document.createElement("option");
@@ -88,23 +107,49 @@
 
     function loadTemplate(id) {
       const selected = templates.find(([templateId]) => templateId === id) || templates[0];
+      const d = I18N[lang];
       selector.value = selected[0];
       templateName.textContent = selected[1];
-      document.title = `${selected[1]} - Apercu premium DATA-HOME`;
-      frame.src = `https://datahome.vercel.app/fr/demo/template-preview/${selected[0]}?embed=1`;
-      requestLink.href = `https://datahome.vercel.app/register?template=${selected[0]}`;
-      history.replaceState(null, "", `template-preview.html?template=${selected[0]}`);
+      document.title = `${selected[1]} - ${d.preview}`;
+      frame.src = `https://datahome.vercel.app/${lang}/demo/template-preview/${selected[0]}?embed=1`;
+      requestLink.href = `https://datahome.vercel.app/register?template=${selected[0]}&locale=${lang}`;
+      history.replaceState(null, "", `template-preview.html?template=${selected[0]}&lang=${lang}`);
     }
 
     selector.addEventListener("change", () => loadTemplate(selector.value));
-    document.querySelectorAll(".device").forEach((button) => {
+    function setLang(nextLang) {
+      lang = I18N[nextLang] ? nextLang : "fr";
+      const d = I18N[lang];
+      localStorage.setItem("dh_lang", lang);
+      document.documentElement.lang = lang;
+      langSelect.value = lang;
+      selector.setAttribute("aria-label", d.choose);
+      document.querySelector(".devices").setAttribute("aria-label", d.devices);
+      deviceButtons[0].title = d.desktop;
+      deviceButtons[1].title = d.tablet;
+      deviceButtons[2].title = d.mobile;
+      requestLink.textContent = d.request;
+      requestLink.dataset.short = d.requestShort;
+      closeButton.title = d.close;
+      frame.title = d.preview;
+      loadTemplate(selector.value || params.get("template") || defaultId);
+    }
+    langSelect.addEventListener("change", () => setLang(langSelect.value));
+    document.querySelector(".brand a").addEventListener("click", (event) => {
+      event.preventDefault();
+      location.href = `templates.html?lang=${lang}`;
+    });
+    closeButton.addEventListener("click", () => {
+      location.href = `templates.html?lang=${lang}`;
+    });
+    deviceButtons.forEach((button) => {
       button.addEventListener("click", () => {
         document.querySelectorAll(".device").forEach((item) => item.classList.remove("active"));
         button.classList.add("active");
         viewport.style.width = button.dataset.width;
       });
     });
-    loadTemplate(params.get("template") || defaultId);
+    setLang(lang);
   </script>
 </body>
 </html>
