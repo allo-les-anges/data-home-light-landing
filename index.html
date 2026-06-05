@@ -140,7 +140,7 @@ h1{font-family:'Montserrat',sans-serif;font-size:clamp(40px,6vw,80px);line-heigh
 /* STATS */
 .stats{background:linear-gradient(135deg,var(--blue),var(--pink));padding:56px 0}
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
-.stat-num{font-size:48px;font-weight:900;color:#fff;line-height:1}
+.stat-num{font-size:48px;font-weight:900;color:#fff;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:.01em}
 .stat-lbl{font-size:14px;color:rgba(255,255,255,.8);margin-top:6px;font-weight:500}
 /* REGIONS */
 .regions{padding:64px 0;background:var(--light)}
@@ -401,10 +401,10 @@ footer{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:72px 
 <section class="stats">
   <div class="container">
     <div class="stats-grid">
-      <div><div class="stat-num">24h</div><div class="stat-lbl" data-i18n="s1">Delai garanti</div></div>
-      <div><div class="stat-num">200+</div><div class="stat-lbl" data-i18n="s2">Agences clientes</div></div>
-      <div><div class="stat-num">8</div><div class="stat-lbl" data-i18n="s3">Langues</div></div>
-      <div><div class="stat-num">95+</div><div class="stat-lbl" data-i18n="s4">Score Lighthouse</div></div>
+      <div><div class="stat-num" data-count="24" data-suffix="h">24h</div><div class="stat-lbl" data-i18n="s1">Delai garanti</div></div>
+      <div><div class="stat-num" data-count="200" data-suffix="+">200+</div><div class="stat-lbl" data-i18n="s2">Agences clientes</div></div>
+      <div><div class="stat-num" data-count="8">8</div><div class="stat-lbl" data-i18n="s3">Langues</div></div>
+      <div><div class="stat-num" data-count="95" data-suffix="+">95+</div><div class="stat-lbl" data-i18n="s4">Score Lighthouse</div></div>
     </div>
   </div>
 </section>
@@ -771,6 +771,50 @@ pl:{nFeat:"Funkcje",nShow:"Portfolio",nPrice:"Cennik",nTpl:"Szablony",nFaq:"FAQ"
 };
 let lang = localStorage.getItem("dh_lang") || (navigator.language||"fr").slice(0,2);
 if (!T[lang]) lang = "fr";
+
+function formatAnimatedStat(value, suffix) {
+  return `${Math.round(value)}${suffix || ""}`;
+}
+
+function animateStatNumber(element) {
+  if (!element || element.dataset.animated === "true") return;
+  const target = Number(element.dataset.count || 0);
+  const suffix = element.dataset.suffix || "";
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  element.dataset.animated = "true";
+  if (prefersReducedMotion || !target) {
+    element.textContent = formatAnimatedStat(target, suffix);
+    return;
+  }
+  const duration = 1200;
+  const start = performance.now();
+  const tick = (now) => {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    element.textContent = formatAnimatedStat(target * eased, suffix);
+    if (progress < 1) requestAnimationFrame(tick);
+  };
+  element.textContent = formatAnimatedStat(0, suffix);
+  requestAnimationFrame(tick);
+}
+
+function initStatsCounter() {
+  const statsSection = document.querySelector(".stats");
+  const statNumbers = document.querySelectorAll(".stat-num[data-count]");
+  if (!statsSection || !statNumbers.length) return;
+  if (!("IntersectionObserver" in window)) {
+    statNumbers.forEach(animateStatNumber);
+    return;
+  }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      statNumbers.forEach(animateStatNumber);
+      observer.disconnect();
+    });
+  }, { threshold: 0.35 });
+  observer.observe(statsSection);
+}
 
 const DEMO_TEXT = {
   fr: {demoKicker:"Dashboard interactif",demoTitle:"Essayez le dashboard en direct",demoText:"Ouvrez une vraie agence de demonstration, explorez les reglages, les modules, les templates et la gestion du site. Les sauvegardes sont bloquees, vous pouvez tester sans risque.",demoP1Label:"Client",demoP1:"Mon espace, settings, modules",demoP2Label:"SaaS",demoP2:"Experience reelle, donnees protegees",demoP3Label:"Site",demoP3:"Templates, langues, branding",demoP4Label:"Demo",demoP4:"Aucune modification sauvegardee",demoCta:"Voir une demo",trialCta:"Commencer l'essai 15 jours",homeTplTitle:"Templates previsualisables",homeTplText:"Ouvrez les modeles reels de l'application SaaS directement depuis la homepage. Chaque preview utilise les routes live du produit.",homeTplGallery:"Voir toute la galerie",tplLive:"Voir live",tplPreview:"Previsualiser",tplIncluded:"Inclus",tplPremium:"Premium",tplDescRiviera:"Luxe clair, editorial, ideal pour biens mediterraneens.",tplDescPrestige:"Style premium sombre pour agences haut de gamme.",tplDescUrban:"Affichage catalogue efficace pour gros volumes XML.",tplDescBlack:"Experience sombre immersive pour biens d'exception."},
@@ -1711,6 +1755,7 @@ async function submitLead(e) {
 }
 
 setLang(lang);
+initStatsCounter();
 initCookieConsent();
 </script>
 <script src="https://assets.taskade.com/embeds/latest/taskade-embed.min.js"></script>
