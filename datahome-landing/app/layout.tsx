@@ -31,13 +31,13 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" suppressHydrationWarning className={montserrat.variable}>
       <body className="font-sans antialiased">
+        <Analytics />
         <ThemeProvider>
           <Navbar />
           <main>{children}</main>
           <Footer />
           <CookieConsent />
         </ThemeProvider>
-        <Analytics />
       </body>
     </html>
   )
