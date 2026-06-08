@@ -5,7 +5,7 @@ import { ThemeProvider } from "@/components/providers/ThemeProvider"
 import { Navbar } from "@/components/layout/Navbar"
 import { Footer } from "@/components/layout/Footer"
 import { CookieConsent } from "@/components/layout/CookieConsent"
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/next"
 
 const montserrat = Montserrat({
   subsets: ["latin"],
