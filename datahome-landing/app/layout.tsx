@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/providers/ThemeProvider"
 import { Navbar } from "@/components/layout/Navbar"
 import { Footer } from "@/components/layout/Footer"
 import { CookieConsent } from "@/components/layout/CookieConsent"
+import { Analytics } from "@vercel/analytics/react"
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -36,6 +37,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <Footer />
           <CookieConsent />
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )
