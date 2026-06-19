@@ -1,11 +1,8 @@
-﻿import type { Metadata } from "next"
+import type { Metadata } from "next"
 import { Montserrat } from "next/font/google"
 import "./globals.css"
-import { ThemeProvider } from "@/components/providers/ThemeProvider"
-import { Navbar } from "@/components/layout/Navbar"
-import { Footer } from "@/components/layout/Footer"
-import { CookieConsent } from "@/components/layout/CookieConsent"
 import { Analytics } from "@vercel/analytics/next"
+import { SiteChrome } from "@/components/layout/SiteChrome"
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -32,12 +29,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en" suppressHydrationWarning className={montserrat.variable}>
       <body className="font-sans antialiased">
         <Analytics />
-        <ThemeProvider>
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-          <CookieConsent />
-        </ThemeProvider>
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   )
