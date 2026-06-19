@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Votre agence immobilière en Espagne — data-home.app</title>
+    <meta
+      name="description"
+      content="Site multilingue pour agences françaises et belges actives en Espagne. Opérationnel en 24h. Essai gratuit 15 jours."
+    />
+    <link rel="canonical" href="https://data-home.app/fr-be" />
+    <meta property="og:title" content="Votre agence immobilière en Espagne — data-home.app" />
+    <meta
+      property="og:description"
+      content="Site multilingue pour agences françaises et belges actives en Espagne. Opérationnel en 24h. Essai gratuit 15 jours."
+    />
+    <meta property="og:url" content="https://data-home.app/fr-be" />
+    <meta property="og:type" content="website" />
+    <style>
+      :root {
+        --pink: #d769a9;
+        --red: #ef4b5a;
+        --blue: #18a1ce;
+        --green: #32b55e;
+        --ink: #080b1d;
+        --white: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: var(--ink);
+        color: var(--white);
+        font-family: Montserrat, Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        letter-spacing: 0;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      .container {
+        width: min(1180px, calc(100% - 40px));
+        margin-inline: auto;
+      }
+
+      .page {
+        min-height: 100vh;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 18% 5%, rgba(24, 161, 206, 0.26), transparent 30rem),
+          radial-gradient(circle at 82% 8%, rgba(239, 75, 90, 0.22), transparent 28rem),
+          #080b1d;
+      }
+
+      .header {
+        display: flex;
+        align-items: center;
+        height: 80px;
+      }
+
+      .logo {
+        width: 220px;
+        height: auto;
+      }
+
+      .hero {
+        padding: 40px 0 48px;
+        text-align: center;
+      }
+
+      h1 {
+        max-width: 980px;
+        margin: 0 auto;
+        color: #fff;
+        font-size: clamp(2.5rem, 7vw, 4.75rem);
+        font-weight: 900;
+        line-height: 1.06;
+      }
+
+      .subheadline {
+        max-width: 790px;
+        margin: 24px auto 0;
+        color: rgba(255, 255, 255, 0.72);
+        font-size: clamp(1rem, 2vw, 1.2rem);
+        line-height: 1.8;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        margin-top: 36px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 56px;
+        width: min(100%, 430px);
+        border-radius: 999px;
+        padding: 16px 28px;
+        background: linear-gradient(135deg, var(--pink) 0%, var(--red) 100%);
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 900;
+        text-align: center;
+        box-shadow: 0 18px 42px rgba(239, 75, 90, 0.24);
+        transition: transform 180ms ease, box-shadow 180ms ease;
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 22px 56px rgba(239, 75, 90, 0.32);
+      }
+
+      .demo-link {
+        color: rgba(255, 255, 255, 0.58);
+        font-size: 0.9rem;
+        font-weight: 700;
+      }
+
+      .demo-link:hover {
+        color: #fff;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+
+      .trust {
+        padding-bottom: 48px;
+      }
+
+      .trust-grid {
+        display: grid;
+        gap: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        padding: 16px;
+        background: rgba(255, 255, 255, 0.04);
+        box-shadow: 0 24px 90px rgba(0, 0, 0, 0.25);
+      }
+
+      .trust-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        min-height: 72px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 8px;
+        padding: 16px;
+        background: rgba(255, 255, 255, 0.035);
+      }
+
+      .check {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+        width: 24px;
+        height: 24px;
+        border-radius: 999px;
+        background: rgba(50, 181, 94, 0.15);
+        color: var(--green);
+        font-size: 0.85rem;
+        font-weight: 900;
+      }
+
+      .trust-item p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 0.92rem;
+        font-weight: 800;
+        line-height: 1.6;
+      }
+
+      .mockup {
+        padding-bottom: 56px;
+      }
+
+      figure {
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      .mockup-frame {
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        padding: 8px;
+        background: rgba(255, 255, 255, 0.04);
+        box-shadow: 0 34px 110px rgba(0, 0, 0, 0.38);
+      }
+
+      .mockup-frame img {
+        width: 100%;
+        border-radius: 6px;
+      }
+
+      figcaption {
+        margin-top: 16px;
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-align: center;
+      }
+
+      .features {
+        padding-bottom: 56px;
+      }
+
+      .feature-grid {
+        display: grid;
+        gap: 16px;
+      }
+
+      .feature-card {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        padding: 24px;
+        background: rgba(255, 255, 255, 0.055);
+        box-shadow: 0 22px 70px rgba(0, 0, 0, 0.22);
+      }
+
+      .feature-card h2 {
+        margin: 0;
+        color: #fff;
+        font-size: 1.25rem;
+        font-weight: 900;
+        line-height: 1.25;
+      }
+
+      .feature-card p {
+        margin: 16px 0 0;
+        color: rgba(255, 255, 255, 0.66);
+        font-size: 0.92rem;
+        line-height: 1.75;
+      }
+
+      .testimonial {
+        padding-bottom: 64px;
+      }
+
+      .quote-card {
+        display: grid;
+        gap: 24px;
+        max-width: 860px;
+        margin: 0 auto;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        padding: 24px;
+        background: linear-gradient(135deg, rgba(24, 161, 206, 0.12), rgba(215, 105, 169, 0.1));
+        box-shadow: 0 28px 90px rgba(0, 0, 0, 0.28);
+      }
+
+      .quote-card img {
+        width: 80px;
+        height: 80px;
+        border-radius: 999px;
+        object-fit: cover;
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.18);
+      }
+
+      blockquote {
+        margin: 0;
+      }
+
+      blockquote p {
+        margin: 0;
+        color: #fff;
+        font-size: clamp(1.25rem, 3vw, 1.5rem);
+        font-weight: 800;
+        line-height: 1.45;
+      }
+
+      blockquote footer {
+        margin-top: 16px;
+        color: rgba(255, 255, 255, 0.58);
+        font-size: 0.9rem;
+        font-weight: 700;
+      }
+
+      .final-cta {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(0, 0, 0, 0.24);
+        text-align: center;
+      }
+
+      .final-cta .container {
+        padding-block: 56px;
+      }
+
+      .final-cta h2 {
+        max-width: 840px;
+        margin: 0 auto;
+        color: #fff;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 900;
+        line-height: 1.1;
+      }
+
+      .final-cta .button {
+        margin-top: 32px;
+      }
+
+      .fine-print {
+        margin: 20px 0 0;
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+
+      .footer {
+        padding: 32px 0;
+        color: rgba(255, 255, 255, 0.45);
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-align: center;
+      }
+
+      @media (min-width: 640px) {
+        .hero {
+          padding: 64px 0;
+        }
+
+        .button {
+          width: auto;
+          font-size: 1.1rem;
+        }
+
+        .quote-card {
+          grid-template-columns: auto 1fr;
+          align-items: center;
+          padding: 32px;
+        }
+
+        .quote-card img {
+          width: 96px;
+          height: 96px;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .trust-grid,
+        .feature-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header class="container header">
+        <a href="/fr-be" aria-label="data-home.app">
+          <img class="logo" src="/images/DH_V2.png" width="220" height="72" alt="data-home.app" />
+        </a>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="container">
+            <h1>Vos clients veulent acheter en Espagne. Sont-ils sur votre site ?</h1>
+            <p class="subheadline">
+              Les agences françaises et belges perdent chaque année des mandats au profit d'agences espagnoles locales.
+              data-home.app vous donne une vitrine en Espagne, à votre marque, visible sur Google.fr et Google.be —
+              opérationnelle en 24 heures.
+            </p>
+            <div class="hero-actions">
+              <a class="button" href="https://datahome.vercel.app/register">Démarrer mon essai gratuit — 15 jours</a>
+              <a class="demo-link" href="https://datahome.vercel.app/demo">Voir une démo d'abord</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="container trust" aria-label="Indicateurs de confiance">
+          <div class="trust-grid">
+            <div class="trust-item">
+              <span class="check">✓</span>
+              <p>Site en français, espagnol et néerlandais</p>
+            </div>
+            <div class="trust-item">
+              <span class="check">✓</span>
+              <p>Vos annonces synchronisées automatiquement</p>
+            </div>
+            <div class="trust-item">
+              <span class="check">✓</span>
+              <p>Visible sur Google.fr et Google.be en 24h</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="container mockup">
+          <figure>
+            <div class="mockup-frame">
+              <img
+                src="/images/modules/crm_sync.png"
+                width="1440"
+                height="900"
+                alt="Dashboard data-home.app"
+                loading="eager"
+              />
+            </div>
+            <figcaption>Dashboard data-home.app — gérez votre site depuis un seul endroit</figcaption>
+          </figure>
+        </section>
+
+        <section class="container features" aria-label="Fonctionnalités">
+          <div class="feature-grid">
+            <article class="feature-card">
+              <h2>Votre site à votre marque</h2>
+              <p>
+                Votre domaine, votre logo, vos couleurs. Disponible en français, espagnol, néerlandais et anglais dès le
+                premier jour.
+              </p>
+            </article>
+            <article class="feature-card">
+              <h2>Vos biens sans effort</h2>
+              <p>
+                Connectez votre flux XML depuis Idealista, Kyero ou HabiHub. Vos annonces s'affichent automatiquement —
+                sans copier-coller.
+              </p>
+            </article>
+            <article class="feature-card">
+              <h2>Google vous trouve</h2>
+              <p>
+                SEO optimisé dans chaque langue. Vos clients belges et français trouvent vos biens espagnols directement
+                sur Google.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="container testimonial">
+          <div class="quote-card">
+            <img src="/images/Elena Rodriguez.jpeg" width="112" height="112" alt="Elena Rodriguez" loading="lazy" />
+            <blockquote>
+              <p>“Livré en 36h, un site magnifique. Mes clients adorent la version espagnole et française.”</p>
+              <footer>Elena Rodriguez — Directrice, Riviera Homes</footer>
+            </blockquote>
+          </div>
+        </section>
+
+        <section class="final-cta">
+          <div class="container">
+            <h2>Prêt à ne plus perdre ces clients ?</h2>
+            <a class="button" href="https://datahome.vercel.app/register">Démarrer mon essai gratuit — 15 jours</a>
+            <p class="fine-print">Sans carte bancaire · Annulable à tout moment · Opérationnel en 24h</p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="container footer">Une question ? Écrivez-nous : info@data-home.app</footer>
+    </div>
+  </body>
+</html>
