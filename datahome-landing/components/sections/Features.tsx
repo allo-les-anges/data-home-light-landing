@@ -1,7 +1,7 @@
 ﻿"use client"
 
 import { motion } from "framer-motion"
-import { Bot, Building2, Globe2, Languages, LayoutTemplate, Link2, Search, Video, Workflow } from "lucide-react"
+import { Bot, Building2, Eye, FileText, Globe2, Landmark, Languages, LayoutTemplate, Link2, Mail, Search, Share2, TrendingUp, Video, Workflow } from "lucide-react"
 
 const modules = [
   { icon: Globe2, title: "Public website", text: "A polished agency website with sales, rentals, contact, legal pages and responsive layouts." },
@@ -9,10 +9,16 @@ const modules = [
   { icon: Building2, title: "Property Manager", text: "Agencies can add sales and rentals, photos, videos and property details from their workspace." },
   { icon: LayoutTemplate, title: "Premium templates", text: "Free and paid templates with editable colors, typography, hero media, cards and footer copy." },
   { icon: Bot, title: "AI chatbot", text: "Qualifies visitors, proposes properties and sends structured leads to the Mini CRM." },
+  { icon: TrendingUp, title: "Mini CRM", text: "Every lead — from the chatbot, the contact form or a converted visitor — organized in one simple pipeline." },
   { icon: Workflow, title: "Landing page generator", text: "Dedicated pages for properties and developments, ready for targeted campaigns." },
   { icon: Languages, title: "Multilingual websites", text: "Core languages included, with extra languages available when agencies need more markets." },
   { icon: Video, title: "Video hero & immersive tours", text: "MP4 hero videos and immersive-tour modules for more emotional property discovery." },
-  { icon: Search, title: "SEO-ready structure", text: "Clean pages, metadata foundations and a roadmap SEO module for future growth." },
+  { icon: Search, title: "SEO IA", text: "AI-optimized titles, meta descriptions and property content to help every listing rank higher." },
+  { icon: Share2, title: "Social Hub", text: "AI-drafted posts for Facebook, Instagram and LinkedIn, scheduled and published from one dashboard." },
+  { icon: Eye, title: "Visitor Tracking", text: "Spot the anonymous visitors browsing your listings and convert the engaged ones into a lead in one click." },
+  { icon: Landmark, title: "Cadastre & Compliance Passport", text: "Live Spanish Catastro lookup with surface and land use, plus an autonomous legal PGOU search for peace of mind." },
+  { icon: Mail, title: "Newsletter", text: "Send curated property updates to your subscriber list straight from the agency dashboard." },
+  { icon: FileText, title: "Custom Pages", text: "Publish free-form content — legal notices, buying guides, local market insights — under your own site." },
 ]
 
 export function Features() {
