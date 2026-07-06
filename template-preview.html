@@ -120,7 +120,7 @@
       selector.value = selected[0];
       templateName.textContent = selected[1];
       document.title = `${selected[1]} - ${d.preview}`;
-      frame.src = `https://datahome.vercel.app/${lang}/demo/template-preview/${selected[0]}?embed=1`;
+      frame.src = `https://datahome.vercel.app/${lang}/demo-datahome/template-preview/${selected[0]}?embed=1`;
       requestLink.href = `https://datahome.vercel.app/register?template=${selected[0]}&locale=${lang}`;
       history.replaceState(null, "", `template-preview.html?template=${selected[0]}&lang=${lang}`);
     }
