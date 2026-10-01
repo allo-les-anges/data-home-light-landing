@@ -1,18 +1,15 @@
-﻿"use client"
+"use client"
 
 import Image from "next/image"
 import { useEffect, useMemo, useState } from "react"
 import { MapPin } from "lucide-react"
 
-type VillaCard = { name: string; location: string; price: number; image: string; badge: string }
+type VillaCard = { name: string; location: string; price: number; image: string }
 
 const fallbackVillas: VillaCard[] = [
-  { name: "Villa Victoria", location: "Ciudad Quesada, Alicante", price: 883210, image: "https://medianewbuild.com/file/hh-media-bucket/developments_v2/13112583/media/images/1.jpg", badge: "Featured" },
-  { name: "Modern Sea View Villa", location: "Marbella, Costa del Sol", price: 1245000, image: "https://medianewbuild.com/file/hh-media-bucket/developments_v2/37089450/media/images/outdoor/1.jpg", badge: "Sea view" },
-  { name: "Golf Residence", location: "Benahavis, Malaga", price: 695000, image: "https://medianewbuild.com/file/hh-media-bucket/developments_v2/82064372/media/images/1.jpg", badge: "Luxury" },
-  { name: "Family Villa", location: "Costa Calida, Murcia", price: 525000, image: "https://medianewbuild.com/file/hh-media-bucket/developments_v2/60846833/media/images/1.jpg", badge: "Prestige" },
-  { name: "Design Villa", location: "Altea, Alicante", price: 1590000, image: "https://medianewbuild.com/file/hh-media-bucket/developments_v2/25407071/media/images/outdoor/1.jpg", badge: "Exclusive" },
-  { name: "Mediterranean Home", location: "Estepona, Malaga", price: 1995000, image: "https://medianewbuild.com/file/hh-media-bucket/developments_v2/70091589/media/images/outdoor/1.jpg", badge: "Premium" },
+  { name: "Villa Victoria", location: "Ciudad Quesada, Alicante", price: 883210, image: "https://medianewbuild.com/file/hh-media-bucket/developments_v2/13112583/media/images/1.jpg" },
+  { name: "Modern Sea View Villa", location: "Marbella, Costa del Sol", price: 1245000, image: "https://medianewbuild.com/file/hh-media-bucket/developments_v2/37089450/media/images/outdoor/1.jpg" },
+  { name: "Golf Residence", location: "Benahavis, Malaga", price: 695000, image: "https://medianewbuild.com/file/hh-media-bucket/developments_v2/82064372/media/images/1.jpg" },
 ]
 
 function parseImages(images: unknown): string[] {
@@ -47,19 +44,38 @@ export function VillasShowcase() {
         if (!response.ok) return
         const payload = await response.json()
         const mapped = (Array.isArray(payload?.properties) ? payload.properties : [])
-          .map((property: any, index: number) => {
+          .map((property: any) => {
             const image = property.image || parseImages(property.images)[0]
             return {
-              name: property.titre_en || property.titre || property.title || property.ref || `Property ${index + 1}`,
+              name: property.titre_en || property.titre || property.title || property.ref || "Property",
               location: [property.town || property.ville, property.province || property.region].filter(Boolean).join(", "),
               price: numericPrice(property.price || property.prix),
               image,
-              badge: ["Featured", "Sea view", "Luxury", "Prestige", "Exclusive", "Premium"][index % 6],
             }
           })
           .filter((property: VillaCard) => property.image && property.price >= 500000 && property.price <= 2000000)
-          .slice(0, 6)
-        if (mounted && mapped.length) setRemoteVillas(mapped)
+
+        // Deduplicate by location — remote source sometimes returns same development twice
+        const seenLocations = new Set<string>()
+        const deduped = mapped.filter((v: VillaCard) => {
+          if (!v.location || seenLocations.has(v.location)) return false
+          seenLocations.add(v.location)
+          return true
+        })
+
+        // Supplement with verified fallback entries if fewer than 3 unique locations
+        let result: VillaCard[] = deduped.slice(0, 3)
+        if (result.length < 3) {
+          for (const fb of fallbackVillas) {
+            if (result.length >= 3) break
+            if (!seenLocations.has(fb.location)) {
+              result.push(fb)
+              seenLocations.add(fb.location)
+            }
+          }
+        }
+
+        if (mounted && result.length) setRemoteVillas(result)
       } catch {
         if (mounted) setRemoteVillas(null)
       }
@@ -71,26 +87,35 @@ export function VillasShowcase() {
   return (
     <section id="showcase" className="py-24 md:py-32">
       <div className="dh-container">
-        <div className="mb-14 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-          <div className="max-w-2xl">
-            <p className="text-sm font-black uppercase tracking-[.22em] text-[#D769A9]">Showcases that sell</p>
-            <h2 className="mt-4 text-4xl font-black text-[#080B1D] md:text-5xl">Real listings, presented with clarity.</h2>
-          </div>
-          <p className="max-w-md text-sm leading-7 text-slate-600">A varied selection from the villas table, from EUR 500K to EUR 2M, with imagery that feels premium from the first scroll.</p>
+        <div className="mb-12 max-w-xl">
+          <h2 className="text-3xl font-black text-[#080B1D] md:text-4xl">Real listings, presented with clarity.</h2>
+          <p className="mt-4 text-sm leading-[1.85] text-slate-500">Live catalogue from agencies on DATAhome — real property data, real imagery.</p>
         </div>
 
         <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
           {villas.map((villa) => (
-            <article key={`${villa.name}-${villa.price}`} className="group overflow-hidden rounded-[1.8rem] border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-2xl hover:shadow-slate-200/80">
-              <div className="relative h-64 overflow-hidden">
-                <Image src={villa.image} alt={villa.name} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#080B1D]/70 via-transparent to-transparent" />
-                <span className="absolute left-4 top-4 rounded-full bg-white/92 px-4 py-2 text-xs font-black uppercase tracking-[.12em] text-[#EF4B5A]">{villa.badge}</span>
-                <p className="absolute bottom-4 left-4 text-2xl font-black text-white">{formatPrice(villa.price)}</p>
+            <article
+              key={`${villa.name}-${villa.price}`}
+              className="group overflow-hidden rounded-2xl border border-slate-200 bg-white"
+            >
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src={villa.image}
+                  alt={villa.name}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover transition-transform duration-500 ease-out [@media(hover:hover)]:group-hover:scale-[1.03]"
+                />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-extrabold text-[#080B1D]">{villa.name}</h3>
-                <p className="mt-3 flex items-center gap-2 text-sm text-slate-500"><MapPin className="h-4 w-4 text-[#18A1CE]" /> {villa.location}</p>
+              <div className="p-5">
+                <div className="flex items-baseline justify-between gap-3">
+                  <h3 className="text-base font-extrabold text-[#080B1D]">{villa.name}</h3>
+                  <p className="shrink-0 text-base font-black tabular-nums text-[#080B1D]">{formatPrice(villa.price)}</p>
+                </div>
+                <p className="mt-2 flex items-center gap-1.5 text-sm text-slate-500">
+                  <MapPin className="h-3.5 w-3.5 shrink-0 text-[#18A1CE]" />
+                  {villa.location}
+                </p>
               </div>
             </article>
           ))}

@@ -1,47 +1,119 @@
-﻿"use client"
+import Image from "next/image"
 
-import { motion } from "framer-motion"
-import { Bot, Building2, Eye, FileText, Globe2, Landmark, Languages, LayoutTemplate, Link2, Mail, Search, Share2, TrendingUp, Video, Workflow } from "lucide-react"
-
-const modules = [
-  { icon: Globe2, title: "Public website", text: "A polished agency website with sales, rentals, contact, legal pages and responsive layouts." },
-  { icon: Link2, title: "XML feed workflow", text: "Connect HabiHub XML feeds from the agency dashboard while keeping client onboarding simple." },
-  { icon: Building2, title: "Property Manager", text: "Agencies can add sales and rentals, photos, videos and property details from their workspace." },
-  { icon: LayoutTemplate, title: "Premium templates", text: "Free and paid templates with editable colors, typography, hero media, cards and footer copy." },
-  { icon: Bot, title: "AI chatbot", text: "Qualifies visitors, proposes properties and sends structured leads to the Mini CRM." },
-  { icon: TrendingUp, title: "Mini CRM", text: "Every lead — from the chatbot, the contact form or a converted visitor — organized in one simple pipeline." },
-  { icon: Workflow, title: "Landing page generator", text: "Dedicated pages for properties and developments, ready for targeted campaigns." },
-  { icon: Languages, title: "Multilingual websites", text: "Core languages included, with extra languages available when agencies need more markets." },
-  { icon: Video, title: "Video hero & immersive tours", text: "MP4 hero videos and immersive-tour modules for more emotional property discovery." },
-  { icon: Search, title: "SEO IA", text: "AI-optimized titles, meta descriptions and property content to help every listing rank higher." },
-  { icon: Share2, title: "Social Hub", text: "AI-drafted posts for Facebook, Instagram and LinkedIn, scheduled and published from one dashboard." },
-  { icon: Eye, title: "Visitor Tracking", text: "Spot the anonymous visitors browsing your listings and convert the engaged ones into a lead in one click." },
-  { icon: Landmark, title: "Cadastre & Compliance Passport", text: "Live Spanish Catastro lookup with surface and land use, plus an autonomous legal PGOU search for peace of mind." },
-  { icon: Mail, title: "Newsletter", text: "Send curated property updates to your subscriber list straight from the agency dashboard." },
-  { icon: FileText, title: "Custom Pages", text: "Publish free-form content — legal notices, buying guides, local market insights — under your own site." },
+const pillars = [
+  {
+    number: "01",
+    label: "Your agency online",
+    headline: "Multilingual website\nand digital presence.",
+    description:
+      "DATAhome deploys a professional agency website in a single onboarding session — production-ready, multilingual and optimized for search from the first day.",
+    capabilities: [
+      "6 languages included by default",
+      "Premium templates with full customization",
+      "Custom domain, SEO-ready from launch",
+      "XML feed integration directly from the workspace",
+    ],
+    reversed: false,
+    screenshot: "/screenshots/pillar-website.png",
+    screenshotAlt: "DATAhome — agency website template",
+    screenshotW: 1440,
+    screenshotH: 843,
+    frameClass: "border-slate-200 shadow-[0_24px_64px_rgba(15,23,42,0.08)]",
+  },
+  {
+    number: "02",
+    label: "Manage",
+    headline: "Properties, catalogue,\nleads and CRM.",
+    description:
+      "Every listing, every inquiry and every client conversation organized in one workspace — without switching between tools.",
+    capabilities: [
+      "Property Manager — sales and rentals with media",
+      "XML import with HabiHub integration",
+      "Mini CRM with structured lead pipeline",
+      "AI chatbot for automated lead qualification",
+    ],
+    reversed: true,
+    screenshot: "/screenshots/property-catalogue.png",
+    screenshotAlt: "DATAhome — Property Manager, catalogue and listing controls",
+    screenshotW: 1440,
+    screenshotH: 900,
+    frameClass: "border-[#1d2236] shadow-[0_24px_64px_rgba(8,11,29,0.16)]",
+  },
+  {
+    number: "03",
+    label: "Generate demand",
+    headline: "Landing pages, Social Hub\nand visitor intelligence.",
+    description:
+      "Targeted campaign and conversion tools that help agencies turn traffic into qualified enquiries — from property pages to scheduled social content.",
+    capabilities: [
+      "Landing page generator per property or development",
+      "Social Hub — AI drafts for Facebook, Instagram, LinkedIn",
+      "Visitor tracking with one-click lead conversion",
+      "Newsletter sent directly from the agency dashboard",
+    ],
+    reversed: false,
+    screenshot: "/screenshots/social-hub.png",
+    screenshotAlt: "DATAhome — Social Hub and demand generation",
+    screenshotW: 1440,
+    screenshotH: 900,
+    frameClass: "border-[#1d2236] shadow-[0_24px_64px_rgba(8,11,29,0.16)]",
+  },
+  {
+    number: "04",
+    label: "Extend",
+    headline: "Optional modules\nand AI capabilities.",
+    description:
+      "Add capabilities as the agency grows. Every module connects directly to the existing DATAhome workspace — no separate logins, no integration work.",
+    capabilities: [
+      "Video hero and immersive property tours",
+      "SEO IA — AI-optimized listing titles and meta",
+      "Cadastre and compliance passport (Spain)",
+      "Custom pages and additional market languages",
+    ],
+    reversed: true,
+    screenshot: "/screenshots/modules.png",
+    screenshotAlt: "DATAhome — optional modules and AI capabilities",
+    screenshotW: 1440,
+    screenshotH: 804,
+    frameClass: "border-slate-200/60 shadow-[0_24px_64px_rgba(15,23,42,0.10)]",
+  },
 ]
+
+
+function ProductImage({ src, alt, crop, width = 1920, height = 1200 }: { src: string; alt: string; crop: string; width?: number; height?: number }) {
+  return <div className={"product-crop " + crop}><Image src={src} alt={alt} width={width} height={height} sizes="(max-width: 600px) 1200px, 1920px" /></div>
+}
 
 export function Features() {
   return (
-    <section id="features" className="py-24 md:py-32">
+    <section id="features" className="product-features">
       <div className="dh-container">
-        <div className="mx-auto mb-16 max-w-3xl text-center">
-          <p className="text-sm font-black uppercase tracking-[.22em] text-[#D769A9]">Everything you need</p>
-          <h2 className="mt-4 text-4xl font-black text-[#080B1D] md:text-5xl">Built around the real Data Home workflow.</h2>
-          <p className="mt-5 text-lg leading-8 text-slate-600">From onboarding to XML imports, from property cards to lead capture, the landing page reflects what the SaaS actually does.</p>
-        </div>
-
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {modules.map((module, index) => (
-            <motion.article key={module.title} initial={{ opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ delay: index * .035 }} className="group rounded-[1.7rem] border border-slate-200/80 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-2xl hover:shadow-slate-200/80">
-              <div className="mb-5 flex h-13 w-13 items-center justify-center rounded-2xl bg-gradient-to-br from-[#18A1CE] to-[#D769A9] text-white shadow-lg shadow-[#D769A9]/20">
-                <module.icon className="h-6 w-6" />
+        <h2 className="product-intro">One workspace.<br />Four operating pillars.</h2>
+        {pillars.map((pillar, index) => (
+          <article key={pillar.number} className={"product-chapter chapter-" + index}>
+            <div className="product-chapter-copy">
+              <div><p className="product-label">{pillar.label}</p><h3>{pillar.headline}</h3><p className="product-description">{pillar.description}</p></div>
+              <ul>{pillar.capabilities.map(cap => <li key={cap}>{cap}</li>)}</ul>
+            </div>
+            {index === 2 ? (
+              <div className="product-demand-story">
+                <figure className="product-stage">
+                  <figcaption><span>Create / publish</span><p>Give each property its own destination.</p></figcaption>
+                  <ProductImage src="/screenshots/landing-pages.png" alt="DATAhome Landing Pages : published property pages, performance and page creation controls." crop="crop-landing" />
+                </figure>
+                <figure className="product-stage stage-distribute">
+                  <figcaption><span>Promote / distribute</span><p>Bring that property to your social channels.</p></figcaption>
+                  <ProductImage src={pillar.screenshot} alt={pillar.screenshotAlt} crop="crop-social" />
+                </figure>
               </div>
-              <h3 className="text-xl font-extrabold text-[#080B1D]">{module.title}</h3>
-              <p className="mt-3 text-sm leading-7 text-slate-600">{module.text}</p>
-            </motion.article>
-          ))}
-        </div>
+            ) : (
+              <figure className={"product-visual visual-" + index}>
+                <ProductImage src={pillar.screenshot} alt={pillar.screenshotAlt} crop={index === 0 ? "crop-website" : index === 1 ? "crop-catalogue" : "crop-modules"} width={index === 0 ? 1440 : 1920} height={index === 0 ? 843 : 1200} />
+                {index === 1 && <figcaption>Your catalogue and your leads, connected. CRM activity is visible from the Cockpit.</figcaption>}
+              </figure>
+            )}
+          </article>
+        ))}
       </div>
     </section>
   )

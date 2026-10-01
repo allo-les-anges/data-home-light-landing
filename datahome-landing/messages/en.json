@@ -1,0 +1,513 @@
+{
+    "navigation":  {
+                       "home":  "Home",
+                       "product":  "Product",
+                       "templates":  "Templates",
+                       "pricing":  "Pricing",
+                       "partners":  "Partners",
+                       "contact":  "Contact"
+                   },
+    "promise":  "Your agency. Online. In {hours} hours.",
+    "chrome":  {
+                   "trial":  "Start free trial",
+                   "language":  "Language",
+                   "openMenu":  "Open menu",
+                   "closeMenu":  "Close menu",
+                   "mainNav":  "Main navigation",
+                   "footerNav":  "Footer navigation",
+                   "privacy":  "Privacy",
+                   "legal":  "Legal",
+                   "cookies":  "Cookie preferences",
+                   "pending":  "This page is being prepared.",
+                   "pendingBody":  "Explore the homepage while we prepare this section.",
+                   "backHome":  "Back to home",
+                   "legalPending":  "These documents are being reviewed and are not yet available.",
+                   "cookieBody":  "Essential functionality works without analytics. Analytics is activated only after you accept all.",
+                   "acceptAll":  "Accept all",
+                   "essential":  "Essential only",
+                   "close":  "Close",
+                   "rights":  "All rights reserved.",
+                   "faq":  "FAQ"
+               },
+    "product":  {
+                    "title":  "One platform to run your agency online.",
+                    "intro":  "Your website, properties, leads and marketing, connected in one workspace. DATAhome brings the tools around your daily work together.",
+                    "metaTitle":  "Real estate agency platform | DATAhome",
+                    "metaDescription":  "Explore the DATAhome platform: agency websites, property management, Mini CRM, landing pages, Social Hub and optional modules.",
+                    "jump":  "Explore the platform",
+                    "imageNote":  "Authentic DATAhome interface. Scroll horizontally on mobile to inspect the product.",
+                    "fullImage":  "Open the full screenshot",
+                    "pilot":  {
+                                  "label":  "Your operating view",
+                                  "title":  "Start with the whole picture.",
+                                  "body":  "The Cockpit brings CRM activity, catalogue updates, newsletter subscribers and publishing activity into a central view. See recent properties and follow the actions available from your workspace.",
+                                  "points":  [
+                                                 "New leads and CRM progress",
+                                                 "Catalogue, imports and recent properties",
+                                                 "Landing Pages and Social Hub activity"
+                                             ]
+                              },
+                    "manage":  {
+                                   "label":  "Properties and opportunities",
+                                   "title":  "The inventory. And the people behind every enquiry.",
+                                   "body":  "Use the Property Manager to add and maintain sales and rental listings, with descriptions and property media. The catalogue brings those listings together for your agency.",
+                                   "points":  [
+                                                  "Manual Property Manager in Essential",
+                                                  "Advanced Property Manager in Pro and Premium",
+                                                  "Optional XML imports, separate from every subscription"
+                                              ],
+                                   "crmTitle":  "Keep the lead in view.",
+                                   "crmBody":  "Mini CRM Leads gives enquiries a place in your workflow. Follow new, contacted and qualified leads; the Cockpit shows CRM activity alongside the properties you manage. Mini CRM Leads is included in Essential, Pro and Premium."
+                               },
+                    "website":  {
+                                    "label":  "Your agency, in public",
+                                    "title":  "A website that carries your identity.",
+                                    "body":  "Present your properties through a real agency website, with your domain, your visual identity and multilingual content. Visitors can explore sales and rentals and contact your agency through a form or WhatsApp.",
+                                    "points":  [
+                                                   "Standard templates and a custom domain",
+                                                   "Up to {languages} website languages included",
+                                                   "Property presentation and agency contact"
+                                               ],
+                                    "caption":  "A public agency website — the result your visitors see."
+                                },
+                    "create":  {
+                                   "label":  "Create, then distribute",
+                                   "title":  "Give a property a destination. Then bring it to your audience.",
+                                   "body":  "Landing Pages let you create dedicated pages for a property or development. Custom Pages provide additional space for your agency content. They complement the main agency website.",
+                                   "landingTitle":  "Create a focused page.",
+                                   "landingBody":  "Manage published landing pages and their activity from your workspace. Landing Pages are included in Pro; Premium includes unlimited Landing Pages.",
+                                   "socialTitle":  "Turn a listing into a social post.",
+                                   "socialBody":  "Choose a property in Social Hub, prepare its promotional content and use the publishing tools for connected channels. The current interface identifies Facebook and Instagram. Social Hub is included in Pro and Premium."
+                               },
+                    "engage":  {
+                                   "label":  "Understand and engage",
+                                   "title":  "From a visit to a conversation.",
+                                   "body":  "Bring visitor signals and communication tools into the agency workflow. Use the information available to decide where to focus your attention.",
+                                   "items":  [
+                                                 {
+                                                     "title":  "Visitors \u0026 analytics",
+                                                     "body":  "Review anonymous visitor activity, visitor countries and engagement signals. Essential Analytics is included from Essential; Advanced Analytics is included in Pro and Premium."
+                                                 },
+                                                 {
+                                                     "title":  "AI Chatbot",
+                                                     "body":  "Help visitors ask about properties and capture enquiries through the chatbot. Pro includes AI Chatbot; Premium extends the chatbot quota."
+                                                 },
+                                                 {
+                                                     "title":  "WhatsApp",
+                                                     "body":  "Give visitors a direct contact path to your agency. Contact Form \u0026 WhatsApp are included in Essential and inherited by Pro and Premium."
+                                                 },
+                                                 {
+                                                     "title":  "Newsletter",
+                                                     "body":  "Manage subscribers and prepare agency communications from your workspace. Newsletter is included in Premium and is also available as an optional module."
+                                                 }
+                                             ]
+                               },
+                    "extend":  {
+                                   "label":  "Room to grow",
+                                   "title":  "Extend the platform around your agency.",
+                                   "body":  "Add capabilities through modules as your needs evolve. Custom Pages, AI Translation, Immersive Tours and Hero Video are part of the available catalogue. Inclusions depend on your plan.",
+                                   "xmlTitle":  "XML is a separate service.",
+                                   "xmlBody":  "Use an optional feed to import property data. XML is not included in Essential, Pro or Premium. Each feed is priced separately at {xml} per month.",
+                                   "pricing":  "Explore the offer"
+                               },
+                    "activation":  {
+                                       "title":  "Your agency. Online. In {hours} hours.",
+                                       "body":  "The platform and templates are already built. The activation window starts once your agency information, branding, content, media, contact details and required property data or configuration have been received and confirmed.",
+                                       "cta":  "Start your {days}-day trial",
+                                       "access":  "Free trial. Full access."
+                                   },
+                    "alts":  {
+                                 "cockpit":  "DATAhome Cockpit showing CRM activity, catalogue and publishing actions",
+                                 "catalogue":  "DATAhome Property Manager with sales and rental filters and property listings",
+                                 "website":  "Authentic public agency website with property presentation",
+                                 "landing":  "DATAhome Landing Pages manager",
+                                 "social":  "DATAhome Social Hub property selection and Create post controls",
+                                 "modules":  "DATAhome catalogue of optional modules"
+                             }
+                },
+    "pricing":  {
+                    "metaTitle":  "Pricing for real estate agencies | DATAhome",
+                    "metaDescription":  "Compare DATAhome Essential, Pro and Premium plans, optional modules, setup and XML feed pricing.",
+                    "eyebrow":  "DATAHOME PRICING",
+                    "title":  "Choose the operating level your agency needs.",
+                    "intro":  "Three clear monthly plans for your website, property activity and growth tools. Start with the capabilities that fit your agency today.",
+                    "monthly":  "Monthly pricing",
+                    "month":  "month",
+                    "user":  "user",
+                    "users":  "users",
+                    "fullAccess":  "Full access",
+                    "trialLine":  "{days}-day free trial",
+                    "planCta":  "Choose",
+                    "plansLabel":  "DATAhome plans",
+                    "planText":  {
+
+                                 },
+                    "differences":  {
+                                        "eyebrow":  "KEY DIFFERENCES",
+                                        "title":  "Compare what changes.",
+                                        "intro":  "A compact view of the capacity, property workflow and distinctive capabilities at each level.",
+                                        "capacity":  "Team capacity",
+                                        "property":  "Property workflow",
+                                        "distinctive":  "Distinctive capabilities"
+                                    },
+                    "modules":  {
+                                    "eyebrow":  "OPTIONAL MODULES",
+                                    "title":  "Add focused capabilities.",
+                                    "intro":  "Choose optional modules according to the services and workflows your agency needs.",
+                                    "languageUnit":  "language/month"
+                                },
+                    "moduleNames":  [
+
+                                    ],
+                    "xml":  {
+                                "eyebrow":  "XML FEED",
+                                "title":  "{xml} per feed, per month.",
+                                "body":  "XML Feed is priced separately from DATAhome subscriptions.",
+                                "none":  "Included in no plan."
+                            },
+                    "setup":  {
+                                  "eyebrow":  "SETUP \u0026 ONBOARDING",
+                                  "title":  "{setup} one-time.",
+                                  "body":  "Setup and onboarding are billed once."
+                              },
+                    "trial":  {
+                                  "eyebrow":  "START WITH THE PRODUCT",
+                                  "title":  "Explore DATAhome for {days} days.",
+                                  "body":  "Use the platform with full access during your free trial.",
+                                  "cta":  "Start your {days}-day trial"
+                              },
+                    "faq":  {
+                                "eyebrow":  "PRICING FAQ",
+                                "title":  "The practical details.",
+                                "items":  [
+                                              {
+                                                  "question":  "How long is the free trial?",
+                                                  "answer":  "The free trial lasts {days} days and includes full access."
+                                              },
+                                              {
+                                                  "question":  "Is there a setup fee?",
+                                                  "answer":  "Setup and onboarding are billed once at {setup}."
+                                              },
+                                              {
+                                                  "question":  "How are optional modules priced?",
+                                                  "answer":  "Optional modules are priced individually per month. An additional language is priced per language, per month."
+                                              },
+                                              {
+                                                  "question":  "Is XML included in a plan?",
+                                                  "answer":  "No. XML Feed is included in no plan and costs {xml} per feed, per month."
+                                              }
+                                          ]
+                            }
+                },
+    "productPending":  {
+                           "message":  "This page is being translated.",
+                           "link":  "Read Product in English"
+                       },
+    "partnersPage":  {
+                         "metaTitle":  "Partners \u0026 integrations for real-estate agencies | DATAhome",
+                         "metaDescription":  "Connect property data and CRM workflows to DATAhome.",
+                         "hero":  {
+                                      "eyebrow":  "PARTNERS \u0026 INTEGRATIONS",
+                                      "title":  "Connect your data ecosystem to DATAhome.",
+                                      "body":  "DATAhome connects property data coming from XML providers and lead workflows going to CRM systems, while your agency keeps its existing tools."
+                                  },
+                         "mapper":  {
+                                        "eyebrow":  "DATAHOME IMPORT MAPPER",
+                                        "title":  "Any source. One DATAhome format.",
+                                        "body":  "Import property data from different sources and structures. Map it once, normalize the data, generate a standardized DATAhome XML feed and use it directly across your DATAhome ecosystem.",
+                                        "alt":  "DATAhome Import Mapper — property data mapping and normalization"
+                                    },
+                         "xml":  {
+                                     "eyebrow":  "PROPERTY DATA / XML PROVIDERS",
+                                     "title":  "Connect your property XML feed to DATAhome.",
+                                     "body":  "Different XML structures can be mapped into the DATAhome property data model through an integration service.",
+                                     "sourceLabel":  "Property data providers",
+                                     "sources":  [
+                                                     "\u003cprice\u003e · \u003cprecio\u003e · \u003cselling_price\u003e",
+                                                     "\u003cref\u003e · \u003cproperty_id\u003e · \u003creference\u003e"
+                                                 ],
+                                     "mapping":  "Mapping \u0026 normalization",
+                                     "standardized":  "Standardized property data",
+                                     "fields":  [
+                                                    "Reference",
+                                                    "Price",
+                                                    "Property type",
+                                                    "Location",
+                                                    "Bedrooms",
+                                                    "Bathrooms",
+                                                    "Description",
+                                                    "Images \u0026 features"
+                                                ],
+                                     "destinationLabel":  "DATAhome ecosystem",
+                                     "destinations":  [
+                                                          "Property catalogue",
+                                                          "Agency website",
+                                                          "Property pages",
+                                                          "Landing pages"
+                                                      ],
+                                     "note":  "Mapping is scoped to the feed and workflow at hand.",
+                                     "price":  "{xml} / feed / month",
+                                     "none":  "Included in no plan."
+                                 },
+                         "verified":  {
+                                          "eyebrow":  "Verified XML integration",
+                                          "label":  "Verified XML import integration",
+                                          "title":  "HabiHub",
+                                          "body":  "HabiHub is an example of an XML property source already connected to DATAhome.",
+                                          "alt":  "HabiHub"
+                                      },
+                         "crm":  {
+                                     "eyebrow":  "CRM PROVIDERS",
+                                     "title":  "Keep your CRM. Connect it to DATAhome.",
+                                     "body":  "DATAhome does not require your agency to replace its existing CRM. It structures leads from its digital ecosystem for compatible CRM workflows.",
+                                     "sourceLabel":  "Leads from DATAhome",
+                                     "sources":  [
+                                                     "Website forms",
+                                                     "Property enquiries",
+                                                     "Landing pages",
+                                                     "AI Chatbot",
+                                                     "Contact forms",
+                                                     "Other lead sources"
+                                                 ],
+                                     "mapping":  "Lead sync \u0026 field mapping",
+                                     "standardized":  "Standardized lead data",
+                                     "fields":  [
+                                                    "Full name",
+                                                    "Email",
+                                                    "Phone",
+                                                    "Source",
+                                                    "Property interest",
+                                                    "Location",
+                                                    "Project type"
+                                                ],
+                                     "destinationLabel":  "Your CRM",
+                                     "destinations":  [
+                                                          "CRM workflow",
+                                                          "Contacts",
+                                                          "Leads",
+                                                          "Opportunities \u0026 pipeline"
+                                                      ],
+                                     "note":  "CRM connectivity is assessed for the compatible system and agency workflow."
+                                 },
+                         "mini":  {
+                                      "have":  "Already have a CRM? Keep it.",
+                                      "none":  "No CRM yet? DATAhome includes one.",
+                                      "body":  "Every DATAhome plan includes the DATAhome Mini CRM. It is available when your agency needs it, never mandatory."
+                                  },
+                         "unified":  {
+                                         "eyebrow":  "UNIFIED PARTNER ECOSYSTEM",
+                                         "title":  "DATAhome adapts to your agency. Your agency doesn\u0027t have to adapt to DATAhome.",
+                                         "left":  "Property data providers",
+                                         "leftDetail":  "XML feeds",
+                                         "center":  "DATAhome",
+                                         "right":  "CRM providers",
+                                         "rightDetail":  "CRM workflows",
+                                         "below":  [
+                                                       "Agency website",
+                                                       "Property catalogue",
+                                                       "Landing pages",
+                                                       "Leads",
+                                                       "Mini CRM",
+                                                       "Digital ecosystem"
+                                                   ]
+                                     },
+                         "cta":  {
+                                     "eyebrow":  "WORK WITH DATAHOME",
+                                     "title":  "Connect your technology to DATAhome.",
+                                     "body":  "Are you a property-data provider, CRM provider, real-estate network or agency with an existing data workflow? Let’s discuss how your system can connect with DATAhome.",
+                                     "cta":  "Discuss an integration"
+                                 }
+                     },
+    "contactPage":  {
+                        "metaTitle":  "Contact DATAhome | Real-estate agency platform",
+                        "metaDescription":  "Contact DATAhome about a trial, your real-estate agency, an XML feed or a technical collaboration.",
+                        "home":  {
+                                     "title":  "Tell us about your agency.",
+                                     "body":  "Start a conversation about DATAhome, your agency workflow or the next step for your online presence."
+                                 },
+                        "hero":  {
+                                     "eyebrow":  "CONTACT DATAHOME",
+                                     "title":  "Start with the work your agency needs to do.",
+                                     "body":  "Tell us where you are today and what you want to connect: your agency website, property data, lead flow or a technical collaboration."
+                                 },
+                        "topics":  {
+                                       "eyebrow":  "RELEVANT TOPICS",
+                                       "title":  "A useful starting point.",
+                                       "body":  "Use this form to open a focused conversation with DATAhome.",
+                                       "items":  [
+                                                     "DATAhome trial",
+                                                     "Your real-estate agency",
+                                                     "Agency network",
+                                                     "XML Feed",
+                                                     "Technical collaboration"
+                                                 ]
+                                   },
+                        "privacy":  "By sending this form, you ask DATAhome to handle your request. Read our",
+                        "form":  {
+                                     "fields":  {
+                                                    "name":  "Name",
+                                                    "email":  "Email",
+                                                    "phone":  "Phone (optional)",
+                                                    "message":  "Message (optional)",
+                                                    "namePlaceholder":  "Your name",
+                                                    "emailPlaceholder":  "you@agency.com",
+                                                    "phonePlaceholder":  "+32 …",
+                                                    "messagePlaceholder":  "Tell us what you would like to discuss."
+                                                },
+                                     "submit":  "Send request",
+                                     "sending":  "Sending…",
+                                     "success":  "Your request has been sent.",
+                                     "genericError":  "The contact service is currently unavailable. Please try again later.",
+                                     "errors":  {
+                                                    "name":  "Enter your name.",
+                                                    "email":  "Enter a valid email address."
+                                                }
+                                 }
+                    },
+    "privacyPage":  {
+                        "metaTitle":  "Privacy Policy | DATAhome",
+                        "metaDescription":  "How DATAhome handles information on data-home.app.",
+                        "eyebrow":  "DATAHOME / PRIVACY",
+                        "title":  "Privacy Policy",
+                        "intro":  "This policy describes the information handled by the DATAhome marketing website, data-home.app.",
+                        "updated":  "Last updated: 18 September 2026.",
+                        "contactLabel":  "Privacy contact",
+                        "operatorStatus":  "Individual entrepreneur / self-employed (autónomo), Spain",
+                        "sections":  [
+                                         {
+                                             "title":  "Data controller",
+                                             "body":  [
+                                                          "DATAhome is the commercial brand operated by {operator}, an individual self-employed professional in Spain. The controller for the processing described on this marketing website can be contacted at {email}."
+                                                      ]
+                                         },
+                                         {
+                                             "title":  "Information we collect",
+                                             "body":  [
+                                                          "We collect information you choose to provide through a contact form: name, email address, optional phone number and optional message. The form also sends its source, selected locale and the page URL from which it was submitted."
+                                                      ]
+                                         },
+                                         {
+                                             "title":  "Contact enquiries",
+                                             "body":  [
+                                                          "When you submit a contact enquiry, the browser sends it to the DATAhome endpoint at /api/leads. The endpoint forwards the enquiry through Resend to the configured DATAhome contact recipient so that we can read and respond to your request.",
+                                                          "We use the information in an enquiry to handle the conversation you initiated. We do not state that the marketing website stores contact enquiries in its own database."
+                                                      ]
+                                         },
+                                         {
+                                             "title":  "Anti-abuse and security",
+                                             "body":  [
+                                                          "To protect the contact service from abuse, the endpoint may temporarily use IP information received with the request to apply rate limiting. This operational record is kept in application memory for the rate-limit window and is not presented as a visitor profile."
+                                                      ]
+                                         },
+                                         {
+                                             "title":  "Analytics",
+                                             "body":  [
+                                                          "DATAhome uses Vercel Analytics only after you choose “Accept all” in the privacy preferences. Before a choice, and after “Essential only”, the marketing website does not mount or activate Vercel Analytics.",
+                                                          "This policy describes DATAhome’s consent behaviour. It does not make assumptions about the internal storage or processing behaviour of Vercel Analytics."
+                                                      ]
+                                         },
+                                         {
+                                             "title":  "Local preferences",
+                                             "body":  [
+                                                          "Your privacy preference is stored locally in your browser under datahome_cookie_consent_v1. It records your Essential only or Accept all choice and the date of that choice. This is functional local storage; it is not an advertising mechanism and is not itself a cookie."
+                                                      ]
+                                         },
+                                         {
+                                             "title":  "External services and technical sources",
+                                             "body":  [
+                                                          "Resend is used to deliver contact enquiries to DATAhome. Vercel Analytics is available only after the analytics-enabled preference has been selected. The website may also retrieve or display public property information or media through external technical sources, including DATAhome application services and property-media sources.",
+                                                          "Links to DATAhome registration, demo and template-preview environments take you to separate destinations. This policy describes data-home.app and does not claim to describe processing that may occur after you leave this marketing website."
+                                                      ]
+                                         },
+                                         {
+                                             "title":  "Retention",
+                                             "body":  [
+                                                          "Contact enquiries are retained for a maximum of {months} months, unless the enquiry develops into a commercial or contractual relationship or an applicable legal obligation requires a different retention period."
+                                                      ]
+                                         },
+                                         {
+                                             "title":  "Recipients and processors",
+                                             "body":  [
+                                                          "Contact enquiry information is sent to the DATAhome contact recipient configured for the service and is delivered through Resend. Technical providers may process information as needed to operate the website and its services. We do not sell contact enquiry information."
+                                                      ]
+                                         },
+                                         {
+                                             "title":  "International transfers",
+                                             "body":  [
+                                                          "Some technical providers may process information outside your country. The location and safeguards applicable to a provider depend on that provider’s service and configuration. Contact us at {email} if you need information about the processing relevant to your enquiry."
+                                                      ]
+                                         },
+                                         {
+                                             "title":  "Your rights and how to exercise them",
+                                             "body":  [
+                                                          "Depending on applicable law, you may have rights to request access, correction, deletion, restriction or objection in relation to your personal information, and to raise a concern with a competent authority. To make a request about information handled through this marketing website, write to {email}."
+                                                      ]
+                                         },
+                                         {
+                                             "title":  "Updates to this policy",
+                                             "body":  [
+                                                          "We may update this policy when the marketing website or its processing changes. The latest version is published on this page."
+                                                      ]
+                                         }
+                                     ]
+                    },
+    "legalPage":  {
+                      "metaTitle":  "Legal Notice | DATAhome",
+                      "metaDescription":  "Legal information for the DATAhome marketing website.",
+                      "eyebrow":  "DATAHOME / LEGAL",
+                      "title":  "Legal Notice",
+                      "intro":  "Legal information for the DATAhome marketing website, data-home.app.",
+                      "contactLabel":  "Contact",
+                      "operatorStatus":  "Individual entrepreneur / self-employed (autónomo), Spain",
+                      "sections":  [
+                                       {
+                                           "title":  "Website publisher and operator",
+                                           "body":  [
+                                                        "DATAhome is the commercial and product brand. This website is published and operated by {operator}, acting as an individual self-employed professional (autónomo) in Spain."
+                                                    ]
+                                       },
+                                       {
+                                           "title":  "Identification",
+                                           "body":  [
+                                                        "Professional address: Alcolechia 47, Alicante, Spain. Tax identification: {taxId}. No VAT number is displayed for this activity."
+                                                    ]
+                                       },
+                                       {
+                                           "title":  "Website purpose",
+                                           "body":  [
+                                                        "data-home.app presents DATAhome and its marketing information for real-estate agencies, networks and property-data workflows. It may link to separate DATAhome application, demo, registration and template-preview environments."
+                                                    ]
+                                       },
+                                       {
+                                           "title":  "Intellectual property",
+                                           "body":  [
+                                                        "The DATAhome name, website content, design, software visuals and other materials are protected where applicable. They may not be reproduced or used beyond what applicable law permits without prior permission from the relevant rights holder."
+                                                    ]
+                                       },
+                                       {
+                                           "title":  "External links and services",
+                                           "body":  [
+                                                        "This website may link to external destinations or display content made available through external technical sources. Those destinations remain responsible for their own content, availability and privacy information. A link does not by itself establish an endorsement or commercial partnership."
+                                                    ]
+                                       },
+                                       {
+                                           "title":  "Liability",
+                                           "body":  [
+                                                        "We aim to keep the information on this website accurate and current, but it is provided for general information. Nothing on the marketing website replaces a specific contractual proposal, product agreement or professional advice."
+                                                    ]
+                                       },
+                                       {
+                                           "title":  "Applicable framework",
+                                           "body":  [
+                                                        "This website is published from Spain. Mandatory rules of applicable law and the jurisdiction of competent authorities apply where relevant."
+                                                    ]
+                                       }
+                                   ]
+                  },
+    "hero":  {
+                 "headline1":  "Your clients are going international.",
+                 "headline2":  "Your agency can too.",
+                 "subtitle":  "International properties, leads and marketing.\nOne workspace for your agency.",
+                 "demo":  "See DATAhome in action"
+             }
+}

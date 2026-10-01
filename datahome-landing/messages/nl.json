@@ -1,0 +1,409 @@
+{
+  "navigation": {
+    "home": "Home",
+    "product": "Product",
+    "templates": "Templates",
+    "pricing": "Prijzen",
+    "partners": "Partners",
+    "contact": "Contact"
+  },
+  "promise": "Uw makelaarskantoor. Online. In {hours} uur.",
+  "chrome": {
+    "trial": "Gratis proberen",
+    "language": "Taal",
+    "openMenu": "Menu openen",
+    "closeMenu": "Menu sluiten",
+    "mainNav": "Hoofdnavigatie",
+    "footerNav": "Voettekstnavigatie",
+    "privacy": "Privacy",
+    "legal": "Juridische informatie",
+    "cookies": "Cookievoorkeuren",
+    "pending": "Deze pagina wordt voorbereid.",
+    "pendingBody": "Bekijk de homepage terwijl we dit onderdeel voorbereiden.",
+    "backHome": "Terug naar home",
+    "legalPending": "Deze documenten worden gecontroleerd en zijn nog niet beschikbaar.",
+    "cookieBody": "Sla uw cookievoorkeur op.",
+    "acceptAll": "Alles accepteren",
+    "essential": "Alleen noodzakelijk",
+    "close": "Sluiten",
+    "rights": "Alle rechten voorbehouden.",
+    "faq": "Veelgestelde vragen"
+  },
+  "productPending": {
+    "message": "De vertaling van deze pagina wordt voorbereid.",
+    "link": "Bekijk het product in het Engels"
+  },
+  "hero": {
+    "headline1": "Uw klanten gaan internationaal.",
+    "headline2": "Uw kantoor ook.",
+    "subtitle": "Internationale panden, leads en marketing.\nÉén werkruimte voor uw makelaarskantoor.",
+    "demo": "Zie DATAhome in actie"
+  },
+  "product": {
+    "title": "Één platform om je bureau online te runnen.",
+    "intro": "Je website, vastgoed, leads en marketing, verbonden in één werkruimte. DATAhome brengt de tools van je dagelijks werk samen.",
+    "metaTitle": "Platform voor vastgoedkantoren | DATAhome",
+    "metaDescription": "Ontdek het DATAhome-platform: websites voor bureaus, vastgoedbeheer, Mini CRM, landingspagina's, Social Hub en optionele modules.",
+    "jump": "Ontdek het platform",
+    "imageNote": "Authentieke DATAhome-interface. Blader horizontaal op mobiel om het product te bekijken.",
+    "fullImage": "Open de volledige schermafdruk",
+    "pilot": {
+      "label": "Jouw operationele overzicht",
+      "title": "Begin met het volledige beeld.",
+      "body": "De Cockpit centraliseert CRM-activiteit, catalogusupdates, nieuwsbriefabonnees en publicatieactiviteit. Bekijk recente panden en beheer acties vanuit je werkruimte.",
+      "points": [
+        "Nieuwe leads en CRM-voortgang",
+        "Catalogus, importaties en recente panden",
+        "Activiteit van Landing Pages en Social Hub"
+      ]
+    },
+    "manage": {
+      "label": "Panden en kansen",
+      "title": "Het inventaris. En de mensen achter elke aanvraag.",
+      "body": "Gebruik de Vastgoedmanager om verkoop- en huuradvertenties toe te voegen en te onderhouden, met beschrijvingen en vastgoedmedia. De catalogus bundelt die advertenties voor je bureau.",
+      "points": [
+        "Handmatige Vastgoedmanager in Essential",
+        "Geavanceerde Vastgoedmanager in Pro en Premium",
+        "Optionele XML-importaties, los van elk abonnement"
+      ],
+      "crmTitle": "Houd de lead in zicht.",
+      "crmBody": "Mini CRM Leads geeft aanvragen een plek in je workflow. Volg nieuwe, gecontacteerde en gekwalificeerde leads; de Cockpit toont CRM-activiteit naast de panden die je beheert. Mini CRM Leads is inbegrepen in Essential, Pro en Premium."
+    },
+    "website": {
+      "label": "Je bureau, in het openbaar",
+      "title": "Een website die jouw identiteit uitdraagt.",
+      "body": "Presenteer je panden via een professionele bureauwebsite, met jouw domein, jouw visuele identiteit en meertalige inhoud. Bezoekers kunnen verkopen en verhuur verkennen en contact opnemen via een formulier of WhatsApp.",
+      "points": [
+        "Standaardtemplates en een eigen domein",
+        "Tot {languages} website-talen inbegrepen",
+        "Presentatie van panden en bureaucontact"
+      ],
+      "caption": "Een publieke bureauwebsite — het resultaat dat jouw bezoekers zien."
+    },
+    "create": {
+      "label": "Maak en distribueer",
+      "title": "Geef een pand een bestemming. Breng het bij je publiek.",
+      "body": "Met Landing Pages maak je toegewijde pagina's voor een pand of project. Aangepaste pagina's bieden extra ruimte voor je bureau-inhoud. Ze zijn een aanvulling op de hoofdwebsite.",
+      "landingTitle": "Maak een gerichte pagina.",
+      "landingBody": "Beheer gepubliceerde landingspagina's en hun activiteit vanuit je werkruimte. Landing Pages zijn inbegrepen in Pro; Premium bevat onbeperkte Landing Pages.",
+      "socialTitle": "Verander een advertentie in een sociaal bericht.",
+      "socialBody": "Kies een pand in Social Hub, bereid de promotie-inhoud voor en gebruik de publicatietools voor verbonden kanalen. De huidige interface identificeert Facebook en Instagram. Social Hub is inbegrepen in Pro en Premium."
+    },
+    "engage": {
+      "label": "Begrijp en betrek",
+      "title": "Van een bezoek naar een gesprek.",
+      "body": "Breng bezoekersignalen en communicatietools in de bureauworkflow. Gebruik de beschikbare informatie om te beslissen waar je je aandacht op richt.",
+      "items": [
+        {
+          "title": "Bezoekers en analyses",
+          "body": "Bekijk anonieme bezoekersactiviteit, landen en betrokkenheidssignalen. Essential Analytics is inbegrepen vanaf Essential; Advanced Analytics is inbegrepen in Pro en Premium."
+        },
+        {
+          "title": "AI Chatbot",
+          "body": "Help bezoekers vragen te stellen over panden en leg aanvragen vast via de chatbot. Pro bevat AI Chatbot; Premium vergroot het chatbotquotum."
+        },
+        {
+          "title": "WhatsApp",
+          "body": "Geef bezoekers een directe contactmogelijkheid met je bureau. Contactformulier en WhatsApp zijn inbegrepen in Essential en geërfd door Pro en Premium."
+        },
+        {
+          "title": "Nieuwsbrief",
+          "body": "Beheer abonnees en bereid bureaucommunicaties voor vanuit je werkruimte. Nieuwsbrief is inbegrepen in Premium en ook beschikbaar als optionele module."
+        }
+      ]
+    },
+    "extend": {
+      "label": "Ruimte om te groeien",
+      "title": "Breid het platform uit naar de behoeften van je bureau.",
+      "body": "Voeg mogelijkheden toe via modules naarmate je behoeften evolueren. Aangepaste Pagina's, AI-vertaling, Immersive Tours en Hero Video maken deel uit van de beschikbare catalogus. Wat is inbegrepen, hangt af van je plan.",
+      "xmlTitle": "XML is een aparte dienst.",
+      "xmlBody": "Gebruik een optionele feed om vastgoedgegevens te importeren. XML is niet inbegrepen in Essential, Pro of Premium. Elke feed heeft een aparte prijs van {xml} per maand.",
+      "pricing": "Ontdek het aanbod"
+    },
+    "activation": {
+      "title": "Je bureau. Online. In {hours} uur.",
+      "body": "Het platform en de templates zijn al gebouwd. Het activatieproces begint zodra de bureaugegevens, huisstijl, inhoud, media, contactgegevens en vereiste vastgoedgegevens of configuratie zijn ontvangen en bevestigd.",
+      "cta": "Start je {days}-daagse proefperiode",
+      "access": "Gratis proefperiode. Volledige toegang."
+    },
+    "alts": {
+      "cockpit": "DATAhome Cockpit met CRM-activiteit, catalogus en publicatieacties",
+      "catalogue": "DATAhome Vastgoedmanager met verkoop- en huurfilters en advertenties",
+      "website": "Authentieke publieke bureauwebsite met presentatie van panden",
+      "landing": "DATAhome Landing Pages-manager",
+      "social": "DATAhome Social Hub met pandselectie en publicatiecontroles",
+      "modules": "Catalogus van optionele DATAhome-modules"
+    }
+  },
+  "pricing": {
+    "metaTitle": "Prijzen voor vastgoedkantoren | DATAhome",
+    "metaDescription": "Vergelijk de Essential, Pro en Premium plannen van DATAhome, optionele modules, opstartprijzen en XML-feedprijzen.",
+    "eyebrow": "DATAHOME PRIJZEN",
+    "title": "Kies het operationele niveau dat je bureau nodig heeft.",
+    "intro": "Drie duidelijke maandelijkse plannen voor je website, vastgoedactiviteit en groeitools. Begin met de mogelijkheden die vandaag bij je bureau passen.",
+    "monthly": "Maandelijkse prijs",
+    "month": "maand",
+    "user": "gebruiker",
+    "users": "gebruikers",
+    "fullAccess": "Volledige toegang",
+    "trialLine": "{days} dagen gratis proefperiode",
+    "planCta": "Kies",
+    "plansLabel": "DATAhome-plannen",
+    "planText": {
+      "Essential": {
+        "tagline": "Een complete professionele online aanwezigheid.",
+        "features": [
+          "1 gebruiker",
+          "Vastgoedmanager (handmatig)",
+          "Mini CRM Leads",
+          "Bureauwebsite",
+          "Tot 2 website-talen",
+          "Essential Analytics",
+          "Contactformulier",
+          "WhatsApp",
+          "Eigen domein"
+        ]
+      },
+      "Pro": {
+        "tagline": "De volledige operationele omgeving voor groeiende bureaus.",
+        "features": [
+          "5 gebruikers",
+          "Geavanceerde Vastgoedmanager",
+          "Tot 5 website-talen",
+          "Landing Pages",
+          "Social Hub",
+          "AI Chatbot",
+          "Geavanceerde analyses"
+        ]
+      },
+      "Premium": {
+        "tagline": "Geavanceerde mogelijkheden voor gevestigde bureaus.",
+        "features": [
+          "10 gebruikers",
+          "Onbeperkte Landing Pages",
+          "Tot 10 website-talen",
+          "Nieuwsbrief",
+          "Uitgebreid AI Chatbot-quotum",
+          "Geavanceerde analyses",
+          "Alle Pro-functies",
+          "Prioriteitsondersteuning"
+        ]
+      }
+    },
+    "differences": {
+      "eyebrow": "KERNVERSCHILLEN",
+      "title": "Vergelijk wat er verandert.",
+      "intro": "Een compacte weergave van de capaciteit, vastgoedworkflow en onderscheidende mogelijkheden op elk niveau.",
+      "capacity": "Teamcapaciteit",
+      "property": "Vastgoedworkflow",
+      "distinctive": "Onderscheidende mogelijkheden"
+    },
+    "modules": {
+      "eyebrow": "OPTIONELE MODULES",
+      "title": "Voeg gerichte mogelijkheden toe.",
+      "intro": "Kies optionele modules op basis van de diensten en workflows die je bureau nodig heeft.",
+      "languageUnit": "taal/maand"
+    },
+    "moduleNames": ["AI Chatbot","Landing Pages","AI SEO","Aangepaste Pagina's","Immersive Tours","Kadaster en Compliance","Vastgoedbeheer","Social Hub","AI Vertaling","Geavanceerde Analyses","Nieuwsbrief","Hero Video","WhatsApp","Extra taal"],
+    "xml": {
+      "eyebrow": "XML FEED",
+      "title": "{xml} per feed, per maand.",
+      "body": "XML Feed heeft een aparte prijs, los van DATAhome-abonnementen.",
+      "none": "In geen enkel plan inbegrepen."
+    },
+    "setup": {
+      "eyebrow": "OPSTARTEN EN ONBOARDING",
+      "title": "Eenmalig {setup}.",
+      "body": "Opstarten en onboarding worden eenmalig gefactureerd."
+    },
+    "trial": {
+      "eyebrow": "BEGIN MET HET PRODUCT",
+      "title": "Ontdek DATAhome {days} dagen lang.",
+      "body": "Gebruik het platform met volledige toegang tijdens je gratis proefperiode.",
+      "cta": "Start je {days}-daagse proefperiode"
+    },
+    "faq": {
+      "eyebrow": "VEELGESTELDE VRAGEN OVER PRIJZEN",
+      "title": "De praktische details.",
+      "items": [
+        {
+          "question": "Hoe lang duurt de gratis proefperiode?",
+          "answer": "De gratis proefperiode duurt {days} dagen en biedt volledige toegang."
+        },
+        {
+          "question": "Is er een opstartvergoeding?",
+          "answer": "Opstarten en onboarding worden eenmalig gefactureerd voor {setup}."
+        },
+        {
+          "question": "Hoe zijn optionele modules geprijsd?",
+          "answer": "Optionele modules worden afzonderlijk per maand geprijsd. Een extra taal wordt per taal, per maand geprijsd."
+        },
+        {
+          "question": "Is XML inbegrepen in een plan?",
+          "answer": "Nee. XML Feed is in geen enkel plan inbegrepen en kost {xml} per feed, per maand."
+        }
+      ]
+    }
+  },
+  "partnersPage": {
+    "metaTitle": "Partners en integraties voor vastgoedkantoren | DATAhome",
+    "metaDescription": "Verbind vastgoedgegevens en CRM-workflows met DATAhome.",
+    "hero": {
+      "eyebrow": "PARTNERS EN INTEGRATIES",
+      "title": "Verbind je data-ecosysteem met DATAhome.",
+      "body": "DATAhome koppelt vastgoedgegevens van XML-providers en lead-workflows naar CRM-systemen, terwijl je bureau zijn bestaande tools behoudt."
+    },
+    "mapper": {
+      "eyebrow": "DATAHOME IMPORT MAPPER",
+      "title": "Elke bron. Één DATAhome-formaat.",
+      "body": "Importeer vastgoedgegevens uit verschillende bronnen en structuren. Map ze eenmalig, normaliseer de gegevens, genereer een gestandaardiseerde DATAhome XML-feed en gebruik deze direct in je DATAhome-ecosysteem.",
+      "alt": "DATAhome Import Mapper — vastgoedgegevens mappen en normaliseren"
+    },
+    "xml": {
+      "eyebrow": "VASTGOEDGEGEVENS / XML-PROVIDERS",
+      "title": "Verbind je XML-feed met DATAhome.",
+      "body": "Verschillende XML-structuren kunnen via een integratiedienst worden gemapt naar het DATAhome vastgoedgegevensmodel.",
+      "sourceLabel": "Vastgoedgegevensproviders",
+      "sources": [
+        "<price> · <precio> · <selling_price>",
+        "<ref> · <property_id> · <reference>"
+      ],
+      "mapping": "Mapping en normalisatie",
+      "standardized": "Gestandaardiseerde vastgoedgegevens",
+      "fields": [
+        "Referentie",
+        "Prijs",
+        "Type pand",
+        "Locatie",
+        "Slaapkamers",
+        "Badkamers",
+        "Beschrijving",
+        "Afbeeldingen en kenmerken"
+      ],
+      "destinationLabel": "DATAhome-ecosysteem",
+      "destinations": [
+        "Vastgoedcatalogus",
+        "Bureauwebsite",
+        "Vastgoedpagina's",
+        "Landingspagina's"
+      ],
+      "note": "Mapping is toegespitst op de betreffende feed en workflow.",
+      "price": "{xml} / feed / maand",
+      "none": "In geen enkel plan inbegrepen."
+    },
+    "verified": {
+      "eyebrow": "Geverifieerde XML-integratie",
+      "label": "Geverifieerde XML-importintegratie",
+      "title": "HabiHub",
+      "body": "HabiHub is een voorbeeld van een XML-vastgoedbron die al verbonden is met DATAhome.",
+      "alt": "HabiHub"
+    },
+    "crm": {
+      "eyebrow": "CRM-PROVIDERS",
+      "title": "Houd je CRM. Verbind het met DATAhome.",
+      "body": "DATAhome vereist niet dat je bureau zijn bestaande CRM vervangt. Het structureert leads uit zijn digitale ecosysteem voor compatibele CRM-workflows.",
+      "sourceLabel": "Leads vanuit DATAhome",
+      "sources": [
+        "Webformulieren",
+        "Vastgoedaanvragen",
+        "Landingspagina's",
+        "AI Chatbot",
+        "Contactformulieren",
+        "Andere leadbronnen"
+      ],
+      "mapping": "Leadsynchronisatie en veldmapping",
+      "standardized": "Gestandaardiseerde leadgegevens",
+      "fields": [
+        "Volledige naam",
+        "E-mail",
+        "Telefoon",
+        "Bron",
+        "Vastgoedinteresse",
+        "Locatie",
+        "Projecttype"
+      ],
+      "destinationLabel": "Jouw CRM",
+      "destinations": [
+        "CRM-workflow",
+        "Contacten",
+        "Leads",
+        "Kansen en pipeline"
+      ],
+      "note": "CRM-connectiviteit wordt beoordeeld voor het compatibele systeem en de bureauworkflow."
+    },
+    "mini": {
+      "have": "Heb je al een CRM? Behoudt het.",
+      "none": "Nog geen CRM? DATAhome bevat er één.",
+      "body": "Elk DATAhome-plan bevat de DATAhome Mini CRM. Die is beschikbaar wanneer je bureau het nodig heeft, nooit verplicht."
+    },
+    "unified": {
+      "eyebrow": "UNIFIED PARTNER ECOSYSTEEM",
+      "title": "DATAhome past zich aan jouw bureau aan. Jouw bureau hoeft zich niet aan DATAhome aan te passen.",
+      "left": "Vastgoedgegevensproviders",
+      "leftDetail": "XML-feeds",
+      "center": "DATAhome",
+      "right": "CRM-providers",
+      "rightDetail": "CRM-workflows",
+      "below": [
+        "Bureauwebsite",
+        "Vastgoedcatalogus",
+        "Landingspagina's",
+        "Leads",
+        "Mini CRM",
+        "Digitaal ecosysteem"
+      ]
+    },
+    "cta": {
+      "eyebrow": "WERK MET DATAHOME",
+      "title": "Verbind je technologie met DATAhome.",
+      "body": "Ben je een vastgoedgegevensprovider, CRM-provider, vastgoednetwerk of bureau met een bestaande dataworkflow? Laten we bespreken hoe jouw systeem verbinding kan maken met DATAhome.",
+      "cta": "Bespreken van een integratie"
+    }
+  },
+  "contactPage": {
+    "metaTitle": "Contact DATAhome | Platform voor vastgoedkantoren",
+    "metaDescription": "Neem contact op met DATAhome over een proefperiode, jouw vastgoedkantoor, een XML-feed of technische samenwerking.",
+    "home": {
+      "title": "Vertel ons over je bureau.",
+      "body": "Begin een gesprek over DATAhome, je bureauworkflow of de volgende stap voor je online aanwezigheid."
+    },
+    "hero": {
+      "eyebrow": "CONTACT DATAHOME",
+      "title": "Begin met het werk dat je bureau nodig heeft.",
+      "body": "Vertel ons waar je vandaag staat en wat je wilt verbinden: je bureauwebsite, vastgoedgegevens, leadflow of technische samenwerking."
+    },
+    "topics": {
+      "eyebrow": "RELEVANTE ONDERWERPEN",
+      "title": "Een nuttig startpunt.",
+      "body": "Gebruik dit formulier om een gerichte conversatie met DATAhome te starten.",
+      "items": [
+        "DATAhome proefperiode",
+        "Je vastgoedkantoor",
+        "Bureaunetwerk",
+        "XML Feed",
+        "Technische samenwerking"
+      ]
+    },
+    "privacy": "Door dit formulier in te dienen, vraag je DATAhome om je aanvraag te behandelen. Lees ons",
+    "form": {
+      "fields": {
+        "name": "Naam",
+        "email": "E-mail",
+        "phone": "Telefoon (optioneel)",
+        "message": "Bericht (optioneel)",
+        "namePlaceholder": "Je naam",
+        "emailPlaceholder": "jij@bureau.com",
+        "phonePlaceholder": "+32 …",
+        "messagePlaceholder": "Vertel ons wat je wilt bespreken."
+      },
+      "submit": "Aanvraag versturen",
+      "sending": "Verzenden…",
+      "success": "Je aanvraag is verzonden.",
+      "genericError": "De contactservice is momenteel niet beschikbaar. Probeer het later opnieuw.",
+      "errors": {
+        "name": "Voer je naam in.",
+        "email": "Voer een geldig e-mailadres in."
+      }
+    }
+  }
+}

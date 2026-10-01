@@ -1,0 +1,564 @@
+{
+    "navigation":  {
+                       "home":  "Accueil",
+                       "product":  "Produit",
+                       "templates":  "Templates",
+                       "pricing":  "Tarifs",
+                       "partners":  "Partenaires",
+                       "contact":  "Contact"
+                   },
+    "promise":  "Votre agence. En ligne. En {hours} heures.",
+    "chrome":  {
+                   "trial":  "Essayer gratuitement",
+                   "language":  "Langue",
+                   "openMenu":  "Ouvrir le menu",
+                   "closeMenu":  "Fermer le menu",
+                   "mainNav":  "Navigation principale",
+                   "footerNav":  "Navigation de pied de page",
+                   "privacy":  "Confidentialité",
+                   "legal":  "Mentions légales",
+                   "cookies":  "Préférences cookies",
+                   "pending":  "Cette page est en préparation.",
+                   "pendingBody":  "Découvrez l’accueil pendant que nous préparons cette rubrique.",
+                   "backHome":  "Retour à l’accueil",
+                   "legalPending":  "Ces documents sont en cours de validation et ne sont pas encore disponibles.",
+                   "cookieBody":  "Les fonctions essentielles sont disponibles sans analytics. Les analytics ne sont activés qu’après « Tout accepter ».",
+                   "acceptAll":  "Tout accepter",
+                   "essential":  "Essentiels uniquement",
+                   "close":  "Fermer",
+                   "rights":  "Tous droits réservés.",
+                   "faq":  "Questions fréquentes"
+               },
+    "product":  {
+                    "title":  "Une plateforme pour piloter votre agence en ligne.",
+                    "intro":  "Votre site, vos biens, vos leads et votre marketing, réunis dans un même espace. DATAhome rassemble les outils qui accompagnent votre activité au quotidien.",
+                    "metaTitle":  "Plateforme pour agences immobilières | DATAhome",
+                    "metaDescription":  "Découvrez DATAhome : site d’agence, gestion des biens, Mini CRM, landing pages, Social Hub et modules complémentaires.",
+                    "jump":  "Explorer la plateforme",
+                    "imageNote":  "Interface DATAhome authentique. Sur mobile, faites défiler horizontalement pour examiner le produit.",
+                    "fullImage":  "Ouvrir la capture complète",
+                    "pilot":  {
+                                  "label":  "Votre vue d’ensemble",
+                                  "title":  "Commencez par une vision globale.",
+                                  "body":  "Le Cockpit réunit l’activité CRM, le catalogue, les abonnés newsletter et les publications. Retrouvez les biens récents et les actions disponibles depuis votre espace de travail.",
+                                  "points":  [
+                                                 "Nouveaux leads et progression CRM",
+                                                 "Catalogue, imports et biens récents",
+                                                 "Activité des Landing Pages et du Social Hub"
+                                             ]
+                              },
+                    "manage":  {
+                                   "label":  "Biens et opportunités",
+                                   "title":  "Les biens. Et les personnes derrière chaque demande.",
+                                   "body":  "Le Property Manager permet de créer et de tenir à jour vos annonces de vente et de location, avec leurs descriptions et leurs médias. Le catalogue rassemble ces biens pour votre agence.",
+                                   "points":  [
+                                                  "Property Manager manuel dans Essential",
+                                                  "Property Manager avancé dans Pro et Premium",
+                                                  "Imports XML optionnels, séparés de chaque abonnement"
+                                              ],
+                                   "crmTitle":  "Gardez le fil de chaque demande.",
+                                   "crmBody":  "Mini CRM Leads donne aux demandes une place dans votre organisation. Suivez les leads nouveaux, contactés et qualifiés ; le Cockpit présente l’activité CRM à côté des biens que vous gérez. Mini CRM Leads est inclus dans Essential, Pro et Premium."
+                               },
+                    "website":  {
+                                    "label":  "Votre agence, côté public",
+                                    "title":  "Un site qui porte votre identité.",
+                                    "body":  "Présentez vos biens sur un véritable site d’agence, avec votre domaine, votre identité visuelle et des contenus multilingues. Vos visiteurs découvrent les ventes et locations et vous contactent par formulaire ou WhatsApp.",
+                                    "points":  [
+                                                   "Templates standards et domaine personnalisé",
+                                                   "Jusqu’à {languages} langues de site incluses",
+                                                   "Présentation des biens et contact de l’agence"
+                                               ],
+                                    "caption":  "Un site d’agence public — le résultat que voient vos visiteurs."
+                                },
+                    "create":  {
+                                   "label":  "Créer, puis diffuser",
+                                   "title":  "Donnez une destination à un bien. Puis faites-le découvrir.",
+                                   "body":  "Les Landing Pages permettent de créer des pages dédiées à un bien ou à un programme. Les Custom Pages accueillent des contenus supplémentaires pour votre agence. Elles complètent le site principal.",
+                                   "landingTitle":  "Créez une page ciblée.",
+                                   "landingBody":  "Gérez les landing pages publiées et leur activité depuis votre espace. Les Landing Pages sont incluses dans Pro ; Premium inclut des Landing Pages illimitées.",
+                                   "socialTitle":  "Transformez une annonce en publication.",
+                                   "socialBody":  "Choisissez un bien dans Social Hub, préparez son contenu promotionnel et utilisez les outils de publication pour les canaux connectés. L’interface actuelle mentionne Facebook et Instagram. Social Hub est inclus dans Pro et Premium."
+                               },
+                    "engage":  {
+                                   "label":  "Comprendre et échanger",
+                                   "title":  "D’une visite à une conversation.",
+                                   "body":  "Retrouvez les signaux de visite et les outils de communication dans le parcours de votre agence. Appuyez-vous sur les informations disponibles pour orienter votre attention.",
+                                   "items":  [
+                                                 {
+                                                     "title":  "Visitors et analytics",
+                                                     "body":  "Consultez l’activité des visiteurs anonymes, leurs pays et les signaux d’engagement. Essential Analytics est inclus dès Essential ; Advanced Analytics est inclus dans Pro et Premium."
+                                                 },
+                                                 {
+                                                     "title":  "AI Chatbot",
+                                                     "body":  "Permettez aux visiteurs de poser leurs questions sur les biens et recueillez leurs demandes via le chatbot. Pro inclut AI Chatbot ; Premium étend son quota."
+                                                 },
+                                                 {
+                                                     "title":  "WhatsApp",
+                                                     "body":  "Offrez aux visiteurs un accès direct à votre agence. Le formulaire de contact et WhatsApp sont inclus dans Essential, ainsi que dans Pro et Premium."
+                                                 },
+                                                 {
+                                                     "title":  "Newsletter",
+                                                     "body":  "Gérez les abonnés et préparez les communications de votre agence depuis votre espace. Newsletter est inclus dans Premium et disponible comme module optionnel."
+                                                 }
+                                             ]
+                               },
+                    "extend":  {
+                                   "label":  "Accompagner votre croissance",
+                                   "title":  "Adaptez la plateforme à votre agence.",
+                                   "body":  "Ajoutez des capacités grâce aux modules lorsque vos besoins évoluent. Custom Pages, AI Translation, Immersive Tours et Hero Video font partie du catalogue disponible. Les inclusions dépendent de votre formule.",
+                                   "xmlTitle":  "Le XML est un service séparé.",
+                                   "xmlBody":  "Un flux optionnel permet d’importer des données immobilières. Le XML n’est inclus ni dans Essential, ni dans Pro, ni dans Premium. Chaque flux est facturé séparément à {xml} par mois.",
+                                   "pricing":  "Découvrir l’offre"
+                               },
+                    "activation":  {
+                                       "title":  "Votre agence. En ligne. En {hours} heures.",
+                                       "body":  "La plateforme et les templates sont déjà construits. Le délai d’activation commence lorsque les informations de l’agence, son identité visuelle, ses contenus, médias, coordonnées et les données immobilières ou configurations nécessaires sont reçus et confirmés.",
+                                       "cta":  "Commencer votre essai de {days} jours",
+                                       "access":  "Essai gratuit. Accès complet."
+                                   },
+                    "alts":  {
+                                 "cockpit":  "Cockpit DATAhome : activité CRM, catalogue et actions de publication",
+                                 "catalogue":  "Property Manager DATAhome avec filtres vente et location et annonces immobilières",
+                                 "website":  "Véritable site public d’agence présentant ses biens",
+                                 "landing":  "Gestionnaire DATAhome des Landing Pages",
+                                 "social":  "Social Hub DATAhome : sélection des biens et création de publications",
+                                 "modules":  "Catalogue DATAhome des modules optionnels"
+                             }
+                },
+    "pricing":  {
+                    "metaTitle":  "Tarifs pour agences immobilières | DATAhome",
+                    "metaDescription":  "Comparez les offres DATAhome Essential, Pro et Premium, les modules optionnels, l’installation et les flux XML.",
+                    "eyebrow":  "TARIFS DATAHOME",
+                    "title":  "Choisissez le niveau adapté à votre agence.",
+                    "intro":  "Trois offres mensuelles claires pour votre site, votre activité immobilière et vos outils de croissance. Commencez avec les capacités utiles à votre agence aujourd’hui.",
+                    "monthly":  "Tarification mensuelle",
+                    "month":  "mois",
+                    "user":  "utilisateur",
+                    "users":  "utilisateurs",
+                    "fullAccess":  "Accès complet",
+                    "trialLine":  "Essai gratuit de {days} jours",
+                    "planCta":  "Choisir",
+                    "plansLabel":  "Offres DATAhome",
+                    "planText":  {
+                                     "Essential":  {
+                                                       "tagline":  "Une présence professionnelle complète en ligne.",
+                                                       "features":  [
+                                                                        "Site web d’agence immobilière",
+                                                                        "Blog avec outils SEO",
+                                                                        "Templates standards et domaine personnalisé",
+                                                                        "Jusqu’à 6 langues",
+                                                                        "Property Manager manuel",
+                                                                        "Catalogue ventes et locations",
+                                                                        "Mini CRM Leads",
+                                                                        "Formulaire de contact et WhatsApp",
+                                                                        "Analytics essentiels"
+                                                                    ]
+                                                   },
+                                     "Pro":  {
+                                                 "tagline":  "L’environnement opérationnel complet des agences en croissance.",
+                                                 "features":  [
+                                                                  "Tout Essential",
+                                                                  "Property Manager avancé",
+                                                                  "Landing Pages",
+                                                                  "Chatbot IA et SEO IA",
+                                                                  "Social Hub",
+                                                                  "Analytics avancés",
+                                                                  "Vidéo Hero"
+                                                              ]
+                                             },
+                                     "Premium":  {
+                                                     "tagline":  "Des capacités avancées pour les agences établies.",
+                                                     "features":  [
+                                                                      "Tout Pro",
+                                                                      "Landing Pages illimitées",
+                                                                      "Newsletter",
+                                                                      "Quota chatbot étendu",
+                                                                      "Custom Pages",
+                                                                      "Visites immersives",
+                                                                      "Cadastre et passeport de conformité",
+                                                                      "Support prioritaire"
+                                                                  ]
+                                                 }
+                                 },
+                    "differences":  {
+                                        "eyebrow":  "DIFFÉRENCES CLÉS",
+                                        "title":  "Comparez ce qui évolue.",
+                                        "intro":  "Une lecture compacte de la capacité, de la gestion des biens et des fonctions distinctives de chaque niveau.",
+                                        "capacity":  "Capacité de l’équipe",
+                                        "property":  "Gestion des biens",
+                                        "distinctive":  "Capacités distinctives"
+                                    },
+                    "modules":  {
+                                    "eyebrow":  "MODULES OPTIONNELS",
+                                    "title":  "Ajoutez des capacités ciblées.",
+                                    "intro":  "Choisissez les modules optionnels correspondant aux services et aux processus utiles à votre agence.",
+                                    "languageUnit":  "langue/mois"
+                                },
+                    "moduleNames":  [
+                                        "Chatbot IA",
+                                        "Landing Pages",
+                                        "SEO IA",
+                                        "Custom Pages",
+                                        "Visites immersives",
+                                        "Cadastre et conformité",
+                                        "Gestion immobilière",
+                                        "Social Hub",
+                                        "Traduction IA",
+                                        "Analytics avancés",
+                                        "Newsletter",
+                                        "Vidéo Hero",
+                                        "WhatsApp",
+                                        "Langue supplémentaire"
+                                    ],
+                    "xml":  {
+                                "eyebrow":  "FLUX XML",
+                                "title":  "{xml} par flux et par mois.",
+                                "body":  "Le flux XML est facturé séparément des abonnements DATAhome.",
+                                "none":  "Inclus dans aucune offre."
+                            },
+                    "setup":  {
+                                  "eyebrow":  "INSTALLATION \u0026 ONBOARDING",
+                                  "title":  "{setup} une seule fois.",
+                                  "body":  "L’installation et l’onboarding sont facturés une seule fois."
+                              },
+                    "trial":  {
+                                  "eyebrow":  "COMMENCEZ PAR LE PRODUIT",
+                                  "title":  "Explorez DATAhome pendant {days} jours.",
+                                  "body":  "Utilisez la plateforme avec un accès complet pendant votre essai gratuit.",
+                                  "cta":  "Commencer l’essai de {days} jours"
+                              },
+                    "faq":  {
+                                "eyebrow":  "FAQ TARIFS",
+                                "title":  "Les informations pratiques.",
+                                "items":  [
+                                              {
+                                                  "question":  "Combien de temps dure l’essai gratuit ?",
+                                                  "answer":  "L’essai gratuit dure {days} jours et comprend un accès complet."
+                                              },
+                                              {
+                                                  "question":  "Y a-t-il des frais d’installation ?",
+                                                  "answer":  "L’installation et l’onboarding sont facturés une seule fois à {setup}."
+                                              },
+                                              {
+                                                  "question":  "Comment les modules optionnels sont-ils facturés ?",
+                                                  "answer":  "Les modules optionnels sont facturés individuellement par mois. Une langue supplémentaire est facturée par langue et par mois."
+                                              },
+                                              {
+                                                  "question":  "Le XML est-il inclus dans une offre ?",
+                                                  "answer":  "Non. Le flux XML n’est inclus dans aucune offre et coûte {xml} par flux et par mois."
+                                              }
+                                          ]
+                            }
+                },
+    "productPending":  {
+                           "message":  "La traduction de cette page est en préparation.",
+                           "link":  "Consulter le produit en anglais"
+                       },
+    "partnersPage":  {
+                         "metaTitle":  "Partenaires et intégrations | DATAhome",
+                         "metaDescription":  "Connectez données immobilières et workflows CRM à DATAhome.",
+                         "hero":  {
+                                      "eyebrow":  "PARTENAIRES \u0026 INTÉGRATIONS",
+                                      "title":  "Connectez votre écosystème de données à DATAhome.",
+                                      "body":  "DATAhome connecte les données immobilières issues de fournisseurs XML et les workflows de leads vers des systèmes CRM, tout en préservant les outils existants de votre agence."
+                                  },
+                         "mapper":  {
+                                        "eyebrow":  "DATAHOME IMPORT MAPPER",
+                                        "title":  "N’importe quelle source. Un seul format DATAhome.",
+                                        "body":  "Importez des données immobilières depuis différentes sources et structures. Mappez une fois, normalisez les données, générez un flux XML standardisé DATAhome et exploitez-le directement dans votre écosystème DATAhome.",
+                                        "alt":  "DATAhome Import Mapper — cartographie et normalisation des données immobilières"
+                                    },
+                         "xml":  {
+                                     "eyebrow":  "FOURNISSEURS DE DONNÉES / XML",
+                                     "title":  "Connectez votre flux XML immobilier à DATAhome.",
+                                     "body":  "Différentes structures XML peuvent être mappées dans le modèle de données immobilières DATAhome au moyen d’un service d’intégration.",
+                                     "sourceLabel":  "Fournisseurs de données immobilières",
+                                     "sources":  [
+                                                     "\u003cprice\u003e · \u003cprecio\u003e · \u003cselling_price\u003e",
+                                                     "\u003cref\u003e · \u003cproperty_id\u003e · \u003creference\u003e"
+                                                 ],
+                                     "mapping":  "Mapping et normalisation",
+                                     "standardized":  "Données immobilières standardisées",
+                                     "fields":  [
+                                                    "Référence",
+                                                    "Prix",
+                                                    "Type de bien",
+                                                    "Localisation",
+                                                    "Chambres",
+                                                    "Salles de bain",
+                                                    "Description",
+                                                    "Images et caractéristiques"
+                                                ],
+                                     "destinationLabel":  "Écosystème DATAhome",
+                                     "destinations":  [
+                                                          "Catalogue immobilier",
+                                                          "Site de l’agence",
+                                                          "Pages de biens",
+                                                          "Landing Pages"
+                                                      ],
+                                     "note":  "Le mapping est adapté au flux et au workflow concernés.",
+                                     "price":  "{xml} / flux / mois",
+                                     "none":  "Inclus dans aucune offre."
+                                 },
+                         "verified":  {
+                                          "eyebrow":  "Intégration XML vérifiée",
+                                          "label":  "Intégration d’import XML vérifiée",
+                                          "title":  "HabiHub",
+                                          "body":  "HabiHub est un exemple de source XML immobilière déjà connectée à DATAhome.",
+                                          "alt":  "HabiHub"
+                                      },
+                         "crm":  {
+                                     "eyebrow":  "FOURNISSEURS CRM",
+                                     "title":  "Gardez votre CRM. Connectez-le à DATAhome.",
+                                     "body":  "DATAhome ne demande pas à votre agence de remplacer son CRM existant. Il structure les leads issus de son écosystème digital pour des workflows CRM compatibles.",
+                                     "sourceLabel":  "Leads issus de DATAhome",
+                                     "sources":  [
+                                                     "Formulaires du site",
+                                                     "Demandes sur les biens",
+                                                     "Landing Pages",
+                                                     "Chatbot IA",
+                                                     "Formulaires de contact",
+                                                     "Autres sources de leads"
+                                                 ],
+                                     "mapping":  "Synchronisation et mapping des leads",
+                                     "standardized":  "Données de leads standardisées",
+                                     "fields":  [
+                                                    "Nom complet",
+                                                    "E-mail",
+                                                    "Téléphone",
+                                                    "Source",
+                                                    "Intérêt immobilier",
+                                                    "Localisation",
+                                                    "Type de projet"
+                                                ],
+                                     "destinationLabel":  "Votre CRM",
+                                     "destinations":  [
+                                                          "Workflow CRM",
+                                                          "Contacts",
+                                                          "Leads",
+                                                          "Opportunités et pipeline"
+                                                      ],
+                                     "note":  "La connectivité CRM est étudiée selon le système compatible et le workflow de l’agence."
+                                 },
+                         "mini":  {
+                                      "have":  "Vous avez déjà un CRM ? Gardez-le.",
+                                      "none":  "Pas encore de CRM ? DATAhome en inclut un.",
+                                      "body":  "Chaque formule DATAhome inclut le Mini CRM DATAhome. Il est disponible lorsque votre agence en a besoin, jamais obligatoire."
+                                  },
+                         "unified":  {
+                                         "eyebrow":  "ÉCOSYSTÈME PARTENAIRES UNIFIÉ",
+                                         "title":  "DATAhome s’adapte à votre agence. Votre agence n’a pas à s’adapter à DATAhome.",
+                                         "left":  "Fournisseurs de données immobilières",
+                                         "leftDetail":  "Flux XML",
+                                         "center":  "DATAhome",
+                                         "right":  "Fournisseurs CRM",
+                                         "rightDetail":  "Workflows CRM",
+                                         "below":  [
+                                                       "Site de l’agence",
+                                                       "Catalogue immobilier",
+                                                       "Landing Pages",
+                                                       "Leads",
+                                                       "Mini CRM",
+                                                       "Écosystème digital"
+                                                   ]
+                                     },
+                         "cta":  {
+                                     "eyebrow":  "TRAVAILLER AVEC DATAHOME",
+                                     "title":  "Connectez votre technologie à DATAhome.",
+                                     "body":  "Vous êtes fournisseur de données immobilières, fournisseur CRM, réseau immobilier ou agence disposant déjà de son propre environnement ? Voyons comment votre système peut se connecter à DATAhome.",
+                                     "cta":  "Discuter d\u0027une intégration"
+                                 }
+                     },
+    "contactPage":  {
+                        "metaTitle":  "Contacter DATAhome | Plateforme pour agences immobilières",
+                        "metaDescription":  "Contactez DATAhome au sujet d’un essai, de votre agence immobilière, d’un flux XML ou d’une collaboration technique.",
+                        "home":  {
+                                     "title":  "Parlez-nous de votre agence.",
+                                     "body":  "Ouvrez une conversation sur DATAhome, votre fonctionnement d’agence ou la prochaine étape de votre présence en ligne."
+                                 },
+                        "hero":  {
+                                     "eyebrow":  "CONTACTER DATAHOME",
+                                     "title":  "Commencez par le travail que votre agence doit accomplir.",
+                                     "body":  "Indiquez où vous en êtes et ce que vous souhaitez relier : votre site d’agence, vos données immobilières, le flux de leads ou une collaboration technique."
+                                 },
+                        "topics":  {
+                                       "eyebrow":  "SUJETS PERTINENTS",
+                                       "title":  "Un point de départ utile.",
+                                       "body":  "Utilisez ce formulaire pour ouvrir une conversation ciblée avec DATAhome.",
+                                       "items":  [
+                                                     "Essai DATAhome",
+                                                     "Votre agence immobilière",
+                                                     "Réseau d’agences",
+                                                     "Flux XML",
+                                                     "Collaboration technique"
+                                                 ]
+                                   },
+                        "privacy":  "En envoyant ce formulaire, vous demandez à DATAhome de traiter votre demande. Consultez notre page",
+                        "form":  {
+                                     "fields":  {
+                                                    "name":  "Nom",
+                                                    "email":  "E-mail",
+                                                    "phone":  "Téléphone (facultatif)",
+                                                    "message":  "Message (facultatif)",
+                                                    "namePlaceholder":  "Votre nom",
+                                                    "emailPlaceholder":  "vous@agence.com",
+                                                    "phonePlaceholder":  "+32 …",
+                                                    "messagePlaceholder":  "Expliquez ce que vous souhaitez aborder."
+                                                },
+                                     "submit":  "Envoyer la demande",
+                                     "sending":  "Envoi…",
+                                     "success":  "Votre demande a été envoyée.",
+                                     "genericError":  "Le service de contact est actuellement indisponible. Veuillez réessayer plus tard.",
+                                     "errors":  {
+                                                    "name":  "Indiquez votre nom.",
+                                                    "email":  "Indiquez une adresse e-mail valide."
+                                                }
+                                 }
+                    },
+    "privacyPage":  {
+                        "metaTitle":  "Politique de confidentialité | DATAhome",
+                        "metaDescription":  "Comment DATAhome traite les informations sur data-home.app.",
+                        "eyebrow":  "DATAHOME / CONFIDENTIALITÉ",
+                        "title":  "Politique de confidentialité",
+                        "intro":  "Cette politique décrit les informations traitées par le site marketing DATAhome, data-home.app.",
+                        "updated":  "Dernière mise à jour : 18 septembre 2026.",
+                        "contactLabel":  "Contact confidentialité",
+                        "operatorStatus":  "Professionnel indépendant (autónomo), Espagne",
+                        "sections":  [
+                                         {
+                                             "title":  "Responsable du traitement",
+                                             "body":  [
+                                                          "DATAhome est la marque commerciale exploitée par {operator}, professionnel indépendant (autónomo) en Espagne. Le responsable des traitements décrits sur ce site marketing peut être contacté à l’adresse {email}."
+                                                      ]
+                                         },
+                                         {
+                                             "title":  "Informations collectées",
+                                             "body":  [
+                                                          "Nous collectons les informations que vous choisissez de fournir via le formulaire de contact : nom, adresse e-mail, téléphone facultatif et message facultatif. Le formulaire transmet également sa source, la langue sélectionnée et l’URL de la page depuis laquelle il est envoyé."
+                                                      ]
+                                         },
+                                         {
+                                             "title":  "Demandes de contact",
+                                             "body":  [
+                                                          "Lorsque vous envoyez une demande, le navigateur la transmet au point d’entrée DATAhome /api/leads. Ce point d’entrée transmet ensuite la demande via Resend au destinataire de contact DATAhome configuré, afin que nous puissions lire et répondre à votre demande.",
+                                                          "Nous utilisons les informations d’une demande pour traiter la conversation que vous avez initiée. Le site marketing ne déclare pas enregistrer lui-même les demandes de contact dans une base de données."
+                                                      ]
+                                         },
+                                         {
+                                             "title":  "Prévention des abus et sécurité",
+                                             "body":  [
+                                                          "Afin de protéger le service de contact contre les abus, le point d’entrée peut utiliser temporairement l’information IP reçue avec la requête pour appliquer une limitation de fréquence. Cette information opérationnelle est conservée en mémoire applicative pendant la fenêtre de limitation et n’est pas utilisée comme profil visiteur."
+                                                      ]
+                                         },
+                                         {
+                                             "title":  "Analytics",
+                                             "body":  [
+                                                          "DATAhome utilise Vercel Analytics uniquement après votre choix « Tout accepter » dans les préférences. Avant tout choix, ainsi qu’après « Essentiels uniquement », le site marketing ne monte ni n’active Vercel Analytics.",
+                                                          "Cette politique décrit le comportement de consentement de DATAhome. Elle ne formule aucune hypothèse sur le stockage ou le traitement interne de Vercel Analytics."
+                                                      ]
+                                         },
+                                         {
+                                             "title":  "Préférences locales",
+                                             "body":  [
+                                                          "Votre préférence est conservée localement dans votre navigateur sous la clé datahome_cookie_consent_v1. Elle enregistre votre choix Essentiels uniquement ou Tout accepter et sa date. Il s’agit d’un stockage local fonctionnel, non d’un mécanisme publicitaire ni d’un cookie en lui-même."
+                                                      ]
+                                         },
+                                         {
+                                             "title":  "Services externes et sources techniques",
+                                             "body":  [
+                                                          "Resend est utilisé pour délivrer les demandes de contact à DATAhome. Vercel Analytics est disponible uniquement après le choix autorisant les analytics. Le site peut aussi récupérer ou afficher des informations publiques sur des biens ou des médias via des sources techniques externes, notamment les services applicatifs DATAhome et des sources de médias immobiliers.",
+                                                          "Les liens vers les environnements DATAhome d’inscription, de démonstration et de prévisualisation de templates conduisent vers des destinations distinctes. Cette politique décrit data-home.app et ne prétend pas décrire les traitements qui peuvent intervenir après avoir quitté ce site marketing."
+                                                      ]
+                                         },
+                                         {
+                                             "title":  "Conservation",
+                                             "body":  [
+                                                          "Les demandes de contact sont conservées au maximum {months} mois, sauf si la demande débouche sur une relation commerciale ou contractuelle, ou si une obligation légale applicable impose une durée différente."
+                                                      ]
+                                         },
+                                         {
+                                             "title":  "Destinataires et sous-traitants",
+                                             "body":  [
+                                                          "Les informations d’une demande de contact sont envoyées au destinataire DATAhome configuré pour le service et sont délivrées via Resend. Des prestataires techniques peuvent traiter des informations lorsque cela est nécessaire au fonctionnement du site et de ses services. Nous ne vendons pas les informations issues des demandes de contact."
+                                                      ]
+                                         },
+                                         {
+                                             "title":  "Transferts internationaux",
+                                             "body":  [
+                                                          "Certains prestataires techniques peuvent traiter des informations hors de votre pays. Le lieu et les garanties applicables à un prestataire dépendent de son service et de sa configuration. Contactez-nous à {email} si vous souhaitez des informations sur le traitement lié à votre demande."
+                                                      ]
+                                         },
+                                         {
+                                             "title":  "Vos droits et leur exercice",
+                                             "body":  [
+                                                          "Selon le droit applicable, vous pouvez disposer de droits d’accès, de rectification, d’effacement, de limitation ou d’opposition concernant vos informations personnelles, ainsi que du droit de saisir une autorité compétente. Pour toute demande concernant les informations traitées par ce site marketing, écrivez à {email}."
+                                                      ]
+                                         },
+                                         {
+                                             "title":  "Mises à jour de cette politique",
+                                             "body":  [
+                                                          "Nous pouvons mettre à jour cette politique lorsque le site marketing ou ses traitements évoluent. La dernière version est publiée sur cette page."
+                                                      ]
+                                         }
+                                     ]
+                    },
+    "legalPage":  {
+                      "metaTitle":  "Mentions légales | DATAhome",
+                      "metaDescription":  "Informations légales du site marketing DATAhome.",
+                      "eyebrow":  "DATAHOME / MENTIONS LÉGALES",
+                      "title":  "Mentions légales",
+                      "intro":  "Informations légales du site marketing DATAhome, data-home.app.",
+                      "contactLabel":  "Contact",
+                      "operatorStatus":  "Professionnel indépendant (autónomo), Espagne",
+                      "sections":  [
+                                       {
+                                           "title":  "Éditeur et exploitant du site",
+                                           "body":  [
+                                                        "DATAhome est la marque commerciale et produit. Ce site est édité et exploité par {operator}, agissant comme professionnel indépendant (autónomo) en Espagne."
+                                                    ]
+                                       },
+                                       {
+                                           "title":  "Identification",
+                                           "body":  [
+                                                        "Adresse professionnelle : Alcolechia 47, Alicante, Espagne. Identification fiscale : {taxId}. Aucun numéro de TVA n’est affiché pour cette activité."
+                                                    ]
+                                       },
+                                       {
+                                           "title":  "Objet du site",
+                                           "body":  [
+                                                        "data-home.app présente DATAhome et ses informations marketing à destination des agences immobilières, réseaux et flux de données immobilières. Il peut proposer des liens vers des environnements DATAhome distincts : application, démonstration, inscription et prévisualisation de templates."
+                                                    ]
+                                       },
+                                       {
+                                           "title":  "Propriété intellectuelle",
+                                           "body":  [
+                                                        "Le nom DATAhome, les contenus du site, le design, les visuels logiciels et les autres éléments sont protégés lorsque le droit applicable le prévoit. Ils ne peuvent pas être reproduits ou utilisés au-delà de ce qu’autorise le droit applicable sans l’accord préalable du titulaire concerné."
+                                                    ]
+                                       },
+                                       {
+                                           "title":  "Liens et services externes",
+                                           "body":  [
+                                                        "Ce site peut proposer des liens vers des destinations externes ou afficher des contenus disponibles via des sources techniques externes. Ces destinations restent responsables de leurs contenus, disponibilité et informations de confidentialité. Un lien ne constitue pas en lui-même une approbation ni un partenariat commercial."
+                                                    ]
+                                       },
+                                       {
+                                           "title":  "Responsabilité",
+                                           "body":  [
+                                                        "Nous cherchons à maintenir les informations de ce site exactes et à jour, mais elles sont fournies à titre général. Aucun contenu du site marketing ne remplace une proposition contractuelle précise, un accord produit ou un conseil professionnel."
+                                                    ]
+                                       },
+                                       {
+                                           "title":  "Cadre applicable",
+                                           "body":  [
+                                                        "Ce site est édité depuis l’Espagne. Les règles impératives du droit applicable et la compétence des autorités compétentes s’appliquent lorsque cela est pertinent."
+                                                    ]
+                                       }
+                                   ]
+                  },
+    "hero":  {
+                 "headline1":  "Vos clients visent l\u0027international.",
+                 "headline2":  "Votre agence aussi.",
+                 "subtitle":  "Biens internationaux, prospects et marketing.\nUn seul espace de travail pour votre agence.",
+                 "demo":  "Voir DATAhome en action"
+             }
+}

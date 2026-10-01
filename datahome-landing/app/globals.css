@@ -1,4 +1,8 @@
-﻿@import "tailwindcss";
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
 
 @theme {
   --font-sans: "Montserrat", "Inter", system-ui, sans-serif;
@@ -6,45 +10,1373 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 229 35% 12%;
-    --muted: 212 42% 96%;
-    --muted-foreground: 216 18% 45%;
-    --border: 214 32% 90%;
-    --card: 0 0% 100%;
-    --ring: 337 57% 63%;
-    --radius: 1rem;
+    /* ── Brand colours ────────────────────────────────────── */
     --dh-pink: #D769A9;
     --dh-red: #EF4B5A;
     --dh-blue: #18A1CE;
     --dh-yellow: #FCC010;
     --dh-green: #32B55E;
-    --dh-ink: #080B1D;
     --dh-grad-primary: linear-gradient(135deg, #D769A9 0%, #EF4B5A 100%);
     --dh-grad-blue: linear-gradient(135deg, #18A1CE 0%, #D769A9 100%);
+
+    /* ── Dark ground palette ──────────────────────────────── */
+    --surface-0: #000000;       /* body */
+    --surface-1: #0c0c0c;       /* nav, section separators */
+    --surface-2: #141414;       /* cards */
+    --surface-3: #1e1e1e;       /* card hover, inputs */
+    --border-subtle:  rgba(255,255,255,0.06);
+    --border-default: rgba(255,255,255,0.10);
+    --border-raised:  rgba(255,255,255,0.16);
+
+    /* ── Fluid type scale ─────────────────────────────────── */
+    --text-h1: clamp(2.5rem, 4.5vw + 0.5rem, 4.5rem);
+    --text-h2: clamp(1.75rem, 2.8vw + 0.5rem, 3rem);
+    --text-h3: clamp(1.125rem, 1.5vw + 0.25rem, 1.625rem);
+
+    /* ── Easing signature ─────────────────────────────────── */
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+    /* ── Shadows (multi-layer, dark-optimised) ────────────── */
+    --shadow-soft:
+      0 1px 2px rgba(0,0,0,.5),
+      0 4px 12px rgba(0,0,0,.4);
+    --shadow-lifted:
+      0 2px 4px rgba(0,0,0,.6),
+      0 8px 24px rgba(0,0,0,.5),
+      0 20px 40px rgba(0,0,0,.3);
+    --shadow-floating:
+      0 4px 8px rgba(0,0,0,.7),
+      0 16px 48px rgba(0,0,0,.55),
+      0 40px 80px rgba(0,0,0,.4);
+
+    /* ── Shadcn semantic tokens (dark-first, no class toggle) */
+    --background: 0 0% 0%;
+    --foreground: 0 0% 97%;
+    --muted: 0 0% 8%;
+    --muted-foreground: 0 0% 55%;
+    --border: 0 0% 100% / 10%;
+    --card: 0 0% 8%;
+    --ring: 337 57% 63%;
+    --radius: 1rem;
   }
 
-  * { border-color: hsl(var(--border)); }
+  * { @apply border-border outline-ring/50; }
 
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; @apply font-sans; }
 
   body {
     min-height: 100vh;
-    background:
-      radial-gradient(circle at 8% 8%, rgba(24,161,206,.10), transparent 28%),
-      radial-gradient(circle at 92% 10%, rgba(215,105,169,.12), transparent 28%),
-      linear-gradient(180deg, #ffffff 0%, #f8fbff 48%, #ffffff 100%);
-    color: hsl(var(--foreground));
+    background: var(--surface-0);
+    color: rgba(255,255,255,0.88);
   }
 
-  h1, h2, h3 { letter-spacing: 0; }
+  h1 { font-size: var(--text-h1); letter-spacing: -0.04em; }
+  h2 { font-size: var(--text-h2); letter-spacing: -0.03em; }
+  h3 { font-size: var(--text-h3); letter-spacing: -0.02em; }
 
-  ::selection { background: rgba(215,105,169,.22); }
+  ::selection { background: rgba(215,105,169,.28); color: #fff; }
 }
 
 @layer utilities {
   .dh-container { width: min(1180px, calc(100% - 40px)); margin-inline: auto; }
   .dh-gradient-text { background: var(--dh-grad-blue); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  .dh-button-gradient { background: var(--dh-grad-primary); box-shadow: 0 18px 42px rgba(239,75,90,.24); }
-  .dh-card { border: 1px solid rgba(15,23,42,.08); background: rgba(255,255,255,.86); box-shadow: 0 24px 80px rgba(15,23,42,.08); backdrop-filter: blur(18px); }
+  .dh-button-gradient { background: var(--dh-grad-primary); box-shadow: 0 18px 42px rgba(239,75,90,.28); }
+  .dh-card {
+    border: 1px solid var(--border-default);
+    background: var(--surface-2);
+    box-shadow: var(--shadow-lifted);
+    backdrop-filter: blur(18px);
+  }
+}
+
+@theme inline {
+  --font-heading: var(--font-sans);
+  --font-sans: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+  --animate-marquee: marquee var(--duration) infinite linear;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+  @keyframes marquee {
+  from {
+    transform: translateX(0);
+    }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  @keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+    }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
+}
+
+/* Dark-only UI — all tokens set to dark values at :root, no .dark toggle needed */
+:root {
+  --background: oklch(0 0 0);
+  --foreground: oklch(0.97 0 0);
+  --card: oklch(0.085 0 0);
+  --card-foreground: oklch(0.97 0 0);
+  --popover: oklch(0.085 0 0);
+  --popover-foreground: oklch(0.97 0 0);
+  --primary: oklch(0.97 0 0);
+  --primary-foreground: oklch(0.085 0 0);
+  --secondary: oklch(0.14 0 0);
+  --secondary-foreground: oklch(0.97 0 0);
+  --muted: oklch(0.14 0 0);
+  --muted-foreground: oklch(0.60 0 0);
+  --accent: oklch(0.14 0 0);
+  --accent-foreground: oklch(0.97 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 12%);
+  --ring: oklch(0.60 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.60 0 0);
+  --chart-3: oklch(0.45 0 0);
+  --chart-4: oklch(0.37 0 0);
+  --chart-5: oklch(0.27 0 0);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.085 0 0);
+  --sidebar-foreground: oklch(0.97 0 0);
+  --sidebar-primary: oklch(0.97 0 0);
+  --sidebar-primary-foreground: oklch(0.085 0 0);
+  --sidebar-accent: oklch(0.14 0 0);
+  --sidebar-accent-foreground: oklch(0.97 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.60 0 0);
+}
+/* Cinematic Home prototype: Hero → Cockpit → Property Catalogue. */
+.product-status { display:flex;align-items:center;gap:9px;color:#607080;font-size:11px;margin-bottom:24px; }
+.product-status span { width:6px;height:6px;border-radius:50%;background:#32b55e; }
+.product-hero-actions { display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-top:28px; }
+.product-primary { display:inline-flex;align-items:center;gap:10px;background:#18a1ce;color:#fff;border-radius:8px;padding:14px 22px;font-size:13px;font-weight:600;transition:background .18s,transform .18s; }
+.product-primary:hover { background:#148bb3;transform:translateY(-1px); }
+.product-primary:focus-visible,.product-demo:focus-visible { outline:2px solid #0b78a1;outline-offset:4px; }
+.product-demo { color:#30485d;font-size:13px; }
+
+.cinematic-scroll { height:560svh;position:relative; }
+/* Background always dark — no JS background transition */
+.cinematic-viewport { position:sticky;top:0;height:100svh;overflow:hidden;isolation:isolate;perspective:1600px;background:#07111f; }
+/* Blue Horizon V2 — two-layer atmospheric system */
+.ch-atmos-band { position:absolute;z-index:0;bottom:-18%;left:50%;width:120vw;height:55vh;border-radius:50%;transform:translateX(-50%);background:radial-gradient(ellipse 80% 60% at 50% 80%,rgba(24,161,206,.22),rgba(24,161,206,.06) 45%,transparent 72%);pointer-events:none;will-change:opacity; }
+.ch-atmos-orb { position:absolute;z-index:0;top:28%;width:44vw;height:44vw;border-radius:50%;transform:translateX(-50%);background:radial-gradient(circle,rgba(24,161,206,.14),rgba(24,161,206,.03) 40%,transparent 68%);pointer-events:none;will-change:left,opacity; }
+/* Cinematic hero copy — white on dark */
+.cinematic-hero-copy { color:#f0f6fb;will-change:transform,opacity; }
+.cinematic-hero-copy .product-status { color:rgba(244,248,253,0.50); }
+.cinematic-hero-copy .product-demo { color:rgba(244,248,253,0.60); }
+.cinematic-hero-copy h1 { max-width:760px;color:#f4f8fd;font-size:clamp(48px,6vw,86px);font-weight:500;line-height:.98;letter-spacing:-.06em; }
+.cinematic-static h1 { max-width:760px;color:#101820;font-size:clamp(48px,6vw,86px);font-weight:500;line-height:.98;letter-spacing:-.06em; }
+.cinematic-hero-copy .product-hero-description { color:rgba(244,248,253,0.46); }
+.product-hero-description { max-width:580px;font-size:15px;line-height:1.8;margin-top:24px; }
+/* Products V2 — fullscreen, no card chrome */
+.cinematic-product { position:absolute;inset:0;margin:0;transform-origin:center center;overflow:hidden;background:#07111f;will-change:transform,opacity; }
+.cinematic-product img { display:block;width:100%;height:100%;object-fit:cover;object-position:center; }
+.cinematic-cockpit { z-index:1; }
+.cinematic-catalogue { z-index:2; }
+.cinematic-catalogue-copy { color:#f4f8fd;will-change:transform,opacity;pointer-events:none; }
+.cinematic-catalogue-copy p,.cinematic-static-catalogue>p { color:#62c7ea;font-size:12px;letter-spacing:.1em;text-transform:uppercase; }
+.cinematic-catalogue-copy h2,.cinematic-static-catalogue h2 { margin-top:8px;font-size:clamp(30px,3.2vw,48px);font-weight:500;line-height:1;letter-spacing:-.045em; }
+/* hidden by default — shown only for mobile/reduced-motion via media queries below */
+.cinematic-static { display:none; }
+.cinematic-hero-copy-anchor { position:absolute;z-index:3;top:clamp(142px,21vh,240px);left:50%;width:min(1180px,calc(100% - 40px));transform:translateX(-50%); }
+.cinematic-catalogue-copy-anchor { position:absolute;z-index:4;bottom:clamp(38px,7vh,84px);left:50%;width:min(1180px,calc(100% - 40px));transform:translateX(-50%); }
+
+
+.product-crop { position:relative;overflow:hidden;aspect-ratio:var(--cw)/var(--ch);border-radius:12px;background:#0b1422;outline:1px solid rgba(255,255,255,.1);box-shadow:0 12px 32px rgba(0,0,0,.14); }
+.product-crop img { position:absolute;max-width:none;width:calc(var(--sw,1920) / var(--cw) * 100%);height:auto;left:calc(var(--cx) / var(--cw) * -100%);top:calc(var(--cy) / var(--ch) * -100%); }
+.crop-cockpit { --cx:344;--cy:150;--cw:1472;--ch:870; }
+.product-features { background:#000;color:#f5f5f5;padding:64px 0 88px; }
+.product-intro { font-weight:500;line-height:1.12;max-width:680px;margin-bottom:32px; }
+.product-chapter { padding:72px 0 80px;border-top:1px solid #222; }
+.product-chapter-copy { display:grid;grid-template-columns:1.2fr 1fr;gap:100px;align-items:end;margin-bottom:40px; }
+.product-label { color:#18a1ce;font-size:13px;margin-bottom:16px; }
+.product-chapter h3 { font-size:clamp(26px,3vw,40px);line-height:1.15;font-weight:500;white-space:pre-line;letter-spacing:-.035em; }
+.product-description { color:#aaa;font-size:14px;line-height:1.85;max-width:570px;margin-top:22px; }
+.product-chapter ul { list-style:none;padding:0;margin:0; }
+.product-chapter li { color:#b8b8b8;font-size:13px;line-height:1.7;padding:8px 0;border-bottom:1px solid #1c1c1c; }
+.product-visual { max-width:1080px;margin:0 auto; }
+.crop-website { --sw:1440;--cx:0;--cy:90;--cw:1440;--ch:750; }
+.crop-catalogue { --cx:344;--cy:150;--cw:1472;--ch:940; }
+.crop-landing { --cx:380;--cy:180;--cw:1068;--ch:832; }
+.crop-social { --cx:380;--cy:180;--cw:1068;--ch:752; }
+.crop-modules { --cx:380;--cy:120;--cw:1068;--ch:648; }
+.visual-3 { max-width:860px; }
+.product-stage { max-width:1000px;margin:0; }
+.product-stage figcaption { margin-bottom:24px; }
+.product-stage figcaption span { color:#18a1ce;font-size:12px; }
+.product-stage figcaption p { color:#ddd;font-size:20px;margin-top:8px;letter-spacing:-.02em; }
+.stage-distribute { margin:64px 0 0 auto;padding-top:32px;border-top:1px solid #222; }
+@media(max-width:600px) {
+ .product-hero { padding-top:112px; }
+ .product-hero-copy { padding-bottom:54px; }
+ .product-hero h1 { font-size:44px; }
+ .product-hero-description { font-size:14px; }
+ .product-hero-actions { gap:20px; }
+ .product-proof { gap:32px; }
+ .cockpit-stage { padding:54px 0 62px; }
+ .cockpit-stage::after { top:-74px;height:112px; }
+ .cockpit-stage-intro { margin-bottom:20px; }
+ .cockpit-stage-intro h2 { font-size:28px; }
+ .cockpit-product-frame { width:calc(100vw - 32px);border-radius:9px; }
+ .cockpit-stage-caption { width:calc(100vw - 32px);margin-top:13px; }
+ .product-crop { border-radius:8px; }
+ .crop-cockpit { --cx:352;--cy:534;--cw:528;--ch:460; }
+ .product-features { padding:32px 0; }
+ .product-chapter { padding:44px 0 48px; }
+ .product-chapter-copy { grid-template-columns:1fr;gap:20px;margin-bottom:28px; }
+ .product-chapter h3 { font-size:29px; }
+ .product-description { margin-top:16px; }
+ .product-chapter li { font-size:12px; }
+ .crop-website { --cx:790;--cy:100;--cw:650;--ch:738; }
+ .crop-catalogue { --cx:368;--cy:660;--cw:650;--ch:345; }
+ .crop-landing { --cx:400;--cy:376;--cw:520;--ch:280; }
+ .crop-social { --cx:400;--cy:602;--cw:336;--ch:334; }
+ .crop-modules { --cx:384;--cy:224;--cw:520;--ch:548; }
+ .product-stage figcaption p { font-size:19px;line-height:1.4; }
+ .stage-distribute { margin-top:36px;padding-top:28px; }
+}
+@media(prefers-reduced-motion:reduce) {
+ .cockpit-stage-intro,.cockpit-product-frame { animation:none; }
+}
+
+@media (max-width: 767px), (prefers-reduced-motion: reduce) {
+  .cinematic-scroll { display:none; }
+  .cinematic-static { display:block;background:#fff;color:#101820; }
+  .cinematic-static-copy { padding-top:116px;padding-bottom:48px; }
+  .cinematic-static-copy > p:not(.product-status) { max-width:580px;margin-top:20px;color:#526171;font-size:14px;line-height:1.75; }
+  .cinematic-static-product { padding:42px 0 58px;background:#07111f; }
+  .cinematic-static-product > img { display:block;width:calc(100% - 32px);height:auto;margin:0 auto;border:1px solid rgba(105,181,224,.28);border-radius:9px; }
+  .cinematic-static-catalogue { margin-top:52px;color:#f4f8fd; }
+  .cinematic-static-catalogue h2 { margin-bottom:18px; }
+  .cinematic-static-catalogue > img { display:block;width:100%;height:auto;border:1px solid rgba(105,181,224,.28);border-radius:9px; }
+}
+@media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+  /* cinematic-static stays display:none on desktop normal-motion — cinematic-scroll is the only hero */
+}
+
+/* Phase 2: shared marketing chrome, independent of product sections. */
+.dh-site-header{position:fixed;inset:0 0 auto;z-index:100;background:rgba(7,10,15,.96);border-bottom:1px solid #ffffff12}
+.dh-nav{display:flex;align-items:center;justify-content:space-between;gap:24px;height:76px}.dh-wordmark{display:inline-flex;white-space:nowrap;font-size:23px;letter-spacing:-1px;font-weight:700;color:#fff}.dh-wordmark span:last-child{color:#42b8e0;font-weight:400}
+.dh-desktop-links,.dh-desktop-actions{display:flex;align-items:center;gap:22px}.dh-desktop-links a{color:#b9c0cb;font-size:14px;padding:12px 0}.dh-desktop-links a[aria-current=page],.dh-mobile-navigation a[aria-current=page]{color:#fff;text-decoration:underline;text-decoration-color:#42b8e0;text-underline-offset:9px}
+.dh-language select{min-height:44px;max-width:150px;background:#101720;color:#e5eaf0;border:1px solid #ffffff20;border-radius:6px;padding:0 9px;font-size:14px}.dh-language option{background:#101720;color:white}
+.dh-trial{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 17px;background:#1599c3;color:#fff;border-radius:6px;font-size:14px;font-weight:600;white-space:nowrap}
+.dh-menu-toggle{display:none;align-items:center;justify-content:center;width:44px;height:44px;color:#fff;background:none;border:1px solid #ffffff25;border-radius:6px}.dh-mobile-navigation{display:none}
+.dh-site-header a:hover,.dh-site-footer a:hover{color:#fff}.dh-site-header :focus-visible,.dh-site-footer :focus-visible,.dh-cookie-panel :focus-visible,.dh-pending a:focus-visible{outline:2px solid #6fd3ff;outline-offset:5px}
+.dh-site-footer{background:#090d14;border-top:1px solid #ffffff18;padding:64px 0 28px;color:#c1c8d2}.dh-footer-promise{margin:18px 0 32px;font-size:18px;color:#e7ecf4}.dh-site-footer nav{display:flex;flex-wrap:wrap;gap:18px 26px;font-size:14px}.dh-site-footer button{cursor:pointer;color:inherit}.dh-copyright{border-top:1px solid #ffffff15;padding-top:24px;margin-top:36px;font-size:12px;color:#9da8b8}
+.dh-pending{min-height:65vh;padding-top:160px;padding-bottom:100px;color:#e8edf4}.dh-pending h1{font-size:clamp(38px,6vw,64px);letter-spacing:-.04em;margin-bottom:24px}.dh-pending h2{font-size:22px;margin-bottom:12px}.dh-pending p{max-width:600px;color:#b9c3d0;line-height:1.7}.dh-pending a{display:inline-block;margin-top:28px;color:#68cdf0}
+.dh-cookie-panel{position:fixed;bottom:20px;right:20px;z-index:300;width:min(430px,calc(100vw - 40px));background:#101720;border:1px solid #ffffff30;border-radius:10px;padding:22px;color:#edf1f6;box-shadow:0 12px 40px #0006}.dh-cookie-heading{display:flex;justify-content:space-between;align-items:center;gap:16px}.dh-cookie-heading h2{font-size:18px}.dh-cookie-heading button{width:44px;height:44px;font-size:24px}.dh-cookie-panel p{color:#b9c3d0;margin:12px 0}.dh-cookie-panel>a{color:#68cdf0;text-decoration:underline}.dh-cookie-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}.dh-cookie-actions button{min-height:44px;flex:1;padding:10px;border:1px solid #ffffff40;border-radius:5px}
+@media(max-width:1199px){.dh-desktop-links,.dh-desktop-actions{display:none}.dh-menu-toggle{display:flex}.dh-mobile-navigation:not([hidden]){display:block;max-height:calc(100dvh - 76px);overflow-y:auto;border-top:1px solid #ffffff20;padding:16px 24px 24px}.dh-mobile-navigation nav{display:flex;flex-direction:column;gap:4px}.dh-mobile-navigation nav>a:not(.dh-trial){padding:12px 0;color:#c1c8d2;font-size:16px}.dh-mobile-navigation .dh-language{margin:12px 0}.dh-mobile-navigation select{width:100%;max-width:none}.dh-mobile-navigation .dh-trial{margin-top:12px}.dh-site-footer nav{gap:18px 24px}.dh-pending{padding-top:125px}}
+
+/* ══════════════════════════════════════════════════════════════
+   HOME V4 — Hero + independent product stages
+   The cinematic CSS above is kept as dead code during visual
+   validation; remove only after V4 is approved in browser.
+══════════════════════════════════════════════════════════════ */
+
+/* ── Shared product-stage tokens ────────────────────────────── */
+.pv4-label{font-size:11.5px;font-weight:600;letter-spacing:.10em;text-transform:uppercase;margin-bottom:14px;color:#18a1ce}
+.pv4-h2{font-size:clamp(28px,3.2vw,46px);font-weight:500;line-height:1.1;letter-spacing:-.04em;margin-bottom:16px}
+.pv4-body{font-size:15px;line-height:1.82;max-width:440px}
+.pv4-body-dark{color:rgba(255,255,255,.48)}
+.pv4-body-light{color:#526070}
+
+/* ── Hero V4 ─────────────────────────────────────────────────── */
+.hero-v4{position:relative;min-height:100svh;background:#07111f;display:flex;align-items:center;overflow:hidden;padding-top:76px}
+.hero-v4-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 700px 520px at 72% 54%,rgba(24,161,206,.13) 0%,transparent 70%)}
+.hero-v4-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center;padding:48px 0 72px}
+.hero-v4-copy h1{max-width:540px;color:#f4f8fd;font-size:clamp(48px,5.5vw,86px);font-weight:500;line-height:.97;letter-spacing:-.055em}
+.hero-v4-copy .product-status{color:rgba(244,248,253,.48)}
+.hero-v4-copy .product-hero-description{color:rgba(244,248,253,.44);max-width:500px}
+.hero-v4-copy .product-demo{color:rgba(244,248,253,.60)}
+.hero-v4-product{border-radius:14px;overflow:hidden;box-shadow:0 4px 8px rgba(0,0,0,.7),0 16px 48px rgba(0,0,0,.55),0 40px 80px rgba(0,0,0,.4)}
+.hero-v4-product-inner{position:relative;width:100%;aspect-ratio:1.6}
+
+/* ── Cockpit Stage ───────────────────────────────────────────── */
+.cockpit-v4{background:#000;color:#f0f6fb;padding:96px 0}
+.cockpit-v4-copy{max-width:660px;margin-bottom:48px}
+.cockpit-v4-stage{position:relative;width:100%;aspect-ratio:2;border-radius:14px;overflow:hidden;margin:0;box-shadow:0 2px 4px rgba(0,0,0,.7),0 8px 32px rgba(0,0,0,.55),0 24px 64px rgba(0,0,0,.4)}
+.cockpit-v4-stage::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 55% 50% at 62% 65%,rgba(24,161,206,.09) 0%,transparent 70%)}
+
+/* ── Catalogue Stage (light section) ────────────────────────── */
+.catalogue-v4{background:#f4f7fb;padding:96px 0}
+.catalogue-v4-inner{display:grid;grid-template-columns:1fr 1.85fr;gap:80px;align-items:center}
+.catalogue-v4-copy h2{color:#080B1D}
+.catalogue-v4-stage{position:relative;aspect-ratio:1.88;border-radius:16px;overflow:hidden;margin:0;background:#0c1422;box-shadow:0 24px 64px rgba(8,11,29,.18),0 4px 12px rgba(8,11,29,.10)}
+
+/* ── CRM Stage ───────────────────────────────────────────────── */
+.crm-v4{background:#080B1D;color:#f0f6fb;padding:96px 0}
+.crm-v4-inner{display:grid;grid-template-columns:1fr 1.35fr;gap:72px;align-items:center}
+.crm-v4-stage{position:relative;aspect-ratio:1.333;border-radius:14px;overflow:hidden;margin:0;box-shadow:0 2px 4px rgba(0,0,0,.7),0 8px 32px rgba(0,0,0,.55),0 24px 64px rgba(0,0,0,.4)}
+
+/* ── Hero — animated light layers ───────────────────────────── */
+/* Static radial is now handled via JS-animated divs; keep rule as no-op fallback */
+.hero-v4-glow{display:none}
+/* Back light: large atmospheric bloom — gradient in CSS, opacity/scale animated by JS */
+.hero-back-light{position:absolute;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse 740px 580px at 74% 52%,rgba(24,161,206,.30) 0%,rgba(24,161,206,.14) 36%,transparent 68%)}
+/* Secondary light: appears to emanate from activity area inside the dashboard */
+.hero-secondary-light{position:absolute;width:380px;height:280px;top:38%;right:18%;transform:translate(50%,-50%);pointer-events:none;z-index:0;background:radial-gradient(ellipse at center,rgba(24,161,206,.20) 0%,rgba(24,161,206,.07) 48%,transparent 70%)}
+/* Product scene: 3D context wrapper */
+.hero-product-scene{position:relative;z-index:1;will-change:transform}
+/* Edge light: left+top corner only — soft, not a full border glow */
+.hero-edge-light{position:absolute;inset:-1px;border-radius:15px;pointer-events:none;z-index:2;background:linear-gradient(135deg,rgba(24,161,206,.32) 0%,rgba(24,161,206,.12) 18%,transparent 38%)}
+
+/* ── Cockpit — light stage layers ───────────────────────────── */
+.cockpit-stage-wrapper{position:relative;width:100%}
+/* Layer 1: large low-opacity atmospheric bloom */
+.cockpit-light-1{position:absolute;inset:-100px;pointer-events:none;z-index:0;background:radial-gradient(ellipse 72% 65% at 55% 52%,rgba(24,161,206,.22) 0%,rgba(24,161,206,.07) 48%,transparent 70%)}
+/* Layer 2: focused bloom behind analytics/activity zone (upper-right quadrant of cockpit) */
+.cockpit-light-2{position:absolute;width:48%;height:65%;top:2%;right:4%;pointer-events:none;z-index:0;background:radial-gradient(ellipse at center,rgba(24,161,206,.20) 0%,rgba(24,161,206,.06) 50%,transparent 72%)}
+/* Layer 3: faint bottom reflection on the floor */
+.cockpit-light-3{position:absolute;width:65%;height:40px;bottom:-18px;left:17%;pointer-events:none;z-index:0;background:radial-gradient(ellipse at center,rgba(24,161,206,.14) 0%,transparent 70%);filter:blur(8px)}
+/* Product frame: sits above the lights */
+.cockpit-product-frame{position:relative;z-index:1;will-change:transform}
+
+/* ── Catalogue — card depth accents ─────────────────────────── */
+.catalogue-card-wrapper{position:relative}
+/* Blue reflection below the dark card, on the light background */
+.catalogue-card-glow{position:absolute;width:85%;height:50px;bottom:-28px;left:7%;pointer-events:none;z-index:0;background:radial-gradient(ellipse at center,rgba(24,161,206,.16) 0%,transparent 70%);filter:blur(10px)}
+/* 1px accent line on left edge only */
+.catalogue-card-accent{position:absolute;top:0;left:0;bottom:0;width:1px;pointer-events:none;z-index:3;background:linear-gradient(to bottom,transparent 0%,rgba(24,161,206,.65) 22%,rgba(24,161,206,.42) 62%,transparent 100%)}
+
+/* ── CRM — focused light ─────────────────────────────────────── */
+.crm-stage-wrapper{position:relative}
+/* Single localized glow — appears behind lead/pipeline zone */
+.crm-product-glow{position:absolute;width:70%;height:60%;top:5%;left:8%;pointer-events:none;z-index:0;background:radial-gradient(ellipse at center,rgba(24,161,206,.22) 0%,rgba(24,161,206,.08) 50%,transparent 72%)}
+.crm-product-frame{position:relative;z-index:1;will-change:transform}
+
+/* ── Mobile overrides ────────────────────────────────────────── */
+@media(max-width:767px){
+  .hero-v4{min-height:auto;align-items:flex-start}
+  .hero-v4-inner{grid-template-columns:1fr;gap:28px;padding:32px 0 52px}
+  .hero-v4-copy h1{font-size:clamp(44px,11vw,56px)}
+  .hero-v4-product{border-radius:10px}
+  .hero-v4-product-inner{aspect-ratio:1.778}
+  .hero-back-light{background:radial-gradient(ellipse 340px 260px at 50% 78%,rgba(24,161,206,.18) 0%,transparent 70%)}
+  .hero-secondary-light{width:220px;height:160px;top:62%;right:10%}
+  .cockpit-v4{padding:64px 0}
+  .cockpit-v4-copy{margin-bottom:32px}
+  .cockpit-v4-stage{aspect-ratio:1.778;border-radius:10px}
+  .cockpit-light-1{inset:-40px}
+  .catalogue-v4{padding:64px 0}
+  .catalogue-v4-inner{grid-template-columns:1fr;gap:28px}
+  .catalogue-v4-inner>.catalogue-card-wrapper{order:-1}
+  .catalogue-v4-stage{border-radius:10px;aspect-ratio:1.333}
+  .catalogue-card-glow{display:none}
+  .crm-v4{padding:64px 0}
+  .crm-v4-inner{grid-template-columns:1fr;gap:28px}
+  .crm-v4-inner>.crm-stage-wrapper{order:-1}
+  .crm-v4-stage{border-radius:10px}
+  .crm-product-glow{width:90%;height:50%;top:5%;left:5%}
+}
+
+/* ════════════════════════════════════════════════════════════════
+   HERO → DISCOVERY  (Phase 1 — single scroll context)
+   ════════════════════════════════════════════════════════════════ */
+
+/* Sticky viewport — 100svh, dark, overflow-clipped */
+.hd-sticky{
+  position:sticky;top:0;
+  height:100svh;
+  overflow:hidden;
+  background:#07111f;
+  display:flex;align-items:center;justify-content:center;
+}
+
+/* Solid background layer (fallback below lights) */
+.hd-bg{
+  position:absolute;inset:0;
+  background:#07111f;
+  pointer-events:none;z-index:0;
+}
+
+/* ── Hero copy — absolutely positioned left column ─────────── */
+.hd-hero-copy{
+  position:absolute;
+  left:max(20px, calc((100% - min(1180px,calc(100% - 40px))) / 2));
+  top:50%;
+  /* translateY(-50%) removed — Framer Motion owns all transforms on this element (y:"-50%") */
+  width:min(460px, 42%);
+  z-index:10;
+  pointer-events:auto;
+}
+.hd-hero-copy h1{
+  max-width:480px;color:#f4f8fd;
+  font-size:clamp(40px,4.8vw,80px);
+  font-weight:500;line-height:.97;letter-spacing:-.055em;
+  margin-top:12px;margin-bottom:0;
+}
+.hd-hero-copy .product-status{color:rgba(244,248,253,.48);font-size:12.5px}
+.hd-desc{color:rgba(244,248,253,.44);max-width:440px;margin-top:20px;margin-bottom:36px}
+.hd-hero-copy .product-demo{color:rgba(244,248,253,.60)}
+
+/*
+ * ── CSS centering wrapper — plain div, Framer NEVER touches this ──
+ * The child motion.div applies scroll transforms from this centered origin.
+ */
+.hd-col-center{
+  position:absolute;
+  left:50%;
+  /*
+   * top: calc(50% + 32px) shifts center down 32px so the discCopy clears
+   * the 76px navbar. Without offset: discCopy top = 27px (behind navbar).
+   * With +32px: discCopy top ≈ 63px (label just clipped, headline visible).
+   */
+  top:calc(50% + 32px);
+  /* CSS transform only — Framer Motion on the child, not here */
+  transform:translate(-50%,-50%);
+  /*
+   * 88vw (not 88% of dh-container): product must use viewport width, not the
+   * 1180px content container. Previous formula min(88%, 88%×1180px)=1038px
+   * left 201px dead space either side at 1440px — product was only 72% wide.
+   */
+  width:min(88vw, 1300px);
+  z-index:5;
+  pointer-events:none;
+}
+
+/* ── Product column — Framer Motion scroll transforms applied here ── */
+.hd-product-col{
+  display:flex;flex-direction:column;align-items:stretch;gap:8px;
+  will-change:transform;
+  pointer-events:auto;
+  transform-origin:center center;
+}
+
+/* ── Discovery orientation copy ────────────────────────────── */
+.hd-disc-copy{
+  text-align:center;
+  padding-bottom:4px;
+  opacity:0; /* imperative handler takes over on scroll */
+}
+.hd-disc-headline{
+  font-size:clamp(17px,1.6vw,22px);
+  font-weight:500;
+  letter-spacing:-.03em;
+  color:#f4f8fd;
+  margin:0;line-height:1.25;
+}
+
+/* ── Product frame ─────────────────────────────────────────── */
+.hd-frame{
+  position:relative;
+  width:100%;
+  /*
+   * Height cap: at 1440×900 with container 1267px, natural height = 1267/1.65 = 768px.
+   * Old cap (100svh-180px = 720px) constrained the frame to 720×1.65 = 1188px (82.5%).
+   * New cap (100svh-100px = 800px) leaves 768px unconstrained → full 1267px width = 88%.
+   */
+  max-height:calc(100svh - 100px);
+  aspect-ratio:1.65;
+  border-radius:14px;
+  overflow:hidden;
+  background:#040C18;
+  border:1px solid rgba(255,255,255,0.05);
+  box-shadow:
+    0 4px 8px rgba(0,0,0,.7),
+    0 16px 48px rgba(0,0,0,.55),
+    0 40px 80px rgba(0,0,0,.4);
+}
+
+/* ── KPI zone blue focus overlay ───────────────────────────── */
+/* Covers the top-left quadrant where Cockpit KPI metrics live */
+.hd-kpi-edge{
+  position:absolute;
+  top:0;left:0;
+  width:46%;height:54%;
+  border-bottom-right-radius:8px;
+  box-shadow:inset 0 0 0 1.5px rgba(24,161,206,.65);
+  pointer-events:none;z-index:3;
+}
+
+/* ── Product column needs position:relative for halo child ─── */
+.hd-product-col{position:relative}
+
+/* ── Localized KPI halo — absolute inside .hd-product-col ───── */
+/* Covers approximately the KPI zone (top-left 45% × 55% of frame) */
+.hd-kpi-halo{
+  position:absolute;
+  /* Place it behind the frame — it sits in the flex flow before the frame */
+  /* We use a negative bottom offset to make it bleed behind the perspective wrapper */
+  top:48px;          /* below the disc-copy gap */
+  left:-40px;
+  width:56%;
+  height:65%;
+  pointer-events:none;
+  background:radial-gradient(
+    ellipse 380px 320px at 28% 35%,
+    rgba(24,161,206,.30) 0%,
+    rgba(24,161,206,.12) 48%,
+    transparent 72%
+  );
+  z-index:0;
+  /* Ensure it stays behind the frame */
+  mix-blend-mode:screen;
+}
+
+/* ── Mobile: revert to static stacked layout ───────────────── */
+@media(max-width:767px){
+  .hd-sticky{
+    height:auto;min-height:100svh;
+    position:relative;
+    flex-direction:column;justify-content:flex-start;
+    align-items:center;
+    padding:80px 20px 48px;
+    gap:28px;
+  }
+  .hd-hero-copy{
+    position:relative;left:auto;top:auto;
+    transform:none!important; /* must override Framer's inline y:"-50%" */
+    opacity:1!important;      /* must override imperative handler */
+    width:100%;max-width:100%;
+  }
+  .hd-col-center{
+    position:relative;left:auto;top:auto;transform:none;
+    width:100%;
+  }
+  .hd-product-col{transform:none!important;scale:1!important}
+  .hd-disc-copy{display:none}
+  .hd-kpi-halo{display:none}
+}
+
+/* ════════════════════════════════════════════════════════════════
+   COCKPIT FILM — Phase 1 — Autonomous time-driven cinematic hero
+   TIME = FILM PLAYHEAD. SCROLL = NORMAL PAGE NAVIGATION.
+   ════════════════════════════════════════════════════════════════ */
+
+/* ── Film stage — normal flow, ~100svh, no sticky, no scroll lock ── */
+.cf-stage{
+  position:relative;
+  min-height:100svh;
+  background:#07111f;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* ── Hero copy — abs left column, same metrics as hd-hero-copy ─── */
+.cf-hero-copy{
+  position:absolute;
+  left:max(20px, calc((100% - min(1180px,calc(100% - 40px))) / 2));
+  top:50%;
+  width:min(460px, 42%);
+  z-index:10;
+  pointer-events:auto;
+  /* y:-50% applied by Framer via style prop */
+}
+.cf-hero-copy h1{
+  max-width:480px;color:#f4f8fd;
+  font-size:clamp(40px,4.8vw,80px);
+  font-weight:500;line-height:.97;letter-spacing:-.055em;
+  margin-top:12px;margin-bottom:0;
+}
+.cf-hero-copy .product-status{color:rgba(244,248,253,.48);font-size:12.5px}
+.cf-desc{color:rgba(244,248,253,.44);max-width:440px;margin-top:20px;margin-bottom:36px}
+.cf-hero-copy .product-demo{color:rgba(244,248,253,.60)}
+
+/* ── Product centering wrapper — Framer NEVER transforms this ───── */
+.cf-col-center{
+  position:absolute;
+  left:50%;top:calc(50% + 32px);
+  transform:translate(-50%,-50%);
+  width:min(88vw,1300px);
+  z-index:5;
+  pointer-events:none;
+}
+
+/* ── Product column — Framer Motion time transforms here ────────── */
+.cf-product-col{
+  display:flex;flex-direction:column;align-items:stretch;gap:8px;
+  will-change:transform;
+  pointer-events:auto;
+  transform-origin:center center;
+  position:relative;
+}
+
+/* ── Disc copy — secondary caption for breathing shot ──────────── */
+.cf-disc-copy{
+  text-align:center;
+  padding-bottom:4px;
+  opacity:0; /* Framer overrides via style prop; 0 prevents SSR flash */
+}
+.cf-disc-headline{
+  font-size:clamp(17px,1.6vw,22px);
+  font-weight:500;
+  letter-spacing:-.03em;
+  color:#f4f8fd;
+  margin:0;line-height:1.25;
+}
+
+/* ── Background product frame ───────────────────────────────────── */
+.cf-frame{
+  position:relative;
+  width:100%;
+  max-height:calc(100svh - 100px);
+  aspect-ratio:1.65;
+  border-radius:14px;
+  overflow:hidden;
+  background:#040C18;
+  border:1px solid rgba(255,255,255,0.05);
+  box-shadow:
+    0 4px 8px rgba(0,0,0,.7),
+    0 16px 48px rgba(0,0,0,.55),
+    0 40px 80px rgba(0,0,0,.4);
+}
+
+/* Darkening scrim that makes bg subordinate during KPI focus */
+.cf-bg-scrim{
+  position:absolute;inset:0;
+  background:#07111f;
+  pointer-events:none;z-index:2;
+  border-radius:14px;
+  /* opacity driven by Framer */
+}
+
+/* ── Foreground KPI layer — second crop of same screenshot ──────── */
+/* Sits above .cf-frame; Framer drives scale/y/opacity/shadow */
+.cf-kpi-layer{
+  opacity:0; /* Framer overrides; prevents SSR flash */
+  position:absolute;
+  /* KPI zone: top-left ~46% × 54% of the frame */
+  /* These are relative to .cf-frame dimensions */
+  top:0;left:0;
+  width:46%;
+  /* Maintain the aspect of the clip within the frame */
+  /* Height is 54% of frame height; frame aspect 1.65 → height=width/1.65 */
+  /* We use padding-top trick or explicit aspect to match */
+  aspect-ratio:calc(0.46 * 1.65 / 0.54);
+  border-radius:0 0 10px 0;
+  overflow:hidden;
+  pointer-events:none;
+  z-index:4;
+  /* Will be elevated by Framer translateY + scale */
+  will-change:transform,opacity,box-shadow;
+  transform-origin:top left;
+}
+
+/* Illuminated edge — thin #18A1CE border on kpi layer */
+.cf-kpi-edge{
+  position:absolute;inset:0;
+  border-radius:0 0 10px 0;
+  pointer-events:none;z-index:5;
+  /* box-shadow driven by Framer via style prop */
+}
+
+/* Localized halo behind the KPI layer */
+.cf-kpi-halo{
+  opacity:0; /* Framer overrides; prevents SSR flash */
+  position:absolute;
+  top:28px;
+  left:-50px;
+  width:60%;
+  height:70%;
+  pointer-events:none;
+  background:radial-gradient(
+    ellipse 360px 300px at 30% 30%,
+    rgba(24,161,206,.35) 0%,
+    rgba(24,161,206,.12) 50%,
+    transparent 72%
+  );
+  z-index:0;
+  mix-blend-mode:screen;
+  /* opacity driven by Framer */
+}
+
+/* ── Mobile: flat static composition ────────────────────────────── */
+@media(max-width:767px){
+  .cf-stage{
+    min-height:100svh;
+    flex-direction:column;justify-content:flex-start;
+    align-items:center;
+    padding:80px 20px 48px;
+    gap:28px;
+  }
+  .cf-hero-copy{
+    position:relative;left:auto;top:auto;
+    transform:none!important;
+    opacity:1!important;
+    width:100%;max-width:100%;
+  }
+  .cf-col-center{
+    position:relative;left:auto;top:auto;transform:none;
+    width:100%;
+  }
+  .cf-product-col{transform:none!important;scale:1!important}
+  .cf-disc-copy{display:none}
+  .cf-kpi-halo{display:none}
+  .cf-kpi-layer{display:none}
+  .cf-bg-scrim{display:none}
+}
+
+/* ════════════════════════════════════════════════════════════════
+   HEROFILM V3 — 8-second cinematic prototype
+   Vertical composition: copy top → camera enters product below.
+   TIME = FILM PLAYHEAD. SCROLL = NORMAL PAGE NAVIGATION.
+   ════════════════════════════════════════════════════════════════ */
+
+/* Stage — normal flow, 100svh dark environment */
+.cfv3-stage {
+  position: relative;
+  min-height: 100svh;
+  background: #07111f;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 76px;  /* clears fixed 76px navbar */
+}
+
+/* Copy block — centered above product, exits upward during camera push */
+.cfv3-copy {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 44px 24px 36px;
+  max-width: 680px;
+  width: 100%;
+  pointer-events: auto;
+  flex-shrink: 0;
+}
+
+/* Status / orientation label */
+.cfv3-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(244,248,253,.40);
+  font-size: 11.5px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  margin-top: 0;
+}
+.cfv3-status::before {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #32b55e;
+  flex-shrink: 0;
+}
+
+/* Headline */
+.cfv3-h1 {
+  color: #f4f8fd;
+  font-size: clamp(44px, 5.2vw, 78px);
+  font-weight: 500;
+  line-height: .96;
+  letter-spacing: -.055em;
+  margin: 0;
+}
+/* Each blur-in line is a block span */
+.cfv3-h1 span {
+  will-change: opacity, transform, filter;
+}
+
+/* Supporting copy */
+.cfv3-desc {
+  color: rgba(244,248,253,.38);
+  max-width: 460px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-size: 14.5px;
+  line-height: 1.72;
+}
+
+/* CTA row */
+.cfv3-ctas {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Secondary CTA link on dark background */
+.cfv3-demo-link {
+  color: rgba(244,248,253,.56);
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  transition: color .18s;
+  padding: 14px 6px;
+}
+.cfv3-demo-link:hover { color: rgba(244,248,253,.85); }
+
+/* Product area — contains frame + light layers */
+.cfv3-product-area {
+  position: relative;
+  width: 84vw;
+  max-width: 1210px;
+  z-index: 5;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+/* Environmental bloom — the dark room reacting to the screen.
+   Extends well beyond the product frame so the background glows, not just the frame. */
+.cfv3-env-bloom {
+  position: absolute;
+  width: 150%;
+  height: 160%;
+  top: -30%;
+  left: -25%;
+  background: radial-gradient(ellipse at 50% 48%,
+    rgba(24,161,206,.16) 0%,
+    rgba(24,161,206,.07) 38%,
+    rgba(24,161,206,.02) 58%,
+    transparent 72%);
+  filter: blur(52px);
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: screen;
+}
+
+/* Local KPI-area bloom — appears during Shot 03.
+   Positioned upper-left: the KPI metrics region of the Cockpit.
+   The light has a SOURCE (top-left), it radiates outward + downward. */
+.cfv3-local-bloom {
+  position: absolute;
+  width: 70%;
+  height: 72%;
+  top: -12%;
+  left: -8%;
+  background: radial-gradient(ellipse at 42% 32%,
+    rgba(24,161,206,.26) 0%,
+    rgba(24,161,206,.10) 42%,
+    rgba(24,161,206,.03) 62%,
+    transparent 75%);
+  filter: blur(30px);
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: screen;
+}
+
+/* Camera wrapper — scale transform for the dolly-in movement.
+   transform-origin: 50% 30% keeps the upper dashboard region roughly
+   fixed as scale increases — the camera closes distance from viewer to product. */
+.cfv3-camera {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  will-change: transform;
+  transform-origin: 50% 30%;
+}
+
+/* Product frame — physical screen in a dark room, not a card or mockup.
+   Hairline reflection (rgba white) and deep shadow only.
+   NO decorative border, NO neon outline. */
+.cfv3-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.6;  /* matches 3840×2400 source exactly */
+  border-radius: 11px;
+  overflow: hidden;
+  background: #040c18;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.045),   /* hairline surface reflection */
+    0 8px 24px rgba(0,0,0,.65),
+    0 28px 72px rgba(0,0,0,.52),
+    0 56px 110px rgba(0,0,0,.38);
+}
+
+/* Mobile: simplified static composition, no film animation expected */
+@media(max-width:767px){
+  .cfv3-stage { padding-top: 72px; }
+  .cfv3-copy { padding: 24px 20px 24px; }
+  .cfv3-product-area { width: 92vw; }
+  .cfv3-h1 { font-size: clamp(36px, 9vw, 52px); }
+  .cfv3-env-bloom,
+  .cfv3-local-bloom { display: none; }
+}
+
+/* ─── ProductCinema — WORLD → FOCUS proof ──────────────────────────────────
+   Two CSS planes from the same 3840×2400 master.
+   Plane A (prc-world): bg-size 100% — full cockpit at 0.33× scale.
+   Plane B (prc-focus): bg-size 300% — near 1:1 source-pixel crop of main content.
+   Both share the same bg-position so matched geometry holds during crossfade.
+   ─────────────────────────────────────────────────────────────────────────── */
+.prc-outer {
+  width: 88vw;
+  max-width: 1268px;
+  margin: 0 auto;
+}
+.prc-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2.2;
+  background: #040c18;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.06);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.04),
+    0 8px 32px rgba(0,0,0,.7),
+    0 32px 80px rgba(0,0,0,.55);
+}
+/* PLANE A: full cockpit — 100% stage width, top-aligned, gentle push-in during handoff */
+.prc-world {
+  position: absolute;
+  inset: 0;
+  background-image: url('/screenshots/premium/cockpit-premium-night-source.png');
+  background-size: 100% auto;
+  background-position: 50% 5%;
+  background-repeat: no-repeat;
+  transform-origin: 50% 0%;   /* zoom from top-center where KPI/greeting lives */
+  will-change: transform, opacity;
+}
+/* PLANE B: near-native crop — bg-size 300% shows source cols ~634–1901 at ~1:1 px ratio.
+   bg-position 25% places the left edge at source-x ~634px, showing the greeting header
+   and KPI cards that sit just right of the sidebar. */
+.prc-focus {
+  position: absolute;
+  inset: 0;
+  background-image: url('/screenshots/premium/cockpit-premium-night-source.png');
+  background-size: 300% auto;
+  background-position: 25% 5%;
+  background-repeat: no-repeat;
+  will-change: opacity;
+}
+
+/* ─── Scene 2→3 Proof — ENRICHMENT → PUBLICATION ───────────────────────────
+   Persistent property photo morphs from admin box to buyer hero.
+   Stage: 1268×713px intrinsic, CSS-scaled to fit 88vw wrapper.
+   ─────────────────────────────────────────────────────────────────────────── */
+.s23-wrap {
+  width: 88vw;
+  max-width: 1268px;
+  margin: 0 auto;
+  aspect-ratio: 1268 / 713;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.55), 0 4px 16px rgba(0,0,0,0.4);
+}
+
+.s23-stage {
+  position: absolute;
+  top: 0; left: 0;
+  width: 1268px;
+  height: 713px;
+  background: #07111f;
+  transform-origin: top left;
+}
+
+.s23-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.s23-photo {
+  position: absolute;
+  background-image: url('/film/golden-hour-estate.webp');
+  background-size: cover;
+  background-position: center 55%;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.s23-spin {
+  width: 10px;
+  height: 10px;
+  border: 1.5px solid #18A1CE;
+  border-top-color: transparent;
+  border-radius: 50%;
+  display: block;
+  animation: s23-rotate 0.85s linear infinite;
+}
+
+@keyframes s23-rotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ─── Scene 4 — LIFESTYLE EXPLORER ─────────────────────────────────────────
+   Buyer page with lifestyle strip that expands to full cinematic Cesium stage.
+   Stage: 1268×713px intrinsic, CSS-scaled to fit 88vw wrapper (mirrors s23).
+   ─────────────────────────────────────────────────────────────────────────── */
+.s4-wrap {
+  width: 88vw;
+  max-width: 1268px;
+  margin: 0 auto;
+  aspect-ratio: 1268 / 713;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.55), 0 4px 16px rgba(0,0,0,0.4);
+}
+
+.s4-stage {
+  position: absolute;
+  top: 0; left: 0;
+  width: 1268px;
+  height: 713px;
+  background: #07111f;
+  transform-origin: top left;
+}
+
+/* ─── Scene 5 — Contact ──────────────────────────────────────────────────────
+   Same wrapper/stage architecture as s4. */
+.s5-wrap {
+  width: 88vw;
+  max-width: 1268px;
+  margin: 0 auto;
+  aspect-ratio: 1268 / 713;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.55), 0 4px 16px rgba(0,0,0,0.4);
+}
+
+.s5-stage {
+  position: absolute;
+  top: 0; left: 0;
+  width: 1268px;
+  height: 713px;
+  background: #07111f;
+  transform-origin: top left;
+}
+
+/* DATAhome-blue confirmation pulse ring — one restrained pulse on success */
+@keyframes s5-pulse {
+  0%   { transform: scale(0.92); opacity: 0.5; }
+  60%  { transform: scale(1.08); opacity: 0.18; }
+  100% { transform: scale(1.18); opacity: 0; }
+}
+
+.s5-pulse-ring {
+  position: absolute;
+  inset: 0;
+  border: 2px solid rgba(24,161,206,0.55);
+  border-radius: 10px;
+  animation: s5-pulse 1.4s ease-out 1 forwards;
+}
+
+/* Spinner used in submit loading state */
+@keyframes s5-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ─── Scene 6 — CRM Lead ─────────────────────────────────────────────────────
+   DATAhome Mini CRM environment. Same wrapper/stage architecture as s5. */
+.s6-wrap {
+  width: 88vw;
+  max-width: 1268px;
+  margin: 0 auto;
+  aspect-ratio: 1268 / 713;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.55), 0 4px 16px rgba(0,0,0,0.4);
+}
+
+.s6-stage {
+  position: absolute;
+  top: 0; left: 0;
+  width: 1268px; height: 713px;
+  background: #0d0e14;
+  transform-origin: top left;
+}
+
+/* One restrained DATAhome-blue pulse on card landing — business event, not celebration */
+@keyframes s6-card-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(24,161,206,0.45); opacity: 1; }
+  60%  { box-shadow: 0 0 0 8px rgba(24,161,206,0.12); opacity: 1; }
+  100% { box-shadow: 0 0 0 14px rgba(24,161,206,0); opacity: 0; }
+}
+
+.s6-card-pulse {
+  position: absolute;
+  inset: -1px;
+  border-radius: 8px;
+  border: 1.5px solid rgba(24,161,206,0.5);
+  animation: s6-card-pulse 1.3s ease-out 1 forwards;
+  pointer-events: none;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   HERO CINEMATIC FRAME V3 — Premium neon data-pulse border
+   @property animates only the conic-gradient angle; element
+   rotation is intentionally avoided to preserve the rectangular mask.
+   ——————————————————————————————————————————————————————————————————————————
+   Cycle: 16 s total — 14 s orbit + ~1 s fade-out + ~1 s dark breath.
+   Three layers: sharp strip | focused glow + shimmer | ambient bloom.
+═══════════════════════════════════════════════════════════════════════════ */
+
+@property --neon-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+@property --neon-glow-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+@property --neon-ambient-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.hero-frame-wrap {
+  --hero-radius: 14px;
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  border-radius: var(--hero-radius);
+  box-shadow:
+    0 0 120px rgba(0, 110, 220, 0.06),
+    0 32px 90px rgba(0, 0, 0, 0.60);
+}
+
+/* ── Layer 1: sharp strip ──────────────────────────────────── */
+.hero-neon-pulse {
+  --neon-angle: 0deg;
+  position: absolute;
+  inset: -3px;
+  border-radius: calc(var(--hero-radius) + 3px);
+  background: conic-gradient(
+    from var(--neon-angle) at 50% 50%,
+    transparent              0deg,
+    transparent            262deg,
+    hsla(196,100%,55%,0.03) 272deg,
+    hsla(196,100%,58%,0.09) 283deg,
+    hsla(196,100%,60%,0.20) 296deg,
+    hsla(196,100%,64%,0.38) 312deg,
+    hsla(196,100%,68%,0.62) 330deg,
+    hsla(196,100%,74%,0.84) 344deg,
+    hsla(196,100%,80%,0.96) 354deg,
+    hsla(196,100%,86%,0.99) 357.5deg,
+    hsla(  0,  0%,  96%,1.00) 359deg,
+    hsla(196,100%,88%,0.60) 360deg
+  );
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  padding: 3px;
+  animation: heroNeonOrbit 16s linear infinite, heroNeonFade 16s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* ── Layer 2: focused glow + organic shimmer ───────────────── */
+.hero-neon-glow-head {
+  --neon-glow-angle: 0deg;
+  position: absolute;
+  inset: -16px;
+  border-radius: calc(var(--hero-radius) + 16px);
+  background: conic-gradient(
+    from var(--neon-glow-angle) at 50% 50%,
+    transparent              0deg,
+    transparent            300deg,
+    hsla(196,100%,58%,0.06) 314deg,
+    hsla(196,100%,64%,0.24) 332deg,
+    hsla(196,100%,72%,0.56) 347deg,
+    hsla(196,100%,80%,0.82) 355deg,
+    hsla(196,100%,86%,0.90) 358deg,
+    hsla(196,100%,86%,0.90) 360deg
+  );
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  padding: 16px;
+  filter: blur(10px) brightness(1);
+  animation:
+    heroNeonGlowOrbit  16s  linear       infinite,
+    heroNeonFade       16s  ease-in-out  infinite,
+    heroNeonShimmer     4.3s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 9;
+}
+
+/* ── Layer 3: ambient bloom ────────────────────────────────── */
+.hero-neon-ambient {
+  --neon-ambient-angle: 0deg;
+  position: absolute;
+  inset: -28px;
+  border-radius: calc(var(--hero-radius) + 28px);
+  background: conic-gradient(
+    from var(--neon-ambient-angle) at 50% 50%,
+    transparent              0deg,
+    transparent            318deg,
+    hsla(196,100%,52%,0.04) 330deg,
+    hsla(196,100%,58%,0.14) 344deg,
+    hsla(196,100%,64%,0.26) 354deg,
+    hsla(196,100%,64%,0.26) 360deg
+  );
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  padding: 28px;
+  filter: blur(20px);
+  animation: heroNeonAmbientOrbit 16s linear infinite, heroNeonFade 16s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 8;
+}
+
+.hero-frame-inner {
+  position: relative;
+  border-radius: var(--hero-radius);
+  overflow: hidden;
+  min-height: calc(100svh - clamp(32px, 5vw, 48px));
+  box-shadow: inset 0 0 0 1px rgba(0, 150, 230, 0.10);
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+  display: block;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(4,  8, 18, 0.48)   0%,
+    rgba(4,  8, 18, 0.18)  42%,
+    rgba(7, 11, 19, 0.72) 100%
+  );
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: clamp(90px, 11vh, 140px) 24px clamp(36px, 5vh, 56px);
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-content .cfv3-h1 {
+  font-size: clamp(30px, 3.8vw, 58px);
+  line-height: 1.04;
+}
+
+/* ── Orbit: angle goes 0→360 over 14 s, then holds (pause) ── */
+@keyframes heroNeonOrbit {
+  0%     { --neon-angle: 0deg; }
+  87.5%  { --neon-angle: 360deg; }
+  100%   { --neon-angle: 360deg; }
+}
+@keyframes heroNeonGlowOrbit {
+  0%     { --neon-glow-angle: 0deg; }
+  87.5%  { --neon-glow-angle: 360deg; }
+  100%   { --neon-glow-angle: 360deg; }
+}
+@keyframes heroNeonAmbientOrbit {
+  0%     { --neon-ambient-angle: 0deg; }
+  87.5%  { --neon-ambient-angle: 360deg; }
+  100%   { --neon-ambient-angle: 360deg; }
+}
+
+/* Fade in at start of orbit, hold, fade out → dark breath */
+@keyframes heroNeonFade {
+  0%     { opacity: 0; }
+  5%     { opacity: 1; }
+  88%    { opacity: 1; }
+  94%    { opacity: 0; }
+  100%   { opacity: 0; }
+}
+
+/* Irregular brightness shimmer on glow layer — non-harmonic with 16 s orbit */
+@keyframes heroNeonShimmer {
+  0%   { filter: blur(10px) brightness(1.00); }
+  9%   { filter: blur(10px) brightness(0.87); }
+  22%  { filter: blur(10px) brightness(0.96); }
+  34%  { filter: blur(10px) brightness(0.83); }
+  47%  { filter: blur(10px) brightness(0.93); }
+  61%  { filter: blur(10px) brightness(0.85); }
+  74%  { filter: blur(10px) brightness(0.97); }
+  86%  { filter: blur(10px) brightness(0.88); }
+  100% { filter: blur(10px) brightness(1.00); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-neon-pulse,
+  .hero-neon-glow-head,
+  .hero-neon-ambient {
+    animation: none;
+    background: none;
+  }
+}
+
+/* ——————————————————————————————————————————————————————————
+   Slightly smaller radius; slightly reduced ambient blur for perf. */
+@media (max-width: 767px) {
+  .hero-frame-wrap  { --hero-radius: 10px; }
+  .hero-frame-inner { min-height: calc(100svh - 32px); }
+  .hero-content     { padding: clamp(70px, 11vh, 100px) 20px 36px; }
+  .hero-neon-ambient { filter: blur(14px); }
+  .hero-content .cfv3-h1 { font-size: clamp(26px, 7vw, 40px); }
 }

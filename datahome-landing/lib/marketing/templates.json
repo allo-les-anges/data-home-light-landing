@@ -1,0 +1,430 @@
+[
+    {
+        "id":  "riviera",
+        "slug":  "riviera",
+        "name":  "Riviera",
+        "tier":  "included",
+        "description":  {
+                            "en":  "Mediterranean elegance, light background, soft gold and editorial cards.",
+                            "fr":  "Élégance méditerranéenne, fond clair, touches dorées et cartes éditoriales.",
+                            "es":  "Elegancia mediterránea, fondo claro, toques dorados y tarjetas editoriales.",
+                            "nl":  "Mediterrane elegantie, lichte achtergrond, zachte gouden accenten en redactionele kaarten.",
+                            "de":  "Mediterrane Eleganz, heller Hintergrund, sanfte Goldakzente und redaktionelle Karten.",
+                            "pl":  "Śródziemnomorska elegancja, jasne tło, subtelne złote akcenty i redakcyjne karty."
+                        },
+        "thumbnail":  "/templates/riviera-thumb.webp",
+        "desktopPreview":  "/templates/riviera-desktop.webp",
+        "livePreviewUrl":  "https://datahome-8h4wv6d9m-mukebas-projects.vercel.app/en/solia/template-preview/riviera?returnTo=%2Fen%2Fsolia%2Fmon-espace%3Fview%3Dsettings",
+        "sortOrder":  0,
+        "width":  1419,
+        "height":  993
+    },
+    {
+        "id":  "prestige",
+        "slug":  "prestige",
+        "name":  "Prestige",
+        "tier":  "included",
+        "description":  {
+                            "en":  "Premium dark style, violet accents and compact cards.",
+                            "fr":  "Style sombre haut de gamme, accents violets et cartes compactes.",
+                            "es":  "Estilo oscuro premium, acentos violetas y tarjetas compactas.",
+                            "nl":  "Premium donkere stijl, violette accenten en compacte kaarten.",
+                            "de":  "Premium dunkler Stil, violette Akzente und kompakte Karten.",
+                            "pl":  "Ciemny styl premium, fioletowe akcenty i kompaktowe karty."
+                        },
+        "thumbnail":  "/templates/prestige-thumb.webp",
+        "desktopPreview":  "/templates/prestige-desktop.webp",
+        "livePreviewUrl":  "https://datahome-8h4wv6d9m-mukebas-projects.vercel.app/en/solia/template-preview/prestige?returnTo=%2Fen%2Fsolia%2Fmon-espace%3Fview%3Dsettings",
+        "sortOrder":  1,
+        "width":  1419,
+        "height":  993
+    },
+    {
+        "id":  "urban",
+        "slug":  "urban",
+        "name":  "Urban",
+        "tier":  "included",
+        "description":  {
+                            "en":  "Horizontal portal layout, bright blue, ideal for high property volume.",
+                            "fr":  "Présentation horizontale de type portail, bleu vif, adaptée à un catalogue immobilier important.",
+                            "es":  "Presentación horizontal tipo portal, azul vivo, ideal para un gran volumen de propiedades.",
+                            "nl":  "Horizontale portaalindeling, helder blauw, ideaal voor een groot vastgoedvolume.",
+                            "de":  "Horizontales Portal-Layout, leuchtendes Blau, ideal für ein hohes Immobilienvolumen.",
+                            "pl":  "Poziomy układ portalu, jasny błękit, idealny dla dużego wolumenu nieruchomości."
+                        },
+        "thumbnail":  "/templates/urban-thumb.webp",
+        "desktopPreview":  "/templates/urban-desktop.webp",
+        "livePreviewUrl":  "https://datahome-8h4wv6d9m-mukebas-projects.vercel.app/en/solia/template-preview/urban?returnTo=%2Fen%2Fsolia%2Fmon-espace%3Fview%3Dsettings",
+        "sortOrder":  2,
+        "width":  1419,
+        "height":  993
+    },
+    {
+        "id":  "soleil",
+        "slug":  "soleil",
+        "name":  "Soleil",
+        "tier":  "included",
+        "description":  {
+                            "en":  "Warm amber and orange tones, friendly and sun-drenched feel.",
+                            "fr":  "Tons ambre et orange chaleureux, ambiance accueillante et ensoleillée.",
+                            "es":  "Tonos cálidos ámbar y naranja, sensación acogedora y soleada.",
+                            "nl":  "Warme amber- en oranje tinten, vriendelijke en zonnige sfeer.",
+                            "de":  "Warme Bernstein- und Orangetöne, freundliche und sonnige Atmosphäre.",
+                            "pl":  "Ciepłe barwy bursztynu i pomarańczu, przyjazna i słoneczna atmosfera."
+                        },
+        "thumbnail":  "/templates/soleil-thumb.webp",
+        "desktopPreview":  "/templates/soleil-desktop.webp",
+        "livePreviewUrl":  "https://datahome-8h4wv6d9m-mukebas-projects.vercel.app/en/solia/template-preview/soleil?returnTo=%2Fen%2Fsolia%2Fmon-espace%3Fview%3Dsettings",
+        "sortOrder":  3,
+        "width":  1419,
+        "height":  993
+    },
+    {
+        "id":  "nordic",
+        "slug":  "nordic",
+        "name":  "Nordic",
+        "tier":  "included",
+        "description":  {
+                            "en":  "Clean layout, square edges, generous whitespace and cool blue accent.",
+                            "fr":  "Mise en page épurée, angles droits, espaces généreux et accent bleu froid.",
+                            "es":  "Diseño limpio, bordes rectos, amplio espacio blanco y acento azul frío.",
+                            "nl":  "Strakke indeling, vierkante hoeken, royale witruimte en koelblauw accent.",
+                            "de":  "Klares Layout, eckige Kanten, großzügige Weißflächen und kühler Blauakzent.",
+                            "pl":  "Przejrzysty układ, kwadratowe krawędzie, przestronne tło i chłodny niebieski akcent."
+                        },
+        "thumbnail":  "/templates/nordic-thumb.webp",
+        "desktopPreview":  "/templates/nordic-desktop.webp",
+        "livePreviewUrl":  "https://datahome-8h4wv6d9m-mukebas-projects.vercel.app/en/solia/template-preview/nordic?returnTo=%2Fen%2Fsolia%2Fmon-espace%3Fview%3Dsettings",
+        "sortOrder":  4,
+        "width":  1419,
+        "height":  993
+    },
+    {
+        "id":  "verde",
+        "slug":  "verde",
+        "name":  "Verde",
+        "tier":  "included",
+        "description":  {
+                            "en":  "Natural green palette, sustainability focus, soft rounded cards.",
+                            "fr":  "Palette verte naturelle, approche durable et cartes aux contours doux.",
+                            "es":  "Paleta verde natural, enfoque en sostenibilidad y tarjetas redondeadas.",
+                            "nl":  "Natuurlijk groen palet, duurzaamheidsfocus en zacht afgeronde kaarten.",
+                            "de":  "Natürliche grüne Palette, Nachhaltigkeitsfokus und weich abgerundete Karten.",
+                            "pl":  "Naturalna zielona paleta, nacisk na zrównoważony rozwój i miękkie zaokrąglone karty."
+                        },
+        "thumbnail":  "/templates/verde-thumb.webp",
+        "desktopPreview":  "/templates/verde-desktop.webp",
+        "livePreviewUrl":  "https://datahome-8h4wv6d9m-mukebas-projects.vercel.app/en/solia/template-preview/verde?returnTo=%2Fen%2Fsolia%2Fmon-espace%3Fview%3Dsettings",
+        "sortOrder":  5,
+        "width":  1419,
+        "height":  993
+    },
+    {
+        "id":  "riviera-light-premium",
+        "slug":  "riviera-light-premium",
+        "name":  "Riviera Light",
+        "tier":  "premium",
+        "description":  {
+                            "en":  "Light premium template with sunny hero, editorial rhythm and high-end presentation.",
+                            "fr":  "Template premium clair, avec un visuel d'accueil ensoleillé, un rythme éditorial et une présentation haut de gamme."
+                        },
+        "thumbnail":  "/templates/riviera-light-premium-thumb.webp",
+        "desktopPreview":  "/templates/riviera-light-premium-desktop.webp",
+        "livePreviewUrl":  "https://datahome-8h4wv6d9m-mukebas-projects.vercel.app/en/solia/template-preview/riviera-light-premium?returnTo=%2Fen%2Fsolia%2Fmon-espace%3Fview%3Dsettings",
+        "sortOrder":  6,
+        "width":  1419,
+        "height":  993,
+        "hidden":  true
+    },
+    {
+        "id":  "prestige-black-premium",
+        "slug":  "prestige-black-premium",
+        "name":  "Prestige Black",
+        "tier":  "premium",
+        "description":  {
+                            "en":  "Dark premium template for exceptional properties, immersive photography and luxury contrast.",
+                            "fr":  "Template premium sombre pour les biens d'exception, avec des photographies immersives et des contrastes luxueux."
+                        },
+        "thumbnail":  "/templates/prestige-black-premium-thumb.webp",
+        "desktopPreview":  "/templates/prestige-black-premium-desktop.webp",
+        "livePreviewUrl":  "https://datahome-8h4wv6d9m-mukebas-projects.vercel.app/en/solia/template-preview/prestige-black-premium?returnTo=%2Fen%2Fsolia%2Fmon-espace%3Fview%3Dsettings",
+        "sortOrder":  7,
+        "width":  1419,
+        "height":  993,
+        "hidden":  true
+    },
+    {
+        "id":  "urban-minimal-premium",
+        "slug":  "urban-minimal-premium",
+        "name":  "Urban Minimal",
+        "tier":  "premium",
+        "description":  {
+                            "en":  "Fast and clean premium template for urban agencies with efficient search and cards.",
+                            "fr":  "Template premium rapide et épuré pour les agences urbaines, avec une recherche et des cartes efficaces."
+                        },
+        "thumbnail":  "/templates/urban-minimal-premium-thumb.webp",
+        "desktopPreview":  "/templates/urban-minimal-premium-desktop.webp",
+        "livePreviewUrl":  "https://datahome-8h4wv6d9m-mukebas-projects.vercel.app/en/solia/template-preview/urban-minimal-premium?returnTo=%2Fen%2Fsolia%2Fmon-espace%3Fview%3Dsettings",
+        "sortOrder":  8,
+        "width":  1419,
+        "height":  993,
+        "hidden":  true
+    },
+    {
+        "id":  "signature-family-premium",
+        "slug":  "signature-family-premium",
+        "name":  "Signature Family",
+        "tier":  "premium",
+        "description":  {
+                            "en":  "Warm premium template for local agencies, family homes and trust-led positioning.",
+                            "fr":  "Template premium chaleureux pour les agences locales et les maisons familiales, centré sur la confiance."
+                        },
+        "thumbnail":  "/templates/signature-family-premium-thumb.webp",
+        "desktopPreview":  "/templates/signature-family-premium-desktop.webp",
+        "livePreviewUrl":  "https://datahome-8h4wv6d9m-mukebas-projects.vercel.app/en/solia/template-preview/signature-family-premium?returnTo=%2Fen%2Fsolia%2Fmon-espace%3Fview%3Dsettings",
+        "sortOrder":  9,
+        "width":  1419,
+        "height":  993,
+        "hidden":  true
+    },
+    {
+        "id":  "coastal-authority-premium",
+        "slug":  "coastal-authority-premium",
+        "name":  "Coastal Authority",
+        "tier":  "premium",
+        "description":  {
+                            "en":  "Premium local-authority template for real estate agencies, exclusive listings and coastal markets.",
+                            "fr":  "Template premium affirmant une expertise locale, pour les agences immobilières, les biens exclusifs et les marchés côtiers.",
+                            "es":  "Template premium de autoridad local para agencias inmobiliarias, propiedades exclusivas y mercados costeros.",
+                            "nl":  "Premium lokaal-autoriteit template voor vastgoedkantoren, exclusieve woningen en kustmarkten.",
+                            "de":  "Premium-Template mit lokaler Expertise für Immobilienagenturen, exklusive Objekte und Küstenmärkte.",
+                            "pl":  "Szablon premium dla agencji nieruchomości z lokalną ekspertyzą, ofertami ekskluzywnymi i rynkami nadmorskimi."
+                        },
+        "thumbnail":  "/templates/coastal-authority-premium-thumb.webp",
+        "desktopPreview":  "/templates/coastal-authority-premium-desktop.webp",
+        "livePreviewUrl":  "https://datahome-8h4wv6d9m-mukebas-projects.vercel.app/en/solia/template-preview/coastal-authority-premium?returnTo=%2Fen%2Fsolia%2Fmon-espace%3Fview%3Dsettings",
+        "sortOrder":  10,
+        "width":  1419,
+        "height":  993
+    },
+    {
+        "id":  "brokerage-mls-premium",
+        "slug":  "brokerage-mls-premium",
+        "name":  "Brokerage MLS",
+        "tier":  "premium",
+        "description":  {
+                            "en":  "Premium search-led real estate template for MLS, communities and local brokerage positioning.",
+                            "fr":  "Template immobilier premium centré sur la recherche, le MLS, les quartiers et l'expertise immobilière locale.",
+                            "es":  "Template inmobiliario premium orientado a la búsqueda, para MLS, comunidades y posicionamiento de agencias locales.",
+                            "nl":  "Premium zoekgericht vastgoedtemplate voor MLS, buurten en lokale makelaarspositionering.",
+                            "de":  "Premium suchorientiertes Immobilien-Template für MLS, Stadtteile und lokale Maklerpositionierung.",
+                            "pl":  "Szablon premium zorientowany na wyszukiwanie dla MLS, społeczności i lokalnych biur pośrednictwa."
+                        },
+        "thumbnail":  "/templates/brokerage-mls-premium-thumb.webp",
+        "desktopPreview":  "/templates/brokerage-mls-premium-desktop.webp",
+        "livePreviewUrl":  "https://datahome-8h4wv6d9m-mukebas-projects.vercel.app/en/solia/template-preview/brokerage-mls-premium?returnTo=%2Fen%2Fsolia%2Fmon-espace%3Fview%3Dsettings",
+        "sortOrder":  11,
+        "width":  1419,
+        "height":  993
+    },
+    {
+        "id":  "personal-realtor-premium",
+        "slug":  "personal-realtor-premium",
+        "name":  "Personal Realtor",
+        "tier":  "premium",
+        "description":  {
+                            "en":  "Premium personal-brand template centered on trust, reputation and local advisor expertise.",
+                            "fr":  "Template premium de marque personnelle, centré sur la confiance, la réputation et l'expertise du conseiller local.",
+                            "es":  "Template premium de marca personal centrado en la confianza, la reputación y la experiencia del asesor local.",
+                            "nl":  "Premium persoonlijk-merk template gericht op vertrouwen, reputatie en expertise als lokaal adviseur.",
+                            "de":  "Premium-Template für persönliche Marken, fokussiert auf Vertrauen, Reputation und lokale Beraterexpertise.",
+                            "pl":  "Szablon premium marki osobistej skupiony na zaufaniu, reputacji i ekspertyzie lokalnego doradcy."
+                        },
+        "thumbnail":  "/templates/personal-realtor-premium-thumb.webp",
+        "desktopPreview":  "/templates/personal-realtor-premium-desktop.webp",
+        "livePreviewUrl":  "https://datahome-8h4wv6d9m-mukebas-projects.vercel.app/en/solia/template-preview/personal-realtor-premium?returnTo=%2Fen%2Fsolia%2Fmon-espace%3Fview%3Dsettings",
+        "sortOrder":  12,
+        "width":  1419,
+        "height":  993
+    },
+    {
+        "id":  "luxury-estate-premium",
+        "slug":  "luxury-estate-premium",
+        "name":  "Luxury Estate",
+        "tier":  "premium",
+        "description":  {
+                            "en":  "Premium institutional template for prestige agencies, high-end portfolios and rare residential properties.",
+                            "fr":  "Template premium institutionnel pour les agences de prestige, les portefeuilles haut de gamme et les biens résidentiels rares.",
+                            "es":  "Template premium institucional para agencias de prestigio, portfolios de alto nivel y propiedades residenciales exclusivas.",
+                            "nl":  "Premium institutioneel template voor prestigieuze kantoren, hoogwaardige portefeuilles en zeldzame woningen.",
+                            "de":  "Institutionelles Premium-Template für Prestige-Agenturen, hochwertige Portfolios und seltene Wohnimmobilien.",
+                            "pl":  "Instytucjonalny szablon premium dla agencji prestiżowych, portfeli wysokiej klasy i rzadkich nieruchomości mieszkalnych."
+                        },
+        "thumbnail":  "/templates/luxury-estate-premium-thumb.webp",
+        "desktopPreview":  "/templates/luxury-estate-premium-desktop.webp",
+        "livePreviewUrl":  "https://datahome-8h4wv6d9m-mukebas-projects.vercel.app/en/solia/template-preview/luxury-estate-premium?returnTo=%2Fen%2Fsolia%2Fmon-espace%3Fview%3Dsettings",
+        "sortOrder":  13,
+        "width":  1419,
+        "height":  993
+    },
+    {
+        "id":  "international-brokerage-premium",
+        "slug":  "international-brokerage-premium",
+        "name":  "International Brokerage",
+        "tier":  "premium",
+        "description":  {
+                            "en":  "Premium template for international brokerages, visible teams, multi-market reach and high-end portfolios.",
+                            "fr":  "Template premium pour les agences internationales, mettant en valeur les équipes, plusieurs marchés et les portefeuilles haut de gamme.",
+                            "es":  "Template premium para agencias internacionales, equipos visibles, alcance en múltiples mercados y portfolios de alto nivel.",
+                            "nl":  "Premium template voor internationale makelaars, zichtbare teams, multi-marktbereik en hoogwaardige portefeuilles.",
+                            "de":  "Premium-Template für internationale Makler, sichtbare Teams, Mehrmarktreichweite und hochwertige Portfolios.",
+                            "pl":  "Szablon premium dla międzynarodowych biur pośrednictwa, widocznych zespołów, wielu rynków i portfeli wysokiej klasy."
+                        },
+        "thumbnail":  "/templates/international-brokerage-premium-thumb.webp",
+        "desktopPreview":  "/templates/international-brokerage-premium-desktop.webp",
+        "livePreviewUrl":  "https://datahome-8h4wv6d9m-mukebas-projects.vercel.app/en/solia/template-preview/international-brokerage-premium?returnTo=%2Fen%2Fsolia%2Fmon-espace%3Fview%3Dsettings",
+        "sortOrder":  14,
+        "width":  1419,
+        "height":  993
+    },
+    {
+        "id":  "lead-generation-premium",
+        "slug":  "lead-generation-premium",
+        "name":  "Lead Generation",
+        "tier":  "premium",
+        "description":  {
+                            "en":  "Premium conversion-led template for valuation, seller/buyer capture and fast contact.",
+                            "fr":  "Template premium orienté conversion : estimation, contacts vendeurs et acheteurs, et prise de contact rapide.",
+                            "es":  "Template premium orientado a la conversión: estimación, captación de vendedores y compradores, y contacto rápido.",
+                            "nl":  "Premium conversiegericht template voor waardebepaling, verkoper-/koperswerving en snel contact.",
+                            "de":  "Premium konversionsorientiertes Template für Bewertungen, Verkäufer-/Käufergewinnung und schnellen Kontakt.",
+                            "pl":  "Szablon premium zorientowany na konwersję: wycena, pozyskiwanie sprzedających i kupujących oraz szybki kontakt."
+                        },
+        "thumbnail":  "/templates/lead-generation-premium-thumb.webp",
+        "desktopPreview":  "/templates/lead-generation-premium-desktop.webp",
+        "livePreviewUrl":  "https://datahome-8h4wv6d9m-mukebas-projects.vercel.app/en/solia/template-preview/lead-generation-premium?returnTo=%2Fen%2Fsolia%2Fmon-espace%3Fview%3Dsettings",
+        "sortOrder":  15,
+        "width":  1419,
+        "height":  993
+    },
+    {
+        "id":  "kaia-estate-premium",
+        "slug":  "kaia-estate-premium",
+        "name":  "Kaia Estate",
+        "tier":  "premium",
+        "description":  {
+                            "en":  "Premium architectural, minimal and editorial template for high-end agencies.",
+                            "fr":  "Template premium architectural, minimaliste et éditorial pour les agences haut de gamme.",
+                            "es":  "Template premium arquitectónico, minimalista y editorial para agencias de alto nivel.",
+                            "nl":  "Premium architecturaal, minimalistisch en redactioneel template voor hoogwaardige kantoren.",
+                            "de":  "Premium architektonisches, minimalistisches und redaktionelles Template für hochwertige Agenturen.",
+                            "pl":  "Architektoniczny, minimalistyczny i redakcyjny szablon premium dla agencji wysokiej klasy."
+                        },
+        "thumbnail":  "/templates/kaia-estate-premium-thumb.webp",
+        "desktopPreview":  "/templates/kaia-estate-premium-desktop.webp",
+        "livePreviewUrl":  "https://datahome-8h4wv6d9m-mukebas-projects.vercel.app/en/solia/template-preview/kaia-estate-premium?returnTo=%2Fen%2Fsolia%2Fmon-espace%3Fview%3Dsettings",
+        "sortOrder":  16,
+        "width":  1419,
+        "height":  993
+    },
+    {
+        "id":  "signature-mediterranean-premium",
+        "slug":  "signature-mediterranean-premium",
+        "name":  "Signature Mediterranean",
+        "tier":  "premium",
+        "description":  {
+                            "en":  "Ultra-premium template for villas, second homes and high-end investment properties in Spain.",
+                            "fr":  "Template ultra-premium pour les villas, résidences secondaires et investissements immobiliers haut de gamme en Espagne.",
+                            "es":  "Template ultra-premium para villas, segundas residencias e inversiones inmobiliarias de alto nivel en España.",
+                            "nl":  "Ultra-premium template voor villa's, vakantiewoningen en hoogwaardige vastgoedinvesteringen in Spanje.",
+                            "de":  "Ultra-Premium-Template für Villen, Ferienhäuser und hochwertige Immobilieninvestitionen in Spanien.",
+                            "pl":  "Ultrapremiowy szablon dla willi, domów wakacyjnych i luksusowych inwestycji nieruchomościowych w Hiszpanii."
+                        },
+        "thumbnail":  "/templates/signature-mediterranean-premium-thumb.webp",
+        "desktopPreview":  "/templates/signature-mediterranean-premium-desktop.webp",
+        "livePreviewUrl":  "https://datahome-8h4wv6d9m-mukebas-projects.vercel.app/en/solia/template-preview/signature-mediterranean-premium?returnTo=%2Fen%2Fsolia%2Fmon-espace%3Fview%3Dsettings",
+        "sortOrder":  17,
+        "width":  1419,
+        "height":  993
+    },
+    {
+        "id":  "dreams-premium",
+        "slug":  "dreams-premium",
+        "name":  "Dreams",
+        "tier":  "premium",
+        "description":  {
+                            "en":  "Bright editorial Mediterranean premium template for high-end villas.",
+                            "fr":  "Template premium méditerranéen, lumineux et éditorial pour les villas haut de gamme.",
+                            "es":  "Template premium mediterráneo, luminoso y editorial para villas de alto nivel.",
+                            "nl":  "Helder redactioneel mediterraan premium template voor hoogwaardige villa's.",
+                            "de":  "Helles redaktionelles mediterranes Premium-Template für hochwertige Villen.",
+                            "pl":  "Jasny redakcyjny śródziemnomorski szablon premium dla ekskluzywnych willi."
+                        },
+        "thumbnail":  "/templates/dreams-premium-thumb.webp",
+        "desktopPreview":  "/templates/dreams-premium-desktop.webp",
+        "livePreviewUrl":  "https://datahome-8h4wv6d9m-mukebas-projects.vercel.app/en/solia/template-preview/dreams-premium?returnTo=%2Fen%2Fsolia%2Fmon-espace%3Fview%3Dsettings",
+        "sortOrder":  18,
+        "width":  1419,
+        "height":  993
+    },
+    {
+        "id":  "terra-editorial-premium",
+        "slug":  "terra-editorial-premium",
+        "name":  "Terra Editorial",
+        "tier":  "premium",
+        "description":  {
+                            "en":  "Minimalist editorial premium template, sand and black palette, sharp edges and clean layout for high-end agencies.",
+                            "fr":  "Template premium éditorial et minimaliste, palette sable et noir, angles droits et mise en page épurée pour les agences haut de gamme.",
+                            "es":  "Template premium minimalista y editorial, paleta arena y negro, ángulos marcados y diseño limpio para agencias de alto nivel.",
+                            "nl":  "Minimalistisch redactioneel premium template, zand- en zwart palet, scherpe randen en strakke indeling voor hoogwaardige kantoren.",
+                            "de":  "Minimalistisches redaktionelles Premium-Template, Sand- und Schwarzpalette, scharfe Kanten und klares Layout für hochwertige Agenturen.",
+                            "pl":  "Minimalistyczny redakcyjny szablon premium, paleta piasku i czerni, ostre krawędzie i przejrzysty układ dla agencji wysokiej klasy."
+                        },
+        "thumbnail":  "/templates/terra-editorial-premium-thumb.webp",
+        "desktopPreview":  "/templates/terra-editorial-premium-desktop.webp",
+        "livePreviewUrl":  "https://datahome-8h4wv6d9m-mukebas-projects.vercel.app/en/solia/template-preview/terra-editorial-premium?returnTo=%2Fen%2Fsolia%2Fmon-espace%3Fview%3Dsettings",
+        "sortOrder":  19,
+        "width":  1419,
+        "height":  993
+    },
+    {
+        "id":  "terra-riviera-premium",
+        "slug":  "terra-riviera-premium",
+        "name":  "Terra Riviera",
+        "tier":  "premium",
+        "description":  {
+                            "en":  "Light Mediterranean editorial with a split hero and generous galleries.",
+                            "fr":  "Présentation éditoriale méditerranéenne claire, avec un accueil en deux parties et des galeries généreuses.",
+                            "es":  "Editorial mediterráneo luminoso con un hero dividido y galerías generosas.",
+                            "nl":  "Lichte mediterrane editorial met een gesplitste hero en royale galerijen.",
+                            "de":  "Helles mediterranes Editorial mit geteiltem Hero und großzügigen Galerien.",
+                            "pl":  "Jasne śródziemnomorskie wydanie edytorskie z podzielonym hero i obszernymi galeriami."
+                        },
+        "thumbnail":  "/templates/terra-riviera-premium-thumb.webp",
+        "desktopPreview":  "/templates/terra-riviera-premium-desktop.webp",
+        "livePreviewUrl":  "https://datahome-8h4wv6d9m-mukebas-projects.vercel.app/en/solia/template-preview/terra-riviera-premium?returnTo=%2Fen%2Fsolia%2Fmon-espace%3Fview%3Dsettings",
+        "sortOrder":  20,
+        "width":  1419,
+        "height":  993
+    },
+    {
+        "id":  "terra-nocturne-premium",
+        "slug":  "terra-nocturne-premium",
+        "name":  "Terra Nocturne",
+        "tier":  "premium",
+        "description":  {
+                            "en":  "Night editorial with immersive photography and bronze accents.",
+                            "fr":  "Présentation éditoriale nocturne, avec des photographies immersives et des accents bronze.",
+                            "es":  "Editorial nocturno con fotografías inmersivas y acentos bronce.",
+                            "nl":  "Nachtredactioneel met meeslepende fotografie en bronzen accenten.",
+                            "de":  "Nacht-Editorial mit immersiver Fotografie und Bronzeakzenten.",
+                            "pl":  "Nocny editorial z immersyjną fotografią i brązowymi akcentami."
+                        },
+        "thumbnail":  "/templates/terra-nocturne-premium-thumb.webp",
+        "desktopPreview":  "/templates/terra-nocturne-premium-desktop.webp",
+        "livePreviewUrl":  "https://datahome-8h4wv6d9m-mukebas-projects.vercel.app/en/solia/template-preview/terra-nocturne-premium?returnTo=%2Fen%2Fsolia%2Fmon-espace%3Fview%3Dsettings",
+        "sortOrder":  21,
+        "width":  1419,
+        "height":  993
+    }
+]

@@ -1,0 +1,42 @@
+{
+    "navigation":  {
+                       "home":  "Início",
+                       "product":  "Produto",
+                       "templates":  "Templates",
+                       "pricing":  "Preços",
+                       "partners":  "Parceiros",
+                       "contact":  "Contacto"
+                   },
+    "promise":  "A sua agência. Online. Em {hours} horas.",
+    "chrome":  {
+                   "trial":  "Experimentar grátis",
+                   "language":  "Idioma",
+                   "openMenu":  "Abrir menu",
+                   "closeMenu":  "Fechar menu",
+                   "mainNav":  "Navegação principal",
+                   "footerNav":  "Navegação do rodapé",
+                   "privacy":  "Privacidade",
+                   "legal":  "Aviso legal",
+                   "cookies":  "Preferências de cookies",
+                   "pending":  "Esta página está em preparação.",
+                   "pendingBody":  "Explore a página inicial enquanto preparamos esta secção.",
+                   "backHome":  "Voltar ao início",
+                   "legalPending":  "Estes documentos estão em revisão e ainda não estão disponíveis.",
+                   "cookieBody":  "Guarde a sua preferência de cookies.",
+                   "acceptAll":  "Aceitar todos",
+                   "essential":  "Apenas essenciais",
+                   "close":  "Fechar",
+                   "rights":  "Todos os direitos reservados.",
+                   "faq":  "Perguntas frequentes"
+               },
+    "productPending":  {
+                           "message":  "A tradução desta página está em preparação.",
+                           "link":  "Consultar o produto em inglês"
+                       },
+    "hero":  {
+                 "headline1":  "Os seus clientes vão para o exterior.",
+                 "headline2":  "A sua agência também.",
+                 "subtitle":  "Imóveis internacionais, leads e marketing.\nUm espaço de trabalho para a sua agência.",
+                 "demo":  "Ver DATAhome em ação"
+             }
+}

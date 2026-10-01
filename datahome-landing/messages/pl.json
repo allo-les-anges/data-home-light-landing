@@ -1,0 +1,409 @@
+{
+  "navigation": {
+    "home": "Start",
+    "product": "Produkt",
+    "templates": "Szablony",
+    "pricing": "Cennik",
+    "partners": "Partnerzy",
+    "contact": "Kontakt"
+  },
+  "promise": "Twoja agencja. Online. W {hours} godziny.",
+  "chrome": {
+    "trial": "Wypróbuj bezpłatnie",
+    "language": "Język",
+    "openMenu": "Otwórz menu",
+    "closeMenu": "Zamknij menu",
+    "mainNav": "Nawigacja główna",
+    "footerNav": "Nawigacja w stopce",
+    "privacy": "Prywatność",
+    "legal": "Informacje prawne",
+    "cookies": "Ustawienia cookies",
+    "pending": "Ta strona jest w przygotowaniu.",
+    "pendingBody": "Odwiedź stronę główną, podczas gdy przygotowujemy tę sekcję.",
+    "backHome": "Powrót do strony głównej",
+    "legalPending": "Te dokumenty są w trakcie weryfikacji i nie są jeszcze dostępne.",
+    "cookieBody": "Zapisz preferencje cookies.",
+    "acceptAll": "Akceptuj wszystkie",
+    "essential": "Tylko niezbędne",
+    "close": "Zamknij",
+    "rights": "Wszelkie prawa zastrzeżone.",
+    "faq": "Najczęstsze pytania"
+  },
+  "productPending": {
+    "message": "Tłumaczenie tej strony jest w przygotowaniu.",
+    "link": "Zobacz produkt po angielsku"
+  },
+  "hero": {
+    "headline1": "Twoi klienci szukają nieruchomości za granicą.",
+    "headline2": "Twoja agencja też.",
+    "subtitle": "Nieruchomości zagraniczne, leady i marketing.\nJedno miejsce pracy dla Twojej agencji.",
+    "demo": "Zobacz DATAhome w akcji"
+  },
+  "product": {
+    "title": "Jedna platforma do prowadzenia agencji online.",
+    "intro": "Twoja strona, nieruchomości, leady i marketing, połączone w jednym miejscu pracy. DATAhome łączy narzędzia codziennej pracy Twojej agencji.",
+    "metaTitle": "Platforma dla agencji nieruchomości | DATAhome",
+    "metaDescription": "Odkryj platformę DATAhome: strony internetowe dla agencji, zarządzanie nieruchomościami, Mini CRM, landing pages, Social Hub i opcjonalne moduły.",
+    "jump": "Odkryj platformę",
+    "imageNote": "Autentyczny interfejs DATAhome. Na urządzeniach mobilnych przesuń poziomo, aby zapoznać się z produktem.",
+    "fullImage": "Otwórz pełny zrzut ekranu",
+    "pilot": {
+      "label": "Twój widok operacyjny",
+      "title": "Zacznij od całościowego obrazu.",
+      "body": "Cockpit centralizuje aktywność CRM, aktualizacje katalogu, subskrybentów newslettera i aktywność publikacyjną. Przeglądaj ostatnie nieruchomości i zarządzaj działaniami ze swojego miejsca pracy.",
+      "points": [
+        "Nowe leady i postępy w CRM",
+        "Katalog, importy i ostatnie nieruchomości",
+        "Aktywność Landing Pages i Social Hub"
+      ]
+    },
+    "manage": {
+      "label": "Nieruchomości i szanse",
+      "title": "Inwentarz. I ludzie za każdym zapytaniem.",
+      "body": "Korzystaj z Menedżera Nieruchomości, aby dodawać i zarządzać ofertami sprzedaży i wynajmu z opisami i mediami. Katalog zbiera te oferty dla Twojej agencji.",
+      "points": [
+        "Ręczny Menedżer Nieruchomości w Essential",
+        "Zaawansowany Menedżer Nieruchomości w Pro i Premium",
+        "Opcjonalne importy XML, oddzielne od każdej subskrypcji"
+      ],
+      "crmTitle": "Miej lead pod kontrolą.",
+      "crmBody": "Mini CRM Leads daje zapytaniom miejsce w Twoim przepływie pracy. Śledź nowe, skontaktowane i zakwalifikowane leady; Cockpit wyświetla aktywność CRM obok zarządzanych nieruchomości. Mini CRM Leads jest zawarty w Essential, Pro i Premium."
+    },
+    "website": {
+      "label": "Twoja agencja, publicznie",
+      "title": "Strona internetowa, która niesie Twoją tożsamość.",
+      "body": "Prezentuj nieruchomości na profesjonalnej stronie agencji z własną domeną, identyfikacją wizualną i treściami wielojęzycznymi. Odwiedzający mogą przeglądać oferty sprzedaży i wynajmu oraz kontaktować się przez formularz lub WhatsApp.",
+      "points": [
+        "Standardowe szablony i własna domena",
+        "Do {languages} języków strony internetowej w zestawie",
+        "Prezentacja nieruchomości i kontakt agencji"
+      ],
+      "caption": "Publiczna strona internetowa agencji — efekt, który widzą Twoi odwiedzający."
+    },
+    "create": {
+      "label": "Twórz i dystrybuuj",
+      "title": "Daj nieruchomości miejsce docelowe. Przynieś ją do swojej publiczności.",
+      "body": "Landing Pages umożliwiają tworzenie dedykowanych stron dla nieruchomości lub inwestycji. Strony Niestandardowe zapewniają dodatkową przestrzeń dla treści Twojej agencji. Uzupełniają główną stronę internetową.",
+      "landingTitle": "Stwórz skupioną stronę.",
+      "landingBody": "Zarządzaj opublikowanymi landing pages i ich aktywnością ze swojego miejsca pracy. Landing Pages są zawarte w Pro; Premium obejmuje nieograniczone Landing Pages.",
+      "socialTitle": "Zamień ogłoszenie w post społecznościowy.",
+      "socialBody": "Wybierz nieruchomość w Social Hub, przygotuj jej treść promocyjną i korzystaj z narzędzi publikacji dla połączonych kanałów. Bieżący interfejs obsługuje Facebook i Instagram. Social Hub jest zawarty w Pro i Premium."
+    },
+    "engage": {
+      "label": "Rozumiej i angażuj",
+      "title": "Od wizyty do rozmowy.",
+      "body": "Wprowadź sygnały odwiedzających i narzędzia komunikacji do przepływu pracy agencji. Korzystaj z dostępnych informacji, aby zdecydować, gdzie skupić uwagę.",
+      "items": [
+        {
+          "title": "Odwiedzający i analizy",
+          "body": "Przeglądaj anonimową aktywność odwiedzających, kraje i sygnały zaangażowania. Essential Analytics jest zawarty od Essential; Advanced Analytics jest zawarty w Pro i Premium."
+        },
+        {
+          "title": "AI Chatbot",
+          "body": "Pomagaj odwiedzającym zadawać pytania o nieruchomości i zbieraj zapytania przez chatbota. Pro obejmuje AI Chatbot; Premium rozszerza limit chatbota."
+        },
+        {
+          "title": "WhatsApp",
+          "body": "Daj odwiedzającym bezpośrednią ścieżkę kontaktu z Twoją agencją. Formularz kontaktowy i WhatsApp są zawarte w Essential i dziedziczone przez Pro i Premium."
+        },
+        {
+          "title": "Newsletter",
+          "body": "Zarządzaj subskrybentami i przygotowuj komunikaty agencji ze swojego miejsca pracy. Newsletter jest zawarty w Premium i dostępny również jako opcjonalny moduł."
+        }
+      ]
+    },
+    "extend": {
+      "label": "Przestrzeń do wzrostu",
+      "title": "Rozszerz platformę o potrzeby Twojej agencji.",
+      "body": "Dodawaj możliwości przez moduły w miarę ewolucji potrzeb. Strony Niestandardowe, Tłumaczenie AI, Immersive Tours i Hero Video są częścią dostępnego katalogu. Zawartość zależy od planu.",
+      "xmlTitle": "XML to oddzielna usługa.",
+      "xmlBody": "Użyj opcjonalnego feeda do importowania danych o nieruchomościach. XML nie jest zawarty w Essential, Pro ani Premium. Każdy feed jest wyceniony oddzielnie na {xml} miesięcznie.",
+      "pricing": "Odkryj ofertę"
+    },
+    "activation": {
+      "title": "Twoja agencja. Online. W {hours} godziny.",
+      "body": "Platforma i szablony są już gotowe. Okno aktywacji rozpoczyna się po otrzymaniu i potwierdzeniu informacji o agencji, brandingu, treściach, mediach, danych kontaktowych i wymaganych danych lub konfiguracji nieruchomości.",
+      "cta": "Rozpocznij {days}-dniowy okres próbny",
+      "access": "Bezpłatny okres próbny. Pełny dostęp."
+    },
+    "alts": {
+      "cockpit": "Cockpit DATAhome pokazujący aktywność CRM, katalog i działania publikacyjne",
+      "catalogue": "Menedżer Nieruchomości DATAhome z filtrami sprzedaży/wynajmu i ofertami",
+      "website": "Autentyczna publiczna strona agencji z prezentacją nieruchomości",
+      "landing": "Menedżer Landing Pages DATAhome",
+      "social": "Social Hub DATAhome z wyborem nieruchomości i kontrolkami publikacji",
+      "modules": "Katalog opcjonalnych modułów DATAhome"
+    }
+  },
+  "pricing": {
+    "metaTitle": "Cennik dla agencji nieruchomości | DATAhome",
+    "metaDescription": "Porównaj plany Essential, Pro i Premium DATAhome, opcjonalne moduły, ceny konfiguracji i feeda XML.",
+    "eyebrow": "CENNIK DATAHOME",
+    "title": "Wybierz poziom operacyjny potrzebny Twojej agencji.",
+    "intro": "Trzy przejrzyste miesięczne plany dla Twojej strony, aktywności nieruchomościowej i narzędzi wzrostu. Zacznij od możliwości dopasowanych do Twojej agencji.",
+    "monthly": "Ceny miesięczne",
+    "month": "miesiąc",
+    "user": "użytkownik",
+    "users": "użytkownicy",
+    "fullAccess": "Pełny dostęp",
+    "trialLine": "{days} dni bezpłatnego okresu próbnego",
+    "planCta": "Wybierz",
+    "plansLabel": "Plany DATAhome",
+    "planText": {
+      "Essential": {
+        "tagline": "Kompletna profesjonalna obecność online.",
+        "features": [
+          "1 użytkownik",
+          "Menedżer Nieruchomości (ręczny)",
+          "Mini CRM Leads",
+          "Strona internetowa agencji",
+          "Do 2 języków strony internetowej",
+          "Essential Analytics",
+          "Formularz kontaktowy",
+          "WhatsApp",
+          "Własna domena"
+        ]
+      },
+      "Pro": {
+        "tagline": "Pełne środowisko operacyjne dla rosnących agencji.",
+        "features": [
+          "5 użytkowników",
+          "Zaawansowany Menedżer Nieruchomości",
+          "Do 5 języków strony internetowej",
+          "Landing Pages",
+          "Social Hub",
+          "AI Chatbot",
+          "Zaawansowane analizy"
+        ]
+      },
+      "Premium": {
+        "tagline": "Zaawansowane możliwości dla ugruntowanych agencji.",
+        "features": [
+          "10 użytkowników",
+          "Nieograniczone Landing Pages",
+          "Do 10 języków strony internetowej",
+          "Newsletter",
+          "Rozszerzony limit AI Chatbot",
+          "Zaawansowane analizy",
+          "Wszystkie funkcje Pro",
+          "Priorytetowe wsparcie"
+        ]
+      }
+    },
+    "differences": {
+      "eyebrow": "KLUCZOWE RÓŻNICE",
+      "title": "Porównaj co się zmienia.",
+      "intro": "Zwięzły widok pojemności, przepływu pracy z nieruchomościami i wyróżniających się możliwości na każdym poziomie.",
+      "capacity": "Pojemność zespołu",
+      "property": "Przepływ pracy z nieruchomościami",
+      "distinctive": "Wyróżniające się możliwości"
+    },
+    "modules": {
+      "eyebrow": "OPCJONALNE MODUŁY",
+      "title": "Dodaj ukierunkowane możliwości.",
+      "intro": "Wybierz opcjonalne moduły zgodnie z usługami i przepływami pracy potrzebnymi Twojej agencji.",
+      "languageUnit": "język/miesiąc"
+    },
+    "moduleNames": ["Chatbot AI","Landing Pages","SEO AI","Strony Niestandardowe","Immersive Tours","Kataster i Compliance","Zarządzanie Nieruchomościami","Social Hub","Tłumaczenie AI","Zaawansowana Analityka","Newsletter","Hero Video","WhatsApp","Dodatkowy język"],
+    "xml": {
+      "eyebrow": "FEED XML",
+      "title": "{xml} za feed, miesięcznie.",
+      "body": "Feed XML jest wyceniony oddzielnie od subskrypcji DATAhome.",
+      "none": "Nie zawarty w żadnym planie."
+    },
+    "setup": {
+      "eyebrow": "KONFIGURACJA I ONBOARDING",
+      "title": "{setup} jednorazowo.",
+      "body": "Konfiguracja i onboarding są rozliczane jednorazowo."
+    },
+    "trial": {
+      "eyebrow": "ZACZNIJ Z PRODUKTEM",
+      "title": "Odkrywaj DATAhome przez {days} dni.",
+      "body": "Korzystaj z platformy z pełnym dostępem podczas bezpłatnego okresu próbnego.",
+      "cta": "Rozpocznij {days}-dniowy okres próbny"
+    },
+    "faq": {
+      "eyebrow": "FAQ CENNIK",
+      "title": "Praktyczne szczegóły.",
+      "items": [
+        {
+          "question": "Jak długo trwa bezpłatny okres próbny?",
+          "answer": "Bezpłatny okres próbny trwa {days} dni i obejmuje pełny dostęp."
+        },
+        {
+          "question": "Czy jest opłata za konfigurację?",
+          "answer": "Konfiguracja i onboarding są rozliczane jednorazowo za {setup}."
+        },
+        {
+          "question": "Jak są wyceniane opcjonalne moduły?",
+          "answer": "Opcjonalne moduły są wyceniane indywidualnie miesięcznie. Dodatkowy język jest wyceniany za język, za miesiąc."
+        },
+        {
+          "question": "Czy XML jest zawarty w planie?",
+          "answer": "Nie. Feed XML nie jest zawarty w żadnym planie i kosztuje {xml} za feed, miesięcznie."
+        }
+      ]
+    }
+  },
+  "partnersPage": {
+    "metaTitle": "Partnerzy i integracje dla agencji nieruchomości | DATAhome",
+    "metaDescription": "Połącz dane nieruchomości i przepływy pracy CRM z DATAhome.",
+    "hero": {
+      "eyebrow": "PARTNERZY I INTEGRACJE",
+      "title": "Połącz swój ekosystem danych z DATAhome.",
+      "body": "DATAhome łączy dane nieruchomości od dostawców XML i przepływy leadów do systemów CRM, podczas gdy Twoja agencja zachowuje swoje dotychczasowe narzędzia."
+    },
+    "mapper": {
+      "eyebrow": "DATAHOME IMPORT MAPPER",
+      "title": "Dowolne źródło. Jeden format DATAhome.",
+      "body": "Importuj dane nieruchomości z różnych źródeł i struktur. Zmapuj je raz, znormalizuj dane, wygeneruj ustandaryzowany feed XML DATAhome i używaj go bezpośrednio w swoim ekosystemie DATAhome.",
+      "alt": "DATAhome Import Mapper — mapowanie i normalizacja danych nieruchomości"
+    },
+    "xml": {
+      "eyebrow": "DANE NIERUCHOMOŚCI / DOSTAWCY XML",
+      "title": "Połącz swój feed XML nieruchomości z DATAhome.",
+      "body": "Różne struktury XML można zmapować do modelu danych nieruchomości DATAhome za pomocą usługi integracyjnej.",
+      "sourceLabel": "Dostawcy danych nieruchomości",
+      "sources": [
+        "<price> · <precio> · <selling_price>",
+        "<ref> · <property_id> · <reference>"
+      ],
+      "mapping": "Mapowanie i normalizacja",
+      "standardized": "Ustandaryzowane dane nieruchomości",
+      "fields": [
+        "Numer referencyjny",
+        "Cena",
+        "Typ nieruchomości",
+        "Lokalizacja",
+        "Sypialnie",
+        "Łazienki",
+        "Opis",
+        "Zdjęcia i cechy"
+      ],
+      "destinationLabel": "Ekosystem DATAhome",
+      "destinations": [
+        "Katalog nieruchomości",
+        "Strona agencji",
+        "Strony nieruchomości",
+        "Landing pages"
+      ],
+      "note": "Mapowanie jest dostosowane do danego feeda i przepływu pracy.",
+      "price": "{xml} / feed / miesiąc",
+      "none": "Nie zawarty w żadnym planie."
+    },
+    "verified": {
+      "eyebrow": "Zweryfikowana integracja XML",
+      "label": "Zweryfikowana integracja importu XML",
+      "title": "HabiHub",
+      "body": "HabiHub jest przykładem źródła XML nieruchomości już połączonego z DATAhome.",
+      "alt": "HabiHub"
+    },
+    "crm": {
+      "eyebrow": "DOSTAWCY CRM",
+      "title": "Zachowaj swój CRM. Połącz go z DATAhome.",
+      "body": "DATAhome nie wymaga, aby Twoja agencja zastępowała istniejący CRM. Strukturyzuje leady ze swojego ekosystemu cyfrowego dla kompatybilnych przepływów pracy CRM.",
+      "sourceLabel": "Leady z DATAhome",
+      "sources": [
+        "Formularze na stronie",
+        "Zapytania o nieruchomości",
+        "Landing pages",
+        "AI Chatbot",
+        "Formularze kontaktowe",
+        "Inne źródła leadów"
+      ],
+      "mapping": "Synchronizacja leadów i mapowanie pól",
+      "standardized": "Ustandaryzowane dane leadów",
+      "fields": [
+        "Pełne imię i nazwisko",
+        "E-mail",
+        "Telefon",
+        "Źródło",
+        "Zainteresowanie nieruchomością",
+        "Lokalizacja",
+        "Typ projektu"
+      ],
+      "destinationLabel": "Twój CRM",
+      "destinations": [
+        "Przepływ pracy CRM",
+        "Kontakty",
+        "Leady",
+        "Szanse i pipeline"
+      ],
+      "note": "Łączność z CRM jest oceniana dla kompatybilnego systemu i przepływu pracy agencji."
+    },
+    "mini": {
+      "have": "Masz już CRM? Zachowaj go.",
+      "none": "Brak CRM? DATAhome zawiera jeden.",
+      "body": "Każdy plan DATAhome zawiera DATAhome Mini CRM. Jest dostępny gdy Twoja agencja go potrzebuje, nigdy nie jest obowiązkowy."
+    },
+    "unified": {
+      "eyebrow": "UJEDNOLICONY EKOSYSTEM PARTNERÓW",
+      "title": "DATAhome dostosowuje się do Twojej agencji. Twoja agencja nie musi dostosowywać się do DATAhome.",
+      "left": "Dostawcy danych nieruchomości",
+      "leftDetail": "Feedy XML",
+      "center": "DATAhome",
+      "right": "Dostawcy CRM",
+      "rightDetail": "Przepływy pracy CRM",
+      "below": [
+        "Strona agencji",
+        "Katalog nieruchomości",
+        "Landing pages",
+        "Leady",
+        "Mini CRM",
+        "Ekosystem cyfrowy"
+      ]
+    },
+    "cta": {
+      "eyebrow": "WSPÓŁPRACUJ Z DATAHOME",
+      "title": "Połącz swoją technologię z DATAhome.",
+      "body": "Jesteś dostawcą danych nieruchomości, dostawcą CRM, siecią nieruchomości lub agencją z istniejącym przepływem danych? Porozmawiajmy o tym, jak Twój system może połączyć się z DATAhome.",
+      "cta": "Omów integrację"
+    }
+  },
+  "contactPage": {
+    "metaTitle": "Kontakt z DATAhome | Platforma dla agencji nieruchomości",
+    "metaDescription": "Skontaktuj się z DATAhome w sprawie okresu próbnego, Twojej agencji nieruchomości, feeda XML lub współpracy technicznej.",
+    "home": {
+      "title": "Opowiedz nam o swojej agencji.",
+      "body": "Rozpocznij rozmowę o DATAhome, przepływie pracy Twojej agencji lub następnym kroku dla Twojej obecności online."
+    },
+    "hero": {
+      "eyebrow": "KONTAKT Z DATAHOME",
+      "title": "Zacznij od pracy, której potrzebuje Twoja agencja.",
+      "body": "Opowiedz nam gdzie jesteś dziś i co chcesz połączyć: stronę internetową agencji, dane nieruchomości, przepływ leadów lub współpracę techniczną."
+    },
+    "topics": {
+      "eyebrow": "ISTOTNE TEMATY",
+      "title": "Przydatny punkt wyjścia.",
+      "body": "Użyj tego formularza, aby rozpocząć ukierunkowaną rozmowę z DATAhome.",
+      "items": [
+        "Okres próbny DATAhome",
+        "Twoja agencja nieruchomości",
+        "Sieć agencji",
+        "Feed XML",
+        "Współpraca techniczna"
+      ]
+    },
+    "privacy": "Wysyłając ten formularz, prosisz DATAhome o obsługę Twojego zapytania. Zapoznaj się z naszą",
+    "form": {
+      "fields": {
+        "name": "Imię i nazwisko",
+        "email": "E-mail",
+        "phone": "Telefon (opcjonalnie)",
+        "message": "Wiadomość (opcjonalnie)",
+        "namePlaceholder": "Twoje imię i nazwisko",
+        "emailPlaceholder": "ty@agencja.pl",
+        "phonePlaceholder": "+48 …",
+        "messagePlaceholder": "Opowiedz nam, co chciałbyś omówić."
+      },
+      "submit": "Wyślij zapytanie",
+      "sending": "Wysyłanie…",
+      "success": "Twoje zapytanie zostało wysłane.",
+      "genericError": "Usługa kontaktowa jest obecnie niedostępna. Spróbuj ponownie później.",
+      "errors": {
+        "name": "Wprowadź swoje imię i nazwisko.",
+        "email": "Wprowadź prawidłowy adres e-mail."
+      }
+    }
+  }
+}

@@ -1,72 +1,168 @@
-﻿"use client"
+"use client"
 
-import Image from "next/image"
 import Link from "next/link"
-import { motion } from "framer-motion"
-import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react"
-
-const highlights = ["Agency website", "XML feeds", "Property Manager", "AI chatbot", "Mini CRM"]
+import Image from "next/image"
+import {
+  motion,
+  useMotionValue,
+  useSpring,
+  useTransform,
+  useReducedMotion,
+  animate,
+} from "framer-motion"
+import { useEffect } from "react"
+import { ease } from "@/lib/motion"
 
 export function Hero() {
+  const reduced = useReducedMotion()
+
+  /* ── Pointer tilt (desktop only) ─────────────────────────── */
+  const mouseX = useMotionValue(0)
+  const mouseY = useMotionValue(0)
+  const rotX = useSpring(useTransform(mouseY, [-0.5, 0.5], [1.5, -1.5]), {
+    stiffness: 60,
+    damping: 18,
+  })
+  const rotY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-1.5, 1.5]), {
+    stiffness: 60,
+    damping: 18,
+  })
+
+  /* ── Ambient float — starts after entrance settles ───────── */
+  const floatY = useMotionValue(0)
+  useEffect(() => {
+    if (reduced) return
+    const timer = window.setTimeout(() => {
+      const ctrl = animate(floatY, [0, -4, 0, 4, 0], {
+        duration: 7,
+        ease: "easeInOut",
+        repeat: Infinity,
+        repeatType: "loop",
+      })
+      return () => ctrl.stop()
+    }, 1500)
+    return () => window.clearTimeout(timer)
+  }, [reduced, floatY])
+
+  function handleMouseMove(e: React.MouseEvent<HTMLElement>) {
+    if (reduced || window.innerWidth < 1024) return
+    const rect = e.currentTarget.getBoundingClientRect()
+    mouseX.set((e.clientX - rect.left) / rect.width - 0.5)
+    mouseY.set((e.clientY - rect.top) / rect.height - 0.5)
+  }
+
+  function handleMouseLeave() {
+    mouseX.set(0)
+    mouseY.set(0)
+  }
+
   return (
-    <section className="relative overflow-hidden pb-20 pt-32 md:pb-28 md:pt-40">
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute left-[-10%] top-20 h-72 w-72 rounded-full bg-[#18A1CE]/16 blur-3xl" />
-        <div className="absolute right-[-10%] top-12 h-96 w-96 rounded-full bg-[#D769A9]/18 blur-3xl" />
-      </div>
+    <section
+      className="hero-v4"
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+    >
+      {/* Back light — large atmospheric bloom, animated in */}
+      <motion.div
+        className="hero-back-light"
+        aria-hidden
+        initial={{ opacity: 0, scale: 0.72 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.7, ease, delay: 0.12 }}
+      />
+      {/* Secondary light — smaller, appears to come from dashboard */}
+      <motion.div
+        className="hero-secondary-light"
+        aria-hidden
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2.2, ease, delay: 0.65 }}
+      />
 
-      <div className="dh-container grid items-center gap-12 lg:grid-cols-[1.02fr_.98fr]">
-        <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-          <span className="inline-flex items-center gap-2 rounded-full border border-[#D769A9]/20 bg-white px-4 py-2 text-xs font-black uppercase tracking-[.2em] text-[#EF4B5A] shadow-sm">
-            <Sparkles className="h-4 w-4" /> Premium SaaS for real estate agencies
-          </span>
+      <div className="hero-v4-inner dh-container">
+        {/* ── Copy ──────────────────────────────────────────── */}
+        <div className="hero-v4-copy">
+          <motion.p
+            className="product-status"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease }}
+          >
+            La plateforme SaaS pour les agences immobilières
+          </motion.p>
 
-          <h1 className="mt-7 max-w-3xl text-5xl font-black leading-[1.02] text-[#080B1D] md:text-7xl">
-            Your agency online, <span className="dh-gradient-text">selling in 24h</span>.
-          </h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.72, ease, delay: 0.08 }}
+          >
+            Votre agence.<br />
+            En ligne.<br />
+            En 24 heures.
+          </motion.h1>
 
-          <p className="mt-7 max-w-xl text-lg leading-8 text-slate-600">
-            Launch a professional real estate website connected to XML feeds, premium templates, dashboards, leads and optional AI modules. Everything is managed from one SaaS workspace.
-          </p>
+          <motion.p
+            className="product-hero-description"
+            style={{ marginTop: 20, marginBottom: 36 }}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.65, ease, delay: 0.16 }}
+          >
+            DATAhome centralise votre site, vos biens, vos leads et vos
+            performances dans une seule plateforme — sans développeur,
+            sans serveur, sans friction.
+          </motion.p>
 
-          <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-            <Link href="https://datahome.vercel.app/register" className="dh-button-gradient inline-flex items-center justify-center gap-3 rounded-2xl px-7 py-4 text-sm font-extrabold text-white transition hover:-translate-y-0.5">
-              Start 15-day trial <ArrowRight className="h-4 w-4" />
+          <motion.div
+            className="product-actions"
+            style={{ display: "flex", gap: 12, flexWrap: "wrap" }}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease, delay: 0.22 }}
+          >
+            <Link href="#contact" className="product-primary">
+              Démarrer — 15 jours gratuits
             </Link>
-            <Link href="https://datahome.vercel.app/demo" className="inline-flex items-center justify-center gap-3 rounded-2xl border border-[#18A1CE]/45 bg-white px-7 py-4 text-sm font-extrabold text-[#18A1CE] transition hover:-translate-y-0.5 hover:border-[#D769A9] hover:text-[#D769A9]">
-              See live demo
+            <Link href="#demo" className="product-demo">
+              Voir la démo →
             </Link>
-          </div>
+          </motion.div>
+        </div>
 
-          <div className="mt-8 flex flex-wrap gap-3">
-            {highlights.map((item) => (
-              <span key={item} className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-slate-600 shadow-sm ring-1 ring-slate-200/70">
-                <CheckCircle2 className="h-4 w-4 text-[#32B55E]" /> {item}
-              </span>
-            ))}
-          </div>
-        </motion.div>
+        {/* ── Product object ────────────────────────────────── */}
+        {/* Outer: entrance animation (opacity + y + scale) */}
+        <motion.div
+          initial={{ opacity: 0, y: 45, scale: 0.94 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 1.1, ease, delay: 0.18 }}
+        >
+          {/* Perspective wrapper — required for rotateX/Y to look 3D */}
+          <div style={{ perspective: "900px" }}>
+            {/* Inner: ongoing float + pointer tilt */}
+            <motion.div
+              className="hero-product-scene"
+              style={{
+                y: reduced ? 0 : floatY,
+                rotateX: reduced ? 0 : rotX,
+                rotateY: reduced ? 0 : rotY,
+              }}
+            >
+              {/* Edge light — left+top corner only */}
+              <div className="hero-edge-light" aria-hidden />
 
-        <motion.div initial={{ opacity: 0, y: 32, scale: .98 }} animate={{ opacity: 1, y: 0, scale: 1 }} transition={{ delay: .12, duration: .7 }} className="relative">
-          <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-br from-[#18A1CE]/20 via-[#D769A9]/20 to-[#FCC010]/20 blur-2xl" />
-          <div className="dh-card relative overflow-hidden rounded-[2.5rem] p-4">
-            <div className="relative overflow-hidden rounded-[2rem] bg-[#080B1D]">
-              <Image src="/hero-villa.jpg" alt="Premium villa" width={1100} height={760} className="h-[420px] w-full object-cover opacity-88" priority />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#080B1D]/82 via-[#080B1D]/20 to-transparent" />
-              <div className="absolute bottom-5 left-5 right-5 rounded-3xl bg-white/92 p-5 shadow-2xl backdrop-blur">
-                <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                  <div>
-                    <p className="text-xs font-black uppercase tracking-[.22em] text-[#D769A9]">Agency dashboard</p>
-                    <h2 className="mt-2 text-2xl font-black text-[#080B1D]">Build, publish, convert.</h2>
-                    <p className="mt-1 text-sm text-slate-500">Templates, XML, leads and modules in one flow.</p>
-                  </div>
-                  <div className="grid grid-cols-2 gap-2 text-center text-xs font-bold text-slate-600">
-                    <span className="rounded-2xl bg-[#18A1CE]/10 px-4 py-3">2548 listings</span>
-                    <span className="rounded-2xl bg-[#D769A9]/10 px-4 py-3">15-day trial</span>
-                  </div>
+              <div className="hero-v4-product">
+                <div className="hero-v4-product-inner">
+                  <Image
+                    src="/screenshots/premium/cockpit-premium-night-source.png"
+                    alt="Cockpit DATAhome — tableau de bord agence"
+                    fill
+                    sizes="(max-width: 767px) 100vw, 55vw"
+                    style={{ objectFit: "cover", objectPosition: "50% 12%" }}
+                    priority
+                  />
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </motion.div>
       </div>

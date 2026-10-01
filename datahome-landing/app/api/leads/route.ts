@@ -1,177 +1,97 @@
-export const dynamic = "force-dynamic"
+export const dynamic = 'force-dynamic';
 
-import { NextRequest, NextResponse } from "next/server"
+import { NextRequest, NextResponse } from 'next/server';
 
-const RESEND_KEY  = process.env.RESEND_KEY || process.env.RESEND_API_KEY
-const FROM_EMAIL  = process.env.FROM_EMAIL  || "noreply@data-home.app"
-const RECIPIENTS  = (process.env.CONTACT_EMAIL || "gillian@amaru-homes.com,gaetan@amaru-homes.com")
-  .split(",").map((e) => e.trim()).filter(Boolean)
+const MAX_REQUESTS = 5;
+const WINDOW_MS = 15 * 60 * 1000;
+const rateLimits = new Map<string, { count: number; resetAt: number }>();
+const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const PHONE = /^[0-9+().\s-]*$/;
+const SOURCE = /^[a-z0-9_-]{1,80}$/i;
 
-const CORS = {
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Methods": "POST, OPTIONS",
-  "Access-Control-Allow-Headers": "Content-Type",
+type Submission = { name: string; email: string; phone: string; message: string; source: string; locale: string; pageUrl: string; };
+
+function escapeHtml(value: string) {
+  return value.replace(/[&<>'"]/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' })[character] as string);
 }
 
-export async function OPTIONS() {
-  return new NextResponse(null, { status: 204, headers: CORS })
+function stringField(value: unknown, max: number) {
+  return typeof value === 'string' && value.length <= max ? value.trim() : null;
 }
 
-function validateBody(body: unknown): string | null {
-  if (!body || typeof body !== "object") return "Body JSON invalide."
-  const { name, email } = body as Record<string, unknown>
-  if (!name || typeof name !== "string" || name.trim().length < 2)
-    return "Le champ 'name' est requis (min 2 caractères)."
-  if (!email || typeof email !== "string" || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
-    return "Le champ 'email' doit être une adresse valide."
-  return null
+function validateSubmission(body: unknown): { value: Submission } | { error: string } {
+  if (!body || typeof body !== 'object' || Array.isArray(body)) return { error: 'Invalid submission.' };
+  const input = body as Record<string, unknown>;
+  const name = stringField(input.name, 120);
+  const email = stringField(input.email, 254);
+  const phone = stringField(input.phone ?? '', 40);
+  const message = stringField(input.message ?? '', 5000);
+  const source = stringField(input.source, 80);
+  const locale = stringField(input.locale ?? '', 12);
+  const company = stringField(input.company ?? '', 120);
+  const metadata = input.metadata;
+  const pageUrl = metadata && typeof metadata === 'object' && !Array.isArray(metadata) ? stringField((metadata as Record<string, unknown>).page_url ?? '', 2048) : null;
+
+  if (company === null || name === null || email === null || phone === null || message === null || source === null || locale === null || pageUrl === null) return { error: 'Invalid submission.' };
+  if (company) return { error: 'honeypot' };
+  if (name.length < 2 || !EMAIL.test(email) || !PHONE.test(phone) || !SOURCE.test(source)) return { error: 'Invalid submission.' };
+  if (locale && !/^[a-z-]{2,12}$/i.test(locale)) return { error: 'Invalid submission.' };
+  if (pageUrl) {
+    try { const url = new URL(pageUrl); if (url.protocol !== 'http:' && url.protocol !== 'https:') return { error: 'Invalid submission.' }; }
+    catch { return { error: 'Invalid submission.' }; }
+  }
+  return { value: { name, email, phone, message, source, locale, pageUrl } };
 }
 
-function buildHtml(data: {
-  name: string
-  email: string
-  phone?: string
-  message?: string
-  plan?: string
-  source?: string
-  locale?: string
-  page_url?: string
-  timestamp: string
-}): string {
-  const planLabel = data.plan ? `<tr>
-    <td style="padding:14px 20px;font-size:13px;color:#64748b;border-bottom:1px solid #e2e8f0;">Plan</td>
-    <td style="padding:14px 20px;text-align:right;font-size:13px;font-weight:700;color:#0f172a;border-bottom:1px solid #e2e8f0;">${data.plan}</td>
-  </tr>` : ""
-  const phoneRow = data.phone ? `<tr>
-    <td style="padding:14px 20px;font-size:13px;color:#64748b;border-bottom:1px solid #e2e8f0;">Téléphone</td>
-    <td style="padding:14px 20px;text-align:right;font-size:13px;font-weight:700;color:#0f172a;border-bottom:1px solid #e2e8f0;">${data.phone}</td>
-  </tr>` : ""
-  const messageRow = data.message ? `<tr>
-    <td style="padding:14px 20px;font-size:13px;color:#64748b;vertical-align:top;">Message</td>
-    <td style="padding:14px 20px;text-align:right;font-size:13px;color:#0f172a;">${data.message.replace(/\n/g, "<br/>")}</td>
-  </tr>` : ""
+function getClientKey(request: NextRequest) {
+  const forwarded = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim();
+  return forwarded || request.headers.get('x-real-ip') || 'unknown';
+}
 
-  return `<!DOCTYPE html>
-<html lang="fr">
-<head><meta charset="UTF-8"/></head>
-<body style="margin:0;padding:0;background:#f1f5f9;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">
-<table width="100%" cellpadding="0" cellspacing="0" style="background:#f1f5f9;padding:40px 0;">
-<tr><td align="center">
-<table width="600" cellpadding="0" cellspacing="0" style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 32px rgba(0,0,0,.10);">
-  <tr>
-    <td style="background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 100%);padding:32px 48px;">
-      <div style="font-size:22px;font-weight:800;color:#fff;letter-spacing:1px;">DATA-HOME</div>
-      <div style="margin-top:6px;color:#cbd5e1;font-size:13px;">Nouveau lead — data-home.app</div>
-    </td>
-  </tr>
-  <tr>
-    <td style="padding:36px 48px;">
-      <p style="margin:0 0 24px;font-size:16px;font-weight:700;color:#0f172a;">Un nouveau contact vient d'envoyer une demande.</p>
-      <table width="100%" cellpadding="0" cellspacing="0" style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;margin-bottom:24px;">
-        <tr>
-          <td style="padding:14px 20px;font-size:13px;color:#64748b;border-bottom:1px solid #e2e8f0;">Nom</td>
-          <td style="padding:14px 20px;text-align:right;font-size:13px;font-weight:700;color:#0f172a;border-bottom:1px solid #e2e8f0;">${data.name}</td>
-        </tr>
-        <tr>
-          <td style="padding:14px 20px;font-size:13px;color:#64748b;border-bottom:1px solid #e2e8f0;">Email</td>
-          <td style="padding:14px 20px;text-align:right;font-size:13px;font-weight:700;color:#2563eb;border-bottom:1px solid #e2e8f0;">${data.email}</td>
-        </tr>
-        ${phoneRow}
-        ${planLabel}
-        ${messageRow}
-      </table>
-      <p style="margin:0;font-size:12px;color:#94a3b8;">
-        Reçu le ${new Date(data.timestamp).toLocaleString("fr-FR")}
-        ${data.locale ? ` · Langue : ${data.locale}` : ""}
-        ${data.source ? ` · Source : ${data.source}` : ""}
-        ${data.page_url ? `<br/><a href="${data.page_url}" style="color:#2563eb;">${data.page_url}</a>` : ""}
-      </p>
-    </td>
-  </tr>
-  <tr>
-    <td style="background:#f8fafc;border-top:1px solid #e2e8f0;padding:18px 48px;text-align:center;">
-      <p style="margin:0;font-size:11px;color:#94a3b8;">© Data-Home · Ne pas répondre à cet e-mail.</p>
-    </td>
-  </tr>
-</table>
-</td></tr>
-</table>
-</body>
-</html>`
+function isRateLimited(key: string) {
+  const now = Date.now();
+  if (rateLimits.size > 1000) for (const [entryKey, entry] of rateLimits) if (entry.resetAt <= now) rateLimits.delete(entryKey);
+  const current = rateLimits.get(key);
+  if (!current || current.resetAt <= now) { rateLimits.set(key, { count: 1, resetAt: now + WINDOW_MS }); return false; }
+  current.count += 1;
+  return current.count > MAX_REQUESTS;
+}
+
+function buildHtml(data: Submission) {
+  const row = (label: string, value: string) => value ? `<tr><td style="padding:12px 16px;color:#64748b;border-bottom:1px solid #e2e8f0;">${label}</td><td style="padding:12px 16px;text-align:right;color:#0f172a;border-bottom:1px solid #e2e8f0;">${escapeHtml(value).replace(/\n/g, '<br/>')}</td></tr>` : '';
+  return `<!doctype html><html lang="en"><body style="margin:0;padding:32px;background:#f1f5f9;font-family:Arial,sans-serif"><table width="100%" cellpadding="0" cellspacing="0"><tr><td align="center"><table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;background:#fff;border-radius:12px;overflow:hidden"><tr><td style="padding:28px 34px;background:#0d1723;color:#fff"><strong style="font-size:20px">DATAhome</strong><br/><span style="color:#b7c5d2;font-size:13px">New contact request</span></td></tr><tr><td style="padding:28px 34px"><table width="100%" cellpadding="0" cellspacing="0">${row('Name', data.name)}${row('Email', data.email)}${row('Phone', data.phone)}${row('Message', data.message)}</table><p style="margin:22px 0 0;color:#64748b;font-size:12px">Source: ${escapeHtml(data.source)}${data.locale ? ` · Locale: ${escapeHtml(data.locale)}` : ''}${data.pageUrl ? `<br/>Page: ${escapeHtml(data.pageUrl)}` : ''}</p></td></tr></table></td></tr></table></body></html>`;
 }
 
 export async function POST(request: NextRequest) {
-  let body: unknown
+  let body: unknown;
+  try { body = await request.json(); } catch { return NextResponse.json({ success: false, error: 'Invalid submission.' }, { status: 400 }); }
+  const validation = validateSubmission(body);
+  if ('error' in validation) {
+    if (validation.error === 'honeypot') return NextResponse.json({ success: true });
+    return NextResponse.json({ success: false, error: validation.error }, { status: 422 });
+  }
+  if (isRateLimited(getClientKey(request))) return NextResponse.json({ success: false, error: 'Too many requests. Please try again later.' }, { status: 429 });
+
+  const resendKey = process.env.RESEND_KEY || process.env.RESEND_API_KEY;
+  const fromEmail = process.env.FROM_EMAIL;
+  const recipients = process.env.CONTACT_EMAIL?.split(',').map(value => value.trim()).filter(Boolean) ?? [];
+  if (!resendKey || !fromEmail || !recipients.length) {
+    console.error('[leads] Missing Resend, sender, or recipient configuration.');
+    return NextResponse.json({ success: false, error: 'The contact service is currently unavailable.' }, { status: 503 });
+  }
+
   try {
-    body = await request.json()
-  } catch {
-    return NextResponse.json(
-      { success: false, error: "Body JSON invalide." },
-      { status: 400, headers: CORS },
-    )
+    const response = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${resendKey}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ from: fromEmail, to: recipients, reply_to: validation.value.email, subject: `DATAhome contact — ${validation.value.name}`, html: buildHtml(validation.value) }),
+    });
+    if (!response.ok) { console.error('[leads] Resend request failed:', response.status); return NextResponse.json({ success: false, error: 'The contact service is currently unavailable.' }, { status: 502 }); }
+  } catch (error) {
+    console.error('[leads] Resend request failed:', error instanceof Error ? error.message : 'Unknown error');
+    return NextResponse.json({ success: false, error: 'The contact service is currently unavailable.' }, { status: 502 });
   }
-
-  const validationError = validateBody(body)
-  if (validationError) {
-    return NextResponse.json(
-      { success: false, error: validationError },
-      { status: 422, headers: CORS },
-    )
-  }
-
-  if (!RESEND_KEY) {
-    console.error("[leads] RESEND_KEY manquant")
-    return NextResponse.json(
-      { success: false, error: "Configuration email manquante." },
-      { status: 500, headers: CORS },
-    )
-  }
-
-  const { name, email, phone, message, plan, source, locale, metadata } =
-    body as Record<string, unknown>
-  const timestamp = new Date().toISOString()
-
-  const html = buildHtml({
-    name: name as string,
-    email: email as string,
-    phone: phone as string | undefined,
-    message: message as string | undefined,
-    plan: plan as string | undefined,
-    source: source as string | undefined,
-    locale: locale as string | undefined,
-    page_url: (metadata as Record<string, string> | undefined)?.page_url,
-    timestamp,
-  })
-
-  const res = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${RESEND_KEY}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      from: FROM_EMAIL,
-      to: RECIPIENTS,
-      subject: `Nouveau lead DATA-HOME — ${name}${plan ? ` (${plan})` : ""}`,
-      html,
-    }),
-  })
-
-  if (!res.ok) {
-    const err = await res.text()
-    console.error("[leads] Resend error:", err)
-    return NextResponse.json(
-      { success: false, error: "Erreur envoi email." },
-      { status: 502, headers: CORS },
-    )
-  }
-
-  return NextResponse.json({ success: true }, { headers: CORS })
+  return NextResponse.json({ success: true });
 }
 
-export async function GET() {
-  return NextResponse.json(
-    { success: false, error: "Method not allowed." },
-    { status: 405, headers: CORS },
-  )
-}
+export async function GET() { return NextResponse.json({ success: false, error: 'Method not allowed.' }, { status: 405, headers: { Allow: 'POST' } }); }

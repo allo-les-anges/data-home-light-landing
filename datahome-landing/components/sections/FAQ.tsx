@@ -1,4 +1,4 @@
-﻿"use client"
+"use client"
 
 import { Accordion, AccordionItem } from "@/components/ui/accordion"
 
@@ -12,18 +12,19 @@ const faqs = [
 
 export function FAQ() {
   return (
-    <section id="faq" className="bg-white py-24 md:py-32">
+    <section id="faq" className="py-24 md:py-32">
       <div className="mx-auto max-w-3xl px-6">
-        <div className="mb-12 text-center">
-          <p className="text-sm font-black uppercase tracking-[.22em] text-[#18A1CE]">FAQ</p>
-          <h2 className="mt-4 text-4xl font-black text-[#080B1D]">Questions before launch.</h2>
-          <p className="mt-4 text-lg leading-8 text-slate-600">The essentials about setup, XML, modules and customization.</p>
+        <div className="mb-14">
+          <h2 className="text-3xl font-black text-[#080B1D] md:text-4xl">Questions before launch.</h2>
+          <p className="mt-4 text-base leading-[1.85] text-slate-500">The essentials about setup, XML, modules and customisation.</p>
         </div>
-        <div className="rounded-[2rem] border border-slate-200 bg-white px-6 py-3 shadow-sm">
-          <Accordion>
-            {faqs.map((faq, i) => <AccordionItem key={faq.q} value={`faq-${i}`} question={faq.q}>{faq.a}</AccordionItem>)}
-          </Accordion>
-        </div>
+        <Accordion>
+          {faqs.map((faq, i) => (
+            <AccordionItem key={faq.q} value={`faq-${i}`} question={faq.q}>
+              {faq.a}
+            </AccordionItem>
+          ))}
+        </Accordion>
       </div>
     </section>
   )
