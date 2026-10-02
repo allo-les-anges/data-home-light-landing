@@ -6,6 +6,20 @@ import { usePathname, useSearchParams } from 'next/navigation';
 import { templates, templateCopy, type Template, type TemplateLocale, type TemplateTier } from '@/lib/marketing/templates';
 import s from './ImageWheel.module.css';
 
+// Replace the returnTo param with the canonical marketing templates URL so the
+// preview bar's "Back to templates" button returns to data-home.app, not the cockpit.
+// The preview frame (datahome-clean) whitelists only https://data-home.app/<locale>/templates.
+const MARKETING_ORIGIN = "https://data-home.app";
+function withMarketingReturnTo(url: string, locale: string): string {
+  try {
+    const parsed = new URL(url);
+    parsed.searchParams.set('returnTo', `${MARKETING_ORIGIN}/${locale}/templates`);
+    return parsed.toString();
+  } catch {
+    return url;
+  }
+}
+
 function circularOffset(itemIndex: number, selectedIndex: number, length: number) {
   let offset = itemIndex - selectedIndex;
   if (offset > length / 2) offset -= length;
@@ -192,7 +206,7 @@ export function ImageWheel({
           <div className={s.detailHeader}>
             <div><p className={s.eyebrow}>{copy[selected.tier]}</p><h2>{selected.name}</h2></div>
             <p className={s.description}>{selected.description[locale]}</p>
-            <a className={s.live} href={selected.livePreviewUrl} target="_blank" rel="noopener noreferrer" aria-label={`${copy.live} — ${selected.name}. ${copy.external}`}>{copy.live} <span aria-hidden="true">↗</span></a>
+            <a className={s.live} href={withMarketingReturnTo(selected.livePreviewUrl, locale)} target="_blank" rel="noopener noreferrer" aria-label={`${copy.live} — ${selected.name}. ${copy.external}`}>{copy.live} <span aria-hidden="true">↗</span></a>
           </div>
           <div className={s.selectedPreview}>
             <Image key={selected.desktopPreview} src={selected.desktopPreview} alt={`${copy.preview} — ${selected.name}`} width={selected.width} height={selected.height} sizes="(max-width: 900px) calc(100vw - 40px), 1220px" loading="eager" />
