@@ -74,7 +74,7 @@ export function ResellerPage({ locale, copy }: { locale: Locale; copy: ResellerP
             </ul>
           </div>
           <div className={s.heroVisual} aria-hidden="true">
-            <Image src="/resellers/hero-villa-sunset.webp" alt="" width={515} height={344} priority className={s.heroVisualImg} />
+            <Image src="/resellers/reseller-hero-visual.jpg" alt="" width={515} height={330} priority className={s.heroVisualImg} />
           </div>
         </div>
       </section>
