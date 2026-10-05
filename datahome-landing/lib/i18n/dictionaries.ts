@@ -13,6 +13,7 @@ export type Dictionary = Pick<typeof en, "navigation" | "promise" | "chrome" | "
   pricing?: typeof en.pricing | typeof fr.pricing;
   partnersPage?: typeof en.partnersPage | typeof fr.partnersPage;
   contactPage?: typeof en.contactPage | typeof fr.contactPage;
+  resellerPage?: typeof en.resellerPage | typeof fr.resellerPage;
   privacyPage?: PrivacyCopy;
   legalPage?: LegalCopy;
 };

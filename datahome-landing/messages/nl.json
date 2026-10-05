@@ -5,6 +5,7 @@
     "templates": "Templates",
     "pricing": "Prijzen",
     "partners": "Partners",
+    "resellers": "Resellers",
     "contact": "Contact"
   },
   "promise": "Uw makelaarskantoor. Online. In {hours} uur.",
@@ -404,6 +405,148 @@
         "name": "Voer je naam in.",
         "email": "Voer een geldig e-mailadres in."
       }
+    }
+  },
+  "resellerPage": {
+    "metaTitle": "Word DATAhome Sales Partner | DATAhome",
+    "metaDescription": "Word DATAhome Sales Partner en bouw je eigen portefeuille van makelaarsklanten op, met onze technologie achter je.",
+    "hero": {
+      "eyebrow": "DATAHOME PARTNERPROGRAMMA",
+      "title": "Breng DATAhome\nnaar jouw markt.",
+      "body": "Word DATAhome Sales Partner en bouw je eigen portefeuille van makelaarsklanten op, met onze technologie achter je.",
+      "ctaPrimary": "Word Sales Partner",
+      "ctaSecondary": "Ontdek DATAhome",
+      "stats": [
+        {"title": "Bouw je portefeuille op", "body": "Ontwikkel je eigen netwerk van DATAhome-klanten"},
+        {"title": "Terugkerende kans", "body": "Laat je terugkerende commissies groeien naarmate je portefeuille groeit"},
+        {"title": "Technologie inbegrepen", "body": "Wij leveren het platform en de bijbehorende tools"}
+      ]
+    },
+    "opportunity": {
+      "eyebrow": "DE KANS",
+      "title": "Jouw markt.\nJouw klanten.\nOnze technologie.",
+      "body": [
+        "Makelaars hebben steeds meer behoefte aan betere websites, internationale vastgoedcatalogi, een CRM, social media-tools en AI.",
+        "Als DATAhome Sales Partner breng je die technologie naar makelaars in jouw markt en bouw je een klantenportefeuille op rond jouw netwerk."
+      ],
+      "items": [
+        {"title": "Een markt die je kent", "body": "Ontwikkel DATAhome binnen de vastgoedmarkt en het professionele netwerk dat je al begrijpt."},
+        {"title": "Een platform dat je kunt verkopen", "body": "Bied makelaars een compleet vastgoedtechnologieplatform in plaats van nog een geïsoleerde digitale tool."},
+        {"title": "Een terugkerende kans", "body": "Bouw een groeiende klantenportefeuille op, met potentieel voor terugkerende commissies."}
+      ]
+    },
+    "howYouEarn": {
+      "eyebrow": "HOE JE VERDIENT",
+      "title": "Bouw je portefeuille op.\nLaat je omzet groeien.",
+      "steps": [
+        {"number": "01", "title": "Vind kansen", "body": "Identificeer makelaars in je netwerk of markt die baat kunnen hebben bij DATAhome."},
+        {"number": "02", "title": "Presenteer DATAhome", "body": "Introduceer het platform, begrijp de behoeften van de makelaar en bouw samen met DATAhome de juiste oplossing."},
+        {"number": "03", "title": "Bouw je portefeuille op", "body": "De klanten die je ontwikkelt, worden onderdeel van jouw commerciële DATAhome-portefeuille."},
+        {"number": "04", "title": "Verdien commissies", "body": "Genereer commissies op de klanten die je aanbrengt, inclusief terugkerende kansen naarmate je portefeuille groeit."}
+      ],
+      "note": "De commissiestructuur en partnervoorwaarden worden individueel besproken tijdens het aanvraagproces."
+    },
+    "salesWorkspace": {
+      "eyebrow": "JOUW SALES WORKSPACE",
+      "title": "Wij geven je de technologie\nom onze technologie te verkopen.",
+      "body": [
+        "DATAhome Sales Partners worden niet aan hun lot overgelaten met spreadsheets en e-mails.",
+        "Onze Sales Workspace helpt je om kansen te structureren, de behoeften van makelaars te kwalificeren en voor elke prospect de juiste DATAhome-oplossing samen te stellen."
+      ],
+      "items": [
+        {"title": "Beheer je kansen", "body": "Houd je prospects en commerciële kansen overzichtelijk georganiseerd."},
+        {"title": "Kwalificeer de behoeften van de makelaar", "body": "Breng de vereisten en commerciële context van de makelaar in kaart."},
+        {"title": "Bouw de juiste oplossing", "body": "Bepaal het DATAhome-plan, de modules en de diensten die bij de klant passen."},
+        {"title": "Laat je portefeuille groeien", "body": "Bouw na verloop van tijd een gestructureerde portefeuille van DATAhome-klanten op."}
+      ]
+    },
+    "whatYouSell": {
+      "eyebrow": "WAT JE VERKOOPT",
+      "title": "Meer dan een website.",
+      "intro": [
+        "Je verkoopt niet zomaar nog een website.",
+        "Je brengt makelaars een compleet vastgoedtechnologieplatform."
+      ],
+      "items": [
+        {"title": "Makelaarswebsite", "body": "Modern, responsive en meertalig."},
+        {"title": "Internationale vastgoedcatalogus", "body": "XML/API-integraties en wereldwijd bereik."},
+        {"title": "Mini CRM", "body": "Beheer klanten en kansen."},
+        {"title": "Social Hub", "body": "Maak en publiceer met één klik."},
+        {"title": "AI-tools", "body": "Automatiseer content en bespaar tijd."},
+        {"title": "Integraties", "body": "Koppel aan grote vastgoedfeeds."}
+      ]
+    },
+    "partnership": {
+      "eyebrow": "HOE HET PARTNERSCHAP WERKT",
+      "title": "Een eenvoudig en krachtig model.",
+      "steps": [
+        {"number": "01", "title": "Jij kent de markt", "body": "Je identificeert kansen en bouwt relaties op met makelaars in jouw markt."},
+        {"number": "02", "title": "Wij leveren de technologie", "body": "DATAhome levert het platform, de productontwikkeling, de infrastructuur en de commerciële tools achter jouw aanbod."},
+        {"number": "03", "title": "We groeien samen", "body": "Jij bouwt je DATAhome-klantenportefeuille op, terwijl wij de technologie erachter blijven bouwen en beheren."}
+      ],
+      "note": "Commerciële voorwaarden worden individueel met elke partner besproken."
+    },
+    "lookingFor": {
+      "eyebrow": "WIE WE ZOEKEN",
+      "title": "Ben jij onze volgende partner?",
+      "profiles": [
+        {"title": "Vastgoedprofessionals", "body": "Makelaarsnetwerken, vastgoedgroepen, consultants."},
+        {"title": "Digitale bureaus", "body": "Gespecialiseerd in vastgoed en digitale marketing."},
+        {"title": "Ondernemers & salesprofessionals", "body": "Business developers, salesprofessionals en experts in lokale markten."}
+      ],
+      "highlight": {"title": "Je hoeft geen developer te zijn.", "body": "Je moet je markt begrijpen, relaties opbouwen en kansen creëren."}
+    },
+    "global": {
+      "eyebrow": "WERELDWIJDE KANS",
+      "title": "Een wereldwijde kans.",
+      "body": "DATAhome breidt internationaal uit en we zoeken Sales Partners die sterke lokale relaties kunnen opbouwen met makelaars.",
+      "markets": ["Europa", "Spanje", "Frankrijk", "België", "Luxemburg", "Zwitserland", "Portugal", "Georgië", "VAE"],
+      "more": "En meer…",
+      "ctaPrompt": "Staat jouw markt er niet bij?",
+      "ctaLink": "Neem contact op."
+    },
+    "finalCta": {
+      "eyebrow": "WORD PARTNER VAN DATAHOME",
+      "lead": "Bouw je klantenportefeuille op met DATAhome.",
+      "lines": ["Jouw netwerk.", "Jouw markt.", "Onze technologie."],
+      "cta": "Word Sales Partner"
+    },
+    "form": {
+      "eyebrow": "WORD DATAHOME SALES PARTNER",
+      "title": "Laten we praten.",
+      "body": "Vertel ons over je ervaring, je markt en je netwerk. We beoordelen je aanvraag en nemen contact met je op om de DATAhome Sales Partner-kans te bespreken.",
+      "fields": {
+        "fullName": "Volledige naam",
+        "company": "Bedrijf",
+        "email": "E-mail",
+        "phone": "Telefoon / WhatsApp",
+        "country": "Land / Markt",
+        "activity": "Huidige activiteit",
+        "hasNetwork": "Heb je al een netwerk van makelaars?",
+        "hasNetworkYes": "Ja",
+        "hasNetworkNo": "Nee",
+        "interest": "Vertel ons over je interesse en je markt",
+        "fullNamePlaceholder": "Je volledige naam",
+        "companyPlaceholder": "Je bedrijf",
+        "emailPlaceholder": "jij@bedrijf.com",
+        "phonePlaceholder": "+32 ...",
+        "countryPlaceholder": "bijv. België",
+        "activityPlaceholder": "bijv. Vastgoedprofessional, digitaal bureau, ondernemer...",
+        "interestPlaceholder": "Vertel ons over je ervaring, je markt en waarom je DATAhome Sales Partner wilt worden."
+      },
+      "submit": "Mijn aanvraag versturen",
+      "sending": "Versturen…",
+      "success": "Je aanvraag is verzonden. We nemen snel contact met je op.",
+      "genericError": "De dienst is momenteel niet beschikbaar. Probeer het later opnieuw.",
+      "errors": {
+        "fullName": "Vul je volledige naam in.",
+        "company": "Vul je bedrijfsnaam in.",
+        "email": "Vul een geldig e-mailadres in.",
+        "country": "Vul je land of markt in.",
+        "activity": "Vul je huidige activiteit in.",
+        "interest": "Vertel ons over je interesse en je markt."
+      },
+      "privacy": "Door dit formulier te versturen, vraag je DATAhome om je aanvraag te verwerken. Lees onze"
     }
   }
 }

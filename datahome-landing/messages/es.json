@@ -5,6 +5,7 @@
     "templates": "Plantillas",
     "pricing": "Precios",
     "partners": "Socios",
+    "resellers": "Distribuidores",
     "contact": "Contacto"
   },
   "promise": "Tu agencia. En línea. En {hours} horas.",
@@ -404,6 +405,148 @@
         "name": "Introduce tu nombre.",
         "email": "Introduce una dirección de email válida."
       }
+    }
+  },
+  "resellerPage": {
+    "metaTitle": "Conviértete en Socio Comercial de DATAhome | DATAhome",
+    "metaDescription": "Conviértete en Socio Comercial de DATAhome y construye tu propia cartera de agencias inmobiliarias clientes, con nuestra tecnología a tu lado.",
+    "hero": {
+      "eyebrow": "PROGRAMA DE SOCIOS DATAHOME",
+      "title": "Lleva DATAhome\na tu mercado.",
+      "body": "Conviértete en Socio Comercial de DATAhome y construye tu propia cartera de agencias inmobiliarias clientes, con nuestra tecnología a tu lado.",
+      "ctaPrimary": "Conviértete en Socio Comercial",
+      "ctaSecondary": "Descubrir DATAhome",
+      "stats": [
+        {"title": "Construye tu cartera", "body": "Desarrolla tu propia red de clientes DATAhome"},
+        {"title": "Oportunidad recurrente", "body": "Haz crecer tus comisiones recurrentes a medida que tu cartera se desarrolla"},
+        {"title": "Tecnología incluida", "body": "Nosotros aportamos la plataforma y las herramientas que la respaldan"}
+      ]
+    },
+    "opportunity": {
+      "eyebrow": "LA OPORTUNIDAD",
+      "title": "Tu mercado.\nTus clientes.\nNuestra tecnología.",
+      "body": [
+        "Las agencias inmobiliarias necesitan cada vez más mejores sitios web, catálogos internacionales de propiedades, CRM, herramientas de redes sociales e inteligencia artificial.",
+        "Como Socio Comercial de DATAhome, llevas esa tecnología a las agencias de tu mercado y construyes una cartera de clientes en torno a tu red."
+      ],
+      "items": [
+        {"title": "Un mercado que ya conoces", "body": "Desarrolla DATAhome dentro del mercado inmobiliario y la red profesional que ya entiendes."},
+        {"title": "Una plataforma que puedes vender", "body": "Ofrece a las agencias una plataforma tecnológica inmobiliaria completa, en lugar de otra herramienta digital aislada."},
+        {"title": "Una oportunidad recurrente", "body": "Construye una cartera de clientes en crecimiento, con potencial para generar comisiones recurrentes."}
+      ]
+    },
+    "howYouEarn": {
+      "eyebrow": "CÓMO GENERAS INGRESOS",
+      "title": "Construye tu cartera.\nHaz crecer tus ingresos.",
+      "steps": [
+        {"number": "01", "title": "Encuentra oportunidades", "body": "Identifica agencias inmobiliarias de tu red o tu mercado que puedan beneficiarse de DATAhome."},
+        {"number": "02", "title": "Presenta DATAhome", "body": "Presenta la plataforma, comprende las necesidades de la agencia y construye la solución adecuada junto con DATAhome."},
+        {"number": "03", "title": "Construye tu cartera", "body": "Los clientes que desarrollas pasan a formar parte de tu cartera comercial DATAhome."},
+        {"number": "04", "title": "Genera comisiones", "body": "Genera comisiones por los clientes que incorporas, incluidas oportunidades recurrentes a medida que tu cartera crece."}
+      ],
+      "note": "La estructura de comisiones y las condiciones de colaboración se acuerdan de forma individual durante el proceso de solicitud."
+    },
+    "salesWorkspace": {
+      "eyebrow": "TU ESPACIO COMERCIAL",
+      "title": "Te damos la tecnología\npara vender nuestra tecnología.",
+      "body": [
+        "Los Socios Comerciales de DATAhome no se quedan con hojas de cálculo y correos electrónicos.",
+        "Nuestro Sales Workspace te ayuda a estructurar oportunidades, cualificar las necesidades de cada agencia y construir la solución DATAhome adecuada para cada prospecto."
+      ],
+      "items": [
+        {"title": "Gestiona tus oportunidades", "body": "Mantén organizados tus prospectos y oportunidades comerciales."},
+        {"title": "Cualifica las necesidades de la agencia", "body": "Recoge los requisitos y el contexto comercial de la agencia."},
+        {"title": "Construye la solución adecuada", "body": "Identifica el plan, los módulos y los servicios DATAhome que encajan con el cliente."},
+        {"title": "Haz crecer tu cartera", "body": "Desarrolla una cartera estructurada de clientes DATAhome con el tiempo."}
+      ]
+    },
+    "whatYouSell": {
+      "eyebrow": "QUÉ VENDES",
+      "title": "Más que un sitio web.",
+      "intro": [
+        "No estás vendiendo otro sitio web más.",
+        "Estás llevando a las agencias una plataforma tecnológica inmobiliaria completa."
+      ],
+      "items": [
+        {"title": "Sitio web de agencia", "body": "Moderno, responsive y multilingüe."},
+        {"title": "Catálogo inmobiliario internacional", "body": "Integraciones XML/API y alcance global."},
+        {"title": "Mini CRM", "body": "Gestiona clientes y oportunidades."},
+        {"title": "Social Hub", "body": "Crea y publica con un clic."},
+        {"title": "Herramientas de IA", "body": "Automatiza contenido y ahorra tiempo."},
+        {"title": "Integraciones", "body": "Conéctate a los principales feeds inmobiliarios."}
+      ]
+    },
+    "partnership": {
+      "eyebrow": "CÓMO FUNCIONA LA ASOCIACIÓN",
+      "title": "Un modelo simple y potente.",
+      "steps": [
+        {"number": "01", "title": "Tú conoces el mercado", "body": "Identificas oportunidades y construyes relaciones con agencias inmobiliarias en tu mercado."},
+        {"number": "02", "title": "Nosotros aportamos la tecnología", "body": "DATAhome aporta la plataforma, la evolución del producto, la infraestructura y las herramientas comerciales detrás de tu oferta."},
+        {"number": "03", "title": "Crecemos juntos", "body": "Desarrollas tu cartera de clientes DATAhome mientras nosotros seguimos construyendo y operando la tecnología detrás."}
+      ],
+      "note": "Las condiciones comerciales se acuerdan individualmente con cada partner."
+    },
+    "lookingFor": {
+      "eyebrow": "A QUIÉN BUSCAMOS",
+      "title": "¿Podrías ser nuestro próximo partner?",
+      "profiles": [
+        {"title": "Profesionales inmobiliarios", "body": "Redes de agencias, grupos inmobiliarios, consultores."},
+        {"title": "Agencias digitales", "body": "Especializadas en inmobiliario y marketing digital."},
+        {"title": "Emprendedores y profesionales comerciales", "body": "Business developers, profesionales de ventas y expertos en mercados locales."}
+      ],
+      "highlight": {"title": "No necesitas ser desarrollador.", "body": "Necesitas entender tu mercado, construir relaciones y crear oportunidades."}
+    },
+    "global": {
+      "eyebrow": "OPORTUNIDAD GLOBAL",
+      "title": "Una oportunidad global.",
+      "body": "DATAhome se expande internacionalmente y buscamos Socios Comerciales capaces de construir relaciones locales sólidas con las agencias inmobiliarias.",
+      "markets": ["Europa", "España", "Francia", "Bélgica", "Luxemburgo", "Suiza", "Portugal", "Georgia", "EAU"],
+      "more": "Y más…",
+      "ctaPrompt": "¿Tu mercado no aparece en la lista?",
+      "ctaLink": "Habla con nosotros."
+    },
+    "finalCta": {
+      "eyebrow": "ASÓCIATE CON DATAHOME",
+      "lead": "Construye tu cartera de clientes con DATAhome.",
+      "lines": ["Tu red.", "Tu mercado.", "Nuestra tecnología."],
+      "cta": "Conviértete en Socio Comercial"
+    },
+    "form": {
+      "eyebrow": "CONVIÉRTETE EN SOCIO COMERCIAL DATAHOME",
+      "title": "Hablemos.",
+      "body": "Cuéntanos sobre tu experiencia, tu mercado y tu red. Revisaremos tu solicitud y te contactaremos para hablar sobre la oportunidad de Socio Comercial DATAhome.",
+      "fields": {
+        "fullName": "Nombre completo",
+        "company": "Empresa",
+        "email": "Email",
+        "phone": "Teléfono / WhatsApp",
+        "country": "País / Mercado",
+        "activity": "Actividad actual",
+        "hasNetwork": "¿Ya tienes una red de agencias inmobiliarias?",
+        "hasNetworkYes": "Sí",
+        "hasNetworkNo": "No",
+        "interest": "Cuéntanos tu interés y tu mercado",
+        "fullNamePlaceholder": "Tu nombre completo",
+        "companyPlaceholder": "Tu empresa",
+        "emailPlaceholder": "tu@empresa.com",
+        "phonePlaceholder": "+34 ...",
+        "countryPlaceholder": "ej. España",
+        "activityPlaceholder": "ej. Profesional inmobiliario, agencia digital, emprendedor...",
+        "interestPlaceholder": "Cuéntanos sobre tu experiencia, tu mercado y por qué te gustaría convertirte en Socio Comercial de DATAhome."
+      },
+      "submit": "Enviar mi solicitud",
+      "sending": "Enviando…",
+      "success": "Tu solicitud ha sido enviada. Nos pondremos en contacto pronto.",
+      "genericError": "El servicio no está disponible en este momento. Inténtalo de nuevo más tarde.",
+      "errors": {
+        "fullName": "Indica tu nombre completo.",
+        "company": "Indica el nombre de tu empresa.",
+        "email": "Indica una dirección de email válida.",
+        "country": "Indica tu país o mercado.",
+        "activity": "Indica tu actividad actual.",
+        "interest": "Cuéntanos tu interés y tu mercado."
+      },
+      "privacy": "Al enviar este formulario, solicitas a DATAhome que gestione tu petición. Consulta nuestra"
     }
   }
 }

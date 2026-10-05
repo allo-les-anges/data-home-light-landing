@@ -1,0 +1,160 @@
+.page{overflow:hidden;color:#0b1420}
+.page :is(h1,h2,h3,p,ul,ol){margin:0}
+.sectionInner{width:min(1180px,calc(100% - 48px));margin:0 auto}
+.eyebrowLight{margin:0 0 16px;color:#7dc9e8;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.eyebrowDark{margin:0 0 16px;color:#0f7fa8;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.ctaPrimary{display:inline-flex;align-items:center;gap:10px;border-radius:8px;background:#18a1ce;padding:15px 24px;color:#fff;font-size:14px;font-weight:600;text-decoration:none;transition:background .18s,transform .15s}
+.ctaPrimary:hover{background:#1490ba;transform:translateY(-1px)}
+.ctaSecondary{display:inline-flex;align-items:center;border:1px solid #ffffff55;border-radius:8px;padding:14px 24px;color:#fff;font-size:14px;font-weight:600;text-decoration:none;transition:border-color .18s,background .18s}
+.ctaSecondary:hover{border-color:#fff;background:#ffffff14}
+
+/* ---------- HERO ---------- */
+/* Solid premium navy background (radial glow, no photo) — the villa/device
+   visual is a framed accent on the right, never a full-bleed page image. */
+.hero{position:relative;min-height:92svh;display:flex;align-items:center;overflow:hidden;background:radial-gradient(1100px 620px at 76% 18%,#122236 0%,#0a1420 48%,#070c13 78%)}
+.heroInner{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:56px;width:min(1240px,calc(100% - 48px));margin:0 auto;padding:148px 0 72px}
+.heroContent h1{max-width:620px;font-size:clamp(40px,4.6vw,66px);font-weight:600;line-height:1.08;letter-spacing:-.01em;color:#fff}
+.heroBody{max-width:520px;margin-top:22px;color:#d7e0e9;font-size:17px;line-height:1.7}
+.heroCtas{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-top:34px}
+.heroStats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px 24px;margin-top:40px;padding-top:28px;border-top:1px solid #ffffff26;list-style:none}
+.heroStats li{display:flex;align-items:flex-start;gap:9px}
+.heroStats svg{color:#43cf8f;flex:0 0 auto;margin-top:2px}
+.heroStatText{display:flex;flex-direction:column;gap:3px}
+.heroStatText strong{color:#fff;font-size:13.5px;font-weight:700;line-height:1.3}
+.heroStatText span{color:#aab6c2;font-size:12px;line-height:1.5}
+
+.heroVisual{display:flex;justify-content:center}
+.heroVisualImg{width:100%;max-width:520px;height:auto;display:block;border-radius:16px;box-shadow:0 36px 80px #00000070,0 0 0 1px #ffffff14,0 0 110px #1a5c7c33;transform:rotate(.6deg)}
+
+/* ---------- OPPORTUNITY (light) ---------- */
+.opportunity{background:#faf7f1;padding:96px 0}
+.opportunity h2{max-width:720px;font-size:clamp(30px,3.6vw,46px);font-weight:600;line-height:1.14;letter-spacing:-.015em;color:#0b1420}
+.opportunityIntro{max-width:680px}
+.opportunityIntro p{margin-top:16px;color:#5a6472;font-size:15.5px;line-height:1.75}
+.opportunityGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.opportunityCard{border:1px solid #e7e2d8;border-radius:12px;background:#fff;padding:28px}
+.opportunityCard h3{margin-top:16px;font-size:17px;font-weight:700;color:#0b1420}
+.opportunityCard p{margin-top:10px;color:#5a6472;font-size:14px;line-height:1.7}
+
+.iconBadgeDark{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:#0b1420;color:#7dc9e8}
+.iconBadgeLight{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:#ffffff12;border:1px solid #ffffff22;color:#7dc9e8}
+.iconBadgeAccent{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:#18a1ce;color:#fff}
+
+/* ---------- HOW YOU EARN (light) ---------- */
+.earn{background:#fff;padding:96px 0}
+.earn h2{max-width:560px;font-size:clamp(30px,3.6vw,46px);font-weight:600;line-height:1.14;letter-spacing:-.015em;color:#0b1420}
+.earnSteps{list-style:none;margin:48px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.earnStep{position:relative;display:flex;flex-direction:column;align-items:flex-start;border:1px solid #e7e2d8;border-radius:12px;background:#faf7f1;padding:26px}
+.earnStep .stepNumber{display:inline-flex;align-items:center;justify-content:center;width:auto;height:auto;border:0;color:#0f7fa8;font-size:13px;font-weight:700;letter-spacing:.04em;margin-bottom:14px}
+.earnStep .iconBadgeDark{margin-top:0}
+.earnStep h3{margin-top:16px;font-size:16px;font-weight:700;color:#0b1420}
+.earnStep p{margin-top:9px;color:#5a6472;font-size:13.5px;line-height:1.65}
+.earnNote{margin-top:28px;padding-top:24px;border-top:1px solid #ece7dc;color:#7a8390;font-size:12.5px;line-height:1.7;font-style:italic}
+
+/* ---------- YOUR SALES WORKSPACE (dark navy) ---------- */
+.workspace{position:relative;background:radial-gradient(1100px 620px at 22% 10%,#122236 0%,#0a1420 48%,#070c13 78%);padding:96px 0}
+.workspace h2{max-width:600px;font-size:clamp(30px,3.6vw,46px);font-weight:600;line-height:1.14;letter-spacing:-.015em;color:#fff}
+.workspaceIntro{max-width:620px}
+.workspaceIntro p{margin-top:16px;color:#aab6c2;font-size:15.5px;line-height:1.75}
+.workspaceGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:48px}
+.workspaceCard{border:1px solid #ffffff1c;border-radius:12px;background:#ffffff08;padding:26px}
+.workspaceCard h3{margin-top:16px;font-size:16px;font-weight:700;color:#fff}
+.workspaceCard p{margin-top:9px;color:#9fadbb;font-size:13.5px;line-height:1.65}
+
+/* ---------- WHAT YOU SELL (dark) ---------- */
+.sell{background:#070c13;padding:96px 0}
+.sell h2{max-width:620px;font-size:clamp(30px,3.6vw,46px);font-weight:600;line-height:1.14;letter-spacing:-.015em;color:#fff}
+.sellIntro{max-width:620px}
+.sellIntro p{margin-top:16px;color:#aab6c2;font-size:15.5px;line-height:1.75}
+.sellGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+.sellCard{border:1px solid #ffffff1c;border-radius:12px;background:#ffffff08;padding:26px;transition:border-color .18s,background .18s,transform .18s}
+.sellCard:hover{border-color:#2f6a85;background:#ffffff0f;transform:translateY(-2px)}
+.sellCard h3{margin-top:16px;font-size:16px;font-weight:700;color:#fff}
+.sellCard p{margin-top:9px;color:#9fadbb;font-size:13.5px;line-height:1.65}
+
+/* ---------- PARTNERSHIP (light) + form ---------- */
+.partnership{background:#fff;padding:96px 0}
+.partnershipGrid{display:grid;grid-template-columns:1fr .92fr;gap:64px;align-items:start}
+.partnershipSteps h2{max-width:460px;font-size:clamp(28px,3.2vw,40px);font-weight:600;line-height:1.16;letter-spacing:-.015em;color:#0b1420}
+.steps{list-style:none;margin:40px 0 0;padding:0;display:grid;gap:30px}
+.steps li{display:flex;gap:18px}
+.stepNumber{flex:0 0 auto;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border:1px solid #cfe3ec;border-radius:50%;color:#0f7fa8;font-size:13px;font-weight:700}
+.steps h3{margin-top:2px;font-size:16px;font-weight:700;color:#0b1420}
+.steps p{margin-top:6px;color:#5a6472;font-size:14px;line-height:1.7}
+.steps .iconBadgeDark{display:none}
+.partnershipNote{margin-top:8px;padding-top:24px;border-top:1px solid #ece7dc;color:#7a8390;font-size:12.5px;line-height:1.7;font-style:italic}
+.partnershipFormWrap{position:sticky;top:24px}
+.privacy{display:flex;align-items:flex-start;gap:12px;margin-top:20px}
+.privacy span{display:block;width:7px;height:7px;flex:0 0 auto;border-radius:50%;background:#18a1ce;margin-top:7px}
+.privacy p{font-size:12.5px;line-height:1.7;color:#6b7482}
+.privacy a{color:#0f7fa8;text-decoration:underline;text-underline-offset:3px}
+
+/* ---------- LOOKING FOR (light) ---------- */
+.lookingFor{background:#faf7f1;padding:96px 0}
+.lookingFor h2{max-width:620px;font-size:clamp(30px,3.6vw,46px);font-weight:600;line-height:1.14;letter-spacing:-.015em;color:#0b1420}
+.lookingForGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:48px}
+.profileCard{border:1px solid #e7e2d8;border-radius:12px;background:#fff;padding:26px}
+.profileCard h3{margin-top:14px;font-size:16px;font-weight:700;color:#0b1420}
+.profileCard p{margin-top:8px;color:#5a6472;font-size:13.5px;line-height:1.65}
+.profileHighlight{background:#eef8fc;border-color:#cfe6f0}
+
+/* ---------- GLOBAL OPPORTUNITY (dark) ---------- */
+.global{position:relative;background:#070c13;padding:96px 0;overflow:hidden}
+.globalGrid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:40px}
+.global h2{max-width:560px;font-size:clamp(30px,3.6vw,46px);font-weight:600;line-height:1.14;letter-spacing:-.015em;color:#fff}
+.globalBody{max-width:520px;margin-top:18px;color:#aab6c2;font-size:15.5px;line-height:1.75}
+.marketChips{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px;list-style:none;padding:0}
+.marketChips li{display:inline-flex;align-items:center;gap:8px;border:1px solid #ffffff22;border-radius:999px;background:#ffffff0c;padding:9px 16px;color:#e7edf3;font-size:13px;font-weight:600}
+.marketMore{color:#9fadbb!important;font-weight:500!important}
+.globalCta{margin-top:32px;color:#aab6c2;font-size:14px}
+.globalCta a{color:#7dc9e8;font-weight:600;text-decoration:underline;text-underline-offset:3px}
+
+/* Map visual: faded into the dark background via a radial mask + low
+   opacity, rather than a crisp rectangle sitting on top of the page. */
+.globalVisual{position:relative;height:clamp(220px,28vw,360px);border-radius:18px;overflow:hidden;-webkit-mask-image:radial-gradient(ellipse 78% 78% at 50% 50%,#000 55%,transparent 100%);mask-image:radial-gradient(ellipse 78% 78% at 50% 50%,#000 55%,transparent 100%)}
+.globalVisualImg{object-fit:cover;opacity:.82;mix-blend-mode:screen}
+
+/* ---------- FINAL CTA (dark) ---------- */
+.finalCta{display:flex;flex-direction:column;align-items:center;gap:26px;background:#0a111b;padding:110px 24px;text-align:center}
+.finalCta h2{font-size:clamp(32px,4.4vw,54px);font-weight:600;line-height:1.16;letter-spacing:-.015em;color:#fff}
+.finalCtaLead{margin-top:-14px;color:#aab6c2;font-size:15.5px;max-width:460px}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:1024px){
+ .heroInner{grid-template-columns:1fr;gap:40px;padding:132px 0 64px;text-align:left}
+ .heroVisual{order:2;max-width:480px}
+ .heroContent{order:1}
+ .opportunityGrid,.sellGrid,.earnSteps,.workspaceGrid{grid-template-columns:repeat(2,1fr)}
+ .partnershipGrid{grid-template-columns:1fr}
+ .partnershipFormWrap{position:static}
+ .globalGrid{grid-template-columns:1fr}
+ .globalVisual{order:2;width:100%;max-width:520px;margin:0 auto}
+}
+
+@media(max-width:768px){
+ .hero{min-height:auto}
+ .heroInner{padding:120px 0 56px}
+ .heroContent h1{max-width:none}
+ .heroStats{grid-template-columns:1fr;gap:16px}
+ .opportunity,.sell,.earn,.workspace,.partnership,.lookingFor,.global{padding:68px 0}
+ .opportunityGrid,.sellGrid,.earnSteps,.workspaceGrid,.lookingForGrid{grid-template-columns:1fr}
+ .finalCta{padding:84px 20px}
+ .finalCtaLead{margin-top:-10px}
+ .globalVisual{height:clamp(180px,42vw,260px)}
+}
+
+@media(max-width:430px){
+ .sectionInner{width:calc(100% - 32px)}
+ .heroInner{width:calc(100% - 32px);padding:112px 0 48px}
+ .heroContent h1{font-size:clamp(34px,9vw,42px)}
+ .heroBody{font-size:15.5px}
+ .heroCtas{flex-direction:column;align-items:stretch}
+ .ctaPrimary,.ctaSecondary{justify-content:center}
+ .heroVisual{display:none}
+ .marketChips li{padding:8px 13px;font-size:12.5px}
+ .globalVisual{height:200px}
+}
+
+@media(prefers-reduced-motion:reduce){
+ .ctaPrimary,.ctaSecondary,.sellCard{transition:none}
+}

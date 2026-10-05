@@ -5,6 +5,7 @@
                        "templates":  "Templates",
                        "pricing":  "Pricing",
                        "partners":  "Partners",
+                       "resellers":  "Resellers",
                        "contact":  "Contact"
                    },
     "promise":  "Your agency. Online. In {hours} hours.",
@@ -509,5 +510,147 @@
                  "headline2":  "Your agency can too.",
                  "subtitle":  "International properties, leads and marketing.\nOne workspace for your agency.",
                  "demo":  "See DATAhome in action"
-             }
+             },
+  "resellerPage": {
+    "metaTitle": "Become a DATAhome Sales Partner | DATAhome",
+    "metaDescription": "Become a DATAhome Sales Partner and build your own portfolio of real estate agency clients with our technology behind you.",
+    "hero": {
+      "eyebrow": "DATAHOME PARTNER PROGRAM",
+      "title": "Bring DATAhome\nto your market.",
+      "body": "Become a DATAhome Sales Partner and build your own portfolio of real estate agency clients with our technology behind you.",
+      "ctaPrimary": "Become a Sales Partner",
+      "ctaSecondary": "Discover DATAhome",
+      "stats": [
+        {"title": "Build your portfolio", "body": "Develop your own network of DATAhome clients"},
+        {"title": "Recurring opportunity", "body": "Grow recurring commissions as your portfolio develops"},
+        {"title": "Technology included", "body": "We provide the platform and the tools behind it"}
+      ]
+    },
+    "opportunity": {
+      "eyebrow": "THE OPPORTUNITY",
+      "title": "Your market.\nYour clients.\nOur technology.",
+      "body": [
+        "Real estate agencies increasingly need better websites, international property catalogues, CRM, social media tools and AI.",
+        "As a DATAhome Sales Partner, you bring that technology to agencies in your market and build a portfolio of clients around your network."
+      ],
+      "items": [
+        {"title": "A market you know", "body": "Develop DATAhome within the real estate market and professional network you already understand."},
+        {"title": "A platform you can sell", "body": "Offer agencies a complete real estate technology platform rather than another isolated digital tool."},
+        {"title": "A recurring opportunity", "body": "Build a growing client portfolio with the potential to generate recurring commissions."}
+      ]
+    },
+    "howYouEarn": {
+      "eyebrow": "HOW YOU EARN",
+      "title": "Build your portfolio.\nGrow your revenue.",
+      "steps": [
+        {"number": "01", "title": "Find opportunities", "body": "Identify real estate agencies in your network or market that could benefit from DATAhome."},
+        {"number": "02", "title": "Present DATAhome", "body": "Introduce the platform, understand the agency's needs and build the right solution with DATAhome."},
+        {"number": "03", "title": "Build your portfolio", "body": "The clients you develop become part of your DATAhome commercial portfolio."},
+        {"number": "04", "title": "Earn commissions", "body": "Generate commissions from the clients you bring, including recurring opportunities as your portfolio grows."}
+      ],
+      "note": "Commission structure and partner conditions are discussed individually during the application process."
+    },
+    "salesWorkspace": {
+      "eyebrow": "YOUR SALES WORKSPACE",
+      "title": "We give you the technology\nto sell our technology.",
+      "body": [
+        "DATAhome Sales Partners are not left with spreadsheets and emails.",
+        "Our Sales Workspace helps you structure opportunities, qualify agency needs and build the right DATAhome solution for each prospect."
+      ],
+      "items": [
+        {"title": "Manage your opportunities", "body": "Keep your prospects and commercial opportunities organised."},
+        {"title": "Qualify agency needs", "body": "Capture the agency's requirements and commercial context."},
+        {"title": "Build the right solution", "body": "Identify the DATAhome plan, modules and services that fit the client."},
+        {"title": "Grow your portfolio", "body": "Develop a structured portfolio of DATAhome clients over time."}
+      ]
+    },
+    "whatYouSell": {
+      "eyebrow": "WHAT YOU SELL",
+      "title": "More than a website.",
+      "intro": [
+        "You're not selling another website.",
+        "You're bringing agencies a complete real estate technology platform."
+      ],
+      "items": [
+        {"title": "Agency Website", "body": "Modern, responsive and multilingual."},
+        {"title": "International Property Catalogue", "body": "XML/API integrations and global reach."},
+        {"title": "Mini CRM", "body": "Manage clients and opportunities."},
+        {"title": "Social Hub", "body": "Create and publish in one click."},
+        {"title": "AI Tools", "body": "Automate content and save time."},
+        {"title": "Integrations", "body": "Connect to major real estate feeds."}
+      ]
+    },
+    "partnership": {
+      "eyebrow": "HOW THE PARTNERSHIP WORKS",
+      "title": "A simple and powerful model.",
+      "steps": [
+        {"number": "01", "title": "You know the market", "body": "You identify opportunities and build relationships with real estate agencies in your market."},
+        {"number": "02", "title": "We provide the technology", "body": "DATAhome provides the platform, product evolution, infrastructure and commercial tools behind your offer."},
+        {"number": "03", "title": "We grow together", "body": "You develop your DATAhome client portfolio while we continue to build and operate the technology behind it."}
+      ],
+      "note": "Commercial terms are discussed individually with each partner."
+    },
+    "lookingFor": {
+      "eyebrow": "WHO WE'RE LOOKING FOR",
+      "title": "Could you be our next partner?",
+      "profiles": [
+        {"title": "Real estate professionals", "body": "Agency networks, real estate groups, consultants."},
+        {"title": "Digital agencies", "body": "Specialized in real estate and digital marketing."},
+        {"title": "Entrepreneurs & sales professionals", "body": "Business developers, sales professionals and local market experts."}
+      ],
+      "highlight": {"title": "You don't need to be a developer.", "body": "You need to understand your market, build relationships and create opportunities."}
+    },
+    "global": {
+      "eyebrow": "GLOBAL OPPORTUNITY",
+      "title": "A global opportunity.",
+      "body": "DATAhome is expanding internationally and we're looking for Sales Partners who can develop strong local relationships with real estate agencies.",
+      "markets": ["Europe", "Spain", "France", "Belgium", "Luxembourg", "Switzerland", "Portugal", "Georgia", "UAE"],
+      "more": "And more…",
+      "ctaPrompt": "Your market isn't listed?",
+      "ctaLink": "Talk to us."
+    },
+    "finalCta": {
+      "eyebrow": "PARTNER WITH DATAHOME",
+      "lead": "Build your client portfolio with DATAhome.",
+      "lines": ["Your network.", "Your market.", "Our technology."],
+      "cta": "Become a Sales Partner"
+    },
+    "form": {
+      "eyebrow": "BECOME A DATAHOME SALES PARTNER",
+      "title": "Let's talk.",
+      "body": "Tell us about your experience, your market and your network. We'll review your application and contact you to discuss the DATAhome Sales Partner opportunity.",
+      "fields": {
+        "fullName": "Full name",
+        "company": "Company",
+        "email": "Email",
+        "phone": "Phone / WhatsApp",
+        "country": "Country / Market",
+        "activity": "Current activity",
+        "hasNetwork": "Do you already have a network of real estate agencies?",
+        "hasNetworkYes": "Yes",
+        "hasNetworkNo": "No",
+        "interest": "Tell us about your interest and your market",
+        "fullNamePlaceholder": "Your full name",
+        "companyPlaceholder": "Your company",
+        "emailPlaceholder": "you@company.com",
+        "phonePlaceholder": "+34 ...",
+        "countryPlaceholder": "e.g. Spain",
+        "activityPlaceholder": "e.g. Real estate professional, digital agency, entrepreneur...",
+        "interestPlaceholder": "Tell us about your experience, your market and why you would like to become a DATAhome Sales Partner."
+      },
+      "submit": "Submit my application",
+      "sending": "Sending…",
+      "success": "Your application has been sent. We'll be in touch shortly.",
+      "genericError": "The application service is currently unavailable. Please try again later.",
+      "errors": {
+        "fullName": "Enter your full name.",
+        "company": "Enter your company name.",
+        "email": "Enter a valid email address.",
+        "country": "Enter your country or market.",
+        "activity": "Enter your current activity.",
+        "interest": "Tell us about your interest and your market."
+      },
+      "privacy": "By sending this form, you ask DATAhome to handle your request. Read our"
+    }
+  }
 }

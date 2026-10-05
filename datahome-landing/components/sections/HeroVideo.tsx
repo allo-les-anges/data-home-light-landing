@@ -33,6 +33,7 @@ export function HeroVideo() {
 
   return (
     <section
+      className="hero-section"
       style={{
         position: "relative",
         minHeight: "100svh",
@@ -40,7 +41,6 @@ export function HeroVideo() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        padding: "clamp(16px, 2.5vw, 24px)",
         overflow: "hidden",
       }}
       aria-label="Hero"

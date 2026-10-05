@@ -1163,6 +1163,10 @@
   inherits: false;
 }
 
+.hero-section {
+  padding: clamp(16px, 2.5vw, 24px);
+}
+
 .hero-frame-wrap {
   --hero-radius: 14px;
   position: relative;
@@ -1374,6 +1378,7 @@
 /* ——————————————————————————————————————————————————————————
    Slightly smaller radius; slightly reduced ambient blur for perf. */
 @media (max-width: 767px) {
+  .hero-section     { padding-left: 0; padding-right: 0; }
   .hero-frame-wrap  { --hero-radius: 10px; }
   .hero-frame-inner { min-height: calc(100svh - 32px); }
   .hero-content     { padding: clamp(70px, 11vh, 100px) 20px 36px; }

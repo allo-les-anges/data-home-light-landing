@@ -5,6 +5,7 @@
                        "templates":  "Templates",
                        "pricing":  "Tarifs",
                        "partners":  "Partenaires",
+                       "resellers":  "Revendeurs",
                        "contact":  "Contact"
                    },
     "promise":  "Votre agence. En ligne. En {hours} heures.",
@@ -560,5 +561,147 @@
                  "headline2":  "Votre agence aussi.",
                  "subtitle":  "Biens internationaux, prospects et marketing.\nUn seul espace de travail pour votre agence.",
                  "demo":  "Voir DATAhome en action"
-             }
+             },
+  "resellerPage": {
+    "metaTitle": "Devenez Partenaire commercial DATAhome | DATAhome",
+    "metaDescription": "Devenez Partenaire commercial DATAhome et développez votre propre portefeuille de clients agences immobilières, avec notre technologie à vos côtés.",
+    "hero": {
+      "eyebrow": "PROGRAMME PARTENAIRES DATAHOME",
+      "title": "Implantez DATAhome\nsur votre marché.",
+      "body": "Devenez Partenaire commercial DATAhome et développez votre propre portefeuille de clients agences immobilières, avec notre technologie à vos côtés.",
+      "ctaPrimary": "Devenir Partenaire commercial",
+      "ctaSecondary": "Découvrir DATAhome",
+      "stats": [
+        {"title": "Développez votre portefeuille", "body": "Construisez votre propre réseau de clients DATAhome"},
+        {"title": "Une opportunité récurrente", "body": "Développez des commissions récurrentes à mesure que votre portefeuille grandit"},
+        {"title": "Technologie incluse", "body": "Nous fournissons la plateforme et les outils associés"}
+      ]
+    },
+    "opportunity": {
+      "eyebrow": "L'OPPORTUNITÉ",
+      "title": "Votre marché.\nVos clients.\nNotre technologie.",
+      "body": [
+        "Les agences immobilières ont de plus en plus besoin de meilleurs sites web, de catalogues de biens internationaux, d'un CRM, d'outils pour les réseaux sociaux et d'intelligence artificielle.",
+        "En tant que Partenaire commercial DATAhome, vous apportez cette technologie aux agences de votre marché et construisez un portefeuille de clients autour de votre réseau."
+      ],
+      "items": [
+        {"title": "Un marché que vous connaissez", "body": "Développez DATAhome au sein du marché immobilier et du réseau professionnel que vous maîtrisez déjà."},
+        {"title": "Une plateforme à proposer", "body": "Offrez aux agences une plateforme technologique immobilière complète plutôt qu'un simple outil digital isolé."},
+        {"title": "Une opportunité récurrente", "body": "Construisez un portefeuille de clients en croissance, avec un potentiel de commissions récurrentes."}
+      ]
+    },
+    "howYouEarn": {
+      "eyebrow": "COMMENT VOUS ÊTES RÉMUNÉRÉ",
+      "title": "Développez votre portefeuille.\nFaites croître vos revenus.",
+      "steps": [
+        {"number": "01", "title": "Identifiez les opportunités", "body": "Repérez les agences immobilières de votre réseau ou de votre marché susceptibles de bénéficier de DATAhome."},
+        {"number": "02", "title": "Présentez DATAhome", "body": "Présentez la plateforme, comprenez les besoins de l'agence et construisez la solution adaptée avec DATAhome."},
+        {"number": "03", "title": "Construisez votre portefeuille", "body": "Les clients que vous développez intègrent votre portefeuille commercial DATAhome."},
+        {"number": "04", "title": "Percevez des commissions", "body": "Générez des commissions sur les clients que vous apportez, avec des opportunités récurrentes à mesure que votre portefeuille grandit."}
+      ],
+      "note": "La structure de commission et les conditions du partenariat sont discutées individuellement lors du processus de candidature."
+    },
+    "salesWorkspace": {
+      "eyebrow": "VOTRE ESPACE COMMERCIAL",
+      "title": "Nous vous donnons la technologie\npour vendre notre technologie.",
+      "body": [
+        "Les Partenaires commerciaux DATAhome ne sont pas livrés à eux-mêmes avec des tableurs et des emails.",
+        "Notre Sales Workspace vous aide à structurer vos opportunités, qualifier les besoins des agences et construire la bonne solution DATAhome pour chaque prospect."
+      ],
+      "items": [
+        {"title": "Gérez vos opportunités", "body": "Gardez vos prospects et opportunités commerciales organisés."},
+        {"title": "Qualifiez les besoins des agences", "body": "Recueillez les besoins et le contexte commercial de l'agence."},
+        {"title": "Construisez la bonne solution", "body": "Identifiez le plan, les modules et les services DATAhome adaptés au client."},
+        {"title": "Développez votre portefeuille", "body": "Construisez progressivement un portefeuille structuré de clients DATAhome."}
+      ]
+    },
+    "whatYouSell": {
+      "eyebrow": "CE QUE VOUS VENDEZ",
+      "title": "Bien plus qu'un site web.",
+      "intro": [
+        "Vous ne vendez pas un simple site web.",
+        "Vous apportez aux agences une plateforme technologique immobilière complète."
+      ],
+      "items": [
+        {"title": "Site web d'agence", "body": "Moderne, responsive et multilingue."},
+        {"title": "Catalogue immobilier international", "body": "Intégrations XML/API et portée mondiale."},
+        {"title": "Mini CRM", "body": "Gérez clients et opportunités."},
+        {"title": "Social Hub", "body": "Créez et publiez en un clic."},
+        {"title": "Outils IA", "body": "Automatisez le contenu et gagnez du temps."},
+        {"title": "Intégrations", "body": "Connectez-vous aux principaux flux immobiliers."}
+      ]
+    },
+    "partnership": {
+      "eyebrow": "COMMENT FONCTIONNE LE PARTENARIAT",
+      "title": "Un modèle simple et puissant.",
+      "steps": [
+        {"number": "01", "title": "Vous connaissez le marché", "body": "Vous identifiez des opportunités et construisez des relations avec les agences immobilières de votre marché."},
+        {"number": "02", "title": "Nous fournissons la technologie", "body": "DATAhome fournit la plateforme, l'évolution produit, l'infrastructure et les outils commerciaux derrière votre offre."},
+        {"number": "03", "title": "Nous grandissons ensemble", "body": "Vous développez votre portefeuille de clients DATAhome pendant que nous continuons à construire et faire évoluer la technologie derrière."}
+      ],
+      "note": "Les conditions commerciales sont discutées individuellement avec chaque partenaire."
+    },
+    "lookingFor": {
+      "eyebrow": "QUI NOUS RECHERCHONS",
+      "title": "Et si vous étiez notre prochain partenaire ?",
+      "profiles": [
+        {"title": "Professionnels de l'immobilier", "body": "Réseaux d'agences, groupes immobiliers, consultants."},
+        {"title": "Agences digitales", "body": "Spécialisées en immobilier et marketing digital."},
+        {"title": "Entrepreneurs & commerciaux", "body": "Business developers, professionnels de la vente et experts de marchés locaux."}
+      ],
+      "highlight": {"title": "Vous n'avez pas besoin d'être développeur.", "body": "Vous devez comprendre votre marché, construire des relations et créer des opportunités."}
+    },
+    "global": {
+      "eyebrow": "OPPORTUNITÉ MONDIALE",
+      "title": "Une opportunité mondiale.",
+      "body": "DATAhome se développe à l'international et recherche des Partenaires commerciaux capables de construire des relations locales solides avec les agences immobilières.",
+      "markets": ["Europe", "Espagne", "France", "Belgique", "Luxembourg", "Suisse", "Portugal", "Géorgie", "Émirats arabes unis"],
+      "more": "Et plus encore…",
+      "ctaPrompt": "Votre marché n'est pas listé ?",
+      "ctaLink": "Parlez-nous-en."
+    },
+    "finalCta": {
+      "eyebrow": "DEVENEZ PARTENAIRE DATAHOME",
+      "lead": "Construisez votre portefeuille de clients avec DATAhome.",
+      "lines": ["Votre réseau.", "Votre marché.", "Notre technologie."],
+      "cta": "Devenir Partenaire commercial"
+    },
+    "form": {
+      "eyebrow": "DEVENIR PARTENAIRE COMMERCIAL DATAHOME",
+      "title": "Parlons-en.",
+      "body": "Parlez-nous de votre expérience, de votre marché et de votre réseau. Nous étudierons votre candidature et vous contacterons pour échanger sur l'opportunité de Partenaire commercial DATAhome.",
+      "fields": {
+        "fullName": "Nom complet",
+        "company": "Société",
+        "email": "Email",
+        "phone": "Téléphone / WhatsApp",
+        "country": "Pays / Marché",
+        "activity": "Activité actuelle",
+        "hasNetwork": "Avez-vous déjà un réseau d'agences immobilières ?",
+        "hasNetworkYes": "Oui",
+        "hasNetworkNo": "Non",
+        "interest": "Parlez-nous de votre intérêt et de votre marché",
+        "fullNamePlaceholder": "Votre nom complet",
+        "companyPlaceholder": "Votre société",
+        "emailPlaceholder": "vous@societe.com",
+        "phonePlaceholder": "+33 ...",
+        "countryPlaceholder": "ex. France",
+        "activityPlaceholder": "ex. Professionnel de l'immobilier, agence digitale, entrepreneur...",
+        "interestPlaceholder": "Parlez-nous de votre expérience, de votre marché et des raisons pour lesquelles vous souhaitez devenir Partenaire commercial DATAhome."
+      },
+      "submit": "Envoyer ma candidature",
+      "sending": "Envoi en cours…",
+      "success": "Votre candidature a été envoyée. Nous reviendrons vers vous rapidement.",
+      "genericError": "Le service est actuellement indisponible. Veuillez réessayer plus tard.",
+      "errors": {
+        "fullName": "Indiquez votre nom complet.",
+        "company": "Indiquez le nom de votre société.",
+        "email": "Indiquez une adresse email valide.",
+        "country": "Indiquez votre pays ou marché.",
+        "activity": "Indiquez votre activité actuelle.",
+        "interest": "Parlez-nous de votre intérêt et de votre marché."
+      },
+      "privacy": "En envoyant ce formulaire, vous demandez à DATAhome de traiter votre demande. Consultez notre"
+    }
+  }
 }
