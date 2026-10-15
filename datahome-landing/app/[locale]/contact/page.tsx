@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { alternatesFor } from '@/lib/seo';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ContactPage } from '@/components/contact/ContactPage';
@@ -12,7 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   if (!isLocale(locale)) notFound();
   if (!isContactLocale(locale)) return { robots: { index: false, follow: true } };
   const copy = getDictionary(locale).contactPage!;
-  return { title: copy.metaTitle, description: copy.metaDescription, alternates: { canonical: `/${locale}/contact`, languages: { en: '/en/contact', fr: '/fr/contact' } }, openGraph: { title: copy.metaTitle, description: copy.metaDescription, url: `/${locale}/contact` } };
+  return { title: copy.metaTitle, description: copy.metaDescription, alternates: alternatesFor('contact', locale), openGraph: { title: copy.metaTitle, description: copy.metaDescription, url: `/${locale}/contact` } };
 }
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
