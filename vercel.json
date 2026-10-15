@@ -7,6 +7,18 @@
     }
   ],
   "routes": [
+    { "src": "/index\\.html", "status": 308, "headers": { "Location": "/en" } },
+    { "src": "/fr-be", "status": 308, "headers": { "Location": "/fr" } },
+    { "src": "/templates\\.html", "status": 308, "headers": { "Location": "/en/templates" } },
+    { "src": "/template-preview\\.html", "status": 308, "headers": { "Location": "/en/templates" } },
+    { "src": "/landing-pages\\.html", "status": 308, "headers": { "Location": "/en/product" } },
+    { "src": "/chatbot\\.html", "status": 308, "headers": { "Location": "/en/product" } },
+    { "src": "/experience\\.html", "status": 308, "headers": { "Location": "/en/product" } },
+    { "src": "/support\\.html", "status": 308, "headers": { "Location": "/en/contact" } },
+    { "src": "/onboarding\\.html", "status": 308, "headers": { "Location": "https://datahome.vercel.app/register" } },
+    { "src": "/privacy\\.html", "status": 308, "headers": { "Location": "/en/privacy" } },
+    { "src": "/legal\\.html", "status": 308, "headers": { "Location": "/en/legal" } },
+    { "src": "/404\\.html", "status": 308, "headers": { "Location": "/en" } },
     {
       "src": "/api/leads",
       "dest": "/datahome-landing/api/leads"

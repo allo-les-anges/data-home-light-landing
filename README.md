@@ -50,7 +50,7 @@ Next.js ne fusionne pas `openGraph` entre le layout et la page : une page qui le
 
 ## Anciennes URL
 
-L'ancien site statique (pages `*.html`) a été retiré. Ses URL sont redirigées de façon permanente vers leur équivalent actuel dans `datahome-landing/next.config.mjs` (`legacyRedirects`).
+L'ancien site statique (pages `*.html`) a été retiré. Ses URL sont redirigées de façon permanente vers leur équivalent actuel. La liste est déclarée deux fois : dans `vercel.json` (`routes`), qui est ce qui s'applique en production tant que la configuration `builds` héritée est utilisée (elle intercepte tout avant Next.js), et dans `datahome-landing/next.config.mjs` (`legacyRedirects`) pour le développement local et pour le jour où `vercel.json` sera supprimé. Toute modification doit être faite aux deux endroits.
 
 ## Déploiement
 
