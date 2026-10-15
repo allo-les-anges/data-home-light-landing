@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { alternatesFor, openGraphFor } from '@/lib/seo';
 import { Suspense } from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -12,7 +13,7 @@ function isTemplateLocale(l: string): l is TemplatePageLocale { return templateL
 export async function generateMetadata({params}:{params:Promise<{locale:string}>}):Promise<Metadata>{
  const {locale}=await params;if(!isLocale(locale))notFound();
  if(!isTemplateLocale(locale))return {robots:{index:false,follow:true}};
- const c=templateCopy[locale];return {title:c.metaTitle,description:c.metaDescription,alternates:{canonical:`/${locale}/templates`,languages:{en:'/en/templates',fr:'/fr/templates'}}};
+ const c=templateCopy[locale];return {title:c.metaTitle,description:c.metaDescription,alternates: alternatesFor('templates', locale),openGraph:openGraphFor('templates', locale, c.metaTitle, c.metaDescription)};
 }
 export default async function Page({params}:{params:Promise<{locale:string}>}){
  const {locale}=await params;if(!isLocale(locale))notFound();

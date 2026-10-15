@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { alternatesFor } from '@/lib/seo';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { PricingPage } from '@/components/pricing/PricingPage';
@@ -15,7 +16,7 @@ export async function generateMetadata({params}:{params:Promise<{locale:string}>
   return {
     title:copy.metaTitle,
     description:copy.metaDescription,
-    alternates:{canonical:`/${locale}/pricing`,languages:{en:'/en/pricing',fr:'/fr/pricing'}},
+    alternates: alternatesFor('pricing', locale),
     openGraph:{title:copy.metaTitle,description:copy.metaDescription,url:`/${locale}/pricing`},
   };
 }

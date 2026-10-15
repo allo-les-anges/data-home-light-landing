@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { alternatesFor } from '@/lib/seo';
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { LegalPage } from "@/components/legal/LegalPages";
@@ -10,7 +11,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   if (!isLocale(locale)) notFound();
   const copy = getDictionary(locale).legalPage;
   if (!copy) return { robots: { index: false, follow: true } };
-  return { title: copy.metaTitle, description: copy.metaDescription, alternates: { canonical: `/${locale}/legal`, languages: { en: "/en/legal", fr: "/fr/legal" } }, openGraph: { title: copy.metaTitle, description: copy.metaDescription, url: `/${locale}/legal` } };
+  return { title: copy.metaTitle, description: copy.metaDescription, alternates: alternatesFor('legal', locale), openGraph: { title: copy.metaTitle, description: copy.metaDescription, url: `/${locale}/legal` } };
 }
 
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {

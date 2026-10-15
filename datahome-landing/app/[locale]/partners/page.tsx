@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { alternatesFor } from '@/lib/seo';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { PartnersPage } from '@/components/partners/PartnersPage';
@@ -15,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: copy.metaTitle,
     description: copy.metaDescription,
-    alternates: { canonical: `/${locale}/partners`, languages: { en: '/en/partners', fr: '/fr/partners' } },
+    alternates: alternatesFor('partners', locale),
     openGraph: { title: copy.metaTitle, description: copy.metaDescription, url: `/${locale}/partners` },
   };
 }

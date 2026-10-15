@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { alternatesFor } from '@/lib/seo';
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PrivacyPage } from "@/components/legal/LegalPages";
@@ -10,7 +11,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   if (!isLocale(locale)) notFound();
   const copy = getDictionary(locale).privacyPage;
   if (!copy) return { robots: { index: false, follow: true } };
-  return { title: copy.metaTitle, description: copy.metaDescription, alternates: { canonical: `/${locale}/privacy`, languages: { en: "/en/privacy", fr: "/fr/privacy" } }, openGraph: { title: copy.metaTitle, description: copy.metaDescription, url: `/${locale}/privacy` } };
+  return { title: copy.metaTitle, description: copy.metaDescription, alternates: alternatesFor('privacy', locale), openGraph: { title: copy.metaTitle, description: copy.metaDescription, url: `/${locale}/privacy` } };
 }
 
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {

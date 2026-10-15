@@ -16,7 +16,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: "DATAhome — Your agency. Online. In 24 hours.",
     description: "Launch a premium real estate agency website with XML feeds, modules and dashboards.",
-    url: "https://data-home.app",
+    // No `url` here on purpose: it would be inherited by every page that does
+    // not define its own openGraph and point social previews at the homepage.
     siteName: "Data Home",
     type: "website",
   },
